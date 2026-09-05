@@ -1,0 +1,188 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container my-5">
+  
+  <!-- Dashboard Header -->
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between pb-3 border-bottom mb-4">
+    <div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="fs-4">📊</span>
+        <h3 class="fw-bold text-dark mb-0">Superhost Analytics & Operations Panel</h3>
+      </div>
+      <p class="text-muted small mb-0 mt-1">Real-time corridor occupancy, revenue analytics, and guest check-in manifest.</p>
+    </div>
+    <div class="mt-3 mt-md-0 d-flex gap-2">
+      <a href="/listings/new" class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">
+        <i class="bi bi-plus-lg me-1"></i> Add Another Stay
+      </a>
+    </div>
+  </div>
+
+  <!-- 4 Key Analytics KPI Cards (3D Spatial Monitors) -->
+  <div class="row g-4 mb-5">
+    
+    <!-- Total Bookings -->
+    <div class="col-sm-6 col-lg-3 reveal-3d">
+      <div class="card border-0 rounded-4 shadow-xl p-3 spatial-kpi-card card-preserve-3d h-100" data-tilt-3d="true">
+        <div class="card-glare-overlay"></div>
+        <div class="d-flex justify-content-between align-items-center mb-2 card-layer-content">
+          <span class="small text-muted fw-semibold">Total Reservations</span>
+          <div class="rounded-circle bg-primary-subtle text-primary p-2">
+            <i class="bi bi-calendar2-check-fill fs-5"></i>
+          </div>
+        </div>
+        <h3 class="fw-bold text-dark mb-1 card-layer-content"><%= totalBookings %></h3>
+        <span class="small text-muted card-layer-content">Across all corridor stays</span>
+      </div>
+    </div>
+
+    <!-- Confirmed Bookings -->
+    <div class="col-sm-6 col-lg-3 reveal-3d">
+      <div class="card border-0 rounded-4 shadow-xl p-3 spatial-kpi-card card-preserve-3d h-100" data-tilt-3d="true">
+        <div class="card-glare-overlay"></div>
+        <div class="d-flex justify-content-between align-items-center mb-2 card-layer-content">
+          <span class="small text-muted fw-semibold">Confirmed Stays</span>
+          <div class="rounded-circle bg-success-subtle text-success p-2">
+            <i class="bi bi-patch-check-fill fs-5"></i>
+          </div>
+        </div>
+        <h3 class="fw-bold text-success mb-1 card-layer-content"><%= confirmedBookings %></h3>
+        <span class="small text-muted card-layer-content">FairSafe guaranteed rooms</span>
+      </div>
+    </div>
+
+    <!-- Pending Bookings -->
+    <div class="col-sm-6 col-lg-3 reveal-3d">
+      <div class="card border-0 rounded-4 shadow-xl p-3 spatial-kpi-card card-preserve-3d h-100" data-tilt-3d="true">
+        <div class="card-glare-overlay"></div>
+        <div class="d-flex justify-content-between align-items-center mb-2 card-layer-content">
+          <span class="small text-muted fw-semibold">Pending Checkout</span>
+          <div class="rounded-circle bg-warning-subtle text-warning p-2">
+            <i class="bi bi-clock-history fs-5"></i>
+          </div>
+        </div>
+        <h3 class="fw-bold text-warning mb-1 card-layer-content"><%= pendingBookings %></h3>
+        <span class="small text-muted card-layer-content">Awaiting pilgrim confirmation</span>
+      </div>
+    </div>
+
+    <!-- Gross Revenue -->
+    <div class="col-sm-6 col-lg-3 reveal-3d">
+      <div class="card border-0 rounded-4 shadow-xl p-3 spatial-kpi-card card-preserve-3d h-100" data-tilt-3d="true">
+        <div class="card-glare-overlay"></div>
+        <div class="d-flex justify-content-between align-items-center mb-2 card-layer-content">
+          <span class="small text-muted fw-semibold">Total Revenue (INR)</span>
+          <div class="rounded-circle bg-info-subtle text-info p-2">
+            <i class="bi bi-currency-rupee fs-5"></i>
+          </div>
+        </div>
+        <h3 class="fw-bold text-dark mb-1 card-layer-content">₹<%= totalRevenue.toLocaleString('en-IN') %></h3>
+        <span class="small text-muted card-layer-content">Fair pricing without surcharge</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Managed Corridor Properties Summary -->
+  <div class="card border-0 rounded-4 shadow-xl p-4 spatial-glass-card mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h5 class="fw-bold text-dark mb-0">Your Active Sacred Corridor Stays (<%= hostListings.length %>)</h5>
+    </div>
+
+    <% if (hostListings && hostListings.length > 0) { %>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <% for (let stay of hostListings) { %>
+          <div class="col">
+            <div class="card h-100 border rounded-3 p-2 bg-light bg-opacity-50">
+              <div class="d-flex gap-2 align-items-center">
+                <img
+                  src="<%= stay.image && stay.image.url ? stay.image.url : '' %>"
+                  alt="<%= stay.title %>"
+                  class="rounded-2 object-fit-cover"
+                  style="width: 50px; height: 50px;"
+                />
+                <div class="text-truncate">
+                  <div class="fw-bold small text-truncate"><%= stay.title %></div>
+                  <div class="text-muted" style="font-size: 0.72rem;"><%= stay.location %> • ₹<%= stay.price %>/nt</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    <% } else { %>
+      <p class="text-muted small mb-0">No stays published under your account yet.</p>
+    <% } %>
+  </div>
+
+  <!-- Guest Manifest & Reservations Table -->
+  <div class="card border-0 rounded-4 shadow-sm p-4 bg-white">
+    <h5 class="fw-bold text-dark mb-3">Pilgrim Guest Manifest & Reservation Ledger</h5>
+
+    <% if (allBookings && allBookings.length > 0) { %>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light small">
+            <tr>
+              <th>Pilgrim Guest</th>
+              <th>Corridor Stay</th>
+              <th>Dates</th>
+              <th>Room #</th>
+              <th>Status</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody class="small">
+            <% for (let b of allBookings) { %>
+              <tr>
+                <td>
+                  <div class="fw-bold text-dark"><%= b.guestName || (b.user ? b.user.username : 'Pilgrim') %></div>
+                  <div class="text-muted" style="font-size: 0.75rem;"><%= b.guestEmail || (b.user ? b.user.email : '') %></div>
+                </td>
+                <td>
+                  <div class="fw-semibold text-truncate" style="max-width: 200px;">
+                    <%= b.listing ? b.listing.title : 'Listing' %>
+                  </div>
+                  <div class="text-muted" style="font-size: 0.75rem;"><%= b.listing ? b.listing.location : '' %></div>
+                </td>
+                <td>
+                  <%= new Date(b.checkIn).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' }) %> – 
+                  <%= new Date(b.checkOut).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' }) %>
+                  <div class="text-muted" style="font-size: 0.72rem;"><%= b.nights %> night(s), <%= b.guests %> guest(s)</div>
+                </td>
+                <td>
+                  <% if (b.roomNumber) { %>
+                    <span class="badge bg-light text-dark border font-monospace"><%= b.roomNumber %></span>
+                  <% } else { %>
+                    <span class="text-muted">—</span>
+                  <% } %>
+                </td>
+                <td>
+                  <span class="badge rounded-pill <%= b.status === 'confirmed' ? 'bg-success' : (b.status === 'pending' ? 'bg-warning text-dark' : 'bg-secondary') %>">
+                    <%= b.status %>
+                  </span>
+                </td>
+                <td class="fw-bold">
+                  ₹<%= (b.totalPrice ? Math.round(b.totalPrice * 1.12) : 0).toLocaleString('en-IN') %>
+                </td>
+                <td>
+                  <% if (b.listing) { %>
+                    <a href="/listings/<%= b.listing._id %>" class="btn btn-sm btn-outline-secondary rounded-pill py-0 px-2" style="font-size: 0.75rem;">
+                      View Stay
+                    </a>
+                  <% } %>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    <% } else { %>
+      <div class="text-center py-4 text-muted small">
+        No guest reservations logged yet. Incoming bookings will populate here automatically.
+      </div>
+    <% } %>
+  </div>
+
+</div>

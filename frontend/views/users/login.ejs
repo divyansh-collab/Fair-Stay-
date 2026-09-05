@@ -1,0 +1,160 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container py-5 my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-5">
+      
+      <div class="card border rounded-4 shadow-sm p-4 p-md-5 auth-card bg-body">
+        
+        <div class="text-center mb-4">
+          <div class="d-inline-flex p-3 rounded-circle bg-primary-subtle text-primary mb-3">
+            <span class="fs-2">🏡</span>
+          </div>
+          <h3 class="fw-bold text-dark">Welcome back</h3>
+          <p class="text-muted small">Log in to manage your stays, wishlist, and bookings.</p>
+        </div>
+
+        <!-- Quick One-Click Demo Logins -->
+        <div class="mb-4 p-3 bg-light rounded-4 border">
+          <div class="small fw-bold text-secondary text-uppercase mb-2" style="font-size: 0.72rem;">
+            ⚡ Instant 1-Click Sign In (Demo Mode)
+          </div>
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-sm btn-outline-dark rounded-pill py-2 text-start px-3 d-flex align-items-center justify-content-between" id="quickAdminBtn">
+              <span><i class="bi bi-shield-lock-fill text-primary me-2"></i><strong>Superhost Admin</strong></span>
+              <span class="badge bg-primary rounded-pill">1-Click Sign In</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill py-2 text-start px-3 d-flex align-items-center justify-content-between" id="quickGuestBtn">
+              <span><i class="bi bi-person-check-fill text-success me-2"></i><strong>Verified Traveler</strong></span>
+              <span class="badge bg-success rounded-pill">1-Click Sign In</span>
+            </button>
+          </div>
+        </div>
+
+        <form action="/login" method="POST" class="needs-validation" novalidate id="loginForm">
+          
+          <!-- Username or Gmail ID -->
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label for="usernameInput" class="form-label fw-semibold text-dark mb-0">Username or Gmail Address</label>
+              <span class="badge bg-light text-muted border rounded-pill" style="font-size: 0.7rem;">
+                <i class="bi bi-google text-danger me-1"></i> @gmail.com
+              </span>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0 text-muted">
+                <i class="bi bi-person"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control border-start-0 rounded-end-3 py-2"
+                id="usernameInput"
+                name="username"
+                placeholder="Username or yourname@gmail.com"
+                required
+              />
+            </div>
+            <div class="invalid-feedback">Please enter your username or authentic Gmail address.</div>
+          </div>
+
+          <!-- Password with Show/Hide Toggle -->
+          <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label for="passwordInput" class="form-label fw-semibold text-dark mb-0">Password</label>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0 text-muted">
+                <i class="bi bi-lock"></i>
+              </span>
+              <input
+                type="password"
+                class="form-control border-start-0 border-end-0 py-2"
+                id="passwordInput"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+              <button class="btn btn-outline-secondary border-start-0 rounded-end-3 bg-light text-muted" type="button" id="togglePasswordBtn">
+                <i class="bi bi-eye" id="toggleEyeIcon"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">Please enter your password.</div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-bold shadow-sm mb-3 fs-6">
+            Continue to Account
+          </button>
+
+        </form>
+
+        <div class="text-center pt-2 border-top">
+          <p class="small text-muted mb-0">
+            Don't have an account yet? 
+            <a href="/signup" class="text-primary fw-bold text-decoration-none hover-underline">Create an account</a>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    // Quick Demo Account Auto-Fill
+    const adminBtn = document.getElementById('quickAdminBtn');
+    const guestBtn = document.getElementById('quickGuestBtn');
+    const userInput = document.getElementById('usernameInput');
+    const form = document.getElementById('loginForm');
+
+    if (adminBtn) {
+      adminBtn.addEventListener('click', function () {
+        userInput.value = 'admin';
+        passInput.value = 'admin123';
+        userInput.classList.add('is-valid');
+        passInput.classList.add('is-valid');
+        if (form) form.submit();
+      });
+    }
+
+    if (guestBtn) {
+      guestBtn.addEventListener('click', function () {
+        userInput.value = 'pilgrim@fairstay.com';
+        passInput.value = 'pilgrim123';
+        userInput.classList.add('is-valid');
+        passInput.classList.add('is-valid');
+        if (form) form.submit();
+      });
+    }
+
+    // Password Show/Hide Toggle
+    const toggleBtn = document.getElementById('togglePasswordBtn');
+    const eyeIcon = document.getElementById('toggleEyeIcon');
+
+    if (toggleBtn && passInput && eyeIcon) {
+      toggleBtn.addEventListener('click', function () {
+        if (passInput.type === 'password') {
+          passInput.type = 'text';
+          eyeIcon.className = 'bi bi-eye-slash';
+        } else {
+          passInput.type = 'password';
+          eyeIcon.className = 'bi bi-eye';
+        }
+      });
+    }
+
+    // Form Validation
+    const form = document.getElementById('loginForm');
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    }
+  })();
+</script>

@@ -1,0 +1,285 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container my-4 my-md-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-xl-10">
+
+      <!-- Breadcrumbs & Header -->
+      <div class="mb-4">
+        <a href="/listings/<%= listing._id %>" class="btn btn-sm btn-link text-muted text-decoration-none ps-0 mb-2 d-inline-flex align-items-center">
+          <i class="bi bi-chevron-left me-1"></i> Back to stay details
+        </a>
+        <h2 class="fw-bold text-dark mb-1">Confirm and Pay</h2>
+        <p class="text-muted small mb-0">Review your stay details, transparent pricing, and choose your payment method.</p>
+      </div>
+
+      <div class="row g-4 g-lg-5">
+        
+        <!-- Left Column: Trip Details, House Rules & Payment Selection -->
+        <div class="col-lg-7">
+          
+          <!-- 1. Trip Details Summary Card -->
+          <div class="card border rounded-4 p-4 mb-4 bg-body shadow-xs">
+            <h5 class="fw-bold text-dark mb-3">Your Trip</h5>
+            
+            <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+              <div>
+                <strong class="text-dark d-block">Dates</strong>
+                <span class="text-muted small">
+                  <%= new Date(booking.checkIn).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }) %> – 
+                  <%= new Date(booking.checkOut).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }) %>
+                </span>
+              </div>
+              <span class="badge bg-light text-dark border rounded-pill px-3 py-2 fw-semibold">
+                <%= booking.nights %> night<%= booking.nights > 1 ? 's' : '' %>
+              </span>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center py-2 pt-3">
+              <div>
+                <strong class="text-dark d-block">Guests</strong>
+                <span class="text-muted small"><%= booking.guests %> <%= booking.guests > 1 ? 'guests' : 'guest' %></span>
+              </div>
+              <span class="badge bg-light text-secondary border rounded-pill px-3 py-2 small">
+                Room assigned upon arrival
+              </span>
+            </div>
+          </div>
+
+          <!-- 2. FairSafe™ Protection & Cancellation Policy -->
+          <div class="card border-0 bg-success-subtle text-success-emphasis rounded-4 p-3 px-4 mb-4">
+            <div class="d-flex align-items-start gap-3">
+              <i class="bi bi-shield-check text-success fs-3 flex-shrink-0 mt-1"></i>
+              <div>
+                <h6 class="fw-bold mb-1">FairSafe™ Price-Lock & Protection</h6>
+                <p class="small mb-1 text-secondary">
+                  Your rate is 100% price-locked with zero hidden service fees. Free cancellation up to 48 hours before check-in with an instant full refund.
+                </p>
+                <div class="d-flex flex-wrap gap-3 small fw-semibold text-success mt-2">
+                  <span><i class="bi bi-clock me-1"></i> Check-in: 2:00 PM</span>
+                  <span><i class="bi bi-box-arrow-right me-1"></i> Checkout: 11:00 AM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Interactive Payment Methods Card -->
+          <div class="card border rounded-4 p-4 bg-body shadow-xs mb-4">
+            <h5 class="fw-bold text-dark mb-3">Pay with</h5>
+
+            <!-- Payment Method Radio Cards -->
+            <div class="d-flex flex-column gap-3 mb-4" id="paymentMethodSelector">
+              
+              <!-- Option 1: Instant UPI -->
+              <label class="payment-method-card active d-flex align-items-center justify-content-between cursor-pointer" for="methodUpi">
+                <div class="d-flex align-items-center gap-3">
+                  <input type="radio" name="paymentMethodRadio" id="methodUpi" class="form-check-input mt-0 cursor-pointer" checked />
+                  <div>
+                    <div class="fw-bold text-dark small">UPI (Google Pay, PhonePe, Paytm, BHIM)</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Instant authorization with zero transaction fees</div>
+                  </div>
+                </div>
+                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill">Fastest</span>
+              </label>
+
+              <!-- Option 2: Cards -->
+              <label class="payment-method-card d-flex align-items-center justify-content-between cursor-pointer" for="methodCard">
+                <div class="d-flex align-items-center gap-3">
+                  <input type="radio" name="paymentMethodRadio" id="methodCard" class="form-check-input mt-0 cursor-pointer" />
+                  <div>
+                    <div class="fw-bold text-dark small">Credit or Debit Card</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Visa, Mastercard, RuPay & American Express</div>
+                  </div>
+                </div>
+                <div class="d-flex gap-1 text-muted fs-5">
+                  <i class="bi bi-credit-card"></i>
+                </div>
+              </label>
+
+              <!-- Option 3: Net Banking -->
+              <label class="payment-method-card d-flex align-items-center justify-content-between cursor-pointer" for="methodNetBanking">
+                <div class="d-flex align-items-center gap-3">
+                  <input type="radio" name="paymentMethodRadio" id="methodNetBanking" class="form-check-input mt-0 cursor-pointer" />
+                  <div>
+                    <div class="fw-bold text-dark small">Net Banking</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">All major Indian banks supported</div>
+                  </div>
+                </div>
+                <i class="bi bi-bank text-muted"></i>
+              </label>
+            </div>
+
+            <!-- UPI Details Form Container -->
+            <div id="upiFieldsContainer" class="p-3 bg-light rounded-3 mb-3 border">
+              <label class="form-label small fw-bold text-dark mb-1">Enter your UPI ID / VPA</label>
+              <div class="input-group">
+                <input type="text" class="form-control rounded-start-3" id="upiIdInput" placeholder="yourname@okaxis or mobile@paytm" value="guest@upi" />
+                <button class="btn btn-outline-secondary btn-sm px-3" type="button" onclick="document.getElementById('upiIdInput').value='user@okicici'">
+                  Sample ID
+                </button>
+              </div>
+              <small class="text-muted mt-1 d-block" style="font-size: 0.75rem;">
+                <i class="bi bi-shield-lock me-1"></i> A payment request will be sent to your UPI app upon authorization.
+              </small>
+            </div>
+
+            <!-- Card Details Form Container (Initially hidden) -->
+            <div id="cardFieldsContainer" class="p-3 bg-light rounded-3 mb-3 border d-none">
+              <div class="mb-3">
+                <label class="form-label small fw-bold text-dark mb-1">Card Number</label>
+                <input type="text" class="form-control rounded-3" placeholder="4111 2222 3333 4444" maxlength="19" value="4111 2222 3333 4444" />
+              </div>
+              <div class="row g-2">
+                <div class="col-6">
+                  <label class="form-label small fw-bold text-dark mb-1">Expiration</label>
+                  <input type="text" class="form-control rounded-3" placeholder="MM/YY" maxlength="5" value="12/28" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label small fw-bold text-dark mb-1">CVV / CVC</label>
+                  <input type="password" class="form-control rounded-3" placeholder="123" maxlength="4" value="123" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Net Banking Form Container (Initially hidden) -->
+            <div id="netBankingContainer" class="p-3 bg-light rounded-3 mb-3 border d-none">
+              <label class="form-label small fw-bold text-dark mb-1">Select Bank</label>
+              <select class="form-select rounded-3">
+                <option selected>HDFC Bank</option>
+                <option>State Bank of India (SBI)</option>
+                <option>ICICI Bank</option>
+                <option>Axis Bank</option>
+                <option>Kotak Mahindra Bank</option>
+              </select>
+            </div>
+
+            <!-- Primary Confirm & Pay Form -->
+            <form action="/bookings/<%= booking._id %>/confirm" method="POST" id="checkoutConfirmForm">
+              <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold fs-6 shadow-sm mb-2" id="confirmPayBtn">
+                <i class="bi bi-shield-lock-fill me-2"></i> Confirm & Authorize ₹<%= finalPayable.toLocaleString('en-IN') %>
+              </button>
+            </form>
+
+            <div class="text-center text-muted small mt-2" style="font-size: 0.8rem;">
+              <i class="bi bi-lock-fill text-success me-1"></i> 256-bit SSL encrypted • Instant WhatsApp & email confirmation
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Floating Vacation Stay Card & Transparent Price Breakdown -->
+        <div class="col-lg-5">
+          <div class="card border rounded-4 p-4 shadow-sm checkout-summary-card sticky-top bg-body" style="top: 90px; z-index: 5;">
+            
+            <!-- Stay Preview -->
+            <div class="d-flex gap-3 pb-3 border-bottom mb-3 align-items-center">
+              <img
+                src="<%= listing.image && listing.image.url ? listing.image.url : 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=400&q=80' %>"
+                alt="<%= listing.title %>"
+                class="rounded-3 object-fit-cover shadow-xs flex-shrink-0"
+                style="width: 96px; height: 96px;"
+              />
+              <div class="d-flex flex-column justify-content-center overflow-hidden">
+                <span class="badge bg-secondary-subtle text-secondary rounded-pill align-self-start mb-1" style="font-size: 0.7rem;">
+                  <%= listing.category || 'Vacation Stay' %>
+                </span>
+                <h6 class="fw-bold text-dark mb-1 text-truncate" title="<%= listing.title %>"><%= listing.title %></h6>
+                <div class="small text-muted text-truncate"><%= listing.location %>, <%= listing.country %></div>
+                <div class="small text-dark fw-semibold mt-1 d-flex align-items-center gap-1">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <span>5.0</span>
+                  <span class="text-muted">(<%= listing.reviews ? listing.reviews.length : 0 %> reviews)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Breakdown Header -->
+            <h6 class="fw-bold text-dark mb-3">Price Details</h6>
+
+            <!-- Base Nights -->
+            <div class="d-flex justify-content-between mb-2 text-muted small">
+              <span>₹<%= booking.pricePerNight.toLocaleString('en-IN') %> × <%= booking.nights %> night<%= booking.nights > 1 ? 's' : '' %></span>
+              <span class="text-dark fw-medium">₹<%= baseSubtotal.toLocaleString('en-IN') %></span>
+            </div>
+
+            <!-- Seasonal Rate Multiplier (if applied) -->
+            <% if (booking.seasonalMultiplier > 1.0) { %>
+              <div class="d-flex justify-content-between mb-2 small text-warning">
+                <div class="d-flex align-items-center gap-1">
+                  <span>Seasonal Rate Adjustment (<%= Math.round((booking.seasonalMultiplier - 1) * 100) %>%)</span>
+                  <i class="bi bi-info-circle cursor-pointer" title="<%= booking.festivalApplied %>"></i>
+                </div>
+                <span class="fw-medium">+₹<%= surgeDifference.toLocaleString('en-IN') %></span>
+              </div>
+              <div class="small text-muted mb-2 px-2 py-1 bg-light rounded" style="font-size: 0.72rem;">
+                <i class="bi bi-sparkles me-1 text-warning"></i>
+                <%= booking.festivalApplied || 'High Demand Season' %>
+              </div>
+            <% } %>
+
+            <!-- GST / Taxes -->
+            <div class="d-flex justify-content-between mb-2 text-muted small">
+              <span>Taxes & GST (12%)</span>
+              <span class="text-dark fw-medium">₹<%= gst.toLocaleString('en-IN') %></span>
+            </div>
+
+            <hr class="my-3" />
+
+            <!-- Grand Total -->
+            <div class="d-flex justify-content-between align-items-baseline fw-bold text-dark fs-5">
+              <span>Total (INR)</span>
+              <span class="text-primary fs-4">₹<%= finalPayable.toLocaleString('en-IN') %></span>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 mt-3 p-2 px-3 rounded-3 bg-success-subtle text-success border border-success-subtle small">
+              <i class="bi bi-shield-check fs-5"></i>
+              <span style="font-size: 0.78rem;"><strong>FairSafe™ Guarantee:</strong> Zero hidden convenience charges. What you see is what you pay.</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const methodUpi = document.getElementById('methodUpi');
+    const methodCard = document.getElementById('methodCard');
+    const methodNetBanking = document.getElementById('methodNetBanking');
+
+    const upiContainer = document.getElementById('upiFieldsContainer');
+    const cardContainer = document.getElementById('cardFieldsContainer');
+    const netBankingContainer = document.getElementById('netBankingContainer');
+
+    const cards = document.querySelectorAll('.payment-method-card');
+
+    function updatePaymentTabs() {
+      cards.forEach(c => c.classList.remove('active'));
+
+      if (methodUpi && methodUpi.checked) {
+        methodUpi.closest('.payment-method-card').classList.add('active');
+        if (upiContainer) upiContainer.classList.remove('d-none');
+        if (cardContainer) cardContainer.classList.add('d-none');
+        if (netBankingContainer) netBankingContainer.classList.add('d-none');
+      } else if (methodCard && methodCard.checked) {
+        methodCard.closest('.payment-method-card').classList.add('active');
+        if (upiContainer) upiContainer.classList.add('d-none');
+        if (cardContainer) cardContainer.classList.remove('d-none');
+        if (netBankingContainer) netBankingContainer.classList.add('d-none');
+      } else if (methodNetBanking && methodNetBanking.checked) {
+        methodNetBanking.closest('.payment-method-card').classList.add('active');
+        if (upiContainer) upiContainer.classList.add('d-none');
+        if (cardContainer) cardContainer.classList.add('d-none');
+        if (netBankingContainer) netBankingContainer.classList.remove('d-none');
+      }
+    }
+
+    if (methodUpi) methodUpi.addEventListener('change', updatePaymentTabs);
+    if (methodCard) methodCard.addEventListener('change', updatePaymentTabs);
+    if (methodNetBanking) methodNetBanking.addEventListener('change', updatePaymentTabs);
+  })();
+</script>

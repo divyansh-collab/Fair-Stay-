@@ -1,0 +1,324 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9 col-xl-8">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-5">
+        <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-semibold mb-2">FairStay Superhost Network</span>
+        <h2 class="fw-bold text-dark display-6">Host your home on FairStay</h2>
+        <p class="text-muted lead fs-6">
+          Join thousands of verified hosts offering stunning beach villas, mountain cabins, and city stays with zero hidden platform gouging.
+        </p>
+      </div>
+
+      <div class="card border-0 shadow-2xl rounded-4 p-4 p-md-5 spatial-glass-card">
+        
+        <form action="/listings" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate id="hostStayForm">
+          
+          <!-- Section 1: Basic Details -->
+          <div class="mb-4 pb-3 border-bottom">
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-info-circle text-primary me-2"></i>1. Tell us about your place</h5>
+            
+            <!-- Title -->
+            <div class="mb-3">
+              <label for="title" class="form-label fw-semibold text-dark">Listing Title</label>
+              <input
+                type="text"
+                class="form-control rounded-3 py-2"
+                id="title"
+                name="listing[title]"
+                placeholder="e.g., Luxury Sunset Beach Villa with Private Infinity Pool"
+                required
+              />
+              <div class="invalid-feedback">Please enter an engaging listing title.</div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+              <label for="description" class="form-label fw-semibold text-dark">Description</label>
+              <textarea
+                class="form-control rounded-3"
+                id="description"
+                name="listing[description]"
+                rows="4"
+                placeholder="Highlight your property's best features: scenic views, peaceful neighborhood, fast Wi-Fi, pool dimensions, nearby beaches or cafes..."
+                required
+              ></textarea>
+              <div class="invalid-feedback">Please provide a description for guests.</div>
+            </div>
+
+            <!-- Category Selection -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold text-dark">Property Category</label>
+              <div class="row g-2" id="categoryTileGrid">
+                <% const categories = [
+                  { id: 'Beachfront', icon: 'bi-umbrella', label: '🏖️ Beachfront' },
+                  { id: 'Mountains', icon: 'bi-triangle', label: '🏔️ Mountains' },
+                  { id: 'Pools', icon: 'bi-water', label: '🏊 Pools' },
+                  { id: 'Heritage', icon: 'bi-bank', label: '🏰 Heritage' },
+                  { id: 'City', icon: 'bi-building', label: '🏙️ City' },
+                  { id: 'Countryside', icon: 'bi-tree', label: '🌿 Countryside' },
+                  { id: 'Workation', icon: 'bi-laptop', label: '💻 Workation' },
+                  { id: 'Luxe', icon: 'bi-gem', label: '💎 Luxe' },
+                  { id: 'Trending', icon: 'bi-fire', label: '🌟 Trending' }
+                ]; %>
+                <% for (let cat of categories) { %>
+                  <div class="col-4 col-sm-3 col-md-4">
+                    <input type="radio" class="btn-check" name="listing[category]" id="cat_<%= cat.id %>" value="<%= cat.id %>" <%= cat.id === 'Trending' ? 'checked' : '' %> autocomplete="off" />
+                    <label class="btn btn-outline-secondary w-100 py-2 rounded-3 text-truncate small fw-medium" for="cat_<%= cat.id %>">
+                      <%= cat.label %>
+                    </label>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Location -->
+          <div class="mb-4 pb-3 border-bottom">
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-geo-alt text-danger me-2"></i>2. Location</h5>
+            <div class="row g-3">
+              <div class="col-md-8">
+                <label for="location" class="form-label fw-semibold text-dark">City, Area or Street</label>
+                <input
+                  type="text"
+                  class="form-control rounded-3 py-2"
+                  id="location"
+                  name="listing[location]"
+                  placeholder="e.g., Candolim Beach Road, Goa"
+                  required
+                />
+                <div class="invalid-feedback">Please provide your stay location.</div>
+              </div>
+              <div class="col-md-4">
+                <label for="country" class="form-label fw-semibold text-dark">Country</label>
+                <input
+                  type="text"
+                  class="form-control rounded-3 py-2"
+                  id="country"
+                  name="listing[country]"
+                  value="India"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Photos -->
+          <div class="mb-4 pb-3 border-bottom">
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-camera text-success me-2"></i>3. Photos</h5>
+            
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="imageUpload" class="form-label fw-semibold text-dark">Upload from Computer</label>
+                <input
+                  type="file"
+                  class="form-control rounded-3 py-2"
+                  id="imageUpload"
+                  name="listing[image]"
+                  accept="image/*"
+                />
+                <div class="form-text small text-muted">Upload high-resolution JPG, PNG or WebP.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="imageUrlInput" class="form-label fw-semibold text-dark">Or Enter Image URL</label>
+                <input
+                  type="url"
+                  class="form-control rounded-3 py-2"
+                  id="imageUrlInput"
+                  name="listing[imageUrl]"
+                  placeholder="https://images.example.com/property.jpg"
+                />
+                <div class="form-text small text-muted">Direct high-res photo link.</div>
+              </div>
+            </div>
+
+            <!-- Live Image Preview Box -->
+            <div id="livePreviewContainer" class="d-none mt-2 p-2 border rounded-3 bg-light text-center">
+              <p class="small text-muted fw-semibold mb-1">Image Preview:</p>
+              <img id="livePreviewImg" src="" alt="Preview" class="rounded-3 shadow-xs" style="max-height: 220px; width: auto; max-width: 100%; object-fit: cover;" />
+            </div>
+          </div>
+
+          <!-- Section 4: Amenities (Interactive Checkboxes) -->
+          <div class="mb-4 pb-3 border-bottom">
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-stars text-warning me-2"></i>4. Amenities Offered</h5>
+            <div class="row g-2">
+              <% const standardAmenities = [
+                'High-Speed Wi-Fi (100+ Mbps)',
+                'Private Swimming Pool',
+                'Air Conditioning',
+                'Dedicated Workspace',
+                'Fully Equipped Kitchen',
+                'Free Parking On-Premises',
+                'Pet Friendly',
+                'Balcony with Scenic View',
+                'Mountain View',
+                'Beach / Ocean Access',
+                'Washing Machine',
+                '24/7 Power Backup'
+              ]; %>
+              <% for (let i = 0; i < standardAmenities.length; i++) { %>
+                <div class="col-sm-6">
+                  <div class="form-check p-2 border rounded-3 bg-light-subtle d-flex align-items-center gap-2">
+                    <input
+                      class="form-check-input m-0 ms-1"
+                      type="checkbox"
+                      name="listing[amenities]"
+                      value="<%= standardAmenities[i] %>"
+                      id="amenity_<%= i %>"
+                      <%= i < 4 ? 'checked' : '' %>
+                    />
+                    <label class="form-check-label small fw-medium text-dark cursor-pointer" for="amenity_<%= i %>">
+                      <%= standardAmenities[i] %>
+                    </label>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+
+          <!-- Section 5: Pricing & FairSafe -->
+          <div class="mb-4 pb-3 border-bottom">
+            <h5 class="fw-bold text-dark mb-3"><i class="bi bi-currency-rupee text-success me-2"></i>5. Pricing & Price Breakdown</h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="priceInput" class="form-label fw-semibold text-dark">Nightly Rate (₹ INR)</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light fw-bold">₹</span>
+                  <input
+                    type="number"
+                    class="form-control rounded-end-3 py-2"
+                    id="priceInput"
+                    name="listing[price]"
+                    placeholder="3500"
+                    min="100"
+                    required
+                  />
+                </div>
+                <div class="invalid-feedback">Please enter a valid price.</div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3 border">
+                  <div class="d-flex justify-content-between small text-muted mb-1">
+                    <span>Base Nightly Rate:</span>
+                    <span id="previewBasePrice" class="fw-semibold text-dark">₹0</span>
+                  </div>
+                  <div class="d-flex justify-content-between small text-muted mb-1">
+                    <span>GST (12%):</span>
+                    <span id="previewGstPrice" class="fw-semibold text-dark">₹0</span>
+                  </div>
+                  <hr class="my-1" />
+                  <div class="d-flex justify-content-between small fw-bold text-dark">
+                    <span>Guest Pays (Total):</span>
+                    <span id="previewTotalPrice" class="text-primary fs-6">₹0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Host Festival & Holiday Pricing Control -->
+              <div class="col-12 mt-3 pt-3 border-top">
+                <label class="form-label fw-bold text-dark small mb-1">
+                  ⚡ Host Festive Pricing Policy (Your custom % adjustment for Diwali, Christmas, Holi, Raksha Bandhan)
+                </label>
+                <select class="form-select rounded-3 py-2" name="listing[hostSurgePercentage]" id="hostSurgePercentageSelect">
+                  <option value="" selected>🤖 AI Dynamic Recommendation (Optimized per destination)</option>
+                  <option value="0">⚖️ 0% Flat Rate (No surge - Host guarantees flat price)</option>
+                  <option value="10">📈 +10% Mild Festive Adjustment</option>
+                  <option value="15">📈 +15% Standard Festive Adjustment</option>
+                  <option value="20">🔥 +20% High Demand Surge (Holi / Raksha Bandhan)</option>
+                  <option value="25">🎄 +25% Peak Surcharge (Christmas / Diwali)</option>
+                  <option value="-10">🎁 -10% Festive Promotional Discount</option>
+                </select>
+                <div class="form-text small text-muted">
+                  You decide your festive pricing. Our AI transparently explains your chosen policy to guests.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="d-flex align-items-center justify-content-between pt-2">
+            <a href="/listings" class="btn btn-outline-secondary rounded-pill px-4">Cancel</a>
+            <button type="submit" class="btn btn-primary rounded-pill px-5 py-2 fw-bold shadow-sm magnetic-btn-3d">
+              <i class="bi bi-cloud-arrow-up me-1"></i> Publish Stay
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Interactive Client-side Script for Live Image Preview & Dynamic Pricing -->
+<script>
+  (function () {
+    // Form Validation
+    const form = document.getElementById('hostStayForm');
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    }
+
+    // Dynamic Price Calculator Preview
+    const priceInput = document.getElementById('priceInput');
+    const previewBase = document.getElementById('previewBasePrice');
+    const previewGst = document.getElementById('previewGstPrice');
+    const previewTotal = document.getElementById('previewTotalPrice');
+
+    if (priceInput) {
+      priceInput.addEventListener('input', function () {
+        const val = Number(this.value) || 0;
+        const gst = Math.round(val * 0.12);
+        const total = val + gst;
+        if (previewBase) previewBase.textContent = '₹' + val.toLocaleString('en-IN');
+        if (previewGst) previewGst.textContent = '₹' + gst.toLocaleString('en-IN');
+        if (previewTotal) previewTotal.textContent = '₹' + total.toLocaleString('en-IN');
+      });
+    }
+
+    // Live Image Preview (File Upload & URL Input)
+    const fileInput = document.getElementById('imageUpload');
+    const urlInput = document.getElementById('imageUrlInput');
+    const previewContainer = document.getElementById('livePreviewContainer');
+    const previewImg = document.getElementById('livePreviewImg');
+
+    function showPreview(src) {
+      if (src && previewImg && previewContainer) {
+        previewImg.src = src;
+        previewContainer.classList.remove('d-none');
+      }
+    }
+
+    if (fileInput) {
+      fileInput.addEventListener('change', function () {
+        if (this.files && this.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            showPreview(e.target.result);
+          };
+          reader.readAsDataURL(this.files[0]);
+        }
+      });
+    }
+
+    if (urlInput) {
+      urlInput.addEventListener('input', function () {
+        if (this.value && this.value.startsWith('http')) {
+          showPreview(this.value);
+        }
+      });
+    }
+  })();
+</script>

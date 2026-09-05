@@ -1,0 +1,1024 @@
+/**
+ * FairStay — 3D Spatial Design, Motion Physics & Glassmorphism Engine
+ * True CSS 3D Transforms (preserve-3d), Multi-Layer translateZ Elevation,
+ * Dynamic Specular Glare, Magnetic Button Physics, and Cinematic Scroll Motion.
+ */
+
+/* ==========================================================================
+   1. 3D Spatial Perspective Context
+   ========================================================================== */
+.perspective-container {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  overflow-x: clip;
+}
+
+.listings-3d-grid {
+  overflow-x: clip;
+}
+
+/* GPU Optimization: content-visibility skips off-screen card rendering */
+.listings-3d-grid > .col {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 450px;
+  position: relative;
+  z-index: 1;
+}
+
+/* On hover, unclip containment and elevate z-index so card is never hidden behind cards above or below */
+.listings-3d-grid > .col:hover,
+.listings-3d-grid > .col:focus-within {
+  content-visibility: visible !important;
+  contain: none !important;
+  z-index: 60 !important;
+}
+
+/* ==========================================================================
+   2. 3D Card Architecture (High Performance Compositor Elevation)
+   ========================================================================== */
+.card-preserve-3d {
+  position: relative;
+  border-radius: 1.25rem !important;
+  background: var(--bs-card-bg, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  z-index: 1;
+}
+
+.card-preserve-3d:hover {
+  will-change: transform;
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.18), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+  z-index: 60 !important;
+}
+
+[data-bs-theme="dark"] .card-preserve-3d {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .card-preserve-3d:hover {
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.18) !important;
+}
+
+/* Multi-layer translateZ depths */
+.card-layer-media {
+  transform: translateZ(16px);
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-layer-badge-left {
+  transform: translateZ(36px);
+  transform-style: preserve-3d;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  backface-visibility: hidden;
+}
+
+.card-layer-badge-right {
+  transform: translateZ(36px);
+  transform-style: preserve-3d;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  backface-visibility: hidden;
+}
+
+.card-layer-heart {
+  transform: translateZ(40px);
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.card-layer-heart:hover {
+  transform: translateZ(48px) scale(1.18);
+}
+
+.card-layer-content {
+  transform: translateZ(22px);
+  transform-style: preserve-3d;
+}
+
+.card-layer-price {
+  transform: translateZ(28px);
+  transform-style: preserve-3d;
+}
+
+/* Dynamic Specular Glass Glare Overlay */
+.card-glare-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: overlay;
+  z-index: 10;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 65%);
+}
+
+[data-bs-theme="dark"] .card-glare-overlay {
+  mix-blend-mode: color-dodge;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 60%);
+}
+
+.card-preserve-3d:hover .card-glare-overlay {
+  opacity: 1;
+}
+
+.card-preserve-3d:hover {
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.18), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .card-preserve-3d:hover {
+  box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 90, 60, 0.15);
+  border-color: rgba(255, 90, 60, 0.3);
+}
+
+/* ==========================================================================
+   3. Concept 1: 3D Spatial Vacation Portals (Apple Vision Pro / Luxury Style)
+   ========================================================================== */
+.spatial-portals-hero {
+  position: relative;
+  background: linear-gradient(180deg, #050813 0%, #0c1527 50%, #060b16 100%);
+  border-radius: 2rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.spatial-bg-glow-1 {
+  position: absolute;
+  top: -120px;
+  left: 15%;
+  width: 500px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.spatial-bg-glow-2 {
+  position: absolute;
+  top: -100px;
+  right: 15%;
+  width: 500px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 90, 60, 0.16) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.spatial-stars-canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#spatialStarsCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.spatial-pill-badge {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  letter-spacing: 0.08em;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: pulse3DGlow 2s infinite ease-in-out;
+}
+
+.spatial-hero-title {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.8rem, 3.4vw, 2.9rem);
+  line-height: 1.15;
+  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3D Spatial Portal Cards (Panoramic Theater Arc) */
+.spatial-portals-grid {
+  perspective: 1600px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 992px) {
+  .spatial-portals-grid > .col:nth-child(1) .spatial-portal-card {
+    transform: perspective(1400px) rotateY(7deg) translateZ(0px);
+  }
+  .spatial-portals-grid > .col:nth-child(2) .spatial-portal-card {
+    transform: perspective(1400px) rotateY(2.5deg) translateZ(20px);
+  }
+  .spatial-portals-grid > .col:nth-child(3) .spatial-portal-card {
+    transform: perspective(1400px) rotateY(-2.5deg) translateZ(20px);
+  }
+  .spatial-portals-grid > .col:nth-child(4) .spatial-portal-card {
+    transform: perspective(1400px) rotateY(-7deg) translateZ(0px);
+  }
+}
+
+.spatial-portal-card {
+  height: 410px;
+  border-radius: 1.75rem !important;
+  background: #0b1329;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 25px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  position: relative;
+  will-change: transform;
+}
+
+.spatial-portal-card:hover {
+  transform: perspective(1400px) rotateY(0deg) translateY(-16px) translateZ(64px) scale(1.04) !important;
+  border-color: rgba(56, 189, 248, 0.9) !important;
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(56, 189, 248, 0.4) !important;
+}
+
+.portal-img-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  transform: translateZ(12px);
+}
+
+.portal-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(5, 10, 24, 0.88) 100%);
+  pointer-events: none;
+}
+
+.portal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.spatial-portal-card:hover .portal-img {
+  transform: scale(1.08);
+}
+
+/* Floating Weather Badge */
+.portal-weather-badge {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  transform: translateZ(35px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+/* Floating Footer Details Glass */
+.portal-footer-glass {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.88) 35%, rgba(10, 16, 30, 0.98) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateZ(30px);
+  border-bottom-left-radius: 1.75rem;
+  border-bottom-right-radius: 1.75rem;
+  z-index: 5;
+}
+
+.portal-action-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.spatial-portal-card:hover .portal-action-arrow {
+  transform: translateX(4px);
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* Spatial Glass Podium Platform */
+.spatial-podium {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 32px -6px rgba(0, 0, 0, 0.45);
+}
+
+/* Ambient Weather Particles */
+.portal-weather-fx {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.portal-sun-fx {
+  background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.18) 0%, transparent 60%);
+}
+
+.portal-lantern-fx {
+  background: radial-gradient(circle at 50% 80%, rgba(249, 115, 22, 0.15) 0%, transparent 65%);
+}
+
+.portal-water-fx {
+  background: radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.14) 0%, transparent 60%);
+}
+.three-pin-tooltip {
+  position: absolute;
+  z-index: 10;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 90, 60, 0.4);
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+  transform: translate(-50%, -120%);
+  display: none;
+  text-align: center;
+  min-width: 150px;
+  animation: tooltipBounce 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tooltipBounce {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -120%) scale(1);
+  }
+}
+
+/* ==========================================================================
+   4. Magnetic Button Micro-Interactions
+   ========================================================================== */
+.magnetic-btn-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.magnetic-btn-3d:hover {
+  box-shadow: 0 12px 24px -6px rgba(255, 90, 60, 0.4);
+}
+
+/* ==========================================================================
+   5. 3D Floating Keyframe Animations & Holographic Sheen
+   ========================================================================== */
+@keyframes float3D {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.floating-3d {
+  animation: float3D 4.5s ease-in-out infinite;
+}
+
+@keyframes pulse3DGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 90, 60, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 90, 60, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 90, 60, 0);
+  }
+}
+
+.pulse-glow-3d {
+  animation: pulse3DGlow 2.5s infinite;
+}
+
+/* Holographic Card Effect for Show Page */
+.holographic-3d-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 248, 255, 0.9));
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.25s ease;
+}
+
+[data-bs-theme="dark"] .holographic-3d-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.holographic-3d-card:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+/* ==========================================================================
+   6. Cinematic 3D Scroll Reveal Animations
+   ========================================================================== */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(800px) rotateX(12deg) translateY(35px) scale(0.96);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-3d.revealed {
+  opacity: 1;
+  transform: perspective(800px) rotateX(0deg) translateY(0px) scale(1);
+}
+
+/* ==========================================================================
+   7. 3D Isometric View for Show Page Map
+   ========================================================================== */
+.map-3d-isometric {
+  transform: perspective(900px) rotateX(15deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.map-3d-isometric:hover {
+  transform: perspective(900px) rotateX(0deg);
+}
+
+/* Touch and Reduced Motion Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  .card-preserve-3d,
+  .magnetic-btn-3d,
+  .floating-3d,
+  .reveal-3d {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   8. Dark Mode Glassmorphism Overrides
+   ========================================================================== */
+[data-bs-theme="dark"] nav.navbar {
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .three-globe-section {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   9. AI Concierge Launcher Clean Floating Pill
+   ========================================================================== */
+#aiLauncherBtn {
+  border-radius: 50px !important;
+}
+
+/* ==========================================================================
+   10. Brand Logo 3D Hover Spin
+   ========================================================================== */
+.brand-icon-wrapper {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+.navbar-brand:hover .brand-icon-wrapper {
+  transform: rotate3d(1, 1, 0, 18deg) scale(1.08);
+}
+
+/* ==========================================================================
+   11. Search Capsule 3D Depth
+   ========================================================================== */
+.search-capsule {
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.2s ease;
+}
+
+.search-capsule:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* ==========================================================================
+   12. Filter Wrapper / Category Rail 3D Polish
+   ========================================================================== */
+.filter-wrapper {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-bs-theme="dark"] .filter-wrapper {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ==========================================================================
+   14. Interactive 3D Corridor Showcase Mini-Cards
+   ========================================================================== */
+.corridor-3d-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.4, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.corridor-3d-card:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(56, 189, 248, 0.7);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.5), 0 0 16px rgba(56, 189, 248, 0.3);
+}
+
+/* ==========================================================================
+   15. Enhanced Luxury 3D Spatial Listing Cards
+   ========================================================================== */
+.card-preserve-3d.stay-card {
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .card-preserve-3d.stay-card {
+  background: linear-gradient(145deg, #1e293b, #0f172a) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.55), 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-preserve-3d.stay-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(255, 90, 60, 0.15) !important;
+  border-color: rgba(255, 90, 60, 0.4) !important;
+}
+
+[data-bs-theme="dark"] .card-preserve-3d.stay-card:hover {
+  box-shadow: 0 28px 55px -12px rgba(0, 0, 0, 0.85), 0 0 28px rgba(255, 90, 60, 0.3) !important;
+  border-color: rgba(255, 90, 60, 0.55) !important;
+}
+
+.card-preserve-3d.stay-card:hover .stay-img {
+  transform: scale(1.06);
+}
+
+.stay-img {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.4, 1) !important;
+}
+
+/* ==========================================================================
+   16. FairStay AI Trip Assistant Clean Floating Button (Revolving Light Removed)
+   ========================================================================== */
+#aiLauncherBtn {
+  background: linear-gradient(135deg, #ff5a3c, #fb8500) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  position: relative;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 24px rgba(255, 90, 60, 0.35) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+#aiLauncherBtn::before {
+  display: none !important;
+}
+
+#aiLauncherBtn:hover {
+  box-shadow: 0 12px 30px rgba(255, 90, 60, 0.55) !important;
+  transform: translateY(-2px) scale(1.04) !important;
+}
+
+/* ==========================================================================
+   17. Tactile 3D Buttons for Explore Chips & Category Bar
+   ========================================================================== */
+.corridor-chips-bar .btn {
+  transition: all 0.18s cubic-bezier(0.2, 0.8, 0.4, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.corridor-chips-bar .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+}
+
+.corridor-chips-bar .btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   18. Universal Spatial Cards (Optimized for 120fps Zero-Lag Scroll)
+   ========================================================================== */
+.spatial-glass-card {
+  background: var(--bs-card-bg, #ffffff) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 10px 25px -6px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
+  position: relative;
+}
+
+[data-bs-theme="dark"] .spatial-glass-card {
+  background: #1e293b !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.7) !important;
+}
+
+.spatial-glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.4) !important;
+}
+
+[data-bs-theme="dark"] .spatial-glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 0 20px rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Floating Stay Weather Pill for Listings Feed (Zero-overhead GPU pill) */
+.stay-weather-pill {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transform: translateZ(36px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   19. 3D Spatial KPI Metric Monitors (Host Panel)
+   ========================================================================== */
+.spatial-kpi-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.5rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  transform-style: preserve-3d;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.25s ease;
+}
+
+[data-bs-theme="dark"] .spatial-kpi-card {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 35px -8px rgba(0, 0, 0, 0.7);
+}
+
+.spatial-kpi-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .spatial-kpi-card:hover {
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* ==========================================================================
+   20. 3D Spatial Boarding Pass / Ticket Cards (Bookings Page)
+   ========================================================================== */
+.spatial-ticket-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.75rem !important;
+  box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.12);
+  transform-style: preserve-3d;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+[data-bs-theme="dark"] .spatial-ticket-card {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8);
+}
+
+.spatial-ticket-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+[data-bs-theme="dark"] .spatial-ticket-card:hover {
+  box-shadow: 0 28px 55px -12px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 90, 60, 0.2);
+  border-color: rgba(255, 90, 60, 0.4);
+}
+
+/* ==========================================================================
+   21. Spatial Glass Inputs & Form Controls
+   ========================================================================== */
+.spatial-input,
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25) !important;
+}
+
+/* ==========================================================================
+   22. Spatial Frosted Modals
+   ========================================================================== */
+.modal-content {
+  border-radius: 1.75rem !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-bs-theme="dark"] .modal-content {
+  background: linear-gradient(160deg, #1e293b 0%, #0f172a 100%) !important;
+  backdrop-filter: blur(24px) !important;
+}
+
+/* Dark Mode Spatial Navbar & Search Capsule */
+[data-bs-theme="dark"] .navbar {
+  background: rgba(10, 16, 30, 0.88) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-bs-theme="dark"] .search-capsule {
+  background: rgba(30, 41, 59, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .search-capsule-item {
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .search-capsule-divider {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-bs-theme="dark"] .brand-title {
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .footer {
+  background: #050813 !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ==========================================================================
+   23. Universal Silk Smooth Motion System (Apple Spring Easing)
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+main.flex-grow-1 {
+  animation: pageEntranceSilk 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageEntranceSilk {
+  0% {
+    opacity: 0.95;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Universal Smooth Physics for all Interactive Elements */
+a, button, .btn, .nav-link, .card, .badge, .form-control, .form-select, .stay-card, .dropdown-menu {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              opacity 0.2s ease;
+}
+
+/* Fluid Hover Elevation for Buttons */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Smooth Card Hover Elevation across the entire site */
+.stay-card:hover, .booking-card:hover, .spatial-kpi-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Smooth Image Scale across all views */
+.stay-img, .portal-img, .carousel-item img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Smooth Modal & Backdrop Transitions */
+.modal.fade .modal-dialog {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+  transform: scale(0.97) translateY(10px);
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1) translateY(0) !important;
+}
+
+.modal-backdrop.show {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Ensure all cards and sections are 100% visible immediately - Never Blank */
+.reveal-3d, .reveal-smooth {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ==========================================================================
+   25. Premium Silk 3D Spatial Architecture (Apple Vision Pro Grade)
+   ========================================================================== */
+.listings-3d-grid {
+  perspective: 1200px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+}
+
+/* Silky 3D card resting and hover states with authentic 3D perspective pitch */
+.listings-3d-grid .stay-card {
+  transform: perspective(1000px) translateZ(0px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease !important;
+  will-change: transform, box-shadow;
+  transform-style: preserve-3d;
+}
+
+.listings-3d-grid .stay-card:hover {
+  transform: perspective(1000px) translateY(-10px) rotateX(3deg) translateZ(16px) scale(1.02) !important;
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.16), 0 10px 20px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .listings-3d-grid .stay-card:hover {
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(56, 189, 248, 0.25) !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+}
+
+/* 3D Perspective Roll as cards scroll into the viewport */
+@supports (animation-timeline: view()) {
+  .listings-3d-grid .stay-card {
+    animation: card3DScrollRoll linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+
+  @keyframes card3DScrollRoll {
+    from {
+      transform: perspective(1200px) rotateX(12deg) translateY(42px) translateZ(-45px) scale(0.95);
+      opacity: 0.75;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    to {
+      transform: perspective(1200px) rotateX(0deg) translateY(0px) translateZ(0px) scale(1);
+      opacity: 1;
+      box-shadow: 0 10px 25px -6px rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+/* Floating 3D Layer Depths inside cards */
+.stay-card .card-layer-media {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stay-card:hover .stay-img {
+  transform: scale(1.05);
+}
+
+.stay-weather-pill {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.stay-card:hover .stay-weather-pill {
+  transform: translateZ(40px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.stay-card:hover .btn-wishlist-heart {
+  transform: translateZ(44px) scale(1.15);
+}
+
+/* ==========================================================================
+   26. Spatial Navigation Capsule & Podium Indicators (Concept 1 High Polish)
+   ========================================================================== */
+.spatial-nav-capsule {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+[data-bs-theme="dark"] .spatial-nav-capsule {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.spatial-nav-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+.spatial-nav-link:hover,
+.spatial-nav-link.active {
+  background: rgba(0, 0, 0, 0.08);
+  color: #ff5a3c;
+}
+
+[data-bs-theme="dark"] .spatial-nav-link:hover,
+[data-bs-theme="dark"] .spatial-nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #38bdf8;
+}
+
+.spatial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.spatial-dot.active {
+  background: #ffffff;
+  width: 22px;
+  border-radius: 11px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+

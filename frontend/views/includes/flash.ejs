@@ -1,0 +1,20 @@
+<% 
+  const successMsg = (typeof success !== 'undefined' && success && success.length) ? success : (typeof locals !== 'undefined' && locals.success && locals.success.length ? locals.success : null);
+  const errorMsg = (typeof error !== 'undefined' && error && error.length) ? error : (typeof locals !== 'undefined' && locals.error && locals.error.length ? locals.error : null);
+%>
+
+<% if (successMsg) { %>
+  <div class="alert alert-success alert-dismissible fade show d-flex align-items-center shadow-sm rounded-4 mb-3" role="alert">
+    <i class="bi bi-check-circle-fill fs-5 me-2 text-success"></i>
+    <div class="flex-grow-1"><%= successMsg %></div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (errorMsg) { %>
+  <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center shadow-sm rounded-4 mb-3" role="alert">
+    <i class="bi bi-exclamation-triangle-fill fs-5 me-2 text-danger"></i>
+    <div class="flex-grow-1"><%= errorMsg %></div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>

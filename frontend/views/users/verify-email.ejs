@@ -1,0 +1,96 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container py-5 my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-5">
+      
+      <div class="card border rounded-4 shadow-sm p-4 p-md-5 auth-card bg-body">
+        
+        <div class="text-center mb-4">
+          <div class="d-inline-flex p-3 rounded-circle bg-danger-subtle text-danger mb-3">
+            <span class="fs-2">🔐</span>
+          </div>
+          <h3 class="fw-bold text-dark mb-1">Verify Your Gmail</h3>
+          <p class="text-muted small">
+            We sent a 6-digit verification code to<br />
+            <strong class="text-dark"><%= email %></strong>
+          </p>
+        </div>
+
+        <!-- OTP Verification Form -->
+        <form action="/verify-email-otp" method="POST" class="needs-validation" novalidate id="otpForm">
+          <input type="hidden" name="email" value="<%= email %>" />
+          
+          <div class="mb-4">
+            <label for="otpInput" class="form-label fw-semibold text-dark text-center d-block">
+              Enter 6-Digit Approval Code
+            </label>
+            <input
+              type="text"
+              name="otp"
+              id="otpInput"
+              class="form-control text-center fw-bold py-3 rounded-3"
+              style="letter-spacing: 0.5em; font-size: 1.5rem;"
+              placeholder="••••••"
+              maxlength="6"
+              pattern="[0-9]{6}"
+              required
+              autofocus
+              autocomplete="one-time-code"
+            />
+            <div class="form-text text-center text-muted small mt-2">
+              <i class="bi bi-clock me-1"></i> Code expires in 15 minutes.
+            </div>
+            <div class="invalid-feedback text-center">Please enter the 6-digit code sent to your Gmail inbox.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow-sm mb-3">
+            <i class="bi bi-check2-circle me-1"></i> Approve & Activate Account
+          </button>
+        </form>
+
+        <!-- Resend Code -->
+        <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-2 small">
+          <span class="text-muted">Didn't receive the email?</span>
+          <form action="/resend-verification-otp" method="POST" class="d-inline">
+            <input type="hidden" name="email" value="<%= email %>" />
+            <button type="submit" class="btn btn-link btn-sm text-decoration-none fw-semibold p-0 text-primary">
+              Resend Code
+            </button>
+          </form>
+        </div>
+
+        <div class="text-center mt-3 pt-2">
+          <a href="/change-signup-email" class="text-muted small text-decoration-none">
+            <i class="bi bi-arrow-left me-1"></i> Wrong email? Sign up with a different address
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const otpInput = document.getElementById('otpInput');
+    if (otpInput) {
+      // Only allow numbers
+      otpInput.addEventListener('input', function () {
+        this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);
+      });
+    }
+
+    const form = document.getElementById('otpForm');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      });
+    }
+  })();
+</script>

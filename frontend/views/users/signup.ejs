@@ -1,0 +1,277 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container py-5 my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      
+      <div class="card border rounded-4 shadow-sm p-4 p-md-5 auth-card bg-body">
+        
+        <div class="text-center mb-4">
+          <div class="d-inline-flex p-3 rounded-circle bg-primary-subtle text-primary mb-3">
+            <span class="fs-2">🏡</span>
+          </div>
+          <h3 class="fw-bold text-dark">Create your account</h3>
+          <p class="text-muted small">Unlock transparent prices, wishlist sync, and direct host bookings.</p>
+        </div>
+
+        <form action="/signup" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate id="signupForm">
+          
+          <!-- Avatar Upload with Live Circular Preview -->
+          <div class="text-center mb-4">
+            <div class="position-relative d-inline-block">
+              <img
+                id="avatarPreviewImg"
+                src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23e2e8f0'><rect width='100' height='100' rx='50'/><circle cx='50' cy='38' r='18' fill='%2394a3b8'/><path d='M22 84c0-16 12-28 28-28s28 12 28 28' fill='%2394a3b8'/></svg>"
+                alt="Profile Preview"
+                class="rounded-circle border shadow-sm"
+                style="width: 80px; height: 80px; object-fit: cover;"
+              />
+              <label for="profilePhotoInput" class="position-absolute bottom-0 end-0 bg-primary text-white rounded-circle p-1 d-flex align-items-center justify-content-center shadow-sm cursor-pointer" style="width: 28px; height: 28px;" title="Upload photo">
+                <i class="bi bi-camera-fill" style="font-size: 0.75rem;"></i>
+              </label>
+              <input type="file" id="profilePhotoInput" name="profilePhoto" class="d-none" accept="image/*" />
+            </div>
+            <div class="small text-muted mt-1">Profile Photo (Optional)</div>
+          </div>
+
+          <div class="row g-3">
+            <!-- Username -->
+            <div class="col-12">
+              <label for="usernameInput" class="form-label fw-semibold text-dark">Username</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted">
+                  <i class="bi bi-person"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control border-start-0 rounded-end-3 py-2"
+                  id="usernameInput"
+                  name="username"
+                  placeholder="e.g. wanderlust_traveler"
+                  required
+                />
+              </div>
+              <div class="invalid-feedback">Please choose a username.</div>
+            </div>
+
+            <!-- Authentic Gmail Address -->
+            <div class="col-12">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label for="emailInput" class="form-label fw-semibold text-dark mb-0">
+                  Authentic Gmail Address
+                </label>
+                <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill" style="font-size: 0.72rem;">
+                  <i class="bi bi-google me-1"></i> @gmail.com required
+                </span>
+              </div>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted">
+                  <i class="bi bi-google text-danger"></i>
+                </span>
+                <input
+                  type="email"
+                  class="form-control border-start-0 rounded-end-3 py-2"
+                  id="emailInput"
+                  name="email"
+                  placeholder="yourname@gmail.com"
+                  required
+                />
+              </div>
+              <div class="form-text text-muted small" id="gmailHelpText">
+                <i class="bi bi-shield-check text-success me-1"></i> Must be an authentic Google Mail ID for verification & booking vouchers.
+              </div>
+              <div class="invalid-feedback">Please enter an authentic Gmail address (ending in @gmail.com).</div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="col-12">
+              <label for="phoneInput" class="form-label fw-semibold text-dark">Phone Number (Optional)</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted">
+                  <i class="bi bi-telephone"></i>
+                </span>
+                <input
+                  type="tel"
+                  class="form-control border-start-0 rounded-end-3 py-2"
+                  id="phoneInput"
+                  name="phone"
+                  placeholder="+91 98765 43210"
+                />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="col-12">
+              <label for="passwordInput" class="form-label fw-semibold text-dark">Password</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted">
+                  <i class="bi bi-lock"></i>
+                </span>
+                <input
+                  type="password"
+                  class="form-control border-start-0 border-end-0 py-2"
+                  id="passwordInput"
+                  name="password"
+                  placeholder="Create a password (min 6 chars)"
+                  required
+                />
+                <button class="btn btn-outline-secondary border-start-0 rounded-end-3 bg-light text-muted" type="button" id="togglePasswordBtn">
+                  <i class="bi bi-eye" id="toggleEyeIcon"></i>
+                </button>
+              </div>
+              <div class="invalid-feedback">Password is required.</div>
+
+              <!-- Password Strength Bar -->
+              <div class="progress mt-2" style="height: 4px;">
+                <div id="pwdStrengthBar" class="progress-bar bg-danger" role="progressbar" style="width: 0%;"></div>
+              </div>
+              <div id="pwdStrengthText" class="small text-muted mt-1" style="font-size: 0.72rem;">Enter at least 6 characters</div>
+            </div>
+          </div>
+
+          <!-- FairSafe Guarantee Terms -->
+          <div class="form-check my-3">
+            <input class="form-check-input" type="checkbox" id="termsCheck" required checked />
+            <label class="form-check-label small text-muted" for="termsCheck">
+              I agree to FairStay's <a href="#" data-bs-toggle="modal" data-bs-target="#helpCenterModal" class="text-primary text-decoration-none">Terms of Service</a> and FairSafe™ Anti-Surge Policy.
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-bold shadow-sm mb-3 fs-6">
+            Agree and Create Account
+          </button>
+
+        </form>
+
+        <div class="text-center pt-2 border-top">
+          <p class="small text-muted mb-0">
+            Already have an account? 
+            <a href="/login" class="text-primary fw-bold text-decoration-none hover-underline">Log in</a>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    // Live Avatar Preview
+    const photoInput = document.getElementById('profilePhotoInput');
+    const avatarImg = document.getElementById('avatarPreviewImg');
+
+    if (photoInput && avatarImg) {
+      photoInput.addEventListener('change', function () {
+        if (this.files && this.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            avatarImg.src = e.target.result;
+          };
+          reader.readAsDataURL(this.files[0]);
+        }
+      });
+    }
+
+    // Password Show/Hide Toggle
+    const toggleBtn = document.getElementById('togglePasswordBtn');
+    const passInput = document.getElementById('passwordInput');
+    const eyeIcon = document.getElementById('toggleEyeIcon');
+
+    if (toggleBtn && passInput && eyeIcon) {
+      toggleBtn.addEventListener('click', function () {
+        if (passInput.type === 'password') {
+          passInput.type = 'text';
+          eyeIcon.className = 'bi bi-eye-slash';
+        } else {
+          passInput.type = 'password';
+          eyeIcon.className = 'bi bi-eye';
+        }
+      });
+    }
+
+    // Interactive Password Strength Meter
+    const strengthBar = document.getElementById('pwdStrengthBar');
+    const strengthText = document.getElementById('pwdStrengthText');
+
+    if (passInput && strengthBar && strengthText) {
+      passInput.addEventListener('input', function () {
+        const val = this.value;
+        let score = 0;
+        if (val.length >= 6) score += 30;
+        if (val.length >= 8) score += 20;
+        if (/[A-Z]/.test(val)) score += 25;
+        if (/[0-9]/.test(val) || /[^A-Za-z0-9]/.test(val)) score += 25;
+
+        strengthBar.style.width = score + '%';
+        if (score < 40) {
+          strengthBar.className = 'progress-bar bg-danger';
+          strengthText.textContent = 'Weak password';
+        } else if (score < 75) {
+          strengthBar.className = 'progress-bar bg-warning';
+          strengthText.textContent = 'Moderate password';
+        } else {
+          strengthBar.className = 'progress-bar bg-success';
+          strengthText.textContent = 'Strong password';
+        }
+      });
+    }
+
+    // Live Authentic Gmail Validation
+    const emailInput = document.getElementById('emailInput');
+    const gmailHelpText = document.getElementById('gmailHelpText');
+
+    function isValidAuthenticGmail(email) {
+      if (!email || typeof email !== 'string') return false;
+      const clean = email.trim().toLowerCase();
+      return /^[a-zA-Z0-9._%+-]+@(gmail\.com|googlemail\.com)$/i.test(clean);
+    }
+
+    if (emailInput) {
+      emailInput.addEventListener('input', function () {
+        const val = this.value.trim().toLowerCase();
+        if (!val) {
+          gmailHelpText.innerHTML = '<i class="bi bi-shield-check text-success me-1"></i> Must be an authentic Google Mail ID for verification & booking vouchers.';
+          gmailHelpText.className = 'form-text text-muted small';
+          emailInput.setCustomValidity('');
+          return;
+        }
+
+        if (isValidAuthenticGmail(val)) {
+          gmailHelpText.innerHTML = '<i class="bi bi-check-circle-fill text-success me-1"></i> Authentic Google Mail address verified.';
+          gmailHelpText.className = 'form-text text-success small fw-semibold';
+          emailInput.setCustomValidity('');
+        } else if (val.includes('@') && !val.endsWith('@gmail.com') && !val.endsWith('@googlemail.com')) {
+          gmailHelpText.innerHTML = '<i class="bi bi-exclamation-triangle-fill text-danger me-1"></i> Only authentic @gmail.com accounts are permitted.';
+          gmailHelpText.className = 'form-text text-danger small fw-semibold';
+          emailInput.setCustomValidity('Only authentic @gmail.com accounts are permitted.');
+        } else {
+          gmailHelpText.innerHTML = '<i class="bi bi-info-circle me-1"></i> Please complete your authentic Gmail address (e.g. yourname@gmail.com).';
+          gmailHelpText.className = 'form-text text-muted small';
+          emailInput.setCustomValidity('');
+        }
+      });
+    }
+
+    // Form Validation
+    const form = document.getElementById('signupForm');
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        if (emailInput) {
+          if (!isValidAuthenticGmail(emailInput.value)) {
+            emailInput.setCustomValidity('Please provide a valid @gmail.com address.');
+          } else {
+            emailInput.setCustomValidity('');
+          }
+        }
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    }
+  })();
+</script>

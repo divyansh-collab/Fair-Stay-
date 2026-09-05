@@ -1,0 +1,99 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      
+      <div class="card border-0 shadow-2xl rounded-4 overflow-hidden spatial-glass-card card-preserve-3d" data-tilt-3d="true">
+        <div class="card-glare-overlay"></div>
+        <!-- Header Cover -->
+        <div class="bg-gradient-primary p-4 text-white">
+          <div class="d-flex align-items-center gap-3">
+            <img
+              src="<%= user.profilePhoto && user.profilePhoto.url ? user.profilePhoto.url : 'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%23e2e8f0\'><rect width=\'100\' height=\'100\' rx=\'50\'/><circle cx=\'50\' cy=\'38\' r=\'18\' fill=\'%2394a3b8\'/><path d=\'M22 84c0-16 12-28 28-28s28 12 28 28\' fill=\'%2394a3b8\'/></svg>' %>"
+              alt="<%= user.username %>"
+              class="rounded-circle border border-3 border-white shadow-sm object-fit-cover"
+              style="width: 80px; height: 80px;"
+            />
+            <div>
+              <h4 class="fw-bold mb-1"><%= user.username %></h4>
+              <div class="small opacity-75"><%= user.email %></div>
+              <div class="mt-2 d-flex gap-2">
+                <% if (user.emailVerified) { %>
+                  <span class="badge bg-white text-success rounded-pill">
+                    <i class="bi bi-patch-check-fill me-1"></i> Verified Pilgrim
+                  </span>
+                <% } else { %>
+                  <span class="badge bg-warning text-dark rounded-pill">
+                    Email Unverified
+                  </span>
+                <% } %>
+                <% if (user.isAdmin) { %>
+                  <span class="badge bg-info text-dark rounded-pill">
+                    FairStay Superhost / Admin
+                  </span>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body p-4 p-md-5">
+          
+          <!-- Verification Notice if unverified -->
+          <% if (!user.emailVerified && user.verificationToken) { %>
+            <div class="alert alert-warning border-0 rounded-4 p-3 mb-4 d-flex align-items-center justify-content-between">
+              <div>
+                <strong class="d-block mb-1">Verify your email address</strong>
+                <span class="small text-muted">Complete verification to unlock priority FairSafe booking protections.</span>
+              </div>
+              <a href="/verify-email/<%= user.verificationToken %>" class="btn btn-sm btn-warning rounded-pill fw-semibold px-3 text-nowrap">
+                Verify Now
+              </a>
+            </div>
+          <% } %>
+
+          <h5 class="fw-bold text-dark mb-3">Edit Pilgrim Profile Details</h5>
+
+          <form action="/profile" method="POST" enctype="multipart/form-data">
+            
+            <div class="mb-3">
+              <label class="form-label small fw-semibold text-muted">Username</label>
+              <input type="text" class="form-control rounded-3" value="<%= user.username %>" disabled />
+              <div class="form-text small">Usernames are permanently linked to corridor reservations.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-semibold text-muted">Email Address</label>
+              <input type="email" class="form-control rounded-3" value="<%= user.email %>" disabled />
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label small fw-semibold text-dark">Mobile Number for WhatsApp Confirmations</label>
+              <input type="tel" class="form-control rounded-3 py-2" id="phone" name="phone" value="<%= user.phone || '' %>" placeholder="+91 98765 43210" />
+            </div>
+
+            <div class="mb-4">
+              <label for="profilePhoto" class="form-label small fw-semibold text-dark">Update Profile Photo</label>
+              <input type="file" class="form-control rounded-3" id="profilePhoto" name="profilePhoto" accept="image/*" />
+            </div>
+
+            <div class="d-flex gap-3">
+              <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm">
+                Save Profile Changes
+              </button>
+              <a href="/bookings" class="btn btn-outline-secondary rounded-pill px-4 py-2">
+                My Trips
+              </a>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

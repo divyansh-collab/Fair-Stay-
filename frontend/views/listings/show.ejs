@@ -1,0 +1,847 @@
+<% layout('/layouts/boilerplate') %>
+
+<!-- Main Container -->
+<div class="container my-4">
+  
+  <!-- Title, Location & Quick Actions Bar (Airbnb Standard) -->
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-3">
+    <div>
+      <h2 class="fw-bold text-dark mb-1"><%= listing.title %></h2>
+      <div class="d-flex flex-wrap align-items-center gap-2 text-muted small">
+        <span class="d-flex align-items-center gap-1 text-dark fw-bold">
+          <i class="bi bi-star-fill text-warning"></i>
+          <%= avgRating > 0 ? avgRating : '5.0' %> (<%= listing.reviews.length %> <%= listing.reviews.length === 1 ? 'review' : 'reviews' %>)
+        </span>
+        <span>•</span>
+        <span class="d-flex align-items-center gap-1">
+          <i class="bi bi-geo-alt-fill text-danger"></i>
+          <%= listing.location %>, <%= listing.country %>
+        </span>
+        <span>•</span>
+        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill">
+          <i class="bi bi-shield-check me-1"></i> FairSafe™ Score: <%= listing.fairsafeScore || 95 %>/100
+        </span>
+        <span>•</span>
+        <span class="badge bg-secondary-subtle text-secondary rounded-pill">
+          <%= listing.category || 'Vacation Villa' %>
+        </span>
+      </div>
+    </div>
+
+    <!-- Share & Save Buttons -->
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-outline-secondary rounded-pill btn-sm px-3 d-flex align-items-center gap-2" id="shareBtn">
+        <i class="bi bi-share"></i>
+        <span>Share</span>
+      </button>
+      <button
+        class="btn btn-outline-secondary rounded-pill btn-sm px-3 d-flex align-items-center gap-2 btn-wishlist-heart"
+        data-id="<%= listing._id %>"
+        data-title="<%= listing.title %>"
+        data-price="<%= listing.price %>"
+        data-location="<%= listing.location %>"
+        data-image="<%= listing.image && listing.image.url ? listing.image.url : '' %>"
+        id="saveStayBtn"
+      >
+        <i class="bi bi-suit-heart heart-icon text-danger"></i>
+        <span id="saveBtnText">Save</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive 5-Photo Bento Showcase (Airbnb Signature Luxury Layout) -->
+  <% 
+    const organicPhoto = listing.image && listing.image.url ? listing.image.url : 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80';
+    const photo2 = 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80';
+    const photo3 = 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80';
+    const photo4 = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80';
+    const photo5 = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80';
+  %>
+  <div class="photo-bento-grid mb-5 shadow-sm">
+    <!-- Main Big Photo (Left) -->
+    <div class="photo-bento-item main-hero" onclick="openGalleryModal(0)">
+      <img src="<%= organicPhoto %>" alt="<%= listing.title %>" id="mainHeroImg" />
+      <span class="badge bg-dark bg-opacity-75 text-white position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1 small">
+        <i class="bi bi-patch-check-fill text-success me-1"></i> Verified Stay
+      </span>
+    </div>
+    <!-- Photo 2 (Top Right 1) -->
+    <div class="photo-bento-item" onclick="openGalleryModal(1)">
+      <img src="<%= photo2 %>" alt="Villa Architecture" loading="lazy" />
+    </div>
+    <!-- Photo 3 (Top Right 2) -->
+    <div class="photo-bento-item" onclick="openGalleryModal(2)">
+      <img src="<%= photo3 %>" alt="Master Bedroom" loading="lazy" />
+    </div>
+    <!-- Photo 4 (Bottom Right 1) -->
+    <div class="photo-bento-item" onclick="openGalleryModal(3)">
+      <img src="<%= photo4 %>" alt="Living Lounge" loading="lazy" />
+    </div>
+    <!-- Photo 5 (Bottom Right 2) -->
+    <div class="photo-bento-item" onclick="openGalleryModal(4)">
+      <img src="<%= photo5 %>" alt="Scenic Patio" loading="lazy" />
+    </div>
+
+    <!-- Show All Photos Button -->
+    <button class="btn btn-sm btn-show-all-photos rounded-pill px-3 py-2" onclick="openGalleryModal(0)">
+      <i class="bi bi-grid-3x3-gap-fill me-1"></i> Show all 5 photos
+    </button>
+  </div>
+
+  <!-- Main Content Layout (2 Columns) -->
+  <div class="row g-5">
+    
+    <!-- Left Column: Story, Highlights, Sleeping, Amenities, Map, Reviews -->
+    <div class="col-lg-7">
+      
+      <!-- Host & Capacity Header -->
+      <div class="d-flex align-items-center justify-content-between border-bottom pb-4 mb-4">
+        <div>
+          <h4 class="fw-bold text-dark mb-1">
+            Entire <%= listing.category || 'home' %> hosted by <%= listing.owner ? listing.owner.username : 'Superhost' %>
+          </h4>
+          <p class="text-muted small mb-0">
+            4 guests • 2 bedrooms • 2 beds • 2 private baths
+          </p>
+        </div>
+        <div class="position-relative">
+          <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold fs-4 shadow-sm" style="width: 54px; height: 54px;">
+            <%= listing.owner && listing.owner.username ? listing.owner.username.charAt(0).toUpperCase() : 'H' %>
+          </div>
+          <span class="position-absolute bottom-0 end-0 bg-warning text-dark rounded-circle p-1 d-flex align-items-center justify-content-center shadow-xs" title="Superhost" style="width: 20px; height: 20px;">
+            <i class="bi bi-award-fill" style="font-size: 0.65rem;"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- 3 Key Stay Highlights (Simple & Clear) -->
+      <div class="border-bottom pb-4 mb-4">
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <div class="p-2 rounded-3 bg-light text-dark">
+            <i class="bi bi-key-fill fs-5 text-primary"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold text-dark mb-0">Self check-in experience</h6>
+            <small class="text-muted">Check yourself in effortlessly with the smart digital keypad.</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <div class="p-2 rounded-3 bg-light text-dark">
+            <i class="bi bi-wifi fs-5 text-success"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold text-dark mb-0">Superfast Wi-Fi (100+ Mbps)</h6>
+            <small class="text-muted">Verified fiber connection for streaming and remote working.</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-start gap-3">
+          <div class="p-2 rounded-3 bg-light text-dark">
+            <i class="bi bi-shield-check fs-5 text-danger"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold text-dark mb-0">FairSafe™ Zero-Surge Guarantee</h6>
+            <small class="text-muted">Transparent pricing protection and 100% full refund up to 48 hours before check-in.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- About this Space -->
+      <div class="border-bottom pb-4 mb-4">
+        <h5 class="fw-bold text-dark mb-3">About this space</h5>
+        <p class="text-secondary lh-lg mb-0" style="white-space: pre-line;"><%= listing.description %></p>
+      </div>
+
+      <!-- Where you'll sleep -->
+      <div class="border-bottom pb-4 mb-4">
+        <h5 class="fw-bold text-dark mb-3">Where you'll sleep</h5>
+        <div class="row g-3">
+          <div class="col-6 col-sm-4">
+            <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
+              <span class="fs-4 mb-2">🛏️</span>
+              <h6 class="fw-bold mb-1 small text-dark">Bedroom 1</h6>
+              <span class="text-muted" style="font-size: 0.8rem;">1 Queen Bed</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4">
+            <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
+              <span class="fs-4 mb-2">🛏️</span>
+              <h6 class="fw-bold mb-1 small text-dark">Bedroom 2</h6>
+              <span class="text-muted" style="font-size: 0.8rem;">2 Single Beds</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 d-none d-sm-block">
+            <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
+              <span class="fs-4 mb-2">🛋️</span>
+              <h6 class="fw-bold mb-1 small text-dark">Living Area</h6>
+              <span class="text-muted" style="font-size: 0.8rem;">1 Sofa Sleeper</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Amenities Section -->
+      <div class="border-bottom pb-4 mb-4">
+        <h5 class="fw-bold text-dark mb-3">What this place offers</h5>
+        <div class="row g-3 mb-3">
+          <% 
+            const displayAmenities = [
+              { icon: 'bi-water', text: 'Private Swimming Pool' },
+              { icon: 'bi-wifi', text: 'Fast Wi-Fi (100+ Mbps)' },
+              { icon: 'bi-snow', text: 'Air Conditioning' },
+              { icon: 'bi-laptop', text: 'Dedicated Workspace' },
+              { icon: 'bi-p-circle', text: 'Free Private Parking' },
+              { icon: 'bi-cup-hot', text: 'Espresso Coffee Machine' }
+            ];
+          %>
+          <% for (let a of displayAmenities) { %>
+            <div class="col-sm-6 d-flex align-items-center gap-3 text-dark">
+              <i class="bi <%= a.icon %> text-primary fs-5"></i>
+              <span class="fw-medium small"><%= a.text %></span>
+            </div>
+          <% } %>
+        </div>
+
+        <!-- Button to open Full Amenities Modal -->
+        <button class="btn btn-outline-dark rounded-pill px-4 py-2 mt-2 fw-semibold btn-sm" data-bs-toggle="modal" data-bs-target="#allAmenitiesModal">
+          Show all 12 amenities
+        </button>
+      </div>
+
+      <!-- Interactive Location & Map Section -->
+      <div class="border-bottom pb-4 mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="fw-bold text-dark mb-0">Where you'll be</h5>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=<%= encodeURIComponent(listing.title + ' ' + listing.location) %>"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-sm btn-outline-primary rounded-pill px-3"
+          >
+            <i class="bi bi-box-arrow-up-right me-1"></i> Google Maps
+          </a>
+        </div>
+        <p class="text-muted small mb-3">
+          <i class="bi bi-geo-alt-fill me-1 text-danger"></i> <%= listing.location %>, <%= listing.country %>
+        </p>
+
+        <!-- Leaflet Map Box -->
+        <div id="showMap" class="rounded-4 overflow-hidden border shadow-sm mb-3" style="height: 320px; width: 100%;"></div>
+
+        <!-- Nearby Landmarks Interactive Pills -->
+        <div class="d-flex flex-wrap gap-2 mt-2">
+          <span class="badge bg-light text-dark border rounded-pill px-3 py-2 small"><i class="bi bi-compass text-primary me-1"></i> Scenic Viewpoint (450m)</span>
+          <span class="badge bg-light text-dark border rounded-pill px-3 py-2 small"><i class="bi bi-cup-hot text-warning me-1"></i> Cafes & Dining (800m)</span>
+          <span class="badge bg-light text-dark border rounded-pill px-3 py-2 small"><i class="bi bi-water text-info me-1"></i> Water & Beach Access (1.5 km)</span>
+          <span class="badge bg-light text-dark border rounded-pill px-3 py-2 small"><i class="bi bi-taxi-front text-secondary me-1"></i> Transit Hub (15 min)</span>
+        </div>
+      </div>
+
+      <!-- Meet your Host -->
+      <div class="border-bottom pb-4 mb-4">
+        <div class="card border rounded-4 p-4 bg-body shadow-xs">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold fs-4" style="width: 50px; height: 50px;">
+                <%= listing.owner && listing.owner.username ? listing.owner.username.charAt(0).toUpperCase() : 'H' %>
+              </div>
+              <div>
+                <h6 class="fw-bold text-dark mb-0">Hosted by <%= listing.owner ? listing.owner.username : 'Superhost' %></h6>
+                <small class="text-muted">Response rate: 100% • Responds within an hour</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-dark rounded-pill px-3 py-2 fw-semibold btn-sm" data-bs-toggle="modal" data-bs-target="#contactHostModal">
+              <i class="bi bi-chat-dots me-1"></i> Contact Host
+            </button>
+          </div>
+          <p class="small text-muted mb-0">
+            To protect your payment, never transfer money or communicate outside of the FairStay website or app.
+          </p>
+        </div>
+      </div>
+
+      <!-- Owner Actions (Edit / Delete) if Owner -->
+      <% if (currUser && (listing.owner && listing.owner._id.equals(currUser._id) || currUser.isAdmin)) { %>
+        <div class="d-flex align-items-center gap-3 border-bottom pb-4 mb-4">
+          <a href="/listings/<%= listing._id %>/edit" class="btn btn-outline-dark rounded-pill px-4 btn-sm">
+            <i class="bi bi-pencil-square me-1"></i> Edit Stay
+          </a>
+          <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" onsubmit="return confirm('Are you sure you want to remove this stay from FairStay?');">
+            <button class="btn btn-outline-danger rounded-pill px-4 btn-sm" type="submit">
+              <i class="bi bi-trash3 me-1"></i> Delete Stay
+            </button>
+          </form>
+        </div>
+      <% } %>
+
+      <!-- Guest Reviews Section -->
+      <div class="mb-4" id="reviewsSection">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <h4 class="fw-bold text-dark mb-0">
+            <i class="bi bi-star-fill text-warning me-1"></i>
+            <%= avgRating > 0 ? avgRating : '5.0' %> • <%= listing.reviews.length %> <%= listing.reviews.length === 1 ? 'Review' : 'Reviews' %>
+          </h4>
+        </div>
+
+        <!-- Rating Breakdown Metrics -->
+        <div class="row g-3 mb-4 pb-3 border-bottom">
+          <div class="col-sm-6">
+            <div class="d-flex justify-content-between small text-dark mb-1">
+              <span>Cleanliness</span>
+              <span class="fw-bold">4.9</span>
+            </div>
+            <div class="rating-bar-container"><div class="rating-bar-fill" style="width: 98%;"></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex justify-content-between small text-dark mb-1">
+              <span>Accuracy</span>
+              <span class="fw-bold">4.9</span>
+            </div>
+            <div class="rating-bar-container"><div class="rating-bar-fill" style="width: 98%;"></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex justify-content-between small text-dark mb-1">
+              <span>Communication</span>
+              <span class="fw-bold">5.0</span>
+            </div>
+            <div class="rating-bar-container"><div class="rating-bar-fill" style="width: 100%;"></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex justify-content-between small text-dark mb-1">
+              <span>Location</span>
+              <span class="fw-bold">4.8</span>
+            </div>
+            <div class="rating-bar-container"><div class="rating-bar-fill" style="width: 96%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Add Review Form (for logged-in users) -->
+        <% if (currUser) { %>
+          <div class="card border rounded-4 p-4 bg-light mb-4 shadow-xs">
+            <h6 class="fw-bold text-dark mb-2">Leave a Review</h6>
+            <form action="/listings/<%= listing._id %>/reviews" method="POST">
+              <!-- Interactive Star Picker -->
+              <div class="mb-3">
+                <label class="form-label small text-muted mb-1 d-block">Overall Rating</label>
+                <div class="star-rating-widget">
+                  <input type="radio" name="review[rating]" id="star5" value="5" checked />
+                  <label for="star5" title="5 stars">★</label>
+                  <input type="radio" name="review[rating]" id="star4" value="4" />
+                  <label for="star4" title="4 stars">★</label>
+                  <input type="radio" name="review[rating]" id="star3" value="3" />
+                  <label for="star3" title="3 stars">★</label>
+                  <input type="radio" name="review[rating]" id="star2" value="2" />
+                  <label for="star2" title="2 stars">★</label>
+                  <input type="radio" name="review[rating]" id="star1" value="1" />
+                  <label for="star1" title="1 star">★</label>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small text-muted mb-1">Your Stay Experience</label>
+                <textarea name="review[comment]" class="form-control rounded-3" rows="3" placeholder="Share your experience about the views, comfort, host communication, and amenities..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary btn-sm rounded-pill px-4 py-2 fw-bold" type="submit">
+                Submit Review
+              </button>
+            </form>
+          </div>
+        <% } %>
+
+        <!-- Reviews Grid -->
+        <div class="row g-3">
+          <% if (listing.reviews && listing.reviews.length > 0) { %>
+            <% for (let review of listing.reviews) { %>
+              <div class="col-md-6">
+                <div class="card border rounded-4 p-3 h-100 shadow-xs bg-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="rounded-circle bg-secondary-subtle text-secondary d-flex align-items-center justify-content-center fw-bold small" style="width: 36px; height: 36px;">
+                        <%= review.author ? review.author.username.charAt(0).toUpperCase() : 'T' %>
+                      </div>
+                      <div>
+                        <div class="fw-bold text-dark small"><%= review.author ? review.author.username : 'Traveler' %></div>
+                        <div class="text-muted" style="font-size: 0.75rem;"><%= new Date(review.createdAt).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' }) %></div>
+                      </div>
+                    </div>
+                    <div class="text-warning small">
+                      <% for (let s = 1; s <= review.rating; s++) { %>★<% } %>
+                    </div>
+                  </div>
+                  <p class="small text-muted mb-2 flex-grow-1"><%= review.comment %></p>
+                  <% if (currUser && (review.author && review.author._id.equals(currUser._id) || currUser.isAdmin)) { %>
+                    <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" class="text-end">
+                      <button class="btn btn-sm btn-link text-danger text-decoration-none p-0" style="font-size: 0.75rem;">
+                        Delete
+                      </button>
+                    </form>
+                  <% } %>
+                </div>
+              </div>
+            <% } %>
+          <% } else { %>
+            <p class="text-muted small">No reviews yet. Be the first guest to leave feedback!</p>
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Interactive AI Concierge Card (Clean & Non-Intrusive) -->
+      <div class="card border-0 bg-primary-subtle text-primary-emphasis rounded-4 p-3 shadow-xs mt-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="d-flex align-items-center gap-3">
+            <span class="fs-3">✨</span>
+            <div>
+              <h6 class="fw-bold mb-0">Have questions about this stay or <%= listing.location %>?</h6>
+              <small class="text-muted">Ask our AI Trip Concierge about local dining, weather & activities</small>
+            </div>
+          </div>
+          <button class="btn btn-primary rounded-pill btn-sm px-3 fw-bold shadow-xs" id="askAiAboutStayBtn">
+            Ask AI Concierge
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Interactive Sticky Booking Card (Clean, Transparent, Easy to Understand) -->
+    <div class="col-lg-5" id="bookingWidget">
+      <div class="sticky-top" style="top: 90px; z-index: 10;">
+        <div class="card border-0 rounded-4 shadow-md p-4 reservation-card-luxury">
+          
+          <!-- Pricing Header -->
+          <div class="d-flex justify-content-between align-items-baseline mb-3 pb-3 border-bottom">
+            <div>
+              <span class="fs-3 fw-bold text-dark" id="displayNightlyPrice">₹<%= listing.price.toLocaleString('en-IN') %></span>
+              <span class="text-muted small">/ night</span>
+            </div>
+            <div class="small fw-semibold text-dark d-flex align-items-center gap-1">
+              <i class="bi bi-star-fill text-warning"></i>
+              <span><%= avgRating > 0 ? avgRating : '5.0' %></span>
+              <span class="text-muted">(<%= listing.reviews.length %>)</span>
+            </div>
+          </div>
+
+          <!-- Booking Form -->
+          <form action="/listings/<%= listing._id %>/bookings" method="POST" id="bookingForm">
+            
+            <!-- Dates Picker Box (Compact Airbnb 2-Field Segment) -->
+            <div class="reservation-date-box p-2 mb-3">
+              <div class="row g-2">
+                <div class="col-6 border-end">
+                  <label class="form-label text-uppercase fw-bold text-muted mb-0" style="font-size: 0.65rem; letter-spacing: 0.05em;">Check-in</label>
+                  <input type="text" id="checkInDate" name="booking[checkIn]" class="form-control form-control-sm border-0 bg-transparent fw-semibold p-0 cursor-pointer" placeholder="Select date" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label text-uppercase fw-bold text-muted mb-0" style="font-size: 0.65rem; letter-spacing: 0.05em;">Checkout</label>
+                  <input type="text" id="checkOutDate" name="booking[checkOut]" class="form-control form-control-sm border-0 bg-transparent fw-semibold p-0 cursor-pointer" placeholder="Select date" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Guest Stepper Dropdown -->
+            <div class="position-relative mb-3">
+              <div class="reservation-date-box p-2 cursor-pointer" id="guestPickerToggle">
+                <label class="form-label text-uppercase fw-bold text-muted mb-0" style="font-size: 0.65rem; letter-spacing: 0.05em;">Guests</label>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-semibold text-dark small" id="guestDisplayLabel">2 guests</span>
+                  <i class="bi bi-chevron-down text-muted small"></i>
+                </div>
+              </div>
+
+              <!-- Stepper Popup -->
+              <div class="guest-picker-dropdown" id="guestPickerDropdown">
+                <!-- Adults -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div>
+                    <div class="fw-bold small text-dark">Adults</div>
+                    <div class="text-muted" style="font-size: 0.72rem;">Age 13+</div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <button type="button" class="stepper-btn" id="adultsMinusBtn">-</button>
+                    <span class="fw-bold px-2 small" id="adultsCountSpan">2</span>
+                    <button type="button" class="stepper-btn" id="adultsPlusBtn">+</button>
+                  </div>
+                </div>
+
+                <!-- Children -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div>
+                    <div class="fw-bold small text-dark">Children</div>
+                    <div class="text-muted" style="font-size: 0.72rem;">Ages 2–12</div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <button type="button" class="stepper-btn" id="childrenMinusBtn" disabled>-</button>
+                    <span class="fw-bold px-2 small" id="childrenCountSpan">0</span>
+                    <button type="button" class="stepper-btn" id="childrenPlusBtn">+</button>
+                  </div>
+                </div>
+
+                <!-- Infants -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div>
+                    <div class="fw-bold small text-dark">Infants</div>
+                    <div class="text-muted" style="font-size: 0.72rem;">Under 2</div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <button type="button" class="stepper-btn" id="infantsMinusBtn" disabled>-</button>
+                    <span class="fw-bold px-2 small" id="infantsCountSpan">0</span>
+                    <button type="button" class="stepper-btn" id="infantsPlusBtn">+</button>
+                  </div>
+                </div>
+
+                <div class="text-end pt-2 border-top">
+                  <button type="button" class="btn btn-sm btn-dark rounded-pill px-3" id="closeGuestPickerBtn">Done</button>
+                </div>
+              </div>
+
+              <!-- Hidden guest count input submitted with form -->
+              <input type="hidden" name="booking[guests]" id="guestsCountInput" value="2" />
+            </div>
+
+            <!-- Submit Reserve Button -->
+            <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold fs-6 shadow-sm mb-2" id="reserveSubmitBtn">
+              Reserve
+            </button>
+
+            <div class="text-center text-muted small mb-3" style="font-size: 0.8rem;">
+              You won't be charged yet
+            </div>
+
+            <!-- Transparent Dynamic Price Breakdown -->
+            <div id="bookingPriceBreakdown" class="border-top pt-3 text-muted small">
+              <div class="d-flex justify-content-between mb-2">
+                <span>₹<%= listing.price.toLocaleString('en-IN') %> × <span id="calcNights">2 nights</span></span>
+                <span id="calcBasePrice" class="text-dark fw-medium">₹<%= (listing.price * 2).toLocaleString('en-IN') %></span>
+              </div>
+              <div class="d-flex justify-content-between mb-2 text-warning d-none" id="calcSurgeRow">
+                <span>Seasonal adjustment (<span id="calcSurgePercent">+15%</span>)</span>
+                <span id="calcSurgePrice">₹0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Taxes & GST (12%)</span>
+                <span id="calcGst" class="text-dark fw-medium">₹<%= Math.round(listing.price * 2 * 0.12).toLocaleString('en-IN') %></span>
+              </div>
+              <hr class="my-2" />
+              <div class="d-flex justify-content-between fw-bold text-dark fs-6">
+                <span>Total</span>
+                <span id="calcTotal">₹<%= Math.round(listing.price * 2 * 1.12).toLocaleString('en-IN') %></span>
+              </div>
+            </div>
+
+            <!-- FairSafe Zero-Surge Guarantee Banner (Reassuring, Not Scary) -->
+            <div class="d-flex align-items-center gap-2 mt-3 p-2 px-3 rounded-3 bg-success-subtle text-success border border-success-subtle small">
+              <i class="bi bi-shield-check fs-5"></i>
+              <span style="font-size: 0.78rem;"><strong>FairSafe™ Protected:</strong> Zero hidden fees & 48h free cancellation.</span>
+            </div>
+
+            <!-- Optional AI Festival Insights Link -->
+            <div class="text-center mt-3">
+              <a href="#" class="text-decoration-none text-muted small" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#festivalPredictorModal">
+                <i class="bi bi-graph-up-arrow text-primary me-1"></i> View seasonal pricing insights
+              </a>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ==========================================================================
+     Modals: 1. Full Photo Lightbox, 2. All Amenities Modal, 3. Contact Host Modal, 4. Festival Predictor
+     ========================================================================== -->
+
+<!-- 1. Photo Fullscreen Lightbox Modal -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 bg-dark text-white rounded-4 overflow-hidden shadow-2xl">
+      <div class="modal-header border-0 pb-0 d-flex justify-content-between">
+        <span class="badge bg-success rounded-pill px-3 py-1 small">
+          <i class="bi bi-shield-check me-1"></i> Verified Stays Photo Gallery
+        </span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4 text-center position-relative">
+        <img id="galleryModalImg" src="<%= organicPhoto %>" alt="<%= listing.title %>" class="img-fluid rounded-3 shadow-lg" style="max-height: 70vh; object-fit: contain;" />
+        
+        <!-- Lightbox Carousel Thumbs -->
+        <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap">
+          <img src="<%= organicPhoto %>" class="rounded-2 border cursor-pointer lightbox-thumb active" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= organicPhoto %>')" />
+          <img src="<%= photo2 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo2 %>')" />
+          <img src="<%= photo3 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo3 %>')" />
+          <img src="<%= photo4 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo4 %>')" />
+          <img src="<%= photo5 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo5 %>')" />
+        </div>
+      </div>
+      <div class="modal-footer border-0 justify-content-center p-3 text-white-50 small">
+        <%= listing.title %> • <%= listing.location %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. All Amenities Modal -->
+<div class="modal fade" id="allAmenitiesModal" tabindex="-1" aria-labelledby="allAmenitiesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      <div class="modal-header border-bottom px-4 py-3">
+        <h5 class="modal-title fw-bold text-dark" id="allAmenitiesModalLabel">What this place offers</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+        
+        <!-- Internet & Office -->
+        <div class="mb-4 pb-3 border-bottom">
+          <h6 class="fw-bold text-dark mb-3">📶 Internet & Office</h6>
+          <div class="row g-3">
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-wifi fs-4 text-primary"></i>
+              <div><strong>Fast Wi-Fi (100+ Mbps)</strong><br /><small class="text-muted">Verified for 4K streaming & video calls</small></div>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-laptop fs-4 text-primary"></i>
+              <div><strong>Dedicated Workspace</strong><br /><small class="text-muted">Ergonomic chair & desk</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scenic Views & Outdoor -->
+        <div class="mb-4 pb-3 border-bottom">
+          <h6 class="fw-bold text-dark mb-3">🏊 Scenic Views & Outdoor</h6>
+          <div class="row g-3">
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-water fs-4 text-info"></i>
+              <div><strong>Private Swimming Pool</strong><br /><small class="text-muted">Filtered and sanitized daily</small></div>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-tree fs-4 text-success"></i>
+              <div><strong>Private Patio / Balcony</strong><br /><small class="text-muted">Mountain and nature panoramic views</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Climate & Comfort -->
+        <div class="mb-4 pb-3 border-bottom">
+          <h6 class="fw-bold text-dark mb-3">❄️ Climate & Comfort</h6>
+          <div class="row g-3">
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-snow fs-4 text-info"></i>
+              <div><strong>Air Conditioning</strong><br /><small class="text-muted">Silent inverter ACs</small></div>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-droplet fs-4 text-primary"></i>
+              <div><strong>24/7 Hot Water</strong><br /><small class="text-muted">Continuous hot showers</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kitchen & Dining -->
+        <div class="mb-4 pb-3 border-bottom">
+          <h6 class="fw-bold text-dark mb-3">🍳 Kitchen & Dining</h6>
+          <div class="row g-3">
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-cup-hot fs-4 text-warning"></i>
+              <div><strong>Coffee Maker & Kettle</strong><br /><small class="text-muted">Complimentary tea & coffee</small></div>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-egg-fried fs-4 text-warning"></i>
+              <div><strong>Equipped Kitchen</strong><br /><small class="text-muted">Cookware, stove, microwave & fridge</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Safety & Facilities -->
+        <div>
+          <h6 class="fw-bold text-dark mb-3">🛡️ Safety & Facilities</h6>
+          <div class="row g-3">
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-p-circle fs-4 text-dark"></i>
+              <div><strong>Free Parking On-Premises</strong><br /><small class="text-muted">Secure gated driveway</small></div>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-3">
+              <i class="bi bi-lightning-charge fs-4 text-warning"></i>
+              <div><strong>24/7 Power Backup</strong><br /><small class="text-muted">Inverter backup for lights & Wi-Fi</small></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Contact Host Modal -->
+<div class="modal fade" id="contactHostModal" tabindex="-1" aria-labelledby="contactHostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      <div class="modal-header border-bottom px-4 py-3 bg-light">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-chat-left-text text-primary fs-5"></i>
+          <h5 class="modal-title fw-bold text-dark mb-0">Message <%= listing.owner ? listing.owner.username : 'Host' %></h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p class="small text-muted mb-3">
+          Have a question about <%= listing.title %>? Select a quick question or write your message below.
+        </p>
+
+        <!-- Quick Question Chips -->
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill quick-msg-chip" data-msg="Hi! Is early check-in or late checkout possible for our dates?">
+            ⏰ Early Check-in?
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill quick-msg-chip" data-msg="Hello! Can you confirm if high-speed Wi-Fi is reliable for video calls?">
+            💻 Wi-Fi Speed?
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill quick-msg-chip" data-msg="Hi! Is private parking available for an SUV?">
+            🚗 Parking Access?
+          </button>
+        </div>
+
+        <form id="contactHostForm">
+          <div class="mb-3">
+            <textarea class="form-control rounded-3" id="hostMsgInput" rows="4" placeholder="Type your message to the host..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow-sm">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. AI Festival Price Predictor Modal -->
+<div class="modal fade" id="festivalPredictorModal" tabindex="-1" aria-labelledby="festivalPredictorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-xl">
+      <div class="modal-header border-bottom px-4 py-3 bg-light">
+        <div class="d-flex align-items-center gap-2">
+          <span class="fs-4">⚡</span>
+          <div>
+            <h5 class="modal-title fw-bold text-dark mb-0" id="festivalPredictorModalLabel">Seasonal Pricing Insights</h5>
+            <small class="text-muted">AI-powered seasonal demand and rate forecasts</small>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        
+        <!-- Controls Row -->
+        <div class="row g-3 mb-4 align-items-end">
+          <div class="col-md-7">
+            <label class="form-label small fw-bold text-dark mb-1">Select Season or Festive Holiday</label>
+            <select class="form-select rounded-3 py-2" id="predictFestivalSelect">
+              <option value="christmas" selected>🎄 Christmas & Year-End Holidays (+25%)</option>
+              <option value="diwali">🪔 Diwali Festive Week (+30%)</option>
+              <option value="holi">🎨 Holi Spring Break (+20%)</option>
+              <option value="rakshabandhan">🧵 Raksha Bandhan Long Weekend (+18%)</option>
+              <option value="new_year">🎆 New Year's Eve Grand Peak (+35%)</option>
+              <option value="monsoon_discount">🌧️ Monsoon Off-Season Discount (-15%)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- AI Live Prediction Card -->
+        <div class="card border rounded-4 p-4 mb-3 bg-light shadow-xs" id="aiPredictionResultCard">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3 pb-3 border-bottom">
+            <div>
+              <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1 mb-2">
+                <i class="bi bi-stars me-1"></i> Real-Time Demand Analysis
+              </span>
+              <h4 class="fw-bold text-dark mb-0" id="predFestivalHeading">🎄 Christmas & Year-End Holidays</h4>
+            </div>
+            <div class="text-md-end">
+              <div class="display-6 fw-bold text-danger" id="predPercentageBadge">+25%</div>
+              <small class="text-muted fw-semibold" id="predDemandLevel">High Seasonal Demand</small>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3 text-center">
+            <div class="col-4">
+              <div class="p-3 rounded-3 bg-white border h-100">
+                <small class="text-muted d-block mb-1">Base Rate</small>
+                <span class="fs-5 fw-bold text-dark" id="predNormalPrice">₹<%= listing.price.toLocaleString('en-IN') %></span>
+                <span class="small text-muted d-block">/ night</span>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-3 rounded-3 bg-white border h-100">
+                <small class="text-muted d-block mb-1">Seasonal Impact</small>
+                <span class="fs-5 fw-bold text-danger" id="predPriceDiff">+₹<%= Math.round(listing.price * 0.25).toLocaleString('en-IN') %></span>
+                <span class="small text-muted d-block" id="predDiffPercent">(+25%)</span>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-3 rounded-3 bg-primary text-white shadow-sm h-100">
+                <small class="text-white-50 d-block mb-1">Effective Rate</small>
+                <span class="fs-5 fw-bold" id="predEffectivePrice">₹<%= Math.round(listing.price * 1.25).toLocaleString('en-IN') %></span>
+                <span class="small text-white-50 d-block">/ night</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2 px-3 rounded-3 bg-success-subtle text-success-emphasis border border-success-subtle small">
+            <i class="bi bi-shield-check me-1"></i> <strong>FairSafe™ Price Lock:</strong> Once reserved, your rate is 100% locked with zero hidden fees.
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm" id="applyFestivalToStayBtn">
+            Apply Rate & Dates
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Data for Leaflet Show Map & Show Page Scripts -->
+<script>
+  window.listingId = "<%= listing._id %>";
+  window.listingCoords = <%- JSON.stringify(listing.geometry ? listing.geometry.coordinates : [83.0064, 25.3109]) %>;
+  window.listingTitle = <%- JSON.stringify(listing.title) %>;
+  window.listingLocation = <%- JSON.stringify(listing.location) %>;
+  window.listingPrice = <%= listing.price %>;
+  window.activeFestival = <%- JSON.stringify(festivalData) %>;
+  window.festivalMultiplier = 1.0;
+  window.organicPhoto = <%- JSON.stringify(organicPhoto) %>;
+
+  function openGalleryModal(index) {
+    const photos = [
+      "<%- organicPhoto %>",
+      "<%- photo2 %>",
+      "<%- photo3 %>",
+      "<%- photo4 %>",
+      "<%- photo5 %>"
+    ];
+    setLightboxPhoto(photos[index || 0]);
+    const modalEl = document.getElementById('galleryModal');
+    if (modalEl && window.bootstrap) {
+      const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      modal.show();
+    }
+  }
+
+  function setLightboxPhoto(url) {
+    const img = document.getElementById('galleryModalImg');
+    if (img) img.src = url;
+    document.querySelectorAll('.lightbox-thumb').forEach(thumb => {
+      if (thumb.src === url) {
+        thumb.classList.add('border-primary', 'border-2');
+      } else {
+        thumb.classList.remove('border-primary', 'border-2');
+      }
+    });
+  }
+</script>
+<script src="/js/show-page.js"></script>

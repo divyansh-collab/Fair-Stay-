@@ -1,0 +1,36 @@
+<!-- Offcanvas Wishlist Drawer -->
+<div class="offcanvas offcanvas-end rounded-start-4 shadow-lg border-0" tabindex="-1" id="wishlistDrawer" aria-labelledby="wishlistDrawerLabel" style="width: 380px; max-width: 90vw;" data-bs-scroll="false" data-bs-backdrop="true">
+  <div class="offcanvas-header border-bottom py-3 px-4">
+    <div class="d-flex align-items-center gap-2">
+      <i class="bi bi-suit-heart-fill text-danger fs-5"></i>
+      <h5 class="offcanvas-title fw-bold" id="wishlistDrawerLabel">Saved Stays</h5>
+    </div>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body p-3 d-flex flex-column">
+    <div id="wishlistEmptyState" class="text-center my-auto py-5 text-muted">
+      <div class="fs-1 mb-3">🪔</div>
+      <h6 class="fw-semibold text-dark">No saved stays yet</h6>
+      <p class="small text-muted px-4">Tap the heart icon on any sacred stay to save it to your trip wishlist.</p>
+      <a href="/listings" class="btn btn-sm btn-outline-primary rounded-pill px-4" data-bs-dismiss="offcanvas">
+        Explore Sacred Corridors
+      </a>
+    </div>
+
+    <div id="wishlistItemsContainer" class="d-flex flex-column gap-3">
+      <!-- Dynamically filled by script.js from localStorage -->
+    </div>
+  </div>
+
+  <div class="offcanvas-footer border-top p-3 bg-light d-none" id="wishlistFooter">
+    <div class="d-flex align-items-center justify-content-between">
+      <button class="btn btn-sm btn-outline-danger rounded-pill px-3" id="clearWishlistBtn">
+        <i class="bi bi-trash3 me-1"></i> Clear All
+      </button>
+      <a href="/listings" class="btn btn-sm btn-primary rounded-pill px-3" data-bs-dismiss="offcanvas">
+        Continue Browsing
+      </a>
+    </div>
+  </div>
+</div>

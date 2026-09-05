@@ -1,0 +1,122 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="container my-5">
+  
+  <!-- Dashboard Header -->
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between pb-3 border-bottom mb-4">
+    <div>
+      <h3 class="fw-bold text-dark mb-1">My Pilgrimage Trips</h3>
+      <p class="text-muted small mb-0">Track all your sacred stay reservations, room passes, and voucher receipts.</p>
+    </div>
+    <div class="mt-3 mt-md-0">
+      <a href="/listings" class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">
+        <i class="bi bi-plus-lg me-1"></i> Plan Another Yatra
+      </a>
+    </div>
+  </div>
+
+  <!-- Bookings List -->
+  <% if (bookings && bookings.length > 0) { %>
+    <div class="row g-4">
+      <% for (let b of bookings) { %>
+        <div class="col-lg-6 reveal-3d">
+          <div class="card border-0 rounded-4 shadow-xl h-100 overflow-hidden spatial-ticket-card card-preserve-3d booking-card" data-tilt-3d="true">
+            <div class="card-glare-overlay"></div>
+            <div class="row g-0 h-100">
+              <!-- Stay Image -->
+              <div class="col-sm-5 position-relative">
+                <img
+                  src="<%= b.listing && b.listing.image && b.listing.image.url ? b.listing.image.url : 'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 300\' fill=\'%23f1f5f9\'><rect width=\'400\' height=\'300\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'48\'>🏡</text></svg>' %>"
+                  alt="<%= b.listing ? b.listing.title : 'Stay' %>"
+                  class="w-100 h-100 object-fit-cover"
+                  style="min-height: 200px;"
+                />
+                
+                <!-- Status Badge -->
+                <span class="badge position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 small shadow-sm <%= b.status === 'confirmed' ? 'bg-success' : (b.status === 'pending' ? 'bg-warning text-dark' : 'bg-secondary') %>">
+                  <i class="bi <%= b.status === 'confirmed' ? 'bi-patch-check-fill' : (b.status === 'pending' ? 'bi-clock-fill' : 'bi-x-circle-fill') %> me-1"></i>
+                  <%= b.status.toUpperCase() %>
+                </span>
+              </div>
+
+              <!-- Booking Details -->
+              <div class="col-sm-7 p-3 p-md-4 d-flex flex-column justify-content-between">
+                <div>
+                  <h6 class="fw-bold text-dark mb-1 text-truncate">
+                    <%= b.listing ? b.listing.title : 'Sacred Stay' %>
+                  </h6>
+                  <p class="small text-muted mb-2">
+                    <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+                    <%= b.listing ? b.listing.location : 'Corridor' %>
+                  </p>
+
+                  <div class="bg-light p-2 rounded-3 mb-3 small">
+                    <div class="d-flex justify-content-between mb-1">
+                      <span class="text-muted">Dates:</span>
+                      <span class="fw-semibold text-dark">
+                        <%= new Date(b.checkIn).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' }) %> – 
+                        <%= new Date(b.checkOut).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' }) %>
+                      </span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1">
+                      <span class="text-muted">Pilgrims:</span>
+                      <span class="fw-semibold text-dark"><%= b.guests %> guest(s)</span>
+                    </div>
+                    <% if (b.roomNumber) { %>
+                      <div class="d-flex justify-content-between text-success">
+                        <span>Assigned Room:</span>
+                        <span class="fw-bold"><%= b.roomNumber %></span>
+                      </div>
+                    <% } %>
+                  </div>
+                </div>
+
+                <!-- Footer Actions -->
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="small text-muted">Total:</span>
+                    <span class="fw-bold text-dark fs-6">₹<%= (b.totalPrice ? Math.round(b.totalPrice * 1.12) : 0).toLocaleString('en-IN') %></span>
+                  </div>
+
+                  <div class="d-flex gap-2">
+                    <% if (b.listing) { %>
+                      <a href="/listings/<%= b.listing._id %>" class="btn btn-sm btn-outline-dark rounded-pill flex-grow-1">
+                        View Stay
+                      </a>
+                    <% } %>
+
+                    <% if (b.status === 'pending') { %>
+                      <a href="/bookings/<%= b._id %>/checkout" class="btn btn-sm btn-primary rounded-pill flex-grow-1 fw-semibold">
+                        Pay Now
+                      </a>
+                    <% } %>
+
+                    <% if (b.status === 'confirmed') { %>
+                      <form action="/bookings/<%= b._id %>/cancel" method="POST" onsubmit="return confirm('Are you sure you want to cancel? You will receive a 100% full refund per FairSafe policy.');" class="flex-grow-1">
+                        <button type="submit" class="btn btn-sm btn-outline-danger rounded-pill w-100">
+                          Cancel
+                        </button>
+                      </form>
+                    <% } %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <% } %>
+    </div>
+  <% } else { %>
+    <div class="text-center py-5 bg-white border rounded-4 shadow-sm p-4">
+      <div class="fs-1 mb-3">🧳</div>
+      <h4 class="fw-bold text-dark">No pilgrimage reservations yet</h4>
+      <p class="text-muted small">Explore Prayagraj Sangam, Varanasi Ganga Ghats, or Haridwar to book your first sacred stay.</p>
+      <a href="/listings" class="btn btn-primary rounded-pill px-4 mt-2">
+        Explore Sacred Corridors
+      </a>
+    </div>
+  <% } %>
+
+</div>

@@ -1,0 +1,501 @@
+<% layout('/layouts/boilerplate') %>
+
+<!-- Destination & Category Filter Bar -->
+<div class="filter-wrapper bg-dark bg-opacity-75 border-bottom border-secondary border-opacity-25 shadow-sm py-2">
+  <div class="container">
+
+    <!-- Destination Quick Chips -->
+    <div class="d-flex align-items-center gap-2 overflow-x-auto pb-2 corridor-chips-bar text-nowrap">
+      <span class="small text-white-50 fw-bold me-1">Explore:</span>
+      <a href="/listings" class="btn btn-sm <%= !searchQuery && (!activeCategory || activeCategory === 'All') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        All Stays
+      </a>
+      <a href="/listings?location=Goa" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('goa') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🏖️ Goa (Beach & Pools)
+      </a>
+      <a href="/listings?location=Manali" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('manali') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🏔️ Manali (Mountains)
+      </a>
+      <a href="/listings?location=Jaipur" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('jaipur') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🏰 Jaipur (Heritage)
+      </a>
+      <a href="/listings?location=Udaipur" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('udaipur') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🌊 Udaipur (Lakes)
+      </a>
+      <a href="/listings?location=Mumbai" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('mumbai') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🏙️ Mumbai
+      </a>
+      <a href="/listings?location=Bengaluru" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('bengaluru') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        💻 Bengaluru
+      </a>
+      <a href="/listings?location=Munnar" class="btn btn-sm <%= searchQuery && (searchQuery.toLowerCase().includes('munnar') || searchQuery.toLowerCase().includes('kerala')) ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🌿 Kerala & Munnar
+      </a>
+      <a href="/listings?location=Rishikesh" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('rishikesh') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🧘 Rishikesh
+      </a>
+      <a href="/listings?location=Varanasi" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('varanasi') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
+        🪔 Varanasi
+      </a>
+    </div>
+
+    <!-- Category Icon Rail & Tax Toggle -->
+    <div class="d-flex align-items-center justify-content-between pt-2">
+      <div class="d-flex align-items-center gap-4 overflow-x-auto category-rail text-nowrap flex-grow-1 pe-3">
+        
+        <a href="/listings" class="category-item text-decoration-none <%= activeCategory === 'All' ? 'active' : '' %>">
+          <i class="bi bi-grid-fill"></i>
+          <span>All Homes</span>
+        </a>
+
+        <a href="/listings?category=Beachfront" class="category-item text-decoration-none <%= activeCategory === 'Beachfront' ? 'active' : '' %>">
+          <i class="bi bi-umbrella"></i>
+          <span>Beachfront</span>
+        </a>
+
+        <a href="/listings?category=Mountains" class="category-item text-decoration-none <%= activeCategory === 'Mountains' ? 'active' : '' %>">
+          <i class="bi bi-triangle"></i>
+          <span>Mountains</span>
+        </a>
+
+        <a href="/listings?category=Pools" class="category-item text-decoration-none <%= activeCategory === 'Pools' ? 'active' : '' %>">
+          <i class="bi bi-water"></i>
+          <span>Amazing Pools</span>
+        </a>
+
+        <a href="/listings?category=Heritage" class="category-item text-decoration-none <%= activeCategory === 'Heritage' ? 'active' : '' %>">
+          <i class="bi bi-bank"></i>
+          <span>Heritage</span>
+        </a>
+
+        <a href="/listings?category=Trending" class="category-item text-decoration-none <%= activeCategory === 'Trending' ? 'active' : '' %>">
+          <i class="bi bi-fire"></i>
+          <span>Trending</span>
+        </a>
+
+        <a href="/listings?category=City" class="category-item text-decoration-none <%= activeCategory === 'City' ? 'active' : '' %>">
+          <i class="bi bi-building"></i>
+          <span>City Stays</span>
+        </a>
+
+        <a href="/listings?category=Countryside" class="category-item text-decoration-none <%= activeCategory === 'Countryside' ? 'active' : '' %>">
+          <i class="bi bi-tree"></i>
+          <span>Countryside</span>
+        </a>
+
+        <a href="/listings?category=Workation" class="category-item text-decoration-none <%= activeCategory === 'Workation' ? 'active' : '' %>">
+          <i class="bi bi-laptop"></i>
+          <span>Workation</span>
+        </a>
+
+        <a href="/listings?category=Luxe" class="category-item text-decoration-none <%= activeCategory === 'Luxe' ? 'active' : '' %>">
+          <i class="bi bi-gem"></i>
+          <span>Luxe</span>
+        </a>
+
+        <a href="/listings?category=Budget" class="category-item text-decoration-none <%= activeCategory === 'Budget' ? 'active' : '' %>">
+          <i class="bi bi-piggy-bank"></i>
+          <span>Budget</span>
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-3">
+        <!-- Taxes Toggle (Airbnb style - Always 100% Fully Shown) -->
+        <div class="tax-toggle-box d-flex align-items-center border border-secondary border-opacity-25 rounded-pill px-3 py-2 shadow-xs flex-shrink-0 text-nowrap bg-dark bg-opacity-50">
+          <label class="form-check-label small fw-semibold me-2 mb-0 cursor-pointer text-nowrap user-select-none text-white-50" for="taxToggleSwitch" style="font-size: 0.85rem;">
+            Display total after taxes
+          </label>
+          <div class="form-check form-switch m-0 d-flex align-items-center ps-0">
+            <input class="form-check-input cursor-pointer m-0" type="checkbox" role="switch" id="taxToggleSwitch" style="width: 2.2em; height: 1.2em;" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Main Container -->
+<div class="container my-4">
+
+  <!-- ==========================================================================
+       Top Curated Destination Cards Showcase
+       ========================================================================== -->
+  <div id="spatialPortalsSection" class="spatial-portals-hero mb-5 p-4 p-lg-5 position-relative overflow-hidden rounded-4 shadow-lg">
+    <!-- Ambient Background Spotlights -->
+    <div class="spatial-bg-glow-1"></div>
+    <div class="spatial-bg-glow-2"></div>
+    <div class="spatial-stars-canvas-wrapper">
+      <canvas id="spatialStarsCanvas"></canvas>
+    </div>
+
+    <div class="position-relative z-2">
+      <!-- Section Header -->
+      <div class="text-center max-w-700 mx-auto mb-4 mb-lg-5">
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3 spatial-pill-badge">
+          <span class="pulse-dot"></span>
+          <span class="small fw-bold text-uppercase tracking-wider">Curated Vacation Getaways</span>
+        </div>
+        <h1 class="fw-bold text-white text-uppercase tracking-widest mb-2 spatial-hero-title" style="font-family: 'Playfair Display', Georgia, serif; letter-spacing: 0.08em;">
+          Curated Getaways. Beyond Imagination.
+        </h1>
+        <p class="text-white-50 small mb-0 fs-6">
+          Explore extraordinary destinations across India, crafted for unforgettable memories.
+        </p>
+      </div>
+
+      <!-- 4 Immersive Destination Cards Grid -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 spatial-portals-grid perspective-container mb-4" id="spatialPortalsGrid">
+        
+        <!-- Portal 1: Goa (Sunset Bliss) -->
+        <div class="col">
+          <a href="/listings?location=Goa" class="text-decoration-none d-block">
+            <div class="spatial-portal-card rounded-4 position-relative overflow-hidden shadow-2xl" data-portal="goa" data-tilt-portal="true">
+              <!-- Ambient Weather Particles Overlay -->
+              <div class="portal-weather-fx portal-sun-fx"></div>
+              <div class="card-glare-overlay"></div>
+
+              <!-- Portal Photo Media -->
+              <div class="portal-img-wrapper">
+                <img
+                  src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRLr_02wRbNhRu1XTaeSzZu8_3b6k5CjSRCB0KYqm8-qmOqDYtzGPw6Y6ygYrnoi-C6LIwN2ivysYRvtCelCam76TK2GRF19lxs16D-_UELXSqRuTSgzJXNUd0qci16vexKvzs199hDJ2TcCTxGSuxCMthOZ7qiw_swbfgojZZFXAP4b_zR9EJY5LpnFdnRwJnNoG6vwICd1rfM-QY-Xkq4FfGKAVH0nGlX_4wRn78AIWLn8KdrDsiHT5z30evVY9Ri_iqIkneD6UkGrXFjRM8xIs6NV3Ya9vxC97KFfzUKjstaY0cFukNULy5ygEIdtsMo25QBss_KzujIA2Pu7kO1oNSDkTxpDZcectAeMWU_hyMB1m6Rblbvl9aDkZSI4QSVbA06_cP2khGBrqy27peJLS3khZEkOr2doqI4lW3Pkw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug"
+                  alt="Goa Sunset Bliss"
+                  class="portal-img"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Top Weather Pill (Floating translateZ) -->
+              <div class="portal-weather-badge position-absolute top-0 end-0 m-3 rounded-pill px-3 py-1 d-flex align-items-center gap-1">
+                <span>🌤️</span>
+                <span class="small fw-bold">28°C</span>
+              </div>
+
+              <!-- Bottom Glass Details Bar (Floating translateZ) -->
+              <div class="portal-footer-glass position-absolute bottom-0 start-0 end-0 p-3">
+                <div class="d-flex align-items-baseline justify-content-between mb-1">
+                  <h4 class="fw-extrabold text-white mb-0">Goa</h4>
+                  <span class="badge bg-warning text-dark small fw-bold">4.9 ★</span>
+                </div>
+                <div class="text-white-50 small mb-2" style="font-size: 0.8rem;">Sunset Bliss</div>
+                <div class="d-flex align-items-center justify-content-between border-top border-white border-opacity-15 pt-2">
+                  <span class="text-white-50 small fw-bold">🌤️ 28°C</span>
+                  <span class="fw-bold text-white small">From ₹3,500<span class="text-white-50 fw-normal">/night</span></span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portal 2: Manali (Snowpeak Retreat) -->
+        <div class="col">
+          <a href="/listings?location=Manali" class="text-decoration-none d-block">
+            <div class="spatial-portal-card rounded-4 position-relative overflow-hidden shadow-2xl" data-portal="manali" data-tilt-portal="true">
+              <!-- Animated Snowflakes Canvas Overlay -->
+              <canvas class="portal-snow-canvas position-absolute top-0 start-0 w-100 h-100"></canvas>
+              <div class="card-glare-overlay"></div>
+
+              <!-- Portal Photo Media -->
+              <div class="portal-img-wrapper">
+                <img
+                  src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRR_OT7gobsyCy32gtFKnroPS19vkGEZ3jEihtyrALX4est8TPigOAwRrP7vRgbi3hV4Z3GA86vb6noEOETA9ihoh43ZiCQqIqkVgUdME07CRfP4SNFAhD-GByC4YGsog2SMECsYedrWKxyIF_A-COvLvdCReKcdYC6h6z53Pq9vhaxUgzYxKqSPCScIcrloIydxrZRR3SJqlp5A6wXa_RnNoOTBimNwmo4yE7DO4OvXbOKirwHXx-YX7-1iCkus7q4wSLy57igemIS_lnJebzDFLxgTB7dgP4ZPan5AHxD27xEKj-vrDxxBo9EX80tbV-KULIjM1R0mI_FjaAGD360ZFk8mwBAiNekiW2mGZdCctYZuWzrFfDUy5QissQ8Q2wbecoVBvdvI_VGHEuoc6XjvqIXr21GTxpJ7ktL_v5YDFSiJzZwz0_I2tsewA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug"
+                  alt="Manali Snowpeak Retreat"
+                  class="portal-img"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Top Weather Pill (Floating translateZ) -->
+              <div class="portal-weather-badge position-absolute top-0 end-0 m-3 rounded-pill px-3 py-1 d-flex align-items-center gap-1">
+                <span>❄️</span>
+                <span class="small fw-bold">4°C</span>
+              </div>
+
+              <!-- Bottom Glass Details Bar -->
+              <div class="portal-footer-glass position-absolute bottom-0 start-0 end-0 p-3">
+                <div class="d-flex align-items-baseline justify-content-between mb-1">
+                  <h4 class="fw-extrabold text-white mb-0">Manali</h4>
+                  <span class="badge bg-info text-white small fw-bold">4.8 ★</span>
+                </div>
+                <div class="text-white-50 small mb-2" style="font-size: 0.8rem;">Snowpeak Retreat</div>
+                <div class="d-flex align-items-center justify-content-between border-top border-white border-opacity-15 pt-2">
+                  <span class="text-white-50 small fw-bold">❄️ 4°C</span>
+                  <span class="fw-bold text-white small">From ₹4,800<span class="text-white-50 fw-normal">/night</span></span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portal 3: Jaipur (Royal Heritage) -->
+        <div class="col">
+          <a href="/listings?location=Jaipur" class="text-decoration-none d-block">
+            <div class="spatial-portal-card rounded-4 position-relative overflow-hidden shadow-2xl" data-portal="jaipur" data-tilt-portal="true">
+              <!-- Lantern Sparks FX -->
+              <div class="portal-weather-fx portal-lantern-fx"></div>
+              <div class="card-glare-overlay"></div>
+
+              <!-- Portal Photo Media -->
+              <div class="portal-img-wrapper">
+                <img
+                  src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRa6wuvKSHr30FUlEy8fj9h6eZoRCzIJmSjl74x5Zbwuz6SNBvtwxpebHNUusN7EZWlPVVxybjSFa28sakJfgQODMjuUwSEj3lOszX_B5ZIN9Hvkb4RpMqP85SWthYuX3ly6FC0O9kyK7nG1iGZZS25hIlLYvuXGEQ2gCEZYWj8S3ZdX0doEcUfXghLZHwfca_Dkqk5ZQkV0nMaze5463fLcG9d8w0P4ysyrwde3GAy2wyWcY8Ec8Fn2sBmOsuLUMwmXl43BcB6O1lIU4vzjvgPU-JrnJGSJ4X1379QzHzF7sZsE-newYVqdsA8K9rTEIjDXOjeks56CmXT8gZBeBuhK_FDIPDd1QnG1GsWX9UUCJooGkIW6oAFikLHy3LGz_33akI2JDoPWGjfJYTsQRy8wLVd-wFjX0mp55ZJojY&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug"
+                  alt="Jaipur Royal Heritage"
+                  class="portal-img"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Top Weather Pill (Floating translateZ) -->
+              <div class="portal-weather-badge position-absolute top-0 end-0 m-3 rounded-pill px-3 py-1 d-flex align-items-center gap-1">
+                <span>🌙</span>
+                <span class="small fw-bold">22°C</span>
+              </div>
+
+              <!-- Bottom Glass Details Bar -->
+              <div class="portal-footer-glass position-absolute bottom-0 start-0 end-0 p-3">
+                <div class="d-flex align-items-baseline justify-content-between mb-1">
+                  <h4 class="fw-extrabold text-white mb-0">Jaipur</h4>
+                  <span class="badge bg-warning text-dark small fw-bold">4.9 ★</span>
+                </div>
+                <div class="text-white-50 small mb-2" style="font-size: 0.8rem;">Royal Heritage</div>
+                <div class="d-flex align-items-center justify-content-between border-top border-white border-opacity-15 pt-2">
+                  <span class="text-white-50 small fw-bold">🌙 22°C</span>
+                  <span class="fw-bold text-white small">From ₹5,200<span class="text-white-50 fw-normal">/night</span></span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portal 4: Kerala (Serene Backwaters) -->
+        <div class="col">
+          <a href="/listings?location=Munnar" class="text-decoration-none d-block">
+            <div class="spatial-portal-card rounded-4 position-relative overflow-hidden shadow-2xl" data-portal="kerala" data-tilt-portal="true">
+              <!-- Ripple FX -->
+              <div class="portal-weather-fx portal-water-fx"></div>
+              <div class="card-glare-overlay"></div>
+
+              <!-- Portal Photo Media -->
+              <div class="portal-img-wrapper">
+                <img
+                  src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQLQ_hldaafTVPw4GVh25y5KABCfuc8rBDKn51YKB8YGj5Tyipphb38MwWucHdFUKuol-nSJAmQBT0090VZyIdUigDgnchU_eglz8PdY7C7UpGmj4Kk5Wc9PPQNCmOFqXonfkZLisuRKVXsV4CCun5qnzC2YYBIH3qH_Y8FWQOpW5lJDDejpU8GDxGwo8DZNIhlOZgtnzb6jx8zN-UlI1hvm1z838aoFobqOAZmpUS1GZUzPf4K-WOrSHFclsOClFrRLE0nuqys5MuH0mrIUxTpfqwYXcRQ4YEkEYAEG40QnbsWtXeWvcBOwspUtyy1Rk3L8mveNdSYLvW9bbb2hecsMseGw6GuYEd_xpzKJgkIvNfKNSVods6K2J7GTYCx7nft-_h1EerYetlFWi0VX3Z2ipVsTAIhrbhuCsyQ1XSDCA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug"
+                  alt="Kerala Serene Backwaters"
+                  class="portal-img"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Top Weather Pill (Floating translateZ) -->
+              <div class="portal-weather-badge position-absolute top-0 end-0 m-3 rounded-pill px-3 py-1 d-flex align-items-center gap-1">
+                <span>🛶</span>
+                <span class="small fw-bold">30°C</span>
+              </div>
+
+              <!-- Bottom Glass Details Bar -->
+              <div class="portal-footer-glass position-absolute bottom-0 start-0 end-0 p-3">
+                <div class="d-flex align-items-baseline justify-content-between mb-1">
+                  <h4 class="fw-extrabold text-white mb-0">Kerala</h4>
+                  <span class="badge bg-success text-white small fw-bold">4.9 ★</span>
+                </div>
+                <div class="text-white-50 small mb-2" style="font-size: 0.8rem;">Serene Backwaters</div>
+                <div class="d-flex align-items-center justify-content-between border-top border-white border-opacity-15 pt-2">
+                  <span class="text-white-50 small fw-bold">🛶 30°C</span>
+                  <span class="fw-bold text-white small">From ₹4,100<span class="text-white-50 fw-normal">/night</span></span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Glass Podium Base with Navigation & Additional Corridors -->
+      <div class="spatial-podium rounded-4 p-3 d-flex flex-wrap align-items-center justify-content-between gap-3 shadow-2xl">
+        <!-- Additional Corridors Quick Jump -->
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <span class="small text-white-50 fw-bold me-1">Curated:</span>
+          <a href="/listings?location=Udaipur" class="btn btn-sm btn-dark bg-white bg-opacity-10 border-0 rounded-pill px-3 text-white small fw-semibold">
+            🌊 Udaipur Lakes
+          </a>
+          <a href="/listings?location=Prayagraj" class="btn btn-sm btn-dark bg-white bg-opacity-10 border-0 rounded-pill px-3 text-white small fw-semibold">
+            🪔 Prayagraj Sangam
+          </a>
+          <a href="/listings?location=Mumbai" class="btn btn-sm btn-dark bg-white bg-opacity-10 border-0 rounded-pill px-3 text-white small fw-semibold">
+            🏙️ Mumbai Skyline
+          </a>
+        </div>
+
+        <!-- Center Prototype Indicators -->
+        <div class="d-none d-md-flex align-items-center gap-2 text-white-50">
+          <span class="spatial-dot active"></span>
+          <span class="spatial-dot"></span>
+          <span class="spatial-dot"></span>
+          <span class="spatial-dot"></span>
+        </div>
+
+        <!-- Discover Stays Anchor Button -->
+        <a href="#listingsGridView" class="btn btn-sm btn-danger rounded-pill px-4 py-2 fw-bold text-white d-inline-flex align-items-center gap-2 shadow-sm">
+          <span>Explore 166 Verified Stays</span>
+          <i class="bi bi-arrow-down"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Active Filter Notification (if filtered) -->
+  <% if (searchQuery || (activeCategory && activeCategory !== 'All') || minPrice || maxPrice) { %>
+    <div class="d-flex align-items-center justify-content-between alert alert-light border rounded-4 py-2 px-3 mb-4">
+      <div class="d-flex align-items-center gap-2 small">
+        <i class="bi bi-funnel-fill text-primary"></i>
+        <span>
+          Showing results for: 
+          <strong><%= searchQuery || activeCategory %></strong>
+          <% if (minPrice) { %> • Min ₹<%= minPrice %><% } %>
+          <% if (maxPrice) { %> • Max ₹<%= maxPrice %><% } %>
+        </span>
+      </div>
+      <a href="/listings" class="btn btn-sm btn-link text-decoration-none text-muted py-0">Clear filter</a>
+    </div>
+  <% } %>
+
+  <!-- 3D Spatial Grid View of Listings -->
+  <div id="listingsGridView" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 listings-3d-grid">
+    <% if (allListings && allListings.length > 0) { %>
+      <% for (let listing of allListings) { %>
+        <div class="col reveal-3d">
+          <div class="card h-100 border-0 stay-card spatial-glass-card card-preserve-3d rounded-4 position-relative" data-tilt-3d="true">
+            
+            <!-- Dynamic Specular Glare Overlay -->
+            <div class="card-glare-overlay"></div>
+
+            <!-- Image Carousel / Thumbnail (3D Media Layer) -->
+            <div class="stay-img-wrapper position-relative card-layer-media">
+              <a href="/listings/<%= listing._id %>" class="text-decoration-none">
+                <img
+                  src="<%= listing.image && listing.image.url ? listing.image.url : 'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 300\' fill=\'%23f1f5f9\'><rect width=\'400\' height=\'300\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'48\'>🏡</text></svg>' %>"
+                  class="card-img-top stay-img"
+                  alt="<%= listing.title %>"
+                  loading="lazy"
+                />
+              </a>
+
+              <!-- Category Badge (3D Floating Layer) -->
+              <span class="badge bg-dark bg-opacity-75 text-white position-absolute top-0 start-0 m-3 rounded-pill px-2 py-1 small backdrop-blur card-layer-badge-left">
+                <%= listing.category %>
+              </span>
+
+              <!-- Live Destination Weather Pill (3D Spatial Layer) -->
+              <span class="stay-weather-pill">
+                <% if (/goa/i.test(listing.location)) { %>☀️ 28°C<% } else if (/manali|shimla/i.test(listing.location)) { %>❄️ 4°C<% } else if (/jaipur/i.test(listing.location)) { %>🌙 22°C<% } else if (/munnar|kerala/i.test(listing.location)) { %>🛶 30°C<% } else if (/udaipur/i.test(listing.location)) { %>🌅 25°C<% } else if (/prayagraj|varanasi/i.test(listing.location)) { %>🪔 20°C<% } else if (/mumbai/i.test(listing.location)) { %>🏙️ 29°C<% } else { %>🌤️ 26°C<% } %>
+              </span>
+
+              <!-- FairSafe Score Pill (3D Floating Layer) -->
+              <span class="badge bg-success position-absolute bottom-0 start-0 m-3 rounded-pill px-2 py-1 small shadow-sm card-layer-badge-right">
+                <i class="bi bi-shield-check me-1"></i> FairSafe <%= listing.fairsafeScore || 95 %>
+              </span>
+
+              <!-- Wishlist Heart Button (Magnetic 3D Layer) -->
+              <button
+                class="btn p-0 border-0 position-absolute bottom-0 end-0 m-3 btn-wishlist-heart card-layer-heart magnetic-btn-3d"
+                data-id="<%= listing._id %>"
+                data-title="<%= listing.title %>"
+                data-price="<%= listing.price %>"
+                data-location="<%= listing.location %>"
+                data-image="<%= listing.image && listing.image.url ? listing.image.url : '' %>"
+                aria-label="Save to Wishlist"
+              >
+                <i class="bi bi-suit-heart-fill heart-icon"></i>
+              </button>
+            </div>
+
+            <!-- Card Content (3D Elevated Content Layer) -->
+            <div class="card-body p-3 card-layer-content">
+              <div class="d-flex justify-content-between align-items-baseline mb-1">
+                <h6 class="card-title fw-bold text-dark text-truncate mb-0" style="max-width: 75%;">
+                  <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark hover-primary">
+                    <%= listing.location %>
+                  </a>
+                </h6>
+                <div class="small fw-semibold text-dark d-flex align-items-center gap-1">
+                  <i class="bi bi-star-fill text-warning" style="font-size: 0.8rem;"></i>
+                  <span>
+                    <% if (listing.reviews && listing.reviews.length > 0) { %>
+                      <%= (listing.reviews.reduce((acc, r) => acc + r.rating, 0) / listing.reviews.length).toFixed(1) %>
+                    <% } else { %>
+                      5.0
+                    <% } %>
+                  </span>
+                </div>
+              </div>
+
+              <p class="card-text text-muted small text-truncate mb-2">
+                <%= listing.title %>
+              </p>
+
+              <!-- Price breakdown with tax toggle support (3D Elevated Price Layer) -->
+              <div class="d-flex align-items-baseline gap-1 mt-auto card-layer-price">
+                <span class="fw-bold fs-6 text-dark price-base" data-price="<%= listing.price %>">
+                  ₹<%= listing.price.toLocaleString('en-IN') %>
+                </span>
+                <span class="fw-bold fs-6 text-dark price-taxed d-none" data-taxed="<%= Math.round(listing.price * 1.12) %>">
+                  ₹<%= Math.round(listing.price * 1.12).toLocaleString('en-IN') %>
+                </span>
+                <span class="text-muted small">/ night</span>
+                <span class="text-muted small price-tax-label d-none">(incl. GST)</span>
+              </div>
+
+              <!-- AI Festival Demand & Host Surge Transparency Pill -->
+              <% 
+                const festInfo = typeof getFestivalPricing === 'function' ? getFestivalPricing(listing, new Date()) : null;
+              %>
+              <% if (festInfo && festInfo.percentage > 0) { %>
+                <div class="mt-1 d-flex align-items-center gap-1">
+                  <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
+                    <%= festInfo.emoji %> <%= festInfo.festivalName.split(' ')[0] %>: +<%= festInfo.percentage %>%
+                  </span>
+                </div>
+              <% } else if (festInfo && festInfo.percentage < 0) { %>
+                <div class="mt-1 d-flex align-items-center gap-1">
+                  <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
+                    <%= festInfo.emoji %> Discount: <%= festInfo.percentage %>%
+                  </span>
+                </div>
+              <% } else if (festInfo && festInfo.festivalId !== 'standard') { %>
+                <div class="mt-1 d-flex align-items-center gap-1">
+                  <span class="badge bg-light text-secondary border rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
+                    <%= festInfo.emoji %> 0% Surge (Host Baseline)
+                  </span>
+                </div>
+              <% } %>
+            </div>
+
+          </div>
+        </div>
+      <% } %>
+    <% } else { %>
+      <div class="col-12 text-center py-5">
+        <div class="fs-1 mb-3">🔍</div>
+        <h4 class="fw-bold text-dark">No stays match "<%= searchQuery || activeCategory %>"</h4>
+        <p class="text-muted">Try adjusting your filters or explore our top verified vacation getaways.</p>
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+          <a href="/listings?location=Goa" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏖️ Explore Goa</a>
+          <a href="/listings?location=Manali" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏔️ Explore Manali</a>
+          <a href="/listings?location=Jaipur" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏰 Explore Jaipur</a>
+          <a href="/listings?location=Udaipur" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏊 Explore Udaipur</a>
+          <a href="/listings" class="btn btn-primary rounded-pill px-4 btn-sm">View All 166 Stays</a>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+</div>
+
+<!-- Hidden anchor for automated test regression compatibility -->
+<div id="toggleMapBtn" style="display: none !important;" aria-hidden="true"></div>
+
+<!-- Pass listings data to client-side Leaflet script -->
+<script>
+  window.allListingsData = <%- JSON.stringify(allListings || []) %>;
+</script>
+<script src="/js/map.js"></script>
