@@ -30,31 +30,27 @@ const userRouter = require('./backend/routes/users');
 const aiRouter = require('./backend/routes/ai');
 const apiRouter = require('./backend/routes/api');
 
-const atlasUri = process.env.ATLAS_URI || process.env.MONGO_URL;
-const localDbUrl = 'mongodb://127.0.0.1:27017/fairstay';
-let activeDbUrl = localDbUrl;
+const dbUrl = process.env.ATLAS_URI || process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/fairstay';
 
 // Connect to MongoDB with automatic fallback
 main();
 
 async function main() {
-  if (atlasUri && atlasUri.startsWith('mongodb+srv://')) {
+  if (dbUrl.startsWith('mongodb+srv://') || dbUrl.includes('@')) {
     try {
-      await mongoose.connect(atlasUri, { serverSelectionTimeoutMS: 3500 });
-      activeDbUrl = atlasUri;
+      await mongoose.connect(dbUrl, { serverSelectionTimeoutMS: 8000 });
       console.log('✅ Connected to MongoDB Atlas Cloud successfully.');
       return;
     } catch (err) {
-      console.warn('⚠️ MongoDB Atlas SRV unreachable. Falling back to local MongoDB:', err.message);
+      console.warn('⚠️ MongoDB Atlas connection error. Falling back to local MongoDB:', err.message);
     }
   }
 
   try {
-    await mongoose.connect(localDbUrl);
-    activeDbUrl = localDbUrl;
+    await mongoose.connect('mongodb://127.0.0.1:27017/fairstay');
     console.log('✅ Connected to local MongoDB database.');
   } catch (err) {
-    console.error('❌ MongoDB Connection Error:', err);
+    console.error('❌ MongoDB Connection Error:', err.message);
   }
 }
 
@@ -69,10 +65,13 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'frontend', 'public')));
 
-// Mongo Session Store with local reliability
+// Mongo Session Store using the primary database
 const store = MongoStore.create({
-  mongoUrl: localDbUrl,
+  mongoUrl: dbUrl,
   touchAfter: 24 * 3600,
+  crypto: {
+    secret: process.env.SESSION_SECRET || 'fairstay_sacred_secret_key_2026',
+  },
 });
 
 store.on('error', (err) => {
