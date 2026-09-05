@@ -27,7 +27,10 @@ if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
  * Send 6-digit Account Approval Code (OTP) to authentic Gmail
  */
 async function sendVerificationOtpEmail(recipientEmail, otp) {
-  console.log(`[FairStay Mailer] Account Approval OTP for ${recipientEmail}: ${otp}`);
+  console.log('====================================================');
+  console.log(`🔑 [FairStay OTP DISPATCH] -> To: ${recipientEmail}`);
+  console.log(`🔑 [APPROVAL CODE]: >>> ${otp} <<< (Valid for 15 mins)`);
+  console.log('====================================================');
 
   if (!transporter) {
     console.log(`[FairStay Mailer (Simulated)]: Sent OTP ${otp} to ${recipientEmail}`);

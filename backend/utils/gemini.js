@@ -82,7 +82,7 @@ async function parseNaturalLanguageSearch(query) {
     try {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({
-        model: 'gemini-3.6-flash',
+        model: 'gemini-1.5-flash',
         generationConfig: { responseMimeType: 'application/json' },
       });
 
@@ -173,7 +173,7 @@ async function generatePilgrimChatResponse(message, history = []) {
     try {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({
-        model: 'gemini-3.6-flash',
+        model: 'gemini-1.5-flash',
         systemInstruction: TRAVEL_SYSTEM_PROMPT,
       });
 
@@ -263,7 +263,7 @@ async function predictFestivalPriceAI({ listing = null, destination = 'Goa', fes
   if (process.env.GEMINI_API_KEY) {
     try {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
+      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
       const prompt = `You are the FairStay Dynamic AI Festival & Vacation Pricing Engine.
 Pricing adjustments depend directly on each individual host's policy and festive demand.
