@@ -69,9 +69,6 @@ app.use(express.static(path.join(__dirname, 'frontend', 'public')));
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 3600,
-  crypto: {
-    secret: process.env.SESSION_SECRET || 'fairstay_sacred_secret_key_2026',
-  },
 });
 
 store.on('error', (err) => {
