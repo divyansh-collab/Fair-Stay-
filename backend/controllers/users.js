@@ -192,10 +192,14 @@ module.exports.resendVerificationOtp = async (req, res) => {
     user.verificationOtpExpires = new Date(Date.now() + 15 * 60 * 1000);
     await user.save();
 
-    await sendVerificationOtpEmail(cleanEmail, otp);
+    const emailSent = await sendVerificationOtpEmail(cleanEmail, otp);
 
     req.session.pendingEmail = cleanEmail;
-    req.flash('success', `A fresh 6-digit verification code has been sent to ${cleanEmail}.`);
+    if (emailSent) {
+      req.flash('success', `A fresh 6-digit verification code has been sent to ${cleanEmail}.`);
+    } else {
+      req.flash('info', `Notice: Cloud SMTP is restricted on free cloud tiers. Your fresh approval code is: ${otp}`);
+    }
     req.session.save(() => res.redirect('/verify-email'));
   } catch (err) {
     req.flash('error', err.message);
@@ -218,23 +222,30 @@ module.exports.renderLogin = (req, res) => {
   res.render('users/login.ejs');
 };
 
-module.exports.login = (req, res) => {
+module.exports.login = async (req, res) => {
   // Check if account is verified
   if (req.user && !req.user.emailVerified && !req.user.isAdmin) {
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     req.user.verificationOtp = otp;
     req.user.verificationOtpExpires = new Date(Date.now() + 15 * 60 * 1000);
-    req.user.save();
+    await req.user.save();
 
-    sendVerificationOtpEmail(req.user.email, otp);
+    const emailSent = await sendVerificationOtpEmail(req.user.email, otp);
 
     const pendingEmail = req.user.email;
     req.logout(() => {
       req.session.pendingEmail = pendingEmail;
-      req.flash(
-        'warning',
-        `Your account requires Gmail verification. We've sent a 6-digit approval code to ${pendingEmail}.`
-      );
+      if (emailSent) {
+        req.flash(
+          'warning',
+          `Your account requires Gmail verification. We've sent a 6-digit approval code to ${pendingEmail}.`
+        );
+      } else {
+        req.flash(
+          'info',
+          `Notice: Cloud SMTP is restricted on free cloud tiers. Your 6-digit approval code is: ${otp}`
+        );
+      }
       req.session.save(() => res.redirect('/verify-email'));
     });
     return;
