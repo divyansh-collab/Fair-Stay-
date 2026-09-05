@@ -17,6 +17,18 @@
           </p>
         </div>
 
+        <% if (typeof fallbackOtp !== 'undefined' && fallbackOtp) { %>
+          <div class="alert alert-info border-0 rounded-4 shadow-sm p-3 mb-4 text-center">
+            <div class="small fw-semibold text-dark mb-1">
+              <i class="bi bi-shield-check text-primary me-1"></i> Cloud Sandbox Approval Code
+            </div>
+            <div class="fs-3 fw-bold text-danger my-1 font-monospace" style="letter-spacing: 0.25em;"><%= fallbackOtp %></div>
+            <button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3 mt-1 fw-semibold" onclick="document.getElementById('otpInput').value = '<%= fallbackOtp %>'; document.getElementById('otpInput').focus();">
+              <i class="bi bi-magic me-1"></i> Auto-fill Code
+            </button>
+          </div>
+        <% } %>
+
         <!-- OTP Verification Form -->
         <form action="/verify-email-otp" method="POST" class="needs-validation" novalidate id="otpForm">
           <input type="hidden" name="email" value="<%= email %>" />

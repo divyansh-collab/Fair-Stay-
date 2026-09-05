@@ -53,6 +53,10 @@ async function sendRawEmail({ to, subject, html, text }) {
         return true;
       }
       console.warn(`[Resend API Error]: ${JSON.stringify(data)}`);
+      // If Resend failed (e.g. 403 free tier recipient restriction), return false immediately
+      if (res.status === 403 || res.status === 422) {
+        return false;
+      }
     } catch (err) {
       console.warn(`[Resend HTTP Error]: ${err.message}`);
     }

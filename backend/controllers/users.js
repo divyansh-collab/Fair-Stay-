@@ -92,11 +92,13 @@ module.exports.signup = async (req, res, next) => {
     // Store pending email in session and require OTP before approval
     req.session.pendingEmail = cleanEmail;
     if (emailSent) {
+      delete req.session.fallbackOtp;
       req.flash(
         'success',
         `Approval code sent! We've sent a 6-digit verification code to ${cleanEmail}. Enter it below to activate your account.`
       );
     } else {
+      req.session.fallbackOtp = otp;
       req.flash(
         'info',
         `Notice: Cloud SMTP is restricted on free cloud tiers. Your 6-digit approval code is: ${otp}`
@@ -118,7 +120,8 @@ module.exports.renderVerifyEmail = (req, res) => {
     req.flash('error', 'Please sign up or log in first.');
     return res.redirect('/signup');
   }
-  res.render('users/verify-email.ejs', { email });
+  const fallbackOtp = req.session.fallbackOtp || null;
+  res.render('users/verify-email.ejs', { email, fallbackOtp });
 };
 
 module.exports.verifyEmailOtp = async (req, res, next) => {
@@ -139,13 +142,15 @@ module.exports.verifyEmailOtp = async (req, res, next) => {
     }
 
     if (user.emailVerified) {
-      req.flash('success', 'Your account is already verified! Please log in.');
+      delete req.session.pendingEmail;
+      delete req.session.fallbackOtp;
+      req.flash('info', 'Your email is already verified. Please log in.');
       return res.redirect('/login');
     }
 
     if (!user.verificationOtp || user.verificationOtp !== cleanOtp) {
       req.flash('error', 'Invalid 6-digit verification code. Please check your Gmail inbox and try again.');
-      return res.render('users/verify-email.ejs', { email: cleanEmail });
+      return res.render('users/verify-email.ejs', { email: cleanEmail, fallbackOtp: req.session.fallbackOtp || null });
     }
 
     if (user.verificationOtpExpires && user.verificationOtpExpires < Date.now()) {
@@ -160,6 +165,7 @@ module.exports.verifyEmailOtp = async (req, res, next) => {
     await user.save();
 
     delete req.session.pendingEmail;
+    delete req.session.fallbackOtp;
 
     // Log the user in
     req.login(user, (err) => {
@@ -196,8 +202,10 @@ module.exports.resendVerificationOtp = async (req, res) => {
 
     req.session.pendingEmail = cleanEmail;
     if (emailSent) {
+      delete req.session.fallbackOtp;
       req.flash('success', `A fresh 6-digit verification code has been sent to ${cleanEmail}.`);
     } else {
+      req.session.fallbackOtp = otp;
       req.flash('info', `Notice: Cloud SMTP is restricted on free cloud tiers. Your fresh approval code is: ${otp}`);
     }
     req.session.save(() => res.redirect('/verify-email'));
@@ -213,6 +221,7 @@ module.exports.changeSignupEmail = async (req, res) => {
     // Delete unverified pending user so they can start fresh
     await User.deleteOne({ email: pendingEmail, emailVerified: false });
     delete req.session.pendingEmail;
+    delete req.session.fallbackOtp;
   }
   req.flash('info', 'Please sign up with your real, active Gmail address.');
   res.redirect('/signup');
@@ -236,11 +245,13 @@ module.exports.login = async (req, res) => {
     req.logout(() => {
       req.session.pendingEmail = pendingEmail;
       if (emailSent) {
+        delete req.session.fallbackOtp;
         req.flash(
           'warning',
           `Your account requires Gmail verification. We've sent a 6-digit approval code to ${pendingEmail}.`
         );
       } else {
+        req.session.fallbackOtp = otp;
         req.flash(
           'info',
           `Notice: Cloud SMTP is restricted on free cloud tiers. Your 6-digit approval code is: ${otp}`

@@ -1,12 +1,30 @@
 <% 
   const successMsg = (typeof success !== 'undefined' && success && success.length) ? success : (typeof locals !== 'undefined' && locals.success && locals.success.length ? locals.success : null);
   const errorMsg = (typeof error !== 'undefined' && error && error.length) ? error : (typeof locals !== 'undefined' && locals.error && locals.error.length ? locals.error : null);
+  const infoMsg = (typeof info !== 'undefined' && info && info.length) ? info : (typeof locals !== 'undefined' && locals.info && locals.info.length ? locals.info : null);
+  const warningMsg = (typeof warning !== 'undefined' && warning && warning.length) ? warning : (typeof locals !== 'undefined' && locals.warning && locals.warning.length ? locals.warning : null);
 %>
 
 <% if (successMsg) { %>
   <div class="alert alert-success alert-dismissible fade show d-flex align-items-center shadow-sm rounded-4 mb-3" role="alert">
     <i class="bi bi-check-circle-fill fs-5 me-2 text-success"></i>
     <div class="flex-grow-1"><%= successMsg %></div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (infoMsg) { %>
+  <div class="alert alert-info alert-dismissible fade show d-flex align-items-center shadow-sm rounded-4 mb-3" role="alert">
+    <i class="bi bi-info-circle-fill fs-5 me-2 text-info"></i>
+    <div class="flex-grow-1"><%= infoMsg %></div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (warningMsg) { %>
+  <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center shadow-sm rounded-4 mb-3" role="alert">
+    <i class="bi bi-exclamation-triangle-fill fs-5 me-2 text-warning"></i>
+    <div class="flex-grow-1"><%= warningMsg %></div>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% } %>
