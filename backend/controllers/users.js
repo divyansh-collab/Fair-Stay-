@@ -49,9 +49,13 @@ module.exports.signup = async (req, res, next) => {
         existingUser.verificationOtp = otp;
         existingUser.verificationOtpExpires = new Date(Date.now() + 15 * 60 * 1000);
         await existingUser.save();
-        await sendVerificationOtpEmail(cleanEmail, otp);
+        const emailSent = await sendVerificationOtpEmail(cleanEmail, otp);
         req.session.pendingEmail = cleanEmail;
-        req.flash('info', `This account is pending verification. We sent a fresh 6-digit approval code to ${cleanEmail}.`);
+        if (emailSent) {
+          req.flash('info', `This account is pending verification. We sent a fresh 6-digit approval code to ${cleanEmail}.`);
+        } else {
+          req.flash('info', `Account pending verification. Your 6-digit approval code is: ${otp}`);
+        }
         return req.session.save(() => res.redirect('/verify-email'));
       }
       req.flash('error', `This Gmail address (${cleanEmail}) is already registered. Please log in.`);
@@ -83,14 +87,21 @@ module.exports.signup = async (req, res, next) => {
     await User.register(newUser, password);
 
     // Send 6-digit OTP code to authentic Gmail inbox
-    await sendVerificationOtpEmail(cleanEmail, otp);
+    const emailSent = await sendVerificationOtpEmail(cleanEmail, otp);
 
     // Store pending email in session and require OTP before approval
     req.session.pendingEmail = cleanEmail;
-    req.flash(
-      'success',
-      `Approval code sent! We've sent a 6-digit verification code to ${cleanEmail}. Enter it below to activate your account.`
-    );
+    if (emailSent) {
+      req.flash(
+        'success',
+        `Approval code sent! We've sent a 6-digit verification code to ${cleanEmail}. Enter it below to activate your account.`
+      );
+    } else {
+      req.flash(
+        'info',
+        `Notice: Cloud SMTP is restricted on free cloud tiers. Your 6-digit approval code is: ${otp}`
+      );
+    }
     req.session.save((saveErr) => {
       if (saveErr) console.error('Session save error on signup:', saveErr);
       res.redirect('/verify-email');
