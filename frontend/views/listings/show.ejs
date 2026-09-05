@@ -52,38 +52,38 @@
   <!-- Interactive 5-Photo Bento Showcase (Airbnb Signature Luxury Layout) -->
   <% 
     const organicPhoto = listing.image && listing.image.url ? listing.image.url : 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80';
-    const photo2 = 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80';
-    const photo3 = 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80';
-    const photo4 = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80';
-    const photo5 = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80';
+    const photo2 = 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80';
+    const photo3 = 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80';
+    const photo4 = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80';
+    const photo5 = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80';
   %>
   <div class="photo-bento-grid mb-5 shadow-sm">
     <!-- Main Big Photo (Left) -->
-    <div class="photo-bento-item main-hero" onclick="openGalleryModal(0)">
+    <div class="photo-bento-item main-hero cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="0" onclick="openGalleryModal(0)" title="Click to view photo gallery">
       <img src="<%= organicPhoto %>" alt="<%= listing.title %>" id="mainHeroImg" />
-      <span class="badge bg-dark bg-opacity-75 text-white position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1 small">
+      <span class="badge bg-dark bg-opacity-75 text-white position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1 small backdrop-blur">
         <i class="bi bi-patch-check-fill text-success me-1"></i> Verified Stay
       </span>
     </div>
     <!-- Photo 2 (Top Right 1) -->
-    <div class="photo-bento-item" onclick="openGalleryModal(1)">
-      <img src="<%= photo2 %>" alt="Villa Architecture" loading="lazy" />
+    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="1" onclick="openGalleryModal(1)" title="Click to view Architecture & Grounds">
+      <img src="<%= photo2 %>" alt="Architecture & Grounds" loading="lazy" />
     </div>
     <!-- Photo 3 (Top Right 2) -->
-    <div class="photo-bento-item" onclick="openGalleryModal(2)">
-      <img src="<%= photo3 %>" alt="Master Bedroom" loading="lazy" />
+    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="2" onclick="openGalleryModal(2)" title="Click to view Master Suite & Bedroom">
+      <img src="<%= photo3 %>" alt="Master Suite & Bedroom" loading="lazy" />
     </div>
     <!-- Photo 4 (Bottom Right 1) -->
-    <div class="photo-bento-item" onclick="openGalleryModal(3)">
-      <img src="<%= photo4 %>" alt="Living Lounge" loading="lazy" />
+    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="3" onclick="openGalleryModal(3)" title="Click to view Living Lounge & Interiors">
+      <img src="<%= photo4 %>" alt="Living Lounge & Interiors" loading="lazy" />
     </div>
     <!-- Photo 5 (Bottom Right 2) -->
-    <div class="photo-bento-item" onclick="openGalleryModal(4)">
-      <img src="<%= photo5 %>" alt="Scenic Patio" loading="lazy" />
+    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="4" onclick="openGalleryModal(4)" title="Click to view Scenic Patio & Views">
+      <img src="<%= photo5 %>" alt="Scenic Patio & Views" loading="lazy" />
     </div>
 
     <!-- Show All Photos Button -->
-    <button class="btn btn-sm btn-show-all-photos rounded-pill px-3 py-2" onclick="openGalleryModal(0)">
+    <button class="btn btn-sm btn-show-all-photos rounded-pill px-3 py-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="0" onclick="openGalleryModal(0)">
       <i class="bi bi-grid-3x3-gap-fill me-1"></i> Show all 5 photos
     </button>
   </div>
@@ -557,31 +557,70 @@
      Modals: 1. Full Photo Lightbox, 2. All Amenities Modal, 3. Contact Host Modal, 4. Festival Predictor
      ========================================================================== -->
 
-<!-- 1. Photo Fullscreen Lightbox Modal -->
+<!-- 1. Photo Fullscreen Lightbox Modal (Airbnb Luxury Standard) -->
 <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
+  <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-lg-down">
     <div class="modal-content border-0 bg-dark text-white rounded-4 overflow-hidden shadow-2xl">
-      <div class="modal-header border-0 pb-0 d-flex justify-content-between">
-        <span class="badge bg-success rounded-pill px-3 py-1 small">
-          <i class="bi bi-shield-check me-1"></i> Verified Stays Photo Gallery
-        </span>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-4 text-center position-relative">
-        <img id="galleryModalImg" src="<%= organicPhoto %>" alt="<%= listing.title %>" class="img-fluid rounded-3 shadow-lg" style="max-height: 70vh; object-fit: contain;" />
-        
-        <!-- Lightbox Carousel Thumbs -->
-        <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap">
-          <img src="<%= organicPhoto %>" class="rounded-2 border cursor-pointer lightbox-thumb active" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= organicPhoto %>')" />
-          <img src="<%= photo2 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo2 %>')" />
-          <img src="<%= photo3 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo3 %>')" />
-          <img src="<%= photo4 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo4 %>')" />
-          <img src="<%= photo5 %>" class="rounded-2 border cursor-pointer lightbox-thumb" style="width: 60px; height: 45px; object-fit: cover;" onclick="setLightboxPhoto('<%= photo5 %>')" />
+      
+      <!-- Modal Header -->
+      <div class="modal-header border-0 px-4 pt-4 pb-2 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-success rounded-pill px-3 py-2 small">
+            <i class="bi bi-shield-check me-1"></i> Verified Stays Photo Gallery
+          </span>
+          <span class="badge bg-secondary-subtle text-white border border-secondary rounded-pill px-3 py-2 small font-monospace" id="galleryPhotoCounter">
+            1 / 5
+          </span>
         </div>
+        <button type="button" class="btn-close btn-close-white p-2" data-bs-dismiss="modal" aria-label="Close" onclick="closeGalleryModal()"></button>
       </div>
-      <div class="modal-footer border-0 justify-content-center p-3 text-white-50 small">
-        <%= listing.title %> • <%= listing.location %>
+
+      <!-- Modal Body (Hero Image + Previous/Next Arrows) -->
+      <div class="modal-body p-3 p-md-4 text-center position-relative d-flex flex-column align-items-center justify-content-center" style="min-height: 55vh;">
+        
+        <!-- Previous Arrow Button -->
+        <button type="button" class="btn btn-dark bg-opacity-75 border border-secondary rounded-circle p-2 text-white position-absolute start-0 top-50 translate-middle-y ms-2 ms-md-4 z-3 shadow" onclick="navigateGallery(-1)" aria-label="Previous Photo" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+          <i class="bi bi-chevron-left fs-4"></i>
+        </button>
+
+        <!-- Main Displayed Photo -->
+        <div class="position-relative w-100 d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+          <img
+            id="galleryModalImg"
+            src="<%= organicPhoto %>"
+            alt="<%= listing.title %>"
+            class="img-fluid rounded-3 shadow-2xl"
+            style="max-height: 68vh; max-width: 100%; object-fit: contain; transition: opacity 0.25s ease;"
+          />
+        </div>
+
+        <!-- Next Arrow Button -->
+        <button type="button" class="btn btn-dark bg-opacity-75 border border-secondary rounded-circle p-2 text-white position-absolute end-0 top-50 translate-middle-y me-2 me-md-4 z-3 shadow" onclick="navigateGallery(1)" aria-label="Next Photo" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+          <i class="bi bi-chevron-right fs-4"></i>
+        </button>
+
+        <!-- Photo Caption -->
+        <div id="galleryPhotoCaption" class="text-white-50 small mt-2 fw-semibold">
+          Main Verified Stay & Space
+        </div>
+
+        <!-- Lightbox Carousel Thumbnails -->
+        <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap" id="galleryThumbsContainer">
+          <img src="<%= organicPhoto %>" class="rounded-2 border cursor-pointer lightbox-thumb active border-primary border-3" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(0)" alt="Thumb 1" />
+          <img src="<%= photo2 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(1)" alt="Thumb 2" />
+          <img src="<%= photo3 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(2)" alt="Thumb 3" />
+          <img src="<%= photo4 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(3)" alt="Thumb 4" />
+          <img src="<%= photo5 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(4)" alt="Thumb 5" />
+        </div>
+
       </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer border-0 justify-content-between px-4 py-3 text-white-50 small">
+        <span><%= listing.title %> • <%= listing.location %>, <%= listing.country %></span>
+        <span class="d-none d-md-inline"><i class="bi bi-keyboard me-1"></i> Use ← / → arrow keys to browse, Esc to close</span>
+      </div>
+
     </div>
   </div>
 </div>
@@ -816,32 +855,101 @@
   window.festivalMultiplier = 1.0;
   window.organicPhoto = <%- JSON.stringify(organicPhoto) %>;
 
+  const GALLERY_PHOTOS = [
+    { url: "<%- organicPhoto %>", title: "Main Verified Stay & Space" },
+    { url: "<%- photo2 %>", title: "Architecture & Grounds" },
+    { url: "<%- photo3 %>", title: "Master Suite & Bedroom" },
+    { url: "<%- photo4 %>", title: "Living Lounge & Comfort" },
+    { url: "<%- photo5 %>", title: "Scenic Patio & Views" }
+  ];
+
+  let currentGalleryIndex = 0;
+
   function openGalleryModal(index) {
-    const photos = [
-      "<%- organicPhoto %>",
-      "<%- photo2 %>",
-      "<%- photo3 %>",
-      "<%- photo4 %>",
-      "<%- photo5 %>"
-    ];
-    setLightboxPhoto(photos[index || 0]);
+    const idx = (index !== undefined && !isNaN(index)) ? Number(index) : 0;
+    setLightboxPhotoByIndex(idx);
     const modalEl = document.getElementById('galleryModal');
-    if (modalEl && window.bootstrap) {
+    if (!modalEl) return;
+
+    if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
       const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
       modal.show();
+    } else {
+      modalEl.classList.add('show');
+      modalEl.style.display = 'block';
+      modalEl.setAttribute('aria-modal', 'true');
+      modalEl.removeAttribute('aria-hidden');
+      document.body.classList.add('modal-open');
     }
   }
 
-  function setLightboxPhoto(url) {
+  function closeGalleryModal() {
+    const modalEl = document.getElementById('galleryModal');
+    if (modalEl) {
+      if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+        const inst = bootstrap.Modal.getInstance(modalEl);
+        if (inst) inst.hide();
+      }
+      modalEl.classList.remove('show');
+      modalEl.style.display = 'none';
+      modalEl.setAttribute('aria-hidden', 'true');
+      modalEl.removeAttribute('aria-modal');
+    }
+    document.body.classList.remove('modal-open');
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) backdrop.remove();
+  }
+
+  function navigateGallery(direction) {
+    let nextIndex = currentGalleryIndex + direction;
+    if (nextIndex < 0) nextIndex = GALLERY_PHOTOS.length - 1;
+    if (nextIndex >= GALLERY_PHOTOS.length) nextIndex = 0;
+    setLightboxPhotoByIndex(nextIndex);
+  }
+
+  function setLightboxPhotoByIndex(index) {
+    if (index < 0 || index >= GALLERY_PHOTOS.length) index = 0;
+    currentGalleryIndex = index;
+    const photo = GALLERY_PHOTOS[index];
+
     const img = document.getElementById('galleryModalImg');
-    if (img) img.src = url;
-    document.querySelectorAll('.lightbox-thumb').forEach(thumb => {
-      if (thumb.src === url) {
-        thumb.classList.add('border-primary', 'border-2');
+    const counter = document.getElementById('galleryPhotoCounter');
+    const caption = document.getElementById('galleryPhotoCaption');
+
+    if (img && photo) {
+      img.style.opacity = '0.35';
+      img.src = photo.url;
+      img.onload = () => { img.style.opacity = '1'; };
+      setTimeout(() => { img.style.opacity = '1'; }, 200);
+    }
+    if (counter) counter.textContent = `${index + 1} / ${GALLERY_PHOTOS.length}`;
+    if (caption && photo) caption.textContent = photo.title;
+
+    const thumbs = document.querySelectorAll('.lightbox-thumb');
+    thumbs.forEach((thumb, i) => {
+      if (i === index) {
+        thumb.classList.add('active', 'border-primary', 'border-3');
+        thumb.classList.remove('opacity-75');
       } else {
-        thumb.classList.remove('border-primary', 'border-2');
+        thumb.classList.remove('active', 'border-primary', 'border-3');
+        thumb.classList.add('opacity-75');
       }
     });
   }
+
+  // Keyboard navigation
+  window.addEventListener('keydown', function (e) {
+    const modalEl = document.getElementById('galleryModal');
+    if (modalEl && (modalEl.classList.contains('show') || modalEl.style.display === 'block')) {
+      if (e.key === 'ArrowLeft') navigateGallery(-1);
+      if (e.key === 'ArrowRight') navigateGallery(1);
+      if (e.key === 'Escape') closeGalleryModal();
+    }
+  });
+
+  window.openGalleryModal = openGalleryModal;
+  window.closeGalleryModal = closeGalleryModal;
+  window.navigateGallery = navigateGallery;
+  window.setLightboxPhotoByIndex = setLightboxPhotoByIndex;
 </script>
 <script src="/js/show-page.js"></script>

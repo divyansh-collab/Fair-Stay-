@@ -1164,6 +1164,22 @@ p, .lh-lg {
   color: #fff;
 }
 
+/* Lightbox Modal Thumbnails & Navigation */
+.lightbox-thumb {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lightbox-thumb:hover {
+  transform: translateY(-2px) scale(1.05);
+  opacity: 1 !important;
+}
+
+.lightbox-thumb.active {
+  box-shadow: 0 0 0 2px #ff5a3c, 0 4px 14px rgba(255, 90, 60, 0.45);
+  opacity: 1 !important;
+}
+
 /* ==========================================================================
    Luxury Sticky Reservation Card
    ========================================================================== */

@@ -381,13 +381,15 @@
      4. 100% Organic Google Places Photo Lightbox Modal
      ========================================================================== */
   function initGalleryModal() {
-    window.openGalleryModal = function () {
-      const modalEl = document.getElementById('galleryModal');
-      if (modalEl && window.bootstrap) {
-        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-        modal.show();
-      }
-    };
+    // Delegate click handlers to all photo items & button
+    document.querySelectorAll('.photo-bento-item, .btn-show-all-photos').forEach((item) => {
+      item.addEventListener('click', function (e) {
+        const idx = parseInt(this.getAttribute('data-gallery-index'), 10) || 0;
+        if (typeof window.openGalleryModal === 'function') {
+          window.openGalleryModal(idx);
+        }
+      });
+    });
   }
 
   /* ==========================================================================
