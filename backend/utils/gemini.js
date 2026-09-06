@@ -250,14 +250,17 @@ All stays come with verified amenities and our FairSafe™ zero-surge price guar
 
 /**
  * AI-Powered Dynamic Festival Price Predictor & Explanation Engine
+ * Evaluates city-specific local seasonality, weather, and regional event calendars.
  */
 async function predictFestivalPriceAI({ listing = null, destination = 'Goa', festival = '', checkInDate = null, basePrice = 4000, listingTitle = '' }) {
-  const { getFestivalPricing, calculateFestivalImpact } = require('./festivals');
+  const { getFestivalPricing, calculateFestivalImpact, getDestinationEvents } = require('./festivals');
 
   // 1. Calculate deterministic baseline from catalog & host policy
   const baselineFestival = getFestivalPricing(listing || destination, checkInDate, festival);
   const baselineImpact = calculateFestivalImpact(basePrice, baselineFestival);
   const hostName = baselineFestival.hostName || 'The Host';
+  const destinationName = baselineFestival.destination || destination || 'Leisure Destination';
+  const cityEvents = baselineFestival.availableEvents || getDestinationEvents(listing || destination);
 
   // 2. Query Google Gemini AI for contextual real-time analysis
   if (process.env.GEMINI_API_KEY) {
@@ -265,27 +268,31 @@ async function predictFestivalPriceAI({ listing = null, destination = 'Goa', fes
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-      const prompt = `You are the FairStay Dynamic AI Festival & Vacation Pricing Engine.
-Pricing adjustments depend directly on each individual host's policy and festive demand.
-Your job is to clearly inform the customer whether the price for THIS stay increases or decreases for this festival, the exact percentage change, and the reason.
+      const prompt = `You are FairStay's City-Centric AI Hospitality & Seasonal Pricing Engine.
+In leisure and tourist destinations (such as Goa, Jaipur, Manali, Kerala, Varanasi, Mumbai), hotel and villa pricing fluctuates strictly according to each city's local season, weather conditions, and regional event calendars (e.g. Jaipur Literature Festival & winter weddings in Jaipur, Sunburn & Goa Carnival in Goa, Kullu Winter Carnival & summer escape in Manali, Dev Deepawali in Varanasi), rather than generic national holidays.
 
-Details:
+Details for this stay:
 - Stay: "${listingTitle || (listing ? listing.title : 'Verified Stay')}"
-- Hosted By: "${hostName}"
-- Destination: "${destination}"
-- Festival: "${festival || baselineFestival.festivalName}"
-- Target Date: "${checkInDate || 'Upcoming holiday'}"
-- Normal Base Price: ₹${basePrice} / night
-- Host Calculated Percentage: ${baselineImpact.signedPercentage} (${baselineImpact.direction === 'higher' ? 'Increase' : baselineImpact.direction === 'lower' ? 'Discount' : 'No change'})
+- Destination / City: "${destinationName}"
+- Host: "${hostName}"
+- Local Season / Event: "${baselineFestival.festivalName}"
+- Event Window / Target Date: "${checkInDate || baselineFestival.dateRange || 'Seasonal Window'}"
+- Baseline Price: ₹${basePrice} / night
+- Host & Season Calculated Rate Impact: ${baselineImpact.signedPercentage} (${baselineImpact.direction === 'higher' ? 'High-demand season increase' : baselineImpact.direction === 'lower' ? 'Seasonal off-peak discount' : 'Standard seasonal rate'})
+- Destination Context: "${baselineFestival.explanation}"
+
+Your task:
+1. Explain specifically why ${destinationName}'s hospitality market and hotel occupancy fluctuates for "${baselineFestival.festivalName}" based on local tourism, city-specific programs/events, or seasonal weather.
+2. Provide a practical booking tip tailored specifically to visiting ${destinationName} during ${baselineFestival.festivalName}.
 
 Output valid JSON strictly with this schema:
 {
-  "festivalName": "Festival name with emoji (e.g., 🎄 Christmas & Year-End, 🪔 Diwali Festive Week, 🧵 Raksha Bandhan Weekend, 🎨 Holi Spring Break)",
-  "direction": "higher" | "lower" | "standard",
+  "festivalName": "${baselineFestival.festivalName}",
+  "direction": "${baselineImpact.direction}",
   "percentage": ${baselineImpact.percentage},
   "demandLevel": "${baselineImpact.demandLevel}",
-  "explanation": "Clear 2-sentence explanation telling the customer whether this listing's price increases or decreases due to the festival, stating the exact percentage change set by the host (e.g., The host has adjusted the rate by +${baselineImpact.percentage}% for Christmas in ${destination} due to high holiday demand, fully capped under FairSafe guarantee).",
-  "travelerTip": "1 practical booking tip for travelers"
+  "explanation": "2-sentence clear explanation stating why ${destinationName} rates change by ${baselineImpact.signedPercentage} for ${baselineFestival.festivalName} due to local event attendance, weather conditions, and hospitality room compression.",
+  "travelerTip": "1 practical booking or travel tip specifically for visiting ${destinationName} during ${baselineFestival.festivalName}."
 }`;
 
       const result = await model.generateContent(prompt);
@@ -310,8 +317,11 @@ Output valid JSON strictly with this schema:
         difference,
         demandLevel: parsed.demandLevel || baselineImpact.demandLevel,
         explanation: parsed.explanation || baselineImpact.explanation,
-        travelerTip: parsed.travelerTip || 'Book early to lock in your stay under FairStay’s FairSafe anti-surge guarantee.',
+        travelerTip: parsed.travelerTip || `Book early in ${destinationName} under FairStay's FairSafe anti-surge guarantee.`,
         customerComparison: baselineImpact.comparisonText,
+        cityKey: baselineFestival.cityKey || 'general',
+        destination: destinationName,
+        availableEvents: cityEvents,
       };
     } catch (err) {
       console.warn('[Gemini Festival Predictor] Fallback to deterministic engine:', err.message);
@@ -331,8 +341,11 @@ Output valid JSON strictly with this schema:
     difference: baselineImpact.difference,
     demandLevel: baselineImpact.demandLevel,
     explanation: baselineImpact.explanation,
-    travelerTip: 'Book early under the FairStay FairSafe™ guarantee to protect your rate against unexpected surges.',
+    travelerTip: `Book early in ${destinationName} under the FairStay FairSafe™ guarantee to protect your rate against unexpected surges.`,
     customerComparison: baselineImpact.comparisonText,
+    cityKey: baselineFestival.cityKey || 'general',
+    destination: destinationName,
+    availableEvents: cityEvents,
   };
 }
 

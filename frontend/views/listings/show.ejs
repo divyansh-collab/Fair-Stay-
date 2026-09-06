@@ -775,15 +775,25 @@
         
         <!-- Controls Row -->
         <div class="row g-3 mb-4 align-items-end">
-          <div class="col-md-7">
-            <label class="form-label small fw-bold text-dark mb-1">Select Season or Festive Holiday</label>
+          <div class="col-md-8">
+            <label class="form-label small fw-bold text-dark mb-1">
+              Select City Season or Local Event (<%= listing.location || 'Local Calendar' %>)
+            </label>
             <select class="form-select rounded-3 py-2" id="predictFestivalSelect">
-              <option value="christmas" selected>🎄 Christmas & Year-End Holidays (+25%)</option>
-              <option value="diwali">🪔 Diwali Festive Week (+30%)</option>
-              <option value="holi">🎨 Holi Spring Break (+20%)</option>
-              <option value="rakshabandhan">🧵 Raksha Bandhan Long Weekend (+18%)</option>
-              <option value="new_year">🎆 New Year's Eve Grand Peak (+35%)</option>
-              <option value="monsoon_discount">🌧️ Monsoon Off-Season Discount (-15%)</option>
+              <% if (typeof destinationEvents !== 'undefined' && destinationEvents && destinationEvents.length > 0) { %>
+                <% destinationEvents.forEach((ev, idx) => { %>
+                  <option value="<%= ev.id %>" <%= idx === 0 ? 'selected' : '' %>>
+                    <%= ev.emoji %> <%= ev.name %> (<%= ev.defaultPercentage >= 0 ? '+' : '' %><%= ev.defaultPercentage %>%)
+                  </option>
+                <% }); %>
+              <% } else { %>
+                <option value="christmas" selected>🎄 Christmas & Year-End Holidays (+25%)</option>
+                <option value="diwali">🪔 Diwali Festive Week (+30%)</option>
+                <option value="holi">🎨 Holi Spring Break (+20%)</option>
+                <option value="rakshabandhan">🧵 Raksha Bandhan Long Weekend (+18%)</option>
+                <option value="new_year">🎆 New Year's Eve Grand Peak (+35%)</option>
+                <option value="monsoon_discount">🌧️ Monsoon Off-Season Discount (-15%)</option>
+              <% } %>
             </select>
           </div>
         </div>
@@ -795,11 +805,17 @@
               <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1 mb-2">
                 <i class="bi bi-stars me-1"></i> Real-Time Demand Analysis
               </span>
-              <h4 class="fw-bold text-dark mb-0" id="predFestivalHeading">🎄 Christmas & Year-End Holidays</h4>
+              <h4 class="fw-bold text-dark mb-0" id="predFestivalHeading">
+                <%= (typeof destinationEvents !== 'undefined' && destinationEvents && destinationEvents.length > 0) ? (destinationEvents[0].emoji + ' ' + destinationEvents[0].name) : '🎄 Christmas & Year-End Holidays' %>
+              </h4>
             </div>
             <div class="text-md-end">
-              <div class="display-6 fw-bold text-danger" id="predPercentageBadge">+25%</div>
-              <small class="text-muted fw-semibold" id="predDemandLevel">High Seasonal Demand</small>
+              <div class="display-6 fw-bold <%= (typeof destinationEvents !== 'undefined' && destinationEvents && destinationEvents.length > 0 && destinationEvents[0].defaultPercentage < 0) ? 'text-success' : 'text-danger' %>" id="predPercentageBadge">
+                <%= (typeof destinationEvents !== 'undefined' && destinationEvents && destinationEvents.length > 0) ? ((destinationEvents[0].defaultPercentage >= 0 ? '+' : '') + destinationEvents[0].defaultPercentage + '%') : '+25%' %>
+              </div>
+              <small class="text-muted fw-semibold" id="predDemandLevel">
+                <%= (typeof destinationEvents !== 'undefined' && destinationEvents && destinationEvents.length > 0 && destinationEvents[0].defaultPercentage < 0) ? 'Seasonal Off-Peak' : 'High Seasonal Demand' %>
+              </small>
             </div>
           </div>
 
@@ -813,16 +829,45 @@
             </div>
             <div class="col-4">
               <div class="p-3 rounded-3 bg-white border h-100">
+                <% 
+                  const firstEvPct = (typeof destinationEvents !== 'undefined' && destinationEvents && destinationEvents.length > 0) ? destinationEvents[0].defaultPercentage : 25;
+                  const firstDiff = Math.round(listing.price * (firstEvPct / 100));
+                %>
                 <small class="text-muted d-block mb-1">Seasonal Impact</small>
-                <span class="fs-5 fw-bold text-danger" id="predPriceDiff">+₹<%= Math.round(listing.price * 0.25).toLocaleString('en-IN') %></span>
-                <span class="small text-muted d-block" id="predDiffPercent">(+25%)</span>
+                <span class="fs-5 fw-bold <%= firstDiff >= 0 ? 'text-danger' : 'text-success' %>" id="predPriceDiff">
+                  <%= firstDiff >= 0 ? '+' : '' %>₹<%= firstDiff.toLocaleString('en-IN') %>
+                </span>
+                <span class="small text-muted d-block" id="predDiffPercent">(<%= firstEvPct >= 0 ? '+' : '' %><%= firstEvPct %>%)</span>
               </div>
             </div>
             <div class="col-4">
               <div class="p-3 rounded-3 bg-primary text-white shadow-sm h-100">
+                <% const firstEff = listing.price + firstDiff; %>
                 <small class="text-white-50 d-block mb-1">Effective Rate</small>
-                <span class="fs-5 fw-bold" id="predEffectivePrice">₹<%= Math.round(listing.price * 1.25).toLocaleString('en-IN') %></span>
+                <span class="fs-5 fw-bold" id="predEffectivePrice">₹<%= firstEff.toLocaleString('en-IN') %></span>
                 <span class="small text-white-50 d-block">/ night</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Contextual Explanation & Tip -->
+          <div class="mb-3 p-3 rounded-3 bg-white border">
+            <div class="d-flex align-items-start gap-2 mb-2">
+              <span class="fs-5 text-primary">💡</span>
+              <div>
+                <strong class="d-block text-dark small">City Season & Event Dynamics:</strong>
+                <p class="small text-muted mb-0" id="predExplanationText">
+                  <%= (typeof destinationEvents !== 'undefined' && destinationEvents && destinationEvents.length > 0) ? destinationEvents[0].summary : 'AI analyzing seasonal travel demand and local event calendar...' %>
+                </p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-2 pt-2 border-top">
+              <span class="fs-6 text-warning">📌</span>
+              <div>
+                <strong class="d-block text-dark small" style="font-size: 0.78rem;">Traveler Insight:</strong>
+                <p class="small text-muted mb-0" id="predTravelerTip" style="font-size: 0.78rem;">
+                  Lock in this <%= listing.location || 'vacation' %> stay early under FairSafe™ zero-surge protection.
+                </p>
               </div>
             </div>
           </div>
@@ -852,6 +897,7 @@
   window.listingLocation = <%- JSON.stringify(listing.location) %>;
   window.listingPrice = <%= listing.price %>;
   window.activeFestival = <%- JSON.stringify(festivalData) %>;
+  window.destinationEvents = <%- JSON.stringify(typeof destinationEvents !== 'undefined' ? destinationEvents : []) %>;
   window.festivalMultiplier = 1.0;
   window.organicPhoto = <%- JSON.stringify(organicPhoto) %>;
 

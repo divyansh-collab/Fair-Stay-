@@ -1,5 +1,5 @@
 const { parseNaturalLanguageSearch, generatePilgrimChatResponse, predictFestivalPriceAI } = require('../utils/gemini');
-const { FESTIVALS_CATALOG } = require('../utils/festivals');
+const { FESTIVALS_CATALOG, getDestinationEvents } = require('../utils/festivals');
 const Listing = require('../models/listing');
 
 module.exports.smartSearch = async (req, res) => {
@@ -63,9 +63,14 @@ module.exports.predictFestivalPrice = async (req, res) => {
       listingTitle: listingTitle || '',
     });
 
+    const resolvedDestination = destination || (listing ? listing.location : 'Goa');
+    const cityEvents = getDestinationEvents(resolvedDestination);
+
     res.json({
       success: true,
       ...prediction,
+      destination: resolvedDestination,
+      availableEvents: cityEvents,
       availableFestivals: FESTIVALS_CATALOG.map((f) => ({
         id: f.id,
         name: f.name,

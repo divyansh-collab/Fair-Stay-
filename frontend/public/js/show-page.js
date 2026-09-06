@@ -264,8 +264,42 @@
 
     let lastPrediction = null;
 
-    // Dates mapped to major festivals for 1-click booking apply
+    // Dates mapped to major festivals & city seasons for 1-click booking apply
     const FESTIVAL_TARGET_DATES = {
+      // Goa
+      goa_sunburn: { checkIn: '2026-12-28', checkOut: '2027-01-01' },
+      goa_carnival: { checkIn: '2026-02-12', checkOut: '2026-02-16' },
+      goa_watersports: { checkIn: '2026-10-15', checkOut: '2026-10-18' },
+      goa_shigmo: { checkIn: '2026-03-18', checkOut: '2026-03-22' },
+      goa_monsoon: { checkIn: '2026-07-15', checkOut: '2026-07-18' },
+      // Jaipur & Rajasthan
+      jaipur_jlf: { checkIn: '2026-01-20', checkOut: '2026-01-24' },
+      jaipur_winter_palace: { checkIn: '2026-12-10', checkOut: '2026-12-14' },
+      jaipur_pushkar: { checkIn: '2026-11-04', checkOut: '2026-11-08' },
+      jaipur_teej: { checkIn: '2026-08-01', checkOut: '2026-08-04' },
+      jaipur_summer: { checkIn: '2026-05-15', checkOut: '2026-05-18' },
+      // Manali & Himachal
+      manali_winter_carnival: { checkIn: '2026-01-08', checkOut: '2026-01-12' },
+      manali_summer_escape: { checkIn: '2026-05-20', checkOut: '2026-05-24' },
+      manali_kullu_dussehra: { checkIn: '2026-10-14', checkOut: '2026-10-18' },
+      manali_apple_harvest: { checkIn: '2026-09-12', checkOut: '2026-09-16' },
+      manali_monsoon: { checkIn: '2026-07-25', checkOut: '2026-07-28' },
+      // Kerala
+      kerala_onam: { checkIn: '2026-08-28', checkOut: '2026-09-02' },
+      kerala_winter_backwaters: { checkIn: '2026-12-05', checkOut: '2026-12-09' },
+      kerala_monsoon_ayurveda: { checkIn: '2026-06-20', checkOut: '2026-06-24' },
+      // Mumbai & Coast
+      mumbai_ganeshotsav: { checkIn: '2026-09-08', checkOut: '2026-09-12' },
+      mumbai_monsoon_ghats: { checkIn: '2026-07-20', checkOut: '2026-07-24' },
+      mumbai_winter_coastal: { checkIn: '2026-12-15', checkOut: '2026-12-18' },
+      // Spiritual Corridor
+      varanasi_dev_deepawali: { checkIn: '2026-11-15', checkOut: '2026-11-18' },
+      varanasi_maha_shivratri: { checkIn: '2026-02-25', checkOut: '2026-02-28' },
+      prayagraj_magh_mela: { checkIn: '2026-01-20', checkOut: '2026-01-24' },
+      ayodhya_deepotsav: { checkIn: '2026-10-28', checkOut: '2026-10-31' },
+      rishikesh_yoga: { checkIn: '2026-03-05', checkOut: '2026-03-09' },
+      mathura_braj_holi: { checkIn: '2026-03-12', checkOut: '2026-03-16' },
+      // General National Holidays
       christmas: { checkIn: '2026-12-24', checkOut: '2026-12-27' },
       new_year: { checkIn: '2026-12-30', checkOut: '2027-01-02' },
       diwali: { checkIn: '2026-11-01', checkOut: '2026-11-04' },
@@ -276,6 +310,23 @@
       eid: { checkIn: '2026-04-10', checkOut: '2026-04-13' },
       monsoon_discount: { checkIn: '2026-07-15', checkOut: '2026-07-18' },
     };
+
+    function getTargetDates(festivalKey) {
+      if (FESTIVAL_TARGET_DATES[festivalKey]) return FESTIVAL_TARGET_DATES[festivalKey];
+      const ev = (window.destinationEvents || []).find((e) => e.id === festivalKey);
+      if (ev && ev.startMonth !== undefined && ev.startDay !== undefined) {
+        const yr = 2026;
+        const mm = String(ev.startMonth + 1).padStart(2, '0');
+        const dd = String(ev.startDay).padStart(2, '0');
+        const inDate = new Date(`${yr}-${mm}-${dd}`);
+        const outDate = new Date(inDate.getTime() + 3 * 24 * 60 * 60 * 1000);
+        return {
+          checkIn: `${yr}-${mm}-${dd}`,
+          checkOut: outDate.toISOString().split('T')[0],
+        };
+      }
+      return { checkIn: '2026-12-24', checkOut: '2026-12-27' };
+    }
 
     select.addEventListener('change', function () {
       if (this.value === 'custom_date') {
@@ -304,6 +355,7 @@
       const diffPercentEl = document.getElementById('predDiffPercent');
       const effectivePriceEl = document.getElementById('predEffectivePrice');
       const explanationEl = document.getElementById('predExplanationText');
+      const tipEl = document.getElementById('predTravelerTip');
 
       if (badge) badge.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span>';
 
@@ -339,6 +391,7 @@
         if (diffPercentEl) diffPercentEl.textContent = `(${data.signedPercentage} ${isSurge ? 'surge' : isDiscount ? 'discount' : 'change'})`;
         if (effectivePriceEl) effectivePriceEl.textContent = `₹${data.effectivePrice.toLocaleString('en-IN')}`;
         if (explanationEl) explanationEl.textContent = data.explanation;
+        if (tipEl && data.travelerTip) tipEl.textContent = data.travelerTip;
       } catch (err) {
         console.error('AI Prediction error:', err);
         if (badge) badge.textContent = '+25%';
@@ -348,7 +401,7 @@
     if (applyBtn) {
       applyBtn.addEventListener('click', function () {
         const festivalKey = select.value;
-        const targetDates = FESTIVAL_TARGET_DATES[festivalKey];
+        const targetDates = getTargetDates(festivalKey);
 
         const multiplier = lastPrediction
           ? 1 + (lastPrediction.percentage * (lastPrediction.direction === 'lower' ? -1 : 1)) / 100
@@ -373,8 +426,9 @@
       });
     }
 
-    // Trigger initial prediction for default selection (Christmas)
-    fetchPrediction('christmas', '');
+    // Trigger initial prediction using the city's top event
+    const initialFestival = select.value || (window.destinationEvents && window.destinationEvents[0] ? window.destinationEvents[0].id : 'christmas');
+    fetchPrediction(initialFestival, '');
   }
 
   /* ==========================================================================

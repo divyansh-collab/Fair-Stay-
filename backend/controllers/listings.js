@@ -112,8 +112,9 @@ module.exports.showListing = async (req, res) => {
   }
 
   // Compute seasonal pricing preview based on host policy
-  const { getFestivalPricing, FESTIVALS_CATALOG } = require('../utils/festivals');
+  const { getFestivalPricing, getDestinationEvents, FESTIVALS_CATALOG } = require('../utils/festivals');
   const festivalData = getFestivalPricing(listing, new Date());
+  const destinationEvents = getDestinationEvents(listing.location || 'India');
 
   // Compute average rating
   let avgRating = 0;
@@ -125,6 +126,7 @@ module.exports.showListing = async (req, res) => {
   res.render('listings/show.ejs', {
     listing,
     festivalData,
+    destinationEvents,
     festivalsCatalog: FESTIVALS_CATALOG,
     avgRating,
   });
