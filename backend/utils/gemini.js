@@ -322,6 +322,10 @@ Output valid JSON strictly with this schema:
         cityKey: baselineFestival.cityKey || 'general',
         destination: destinationName,
         availableEvents: cityEvents,
+        occupancyRate: baselineFestival.occupancyRate,
+        primaryDriver: baselineFestival.primaryDriver,
+        weatherIndex: baselineFestival.weatherIndex,
+        whyNotDiwali: baselineFestival.whyNotDiwali,
       };
     } catch (err) {
       console.warn('[Gemini Festival Predictor] Fallback to deterministic engine:', err.message);
@@ -346,6 +350,10 @@ Output valid JSON strictly with this schema:
     cityKey: baselineFestival.cityKey || 'general',
     destination: destinationName,
     availableEvents: cityEvents,
+    occupancyRate: baselineFestival.occupancyRate,
+    primaryDriver: baselineFestival.primaryDriver,
+    weatherIndex: baselineFestival.weatherIndex,
+    whyNotDiwali: baselineFestival.whyNotDiwali,
   };
 }
 

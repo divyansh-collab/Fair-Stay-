@@ -392,6 +392,16 @@
         if (effectivePriceEl) effectivePriceEl.textContent = `₹${data.effectivePrice.toLocaleString('en-IN')}`;
         if (explanationEl) explanationEl.textContent = data.explanation;
         if (tipEl && data.travelerTip) tipEl.textContent = data.travelerTip;
+
+        const occupancyEl = document.getElementById('predOccupancyRate');
+        const driverEl = document.getElementById('predPrimaryDriver');
+        const weatherEl = document.getElementById('predWeatherIndex');
+        const whyNotDiwaliEl = document.getElementById('predWhyNotDiwali');
+
+        if (occupancyEl && data.occupancyRate) occupancyEl.textContent = data.occupancyRate;
+        if (driverEl && data.primaryDriver) driverEl.textContent = data.primaryDriver;
+        if (weatherEl && data.weatherIndex) weatherEl.textContent = data.weatherIndex;
+        if (whyNotDiwaliEl && data.whyNotDiwali) whyNotDiwaliEl.textContent = data.whyNotDiwali;
       } catch (err) {
         console.error('AI Prediction error:', err);
         if (badge) badge.textContent = '+25%';

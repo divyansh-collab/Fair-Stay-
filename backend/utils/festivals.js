@@ -759,6 +759,18 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
     isSurgeCapped: percentage > 0,
     surgePercentage: percentage,
     availableEvents: cityEvents,
+    occupancyRate: matchedFestival && matchedFestival.occupancyRate
+      ? matchedFestival.occupancyRate
+      : (percentage > 0 ? '92%+ (Peak Compression)' : percentage < 0 ? '30% (Inventory Surplus)' : '65% (Balanced)'),
+    primaryDriver: matchedFestival && matchedFestival.primaryDriver
+      ? matchedFestival.primaryDriver
+      : (matchedFestival ? matchedFestival.summary : 'Local seasonal demand and city-specific event attendance.'),
+    weatherIndex: matchedFestival && matchedFestival.weatherIndex
+      ? matchedFestival.weatherIndex
+      : (percentage < 0 ? 'Off-season climate slowdown' : 'Pleasant travel weather'),
+    whyNotDiwali: matchedFestival && matchedFestival.whyNotDiwali
+      ? matchedFestival.whyNotDiwali
+      : 'National religious holidays see domestic travelers staying home for family pujas. Hotel compression in this leisure destination is strictly governed by local weather patterns and regional event calendars.',
   };
 }
 
