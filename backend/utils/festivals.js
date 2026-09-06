@@ -526,7 +526,12 @@ function getHostSpecificPercentage(listingOrObj, basePercentage) {
     return Number(listingOrObj.hostSurgePercentage);
   }
 
-  // 2. Otherwise, derive an individual host policy based on the unique property attributes
+  // 2. If base percentage is 0 (standard regular season / normal day), the surge is 0%!
+  if (basePercentage === 0) {
+    return 0;
+  }
+
+  // 3. Otherwise, derive an individual host policy based on the unique property attributes
   const idStr = String(listingOrObj._id || listingOrObj.id || listingOrObj.title || '');
   let hash = 0;
   for (let i = 0; i < idStr.length; i++) {
@@ -539,11 +544,13 @@ function getHostSpecificPercentage(listingOrObj, basePercentage) {
   // Some hosts offer promotional discounts (-5% to -10%)
   if (hash % 19 === 0) return -10;
 
+  // Discounts stay discounts
+  if (basePercentage < 0) return basePercentage;
+
   // Variety around the base percentage: e.g. base 35% -> 28%, 32%, 35%, 38%
   const offset = ((hash % 11) - 5); // -5 to +5
   const finalPercent = basePercentage + offset;
 
-  if (basePercentage < 0) return basePercentage; // discount stays discount
   return Math.max(5, Math.min(45, finalPercent));
 }
 

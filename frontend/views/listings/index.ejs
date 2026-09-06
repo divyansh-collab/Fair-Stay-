@@ -449,22 +449,22 @@
               <% 
                 const festInfo = typeof getFestivalPricing === 'function' ? getFestivalPricing(listing, new Date()) : null;
               %>
-              <% if (festInfo && festInfo.percentage > 0) { %>
+              <% if (festInfo && festInfo.festivalId !== 'standard' && festInfo.percentage > 0) { %>
                 <div class="mt-1 d-flex align-items-center gap-1">
                   <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
                     <%= festInfo.emoji %> <%= festInfo.festivalName.split(' ')[0] %>: +<%= festInfo.percentage %>%
                   </span>
                 </div>
-              <% } else if (festInfo && festInfo.percentage < 0) { %>
+              <% } else if (festInfo && festInfo.festivalId !== 'standard' && festInfo.percentage < 0) { %>
                 <div class="mt-1 d-flex align-items-center gap-1">
                   <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
                     <%= festInfo.emoji %> Discount: <%= festInfo.percentage %>%
                   </span>
                 </div>
-              <% } else if (festInfo && festInfo.festivalId !== 'standard') { %>
+              <% } else { %>
                 <div class="mt-1 d-flex align-items-center gap-1">
-                  <span class="badge bg-light text-secondary border rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
-                    <%= festInfo.emoji %> 0% Surge (Host Baseline)
+                  <span class="badge bg-light text-muted border rounded-pill" style="font-size: 0.68rem;" title="Standard regular baseline rate with 0% seasonal surge">
+                    ⚖️ Standard: 0% Surge
                   </span>
                 </div>
               <% } %>
