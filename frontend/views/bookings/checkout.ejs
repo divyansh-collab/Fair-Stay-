@@ -219,7 +219,7 @@
 
             <!-- GST / Taxes -->
             <div class="d-flex justify-content-between mb-2 text-muted small">
-              <span>Taxes & GST (12%)</span>
+              <span><%= typeof gstLabel !== 'undefined' ? gstLabel : 'Taxes & GST' %></span>
               <span class="text-dark fw-medium">₹<%= gst.toLocaleString('en-IN') %></span>
             </div>
 

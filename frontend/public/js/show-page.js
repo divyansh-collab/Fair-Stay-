@@ -204,16 +204,30 @@
 
       const effectivePrice = Math.round(basePrice * currentMultiplier);
       const subtotal = effectivePrice * nights;
-      const gst = Math.round(subtotal * 0.12);
+
+      // Authentic statutory Indian hotel GST slabs:
+      let gstRate = 0.12;
+      let gstLabelText = 'Taxes & GST (12%)';
+      if (effectivePrice <= 1000) {
+        gstRate = 0;
+        gstLabelText = '0% GST (Exempt under ₹1,000)';
+      } else if (effectivePrice > 7500) {
+        gstRate = 0.18;
+        gstLabelText = 'Taxes & GST (18% Luxury)';
+      }
+
+      const gst = Math.round(subtotal * gstRate);
       const total = subtotal + gst;
 
       const calcNights = document.getElementById('calcNights');
       const calcBasePrice = document.getElementById('calcBasePrice');
+      const calcGstLabel = document.getElementById('calcGstLabel');
       const calcGst = document.getElementById('calcGst');
       const calcTotal = document.getElementById('calcTotal');
 
       if (calcNights) calcNights.textContent = `${nights} night${nights > 1 ? 's' : ''}`;
       if (calcBasePrice) calcBasePrice.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+      if (calcGstLabel) calcGstLabel.textContent = gstLabelText;
       if (calcGst) calcGst.textContent = `₹${gst.toLocaleString('en-IN')}`;
       if (calcTotal) calcTotal.textContent = `₹${total.toLocaleString('en-IN')}`;
     }

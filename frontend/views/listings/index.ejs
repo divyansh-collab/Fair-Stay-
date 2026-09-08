@@ -429,21 +429,39 @@
                 </div>
               </div>
 
-              <p class="card-text text-muted small text-truncate mb-2">
+              <p class="card-text text-muted small text-truncate mb-1">
                 <%= listing.title %>
               </p>
 
-              <!-- Price breakdown with tax toggle support (3D Elevated Price Layer) -->
+              <!-- Authentic Property Sizing & Classification -->
+              <div class="text-muted small text-truncate mb-2" style="font-size: 0.78rem;">
+                <%= listing.maxGuests || 4 %> <%= (listing.maxGuests || 4) === 1 ? 'guest' : 'guests' %> · <%= listing.bedrooms || 2 %> <%= (listing.bedrooms || 2) === 1 ? 'room' : 'rooms' %> · <%= listing.propertyType || listing.category || 'Vacation Stay' %>
+              </div>
+
+              <!-- Price breakdown with authentic Indian statutory GST slabs (0% <=1k, 12% 1k-7.5k, 18% >7.5k) -->
+              <% 
+                const gstRate = listing.price <= 1000 ? 0 : (listing.price > 7500 ? 0.18 : 0.12);
+                const taxedPrice = Math.round(listing.price * (1 + gstRate));
+                const gstText = gstRate === 0 ? '0% GST (Exempt)' : (gstRate === 0.18 ? 'incl. 18% Luxury GST' : 'incl. 12% GST');
+              %>
               <div class="d-flex align-items-baseline gap-1 mt-auto card-layer-price">
                 <span class="fw-bold fs-6 text-dark price-base" data-price="<%= listing.price %>">
                   ₹<%= listing.price.toLocaleString('en-IN') %>
                 </span>
-                <span class="fw-bold fs-6 text-dark price-taxed d-none" data-taxed="<%= Math.round(listing.price * 1.12) %>">
-                  ₹<%= Math.round(listing.price * 1.12).toLocaleString('en-IN') %>
+                <span class="fw-bold fs-6 text-dark price-taxed d-none" data-taxed="<%= taxedPrice %>">
+                  ₹<%= taxedPrice.toLocaleString('en-IN') %>
                 </span>
                 <span class="text-muted small">/ night</span>
-                <span class="text-muted small price-tax-label d-none">(incl. GST)</span>
+                <span class="text-muted small price-tax-label d-none">(<%= gstText %>)</span>
               </div>
+
+              <!-- Benchmark Market OTA Peak Comparison & Direct FairSafe Savings -->
+              <% if (listing.marketOtaPrice && listing.marketOtaPrice > listing.price) { %>
+                <div class="d-flex align-items-center justify-content-between mt-1 pt-1 border-top border-light-subtle" style="font-size: 0.72rem;">
+                  <span class="text-muted text-decoration-line-through">OTA ₹<%= listing.marketOtaPrice.toLocaleString('en-IN') %></span>
+                  <span class="text-success fw-semibold"><i class="bi bi-shield-check"></i> Save ₹<%= (listing.marketOtaPrice - listing.price).toLocaleString('en-IN') %></span>
+                </div>
+              <% } %>
 
               <!-- AI Festival Demand & Host Surge Transparency Pill -->
               <% 

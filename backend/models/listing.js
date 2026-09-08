@@ -103,6 +103,34 @@ const listingSchema = new Schema({
       'Balcony with Scenic View',
     ],
   },
+  propertyType: {
+    type: String,
+    default: 'Vacation Stay',
+  },
+  maxGuests: {
+    type: Number,
+    default: 4,
+    min: 1,
+  },
+  bedrooms: {
+    type: Number,
+    default: 2,
+    min: 1,
+  },
+  beds: {
+    type: Number,
+    default: 2,
+    min: 1,
+  },
+  baths: {
+    type: Number,
+    default: 2,
+    min: 1,
+  },
+  marketOtaPrice: {
+    type: Number,
+    default: null, // Average unmonitored OTA rate for transparency comparison
+  },
   createdAt: {
     type: Date,
     default: Date.now,

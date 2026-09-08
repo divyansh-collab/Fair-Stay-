@@ -23,7 +23,7 @@
         </span>
         <span>•</span>
         <span class="badge bg-secondary-subtle text-secondary rounded-pill">
-          <%= listing.category || 'Vacation Villa' %>
+          <%= listing.propertyType || listing.category || 'Vacation Villa' %>
         </span>
       </div>
     </div>
@@ -98,10 +98,10 @@
       <div class="d-flex align-items-center justify-content-between border-bottom pb-4 mb-4">
         <div>
           <h4 class="fw-bold text-dark mb-1">
-            Entire <%= listing.category || 'home' %> hosted by <%= listing.owner ? listing.owner.username : 'Superhost' %>
+            <%= listing.propertyType || 'Entire stay' %> hosted by <%= listing.owner ? listing.owner.username : 'Superhost' %>
           </h4>
           <p class="text-muted small mb-0">
-            4 guests • 2 bedrooms • 2 beds • 2 private baths
+            <%= listing.maxGuests || 4 %> <%= (listing.maxGuests || 4) === 1 ? 'guest' : 'guests' %> • <%= listing.bedrooms || 2 %> <%= (listing.bedrooms || 2) === 1 ? 'bedroom' : 'bedrooms' %> • <%= listing.beds || 2 %> <%= (listing.beds || 2) === 1 ? 'bed' : 'beds' %> • <%= listing.baths || 2 %> <%= (listing.baths || 2) === 1 ? 'bath' : 'baths' %>
           </p>
         </div>
         <div class="position-relative">
@@ -160,24 +160,36 @@
           <div class="col-6 col-sm-4">
             <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
               <span class="fs-4 mb-2">🛏️</span>
-              <h6 class="fw-bold mb-1 small text-dark">Bedroom 1</h6>
-              <span class="text-muted" style="font-size: 0.8rem;">1 Queen Bed</span>
+              <h6 class="fw-bold mb-1 small text-dark"><%= (listing.bedrooms || 1) === 1 ? 'Primary Suite' : 'Bedroom 1' %></h6>
+              <span class="text-muted" style="font-size: 0.8rem;">1 King/Queen Bed</span>
             </div>
           </div>
-          <div class="col-6 col-sm-4">
-            <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
-              <span class="fs-4 mb-2">🛏️</span>
-              <h6 class="fw-bold mb-1 small text-dark">Bedroom 2</h6>
-              <span class="text-muted" style="font-size: 0.8rem;">2 Single Beds</span>
+          <% if ((listing.bedrooms || 1) > 1) { %>
+            <div class="col-6 col-sm-4">
+              <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
+                <span class="fs-4 mb-2">🛏️</span>
+                <h6 class="fw-bold mb-1 small text-dark">Bedroom 2</h6>
+                <span class="text-muted" style="font-size: 0.8rem;"><%= (listing.beds || 2) > 2 ? '2 Twin Beds' : '1 Double Bed' %></span>
+              </div>
             </div>
-          </div>
-          <div class="col-6 col-sm-4 d-none d-sm-block">
-            <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
-              <span class="fs-4 mb-2">🛋️</span>
-              <h6 class="fw-bold mb-1 small text-dark">Living Area</h6>
-              <span class="text-muted" style="font-size: 0.8rem;">1 Sofa Sleeper</span>
+          <% } %>
+          <% if ((listing.bedrooms || 1) > 2) { %>
+            <div class="col-6 col-sm-4">
+              <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
+                <span class="fs-4 mb-2">🛏️</span>
+                <h6 class="fw-bold mb-1 small text-dark">Bedroom 3</h6>
+                <span class="text-muted" style="font-size: 0.8rem;">1 Double Bed</span>
+              </div>
             </div>
-          </div>
+          <% } else { %>
+            <div class="col-6 col-sm-4 d-none d-sm-block">
+              <div class="card border rounded-4 p-3 h-100 bg-body shadow-xs">
+                <span class="fs-4 mb-2">🛋️</span>
+                <h6 class="fw-bold mb-1 small text-dark">Living Space</h6>
+                <span class="text-muted" style="font-size: 0.8rem;"><%= listing.maxGuests && listing.maxGuests > 2 ? 'Sofa Sleeper / Daybed' : 'Lounge & Seating' %></span>
+              </div>
+            </div>
+          <% } %>
         </div>
       </div>
 
@@ -423,6 +435,20 @@
             </div>
           </div>
 
+          <!-- Benchmark Market OTA Rate Comparison & FairSafe™ Direct Savings -->
+          <% if (listing.marketOtaPrice && listing.marketOtaPrice > listing.price) { %>
+            <div class="p-2 px-3 rounded-3 bg-light border mb-3 small">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="text-muted" style="font-size: 0.75rem;">Open Commercial OTA Rate:</span>
+                <span class="text-decoration-line-through text-muted fw-semibold">₹<%= listing.marketOtaPrice.toLocaleString('en-IN') %></span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center text-success fw-bold" style="font-size: 0.8rem;">
+                <span><i class="bi bi-shield-check me-1"></i> FairSafe™ Direct Savings:</span>
+                <span>Save ₹<%= (listing.marketOtaPrice - listing.price).toLocaleString('en-IN') %>/night</span>
+              </div>
+            </div>
+          <% } %>
+
           <!-- Booking Form -->
           <form action="/listings/<%= listing._id %>/bookings" method="POST" id="bookingForm">
             
@@ -519,14 +545,20 @@
                 <span>Seasonal adjustment (<span id="calcSurgePercent">+15%</span>)</span>
                 <span id="calcSurgePrice">₹0</span>
               </div>
+              <% 
+                const showGstRate = listing.price <= 1000 ? 0 : (listing.price > 7500 ? 0.18 : 0.12);
+                const showGstLabel = showGstRate === 0 ? '0% GST (Exempt under ₹1,000)' : (showGstRate === 0.18 ? 'Taxes & GST (18% Luxury)' : 'Taxes & GST (12%)');
+                const showInitialGst = Math.round(listing.price * 2 * showGstRate);
+                const showInitialTotal = (listing.price * 2) + showInitialGst;
+              %>
               <div class="d-flex justify-content-between mb-2">
-                <span>Taxes & GST (12%)</span>
-                <span id="calcGst" class="text-dark fw-medium">₹<%= Math.round(listing.price * 2 * 0.12).toLocaleString('en-IN') %></span>
+                <span id="calcGstLabel"><%= showGstLabel %></span>
+                <span id="calcGst" class="text-dark fw-medium">₹<%= showInitialGst.toLocaleString('en-IN') %></span>
               </div>
               <hr class="my-2" />
               <div class="d-flex justify-content-between fw-bold text-dark fs-6">
                 <span>Total</span>
-                <span id="calcTotal">₹<%= Math.round(listing.price * 2 * 1.12).toLocaleString('en-IN') %></span>
+                <span id="calcTotal">₹<%= showInitialTotal.toLocaleString('en-IN') %></span>
               </div>
             </div>
 

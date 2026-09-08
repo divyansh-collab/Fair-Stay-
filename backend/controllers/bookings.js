@@ -76,7 +76,23 @@ module.exports.renderCheckout = async (req, res) => {
   const festivalData = getFestivalPricing(booking.listing.location, booking.checkIn);
   const baseSubtotal = booking.pricePerNight * booking.nights;
   const surgeDifference = booking.totalPrice - baseSubtotal;
-  const gst = Math.round(booking.totalPrice * 0.12);
+
+  // Genuine Indian Statutory Hotel GST Slabs:
+  // <= ₹1,000: 0% GST (Exempt)
+  // ₹1,001 - ₹7,500: 12% GST
+  // > ₹7,500: 18% Luxury Hotel GST
+  const nightlyEffective = booking.totalPrice / (booking.nights || 1);
+  let gstRate = 0.12;
+  let gstLabel = '12% Hotel GST';
+  if (nightlyEffective <= 1000) {
+    gstRate = 0;
+    gstLabel = '0% GST (Exempt under ₹1,000)';
+  } else if (nightlyEffective > 7500) {
+    gstRate = 0.18;
+    gstLabel = '18% Luxury Hotel GST';
+  }
+
+  const gst = Math.round(booking.totalPrice * gstRate);
   const finalPayable = booking.totalPrice + gst;
 
   res.render('bookings/checkout.ejs', {
@@ -86,6 +102,8 @@ module.exports.renderCheckout = async (req, res) => {
     baseSubtotal,
     surgeDifference,
     gst,
+    gstRate,
+    gstLabel,
     finalPayable,
     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY || null,
   });
