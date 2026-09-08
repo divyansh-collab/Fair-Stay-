@@ -42,6 +42,12 @@
           <span>FairStay your home</span>
         </a>
 
+        <!-- Theme Toggle Button (Radiant Dawn ☀️ / Velvet Nocturne 🌙) -->
+        <button class="btn btn-nav-icon rounded-circle position-relative p-2" type="button" id="themeToggleBtn" title="Toggle Light / Dark theme" aria-label="Toggle Theme">
+          <i class="bi bi-sun-fill fs-5 theme-icon-sun text-warning d-none"></i>
+          <i class="bi bi-moon-stars-fill fs-5 theme-icon-moon text-info"></i>
+        </button>
+
         <!-- Wishlist Saved Drawer Button -->
         <button class="btn btn-nav-icon position-relative btn-wishlist-nav" type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlistDrawer" aria-controls="wishlistDrawer" title="Saved Stays & Wishlist">
           <i class="bi bi-suit-heart-fill fs-5 text-danger"></i>
@@ -84,6 +90,7 @@
               <li><a class="dropdown-item py-2 text-white-50 d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#smartSearchModal"><i class="bi bi-stars me-2 text-warning fs-6"></i> AI Smart Search</a></li>
               <li><a class="dropdown-item py-2 text-white-50 d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#experiencesModal"><i class="bi bi-compass me-2 text-info fs-6"></i> Curated Experiences</a></li>
               <li><a class="dropdown-item py-2 text-white-50 d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#helpCenterModal"><i class="bi bi-shield-check me-2 text-success fs-6"></i> FairSafe™ Zero-Surge Guarantee</a></li>
+              <li><a class="dropdown-item py-2 text-white-50 d-flex align-items-center dropdown-theme-toggle" href="#" id="dropdownThemeToggle"><i class="bi bi-circle-half me-2 text-warning fs-6"></i> Toggle Theme (Light / Dark)</a></li>
             <% } else { %>
               <!-- Active User Profile Card -->
               <li class="px-3 py-2 border-bottom border-secondary border-opacity-25 mb-1 bg-dark bg-opacity-50 rounded-top-3">
@@ -121,6 +128,7 @@
               <li><hr class="dropdown-divider border-secondary border-opacity-25"></li>
               <li><a class="dropdown-item py-2 text-white-50 d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#smartSearchModal"><i class="bi bi-stars me-2 text-warning fs-6"></i> AI Smart Search</a></li>
               <li><a class="dropdown-item py-2 text-white-50 d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#helpCenterModal"><i class="bi bi-shield-check me-2 text-success fs-6"></i> FairSafe™ Zero-Surge Guarantee</a></li>
+              <li><a class="dropdown-item py-2 text-white-50 d-flex align-items-center dropdown-theme-toggle" href="#" id="dropdownThemeToggleLoggedIn"><i class="bi bi-circle-half me-2 text-warning fs-6"></i> Toggle Theme (Light / Dark)</a></li>
               <li><hr class="dropdown-divider border-secondary border-opacity-25"></li>
               <!-- Prominent Log Out Button -->
               <li>

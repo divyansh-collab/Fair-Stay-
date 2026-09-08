@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTaxToggle();
   initModalsAndExperiences();
   initSearchSuggestions();
+  initLiveFeedInteractions();
+  initQuickReserveDrawer();
 });
 
 /* ==========================================================================
@@ -345,11 +347,332 @@ function showToast(text, type = 'success') {
 }
 
 /* ==========================================================================
-   4. Permanent Night Mode Theme Engine
+   4. Dual-Theme Engine (Radiant Dawn ☀️ / Velvet Nocturne 🌙)
    ========================================================================== */
 function initTheme() {
-  document.documentElement.setAttribute('data-bs-theme', 'dark');
-  try {
-    localStorage.setItem('fairstay_theme', 'dark');
-  } catch (e) {}
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    try {
+      localStorage.setItem('fairstay_theme', theme);
+    } catch (e) {}
+
+    const sunIcons = document.querySelectorAll('.theme-icon-sun');
+    const moonIcons = document.querySelectorAll('.theme-icon-moon');
+    if (theme === 'dark') {
+      sunIcons.forEach((i) => i.classList.remove('d-none'));
+      moonIcons.forEach((i) => i.classList.add('d-none'));
+    } else {
+      sunIcons.forEach((i) => i.classList.add('d-none'));
+      moonIcons.forEach((i) => i.classList.remove('d-none'));
+    }
+  }
+
+  const savedTheme = localStorage.getItem('fairstay_theme') || 'light';
+  applyTheme(savedTheme);
+
+  const toggleBtn = document.getElementById('themeToggleBtn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-bs-theme') || 'light';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      showToast(nextTheme === 'dark' ? '🌙 Dark mode enabled' : '☀️ Sunlit mode enabled', 'info');
+    });
+  }
+
+  document.querySelectorAll('.dropdown-theme-toggle').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const current = document.documentElement.getAttribute('data-bs-theme') || 'light';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      showToast(nextTheme === 'dark' ? '🌙 Dark mode enabled' : '☀️ Sunlit mode enabled', 'info');
+    });
+  });
 }
+
+/* ==========================================================================
+   5. Live Feed Real-Time 0ms Filtering & Vibe Controls
+   ========================================================================== */
+function initLiveFeedInteractions() {
+  const searchInput = document.getElementById('liveSearchInput');
+  const clearBtn = document.getElementById('clearLiveSearchBtn');
+  const vibeBtns = document.querySelectorAll('.filter-vibe-btn');
+  const staysCountBadge = document.getElementById('filteredStaysCount');
+  const cardCols = document.querySelectorAll('.stay-card-col');
+
+  if (!cardCols.length) return;
+
+  let activeVibe = 'all';
+
+  function filterCards() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    let visibleCount = 0;
+    const matchingIds = [];
+
+    cardCols.forEach((col) => {
+      const title = col.getAttribute('data-title') || '';
+      const location = col.getAttribute('data-location') || '';
+      const category = col.getAttribute('data-category') || '';
+      const price = Number(col.getAttribute('data-price')) || 0;
+      const id = col.getAttribute('data-id');
+
+      // Check text search against title, location, category
+      const matchesSearch =
+        !query ||
+        title.includes(query) ||
+        location.includes(query) ||
+        category.includes(query);
+
+      // Check vibe filter
+      let matchesVibe = true;
+      if (activeVibe === 'budget') {
+        matchesVibe = price <= 2000;
+      } else if (activeVibe === 'mid') {
+        matchesVibe = price > 2000 && price <= 7500;
+      } else if (activeVibe === 'luxury') {
+        matchesVibe = price > 7500;
+      }
+
+      const isVisible = matchesSearch && matchesVibe;
+      if (isVisible) {
+        col.classList.remove('d-none');
+        visibleCount++;
+        if (id) matchingIds.push(id);
+      } else {
+        col.classList.add('d-none');
+      }
+    });
+
+    // Update count badge
+    if (staysCountBadge) {
+      staysCountBadge.textContent = `${visibleCount} ${visibleCount === 1 ? 'Stay' : 'Stays'}`;
+    }
+
+    // Toggle clear search button
+    if (clearBtn) {
+      if (query.length > 0) {
+        clearBtn.classList.remove('d-none');
+      } else {
+        clearBtn.classList.add('d-none');
+      }
+    }
+
+    // Sync with Leaflet Map markers if map is active
+    if (typeof window.filterMapMarkers === 'function') {
+      window.filterMapMarkers(matchingIds);
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterCards);
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.classList.add('d-none');
+      filterCards();
+      searchInput.focus();
+    });
+  }
+
+  vibeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      vibeBtns.forEach((b) => {
+        b.classList.remove('active', 'btn-dark');
+        b.classList.add('btn-outline-secondary');
+      });
+      btn.classList.add('active', 'btn-dark');
+      btn.classList.remove('btn-outline-secondary');
+      activeVibe = btn.getAttribute('data-vibe') || 'all';
+      filterCards();
+    });
+  });
+
+  // Bi-directional hover card -> map marker highlight
+  cardCols.forEach((col) => {
+    const id = col.getAttribute('data-id');
+    if (!id) return;
+
+    col.addEventListener('mouseenter', () => {
+      if (typeof window.highlightMapMarker === 'function') {
+        window.highlightMapMarker(id, true);
+      }
+    });
+
+    col.addEventListener('mouseleave', () => {
+      if (typeof window.highlightMapMarker === 'function') {
+        window.highlightMapMarker(id, false);
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   6. 1-Click Quick Reserve Offcanvas Drawer
+   ========================================================================== */
+function initQuickReserveDrawer() {
+  const drawerEl = document.getElementById('quickReserveDrawer');
+  if (!drawerEl) return;
+
+  const qrImg = document.getElementById('qrListingImg');
+  const qrTitle = document.getElementById('qrListingTitle');
+  const qrLocation = document.getElementById('qrListingLocation');
+  const qrPrice = document.getElementById('qrListingPrice');
+  const qrNightlyPrice = document.getElementById('qrNightlyPrice');
+  const qrNightsCount = document.getElementById('qrNightsCount');
+  const qrBasePrice = document.getElementById('qrBasePrice');
+  const qrGstLabel = document.getElementById('qrGstLabel');
+  const qrGstAmount = document.getElementById('qrGstAmount');
+  const qrTotalAmount = document.getElementById('qrTotalAmount');
+  const qrForm = document.getElementById('qrBookingForm');
+  const qrFullDetailsLink = document.getElementById('qrFullDetailsLink');
+
+  const checkInInput = document.getElementById('qrCheckInDate');
+  const checkOutInput = document.getElementById('qrCheckOutDate');
+  const guestsInput = document.getElementById('qrGuestsInput');
+  const guestsMinus = document.getElementById('qrGuestsMinus');
+  const guestsPlus = document.getElementById('qrGuestsPlus');
+
+  let currentPrice = 0;
+  let nights = 2;
+
+  function calculateCosts() {
+    if (currentPrice <= 0) return;
+    const baseTotal = currentPrice * nights;
+    
+    // Statutory Indian GST Slabs (0% <=1k, 12% 1k-7.5k, 18% >7.5k)
+    let gstRate = 0.12;
+    let label = 'Taxes & GST (12%)';
+    if (currentPrice <= 1000) {
+      gstRate = 0;
+      label = '0% GST (Exempt under ₹1,000)';
+    } else if (currentPrice > 7500) {
+      gstRate = 0.18;
+      label = 'Taxes & GST (18% Luxury Surcharge)';
+    }
+
+    const gstAmount = Math.round(baseTotal * gstRate);
+    const grandTotal = baseTotal + gstAmount;
+
+    if (qrNightlyPrice) qrNightlyPrice.textContent = Number(currentPrice).toLocaleString('en-IN');
+    if (qrNightsCount) qrNightsCount.textContent = `${nights} ${nights === 1 ? 'night' : 'nights'}`;
+    if (qrBasePrice) qrBasePrice.textContent = `₹${baseTotal.toLocaleString('en-IN')}`;
+    if (qrGstLabel) qrGstLabel.textContent = label;
+    if (qrGstAmount) qrGstAmount.textContent = `₹${gstAmount.toLocaleString('en-IN')}`;
+    if (qrTotalAmount) qrTotalAmount.textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
+  }
+
+  // Guests Stepper
+  if (guestsMinus && guestsPlus && guestsInput) {
+    guestsMinus.addEventListener('click', () => {
+      let g = parseInt(guestsInput.value, 10) || 1;
+      if (g > 1) {
+        guestsInput.value = g - 1;
+      }
+    });
+
+    guestsPlus.addEventListener('click', () => {
+      let g = parseInt(guestsInput.value, 10) || 1;
+      if (g < 10) {
+        guestsInput.value = g + 1;
+      }
+    });
+  }
+
+  // Date setup
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const dayAfter = new Date();
+  dayAfter.setDate(dayAfter.getDate() + 3);
+
+  const formatDateYMD = (d) => {
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${d.getFullYear()}-${month}-${day}`;
+  };
+
+  function recalculateNights() {
+    if (!checkInInput || !checkOutInput) return;
+    const inVal = new Date(checkInInput.value);
+    const outVal = new Date(checkOutInput.value);
+    if (!isNaN(inVal.getTime()) && !isNaN(outVal.getTime()) && outVal > inVal) {
+      const diffTime = outVal.getTime() - inVal.getTime();
+      nights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+    } else {
+      nights = 1;
+    }
+    calculateCosts();
+  }
+
+  if (checkInInput && checkOutInput) {
+    checkInInput.value = formatDateYMD(tomorrow);
+    checkOutInput.value = formatDateYMD(dayAfter);
+    nights = 2;
+
+    if (typeof flatpickr !== 'undefined') {
+      flatpickr(checkInInput, {
+        minDate: 'today',
+        dateFormat: 'Y-m-d',
+        defaultDate: tomorrow,
+        onChange: function (selectedDates) {
+          if (selectedDates.length > 0) {
+            const nextDay = new Date(selectedDates[0]);
+            nextDay.setDate(nextDay.getDate() + 1);
+            if (checkOutInput._flatpickr) {
+              checkOutInput._flatpickr.set('minDate', nextDay);
+            }
+            recalculateNights();
+          }
+        },
+      });
+
+      flatpickr(checkOutInput, {
+        minDate: tomorrow,
+        dateFormat: 'Y-m-d',
+        defaultDate: dayAfter,
+        onChange: function () {
+          recalculateNights();
+        },
+      });
+    } else {
+      checkInInput.addEventListener('change', recalculateNights);
+      checkOutInput.addEventListener('change', recalculateNights);
+    }
+  }
+
+  // Bind to all Quick Reserve buttons
+  document.querySelectorAll('.btn-quick-reserve').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const id = btn.getAttribute('data-id');
+      const title = btn.getAttribute('data-title') || 'FairStay Verified Stay';
+      const location = btn.getAttribute('data-location') || 'India';
+      const price = Number(btn.getAttribute('data-price')) || 0;
+      const image = btn.getAttribute('data-image') || 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=400&q=80';
+
+      currentPrice = price;
+
+      if (qrImg) qrImg.src = image;
+      if (qrTitle) qrTitle.textContent = title;
+      if (qrLocation) qrLocation.textContent = location;
+      if (qrPrice) qrPrice.textContent = `₹${price.toLocaleString('en-IN')} / night`;
+      if (qrForm) qrForm.action = `/listings/${id}/bookings`;
+      if (qrFullDetailsLink) qrFullDetailsLink.href = `/listings/${id}`;
+
+      calculateCosts();
+
+      if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+        const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(drawerEl);
+        offcanvas.show();
+      } else {
+        drawerEl.classList.add('show');
+        drawerEl.style.visibility = 'visible';
+      }
+    });
+  });
+}
+

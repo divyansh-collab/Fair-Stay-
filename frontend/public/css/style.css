@@ -130,19 +130,21 @@ p, .lh-lg {
    Floating Capsule Navbar
    -------------------------------------------------------------------------- */
 .navbar-wrapper {
-  background-color: rgba(11, 15, 25, 0.88) !important;
+  background-color: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   position: sticky !important;
   top: 0 !important;
   z-index: 1040 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 [data-bs-theme="dark"] .navbar-wrapper {
   background-color: rgba(11, 15, 25, 0.88) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35) !important;
 }
 
 /* Brand Hover Micro-Physics */
@@ -161,9 +163,9 @@ p, .lh-lg {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255, 90, 60, 0.2), rgba(255, 140, 80, 0.08));
-  border: 1px solid rgba(255, 90, 60, 0.35);
-  box-shadow: 0 0 14px rgba(255, 90, 60, 0.2);
+  background: linear-gradient(135deg, rgba(255, 90, 60, 0.15), rgba(255, 140, 80, 0.06));
+  border: 1px solid rgba(255, 90, 60, 0.3);
+  box-shadow: 0 0 14px rgba(255, 90, 60, 0.15);
   transition: all 0.25s ease;
 }
 
@@ -174,9 +176,13 @@ p, .lh-lg {
 }
 
 .brand-title {
-  color: #ffffff !important;
+  color: #0f172a !important;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
+}
+
+[data-bs-theme="dark"] .brand-title {
+  color: #ffffff !important;
 }
 
 .brand-dot {
@@ -186,48 +192,73 @@ p, .lh-lg {
 }
 
 .brand-subtitle {
-  color: #94a3b8 !important;
+  color: #64748b !important;
   font-size: 0.72rem;
   letter-spacing: 0.02em;
+}
+
+[data-bs-theme="dark"] .brand-subtitle {
+  color: #94a3b8 !important;
 }
 
 /* Luxury Interactive Search Capsule */
 .search-capsule {
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
   border-radius: 40px;
   padding: 6px 8px;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(30, 41, 59, 0.7) !important;
+  background: #ffffff !important;
   user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="dark"] .search-capsule {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(30, 41, 59, 0.7) !important;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .search-capsule:hover {
   border-color: rgba(255, 90, 60, 0.5) !important;
-  box-shadow: 0 0 26px rgba(255, 90, 60, 0.22) !important;
+  box-shadow: 0 0 20px rgba(255, 90, 60, 0.2) !important;
   transform: translateY(-1px) scale(1.01);
-  background: rgba(30, 41, 59, 0.85) !important;
 }
 
 .capsule-primary-text {
-  color: #f8fafc !important;
+  color: #0f172a !important;
   font-size: 0.86rem;
 }
 
+[data-bs-theme="dark"] .capsule-primary-text {
+  color: #f8fafc !important;
+}
+
 .capsule-sub-text {
-  color: #94a3b8 !important;
+  color: #64748b !important;
   font-size: 0.84rem;
   transition: color 0.2s ease;
 }
 
+[data-bs-theme="dark"] .capsule-sub-text {
+  color: #94a3b8 !important;
+}
+
 .search-capsule:hover .capsule-sub-text {
+  color: #0f172a !important;
+}
+
+[data-bs-theme="dark"] .search-capsule:hover .capsule-sub-text {
   color: #cbd5e1 !important;
 }
 
 .search-capsule-divider {
   height: 20px;
   width: 1px;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-bs-theme="dark"] .search-capsule-divider {
   background-color: rgba(255, 255, 255, 0.14) !important;
 }
 
@@ -247,20 +278,30 @@ p, .lh-lg {
 
 /* Navbar Action Items */
 .btn-nav-action {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  color: #f1f5f9 !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1e293b !important;
   font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.25s ease;
 }
 
+[data-bs-theme="dark"] .btn-nav-action {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f1f5f9 !important;
+}
+
 .btn-nav-action:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 90, 60, 0.1) !important;
   border-color: rgba(255, 90, 60, 0.45) !important;
-  color: #ffffff !important;
+  color: #ff5a3c !important;
   transform: translateY(-1px);
-  box-shadow: 0 0 16px rgba(255, 90, 60, 0.25) !important;
+}
+
+[data-bs-theme="dark"] .btn-nav-action:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
 }
 
 .btn-wishlist-nav {
@@ -270,28 +311,46 @@ p, .lh-lg {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1e293b !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-bs-theme="dark"] .btn-wishlist-nav {
   background: rgba(255, 255, 255, 0.06) !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #f1f5f9 !important;
 }
 
 .btn-wishlist-nav:hover {
   background: rgba(255, 90, 60, 0.16) !important;
   border-color: rgba(255, 90, 60, 0.5) !important;
   transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 0 20px rgba(255, 90, 60, 0.4) !important;
+  box-shadow: 0 0 16px rgba(255, 90, 60, 0.3) !important;
 }
 
 .user-menu-btn {
-  background: rgba(30, 41, 59, 0.75) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  color: #f8fafc !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #0f172a !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+[data-bs-theme="dark"] .user-menu-btn {
+  background: rgba(30, 41, 59, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #f8fafc !important;
+}
+
 .user-menu-btn:hover {
-  border-color: rgba(255, 255, 255, 0.28) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .user-menu-btn:hover {
+  border-color: rgba(255, 255, 255, 0.28) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
@@ -304,12 +363,18 @@ p, .lh-lg {
 
 /* Glass Dropdown Menu */
 .navbar-glass-dropdown {
-  background: rgba(15, 23, 42, 0.96) !important;
+  background: #ffffff !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1) !important;
+  animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-bs-theme="dark"] .navbar-glass-dropdown {
+  background: rgba(15, 23, 42, 0.96) !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
-  animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-glass-dropdown .dropdown-item {
@@ -318,12 +383,22 @@ p, .lh-lg {
   margin: 1px 6px;
   width: calc(100% - 12px);
   font-size: 0.88rem;
+  color: #0f172a;
+}
+
+[data-bs-theme="dark"] .navbar-glass-dropdown .dropdown-item {
+  color: #f1f5f9;
 }
 
 .navbar-glass-dropdown .dropdown-item:hover {
+  background: rgba(255, 90, 60, 0.1) !important;
+  color: #ff5a3c !important;
+  transform: translateX(3px);
+}
+
+[data-bs-theme="dark"] .navbar-glass-dropdown .dropdown-item:hover {
   background: rgba(255, 255, 255, 0.08) !important;
   color: #ffffff !important;
-  transform: translateX(3px);
 }
 
 @keyframes dropdownFadeIn {
@@ -418,8 +493,8 @@ p, .lh-lg {
 .stay-img-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
-  aspect-ratio: 20 / 19;
+  border-radius: 1.15rem;
+  aspect-ratio: 16 / 11;
   background-color: #f0f0f0;
 }
 
@@ -466,6 +541,31 @@ p, .lh-lg {
   color: var(--fs-primary) !important;
 }
 
+/* Bi-directional Card Pulse */
+@keyframes cardHighlightPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 90, 60, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 90, 60, 0);
+    transform: translateY(-6px) scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 90, 60, 0);
+    transform: scale(1);
+  }
+}
+
+.card-highlight-pulse {
+  animation: cardHighlightPulse 1.2s ease-in-out;
+  border: 2px solid #ff5a3c !important;
+}
+
+.transition-all {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
 /* --------------------------------------------------------------------------
    Floating Map Button
    -------------------------------------------------------------------------- */
@@ -494,24 +594,27 @@ p, .lh-lg {
 /* Custom Leaflet Price Markers */
 .custom-price-marker {
   background: #ffffff;
-  color: #222222;
+  color: #111827;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   padding: 4px 10px;
   border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .custom-price-marker:hover,
-.custom-price-marker.active {
-  background: #222222;
-  color: #ffffff;
-  transform: scale(1.1);
-  border-color: #000;
+.custom-price-marker.active,
+.custom-price-marker.marker-hover {
+  background: #ff5a3c !important;
+  color: #ffffff !important;
+  transform: scale(1.18);
+  border-color: #ff5a3c !important;
+  box-shadow: 0 4px 16px rgba(255, 90, 60, 0.45) !important;
+  z-index: 1000 !important;
 }
 
 /* Ensure Leaflet Maps have explicit dimensions and clear styles */
@@ -1557,3 +1660,75 @@ body:has(.offcanvas.show) {
   overflow: hidden !important;
   overscroll-behavior: none !important;
 }
+
+/* ==========================================================================
+   Quick Reserve Drawer & Mobile Sticky Reservation Bar
+   ========================================================================== */
+.btn-quick-reserve {
+  background: linear-gradient(135deg, #ff5a3c 0%, #ff385c 100%);
+  border: none;
+  color: #ffffff !important;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-quick-reserve:hover {
+  background: linear-gradient(135deg, #e0482b 0%, #e0284c 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 90, 60, 0.35);
+}
+
+#quickReserveDrawer.offcanvas {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  z-index: 1060 !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25) !important;
+  background-color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] #quickReserveDrawer.offcanvas {
+  background-color: #0f172a !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+#quickReserveDrawer .offcanvas-header {
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="dark"] #quickReserveDrawer .offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#quickReserveDrawer .offcanvas-body {
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-sticky-reservation-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  padding: 10px 20px;
+}
+
+[data-bs-theme="dark"] .mobile-sticky-reservation-bar {
+  background: rgba(15, 23, 42, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.4);
+}
+

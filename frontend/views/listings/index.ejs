@@ -1,12 +1,12 @@
 <% layout('/layouts/boilerplate') %>
 
 <!-- Destination & Category Filter Bar -->
-<div class="filter-wrapper bg-dark bg-opacity-75 border-bottom border-secondary border-opacity-25 shadow-sm py-2">
+<div class="filter-wrapper border-bottom shadow-xs py-2">
   <div class="container">
 
     <!-- Destination Quick Chips -->
     <div class="d-flex align-items-center gap-2 overflow-x-auto pb-2 corridor-chips-bar text-nowrap">
-      <span class="small text-white-50 fw-bold me-1">Explore:</span>
+      <span class="small text-muted fw-bold me-1">Explore:</span>
       <a href="/listings" class="btn btn-sm <%= !searchQuery && (!activeCategory || activeCategory === 'All') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
         All Stays
       </a>
@@ -101,8 +101,8 @@
 
       <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-3">
         <!-- Taxes Toggle (Airbnb style - Always 100% Fully Shown) -->
-        <div class="tax-toggle-box d-flex align-items-center border border-secondary border-opacity-25 rounded-pill px-3 py-2 shadow-xs flex-shrink-0 text-nowrap bg-dark bg-opacity-50">
-          <label class="form-check-label small fw-semibold me-2 mb-0 cursor-pointer text-nowrap user-select-none text-white-50" for="taxToggleSwitch" style="font-size: 0.85rem;">
+        <div class="tax-toggle-box d-flex align-items-center border rounded-pill px-3 py-2 shadow-xs flex-shrink-0 text-nowrap bg-body">
+          <label class="form-check-label small fw-semibold me-2 mb-0 cursor-pointer text-nowrap user-select-none text-muted" for="taxToggleSwitch" style="font-size: 0.85rem;">
             Display total after taxes
           </label>
           <div class="form-check form-switch m-0 d-flex align-items-center ps-0">
@@ -359,158 +359,252 @@
     </div>
   <% } %>
 
-  <!-- 3D Spatial Grid View of Listings -->
-  <div id="listingsGridView" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 listings-3d-grid">
-    <% if (allListings && allListings.length > 0) { %>
-      <% for (let listing of allListings) { %>
-        <div class="col reveal-3d">
-          <div class="card h-100 border-0 stay-card spatial-glass-card card-preserve-3d rounded-4 position-relative" data-tilt-3d="true">
-            
-            <!-- Dynamic Specular Glare Overlay -->
-            <div class="card-glare-overlay"></div>
-
-            <!-- Image Carousel / Thumbnail (3D Media Layer) -->
-            <div class="stay-img-wrapper position-relative card-layer-media">
-              <a href="/listings/<%= listing._id %>" class="text-decoration-none">
-                <img
-                  src="<%= listing.image && listing.image.url ? listing.image.url : 'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 300\' fill=\'%23f1f5f9\'><rect width=\'400\' height=\'300\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'48\'>🏡</text></svg>' %>"
-                  class="card-img-top stay-img"
-                  alt="<%= listing.title %>"
-                  loading="lazy"
-                />
-              </a>
-
-              <!-- Category Badge (3D Floating Layer) -->
-              <span class="badge bg-dark bg-opacity-75 text-white position-absolute top-0 start-0 m-3 rounded-pill px-2 py-1 small backdrop-blur card-layer-badge-left">
-                <%= listing.category %>
-              </span>
-
-              <!-- Live Destination Weather Pill (3D Spatial Layer) -->
-              <span class="stay-weather-pill">
-                <% if (/goa/i.test(listing.location)) { %>☀️ 28°C<% } else if (/manali|shimla/i.test(listing.location)) { %>❄️ 4°C<% } else if (/jaipur/i.test(listing.location)) { %>🌙 22°C<% } else if (/munnar|kerala/i.test(listing.location)) { %>🛶 30°C<% } else if (/udaipur/i.test(listing.location)) { %>🌅 25°C<% } else if (/prayagraj|varanasi/i.test(listing.location)) { %>🪔 20°C<% } else if (/mumbai/i.test(listing.location)) { %>🏙️ 29°C<% } else { %>🌤️ 26°C<% } %>
-              </span>
-
-              <!-- FairSafe Score Pill (3D Floating Layer) -->
-              <span class="badge bg-success position-absolute bottom-0 start-0 m-3 rounded-pill px-2 py-1 small shadow-sm card-layer-badge-right">
-                <i class="bi bi-shield-check me-1"></i> FairSafe <%= listing.fairsafeScore || 95 %>
-              </span>
-
-              <!-- Wishlist Heart Button (Magnetic 3D Layer) -->
-              <button
-                class="btn p-0 border-0 position-absolute bottom-0 end-0 m-3 btn-wishlist-heart card-layer-heart magnetic-btn-3d"
-                data-id="<%= listing._id %>"
-                data-title="<%= listing.title %>"
-                data-price="<%= listing.price %>"
-                data-location="<%= listing.location %>"
-                data-image="<%= listing.image && listing.image.url ? listing.image.url : '' %>"
-                aria-label="Save to Wishlist"
-              >
-                <i class="bi bi-suit-heart-fill heart-icon"></i>
-              </button>
-            </div>
-
-            <!-- Card Content (3D Elevated Content Layer) -->
-            <div class="card-body p-3 card-layer-content">
-              <div class="d-flex justify-content-between align-items-baseline mb-1">
-                <h6 class="card-title fw-bold text-dark text-truncate mb-0" style="max-width: 75%;">
-                  <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark hover-primary">
-                    <%= listing.location %>
-                  </a>
-                </h6>
-                <div class="small fw-semibold text-dark d-flex align-items-center gap-1">
-                  <i class="bi bi-star-fill text-warning" style="font-size: 0.8rem;"></i>
-                  <span>
-                    <% if (listing.reviews && listing.reviews.length > 0) { %>
-                      <%= (listing.reviews.reduce((acc, r) => acc + r.rating, 0) / listing.reviews.length).toFixed(1) %>
-                    <% } else { %>
-                      5.0
-                    <% } %>
-                  </span>
-                </div>
-              </div>
-
-              <p class="card-text text-muted small text-truncate mb-1">
-                <%= listing.title %>
-              </p>
-
-              <!-- Authentic Property Sizing & Classification -->
-              <div class="text-muted small text-truncate mb-2" style="font-size: 0.78rem;">
-                <%= listing.maxGuests || 4 %> <%= (listing.maxGuests || 4) === 1 ? 'guest' : 'guests' %> · <%= listing.bedrooms || 2 %> <%= (listing.bedrooms || 2) === 1 ? 'room' : 'rooms' %> · <%= listing.propertyType || listing.category || 'Vacation Stay' %>
-              </div>
-
-              <!-- Price breakdown with authentic Indian statutory GST slabs (0% <=1k, 12% 1k-7.5k, 18% >7.5k) -->
-              <% 
-                const gstRate = listing.price <= 1000 ? 0 : (listing.price > 7500 ? 0.18 : 0.12);
-                const taxedPrice = Math.round(listing.price * (1 + gstRate));
-                const gstText = gstRate === 0 ? '0% GST (Exempt)' : (gstRate === 0.18 ? 'incl. 18% Luxury GST' : 'incl. 12% GST');
-              %>
-              <div class="d-flex align-items-baseline gap-1 mt-auto card-layer-price">
-                <span class="fw-bold fs-6 text-dark price-base" data-price="<%= listing.price %>">
-                  ₹<%= listing.price.toLocaleString('en-IN') %>
-                </span>
-                <span class="fw-bold fs-6 text-dark price-taxed d-none" data-taxed="<%= taxedPrice %>">
-                  ₹<%= taxedPrice.toLocaleString('en-IN') %>
-                </span>
-                <span class="text-muted small">/ night</span>
-                <span class="text-muted small price-tax-label d-none">(<%= gstText %>)</span>
-              </div>
-
-              <!-- Benchmark Market OTA Peak Comparison & Direct FairSafe Savings -->
-              <% if (listing.marketOtaPrice && listing.marketOtaPrice > listing.price) { %>
-                <div class="d-flex align-items-center justify-content-between mt-1 pt-1 border-top border-light-subtle" style="font-size: 0.72rem;">
-                  <span class="text-muted text-decoration-line-through">OTA ₹<%= listing.marketOtaPrice.toLocaleString('en-IN') %></span>
-                  <span class="text-success fw-semibold"><i class="bi bi-shield-check"></i> Save ₹<%= (listing.marketOtaPrice - listing.price).toLocaleString('en-IN') %></span>
-                </div>
-              <% } %>
-
-              <!-- AI Festival Demand & Host Surge Transparency Pill -->
-              <% 
-                const festInfo = typeof getFestivalPricing === 'function' ? getFestivalPricing(listing, new Date()) : null;
-              %>
-              <% if (festInfo && festInfo.festivalId !== 'standard' && festInfo.percentage > 0) { %>
-                <div class="mt-1 d-flex align-items-center gap-1">
-                  <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
-                    <%= festInfo.emoji %> <%= festInfo.festivalName.split(' ')[0] %>: +<%= festInfo.percentage %>%
-                  </span>
-                </div>
-              <% } else if (festInfo && festInfo.festivalId !== 'standard' && festInfo.percentage < 0) { %>
-                <div class="mt-1 d-flex align-items-center gap-1">
-                  <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
-                    <%= festInfo.emoji %> Discount: <%= festInfo.percentage %>%
-                  </span>
-                </div>
-              <% } else { %>
-                <div class="mt-1 d-flex align-items-center gap-1">
-                  <span class="badge bg-light text-muted border rounded-pill" style="font-size: 0.68rem;" title="Standard regular baseline rate with 0% seasonal surge">
-                    ⚖️ Standard: 0% Surge
-                  </span>
-                </div>
-              <% } %>
-            </div>
-
-          </div>
-        </div>
-      <% } %>
-    <% } else { %>
-      <div class="col-12 text-center py-5">
-        <div class="fs-1 mb-3">🔍</div>
-        <h4 class="fw-bold text-dark">No stays match "<%= searchQuery || activeCategory %>"</h4>
-        <p class="text-muted">Try adjusting your filters or explore our top verified vacation getaways.</p>
-        <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
-          <a href="/listings?location=Goa" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏖️ Explore Goa</a>
-          <a href="/listings?location=Manali" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏔️ Explore Manali</a>
-          <a href="/listings?location=Jaipur" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏰 Explore Jaipur</a>
-          <a href="/listings?location=Udaipur" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏊 Explore Udaipur</a>
-          <a href="/listings" class="btn btn-primary rounded-pill px-4 btn-sm">View All 166 Stays</a>
+  <!-- Interactive Live Filter & Search Toolbar (Real-Time 0ms Filtering) -->
+  <div class="card border shadow-xs rounded-4 p-3 mb-4 bg-body" id="liveInteractiveToolbar">
+    <div class="row g-3 align-items-center justify-content-between">
+      <!-- Real-time Live Typing Search Input -->
+      <div class="col-12 col-md-5">
+        <div class="input-group search-input-group rounded-pill overflow-hidden border">
+          <span class="input-group-text bg-transparent border-0 pe-2 text-danger">
+            <i class="bi bi-search"></i>
+          </span>
+          <input
+            type="text"
+            id="liveSearchInput"
+            class="form-control border-0 ps-1 bg-transparent"
+            placeholder="Live search by city, stay, or vibe (Goa, pool, villa, Manali, ashram)..."
+            autocomplete="off"
+            aria-label="Live search stays"
+          />
+          <button class="btn btn-link text-muted border-0 d-none text-decoration-none pe-3" type="button" id="clearLiveSearchBtn" title="Clear search">
+            <i class="bi bi-x-circle-fill"></i>
+          </button>
         </div>
       </div>
-    <% } %>
+
+      <!-- Quick Price & Vibe Pills -->
+      <div class="col-12 col-md-4 d-flex align-items-center gap-1 overflow-x-auto text-nowrap pb-1 pb-md-0">
+        <button class="btn btn-sm btn-dark rounded-pill px-3 filter-vibe-btn active" data-vibe="all">
+          All Stays
+        </button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 filter-vibe-btn" data-vibe="budget">
+          💰 &lt;₹2k
+        </button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 filter-vibe-btn" data-vibe="mid">
+          🏡 ₹2k–7.5k
+        </button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 filter-vibe-btn" data-vibe="luxury">
+          ✨ Luxury &gt;₹7.5k
+        </button>
+      </div>
+
+      <!-- Stays Count & View Switcher -->
+      <div class="col-12 col-md-3 d-flex align-items-center justify-content-between justify-content-md-end gap-2">
+        <span id="filteredStaysCount" class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill px-3 py-2 small fw-bold">
+          <%= allListings ? allListings.length : 0 %> Stays
+        </span>
+
+        <div class="btn-group rounded-pill p-1 bg-body-secondary border" role="group">
+          <button type="button" class="btn btn-sm btn-dark rounded-pill px-3 fw-bold" id="btnGridViewToggle">
+            <i class="bi bi-grid-3x3-gap-fill me-1"></i> Grid
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-secondary border-0 rounded-pill px-3 fw-semibold text-body" id="topMapToggle">
+            <i class="bi bi-map-fill me-1" id="topMapIcon"></i> Split Map
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stays Feed & Interactive Split Map Container -->
+  <div class="row g-4" id="mainStaysRow">
+    <!-- Left / Main Stays Column -->
+    <div class="col-12 transition-all" id="staysCol">
+      <div id="listingsGridView" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 listings-3d-grid">
+        <% if (allListings && allListings.length > 0) { %>
+          <% for (let listing of allListings) { %>
+            <div class="col stay-card-col reveal-3d"
+              data-id="<%= listing._id %>"
+              data-title="<%= (listing.title || '').toLowerCase() %>"
+              data-location="<%= (listing.location || '').toLowerCase() %>"
+              data-category="<%= (listing.category || '').toLowerCase() %>"
+              data-price="<%= listing.price %>">
+              <div class="card h-100 border-0 stay-card spatial-glass-card card-preserve-3d rounded-4 position-relative" data-tilt-3d="true">
+                
+                <!-- Dynamic Specular Glare Overlay -->
+                <div class="card-glare-overlay"></div>
+
+                <!-- Image Carousel / Thumbnail (3D Media Layer) -->
+                <div class="stay-img-wrapper position-relative card-layer-media">
+                  <a href="/listings/<%= listing._id %>" class="text-decoration-none">
+                    <img
+                      src="<%= listing.image && listing.image.url ? listing.image.url : 'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 300\' fill=\'%23f1f5f9\'><rect width=\'400\' height=\'300\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'48\'>🏡</text></svg>' %>"
+                      class="card-img-top stay-img"
+                      alt="<%= listing.title %>"
+                      loading="lazy"
+                    />
+                  </a>
+
+                  <!-- Category Badge (3D Floating Layer) -->
+                  <span class="badge bg-dark bg-opacity-75 text-white position-absolute top-0 start-0 m-3 rounded-pill px-2 py-1 small backdrop-blur card-layer-badge-left">
+                    <%= listing.category %>
+                  </span>
+
+                  <!-- Live Destination Weather Pill (3D Spatial Layer) -->
+                  <span class="stay-weather-pill">
+                    <% if (/goa/i.test(listing.location)) { %>☀️ 28°C<% } else if (/manali|shimla/i.test(listing.location)) { %>❄️ 4°C<% } else if (/jaipur/i.test(listing.location)) { %>🌙 22°C<% } else if (/munnar|kerala/i.test(listing.location)) { %>🛶 30°C<% } else if (/udaipur/i.test(listing.location)) { %>🌅 25°C<% } else if (/prayagraj|varanasi/i.test(listing.location)) { %>🪔 20°C<% } else if (/mumbai/i.test(listing.location)) { %>🏙️ 29°C<% } else { %>🌤️ 26°C<% } %>
+                  </span>
+
+                  <!-- FairSafe Score Pill (3D Floating Layer) -->
+                  <span class="badge bg-success position-absolute bottom-0 start-0 m-3 rounded-pill px-2 py-1 small shadow-sm card-layer-badge-right">
+                    <i class="bi bi-shield-check me-1"></i> FairSafe <%= listing.fairsafeScore || 95 %>
+                  </span>
+
+                  <!-- Wishlist Heart Button (Magnetic 3D Layer) -->
+                  <button
+                    class="btn p-0 border-0 position-absolute bottom-0 end-0 m-3 btn-wishlist-heart card-layer-heart magnetic-btn-3d"
+                    data-id="<%= listing._id %>"
+                    data-title="<%= listing.title %>"
+                    data-price="<%= listing.price %>"
+                    data-location="<%= listing.location %>"
+                    data-image="<%= listing.image && listing.image.url ? listing.image.url : '' %>"
+                    aria-label="Save to Wishlist"
+                  >
+                    <i class="bi bi-suit-heart-fill heart-icon"></i>
+                  </button>
+                </div>
+
+                <!-- Card Content (3D Elevated Content Layer) -->
+                <div class="card-body p-3 card-layer-content d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-baseline mb-1">
+                    <h6 class="card-title fw-bold text-dark text-truncate mb-0" style="max-width: 75%;">
+                      <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark hover-primary">
+                        <%= listing.location %>
+                      </a>
+                    </h6>
+                    <div class="small fw-semibold text-dark d-flex align-items-center gap-1">
+                      <i class="bi bi-star-fill text-warning" style="font-size: 0.8rem;"></i>
+                      <span>
+                        <% if (listing.reviews && listing.reviews.length > 0) { %>
+                          <%= (listing.reviews.reduce((acc, r) => acc + r.rating, 0) / listing.reviews.length).toFixed(1) %>
+                        <% } else { %>
+                          5.0
+                        <% } %>
+                      </span>
+                    </div>
+                  </div>
+
+                  <p class="card-text text-muted small text-truncate mb-1">
+                    <%= listing.title %>
+                  </p>
+
+                  <!-- Authentic Property Sizing & Classification -->
+                  <div class="text-muted small text-truncate mb-2" style="font-size: 0.78rem;">
+                    <%= listing.maxGuests || 4 %> <%= (listing.maxGuests || 4) === 1 ? 'guest' : 'guests' %> · <%= listing.bedrooms || 2 %> <%= (listing.bedrooms || 2) === 1 ? 'room' : 'rooms' %> · <%= listing.propertyType || listing.category || 'Vacation Stay' %>
+                  </div>
+
+                  <!-- Price breakdown with authentic Indian statutory GST slabs (0% <=1k, 12% 1k-7.5k, 18% >7.5k) -->
+                  <% 
+                    const gstRate = listing.price <= 1000 ? 0 : (listing.price > 7500 ? 0.18 : 0.12);
+                    const taxedPrice = Math.round(listing.price * (1 + gstRate));
+                    const gstText = gstRate === 0 ? '0% GST (Exempt)' : (gstRate === 0.18 ? 'incl. 18% Luxury GST' : 'incl. 12% GST');
+                  %>
+                  <div class="d-flex align-items-baseline gap-1 mt-auto card-layer-price">
+                    <span class="fw-bold fs-6 text-dark price-base" data-price="<%= listing.price %>">
+                      ₹<%= listing.price.toLocaleString('en-IN') %>
+                    </span>
+                    <span class="fw-bold fs-6 text-dark price-taxed d-none" data-taxed="<%= taxedPrice %>">
+                      ₹<%= taxedPrice.toLocaleString('en-IN') %>
+                    </span>
+                    <span class="text-muted small">/ night</span>
+                    <span class="text-muted small price-tax-label d-none">(<%= gstText %>)</span>
+                  </div>
+
+                  <!-- Benchmark Market OTA Peak Comparison & Direct FairSafe Savings -->
+                  <% if (listing.marketOtaPrice && listing.marketOtaPrice > listing.price) { %>
+                    <div class="d-flex align-items-center justify-content-between mt-1 pt-1 border-top border-light-subtle" style="font-size: 0.72rem;">
+                      <span class="text-muted text-decoration-line-through">OTA ₹<%= listing.marketOtaPrice.toLocaleString('en-IN') %></span>
+                      <span class="text-success fw-semibold"><i class="bi bi-shield-check"></i> Save ₹<%= (listing.marketOtaPrice - listing.price).toLocaleString('en-IN') %></span>
+                    </div>
+                  <% } %>
+
+                  <!-- AI Festival Demand & Host Surge Transparency Pill -->
+                  <% 
+                    const festInfo = typeof getFestivalPricing === 'function' ? getFestivalPricing(listing, new Date()) : null;
+                  %>
+                  <% if (festInfo && festInfo.festivalId !== 'standard' && festInfo.percentage > 0) { %>
+                    <div class="mt-1 d-flex align-items-center gap-1">
+                      <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
+                        <%= festInfo.emoji %> <%= festInfo.festivalName.split(' ')[0] %>: +<%= festInfo.percentage %>%
+                      </span>
+                    </div>
+                  <% } else if (festInfo && festInfo.festivalId !== 'standard' && festInfo.percentage < 0) { %>
+                    <div class="mt-1 d-flex align-items-center gap-1">
+                      <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle rounded-pill" style="font-size: 0.68rem;" title="<%= festInfo.explanation %>">
+                        <%= festInfo.emoji %> Discount: <%= festInfo.percentage %>%
+                      </span>
+                    </div>
+                  <% } else { %>
+                    <div class="mt-1 d-flex align-items-center gap-1">
+                      <span class="badge bg-light text-muted border rounded-pill" style="font-size: 0.68rem;" title="Standard regular baseline rate with 0% seasonal surge">
+                        ⚖️ Standard: 0% Surge
+                      </span>
+                    </div>
+                  <% } %>
+
+                  <!-- ⚡ Instant 1-Click Quick Reserve Button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm w-100 rounded-pill fw-bold py-2 mt-2 btn-quick-reserve shadow-xs"
+                    data-id="<%= listing._id %>"
+                    data-title="<%= listing.title %>"
+                    data-location="<%= listing.location %>"
+                    data-price="<%= listing.price %>"
+                    data-image="<%= listing.image && listing.image.url ? listing.image.url : '' %>"
+                  >
+                    <i class="bi bi-lightning-charge-fill me-1"></i> Quick Reserve
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          <% } %>
+        <% } else { %>
+          <div class="col-12 text-center py-5">
+            <div class="fs-1 mb-3">🔍</div>
+            <h4 class="fw-bold text-dark">No stays match "<%= searchQuery || activeCategory %>"</h4>
+            <p class="text-muted">Try adjusting your filters or explore our top verified vacation getaways.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+              <a href="/listings?location=Goa" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏖️ Explore Goa</a>
+              <a href="/listings?location=Manali" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏔️ Explore Manali</a>
+              <a href="/listings?location=Jaipur" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏰 Explore Jaipur</a>
+              <a href="/listings?location=Udaipur" class="btn btn-outline-secondary rounded-pill px-3 btn-sm">🏊 Explore Udaipur</a>
+              <a href="/listings" class="btn btn-primary rounded-pill px-4 btn-sm">View All 166 Stays</a>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Right Split Map Column (Initially hidden, revealed in Split Map mode) -->
+    <div class="col-lg-5 col-xl-5 d-none transition-all" id="splitMapCol">
+      <div class="sticky-top" style="top: 85px; z-index: 20;">
+        <div id="listingsMapView" class="rounded-4 overflow-hidden shadow-md border position-relative" style="height: calc(100vh - 120px); min-height: 540px;">
+          <div id="indexMap" style="height: 100%; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
 
-<!-- Hidden anchor for automated test regression compatibility -->
-<div id="toggleMapBtn" style="display: none !important;" aria-hidden="true"></div>
+<!-- Floating Map Pill Button (Always accessible for quick map toggling on all screens) -->
+<div class="floating-map-btn-wrapper position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index: 1020;">
+  <button class="btn btn-dark rounded-pill px-4 py-2 shadow-2xl d-flex align-items-center gap-2 fw-bold floating-map-pill border border-secondary border-opacity-25" id="toggleMapBtn">
+    <i class="bi bi-map-fill" id="toggleMapIcon"></i>
+    <span id="toggleMapText">Show Map</span>
+  </button>
+</div>
 
 <!-- Pass listings data to client-side Leaflet script -->
 <script>
