@@ -2,18 +2,34 @@
    FairStay — Custom Airbnb-Inspired Pilgrimage Design System
    ========================================================================== */
 
-:root {
+:root,
+[data-bs-theme="light"] {
   --fs-primary: #ff5a3c;
   --fs-primary-hover: #e0482b;
   --fs-primary-light: #fff2ef;
   --fs-dark: #0f172a;
   --fs-secondary: #64748b;
-  --fs-border: #e2e8f0;
-  --fs-bg: #ffffff;
+  --fs-border: rgba(0, 0, 0, 0.08);
+  --fs-bg: #f8fafc;
+  --fs-card-bg: #ffffff;
+  --fs-text-primary: #0f172a;
+  --fs-text-muted: #64748b;
   --fs-gold: #ffb703;
   --fs-success: #10b981;
+  --fs-card-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  --fs-card-shadow-hover: 0 16px 32px rgba(0, 0, 0, 0.12);
   --fs-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --fs-heading-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[data-bs-theme="dark"] {
+  --fs-bg: #0b1120;
+  --fs-card-bg: #1e293b;
+  --fs-border: rgba(255, 255, 255, 0.1);
+  --fs-text-primary: #f8fafc;
+  --fs-text-muted: #94a3b8;
+  --fs-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --fs-card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
 html {
@@ -361,6 +377,67 @@ p, .lh-lg {
   font-size: 0.8rem;
 }
 
+.user-menu-btn .user-menu-icon {
+  color: #0f172a !important;
+  transition: color 0.2s ease;
+}
+
+[data-bs-theme="dark"] .user-menu-btn .user-menu-icon {
+  color: #f8fafc !important;
+}
+
+.user-name-label {
+  color: #0f172a;
+}
+
+[data-bs-theme="dark"] .user-name-label {
+  color: #f8fafc;
+}
+
+.user-dropdown-header {
+  background: #f1f5f9;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .user-dropdown-header {
+  background: #1e293b !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.user-profile-name {
+  color: #0f172a;
+}
+
+[data-bs-theme="dark"] .user-profile-name {
+  color: #f8fafc;
+}
+
+.user-profile-email {
+  color: #64748b;
+}
+
+[data-bs-theme="dark"] .user-profile-email {
+  color: #94a3b8;
+}
+
+.mobile-search-bar-strip {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .mobile-search-bar-strip {
+  background: rgba(15, 23, 42, 0.96) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.mobile-search-prompt {
+  color: #0f172a;
+}
+
+[data-bs-theme="dark"] .mobile-search-prompt {
+  color: #f8fafc;
+}
+
 /* Glass Dropdown Menu */
 .navbar-glass-dropdown {
   background: #ffffff !important;
@@ -480,14 +557,32 @@ p, .lh-lg {
 .stay-card {
   position: relative;
   z-index: 1;
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+  background-color: var(--fs-card-bg, #ffffff);
+  border: 1px solid var(--fs-border, rgba(0, 0, 0, 0.08));
+  border-radius: 1.25rem;
+  box-shadow: var(--fs-card-shadow, 0 4px 16px rgba(0, 0, 0, 0.05));
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+[data-bs-theme="light"] .stay-card,
+[data-bs-theme="light"] .card-preserve-3d,
+[data-bs-theme="light"] .spatial-glass-card {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
 }
 
 .stay-card:hover {
   position: relative;
   z-index: 60 !important;
   transform: translateY(-8px) scale(1.015);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: var(--fs-card-shadow-hover, 0 16px 32px rgba(0, 0, 0, 0.12)) !important;
+}
+
+[data-bs-theme="light"] .stay-card:hover,
+[data-bs-theme="light"] .card-preserve-3d:hover {
+  border-color: rgba(255, 90, 60, 0.3) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12) !important;
 }
 
 .stay-img-wrapper {

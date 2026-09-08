@@ -74,7 +74,7 @@
                 placeholder="••••••••"
                 required
               />
-              <button class="btn btn-outline-secondary border-start-0 rounded-end-3 bg-light text-muted" type="button" id="togglePasswordBtn">
+              <button class="input-group-text bg-light border-start-0 rounded-end-3 text-secondary cursor-pointer" type="button" id="togglePasswordBtn" title="Toggle password visibility">
                 <i class="bi bi-eye" id="toggleEyeIcon"></i>
               </button>
             </div>
@@ -103,13 +103,15 @@
 
 <script>
   (function () {
-    // Quick Demo Account Auto-Fill
+    // Elements
     const adminBtn = document.getElementById('quickAdminBtn');
     const guestBtn = document.getElementById('quickGuestBtn');
     const userInput = document.getElementById('usernameInput');
+    const passInput = document.getElementById('passwordInput');
     const form = document.getElementById('loginForm');
 
-    if (adminBtn) {
+    // Quick Demo Account Auto-Fill
+    if (adminBtn && userInput && passInput) {
       adminBtn.addEventListener('click', function () {
         userInput.value = 'admin';
         passInput.value = 'admin123';
@@ -119,7 +121,7 @@
       });
     }
 
-    if (guestBtn) {
+    if (guestBtn && userInput && passInput) {
       guestBtn.addEventListener('click', function () {
         userInput.value = 'pilgrim@fairstay.com';
         passInput.value = 'pilgrim123';
@@ -146,7 +148,6 @@
     }
 
     // Form Validation
-    const form = document.getElementById('loginForm');
     if (form) {
       form.addEventListener('submit', function (event) {
         if (!form.checkValidity()) {

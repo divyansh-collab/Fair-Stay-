@@ -17,19 +17,17 @@
   overflow-x: clip;
 }
 
-/* GPU Optimization: content-visibility skips off-screen card rendering */
+/* Grid item visibility & elevation */
 .listings-3d-grid > .col {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 450px;
+  content-visibility: visible;
+  contain: none;
   position: relative;
   z-index: 1;
 }
 
-/* On hover, unclip containment and elevate z-index so card is never hidden behind cards above or below */
+/* On hover, elevate z-index so card is never hidden behind cards above or below */
 .listings-3d-grid > .col:hover,
 .listings-3d-grid > .col:focus-within {
-  content-visibility: visible !important;
-  contain: none !important;
   z-index: 60 !important;
 }
 
@@ -117,7 +115,7 @@
   transition: opacity 0.3s ease;
   mix-blend-mode: overlay;
   z-index: 10;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 65%);
 }
 
 [data-bs-theme="dark"] .card-glare-overlay {
@@ -148,6 +146,12 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   overflow: hidden;
+}
+
+[data-bs-theme="light"] .spatial-portals-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .spatial-bg-glow-1 {
@@ -931,12 +935,12 @@ a, button, .btn, .nav-link, .card, .badge, .form-control, .form-select, .stay-ca
 
   @keyframes card3DScrollRoll {
     from {
-      transform: perspective(1200px) rotateX(12deg) translateY(42px) translateZ(-45px) scale(0.95);
-      opacity: 0.75;
+      transform: perspective(1200px) rotateX(4deg) translateY(14px) scale(0.98);
+      opacity: 0.95;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     }
     to {
-      transform: perspective(1200px) rotateX(0deg) translateY(0px) translateZ(0px) scale(1);
+      transform: perspective(1200px) rotateX(0deg) translateY(0px) scale(1);
       opacity: 1;
       box-shadow: 0 10px 25px -6px rgba(0, 0, 0, 0.08);
     }

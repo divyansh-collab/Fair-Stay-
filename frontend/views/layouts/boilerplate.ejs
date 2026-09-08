@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>
     (function () {
-      const savedTheme = localStorage.getItem('fairstay_theme') || 'light';
-      document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      const savedTheme = localStorage.getItem('fairstay_theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', theme);
     })();
   </script>
   <title>FairStay — Vacation Rentals, Homes, Villas & Stays</title>
@@ -38,16 +40,6 @@
   <!-- Custom FairStay CSS & 3D Spatial Motion Engine -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/motion-3d.css" />
-
-  <!-- Pre-load Dark / Light Theme to prevent flash -->
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem('fairstay_theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-bs-theme', theme);
-    })();
-  </script>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
