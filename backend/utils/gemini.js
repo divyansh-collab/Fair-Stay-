@@ -317,7 +317,7 @@ Output valid JSON strictly with this schema:
         difference,
         demandLevel: parsed.demandLevel || baselineImpact.demandLevel,
         explanation: parsed.explanation || baselineImpact.explanation,
-        travelerTip: parsed.travelerTip || `Book early in ${destinationName} under FairStay's FairSafe anti-surge guarantee.`,
+        travelerTip: parsed.travelerTip || `Explore stays in ${destinationName} with transparent festival and seasonal area pricing.`,
         customerComparison: baselineImpact.comparisonText,
         cityKey: baselineFestival.cityKey || 'general',
         destination: destinationName,

@@ -28,9 +28,9 @@
 - **Fullscreen Modal Viewer**: Click ANY photo or the *"Show all 5 photos"* button to open the full-screen gallery.
 - **Photo Navigation**: Previous (`<`) and Next (`>`) arrows, keyboard arrow controls (`←` / `→` / `Esc`), live photo counter (`1 / 5`), room captions, and clickable thumbnails.
 
-### 🛡️ 3. FairSafe™ Zero-Surge Price Guarantee & Breakdown
-- **100% Transparent Pricing**: See the exact base price, GST tax calculation (12%), and host price breakdown with zero hidden service markups.
-- **Anti-Surge Protection**: Algorithmic price cap verification protects guests from predatory holiday price spikes.
+### 🛡️ 3. FairSafe™ Transparent Festival & Area-Wise Pricing
+- **100% Transparent Pricing**: See the exact base price, GST tax breakdown (12% / 18%), and direct host pricing with zero hidden OTA markups.
+- **City & Area Festival Intelligence**: Dynamic tracking of price increases and decreases during premier local events and off-seasons across specific Indian destinations—with complete freedom for hosts to price their properties and zero platform restrictions.
 
 ### 🤖 4. AI Trip Assistant & Festival Price Predictor (Google Gemini)
 - **AI Concierge**: Floating interactive chat assistant widget powered by Google Gemini 1.5 Flash to answer questions, recommend itineraries, and suggest authentic local experiences.

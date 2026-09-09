@@ -735,15 +735,15 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
   const cityName = location ? location.split(',')[0].trim() : 'this destination';
 
   if (percentage > 0) {
-    explanation = `The host of ${stayTitle} has adjusted the rate by +${percentage}% for ${festivalName} reflecting ${cityName}'s local event and peak seasonal demand, fully capped under FairSafe anti-surge protection.`;
+    explanation = `Area seasonal trend: Rates in ${cityName} typically adjust by +${percentage}% during ${festivalName} reflecting local event demand and peak area occupancy. Hosts retain full pricing freedom with direct, transparent rates.`;
     demandLevel = percentage >= 30 ? 'Peak Local Event Surge' : 'Seasonal Holiday Demand';
   } else if (percentage < 0) {
-    explanation = `Great value! The host is offering a ${Math.abs(percentage)}% off-peak seasonal discount for ${stayTitle} during ${cityName}'s low season below the normal baseline rate.`;
+    explanation = `Off-peak season savings: Stays in ${cityName} trend ${Math.abs(percentage)}% lower during ${festivalName} below standard baseline rates.`;
     demandLevel = 'Off-Season Promotional Discount';
   } else {
     explanation = matchedFestival
-      ? `The host of ${stayTitle} maintains a 0% surge during ${festivalName}, offering you standard baseline pricing with zero markup!`
-      : `Standard regular season in ${cityName}. Enjoy 100% transparent baseline rates with no surge markups.`;
+      ? `Standard baseline rate: Stays in ${cityName} maintain standard pricing during ${festivalName} with steady demand.`
+      : `Standard regular season in ${cityName}. Enjoy 100% transparent baseline rates with steady year-round pricing.`;
     demandLevel = 'Standard Normal Rate';
   }
 
