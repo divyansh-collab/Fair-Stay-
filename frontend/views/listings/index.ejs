@@ -265,12 +265,12 @@
                 <!-- Card Content (3D Elevated Content Layer) -->
                 <div class="card-body p-3 card-layer-content d-flex flex-column">
                   <div class="d-flex justify-content-between align-items-baseline mb-1">
-                    <h6 class="card-title fw-bold text-dark text-truncate mb-0" style="max-width: 75%;">
+                    <h6 class="card-title fw-bold text-dark text-truncate mb-0 flex-grow-1 me-2" title="<%= listing.title %>">
                       <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark hover-primary">
-                        <%= listing.location %>
+                        <%= listing.title %>
                       </a>
                     </h6>
-                    <div class="small fw-semibold text-dark d-flex align-items-center gap-1">
+                    <div class="small fw-semibold text-dark d-flex align-items-center gap-1 flex-shrink-0">
                       <i class="bi bi-star-fill text-warning" style="font-size: 0.8rem;"></i>
                       <span>
                         <% if (listing.reviews && listing.reviews.length > 0) { %>
@@ -282,8 +282,8 @@
                     </div>
                   </div>
 
-                  <p class="card-text text-muted small text-truncate mb-1">
-                    <%= listing.title %>
+                  <p class="card-text text-muted small text-truncate mb-1" title="<%= listing.location %><% if (listing.country && listing.country !== listing.location) { %>, <%= listing.country %><% } %>">
+                    <i class="bi bi-geo-alt-fill text-danger me-1" style="font-size: 0.75rem;"></i><%= listing.location %><% if (listing.country && listing.country !== listing.location) { %>, <%= listing.country %><% } %>
                   </p>
 
                   <!-- Authentic Property Sizing & Classification -->

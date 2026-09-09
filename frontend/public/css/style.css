@@ -84,14 +84,7 @@ body {
 }
 
 .scroll-progress-3d {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #ff5a3c, #38bdf8, #ffb703);
-  z-index: 99999;
-  pointer-events: none;
-  transition: width 0.08s linear;
+  display: none !important;
 }
 
 h1, h2, h3, h4, h5, h6, .brand-title {
@@ -489,27 +482,18 @@ p, .lh-lg {
   }
 }
 
-/* Destination & Category Filter Bar - Sticky under Navbar */
+/* Destination & Category Filter Bar */
 .filter-wrapper {
-  position: sticky !important;
-  top: 64px !important;
-  z-index: 1015 !important;
-  background-color: rgba(255, 255, 255, 0.96) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  position: relative !important;
+  z-index: 10 !important;
+  background-color: var(--bs-body-bg, #ffffff) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  transition: top 0.2s ease, background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 [data-bs-theme="dark"] .filter-wrapper {
-  background-color: rgba(15, 23, 42, 0.96) !important;
+  background-color: var(--bs-body-bg, #0f172a) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-@media (max-width: 767.98px) {
-  .filter-wrapper {
-    top: 114px !important;
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1158,7 +1142,7 @@ p, .lh-lg {
 
 /* Filter bar & Categories in Dark Mode */
 [data-bs-theme="dark"] .filter-wrapper {
-  background: rgba(15, 23, 42, 0.96) !important;
+  background: var(--bs-body-bg, #0f172a) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 [data-bs-theme="dark"] .category-item {

@@ -380,7 +380,6 @@
     initSpatialPortals();
     init3DCardTiltEngine();
     initMagneticButtons();
-    initScrollProgressBar();
   }
 
   // Auto-init on document ready
