@@ -2,11 +2,11 @@
 <div class="modal fade" id="smartSearchModal" tabindex="-1" aria-labelledby="smartSearchModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-top modal-lg search-modal-dialog">
     <div class="modal-content border-0 search-modal-content overflow-hidden shadow-2xl">
-      <div class="modal-header border-bottom px-4 py-3 bg-light d-flex align-items-center justify-content-between">
+      <div class="modal-header border-bottom px-4 py-3 search-modal-header d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center gap-2">
           <span class="fs-4">✨</span>
           <div>
-            <h5 class="modal-title fw-bold text-dark mb-0" id="smartSearchModalLabel">FairStay Vacation Search</h5>
+            <h5 class="modal-title fw-bold mb-0" id="smartSearchModalLabel">FairStay Vacation Search</h5>
             <small class="text-muted">Find luxury villas, mountain cabins, and beach getaways</small>
           </div>
         </div>
@@ -17,7 +17,7 @@
         <!-- Natural Language AI Search Form -->
         <form action="/ai/smart-search" method="POST" id="smartSearchForm">
           <div class="d-flex align-items-center justify-content-between mb-2">
-            <label class="form-label fw-bold text-dark mb-0">
+            <label class="form-label fw-bold mb-0">
               Where would you like to go?
             </label>
             <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-2 py-1 small">
@@ -25,20 +25,20 @@
             </span>
           </div>
 
-          <div class="input-group mb-3 shadow-sm rounded-pill overflow-hidden border p-1 bg-white">
-            <span class="input-group-text bg-white border-0 ps-3">
+          <div class="input-group mb-3 shadow-sm rounded-pill overflow-hidden border p-1 search-input-wrapper">
+            <span class="input-group-text border-0 ps-3">
               <i class="bi bi-search text-primary fs-5"></i>
             </span>
             <input
               type="text"
               name="query"
               id="naturalSearchInput"
-              class="form-control border-0 py-2 pe-3 bg-white"
+              class="form-control border-0 py-2 pe-3"
               placeholder="e.g., Beachfront villa in Goa with pool under ₹6000"
               autocomplete="off"
               required
             />
-            <button class="btn btn-primary px-4 rounded-pill fw-bold" type="submit">
+            <button class="btn btn-search-submit px-4 rounded-pill fw-bold" type="submit">
               Search Stays
             </button>
           </div>
@@ -122,7 +122,7 @@
             <input type="number" name="maxPrice" class="form-control rounded-3" placeholder="e.g. 6000" min="500" step="500" />
           </div>
           <div class="col-12 text-end mt-3">
-            <button type="submit" class="btn btn-dark rounded-pill px-4">
+            <button type="submit" class="btn btn-dark btn-apply-filters rounded-pill px-4">
               Apply Filters
             </button>
           </div>

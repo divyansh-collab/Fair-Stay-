@@ -192,21 +192,14 @@ function initTaxToggle() {
    3. Modals & Curated Experiences
    ========================================================================== */
 function initModalsAndExperiences() {
-  // Direct click delegate for search capsules
-  document.addEventListener('click', (e) => {
-    const searchCapsule = e.target.closest('.search-capsule, [data-bs-target="#smartSearchModal"]');
-    if (searchCapsule && window.bootstrap) {
-      const modalEl = document.getElementById('smartSearchModal');
-      if (modalEl) {
-        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-        modal.show();
-        setTimeout(() => {
-          const inp = document.getElementById('naturalSearchInput');
-          if (inp) inp.focus();
-        }, 350);
-      }
-    }
-  });
+  // Focus search input when modal is opened via Bootstrap data attributes
+  const smartSearchModal = document.getElementById('smartSearchModal');
+  if (smartSearchModal) {
+    smartSearchModal.addEventListener('shown.bs.modal', () => {
+      const inp = document.getElementById('naturalSearchInput');
+      if (inp) inp.focus();
+    });
+  }
 
   // Mark all notifications read
   const markAllReadBtn = document.getElementById('markAllReadBtn');
