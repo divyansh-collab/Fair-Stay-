@@ -1265,4 +1265,40 @@
   window.navigateGallery = navigateGallery;
   window.setLightboxPhotoByIndex = setLightboxPhotoByIndex;
 </script>
-<script src="/js/show-page.js"></script>
+<!-- Infallible bfcache & back-navigation state restoration script -->
+<script>
+  (function () {
+    function forceResetReserveBtn() {
+      const btn = document.getElementById('reserveSubmitBtn');
+      if (!btn) return;
+      if (btn.hasAttribute('data-host-disabled')) {
+        btn.disabled = true;
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.7';
+        btn.innerHTML = 'Host Preview (Your Stay)';
+      } else {
+        btn.disabled = false;
+        btn.style.pointerEvents = 'auto';
+        btn.style.opacity = '1';
+        btn.innerHTML = 'Reserve';
+      }
+    }
+
+    // 1. pagehide: Reset button BEFORE browser captures bfcache snapshot
+    window.addEventListener('pagehide', forceResetReserveBtn);
+    // 2. pageshow: Reset button immediately when page is restored from bfcache
+    window.addEventListener('pageshow', forceResetReserveBtn);
+    // 3. visibilitychange: Reset when returning to tab
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) forceResetReserveBtn();
+    });
+    // 4. focus: Reset when tab or window regains focus
+    window.addEventListener('focus', forceResetReserveBtn);
+    // 5. popstate: Reset on browser history navigation
+    window.addEventListener('popstate', forceResetReserveBtn);
+
+    window.forceResetReserveBtn = forceResetReserveBtn;
+  })();
+</script>
+<script src="/js/show-page.js?v=<%= Date.now() %>"></script>
+

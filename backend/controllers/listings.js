@@ -141,6 +141,11 @@ module.exports.showListing = async (req, res) => {
     console.warn('⚠️ Could not fetch booked ranges:', err.message);
   }
 
+  // Prevent stale bfcache / browser cache locks on back navigation
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+
   res.render('listings/show.ejs', {
     listing,
     festivalData,

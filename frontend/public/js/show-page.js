@@ -108,11 +108,16 @@
     };
 
     function resetReserveButton() {
+      if (typeof window.forceResetReserveBtn === 'function') {
+        window.forceResetReserveBtn();
+        return;
+      }
       const reserveBtn = document.getElementById('reserveSubmitBtn');
       if (reserveBtn) {
         if (reserveBtn.hasAttribute('data-host-disabled')) {
           reserveBtn.disabled = true;
           reserveBtn.style.pointerEvents = 'none';
+          reserveBtn.style.opacity = '0.7';
           reserveBtn.innerHTML = 'Host Preview (Your Stay)';
         } else {
           reserveBtn.disabled = false;
@@ -123,8 +128,14 @@
       }
     }
 
-    // Reset button whenever page is shown (handles browser back button / bfcache)
+    // Comprehensive lifecycle reset handlers (eliminates bfcache button locks on back navigation)
     window.addEventListener('pageshow', resetReserveButton);
+    window.addEventListener('pagehide', resetReserveButton);
+    window.addEventListener('focus', resetReserveButton);
+    window.addEventListener('popstate', resetReserveButton);
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) resetReserveButton();
+    });
 
     function updateAvailabilityUI(d1, d2) {
       const box = document.getElementById('dateAvailabilityBox');
@@ -220,6 +231,12 @@
         animate: true,
         disableMobile: true,
         disable: [isDateBooked],
+        onOpen: function () {
+          resetReserveButton();
+        },
+        onClose: function () {
+          resetReserveButton();
+        },
         onChange: async function (selectedDates, dateStr) {
           resetReserveButton();
           if (fpCheckOut) {
@@ -234,6 +251,7 @@
           // Real-time festival check for picked date
           await syncFestivalForDate(dateStr);
           calculateTotal();
+          resetReserveButton();
         },
       });
 
@@ -247,10 +265,22 @@
         animate: true,
         disableMobile: true,
         disable: [isDateBooked],
+        onOpen: function () {
+          resetReserveButton();
+        },
+        onClose: function () {
+          resetReserveButton();
+        },
         onChange: function () {
           resetReserveButton();
           calculateTotal();
         },
+      });
+
+      // Bind input click & focus to immediately restore reserve button
+      [checkInEl, checkOutEl].forEach((input) => {
+        input.addEventListener('focus', resetReserveButton);
+        input.addEventListener('click', resetReserveButton);
       });
     }
 
@@ -425,10 +455,10 @@
           reserveBtn.style.pointerEvents = 'none';
           reserveBtn.style.opacity = '0.85';
 
-          // Safety fallback: restore button if response takes more than 7s
+          // Safety fallback: restore button if navigation takes more than 3.5s
           setTimeout(() => {
             resetReserveButton();
-          }, 7000);
+          }, 3500);
         }
       });
     }
