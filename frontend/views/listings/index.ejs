@@ -4,43 +4,8 @@
 <div class="filter-wrapper border-bottom shadow-xs py-2">
   <div class="container">
 
-    <!-- Destination Quick Chips -->
-    <div class="d-flex align-items-center gap-2 overflow-x-auto pb-2 corridor-chips-bar text-nowrap">
-      <span class="small text-muted fw-bold me-1">Explore:</span>
-      <a href="/listings" class="btn btn-sm <%= !searchQuery && (!activeCategory || activeCategory === 'All') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        All Stays
-      </a>
-      <a href="/listings?location=Goa" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('goa') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🏖️ Goa (Beach & Pools)
-      </a>
-      <a href="/listings?location=Manali" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('manali') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🏔️ Manali (Mountains)
-      </a>
-      <a href="/listings?location=Jaipur" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('jaipur') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🏰 Jaipur (Heritage)
-      </a>
-      <a href="/listings?location=Udaipur" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('udaipur') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🌊 Udaipur (Lakes)
-      </a>
-      <a href="/listings?location=Mumbai" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('mumbai') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🏙️ Mumbai
-      </a>
-      <a href="/listings?location=Bengaluru" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('bengaluru') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        💻 Bengaluru
-      </a>
-      <a href="/listings?location=Munnar" class="btn btn-sm <%= searchQuery && (searchQuery.toLowerCase().includes('munnar') || searchQuery.toLowerCase().includes('kerala')) ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🌿 Kerala & Munnar
-      </a>
-      <a href="/listings?location=Rishikesh" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('rishikesh') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🧘 Rishikesh
-      </a>
-      <a href="/listings?location=Varanasi" class="btn btn-sm <%= searchQuery && searchQuery.toLowerCase().includes('varanasi') ? 'btn-danger text-white' : 'btn-outline-secondary' %> rounded-pill px-3">
-        🪔 Varanasi
-      </a>
-    </div>
-
     <!-- Category Icon Rail & Tax Toggle -->
-    <div class="d-flex align-items-center justify-content-between pt-2">
+    <div class="d-flex align-items-center justify-content-between py-1">
       <div class="d-flex align-items-center gap-4 overflow-x-auto category-rail text-nowrap flex-grow-1 pe-3">
         
         <a href="/listings" class="category-item text-decoration-none <%= activeCategory === 'All' ? 'active' : '' %>">
@@ -123,64 +88,60 @@
        ========================================================================== -->
   <% if (!searchQuery && (!activeCategory || activeCategory === 'All') && !minPrice && !maxPrice) { %>
     <div id="naturalSanctuaryHero" class="natural-sanctuary-hero mb-4 p-4 p-md-5 position-relative overflow-hidden rounded-4 shadow-sm text-white">
-      <!-- Ambient Organic Lighting Overlay -->
-      <div class="natural-scenic-overlay"></div>
-
-      <div class="position-relative z-2 max-w-850 mx-auto text-center py-2 py-md-3">
+      <div class="position-relative z-2 hero-content-left py-2 py-md-3">
         <!-- Luxury Brand Badge -->
-        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3 natural-pill-badge">
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3 hero-glass-badge">
           <span>✨</span>
-          <span class="small fw-bold text-uppercase tracking-wider">STAY DIFFERENT. TRAVEL BETTER.</span>
+          <span class="small fw-bold text-uppercase tracking-wider">DISCOVER • BOOK • HOST</span>
         </div>
 
-        <!-- Main Editorial Headline -->
-        <h1 class="fw-extrabold natural-hero-title mb-2">
-          Your Next Stay Starts Here.
+        <!-- Main Editorial Headline (Two-tone) -->
+        <h1 class="hero-main-title mb-3">
+          Your Next Stay<br>
+          <span class="hero-title-accent">Starts Here.</span>
         </h1>
 
         <!-- Atmospheric Subtitle -->
-        <p class="natural-hero-subtitle lead fs-6 mb-4 opacity-90 mx-auto">
+        <p class="hero-main-subtitle mb-4">
           From cozy homes to luxury escapes, discover places worth staying — or open your doors to travelers.
         </p>
 
         <!-- Curated Discovery Pills -->
-        <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 mb-4">
-          <a href="/listings?location=Goa#listingsGridView" class="natural-hero-pill-tag text-decoration-none">
-            🏖️ Goa Coastal Villas
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+          <a href="/listings?location=Goa#listingsGridView" class="hero-vibe-chip text-decoration-none">
+            <span>🌴</span> Goa Coastal Villas
           </a>
-          <a href="/listings?location=Manali#listingsGridView" class="natural-hero-pill-tag text-decoration-none">
-            🏔️ Manali Mountain Chalets
+          <a href="/listings?location=Manali#listingsGridView" class="hero-vibe-chip text-decoration-none">
+            <span>🏔️</span> Manali Mountain Chalets
           </a>
-          <a href="/listings?location=Jaipur#listingsGridView" class="natural-hero-pill-tag text-decoration-none">
-            🏰 Jaipur Royal Haveli
+          <a href="/listings?location=Jaipur#listingsGridView" class="hero-vibe-chip text-decoration-none">
+            <span>🏰</span> Jaipur Royal Haveli
           </a>
-          <a href="/listings?location=Munnar#listingsGridView" class="natural-hero-pill-tag text-decoration-none">
-            🌿 Munnar Sanctuaries
+          <a href="/listings?location=Munnar#listingsGridView" class="hero-vibe-chip text-decoration-none">
+            <span>🌿</span> Munnar Sanctuaries
           </a>
-          <a href="/listings?location=Udaipur#listingsGridView" class="natural-hero-pill-tag text-decoration-none">
-            🌊 Udaipur Lakefront Stays
+          <a href="/listings?location=Udaipur#listingsGridView" class="hero-vibe-chip text-decoration-none">
+            <span>🌊</span> Udaipur Lakefront Stays
           </a>
         </div>
 
         <!-- Dual Marketplace CTAs: Explore Stays → and Become a Host -->
-        <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
-          <a href="#listingsGridView" class="btn btn-danger rounded-pill px-4 py-2 fw-bold text-white shadow-sm natural-explore-btn d-inline-flex align-items-center gap-2">
+        <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+          <a href="#listingsGridView" class="btn hero-cta-explore d-inline-flex align-items-center gap-2">
             <span>Explore Stays</span>
             <i class="bi bi-arrow-right"></i>
           </a>
-          <a href="/listings/new" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold shadow-sm natural-host-btn d-inline-flex align-items-center gap-2">
+          <a href="/listings/new" class="btn hero-cta-host d-inline-flex align-items-center gap-2">
             <i class="bi bi-house-door-fill text-warning"></i>
             <span>Become a Host</span>
           </a>
         </div>
 
         <!-- Reassurance Trust Line -->
-        <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mt-3 text-white-50 small" style="font-size: 0.8rem;">
-          <span class="d-flex align-items-center gap-1 text-white opacity-75"><i class="bi bi-shield-check text-success"></i> 100% Verified Homes</span>
-          <span class="opacity-50">•</span>
-          <span class="d-flex align-items-center gap-1 text-white opacity-75"><i class="bi bi-tag-fill text-warning"></i> Zero Hidden Fees</span>
-          <span class="opacity-50">•</span>
-          <span class="d-flex align-items-center gap-1 text-white opacity-75"><i class="bi bi-patch-check-fill text-info"></i> FairSafe™ Protected</span>
+        <div class="d-flex flex-wrap align-items-center gap-4 text-white small hero-trust-row" style="font-size: 0.85rem;">
+          <span class="d-flex align-items-center gap-2 opacity-90"><i class="bi bi-shield-check text-success"></i> 100% Verified Homes</span>
+          <span class="d-flex align-items-center gap-2 opacity-90"><i class="bi bi-tag-fill text-warning"></i> Zero Hidden Fees</span>
+          <span class="d-flex align-items-center gap-2 opacity-90"><i class="bi bi-patch-check-fill text-info"></i> FairStay™ Protected</span>
         </div>
       </div>
     </div>
@@ -210,10 +171,16 @@
         <%= allListings ? allListings.length : 0 %> Stays
       </span>
     </div>
-    <div class="small text-muted d-none d-md-flex align-items-center gap-2">
-      <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-2 py-1">
-        <i class="bi bi-shield-check me-1"></i> Zero-Surge FairSafe Guaranteed
-      </span>
+    <div class="d-flex align-items-center gap-3">
+      <div class="small text-muted d-none d-lg-flex align-items-center gap-2 me-2">
+        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-2 py-1">
+          <i class="bi bi-shield-check me-1"></i> Zero-Surge FairSafe Guaranteed
+        </span>
+      </div>
+      <a href="#listingsGridView" class="text-decoration-none text-muted fw-semibold small d-flex align-items-center gap-1 hover-underline">
+        <span>View All</span>
+        <i class="bi bi-arrow-right small"></i>
+      </a>
     </div>
   </div>
 
