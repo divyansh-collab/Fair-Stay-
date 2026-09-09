@@ -2141,4 +2141,103 @@ body:not(.modal-open) .modal-backdrop {
   box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
 }
 
+/* ==========================================================================
+   27. FairSafe™ Traveler Protection & Help Center Luxury Accordion
+   ========================================================================== */
+.help-modal-content {
+  border-radius: 1.75rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.3) !important;
+  background: #ffffff !important;
+  overflow: hidden;
+}
+
+[data-bs-theme="dark"] .help-modal-content {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85) !important;
+  color: #f8fafc !important;
+}
+
+.help-modal-header {
+  background: rgba(248, 250, 252, 0.9) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .help-modal-header {
+  background: #1f2937 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Custom FairSafe Accordion without default Bootstrap blue */
+#helpAccordion .accordion-item {
+  background: transparent !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 1rem !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+[data-bs-theme="dark"] #helpAccordion .accordion-item {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+#helpAccordion .accordion-item:hover {
+  border-color: rgba(255, 90, 60, 0.4) !important;
+}
+
+[data-bs-theme="dark"] #helpAccordion .accordion-item:hover {
+  border-color: rgba(255, 107, 80, 0.4) !important;
+}
+
+#helpAccordion .accordion-button {
+  background: transparent !important;
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+[data-bs-theme="dark"] #helpAccordion .accordion-button {
+  color: #f1f5f9 !important;
+}
+
+#helpAccordion .accordion-button:not(.collapsed) {
+  background: rgba(255, 90, 60, 0.06) !important;
+  color: #ff5a3c !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(255, 90, 60, 0.15) !important;
+}
+
+[data-bs-theme="dark"] #helpAccordion .accordion-button:not(.collapsed) {
+  background: rgba(255, 107, 80, 0.1) !important;
+  color: #ff6b50 !important;
+  border-bottom: 1px solid rgba(255, 107, 80, 0.2) !important;
+}
+
+#helpAccordion .accordion-button::after {
+  filter: grayscale(1);
+  transition: transform 0.25s ease;
+}
+
+[data-bs-theme="dark"] #helpAccordion .accordion-button::after {
+  filter: invert(1);
+}
+
+#helpAccordion .accordion-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #475569 !important;
+  background: transparent !important;
+}
+
+[data-bs-theme="dark"] #helpAccordion .accordion-body {
+  color: #94a3b8 !important;
+}
+
 

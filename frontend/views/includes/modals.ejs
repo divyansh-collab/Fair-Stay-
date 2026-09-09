@@ -285,53 +285,117 @@
 <!-- 4. Help Center Modal -->
 <div class="modal fade" id="helpCenterModal" tabindex="-1" aria-labelledby="helpCenterModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 rounded-4 shadow-lg">
-      <div class="modal-header border-bottom px-4 py-3 bg-light">
+    <div class="modal-content help-modal-content border-0 rounded-4 shadow-xl">
+      <div class="modal-header border-bottom px-4 py-3 help-modal-header d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center gap-2">
           <i class="bi bi-shield-check text-success fs-4"></i>
-          <h5 class="modal-title fw-bold" id="helpCenterModalLabel">FairSafe™ Traveler Protection & Help Center</h5>
+          <div>
+            <h5 class="modal-title fw-bold mb-0" id="helpCenterModalLabel">FairSafe™ Traveler Protection & Help Center</h5>
+            <small class="text-muted">Verified policies, zero-surge price guarantees, and guest safety standards</small>
+          </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-4">
-        <div class="accordion accordion-flush" id="helpAccordion">
+        <div class="accordion" id="helpAccordion">
+          <!-- Item 1: Anti-Surge Guarantee -->
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#helpOne">
-                What is the FairSafe™ Anti-Surge Guarantee?
+              <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#helpOne">
+                <i class="bi bi-shield-lock-fill text-success me-2 fs-5"></i> What is the FairSafe™ Anti-Surge Guarantee?
               </button>
             </h2>
             <div id="helpOne" class="accordion-collapse collapse show" data-bs-parent="#helpAccordion">
-              <div class="accordion-body text-muted small">
-                Unlike platforms that allow 300% to 500% price gouging during holidays, New Year, or festival weeks, FairStay legally limits seasonal adjustments to a maximum of <strong>+15%</strong>. All listed prices are completely transparent with no hidden cleaning fees.
+              <div class="accordion-body">
+                Unlike commercial OTAs that allow 300% to 500% predatory price gouging during holidays and festival weeks, FairStay protects travelers with our <strong>FairSafe™ anti-surge ceiling</strong>. Seasonal adjustments are transparently capped (maximum +35% to +45% during premier events like Goa Sunburn or Jaipur Literature Festival), standard regular seasons maintain 0% markup, and low seasons receive automatic discounts up to 35% below baseline rates. You always receive direct host rates with zero hidden fees.
               </div>
             </div>
           </div>
 
+          <!-- Item 2: Free Cancellation -->
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#helpTwo">
-                How does Free Cancellation work?
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#helpTwo">
+                <i class="bi bi-arrow-counterclockwise text-primary me-2 fs-5"></i> How does Free Cancellation & Instant Refund work?
               </button>
             </h2>
             <div id="helpTwo" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
-              <div class="accordion-body text-muted small">
-                Enjoy peace of mind. Every reservation can be cancelled up to 48 hours prior to check-in for a 100% instant refund with zero cancellation penalties.
+              <div class="accordion-body">
+                Enjoy total peace of mind. Any confirmed reservation can be cancelled directly from your <strong>My Trips</strong> dashboard (<a href="/bookings" class="text-decoration-none fw-semibold">/bookings</a>) prior to check-in with one click. When cancelled, you receive an <strong>instant 100% full refund</strong> with zero cancellation penalties, processing deductions, or platform fees.
               </div>
             </div>
           </div>
 
+          <!-- Item 3: Verified Amenities -->
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#helpThree">
-                Are amenities and Wi-Fi verified?
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#helpThree">
+                <i class="bi bi-patch-check-fill text-info me-2 fs-5"></i> Are property amenities, capacity, and Wi-Fi verified?
               </button>
             </h2>
             <div id="helpThree" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
-              <div class="accordion-body text-muted small">
-                Yes! Every Superhost property undergoes verification for verified high-speed Wi-Fi (100+ Mbps), clean private pools, working air conditioning, and safe neighborhood locations.
+              <div class="accordion-body">
+                Yes! Every property on FairStay undergoes verification for authentic physical capacity (exact guest limits, bedrooms, beds, and bathrooms), verified high-speed Wi-Fi (100+ Mbps), private pools, working air conditioning, verified geographic coordinates, and a certified FairSafe Trust & Safety score (up to 99/100).
               </div>
             </div>
+          </div>
+
+          <!-- Item 4: GST & Pricing Transparency -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#helpFour">
+                <i class="bi bi-receipt-cutoff text-warning me-2 fs-5"></i> How does All-Inclusive Pricing & Indian GST work?
+              </button>
+            </h2>
+            <div id="helpFour" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                We practice 100% upfront pricing transparency. Use the <strong>"Display total after taxes"</strong> toggle on the home feed to view complete bottom-line rates before booking. Statutory Indian GST is calculated strictly per official government slabs (0% for under ₹1,000, 12% for ₹1,000–₹7,500, and 18% for luxury stays above ₹7,500). There are zero surprise service charges or hidden cleaning fees added at checkout.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: AI Concierge & Smart Search -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#helpFive">
+                <i class="bi bi-stars text-danger me-2 fs-5"></i> How does the FairStay AI Trip Assistant & Smart Search work?
+              </button>
+            </h2>
+            <div id="helpFive" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                FairStay integrates Google Gemini to help you discover ideal stays effortlessly. Use the search capsule at the top for natural language queries (e.g., <em>"Beachfront villa in Goa with pool under ₹6000"</em>) or click the <strong>"FairStay AI Trip Assistant"</strong> button on the bottom right for 24/7 personalized itinerary recommendations, budgeting advice, and seasonal festival travel tips.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Host Onboarding -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#helpSix">
+                <i class="bi bi-house-door-fill text-success me-2 fs-5"></i> Can I list my own property and become a Host?
+              </button>
+            </h2>
+            <div id="helpSix" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Yes! Homeowners, boutique resorts, and villa hosts can list properties directly by clicking <strong>"List Your Property"</strong> in the top navigation bar (<a href="/listings/new" class="text-decoration-none fw-semibold">/listings/new</a>). Hosts get transparent direct bookings, zero predatory commissions, and access to the Superhost Host Panel (<a href="/bookings/host/panel" class="text-decoration-none fw-semibold">/bookings/host/panel</a>) for real-time revenue analytics and guest reservation ledgers.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Help Contact Footer -->
+        <div class="mt-4 p-3 rounded-3 bg-body-tertiary border d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+          <div class="d-flex align-items-center gap-2 small text-muted">
+            <i class="bi bi-info-circle-fill text-primary"></i>
+            <span>Need personalized booking or host assistance?</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <a href="/bookings" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+              <i class="bi bi-ticket-perforated me-1"></i> My Trips
+            </a>
+            <button type="button" class="btn btn-sm btn-primary rounded-pill px-3" data-bs-dismiss="modal" onclick="document.getElementById('aiConciergeWidget')?.classList.remove('d-none'); document.getElementById('aiMessageInput')?.focus();">
+              <i class="bi bi-chat-dots-fill me-1"></i> Ask AI Assistant
+            </button>
           </div>
         </div>
       </div>
