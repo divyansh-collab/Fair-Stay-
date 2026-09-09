@@ -107,7 +107,109 @@
       calculateTotal();
     };
 
+    function resetReserveButton() {
+      const reserveBtn = document.getElementById('reserveSubmitBtn');
+      if (reserveBtn) {
+        if (reserveBtn.hasAttribute('data-host-disabled')) {
+          reserveBtn.disabled = true;
+          reserveBtn.style.pointerEvents = 'none';
+          reserveBtn.innerHTML = 'Host Preview (Your Stay)';
+        } else {
+          reserveBtn.disabled = false;
+          reserveBtn.style.pointerEvents = 'auto';
+          reserveBtn.style.opacity = '1';
+          reserveBtn.innerHTML = 'Reserve';
+        }
+      }
+    }
+
+    // Reset button whenever page is shown (handles browser back button / bfcache)
+    window.addEventListener('pageshow', resetReserveButton);
+
+    function updateAvailabilityUI(d1, d2) {
+      const box = document.getElementById('dateAvailabilityBox');
+      const text = document.getElementById('availabilityStatusText');
+      const icon = document.getElementById('availabilityIcon');
+      const badge = document.getElementById('availabilityBadge');
+
+      if (!box || !text) return;
+
+      if (!d1 || !d2) {
+        box.className = 'd-flex align-items-center justify-content-between p-2 px-3 rounded-3 bg-secondary-subtle border border-secondary-subtle mb-3';
+        text.className = 'text-secondary small fw-semibold';
+        text.textContent = 'Select check-in and check-out dates';
+        if (icon) icon.className = 'bi bi-calendar-check text-secondary';
+        if (badge) {
+          badge.className = 'badge bg-secondary text-white small';
+          badge.textContent = 'Select Dates';
+        }
+        return;
+      }
+
+      const date1 = new Date(d1);
+      const date2 = new Date(d2);
+
+      if (date2 <= date1) {
+        box.className = 'd-flex align-items-center justify-content-between p-2 px-3 rounded-3 bg-warning-subtle border border-warning-subtle mb-3';
+        text.className = 'text-warning-emphasis small fw-semibold';
+        text.textContent = 'Check-out date must be after check-in date';
+        if (icon) icon.className = 'bi bi-exclamation-triangle-fill text-warning';
+        if (badge) {
+          badge.className = 'badge bg-warning text-dark small';
+          badge.textContent = 'Adjust Dates';
+        }
+        return;
+      }
+
+      // Check if selected range overlaps any confirmed booking
+      const overlaps = (window.bookedDateRanges || []).some((range) => {
+        const rs = new Date(range.from);
+        const re = new Date(range.to);
+        return date1 < re && date2 > rs;
+      });
+
+      if (overlaps) {
+        box.className = 'd-flex align-items-center justify-content-between p-2 px-3 rounded-3 bg-danger-subtle border border-danger-subtle mb-3';
+        text.className = 'text-danger small fw-semibold';
+        text.textContent = 'These dates are already booked. Please choose other dates.';
+        if (icon) icon.className = 'bi bi-x-circle-fill text-danger';
+        if (badge) {
+          badge.className = 'badge bg-danger text-white small';
+          badge.textContent = 'Unavailable';
+        }
+        const reserveBtn = document.getElementById('reserveSubmitBtn');
+        if (reserveBtn && !reserveBtn.hasAttribute('data-host-disabled')) {
+          reserveBtn.disabled = true;
+          reserveBtn.style.pointerEvents = 'none';
+          reserveBtn.innerHTML = 'Dates Unavailable';
+        }
+      } else {
+        const diffTime = date2 - date1;
+        const nights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+        box.className = 'd-flex align-items-center justify-content-between p-2 px-3 rounded-3 bg-success-subtle border border-success-subtle mb-3';
+        text.className = 'text-success small fw-semibold';
+        text.textContent = 'Dates Available • Instant Confirmation Guaranteed';
+        if (icon) icon.className = 'bi bi-check-circle-fill text-success';
+        if (badge) {
+          badge.className = 'badge bg-success text-white small';
+          badge.textContent = `✓ ${nights} night${nights > 1 ? 's' : ''} available`;
+        }
+        resetReserveButton();
+      }
+    }
+
     if (window.flatpickr) {
+      const bookedRanges = window.bookedDateRanges || [];
+      const isDateBooked = (date) => {
+        if (!bookedRanges.length) return false;
+        const t = date.getTime();
+        return bookedRanges.some((r) => {
+          const start = new Date(r.from).setHours(0, 0, 0, 0);
+          const end = new Date(r.to).setHours(23, 59, 59, 999);
+          return t >= start && t <= end;
+        });
+      };
+
       fpCheckIn = flatpickr(checkInEl, {
         defaultDate: defaultCheckIn,
         minDate: 'today',
@@ -117,7 +219,9 @@
         monthSelectorType: 'static',
         animate: true,
         disableMobile: true,
+        disable: [isDateBooked],
         onChange: async function (selectedDates, dateStr) {
+          resetReserveButton();
           if (fpCheckOut) {
             fpCheckOut.set('minDate', dateStr);
             // If checkout date is on or before new check-in date, auto advance by 2 days
@@ -142,7 +246,9 @@
         monthSelectorType: 'static',
         animate: true,
         disableMobile: true,
+        disable: [isDateBooked],
         onChange: function () {
+          resetReserveButton();
           calculateTotal();
         },
       });
@@ -168,6 +274,7 @@
         if (displayNightly) displayNightly.textContent = `₹${basePrice.toLocaleString('en-IN')}`;
 
         calculateTotal();
+        resetReserveButton();
 
         // Smoothly open check-in picker for fresh selection
         if (fpCheckIn) fpCheckIn.open();
@@ -183,15 +290,15 @@
           basePrice: basePrice,
           listingTitle: window.listingTitle || '',
         });
-        const res = await fetch(`/ai/predict-festival-price?${queryParams.toString()}`);
+        const res = await fetch(`/api/festival-pricing?${queryParams.toString()}`);
         if (!res.ok) return;
         const data = await res.json();
-        if (data && data.success) {
-          currentMultiplier = 1 + (data.percentage * (data.direction === 'lower' ? -1 : 1)) / 100;
+        if (data && data.multiplier !== undefined) {
+          currentMultiplier = data.multiplier;
           updateFestivalUI(data);
         }
       } catch (err) {
-        console.warn('Could not sync festival for date:', err);
+        console.warn('Could not sync festival data for date:', err);
       }
     }
 
@@ -207,6 +314,7 @@
 
       if (alertBox) {
         alertBox.className = `alert ${isSurge ? 'alert-warning border-warning-subtle' : isDiscount ? 'alert-success border-success-subtle' : 'alert-light border'} rounded-3 p-2 small mb-3`;
+        alertBox.classList.remove('d-none');
       }
       if (alertTitle) {
         alertTitle.innerHTML = `<span>${data.festivalName.split(' ')[0] || '✨'}</span> <span>${data.festivalName}</span>`;
@@ -227,6 +335,8 @@
     function calculateTotal() {
       const d1 = checkInEl.value;
       const d2 = checkOutEl.value;
+      updateAvailabilityUI(d1, d2);
+
       if (!d1 || !d2) return;
 
       const date1 = new Date(d1);
@@ -266,10 +376,18 @@
 
     // Run initial calculation
     calculateTotal();
+    resetReserveButton();
 
-    // Form Submission Validation
+    // Form Submission Validation & Frictionless Processing
     if (bookingForm) {
       bookingForm.addEventListener('submit', function (e) {
+        const reserveBtn = document.getElementById('reserveSubmitBtn');
+        if (reserveBtn && reserveBtn.hasAttribute('data-host-disabled')) {
+          e.preventDefault();
+          showToast('ℹ️ Host Preview: You own this stay. Use the Host Panel to view bookings.');
+          return false;
+        }
+
         const d1 = checkInEl.value;
         const d2 = checkOutEl.value;
         if (!d1 || !d2) {
@@ -288,10 +406,29 @@
           return false;
         }
 
-        const reserveBtn = document.getElementById('reserveSubmitBtn');
+        // Check if selected range overlaps any confirmed booking
+        const overlaps = (window.bookedDateRanges || []).some((range) => {
+          const rs = new Date(range.from);
+          const re = new Date(range.to);
+          return date1 < re && date2 > rs;
+        });
+        if (overlaps) {
+          e.preventDefault();
+          showToast('⚠️ These dates are already booked. Please choose different dates.');
+          return false;
+        }
+
         if (reserveBtn) {
-          reserveBtn.disabled = true;
+          // CRITICAL: DO NOT set reserveBtn.disabled = true synchronously!
+          // Disabling submit button inside submit event cancels form submit in Chromium (Chrome/Edge)!
           reserveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Securing your stay...';
+          reserveBtn.style.pointerEvents = 'none';
+          reserveBtn.style.opacity = '0.85';
+
+          // Safety fallback: restore button if response takes more than 7s
+          setTimeout(() => {
+            resetReserveButton();
+          }, 7000);
         }
       });
     }

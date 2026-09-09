@@ -472,6 +472,15 @@
               </div>
             </div>
 
+            <!-- Real-Time Date Availability Indicator -->
+            <div class="d-flex align-items-center justify-content-between p-2 px-3 rounded-3 bg-success-subtle border border-success-subtle mb-3" id="dateAvailabilityBox">
+              <div class="d-flex align-items-center gap-2 text-success small fw-semibold">
+                <i class="bi bi-check-circle-fill text-success" id="availabilityIcon"></i>
+                <span id="availabilityStatusText">Dates Available • Instant Booking</span>
+              </div>
+              <span class="badge bg-success text-white small" id="availabilityBadge">✓ Available</span>
+            </div>
+
             <!-- Interactive Guest Stepper Dropdown -->
             <div class="position-relative mb-3">
               <div class="reservation-date-box p-2 cursor-pointer" id="guestPickerToggle">
@@ -532,9 +541,30 @@
               <input type="hidden" name="booking[guests]" id="guestsCountInput" value="2" />
             </div>
 
+            <% 
+              const isListingHost = currUser && listing.owner && (
+                (listing.owner.equals && listing.owner.equals(currUser._id)) ||
+                String(listing.owner._id || listing.owner) === String(currUser._id)
+              );
+            %>
+
+            <% if (isListingHost) { %>
+              <div class="alert alert-info py-2 px-3 small rounded-3 mb-3 d-flex align-items-center gap-2">
+                <i class="bi bi-info-circle-fill text-info fs-5 flex-shrink-0"></i>
+                <div>
+                  <strong>Host Preview</strong>: You own this stay. Use the Host Panel to manage calendar and guest bookings.
+                </div>
+              </div>
+            <% } %>
+
             <!-- Submit Reserve Button -->
-            <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold fs-6 shadow-sm mb-2" id="reserveSubmitBtn">
-              Reserve
+            <button
+              type="submit"
+              class="btn btn-primary w-100 py-3 rounded-pill fw-bold fs-6 shadow-sm mb-2"
+              id="reserveSubmitBtn"
+              <% if (isListingHost) { %>data-host-disabled="true" title="Host Preview Mode"<% } %>
+            >
+              <%= isListingHost ? 'Host Preview (Your Stay)' : 'Reserve' %>
             </button>
 
             <div class="text-center text-muted small mb-3" style="font-size: 0.8rem;">
@@ -1015,6 +1045,7 @@
   window.destinationEvents = <%- JSON.stringify(typeof destinationEvents !== 'undefined' ? destinationEvents : []) %>;
   window.festivalMultiplier = 1.0;
   window.organicPhoto = <%- JSON.stringify(organicPhoto) %>;
+  window.bookedDateRanges = <%- JSON.stringify(typeof bookedRanges !== 'undefined' ? bookedRanges : []) %>;
 
   const GALLERY_PHOTOS = [
     { url: "<%- organicPhoto %>", title: "Main Verified Stay & Space" },

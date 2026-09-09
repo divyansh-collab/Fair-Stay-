@@ -1,4 +1,5 @@
 const Listing = require('../models/listing');
+const Booking = require('../models/booking');
 const { geocodeLocation } = require('../utils/geocoder');
 const { getFestivalPricing } = require('../utils/festivals');
 
@@ -123,12 +124,30 @@ module.exports.showListing = async (req, res) => {
     avgRating = (total / listing.reviews.length).toFixed(1);
   }
 
+  // Fetch active confirmed bookings for date availability
+  let bookedRanges = [];
+  try {
+    const activeBookings = await Booking.find({
+      listing: id,
+      status: 'confirmed',
+      checkOut: { $gte: new Date() },
+    }).select('checkIn checkOut');
+
+    bookedRanges = (activeBookings || []).map((b) => ({
+      from: b.checkIn.toISOString().split('T')[0],
+      to: b.checkOut.toISOString().split('T')[0],
+    }));
+  } catch (err) {
+    console.warn('⚠️ Could not fetch booked ranges:', err.message);
+  }
+
   res.render('listings/show.ejs', {
     listing,
     festivalData,
     destinationEvents,
     festivalsCatalog: FESTIVALS_CATALOG,
     avgRating,
+    bookedRanges,
   });
 };
 
