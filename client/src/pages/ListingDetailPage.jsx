@@ -83,15 +83,37 @@ export default function ListingDetailPage() {
 
   if (loading) {
     return (
-      <div className="container-custom" style={{ padding: '60px 24px', textAlign: 'center' }}>
-        <div style={{ fontSize: '1.2rem', fontWeight: '700', color: '#64748b' }}>
-          Loading sanctuary details...
+      <div className="container-custom" style={{ padding: '100px 24px', textAlign: 'center' }}>
+        <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+          <div style={{ width: '42px', height: '42px', border: '3px solid #ff5a5f', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+          <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0f172a' }}>
+            Loading Sanctuary Details...
+          </div>
+          <p style={{ color: '#64748b', fontSize: '0.88rem' }}>
+            Fetching verified photos, real-time rates & FairSafe credentials...
+          </p>
         </div>
       </div>
     );
   }
 
-  if (!listing) return null;
+  if (!listing) {
+    return (
+      <div className="container-custom" style={{ padding: '100px 24px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '480px', margin: '0 auto', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '24px', padding: '40px 24px', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#0f172a', marginBottom: '10px' }}>
+            Stay Not Found
+          </h2>
+          <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '24px', lineHeight: 1.6 }}>
+            The vacation sanctuary or room you are looking for may have been booked, updated, or moved.
+          </p>
+          <Link to="/" className="btn-coral">
+            Explore All Stays
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   const mainPhoto = listing.image?.url || 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80';
   const gallery = [mainPhoto, ...COMPLEMENTARY_PHOTOS];

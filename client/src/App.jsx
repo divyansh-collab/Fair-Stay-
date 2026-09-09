@@ -31,6 +31,7 @@ export default function App() {
               element={<HomePage searchQuery={searchQuery} onClearSearch={handleClearSearch} />}
             />
             <Route path="/listing/:id" element={<ListingDetailPage />} />
+            <Route path="/listings/:id" element={<ListingDetailPage />} />
             <Route path="/stay/:id" element={<ListingDetailPage />} />
             <Route path="/trips" element={<MyTripsPage />} />
             <Route path="/host" element={<HostStayPage />} />

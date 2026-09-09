@@ -19,6 +19,11 @@
   --radius-full: 9999px;
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 html {
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
@@ -138,6 +143,8 @@ button {
   position: relative;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  user-select: none;
 }
 
 .stay-card:hover {

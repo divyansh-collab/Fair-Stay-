@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Star, MapPin, Users, Bed, Bath, ShieldCheck } from 'lucide-react';
 
 export default function StayCard({ listing, showTax }) {
+  const navigate = useNavigate();
   if (!listing) return null;
 
   const basePrice = Number(listing.price) || 0;
@@ -17,9 +18,30 @@ export default function StayCard({ listing, showTax }) {
 
   const imageUrl = listing.image?.url || 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80';
 
+  const handleCardClick = (e) => {
+    // Avoid double navigation if clicking interactive child button
+    if (e.target.closest('button')) return;
+    navigate(`/stay/${listing._id}`);
+  };
+
   return (
-    <div className="stay-card">
-      <Link to={`/listing/${listing._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+    <div
+      className="stay-card"
+      onClick={handleCardClick}
+      style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
+    >
+      <Link
+        to={`/stay/${listing._id}`}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          height: '100%',
+          textDecoration: 'none',
+          color: 'inherit',
+          flex: 1,
+        }}
+      >
         {/* Photo Container */}
         <div className="stay-card-img-wrap">
           <img
@@ -46,7 +68,7 @@ export default function StayCard({ listing, showTax }) {
         </div>
 
         {/* Content Body */}
-        <div style={{ padding: '16px' }}>
+        <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', flex: 1 }}>
           {/* Location & Rating */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', color: '#64748b', fontWeight: '500' }}>
@@ -77,7 +99,7 @@ export default function StayCard({ listing, showTax }) {
           </div>
 
           {/* Pricing Row */}
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', borderTop: '1px solid #f1f5f9', paddingTop: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', borderTop: '1px solid #f1f5f9', paddingTop: '10px', marginTop: 'auto' }}>
             <div>
               <span style={{ fontSize: '1.15rem', fontWeight: '800', color: '#0f172a' }}>
                 ₹{displayPrice.toLocaleString('en-IN')}

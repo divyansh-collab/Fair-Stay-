@@ -197,7 +197,12 @@
               data-location="<%= (listing.location || '').toLowerCase() %>"
               data-category="<%= (listing.category || '').toLowerCase() %>"
               data-price="<%= listing.price %>">
-              <div class="card h-100 stay-card spatial-glass-card card-preserve-3d rounded-4 position-relative" data-tilt-3d="true">
+              <div
+                class="card h-100 stay-card spatial-glass-card card-preserve-3d rounded-4 position-relative"
+                data-tilt-3d="true"
+                style="cursor: pointer;"
+                onclick="if (!event.target.closest('.btn-wishlist-heart')) { window.location.href='/listings/<%= listing._id %>'; }"
+              >
                 
                 <!-- Dynamic Specular Glare Overlay -->
                 <div class="card-glare-overlay"></div>
