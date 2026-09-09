@@ -1783,13 +1783,13 @@ body:has(.offcanvas.show) {
 }
 
 .natural-pill-badge {
-  background: rgba(16, 185, 129, 0.22);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(52, 211, 153, 0.45);
-  color: #a7f3d0 !important;
-  letter-spacing: 0.06em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  color: #ffffff !important;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .natural-hero-title {
