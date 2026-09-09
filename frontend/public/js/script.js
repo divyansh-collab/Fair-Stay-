@@ -415,3 +415,15 @@ function initLiveFeedInteractions() {
     });
   });
 }
+
+// Global Bootstrap Modal Backdrop Safety Guard
+document.addEventListener('hidden.bs.modal', function () {
+  setTimeout(() => {
+    if (!document.querySelector('.modal.show')) {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      document.querySelectorAll('.modal-backdrop').forEach((b) => b.remove());
+    }
+  }, 100);
+});

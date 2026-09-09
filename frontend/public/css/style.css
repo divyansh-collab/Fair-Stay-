@@ -1876,3 +1876,10 @@ body:has(.offcanvas.show) {
   box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.4);
 }
 
+/* Modal Backdrop Safety Guard - Never allow orphaned backdrops */
+body:not(.modal-open) .modal-backdrop {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+

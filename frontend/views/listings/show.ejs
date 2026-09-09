@@ -59,31 +59,31 @@
   %>
   <div class="photo-bento-grid mb-5 shadow-sm">
     <!-- Main Big Photo (Left) -->
-    <div class="photo-bento-item main-hero cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="0" onclick="openGalleryModal(0)" title="Click to view photo gallery">
+    <div class="photo-bento-item main-hero cursor-pointer" data-gallery-index="0" onclick="openGalleryModal(0)" title="Click to view photo gallery">
       <img src="<%= organicPhoto %>" alt="<%= listing.title %>" id="mainHeroImg" />
       <span class="badge bg-dark bg-opacity-75 text-white position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1 small backdrop-blur">
         <i class="bi bi-patch-check-fill text-success me-1"></i> Verified Stay
       </span>
     </div>
     <!-- Photo 2 (Top Right 1) -->
-    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="1" onclick="openGalleryModal(1)" title="Click to view Architecture & Grounds">
+    <div class="photo-bento-item cursor-pointer" data-gallery-index="1" onclick="openGalleryModal(1)" title="Click to view Architecture & Grounds">
       <img src="<%= photo2 %>" alt="Architecture & Grounds" loading="lazy" />
     </div>
     <!-- Photo 3 (Top Right 2) -->
-    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="2" onclick="openGalleryModal(2)" title="Click to view Master Suite & Bedroom">
+    <div class="photo-bento-item cursor-pointer" data-gallery-index="2" onclick="openGalleryModal(2)" title="Click to view Master Suite & Bedroom">
       <img src="<%= photo3 %>" alt="Master Suite & Bedroom" loading="lazy" />
     </div>
     <!-- Photo 4 (Bottom Right 1) -->
-    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="3" onclick="openGalleryModal(3)" title="Click to view Living Lounge & Interiors">
+    <div class="photo-bento-item cursor-pointer" data-gallery-index="3" onclick="openGalleryModal(3)" title="Click to view Living Lounge & Interiors">
       <img src="<%= photo4 %>" alt="Living Lounge & Interiors" loading="lazy" />
     </div>
     <!-- Photo 5 (Bottom Right 2) -->
-    <div class="photo-bento-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="4" onclick="openGalleryModal(4)" title="Click to view Scenic Patio & Views">
+    <div class="photo-bento-item cursor-pointer" data-gallery-index="4" onclick="openGalleryModal(4)" title="Click to view Scenic Patio & Views">
       <img src="<%= photo5 %>" alt="Scenic Patio & Views" loading="lazy" />
     </div>
 
     <!-- Show All Photos Button -->
-    <button class="btn btn-sm btn-show-all-photos rounded-pill px-3 py-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery-index="0" onclick="openGalleryModal(0)">
+    <button type="button" class="btn btn-sm btn-show-all-photos rounded-pill px-3 py-2 shadow-sm" data-gallery-index="0" onclick="openGalleryModal(0)">
       <i class="bi bi-grid-3x3-gap-fill me-1"></i> Show all 5 photos
     </button>
   </div>
@@ -454,6 +454,12 @@
             
             <!-- Dates Picker Box (Compact Airbnb 2-Field Segment) -->
             <div class="reservation-date-box p-2 mb-3">
+              <div class="d-flex align-items-center justify-content-between px-1 pb-1 border-bottom mb-2">
+                <span class="small fw-bold text-muted" style="font-size: 0.7rem; letter-spacing: 0.05em;">DATES</span>
+                <button type="button" id="clearDatesBtn" class="btn btn-link btn-sm text-decoration-none p-0 text-danger fw-semibold" style="font-size: 0.75rem;" title="Reset and choose new dates">
+                  <i class="bi bi-arrow-counterclockwise me-1"></i>Reset dates
+                </button>
+              </div>
               <div class="row g-2">
                 <div class="col-6 border-end">
                   <label class="form-label text-uppercase fw-bold text-muted mb-0" style="font-size: 0.65rem; letter-spacing: 0.05em;">Check-in</label>
@@ -604,7 +610,7 @@
             1 / 5
           </span>
         </div>
-        <button type="button" class="btn-close btn-close-white p-2" data-bs-dismiss="modal" aria-label="Close" onclick="closeGalleryModal()"></button>
+        <button type="button" class="btn-close btn-close-white p-2" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <!-- Modal Body (Hero Image + Previous/Next Arrows) -->
@@ -1020,18 +1026,31 @@
     const modalEl = document.getElementById('galleryModal');
     if (modalEl) {
       if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
-        const inst = bootstrap.Modal.getInstance(modalEl);
+        const inst = bootstrap.Modal.getInstance(modalEl) || bootstrap.Modal.getOrCreateInstance(modalEl);
         if (inst) inst.hide();
+      } else {
+        modalEl.classList.remove('show');
+        modalEl.style.display = 'none';
+        modalEl.setAttribute('aria-hidden', 'true');
+        modalEl.removeAttribute('aria-modal');
+        document.body.classList.remove('modal-open');
+        document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
       }
-      modalEl.classList.remove('show');
-      modalEl.style.display = 'none';
-      modalEl.setAttribute('aria-hidden', 'true');
-      modalEl.removeAttribute('aria-modal');
     }
-    document.body.classList.remove('modal-open');
-    const backdrop = document.querySelector('.modal-backdrop');
-    if (backdrop) backdrop.remove();
   }
+
+  // Ensure full backdrop cleanup on modal hide
+  document.addEventListener('DOMContentLoaded', function () {
+    const modalEl = document.getElementById('galleryModal');
+    if (modalEl) {
+      modalEl.addEventListener('hidden.bs.modal', function () {
+        document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      });
+    }
+  });
 
   function navigateGallery(direction) {
     let nextIndex = currentGalleryIndex + direction;

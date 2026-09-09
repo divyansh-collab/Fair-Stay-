@@ -120,6 +120,12 @@
         onChange: async function (selectedDates, dateStr) {
           if (fpCheckOut) {
             fpCheckOut.set('minDate', dateStr);
+            // If checkout date is on or before new check-in date, auto advance by 2 days
+            if (checkOutEl.value && checkOutEl.value <= dateStr) {
+              const inDate = new Date(dateStr);
+              const nextDate = new Date(inDate.getTime() + 2 * 24 * 60 * 60 * 1000);
+              fpCheckOut.setDate(formatYMD(nextDate), true);
+            }
           }
           // Real-time festival check for picked date
           await syncFestivalForDate(dateStr);
@@ -139,6 +145,32 @@
         onChange: function () {
           calculateTotal();
         },
+      });
+    }
+
+    // Interactive Reset / Clear Dates Button
+    const clearDatesBtn = document.getElementById('clearDatesBtn');
+    if (clearDatesBtn) {
+      clearDatesBtn.addEventListener('click', function () {
+        currentMultiplier = 1.0;
+        if (fpCheckIn) fpCheckIn.setDate(defaultCheckIn, false);
+        if (fpCheckOut) {
+          fpCheckOut.set('minDate', defaultCheckIn);
+          fpCheckOut.setDate(defaultCheckOut, false);
+        }
+        checkInEl.value = defaultCheckIn;
+        checkOutEl.value = defaultCheckOut;
+
+        // Reset festival alert UI if present
+        const alertBox = document.getElementById('activeFestivalAlertBox');
+        if (alertBox) alertBox.classList.add('d-none');
+        const displayNightly = document.getElementById('displayNightlyPrice');
+        if (displayNightly) displayNightly.textContent = `₹${basePrice.toLocaleString('en-IN')}`;
+
+        calculateTotal();
+
+        // Smoothly open check-in picker for fresh selection
+        if (fpCheckIn) fpCheckIn.open();
       });
     }
 
@@ -459,9 +491,12 @@
      4. 100% Organic Google Places Photo Lightbox Modal
      ========================================================================== */
   function initGalleryModal() {
-    // Delegate click handlers to all photo items & button
+    // Delegate single click handler to photo items & button
     document.querySelectorAll('.photo-bento-item, .btn-show-all-photos').forEach((item) => {
+      // Remove inline onclick to avoid double-invoking
+      item.removeAttribute('onclick');
       item.addEventListener('click', function (e) {
+        e.preventDefault();
         const idx = parseInt(this.getAttribute('data-gallery-index'), 10) || 0;
         if (typeof window.openGalleryModal === 'function') {
           window.openGalleryModal(idx);
