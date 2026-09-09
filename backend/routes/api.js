@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Listing = require('../models/listing');
+const Booking = require('../models/booking');
+const User = require('../models/user');
 const { getFestivalPricing } = require('../utils/festivals');
 const { parseNaturalLanguageSearch, generatePilgrimChatResponse } = require('../utils/gemini');
 
@@ -182,6 +184,173 @@ router.all('/fetch-live-stays', async (req, res) => {
 router.all('/festival-pricing', async (req, res) => {
   const { predictFestivalPrice } = require('../controllers/ai');
   return predictFestivalPrice(req, res);
+});
+
+// POST /api/bookings - Create confirmed reservation & assign suite pass
+router.post('/bookings', async (req, res) => {
+  try {
+    const {
+      listingId,
+      checkIn,
+      checkOut,
+      guests = 1,
+      guestName = 'Valued Guest',
+      guestEmail = 'guest@fairstay.com',
+      paymentMethod = 'UPI',
+      discount = 0,
+      totalPrice,
+    } = req.body;
+
+    const listing = await Listing.findById(listingId);
+    if (!listing) {
+      return res.status(404).json({ success: false, error: 'Stay not found.' });
+    }
+
+    const inDate = checkIn ? new Date(checkIn) : new Date();
+    const outDate = checkOut ? new Date(checkOut) : new Date(Date.now() + 2 * 24 * 60 * 60 * 1000);
+    const nights = Math.max(1, Math.ceil((outDate - inDate) / (1000 * 60 * 60 * 24)));
+
+    let userId = req.user ? req.user._id : null;
+    if (!userId) {
+      const defaultUser = await User.findOne();
+      userId = defaultUser ? defaultUser._id : listing.owner;
+    }
+
+    const destPrefix = (listing.location || 'STAY').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 3) || 'STY';
+    const randomSuiteNum = Math.floor(100 + Math.random() * 900);
+    const roomNumber = `SUITE-${destPrefix}-${randomSuiteNum}`;
+    const keylessPin = String(Math.floor(1000 + Math.random() * 9000));
+
+    const basePrice = listing.price || 3500;
+    const staySubtotal = basePrice * nights;
+    const gstRate = basePrice > 7500 ? 0.18 : (basePrice <= 1000 ? 0 : 0.12);
+    const gst = Math.round(staySubtotal * gstRate);
+    const finalCalculated = Math.max(0, staySubtotal + gst - Number(discount || 0));
+    const finalAmount = totalPrice !== undefined ? Number(totalPrice) : finalCalculated;
+
+    const booking = new Booking({
+      listing: listing._id,
+      user: userId,
+      checkIn: inDate,
+      checkOut: outDate,
+      nights,
+      guests: Number(guests) || 1,
+      guestName: guestName.trim(),
+      guestEmail: guestEmail.trim(),
+      pricePerNight: basePrice,
+      totalPrice: finalAmount,
+      status: 'confirmed',
+      roomNumber,
+    });
+
+    await booking.save();
+    const populatedBooking = await Booking.findById(booking._id).populate('listing');
+
+    res.status(201).json({
+      success: true,
+      booking: populatedBooking,
+      keylessPin,
+      paymentMethod,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET /api/bookings - Fetch reservations
+router.get('/bookings', async (req, res) => {
+  try {
+    let query = {};
+    if (req.user) {
+      query = { user: req.user._id };
+    }
+    const bookings = await Booking.find(query).populate('listing').sort({ createdAt: -1 }).limit(30);
+    res.json({
+      success: true,
+      count: bookings.length,
+      data: bookings,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// POST /api/bookings/:id/cancel - 100% full FairSafe refund cancellation
+router.post('/bookings/:id/cancel', async (req, res) => {
+  try {
+    const booking = await Booking.findById(req.params.id);
+    if (!booking) {
+      return res.status(404).json({ success: false, error: 'Booking not found.' });
+    }
+    booking.status = 'cancelled';
+    await booking.save();
+    res.json({
+      success: true,
+      message: 'Reservation successfully cancelled with 100% full FairSafe refund.',
+      booking,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// POST /api/listings - Create new listing from React host form
+router.post('/listings', async (req, res) => {
+  try {
+    const {
+      title,
+      description,
+      location,
+      category = 'Trending',
+      price = 3500,
+      imageUrl,
+      maxGuests = 4,
+      bedrooms = 2,
+      beds = 2,
+      baths = 2,
+      propertyType = 'Vacation Stay',
+    } = req.body;
+
+    if (!title || !location || !price) {
+      return res.status(400).json({ success: false, error: 'Title, location, and price are required.' });
+    }
+
+    let ownerId = req.user ? req.user._id : null;
+    if (!ownerId) {
+      const firstUser = await User.findOne();
+      ownerId = firstUser ? firstUser._id : null;
+    }
+
+    const newListing = new Listing({
+      title: title.trim(),
+      description: (description || 'A beautiful, authentic FairStay vacation sanctuary with premium hospitality, luxury comfort, and transparent pricing.').trim(),
+      location: location.trim(),
+      country: 'India',
+      category: category || 'Trending',
+      price: Number(price),
+      marketOtaPrice: Math.round(Number(price) * 1.25),
+      fairsafeScore: 97,
+      maxGuests: Number(maxGuests) || 4,
+      bedrooms: Number(bedrooms) || 2,
+      beds: Number(beds) || 2,
+      baths: Number(baths) || 2,
+      propertyType: propertyType || 'Vacation Stay',
+      image: {
+        url: imageUrl || 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80',
+        filename: 'custom_host_listing',
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [75.7873, 26.9124],
+      },
+      owner: ownerId,
+    });
+
+    await newListing.save();
+    res.status(201).json({ success: true, data: newListing });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 module.exports = router;

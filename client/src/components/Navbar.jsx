@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, Globe, Menu, User, Sparkles, ShieldCheck } from 'lucide-react';
+import { Search, Globe, Menu, User, Sparkles, ShieldCheck, Luggage } from 'lucide-react';
 import api from '../services/api';
 
 export default function Navbar({ onSearch, currentSearch }) {
@@ -110,10 +110,15 @@ export default function Navbar({ onSearch, currentSearch }) {
         </div>
 
         {/* Right Action Icons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          <a href="/listings/new" className="btn-outline" style={{ fontSize: '0.85rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <Link to="/trips" className="btn-outline" style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <Luggage size={15} style={{ color: '#ff5a5f' }} />
+            <span>My Trips</span>
+          </Link>
+
+          <Link to="/host" className="btn-outline" style={{ fontSize: '0.85rem' }}>
             Become a Host
-          </a>
+          </Link>
 
           <div style={{ position: 'relative' }}>
             <button
@@ -128,10 +133,18 @@ export default function Navbar({ onSearch, currentSearch }) {
 
             {isDropdownOpen && (
               <div style={{ position: 'absolute', right: 0, top: '115%', width: '220px', background: '#fff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', padding: '8px 0', zIndex: 100 }}>
-                <a href="/login" style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', fontWeight: '600', color: '#0f172a' }}>Log in</a>
-                <a href="/signup" style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', color: '#475569' }}>Sign up</a>
+                <Link to="/" onClick={() => setIsDropdownOpen(false)} style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', fontWeight: '600', color: '#0f172a' }}>
+                  Explore Stays
+                </Link>
+                <Link to="/trips" onClick={() => setIsDropdownOpen(false)} style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', fontWeight: '600', color: '#ff5a5f' }}>
+                  My Trips & Passes
+                </Link>
+                <Link to="/host" onClick={() => setIsDropdownOpen(false)} style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', color: '#475569' }}>
+                  Host a Sanctuary
+                </Link>
                 <hr style={{ border: 'none', borderTop: '1px solid #f1f5f9', margin: '6px 0' }} />
-                <a href="/bookings" style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', color: '#475569' }}>My Trips</a>
+                <a href="/login" style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', color: '#475569' }}>Log in</a>
+                <a href="/signup" style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', color: '#475569' }}>Sign up</a>
                 <a href="/profile" style={{ display: 'block', padding: '10px 20px', fontSize: '0.85rem', color: '#475569' }}>Profile</a>
               </div>
             )}

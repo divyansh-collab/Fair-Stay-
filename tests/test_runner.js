@@ -47,6 +47,9 @@ async function main() {
     console.log('\n>>> PHASE 5: Running Full Stack MERN React Client Integration Audit (test_mern_integration.js)...\n');
     await runScript('test_mern_integration.js');
 
+    console.log('\n>>> PHASE 6: Running React Full-Fidelity Booking, Payment & Room Ticket Audit (test_react_enhancements.js)...\n');
+    await runScript('test_react_enhancements.js');
+
     console.log('\n===============================================================');
     console.log('   🎉 GSTACK CERTIFICATION: 100% TEST COVERAGE VERIFIED!     ');
     console.log('   STATUS: ALL MERN & BACKEND ASSERTIONS PASSED (100% SUCCESS) ');

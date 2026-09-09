@@ -158,7 +158,7 @@ if (fs.existsSync(clientDistPath)) {
   app.get('/', (req, res) => {
     res.sendFile(path.join(clientDistPath, 'index.html'));
   });
-  app.get(['/app', '/app/*', '/stay/:id', '/listing/:id'], (req, res) => {
+  app.get(['/app', '/app/*', '/stay/:id', '/listing/:id', '/trips', '/host', '/ticket/:id'], (req, res) => {
     res.sendFile(path.join(clientDistPath, 'index.html'));
   });
 } else {

@@ -23,6 +23,8 @@ import {
 } from 'lucide-react';
 import api from '../services/api';
 import FestivalPricingWidget from '../components/FestivalPricingWidget';
+import CheckoutModal from '../components/CheckoutModal';
+import RoomTicketModal from '../components/RoomTicketModal';
 
 // 4 complementary fallback high-res photos for luxury 5-photo bento grid
 const COMPLEMENTARY_PHOTOS = [
@@ -38,10 +40,16 @@ export default function ListingDetailPage() {
   const [loading, setLoading] = useState(true);
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  // Booking widget state
-  const [checkIn, setCheckIn] = useState('');
-  const [checkOut, setCheckOut] = useState('');
+  // Booking & Modal States
+  const defaultIn = new Date().toISOString().split('T')[0];
+  const defaultOut = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+  const [checkIn, setCheckIn] = useState(defaultIn);
+  const [checkOut, setCheckOut] = useState(defaultOut);
   const [guests, setGuests] = useState(1);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isTicketOpen, setIsTicketOpen] = useState(false);
+  const [confirmedBooking, setConfirmedBooking] = useState(null);
+  const [keylessPin, setKeylessPin] = useState('8492');
 
   useEffect(() => {
     loadListing();
@@ -51,13 +59,23 @@ export default function ListingDetailPage() {
   const loadListing = async () => {
     setLoading(true);
     try {
-      const res = await api.getListings();
+      // High-speed direct single listing fetch
+      const res = await api.getListing(id);
       if (res && res.data) {
-        const found = res.data.find((item) => item._id === id);
-        setListing(found || res.data[0]);
+        setListing(res.data);
+      } else {
+        // Resilient fallback
+        const allRes = await api.getListings();
+        const found = allRes?.data?.find((item) => item._id === id);
+        setListing(found || allRes?.data?.[0]);
       }
     } catch (err) {
       console.error('Failed to load listing:', err);
+      try {
+        const allRes = await api.getListings();
+        const found = allRes?.data?.find((item) => item._id === id);
+        setListing(found || allRes?.data?.[0]);
+      } catch (e) {}
     } finally {
       setLoading(false);
     }
@@ -312,14 +330,15 @@ export default function ListingDetailPage() {
               </div>
             </div>
 
-            {/* Direct Reserve Button */}
-            <a
-              href={`/listings/${listing._id}`}
+            {/* Direct Reserve Button opening Checkout Modal */}
+            <button
+              type="button"
+              onClick={() => setIsCheckoutOpen(true)}
               className="btn-coral"
-              style={{ width: '100%', padding: '14px', fontSize: '1rem', marginBottom: '14px' }}
+              style={{ width: '100%', padding: '14px', fontSize: '1rem', marginBottom: '14px', cursor: 'pointer' }}
             >
               Reserve via FairStay
-            </a>
+            </button>
 
             <div style={{ textAlign: 'center', fontSize: '0.78rem', color: '#64748b', marginBottom: '20px' }}>
               You won't be charged yet • Instant 100% full refund guarantee
@@ -384,6 +403,29 @@ export default function ListingDetailPage() {
           </div>
         </div>
       )}
+
+      {/* Interactive Payment Checkout Modal */}
+      <CheckoutModal
+        isOpen={isCheckoutOpen}
+        onClose={() => setIsCheckoutOpen(false)}
+        listing={listing}
+        checkIn={checkIn}
+        checkOut={checkOut}
+        guests={guests}
+        onBookingSuccess={(booking, pin) => {
+          setConfirmedBooking(booking);
+          setKeylessPin(pin || '8492');
+          setIsTicketOpen(true);
+        }}
+      />
+
+      {/* Luxury Confirmed Room Ticket Pass Modal */}
+      <RoomTicketModal
+        isOpen={isTicketOpen}
+        onClose={() => setIsTicketOpen(false)}
+        booking={confirmedBooking}
+        keylessPin={keylessPin}
+      />
     </div>
   );
 }
