@@ -12,6 +12,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
+const fs = require('fs');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
@@ -162,6 +163,18 @@ app.use('/', bookingRouter);
 app.use('/', userRouter);
 app.use('/ai', aiRouter);
 app.use('/api', apiRouter);
+
+// Serve FairStay React (MERN) Client SPA
+const clientDistPath = path.join(__dirname, 'client', 'dist');
+if (fs.existsSync(clientDistPath)) {
+  app.get(['/app', '/app/'], (req, res) => {
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+  app.use('/app', express.static(clientDistPath));
+  app.get('/app/*', (req, res) => {
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
 
 // 404 Handler
 app.all('*', (req, res, next) => {

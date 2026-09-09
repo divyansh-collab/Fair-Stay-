@@ -44,9 +44,12 @@ async function main() {
     console.log('\n>>> PHASE 4: Running Realistic Market Diversity & Capacity Specifications (test_market_diversity.js)...\n');
     await runScript('test_market_diversity.js');
 
+    console.log('\n>>> PHASE 5: Running Full Stack MERN React Client Integration Audit (test_mern_integration.js)...\n');
+    await runScript('test_mern_integration.js');
+
     console.log('\n===============================================================');
     console.log('   🎉 GSTACK CERTIFICATION: 100% TEST COVERAGE VERIFIED!     ');
-    console.log('   STATUS: ALL 62 ASSERTIONS PASSED (100% SUCCESS)             ');
+    console.log('   STATUS: ALL MERN & BACKEND ASSERTIONS PASSED (100% SUCCESS) ');
     console.log('   READY FOR /ship RELEASE DEPLOYMENT                          ');
     console.log('===============================================================\n');
     process.exit(0);

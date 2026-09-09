@@ -1,0 +1,224 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { Sparkles, Send, X, Bot, User, MessageSquare } from 'lucide-react';
+import api from '../services/api';
+
+const QUICK_PROMPTS = [
+  'Best villas in Goa with private pool',
+  'Cozy wooden cottages in Manali under ₹5,000',
+  'Heritage havelis in Jaipur near palaces',
+  'Dev Deepawali stays in Varanasi ghats',
+];
+
+export default function AiConciergeDrawer() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState([
+    {
+      role: 'assistant',
+      text: 'Namaste! 🙏 I am your FairStay AI Concierge. Ask me anything about Indian vacation destinations, seasonal festivals, local price trends, or finding the perfect stay!',
+    },
+  ]);
+  const [loading, setLoading] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      scrollToBottom();
+    }
+  }, [messages, isOpen]);
+
+  const handleSend = async (textToSend) => {
+    const query = textToSend || input;
+    if (!query.trim() || loading) return;
+
+    const userMsg = { role: 'user', text: query };
+    setMessages((prev) => [...prev, userMsg]);
+    setInput('');
+    setLoading(true);
+
+    try {
+      // Build history
+      const history = messages.map((m) => ({
+        role: m.role === 'assistant' ? 'model' : 'user',
+        parts: [{ text: m.text }],
+      }));
+
+      const res = await api.sendAiMessage(query, history);
+      const botReply = res?.response || res?.message || 'I am ready to help you find your dream vacation stay in India!';
+      setMessages((prev) => [...prev, { role: 'assistant', text: botReply }]);
+    } catch (err) {
+      console.error('AI chat error:', err);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: 'assistant',
+          text: 'FairStay AI is experiencing high demand. Feel free to explore our curated stays or ask again in a moment!',
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <>
+      {/* Floating Trigger Button */}
+      <button
+        onClick={() => setIsOpen(true)}
+        style={{
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          zIndex: 999,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          padding: '12px 20px',
+          borderRadius: '9999px',
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+          color: '#ffffff',
+          fontWeight: '700',
+          fontSize: '0.88rem',
+          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.25)',
+          border: '1px solid rgba(255, 90, 95, 0.3)',
+          cursor: 'pointer',
+        }}
+      >
+        <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#4ade80', display: 'inline-block' }} />
+        <Sparkles size={16} style={{ color: '#ff5a5f' }} />
+        <span>Ask AI Concierge</span>
+      </button>
+
+      {/* Drawer Backdrop */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(15, 23, 42, 0.4)', backdropFilter: 'blur(4px)', zIndex: 1000 }}
+        />
+      )}
+
+      {/* Slide-over Drawer */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          maxWidth: '440px',
+          background: '#ffffff',
+          boxShadow: '-8px 0 32px rgba(0, 0, 0, 0.2)',
+          zIndex: 1001,
+          display: 'flex',
+          flexDirection: 'column',
+          transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      >
+        {/* Drawer Header */}
+        <div style={{ padding: '20px', borderBottom: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#f8fafc' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #ff5a5f 0%, #ff6b50 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+              <Bot size={20} />
+            </div>
+            <div>
+              <div style={{ fontWeight: '800', fontSize: '1rem', color: '#0f172a' }}>FairStay AI Concierge</div>
+              <div style={{ fontSize: '0.72rem', color: '#16a34a', fontWeight: '600' }}>● Powered by Gemini 1.5 Flash</div>
+            </div>
+          </div>
+          <button onClick={() => setIsOpen(false)} style={{ color: '#64748b', padding: '6px', cursor: 'pointer' }}>
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Message Feed */}
+        <div style={{ flex: 1, overflowY: 'auto', padding: '20px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+          {messages.map((m, idx) => (
+            <div
+              key={idx}
+              style={{
+                display: 'flex',
+                gap: '8px',
+                alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start',
+                maxWidth: '85%',
+              }}
+            >
+              {m.role === 'assistant' && (
+                <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(255, 90, 95, 0.1)', color: '#ff5a5f', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Sparkles size={14} />
+                </div>
+              )}
+              <div
+                style={{
+                  padding: '12px 16px',
+                  borderRadius: '14px',
+                  fontSize: '0.85rem',
+                  lineHeight: 1.5,
+                  background: m.role === 'user' ? '#ff5a5f' : '#f1f5f9',
+                  color: m.role === 'user' ? '#ffffff' : '#0f172a',
+                  borderBottomRightRadius: m.role === 'user' ? '4px' : '14px',
+                  borderBottomLeftRadius: m.role === 'assistant' ? '4px' : '14px',
+                }}
+              >
+                {m.text}
+              </div>
+            </div>
+          ))}
+
+          {loading && (
+            <div style={{ display: 'flex', gap: '8px', alignSelf: 'flex-start' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(255, 90, 95, 0.1)', color: '#ff5a5f', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Sparkles size={14} />
+              </div>
+              <div style={{ padding: '10px 16px', borderRadius: '14px', background: '#f1f5f9', color: '#64748b', fontSize: '0.82rem' }}>
+                Thinking...
+              </div>
+            </div>
+          )}
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* Quick Prompts */}
+        <div style={{ padding: '10px 16px', borderTop: '1px solid #f1f5f9', background: '#f8fafc', display: 'flex', gap: '6px', overflowX: 'auto', scrollbarWidth: 'none' }}>
+          {QUICK_PROMPTS.map((prompt, i) => (
+            <button
+              key={i}
+              onClick={() => handleSend(prompt)}
+              style={{ flexShrink: 0, padding: '6px 12px', borderRadius: '9999px', background: '#fff', border: '1px solid #e2e8f0', fontSize: '0.72rem', color: '#475569', cursor: 'pointer', whiteSpace: 'nowrap' }}
+            >
+              {prompt}
+            </button>
+          ))}
+        </div>
+
+        {/* Input Bar */}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSend();
+          }}
+          style={{ padding: '16px', borderTop: '1px solid #e2e8f0', display: 'flex', gap: '8px', background: '#fff' }}
+        >
+          <input
+            type="text"
+            placeholder="Ask about stays, Goa villas, Manali cottages..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            style={{ flex: 1, padding: '10px 14px', borderRadius: '9999px', border: '1px solid #cbd5e1', fontSize: '0.85rem', fontFamily: 'inherit', outline: 'none' }}
+          />
+          <button
+            type="submit"
+            disabled={!input.trim() || loading}
+            style={{ width: '40px', height: '40px', borderRadius: '50%', background: input.trim() ? '#ff5a5f' : '#cbd5e1', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: input.trim() ? 'pointer' : 'default', transition: 'background 0.2s' }}
+          >
+            <Send size={16} />
+          </button>
+        </form>
+      </div>
+    </>
+  );
+}

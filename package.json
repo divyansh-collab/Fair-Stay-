@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node app.js",
     "seed": "node backend/seeds/index.js",
-    "test": "node tests/test_runner.js"
+    "test": "node tests/test_runner.js",
+    "client:install": "npm --prefix client install",
+    "client:build": "npm --prefix client run build",
+    "client:dev": "npm --prefix client run dev",
+    "build": "npm --prefix client run build"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
