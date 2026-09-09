@@ -1757,70 +1757,73 @@ body:has(.offcanvas.show) {
 }
 
 /* ==========================================================================
-   Panoramic Scenic Nature Sanctuary Hero Banner
+   Panoramic Luxury Architectural & Cozy Escape Hero Banner
    ========================================================================== */
 .natural-sanctuary-hero {
   position: relative;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.42) 0%, rgba(15, 23, 42, 0.72) 100%),
-              url('https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&w=2000&q=85') center 35% / cover no-repeat;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
-  border-radius: 1.5rem !important;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 27, 75, 0.5) 50%, rgba(15, 23, 42, 0.75) 100%),
+              url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2400&q=85') center 42% / cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.45);
+  border-radius: 1.75rem !important;
   color: #ffffff !important;
-  min-height: 280px;
+  min-height: 300px;
 }
 
 [data-bs-theme="dark"] .natural-sanctuary-hero {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.65);
 }
 
 .natural-scenic-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.35) 100%);
+  background: radial-gradient(circle at 50% 25%, rgba(255, 180, 100, 0.12) 0%, rgba(0, 0, 0, 0.45) 100%);
   pointer-events: none;
 }
 
 .natural-pill-badge {
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
   color: #ffffff !important;
-  letter-spacing: 0.08em;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.1em;
+  font-size: 0.76rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .natural-hero-title {
   font-family: var(--fs-heading-font);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   color: #ffffff !important;
   line-height: 1.15;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.75);
 }
 
 .natural-hero-subtitle {
-  color: #e2e8f0 !important;
-  max-width: 640px;
-  line-height: 1.6;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  color: #f1f5f9 !important;
+  font-size: 1.05rem;
+  max-width: 680px;
+  line-height: 1.65;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .natural-hero-pill-tag {
   background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: #ffffff !important;
   font-size: 0.85rem;
   font-weight: 600;
-  padding: 0.45rem 1.1rem;
+  padding: 0.45rem 1.15rem;
   border-radius: 9999px;
   transition: all 0.22s ease;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .natural-hero-pill-tag:hover {
@@ -1828,16 +1831,43 @@ body:has(.offcanvas.show) {
   border-color: #ffffff;
   color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .natural-explore-btn {
-  transition: all 0.22s ease;
+  background: linear-gradient(135deg, #ff385c 0%, #e00b41 100%) !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(224, 11, 65, 0.42) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  padding: 0.65rem 1.6rem !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .natural-explore-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(235, 87, 87, 0.4) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 12px 30px rgba(224, 11, 65, 0.55) !important;
+  color: #ffffff !important;
+}
+
+.natural-host-btn {
+  background: rgba(255, 255, 255, 0.16) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.55) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  padding: 0.65rem 1.6rem !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.natural-host-btn:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35) !important;
+  color: #ffffff !important;
 }
 
 .mobile-sticky-reservation-bar {
