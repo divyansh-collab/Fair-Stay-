@@ -489,11 +489,27 @@ p, .lh-lg {
   }
 }
 
-/* Destination & Category Filter Bar Stacking */
+/* Destination & Category Filter Bar - Sticky under Navbar */
 .filter-wrapper {
-  position: relative !important;
-  z-index: 100 !important;
-  background-color: #ffffff;
+  position: sticky !important;
+  top: 64px !important;
+  z-index: 1015 !important;
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: top 0.2s ease, background-color 0.2s ease;
+}
+
+[data-bs-theme="dark"] .filter-wrapper {
+  background-color: rgba(15, 23, 42, 0.96) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+@media (max-width: 767.98px) {
+  .filter-wrapper {
+    top: 114px !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1142,8 +1158,8 @@ p, .lh-lg {
 
 /* Filter bar & Categories in Dark Mode */
 [data-bs-theme="dark"] .filter-wrapper {
-  background: #0f172a !important;
-  border-bottom: 1px solid #1e293b !important;
+  background: rgba(15, 23, 42, 0.96) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 [data-bs-theme="dark"] .category-item {
   color: #94a3b8 !important;
@@ -1757,182 +1773,87 @@ body:has(.offcanvas.show) {
 }
 
 /* ==========================================================================
-   Natural Scenic Sanctuary Hero Banner
+   Panoramic Scenic Nature Sanctuary Hero Banner
    ========================================================================== */
 .natural-sanctuary-hero {
   position: relative;
-  background: linear-gradient(135deg, #fbfbfa 0%, #fef8f4 45%, #f4f8fa 100%);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.42) 0%, rgba(15, 23, 42, 0.72) 100%),
+              url('https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&w=2000&q=85') center 35% / cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+  border-radius: 1.5rem !important;
+  color: #ffffff !important;
+  min-height: 280px;
 }
 
 [data-bs-theme="dark"] .natural-sanctuary-hero {
-  background: linear-gradient(135deg, #0b1324 0%, #111d33 50%, #0c1626 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6);
 }
 
-.natural-hero-glow-1 {
+.natural-scenic-overlay {
   position: absolute;
-  top: -80px;
-  left: 10%;
-  width: 450px;
-  height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 145, 77, 0.09) 0%, transparent 70%);
-  filter: blur(50px);
-  pointer-events: none;
-}
-
-.natural-hero-glow-2 {
-  position: absolute;
-  bottom: -80px;
-  right: 10%;
-  width: 450px;
-  height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.07) 0%, transparent 70%);
-  filter: blur(50px);
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.35) 100%);
   pointer-events: none;
 }
 
 .natural-pill-badge {
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #059669;
+  background: rgba(16, 185, 129, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  color: #a7f3d0 !important;
   letter-spacing: 0.06em;
-}
-
-[data-bs-theme="dark"] .natural-pill-badge {
-  background: rgba(16, 185, 129, 0.15);
-  border-color: rgba(16, 185, 129, 0.4);
-  color: #34d399;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .natural-hero-title {
   font-family: var(--fs-heading-font);
-  font-size: clamp(1.85rem, 3.5vw, 2.65rem);
-  letter-spacing: -0.025em;
-  color: #0f172a;
-  line-height: 1.2;
-}
-
-[data-bs-theme="dark"] .natural-hero-title {
-  color: #f8fafc;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff !important;
+  line-height: 1.15;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
 }
 
 .natural-hero-subtitle {
-  color: #64748b;
-  max-width: 620px;
-  margin-inline: auto;
+  color: #e2e8f0 !important;
+  max-width: 640px;
   line-height: 1.6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
-[data-bs-theme="dark"] .natural-hero-subtitle {
-  color: #94a3b8;
-}
-
-.natural-dest-card {
-  position: relative;
-  border-radius: 1.25rem !important;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-}
-
-[data-bs-theme="dark"] .natural-dest-card {
-  background: #1e293b;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.natural-dest-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12) !important;
-}
-
-[data-bs-theme="dark"] .natural-dest-card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
-}
-
-.dest-img-wrapper {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: 1.25rem;
-}
-
-.dest-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.45s ease;
-}
-
-.natural-dest-card:hover .dest-img {
-  transform: scale(1.05);
-}
-
-.natural-weather-pill {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  z-index: 3;
-}
-
-.dest-caption {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.45) 60%, transparent 100%);
-  z-index: 2;
-  border-radius: 0 0 1.25rem 1.25rem;
-}
-
-.natural-hero-footer {
-  background: rgba(255, 255, 255, 0.75);
+.natural-hero-pill-tag {
+  background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  border-radius: 9999px;
+  transition: all 0.22s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-[data-bs-theme="dark"] .natural-hero-footer {
-  background: rgba(15, 23, 42, 0.75);
-  border-color: rgba(255, 255, 255, 0.08);
+.natural-hero-pill-tag:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #ffffff;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-.natural-footer-label {
-  color: #475569;
+.natural-explore-btn {
+  transition: all 0.22s ease;
 }
 
-[data-bs-theme="dark"] .natural-footer-label {
-  color: #94a3b8;
-}
-
-.natural-footer-chip {
-  background: rgba(0, 0, 0, 0.04);
-  color: #334155;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.natural-footer-chip:hover {
-  background: rgba(255, 90, 60, 0.1);
-  color: #ff5a3c;
-  border-color: rgba(255, 90, 60, 0.3);
-  transform: translateY(-1px);
-}
-
-[data-bs-theme="dark"] .natural-footer-chip {
-  background: rgba(255, 255, 255, 0.06);
-  color: #cbd5e1;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-bs-theme="dark"] .natural-footer-chip:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+.natural-explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(235, 87, 87, 0.4) !important;
 }
 
 .mobile-sticky-reservation-bar {
