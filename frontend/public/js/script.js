@@ -416,6 +416,27 @@ function initLiveFeedInteractions() {
   });
 }
 
+// Global Modal Hoister to prevent stacking context traps
+function hoistAllModalsToBody() {
+  document.querySelectorAll('.modal').forEach((modal) => {
+    if (modal.parentElement && modal.parentElement !== document.body) {
+      document.body.appendChild(modal);
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', hoistAllModalsToBody);
+} else {
+  hoistAllModalsToBody();
+}
+
+document.addEventListener('show.bs.modal', function (e) {
+  if (e.target && e.target.parentElement && e.target.parentElement !== document.body) {
+    document.body.appendChild(e.target);
+  }
+});
+
 // Global Bootstrap Modal Backdrop Safety Guard
 document.addEventListener('hidden.bs.modal', function () {
   setTimeout(() => {
@@ -425,5 +446,6 @@ document.addEventListener('hidden.bs.modal', function () {
       document.body.style.paddingRight = '';
       document.querySelectorAll('.modal-backdrop').forEach((b) => b.remove());
     }
-  }, 100);
+  }, 50);
 });
+

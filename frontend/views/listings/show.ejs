@@ -596,67 +596,89 @@
      ========================================================================== -->
 
 <!-- 1. Photo Fullscreen Lightbox Modal (Airbnb Luxury Standard) -->
-<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-lg-down">
-    <div class="modal-content border-0 bg-dark text-white rounded-4 overflow-hidden shadow-2xl">
+<div class="modal fade modal-fullscreen" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true" data-bs-backdrop="true">
+  <div class="modal-dialog modal-fullscreen m-0 p-0">
+    <div class="modal-content border-0 bg-black text-white h-100 rounded-0 d-flex flex-column justify-content-between position-relative select-none">
       
-      <!-- Modal Header -->
-      <div class="modal-header border-0 px-4 pt-4 pb-2 d-flex justify-content-between align-items-center">
+      <!-- Modal Header (Controls: Badges + High-Contrast Close Button) -->
+      <div class="modal-header border-0 px-3 px-md-4 pt-3 pb-2 d-flex justify-content-between align-items-center position-relative z-3">
         <div class="d-flex align-items-center gap-2">
-          <span class="badge bg-success rounded-pill px-3 py-2 small">
-            <i class="bi bi-shield-check me-1"></i> Verified Stays Photo Gallery
+          <span class="badge bg-success rounded-pill px-3 py-2 small d-inline-flex align-items-center gap-1 shadow-sm">
+            <i class="bi bi-shield-check"></i> <span>Verified Photos</span>
           </span>
           <span class="badge bg-secondary-subtle text-white border border-secondary rounded-pill px-3 py-2 small font-monospace" id="galleryPhotoCounter">
             1 / 5
           </span>
         </div>
-        <button type="button" class="btn-close btn-close-white p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn btn-outline-light rounded-pill px-3 py-2 d-flex align-items-center gap-2 border-secondary shadow gallery-close-btn"
+          id="galleryModalCloseBtn"
+          onclick="closeGalleryModal()"
+          data-bs-dismiss="modal"
+          aria-label="Close photo gallery"
+          title="Close gallery (Esc)"
+        >
+          <i class="bi bi-x-lg fs-6"></i>
+          <span class="small fw-semibold d-none d-sm-inline">Close (Esc)</span>
+        </button>
       </div>
 
-      <!-- Modal Body (Hero Image + Previous/Next Arrows) -->
-      <div class="modal-body p-3 p-md-4 text-center position-relative d-flex flex-column align-items-center justify-content-center" style="min-height: 55vh;">
+      <!-- Modal Body (Full Viewport Stage with High-Res Image & Left/Right Arrows) -->
+      <div class="modal-body p-0 d-flex align-items-center justify-content-center position-relative flex-grow-1 overflow-hidden" id="galleryStage">
         
         <!-- Previous Arrow Button -->
-        <button type="button" class="btn btn-dark bg-opacity-75 border border-secondary rounded-circle p-2 text-white position-absolute start-0 top-50 translate-middle-y ms-2 ms-md-4 z-3 shadow" onclick="navigateGallery(-1)" aria-label="Previous Photo" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-          <i class="bi bi-chevron-left fs-4"></i>
+        <button
+          type="button"
+          class="btn btn-dark bg-opacity-75 border border-secondary rounded-circle text-white position-absolute start-0 top-50 translate-middle-y ms-2 ms-md-4 gallery-nav-btn gallery-nav-prev shadow-lg"
+          onclick="navigateGallery(-1)"
+          aria-label="Previous Photo"
+          title="Previous (Left arrow or swipe right)"
+        >
+          <i class="bi bi-chevron-left fs-3"></i>
         </button>
 
         <!-- Main Displayed Photo -->
-        <div class="position-relative w-100 d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+        <div class="position-relative w-100 h-100 d-flex flex-column justify-content-center align-items-center px-2 px-md-5" id="galleryImgWrapper">
           <img
             id="galleryModalImg"
             src="<%= organicPhoto %>"
             alt="<%= listing.title %>"
-            class="img-fluid rounded-3 shadow-2xl"
-            style="max-height: 68vh; max-width: 100%; object-fit: contain; transition: opacity 0.25s ease;"
+            class="gallery-hero-img img-fluid rounded-3 shadow-2xl"
           />
+          <!-- Photo Caption -->
+          <div id="galleryPhotoCaption" class="text-white-50 small mt-3 fw-semibold text-center">
+            Main Verified Stay & Space
+          </div>
         </div>
 
         <!-- Next Arrow Button -->
-        <button type="button" class="btn btn-dark bg-opacity-75 border border-secondary rounded-circle p-2 text-white position-absolute end-0 top-50 translate-middle-y me-2 me-md-4 z-3 shadow" onclick="navigateGallery(1)" aria-label="Next Photo" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-          <i class="bi bi-chevron-right fs-4"></i>
+        <button
+          type="button"
+          class="btn btn-dark bg-opacity-75 border border-secondary rounded-circle text-white position-absolute end-0 top-50 translate-middle-y me-2 me-md-4 gallery-nav-btn gallery-nav-next shadow-lg"
+          onclick="navigateGallery(1)"
+          aria-label="Next Photo"
+          title="Next (Right arrow or swipe left)"
+        >
+          <i class="bi bi-chevron-right fs-3"></i>
         </button>
-
-        <!-- Photo Caption -->
-        <div id="galleryPhotoCaption" class="text-white-50 small mt-2 fw-semibold">
-          Main Verified Stay & Space
-        </div>
-
-        <!-- Lightbox Carousel Thumbnails -->
-        <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap" id="galleryThumbsContainer">
-          <img src="<%= organicPhoto %>" class="rounded-2 border cursor-pointer lightbox-thumb active border-primary border-3" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(0)" alt="Thumb 1" />
-          <img src="<%= photo2 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(1)" alt="Thumb 2" />
-          <img src="<%= photo3 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(2)" alt="Thumb 3" />
-          <img src="<%= photo4 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(3)" alt="Thumb 4" />
-          <img src="<%= photo5 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-75" style="width: 72px; height: 50px; object-fit: cover; transition: all 0.2s ease;" onclick="setLightboxPhotoByIndex(4)" alt="Thumb 5" />
-        </div>
-
       </div>
 
-      <!-- Modal Footer -->
-      <div class="modal-footer border-0 justify-content-between px-4 py-3 text-white-50 small">
-        <span><%= listing.title %> • <%= listing.location %>, <%= listing.country %></span>
-        <span class="d-none d-md-inline"><i class="bi bi-keyboard me-1"></i> Use ← / → arrow keys to browse, Esc to close</span>
+      <!-- Modal Footer (Interactive Thumbnail Strip & Navigation Hints) -->
+      <div class="modal-footer border-0 flex-column align-items-center justify-content-center px-3 py-3 position-relative z-3 bg-dark bg-opacity-50 border-top border-dark-subtle">
+        <!-- Lightbox Carousel Thumbnails -->
+        <div class="d-flex justify-content-center gap-2 flex-wrap mb-2" id="galleryThumbsContainer">
+          <img src="<%= organicPhoto %>" class="rounded-2 border cursor-pointer lightbox-thumb active border-primary border-3" onclick="setLightboxPhotoByIndex(0)" alt="Thumb 1" />
+          <img src="<%= photo2 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-60" onclick="setLightboxPhotoByIndex(1)" alt="Thumb 2" />
+          <img src="<%= photo3 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-60" onclick="setLightboxPhotoByIndex(2)" alt="Thumb 3" />
+          <img src="<%= photo4 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-60" onclick="setLightboxPhotoByIndex(3)" alt="Thumb 4" />
+          <img src="<%= photo5 %>" class="rounded-2 border cursor-pointer lightbox-thumb opacity-60" onclick="setLightboxPhotoByIndex(4)" alt="Thumb 5" />
+        </div>
+        <div class="text-white-50 small d-none d-md-block text-center">
+          <span><%= listing.title %> • <%= listing.location %>, <%= listing.country %></span>
+          <span class="mx-2">•</span>
+          <span><i class="bi bi-arrows"></i> Swipe or use ← / → keys to navigate • Esc to close</span>
+        </div>
       </div>
 
     </div>
@@ -1004,14 +1026,34 @@
 
   let currentGalleryIndex = 0;
 
+  // Hoist modals immediately to document.body so they never collide with container stacking contexts
+  function hoistPageModals() {
+    ['galleryModal', 'allAmenitiesModal', 'contactHostModal', 'festivalPredictorModal'].forEach(function (id) {
+      const el = document.getElementById(id);
+      if (el && el.parentElement && el.parentElement !== document.body) {
+        document.body.appendChild(el);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hoistPageModals);
+  } else {
+    hoistPageModals();
+  }
+
   function openGalleryModal(index) {
+    hoistPageModals();
     const idx = (index !== undefined && !isNaN(index)) ? Number(index) : 0;
     setLightboxPhotoByIndex(idx);
     const modalEl = document.getElementById('galleryModal');
     if (!modalEl) return;
 
     if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
-      const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      const modal = bootstrap.Modal.getOrCreateInstance(modalEl, {
+        backdrop: true,
+        keyboard: true
+      });
       modal.show();
     } else {
       modalEl.classList.add('show');
@@ -1026,17 +1068,21 @@
     const modalEl = document.getElementById('galleryModal');
     if (modalEl) {
       if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
-        const inst = bootstrap.Modal.getInstance(modalEl) || bootstrap.Modal.getOrCreateInstance(modalEl);
-        if (inst) inst.hide();
-      } else {
-        modalEl.classList.remove('show');
-        modalEl.style.display = 'none';
-        modalEl.setAttribute('aria-hidden', 'true');
-        modalEl.removeAttribute('aria-modal');
-        document.body.classList.remove('modal-open');
-        document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
+        try {
+          const inst = bootstrap.Modal.getInstance(modalEl) || bootstrap.Modal.getOrCreateInstance(modalEl);
+          if (inst) inst.hide();
+        } catch (e) {}
       }
+      modalEl.classList.remove('show');
+      modalEl.style.display = 'none';
+      modalEl.setAttribute('aria-hidden', 'true');
+      modalEl.removeAttribute('aria-modal');
     }
+    // Instant DOM cleanup: remove backdrops, unlock body scroll
+    document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
   }
 
   // Ensure full backdrop cleanup on modal hide
@@ -1048,6 +1094,72 @@
         document.body.classList.remove('modal-open');
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
+      });
+    }
+
+    // Touch Swipe & Drag Physics for Gallery Stage
+    const stage = document.getElementById('galleryStage');
+    if (stage) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let mouseStartX = 0;
+      let mouseStartY = 0;
+      let isMouseDown = false;
+
+      // Touch events (Mobile / Tablet)
+      stage.addEventListener('touchstart', function (e) {
+        if (e.touches && e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        }
+      }, { passive: true });
+
+      stage.addEventListener('touchend', function (e) {
+        if (e.changedTouches && e.changedTouches.length === 1) {
+          const deltaX = e.changedTouches[0].clientX - touchStartX;
+          const deltaY = e.changedTouches[0].clientY - touchStartY;
+          handleSwipeGesture(deltaX, deltaY);
+        }
+      }, { passive: true });
+
+      // Mouse drag events (Desktop)
+      stage.addEventListener('mousedown', function (e) {
+        if (e.button !== 0) return;
+        if (e.target.closest('.gallery-nav-btn, .gallery-close-btn, .lightbox-thumb')) return;
+        mouseStartX = e.clientX;
+        mouseStartY = e.clientY;
+        isMouseDown = true;
+      });
+
+      window.addEventListener('mouseup', function (e) {
+        if (!isMouseDown) return;
+        isMouseDown = false;
+        const deltaX = e.clientX - mouseStartX;
+        const deltaY = e.clientY - mouseStartY;
+        handleSwipeGesture(deltaX, deltaY);
+      });
+
+      function handleSwipeGesture(deltaX, deltaY) {
+        const absX = Math.abs(deltaX);
+        const absY = Math.abs(deltaY);
+        // Horizontal swipe threshold: 40px
+        if (absX > 40 && absX > absY) {
+          if (deltaX < 0) {
+            navigateGallery(1); // Swipe left -> next image
+          } else {
+            navigateGallery(-1); // Swipe right -> prev image
+          }
+        } else if (deltaY > 80 && absY > absX) {
+          // Swipe down -> close lightbox
+          closeGalleryModal();
+        }
+      }
+
+      // Backdrop click to close (clicking empty stage outside the photo or buttons)
+      stage.addEventListener('click', function (e) {
+        if (e.target === stage || e.target.id === 'galleryImgWrapper') {
+          closeGalleryModal();
+        }
       });
     }
   });
@@ -1070,9 +1182,16 @@
 
     if (img && photo) {
       img.style.opacity = '0.35';
+      img.style.transform = 'scale(0.98)';
       img.src = photo.url;
-      img.onload = () => { img.style.opacity = '1'; };
-      setTimeout(() => { img.style.opacity = '1'; }, 200);
+      img.onload = () => {
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      };
+      setTimeout(() => {
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 150);
     }
     if (counter) counter.textContent = `${index + 1} / ${GALLERY_PHOTOS.length}`;
     if (caption && photo) caption.textContent = photo.title;
@@ -1081,10 +1200,12 @@
     thumbs.forEach((thumb, i) => {
       if (i === index) {
         thumb.classList.add('active', 'border-primary', 'border-3');
-        thumb.classList.remove('opacity-75');
+        thumb.classList.remove('opacity-60');
+        thumb.style.transform = 'scale(1.1)';
       } else {
         thumb.classList.remove('active', 'border-primary', 'border-3');
-        thumb.classList.add('opacity-75');
+        thumb.classList.add('opacity-60');
+        thumb.style.transform = 'scale(1)';
       }
     });
   }
@@ -1093,9 +1214,18 @@
   window.addEventListener('keydown', function (e) {
     const modalEl = document.getElementById('galleryModal');
     if (modalEl && (modalEl.classList.contains('show') || modalEl.style.display === 'block')) {
-      if (e.key === 'ArrowLeft') navigateGallery(-1);
-      if (e.key === 'ArrowRight') navigateGallery(1);
-      if (e.key === 'Escape') closeGalleryModal();
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        navigateGallery(-1);
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        navigateGallery(1);
+      }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeGalleryModal();
+      }
     }
   });
 
