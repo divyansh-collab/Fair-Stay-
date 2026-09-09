@@ -1,15 +1,15 @@
-# 🏡 FairStay — Universal Vacation Rentals & Stays
+# 🏡 FairStay — Universal Vacation Rentals & Stays (Full Stack MERN)
 
+[![React 19](https://img.shields.io/badge/React-19.0.0-61dafb.svg)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vite.dev/)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/express-4.21.2-blue.svg)](https://expressjs.com/)
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-green.svg)](https://www.mongodb.com/atlas)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-purple.svg)](https://getbootstrap.com/)
 [![Google Gemini AI](https://img.shields.io/badge/Google%20Gemini-AI%20Concierge-orange.svg)](https://deepmind.google/technologies/gemini/)
-[![Leaflet.js](https://img.shields.io/badge/Leaflet-1.9.4-brightgreen.svg)](https://leafletjs.com/)
-[![Tests Coverage](https://img.shields.io/badge/tests-27%2F27%20passed%20(100%25)-success.svg)](https://github.com/divyansh-collab/Fair-Stay-)
+[![Tests Coverage](https://img.shields.io/badge/tests-70%2F70%20passed%20(100%25)-success.svg)](https://github.com/divyansh-collab/Fair-Stay-)
 [![Live Deployment](https://img.shields.io/badge/Render-Live%20Production-blueviolet.svg)](https://fair-stay.onrender.com)
 
-**FairStay** is a production-ready, full-stack vacation rental platform engineered with signature Airbnb elegance, 3D spatial motion physics, transparent anti-surge pricing (**FairSafe™**), 100% organic Google Places photography, and an intelligent AI Trip Assistant powered by **Google Gemini 1.5 Flash**.
+**FairStay** is a production-ready, full-stack **MERN** (MongoDB, Express, React, Node.js) vacation rental platform engineered with signature Airbnb elegance, 3D spatial motion physics, transparent area pricing (**FairSafe™**), 100% organic Google Places photography, and an intelligent AI Trip Assistant powered by **Google Gemini 1.5 Flash**.
 
 🌐 **Live Deployment:** [fair-stay.onrender.com](https://fair-stay.onrender.com)  
 📂 **GitHub Repository:** [divyansh-collab/Fair-Stay-](https://github.com/divyansh-collab/Fair-Stay-)
@@ -59,6 +59,14 @@ fairstay/
 ├── README.md                       # Documentation and setup guide
 ├── .env.example                    # Sample environment variables template
 ├── .gitignore                      # Git exclusion rules (node_modules, .env, secrets)
+│
+├── client/                         # React 19 Single Page Application (Vite + React Router)
+│   ├── src/                        # React components, pages, services, styles
+│   │   ├── components/             # Navbar, Hero, CategoryRail, StayCard, FestivalWidget, AiDrawer
+│   │   ├── pages/                  # HomePage.jsx, ListingDetailPage.jsx
+│   │   └── services/               # api.js (REST API integration layer)
+│   ├── dist/                       # Compiled production React SPA bundle
+│   └── package.json                # React client dependencies & Vite config
 │
 ├── backend/                        # Backend Domain Logic & Server Code
 │   ├── controllers/                # Request handlers (listings, bookings, users, reviews, ai)
