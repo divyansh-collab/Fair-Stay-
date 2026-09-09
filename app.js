@@ -65,6 +65,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'frontend', 'public')));
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
 // Mongo Session Store using the primary database
 const store = MongoStore.create({
@@ -151,10 +152,21 @@ app.use((req, res, next) => {
   next();
 });
 
-// Root route redirect
-app.get('/', (req, res) => {
-  res.redirect('/listings');
-});
+// Serve FairStay React (MERN) Client SPA at Root
+const clientDistPath = path.join(__dirname, 'client', 'dist');
+if (fs.existsSync(clientDistPath)) {
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+  app.get(['/app', '/app/*', '/stay/:id', '/listing/:id'], (req, res) => {
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+} else {
+  // Fallback to server-rendered listings if client is not built
+  app.get('/', (req, res) => {
+    res.redirect('/listings');
+  });
+}
 
 // Route pipelines
 app.use('/listings', listingRouter);
@@ -163,18 +175,6 @@ app.use('/', bookingRouter);
 app.use('/', userRouter);
 app.use('/ai', aiRouter);
 app.use('/api', apiRouter);
-
-// Serve FairStay React (MERN) Client SPA
-const clientDistPath = path.join(__dirname, 'client', 'dist');
-if (fs.existsSync(clientDistPath)) {
-  app.get(['/app', '/app/'], (req, res) => {
-    res.sendFile(path.join(clientDistPath, 'index.html'));
-  });
-  app.use('/app', express.static(clientDistPath));
-  app.get('/app/*', (req, res) => {
-    res.sendFile(path.join(clientDistPath, 'index.html'));
-  });
-}
 
 // 404 Handler
 app.all('*', (req, res, next) => {

@@ -18,7 +18,7 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter basename="/app">
+    <BrowserRouter>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar onSearch={handleSearch} currentSearch={searchQuery} />
         
@@ -29,6 +29,7 @@ export default function App() {
               element={<HomePage searchQuery={searchQuery} onClearSearch={handleClearSearch} />}
             />
             <Route path="/listing/:id" element={<ListingDetailPage />} />
+            <Route path="/stay/:id" element={<ListingDetailPage />} />
           </Routes>
         </div>
 

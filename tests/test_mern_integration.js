@@ -29,19 +29,19 @@ async function testMernIntegration() {
   }
 
   try {
-    // 1. React SPA Root Route
-    const appRes = await fetch('http://127.0.0.1:8080/app');
-    assert(appRes.status === 200, 'React SPA serves at /app with HTTP 200');
-    assert(appRes.body.includes('<div id="root"></div>'), 'React root mounting container verified');
-    assert(appRes.body.includes('FairStay'), 'FairStay branding present in client title');
+    // 1. React SPA Root Route (Default Homepage)
+    const rootRes = await fetch('http://127.0.0.1:8080/');
+    assert(rootRes.status === 200, 'React SPA serves directly at default root / with HTTP 200');
+    assert(rootRes.body.includes('<div id="root"></div>'), 'React root mounting container verified on homepage');
+    assert(rootRes.body.includes('FairStay'), 'FairStay branding present in client title');
 
-    // 2. React SPA Sub-Route Fallback (Client-side Routing Support)
-    const subRouteRes = await fetch('http://127.0.0.1:8080/app/listing/sample-id');
-    assert(subRouteRes.status === 200, 'React SPA wildcard routing /app/listing/:id falls back to index.html');
+    // 2. React SPA Sub-Route Fallback (/stay/:id and /app)
+    const subRouteRes = await fetch('http://127.0.0.1:8080/stay/sample-id');
+    assert(subRouteRes.status === 200, 'React SPA routing /stay/:id serves client with HTTP 200');
     assert(subRouteRes.body.includes('<div id="root"></div>'), 'Sub-route serves React SPA container');
 
-    // 3. Asset Serving
-    const jsMatch = appRes.body.match(/src="(\/app\/assets\/[^"]+\.js)"/);
+    // 3. Asset Serving (Direct /assets/bundle.js)
+    const jsMatch = rootRes.body.match(/src="(\/assets\/[^"]+\.js)"/);
     if (jsMatch) {
       const assetRes = await fetch(`http://127.0.0.1:8080${jsMatch[1]}`);
       assert(assetRes.status === 200, `React production bundle ${jsMatch[1]} loads with HTTP 200`);
