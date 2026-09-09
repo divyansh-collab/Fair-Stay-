@@ -19,6 +19,11 @@
   --radius-full: 9999px;
 }
 
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -181,6 +186,11 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+}
+
+.stays-grid > .stay-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 380px;
 }
 
 @media (min-width: 1280px) {

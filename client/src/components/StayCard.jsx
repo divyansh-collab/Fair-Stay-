@@ -27,6 +27,7 @@ export default function StayCard({ listing, showTax }) {
             alt={listing.title}
             className="stay-card-img"
             loading="lazy"
+            decoding="async"
             onError={(e) => {
               e.currentTarget.src = 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80';
             }}
