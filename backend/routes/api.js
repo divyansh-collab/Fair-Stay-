@@ -52,13 +52,36 @@ router.get('/listings', async (req, res) => {
       Listing.find(filter).populate('reviews', 'rating').skip(skip).limit(pageSize),
       Listing.countDocuments(filter),
     ]);
+
+    const checkInDate = req.query.checkIn || req.query.checkInDate || null;
+    const dateObj = checkInDate ? new Date(checkInDate) : new Date();
+
+    const dataWithPricing = listings.map((l) => {
+      const obj = l.toObject();
+      const fest = getFestivalPricing(l, dateObj, req.query.festival || null);
+      obj.festivalPricing = {
+        festivalId: fest.festivalId,
+        festivalName: fest.festivalName,
+        emoji: fest.emoji,
+        direction: fest.direction,
+        percentage: fest.percentage,
+        signedPercentage: fest.signedPercentage,
+        rawPercentage: fest.rawPercentage,
+        multiplier: fest.multiplier,
+        demandLevel: fest.demandLevel,
+        explanation: fest.explanation,
+      };
+      obj.effectivePrice = Math.round(obj.price * fest.multiplier);
+      return obj;
+    });
+
     res.json({
       success: true,
       count: listings.length,
       total,
       page: pageNum,
       totalPages: Math.ceil(total / pageSize),
-      data: listings,
+      data: dataWithPricing,
     });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
@@ -115,12 +138,16 @@ router.get('/listings/:id', async (req, res) => {
       return res.status(404).json({ success: false, error: 'Stay not found' });
     }
 
-    const festivalPricing = getFestivalPricing(listing, new Date());
+    const checkInDate = req.query.checkIn || req.query.checkInDate || null;
+    const dateObj = checkInDate ? new Date(checkInDate) : new Date();
+    const festivalPricing = getFestivalPricing(listing, dateObj, req.query.festival || null);
+    const effectivePrice = Math.round(listing.price * festivalPricing.multiplier);
 
     res.json({
       success: true,
       data: listing,
       festivalPricing,
+      effectivePrice,
     });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });

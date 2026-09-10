@@ -22,6 +22,8 @@ export default function CheckoutModal({
   checkIn, 
   checkOut, 
   guests, 
+  seasonalPricing,
+  effectiveNightlyRate: propEffectiveRate,
   onBookingSuccess 
 }) {
   if (!isOpen || !listing) return null;
@@ -54,14 +56,19 @@ export default function CheckoutModal({
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingStep, setProcessingStep] = useState('');
 
-  // Calculate pricing
+  // Calculate pricing with Fair Price Engine
   const inDate = checkIn ? new Date(checkIn) : new Date();
   const outDate = checkOut ? new Date(checkOut) : new Date(Date.now() + 2 * 24 * 60 * 60 * 1000);
   const nights = Math.max(1, Math.ceil((outDate - inDate) / (1000 * 60 * 60 * 24)));
   
   const basePrice = Number(listing.price) || 3500;
-  const staySubtotal = basePrice * nights;
-  const gstRate = basePrice > 7500 ? 0.18 : (basePrice <= 1000 ? 0 : 0.12);
+  const effectiveNightly = propEffectiveRate || (seasonalPricing?.multiplier ? Math.round(basePrice * seasonalPricing.multiplier) : (listing.effectivePrice || basePrice));
+  const baseSubtotal = basePrice * nights;
+  const seasonalAdjustment = (effectiveNightly - basePrice) * nights;
+  const staySubtotal = effectiveNightly * nights;
+  const hasImpact = seasonalPricing && seasonalPricing.rawPercentage !== 0 && seasonalPricing.festivalId !== 'standard';
+
+  const gstRate = effectiveNightly > 7500 ? 0.18 : (effectiveNightly <= 1000 ? 0 : 0.12);
   const gstAmount = Math.round(staySubtotal * gstRate);
   const grossTotal = staySubtotal + gstAmount;
   const finalPayable = Math.max(0, grossTotal - appliedDiscount);
@@ -467,7 +474,7 @@ export default function CheckoutModal({
               </div>
 
               {/* Trip Dates & Specs */}
-              <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-light)', padding: '12px 16px', marginBottom: '20px', fontSize: '0.82rem' }}>
+              <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-light)', padding: '12px 16px', marginBottom: hasImpact ? '12px' : '20px', fontSize: '0.82rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
                   <span style={{ color: 'var(--text-secondary)' }}>Dates:</span>
                   <span style={{ fontWeight: '700', color: 'var(--text-primary)' }}>
@@ -479,6 +486,26 @@ export default function CheckoutModal({
                   <span style={{ fontWeight: '700', color: 'var(--text-primary)' }}>{guests} guest{guests > 1 ? 's' : ''}</span>
                 </div>
               </div>
+
+              {/* Dynamic Seasonal Impact Alert */}
+              {hasImpact && (
+                <div style={{
+                  padding: '8px 12px',
+                  borderRadius: '10px',
+                  marginBottom: '16px',
+                  fontSize: '0.78rem',
+                  fontWeight: '600',
+                  background: seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.08)' : 'rgba(34, 197, 94, 0.08)',
+                  color: seasonalPricing.rawPercentage > 0 ? '#dc2626' : '#15803d',
+                  border: `1px solid ${seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}>
+                  <span>{seasonalPricing.emoji}</span>
+                  <span>{seasonalPricing.festivalName}: {seasonalPricing.signedPercentage} Fair Dynamic Adjustment applied</span>
+                </div>
+              )}
 
               {/* Promo Code Form */}
               <form onSubmit={handleApplyPromo} style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
@@ -505,11 +532,22 @@ export default function CheckoutModal({
               {/* Price Breakdown */}
               <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)' }}>
-                  <span>₹{basePrice.toLocaleString('en-IN')} × {nights} nights</span>
-                  <span>₹{staySubtotal.toLocaleString('en-IN')}</span>
+                  <span>Base rate (₹{basePrice.toLocaleString('en-IN')} × {nights} {nights === 1 ? 'night' : 'nights'})</span>
+                  <span>₹{baseSubtotal.toLocaleString('en-IN')}</span>
                 </div>
+                {hasImpact && (
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    color: seasonalPricing.rawPercentage > 0 ? '#ef4444' : '#16a34a',
+                    fontWeight: '600'
+                  }}>
+                    <span>{seasonalPricing.emoji} {seasonalPricing.festivalName} ({seasonalPricing.signedPercentage})</span>
+                    <span>{seasonalAdjustment >= 0 ? '+' : ''}₹{seasonalAdjustment.toLocaleString('en-IN')}</span>
+                  </div>
+                )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)' }}>
-                  <span>Statutory GST ({gstRate * 100}%)</span>
+                  <span>Statutory GST ({Math.round(gstRate * 100)}%)</span>
                   <span>₹{gstAmount.toLocaleString('en-IN')}</span>
                 </div>
                 {appliedDiscount > 0 && (

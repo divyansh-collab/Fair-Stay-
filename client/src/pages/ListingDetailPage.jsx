@@ -54,6 +54,21 @@ export default function ListingDetailPage() {
   const [confirmedBooking, setConfirmedBooking] = useState(null);
   const [keylessPin, setKeylessPin] = useState('8492');
   const [isSaved, setIsSaved] = useState(false);
+  const [seasonalPricing, setSeasonalPricing] = useState(null);
+
+  useEffect(() => {
+    if (!listing?._id) return;
+    api.predictFestivalPrice({
+      listingId: listing._id,
+      destination: listing.location,
+      checkInDate: checkIn,
+      basePrice: Number(listing.price) || 3500,
+    }).then((res) => {
+      if (res) setSeasonalPricing(res);
+    }).catch((err) => {
+      console.warn('Could not load festival pricing for stay:', err);
+    });
+  }, [listing?._id, checkIn]);
 
   useEffect(() => {
     try {
@@ -167,11 +182,22 @@ export default function ListingDetailPage() {
   const gallery = [mainPhoto, ...COMPLEMENTARY_PHOTOS];
 
   const basePrice = Number(listing.price) || 3500;
-  const nights = 2; // Default 2 nights preview
-  const staySubtotal = basePrice * nights;
-  const gstRate = basePrice > 7500 ? 0.18 : 0.12;
+  const inDate = checkIn ? new Date(checkIn) : new Date();
+  const outDate = checkOut ? new Date(checkOut) : new Date(Date.now() + 2 * 24 * 60 * 60 * 1000);
+  const diffTime = outDate.getTime() - inDate.getTime();
+  const nights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+
+  const multiplier = seasonalPricing?.multiplier || 1.0;
+  const effectiveNightlyRate = Math.round(basePrice * multiplier);
+  const baseSubtotal = basePrice * nights;
+  const seasonalAdjustment = (effectiveNightlyRate - basePrice) * nights;
+  const staySubtotal = effectiveNightlyRate * nights;
+
+  const gstRate = effectiveNightlyRate > 7500 ? 0.18 : (effectiveNightlyRate <= 1000 ? 0 : 0.12);
   const gstAmount = Math.round(staySubtotal * gstRate);
   const totalAmount = staySubtotal + gstAmount;
+
+  const hasImpact = seasonalPricing && seasonalPricing.rawPercentage !== 0 && seasonalPricing.festivalId !== 'standard';
 
   return (
     <div className="container-custom" style={{ padding: '32px 24px 80px' }}>
@@ -376,20 +402,77 @@ export default function ListingDetailPage() {
         <div>
           <div style={{ position: 'sticky', top: '100px', background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '20px', padding: '28px', boxShadow: 'var(--shadow-md)' }}>
             {/* Price Header */}
-            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: hasImpact ? '12px' : '20px' }}>
               <div>
-                <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-primary)' }}>
-                  ₹{basePrice.toLocaleString('en-IN')}
-                </span>
-                <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginLeft: '4px' }}>
-                  / night
-                </span>
+                {hasImpact ? (
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: '1.65rem', fontWeight: '800', color: seasonalPricing.rawPercentage > 0 ? 'var(--text-primary)' : '#16a34a' }}>
+                        ₹{effectiveNightlyRate.toLocaleString('en-IN')}
+                      </span>
+                      <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                        / night
+                      </span>
+                      <span style={{ fontSize: '1rem', textDecoration: 'line-through', color: 'var(--text-muted)' }}>
+                        ₹{basePrice.toLocaleString('en-IN')}
+                      </span>
+                    </div>
+                    <div style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '5px',
+                      fontSize: '0.74rem',
+                      fontWeight: '700',
+                      padding: '3px 8px',
+                      borderRadius: '6px',
+                      marginTop: '4px',
+                      background: seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 197, 94, 0.1)',
+                      color: seasonalPricing.rawPercentage > 0 ? '#ef4444' : '#16a34a',
+                      border: `1px solid ${seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.25)' : 'rgba(34, 197, 94, 0.25)'}`
+                    }}>
+                      <span>{seasonalPricing.emoji}</span>
+                      <span>{seasonalPricing.signedPercentage} {seasonalPricing.festivalName}</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-primary)' }}>
+                      ₹{basePrice.toLocaleString('en-IN')}
+                    </span>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginLeft: '4px' }}>
+                      / night
+                    </span>
+                  </div>
+                )}
               </div>
               <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Star size={14} style={{ fill: '#eab308', color: '#eab308' }} />
                 <span>4.96</span>
               </div>
             </div>
+
+            {/* Dynamic Festival / Seasonal Alert Banner */}
+            {hasImpact && (
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 12px',
+                borderRadius: '12px',
+                marginBottom: '16px',
+                fontSize: '0.78rem',
+                fontWeight: '600',
+                background: seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.07)' : 'rgba(34, 197, 94, 0.07)',
+                border: `1px solid ${seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`,
+                color: seasonalPricing.rawPercentage > 0 ? '#dc2626' : '#15803d',
+                lineHeight: 1.45
+              }}>
+                <span style={{ fontSize: '1.1rem' }}>{seasonalPricing.emoji}</span>
+                <div>
+                  <strong>{seasonalPricing.festivalName}:</strong> {seasonalPricing.rawPercentage > 0 ? `Fair Dynamic Surge (${seasonalPricing.signedPercentage})` : `Seasonal Discount (${seasonalPricing.signedPercentage})`} applied for {listing.location || 'this city'}.
+                </div>
+              </div>
+            )}
 
             {/* Check-In / Check-Out Box */}
             <div style={{ border: '1px solid var(--border-hover)', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px', background: 'var(--bg-input)' }}>
@@ -445,11 +528,22 @@ export default function ListingDetailPage() {
             {/* Price Calculations */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-light)', paddingTop: '16px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span>₹{basePrice.toLocaleString('en-IN')} × {nights} nights</span>
-                <span>₹{staySubtotal.toLocaleString('en-IN')}</span>
+                <span>Base rate (₹{basePrice.toLocaleString('en-IN')} × {nights} {nights === 1 ? 'night' : 'nights'})</span>
+                <span>₹{baseSubtotal.toLocaleString('en-IN')}</span>
               </div>
+              {hasImpact && (
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  color: seasonalPricing.rawPercentage > 0 ? '#ef4444' : '#16a34a',
+                  fontWeight: '600'
+                }}>
+                  <span>{seasonalPricing.emoji} {seasonalPricing.festivalName} ({seasonalPricing.signedPercentage})</span>
+                  <span>{seasonalAdjustment >= 0 ? '+' : ''}₹{seasonalAdjustment.toLocaleString('en-IN')}</span>
+                </div>
+              )}
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span>Statutory GST ({basePrice > 7500 ? '18%' : '12%'})</span>
+                <span>Statutory GST ({Math.round(gstRate * 100)}%)</span>
                 <span>₹{gstAmount.toLocaleString('en-IN')}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#16a34a', fontWeight: '600' }}>
@@ -457,7 +551,7 @@ export default function ListingDetailPage() {
                 <span>₹0 (Waived)</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '14px', fontSize: '1rem', fontWeight: '800', color: 'var(--text-primary)' }}>
-                <span>Total before taxes & fees</span>
+                <span>Total Amount</span>
                 <span>₹{totalAmount.toLocaleString('en-IN')}</span>
               </div>
             </div>
@@ -510,6 +604,8 @@ export default function ListingDetailPage() {
         checkIn={checkIn}
         checkOut={checkOut}
         guests={guests}
+        seasonalPricing={seasonalPricing}
+        effectiveNightlyRate={effectiveNightlyRate}
         onBookingSuccess={(booking, pin) => {
           setConfirmedBooking(booking);
           setKeylessPin(pin || '8492');
