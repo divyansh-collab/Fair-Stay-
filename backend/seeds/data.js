@@ -7,8 +7,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ9OiPM68nwuWnx8yUMm_PC6GJkO3CvXJH9zG_4MsOFCOIbhd8ttlEqqlt0anPErd43oaD_Wmx4s2R_S7mLoDVJWNXh_5BkknE4Ufo5CvPnkdT9GKkDnnGhgCg3HWQg7CyRM0U7gfd-MitqgDiyIrcB1KJZPu3LM0aWchnrgEhH7qPFv-zhT2K18eZ2ZmskQ9_PKq_UO2ZFE-bncupJNfSYkEU_sELXbVUHtUY5Zx4uSQDtp2w_38NcZ_BGVQZAnKVHxhge6dMX7SXO6n4Vcagj96j104W-Hmr5nzE0GAoOr4VazpZ4pLymzsYkNlvdl5vBjGKxHiGIrQm2Sh2GiiYppJP0gEDGFcEEiXjUVgDlQ_9QmrX3h1x2bJO5FXfGgElIBkVhGUW-Kb95iGxjUshz0RLTtot5s7HCQ-fUDfJYddoX__7J9O2Fjmt3lnhS&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJreiV5i8xjjkRg7XSCa2LGXA"
     },
-    "price": 650,
-    "location": "h Ghat, Varanasi",
+    "price": 1450,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -17,7 +17,7 @@ module.exports = [
         25.3075498
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -28,12 +28,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.299Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Air-Conditioned Pilgrim Residency",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1950,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -44,8 +44,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTaWclzGEeWhO8lh9SqMmUZHrYwacLygKld6GCNeYaVyFLKUXs3f2l44xtOmyHKxC_vp4MP_EWwpTMA_MXrj-YQk0wv7a5GbgKgVGeTfkmE5qkdvQ23SpHh8yUy4Kea1CSQ8Hm7bSR0pzqV7o5OGMEwslMu6IRabFN5qWxDV210lNCVSgpLS43veJIl0j4B_gMAQuhqv4Giq219aWXJW9vykBiNJfHNZ-u6LpmQGfPZc0KMFU94d_VS0Taij-q0jJ_GwSc71mXljjwQY4xtgxZ7MngSt3UI_OXuehMHx0_Znelmr1-l8UMDOlF2yohb9jQ4nNVpjRzgoHmEsgXtAydLO1v6vBtR5mOJ5o1r9RXbM9LRHxmFCr1MDz-JeUja6ASAhUCGF4Kc5AgdFql6PJj2Ie8plSxbYG-NTNDsPdwcvoYz&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ53K-N-IxjjkRIGKYvyK-vsc"
     },
-    "price": 650,
-    "location": "h Ghat, Varanasi",
+    "price": 1150,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -54,7 +54,7 @@ module.exports = [
         25.3053837
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 86,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -65,12 +65,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.315Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Family Pilgrim Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1550,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -81,8 +81,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRwfB-Jh6Jx_aeJX476FRIuW1lboR_7gkDPllqB3IsY_cU2BcDgz2Ewz4C0Tcj93ChkpVtkUUCm9YQPEQ-8trps4GoUTtLz2BvxLY49t_Ziid2qYW9bJG-_Z17pyXMXmU9tGnKX4HzMEy7YEcPZxFUckGMBTIVf6-Rap0RUnVdad42_nEKN5DTEP--GFZsQlBZKFbHXwsITuSJcnGFdG_Xs1yct2gfaIUN-fgrk0pIHJR9KLPusj7R0SYOFntfkOtLBM9n-Or4YmkiVs55jVXXcfsnwQwfW1U4bGCtOeJWpa1mPqXewsTjNPvQMyaxYB0jYvE442EiTod37t0ygMqtUK6LE6TBTviIeWobI7w42NSKiFlrMKWdGV0-oXvSEMairOichS_fO9J1j7XQvTGW3Mh5vVtTcmAV2WVBkAT4YfFViaMLCSr9gG7VwfiyA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJXwj33v8xjjkRSvvv0RUt-Ck"
     },
-    "price": 650,
-    "location": "Ghat, Varanasi",
+    "price": 1650,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -91,7 +91,7 @@ module.exports = [
         25.305871
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 85,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -102,12 +102,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.321Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "River-Facing Pilgrim Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2250,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -118,8 +118,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ8gO5M80RPWZVsp8VTCug5xIdMbHnN4xIYkM2aMaGXG_XQ8veYBGEz1vYRuSALNbn_8ruGvxR3f_vlkqYksEBs1l3a-0LKXE1fYBboieUPAb6gae2m2L6jVAfe_0AFC_hDw789t85uNGXnOBJOPkVvjhCaygwd9Y825vnoqlR2aw24Af-ZgRpTkpCgUY_bqvTzDYR4yKvC-_sp-EvAcSw3MrijrFGoVX4w9a5uW51OC15HuKFjvoK7IrTk33MIkTobu80V9k1_9XdqVm4nl0_1WiJskPwhbT69tSE5aORSVNiYdTnkwaRXiFF1DhY1C4L9SEVN_d_pZ2i9ObiY5Yllpyq75CzmP0p_kNqigJb7Fv4x1ydMy7LRnESlSBuiZuWqmEnMzXrLHB4G2D0h8RLutFXrKIE1-tjFo0jRZxiOJpYUDaHeQbPtSlfJsxOn&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJid-qow0xjjkR789xemI4Jg0"
     },
-    "price": 650,
-    "location": "h Ghat, Varanasi",
+    "price": 1250,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -128,7 +128,7 @@ module.exports = [
         25.3064508
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -139,12 +139,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.327Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Ghat-View Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1700,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -155,7 +155,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSTLLRwlxMkgO2eCLUIVp9wU2CXx9NEyzEDcTKdCFL4y4LESUQYDwYLBdB9cOhVVoh7yp2yWBPRjyL-3cYaOrmx182Pj_Q-ueZi654X2zQ4UqIkZjDiI3vh0ce6r5mRgiu54XwRv3-70KluxRIXxNyDDHUmThxRrHNCZtW-3sHXgVp2JGqZF95YGH3OLPUw9Vnm-6-BnHz6F_hWhTPomWKt0eONazA-J95xP423KLdcBL5h0cINO472HFYqv6XlJW3rzlO615so8_uvSdH4qUtFiqT9ZkpgtlMFmAoa3txWPe0uS-PwfxfNQPV4kod2piEKf83tvTi-P-VNIO2TfjE_ktkDDPFidVpG4jiUJMH0lx65_stEhT8cqKpMS4m4lP-Su7_4NFd9Dvixjd2ENFifDMDpTJjxLOPtJI-U3521xp_HKGlil1X6XWrA3kz5&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ86q0ORRLhTkRlQBXlhRtU0I"
     },
-    "price": 650,
+    "price": 2200,
     "location": "and resorts, Prayagraj",
     "country": "India",
     "geometry": {
@@ -165,7 +165,7 @@ module.exports = [
         25.4054966
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 92,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -176,12 +176,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.103Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Sangam Resort & Lawn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3200,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -192,7 +192,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTaP6DEWqOgEAp54Ok2ZWp98ksm8gSJDx5eZ9TI3EpRNGtrrvh2pKFWYfn537fwRIFu8SwCDhCe2TR2dX7l-hFDkDWj4JVm4oPUkobWq0U2YjYM3C_NxxSuvG5k6X-L1Au0eFhmSDwd7sFHdqjSz8G_XVei66AFVnAzK-V3xEfyr3E7ZP-vvc6n5ue266iFWr1V1a1GXsUixHzhXBkjpoIoo6HS2Vkt47Kg52oesekVu5T-4ZdOgSmfIr6iJdVZRJ1h4Q7FXDd9-62cegzTFyCqzvsFlB53Vjmkg0fTkq5hwFfRm2rlt_y4jUl5EZQsRP_PeVn0g4MWJm1h0tEtPM9KpjiS0KK_4l99ZkOql9gmafKxK6mGo5IduID_9U0da06Y5utPVUj4q7cLeep05Z4xt-_Wn-r214fi2fvXG94&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJs-Z_OdFKhTkRcGKVXwZYDuk"
     },
-    "price": 650,
+    "price": 1550,
     "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
@@ -202,7 +202,7 @@ module.exports = [
         25.4318938
       ]
     },
-    "category": "Ashram",
+    "category": "City",
     "fairsafeScore": 100,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -213,12 +213,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.109Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Executive City Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2200,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -229,8 +229,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTSuZHGoOGJZkm0om0mb-9NsXhKQLG6YNZbcXXa_pmTKeXGJ9O2amXKrzrISGxW8FhrK6IzjqWN-Akt1QnsR18P1_esuPOrNRu-NFFLRCz6RJa967-2omiEL0qH4ZUaUcsw-Cp6vut3RiKRDML6vL8UsvN1fC-iQqdvOsZEksCWsVMJbpj533zbPb4573nNY6IPwOZY_hy0KekobUBTXD-iUuoIGwt3cb71HW3_Nplq7jgOnGz4v-uDakXOqzFh0E_Abvqb9eCsP7WkWT8oeUVxEhG1V5_3Veun-OvUZfpQvycM-N3N9AYP4B7HHWHrMkJDfwluXhyZUI_rNrQvZRXtD9pYwqd_3CAg54LKcpsCvfXpoZ1lTMqA8T-2a2Eq8458BHot3XT4A0vbbGSIVhCooMHIC1BS8BYfMbnxfku-KDzt&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJAbAzjU41hTkRXhbnd9DUdww"
     },
-    "price": 650,
-    "location": "Civil Lines, Prayagraj",
+    "price": 2400,
+    "location": "Sangam Ghat Road, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -239,7 +239,7 @@ module.exports = [
         25.4293997
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 85,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -250,12 +250,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.114Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "UPSTDC Riverside Sangam Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3400,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -276,7 +276,7 @@ module.exports = [
         25.4544174
       ]
     },
-    "category": "Rooms",
+    "category": "City",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -287,7 +287,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.120Z",
-    "propertyType": "Standard Hotel Room",
+    "propertyType": "Comfortable Budget Stay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
@@ -488,7 +488,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR4JeOIQas9BECm9KGvhpst7hrpNGNNzlfpPNuuqlRa-vTRijHYnff67baM39dOFMpH6S6t_0jJbQCjYkQUQ7uUqCp2ozjgrSnHkkTjOhmXEJfexCytVjRGgyNt9IhYhvlFvrPlyvAwarLfs70svl4C8Swa3VVu4pAbStCrxZ0NPrl0GtgRccqhcmXia6UP6ivtgGpkshCZxSCwfROYtPZT5VNeKd33GSHGpy0BniaZVTyP6oXZYvZuXsVIb-PUaA1ekmo3itdaUDEDXsEDUzMm_7Llf6C9wP_DdKen2WLPDrif-0Xzxv3a9V3qBqTlX1eZ860OMj-Zqw397zTVLHKrzyZHzh_ixtnqm14LvjdTtFpbu_-YSVITLKl-HbRf6A9Bek_hzrQUR9Pq3k3ECCoS7kRcc3HP_rPn_7Yk7Dg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJx1xBRv49CTkR8QQMN0HeXeo"
     },
-    "price": 650,
+    "price": 2400,
     "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
@@ -498,7 +498,7 @@ module.exports = [
         30.1311279
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -509,12 +509,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.240Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Ayurvedic Wellness Hotel Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3400,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -525,7 +525,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSOIqH5MD3rodjENwmdd3qhwTwmlLuPrVpZLNEI9Usl0NKZ6kdQDO7u_8SFYLywpqdjMlMiLsERhOGDUQCHCMEBUSEzynHNhI5yJr6zjS90dBu-zNuqY-owymXllPWsJ5W7WdTe4OzzxO78LIQnEx9eWsRLJDbRFIw1agvOG9l6tvUlSfZbtnJ9MiB-XO7gK5f3xQXxCp9ffkMdmSA6-IiF2BsTcyNzVgocbQIqi-CiX9XxGOQEpBaWU4Zmi0M-nD2rCjjOHmg5irybkDdVHT9KMh6QVbQt2BxHRcKBdU7dRdfYYXxaT5HmvbM6kGddUaItI9qks94nZjlwKqc0e6kTCvHSJ7DkfiMDdguZCBz5NxyIO5wujowNZd-7wO8iX1UCaDLzRSW-bAcBT3thy5v7qGoilunlCaJleIZ3IsKYDICFWlyYVuLgkyP7S4-R&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ3_sBKnEXCTkRLlMtnsWAm7Y"
     },
-    "price": 650,
+    "price": 1850,
     "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
@@ -535,7 +535,7 @@ module.exports = [
         30.1330253
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 96,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -546,12 +546,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.245Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Boutique Tapovan Retreat",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2600,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -562,7 +562,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS34m0IviQ04sQqD4GtX1lVIPX_XmJxDcIh8M-ODA93pdqni-r7VaMNIQ_jahxUBO2VT5fUokaJninR9mFRsYOUsHw7gP0j81dDBRvvhGvUil4ZaE2FWxMTXMF7ahNoSYq9Q1rwaPRxcHkkIZlfJ-Qxttz8OAU3BsZBi06emrXCShM5PEosDXcbVLkQ4HsCXh5u1xzV2BREXWaS94J6QMqkEBk4YPJsGHcDcB8AEO9XuFw56TarP3fvurcPOSs70HB5xIVR2HwAMzFS7vTGEI3Y946vIQ-m8DLgB8PVHqGfnRtJ_2-oGJHFqN386vggkRd7CKAvfoivzLm_jFUMSQrGKXnjiJbpiOi6jwvORXZDGcv70xY31oUAdPbs-pZ8zJx9v1QHy4ANUbVHRMh0rIiifgaDChKBq1pr9nR-nYh4j6Ti4tlVgfVWHSDpptau&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ9en6YhMXCTkREhyotBtXKBQ"
     },
-    "price": 650,
+    "price": 1650,
     "location": "Jhula Car Parking, Rishikesh",
     "country": "India",
     "geometry": {
@@ -572,7 +572,7 @@ module.exports = [
         30.1273934
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 94,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -583,12 +583,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.250Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Nature Retreat",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2300,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -599,7 +599,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQJ4SZ5nrqGyt9BB58ekaDjl3HW8KaudtmMivguVAh6Xbof5eQ-qDQ0vpuODZifvf2rYIWbDnYlyaCn8o3QqVxgH66Ae0YhJnZjNecXAObw65wPUt7VDpKuQnxzvGDqN9NVBiBTbBgyX5bNQtLdMKLpkl3P0bxXMKiqxmWyk99C7-Hg5G3gQ8-plpowMcFPemBTtknlLctCVStS8Ai0MWDfF4Wn6JYJ8Vd9q0Z5AFf2gfPi6LKdqwQ9AfURpairC2gyKr1pD8Gv8FW1wJhLGSafHoNNkY-7l0Cy-aN1Z6TpMAhD9SW9TGg-8-WrXUniDzhLTyP1VtWciMooF7hxhYeKSsbeYZe7kSY9UKxAlctanH-OU21plLC_5YV_R7wNN6mXRo4j9B2iFB5FRIAkZrrKvGAq8Hyp1Na_jPsEJhVCmV4&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJuwEeysv03TsRlDs4SWe-qgY"
     },
-    "price": 650,
+    "price": 1450,
     "location": "Road, Nashik",
     "country": "India",
     "geometry": {
@@ -609,7 +609,7 @@ module.exports = [
         19.9353738
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 85,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -620,12 +620,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.845Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Pilgrim Comfort Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2050,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -636,7 +636,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTsxYN84UoLSvqoMrGdfzDVNxzOFU_mgy4fRcDydKrZwZAKXkq5x-GEqmKUlJa1Emi-fBX3ApSEBIL9aBbedNJDwyKn2QdBNLI6JSV19KS2mF7rRRJQsgYI1OetoNtBzWIc1Y58XggZ7tgeY6eMXDLyPw6tH2GX2oJP_LF0Tvnc7b1PEvHajlQDlnLkKvYhfcubMjsCL91GxHGZuSifFn3YotxO8y2Zf4i0-oZTe-0ZZyxfAky92h4edeL8PNceiGEr1KAZTtx2Yuy9IGRnL1UKmDJT77KGVMiNT4MioA6w55T4y-20_73TSkmJdq6yK7esqOUY6uJ14IlLjZXsoU3FTW6TQn6hGe7NMdnqJIh8ctP1jCaRd0rxLzY8Wqn4iDzCy0p5u1Y6JncvXWsRq4ztNPXtYuVb5s_5ttJhU303Aw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJNaA4AQD13TsRS3LaBAzyr2g"
     },
-    "price": 650,
+    "price": 3200,
     "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
@@ -646,7 +646,7 @@ module.exports = [
         19.9513493
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -657,12 +657,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.849Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Boutique Farm Villa",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 4500,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -710,7 +710,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSNFfVGjQqdUJlizwtyrAR2Ly7e6ldTrFOSEVfw4RDyGvhypKFB6f5XgTASXBqJFQvXJoYqAzio_W5Yw3rz5NNYxEcZu5JCTtA4OExoNds4X24hZmQkaIv62Ek5otzWH8UVvZerqMauua8-Hqlu3hKWefSLZswT7SHjPjAgq15n311cmFfE-jfB8DN4C9Ss2b-hdNDxYK3DVMMUMtNwdojoESVJz0x6CMszw_ApRqD8jJZNhER3ChE-oRXkGDeUg-jlz_vOqrQrXICUg2cyLN7-_tCcKI3BJsuiFZPD0Jfd9cnUp3-zINELjmkdR9aTOejxZBnc_p9XR6ci9Y6tdCw7aAI_zMaLS4-zpB8SYkGWcjzuLdUx5VBqLYiTsO06VVeXrf-pbIufTkSfxig_R18VwNO9xot_hZQMpgjsohSIWYwmni0FJ7uGqjtr9lyd&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJZRVfy8v03TsRRvBeQAxHi-E"
     },
-    "price": 650,
+    "price": 550,
     "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
@@ -731,24 +731,24 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.858Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
   {
-    "title": "AADITYA ASHRAM SEVA SAMITI",
-    "description": "AADITYA ASHRAM SEVA SAMITI is a verified pilgrimage accommodation situated at D-62/4, D-6, Sonia Rd, Maulvibagh, Sigra, Varanasi, Uttar Pradesh 221002, India. Providing authentic spiritual hospitality, pure vegetarian dining, 24/7 hot water for holy snan, and effortless proximity to key mandirs, ghats, and river corridors.",
+    "title": "Aaditya ashram sewa samiti",
+    "description": "Aaditya ashram sewa samiti provides clean, peaceful, and air-conditioned pilgrim guest suite accommodation on Sonia Road in Sigra/Cantonment, Varanasi. Located just 2.2 km from Kashi Vishwanath Temple, it features spacious AC rooms with private attached western bathrooms, 24/7 hot water, elevator access, pure sattvic bhojanshala dining, and transparent pricing matching verified Agoda rates.",
     "image": {
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTqBxC8GDlfvW62xTHtvzIxUyGQcCNM1bNrmGCGIC1ojI9Kuk3XdIrcuVUK3cBkE9ex1ODtnorfgvq3llooB7a-oeF5wr03essG8R5yJeDyPpllWVz4X7IHyrlkEEPqfo7LIq7FTXhGNRBG-xXMFrPSpx2J3goLp_PlFO_ZEMSnXp8rBVJ6GhacUg79HQX0Rme7luI-WKeOjq6ZprM5coQGMI5KqXsEXDxKIPuGHDtgVBdZSSqOPAH1ya5TqueN_0I5oFJChCJvZgSstVilueATLcLhKK0TQiDMDkchZ5EqDE2zjPurap9O_hKRmzFRz0bLAkwkGahqOfVWHd-puaoncyawtd7MSxRUvt0WkWVBpL2XzmpyIaIC0c9CjSJmff-SdRhGERohZ_RFLl9T6grNqvaRBMGxsmELG3HVUfDWEMa4Z1niyL2bAXQYNele&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
-      "filename": "places_ChIJcTHDGJAvjjkR79bR7c5faKQ"
+      "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+      "filename": "aaditya_ashram_main"
     },
-    "price": 550,
-    "location": "D-62/4, Varanasi",
+    "price": 1900,
+    "location": "Sonia Road, Cantonment, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -760,20 +760,22 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Holy Ghat Proximity (<400m)",
-      "Pure Vegetarian Sattvic Meals",
-      "24/7 Hot Water for Sacred Snan",
-      "Clean Attached Bathroom",
-      "Peaceful Spiritual Ambiance",
-      "Luggage Cloakroom Assistance"
+      "Air Conditioning & Ceiling Fan",
+      "Free High-Speed Wi-Fi",
+      "Private Attached Western Bathroom",
+      "24/7 Running Hot Water",
+      "Pure Vegetarian Sattvic Bhojanshala",
+      "Elevator & Wheelchair Access",
+      "Proximity to Kashi Vishwanath (2.2 km)",
+      "CCTV Security & 24/7 Front Desk"
     ],
     "createdAt": "2026-09-02T19:56:49.430Z",
-    "propertyType": "Peaceful Ashram Room",
-    "maxGuests": 2,
+    "propertyType": "Air-Conditioned Pilgrim Guest Suite",
+    "maxGuests": 4,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 2400,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -785,7 +787,7 @@ module.exports = [
       "filename": "places_ChIJB5p8jx0ujjkR7mk14cfglFY"
     },
     "price": 550,
-    "location": "h Ghat, Varanasi",
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -822,7 +824,7 @@ module.exports = [
       "filename": "places_ChIJJ8-9f0QxjjkR1WudHrkojVc"
     },
     "price": 550,
-    "location": "h Ghat, Varanasi",
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -932,8 +934,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT02rNKizxZl9QDST7gwcvLxf2sR2PdM79eB_-HasM7wNP-n_uQFEJDaXHwNi02DOtkupYvHaxf4NNRShZH9CmbUABAWHMZCG72ZSwwZ2LB9GN6zBzfDf4oQ5HJQrNW_Cl2_qLseHm5fI8NjiLT21auIZF1HOtBwSZ5cTybfVjfiA1zFMjPyEBrz261A51JIXDR3bW8dQGgnCEM9iGXPsc2uHFCE0WRy2qGoYuQXt8EZIpeiIvIobB6D-a5DSqpAuJwCOP5-xAbi_K7NDWKMVJ_Vx5eMehcoyj3beWzZg2p8HCjSN_1wBOZqoUWBkPli4KoyjYLFAvEnbYIcW3mYhcE61tf8TzrBq_PFdVDrLkrhVeX5cqhietYbNL1xMZjxuAxjNlFjmlGWgzzixZv8oET5js_My-BqQ6r_MB6cj24Bg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJh1EMQAIvjjkRMqBtcv7X8pY"
     },
-    "price": 650,
-    "location": "C 21/102, Varanasi",
+    "price": 1950,
+    "location": "Cantonment, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -942,7 +944,7 @@ module.exports = [
         25.3227071
       ]
     },
-    "category": "Ashram",
+    "category": "Heritage",
     "fairsafeScore": 96,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -953,12 +955,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.307Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Traditional Kashi Haveli Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2600,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -969,8 +971,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS-7jO9J4p9VHpANgLnBr2wuUgfzmtZI3LY-_Jn5Wpwc5zx5Pq9SbIJ43Azm6ROsbODbPqmz2Q8KLHA6H9-Elo-ftZwebHi3BKXu2yQBGTC5wmMwHssjtVxFAfon2wcebsknI62dkLNYbYY6cP6qmermJBX2S18JOat9g7Swt3m0WVSB2JnGyKRHx4UpF92N68rNIfsqNxgK76keSqc6zENwPtPas9uquRoGrka_XTdJKBOQlGa5adP7HmBIo3cDKDlZlTcCc7obxVSVgMntFimAaBe4eRCaBBUlF2FGgzY3ROhKXwMzw59pm6VqfnGglhyGt8FsBxEjPH8AnRDHPZwOivpa5OWaTCCJtCOkJsQY7BxaVA6cihNJ6Z36ZeyEZanw21VPrlS7JB853kuFaxicVTDf40Xy3a-XSxivgj28ERR&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJI9_eZpQxjjkRN2c2TQ3JqDg"
     },
-    "price": 650,
-    "location": "D 27/18, Varanasi",
+    "price": 2200,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -979,7 +981,7 @@ module.exports = [
         25.3029237
       ]
     },
-    "category": "Ashram",
+    "category": "Heritage",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -990,12 +992,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.320Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Heritage Courtyard Haveli Stay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2950,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1006,8 +1008,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSp249uKr8VPsf20yz6VT59HfOgInSKw0z0dE65ZbOwOKyk0dVmqhAPv1bWgvaQuyIPPSFMIv6li4OA6hQeZvl9JP_enDHmO0Pg4YfzC9vlW48i8b66Oomfe0MT-ievh5bcUugVrEUGw6loW1RbFHg0wRgVUqlhRr8eoHx0mE0yyHyst7_AZX7Hz2sUWZnnikMf3OHIpTmz_Y_Ruk-wSmq8kzfDhjEbmRuNYo5dEI9QtmEW7KnMV-LMf-irzSoBwzKrdpdBpe1T4OhxxrO4qXauUepmwueo_9Sh1teAsDj5fm9L-Q0fXt9d9VgW_dOYKsAcmbpNRD_ovG_rquaMaVeEJjB-3ouN5O6as4bPZ1rX8PrJwCvNKzGCDAlI79hJn3sNVN6Cqb9YurfdEQ-qTFzKF7BaTrn2Vnptk8f6O2aQRQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJMS1Hk-ExjjkRkeQC0GwH53g"
     },
-    "price": 650,
-    "location": "D21, Varanasi",
+    "price": 2400,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1016,7 +1018,7 @@ module.exports = [
         25.304756
       ]
     },
-    "category": "Ashram",
+    "category": "Heritage",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1027,12 +1029,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.329Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Boutique Riverfront Heritage Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3200,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1043,8 +1045,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRCpSm0k5lsPQP3fqXPgcDFpgnutYCrjwDnouyum4scQkM8HhnIBG28hXMdmLuY9SaCH0cyDZey0jC2SlrLh33Z88wZKmGc5VTFACaUXDtKiVJXbYrbZrMYJnEjwsvsMAtKSFetCEliccTYSNPPmgZwJCCHSE0Q0WRRhnRaSu2r_eIZ7v9nnLLtF_oKuDkL0UGaSfZ-oKynoyc4nxz0tMzee8cvn0mBGXZ8yWSWnE65-YnEZW-uvACBZv5ba4Mg14r_vt2Thf08Kkci4n3-Z6iBMnh6GtRVoMhEJ_gyfgB5Zx-rpsv2Qu5dJ1XAjSOhhF1Kyypm2phqFIuRpJRWUT2z8IaRKPqnKde_Yg5Q3zG3hRHemQ6RzhBlv0eGesPRTQcN0QAlwfh4aQp7Cv6PA3vfRAIpxEaVhQ8ocpMvnYJWWw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ6zi3eKoxjjkROzuIYiINm_g"
     },
-    "price": 650,
-    "location": "B2/50A, Varanasi",
+    "price": 1850,
+    "location": "Assi Ghat Road, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1053,7 +1055,7 @@ module.exports = [
         25.2907189
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1064,12 +1066,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.335Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Boutique Cultural Heritage Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2500,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1080,7 +1082,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQnOWil9huzJPcYXYKTcyjWcg24vkBiIGT9SRnYyjkBpigX0Cw5mT1VT77WksRryY5V8aUv3vhIgWWGLaF308wM1yhwjL8RrsqVhxWM1zd-flsQxShDmycRS9KV7f8m_wgCdCvNtTV8xZnCaCY5bTuoj4TTgdujuM5WXdgRMBOjb-MRo69cihMj-KodULbQ2QLivXsygroasdsdLzbgTwYKKm6sPVuAXWoVB-nWCHWP0uOqFX3562Lr69dPsMXTvZu5kOdXtCzA4yxQ5_37Ln7Oh16d2eNrOMicGK3864qhEAyDk-KrZwHGkEbiqvLojFGYHpGjnTKVlyLuAzSRFxhKCE4AjwpJ-9Kf-1K2WSjOxJhCeNEJ7cfFLD6NHgfVr6keBW_PZ9ZDdV3mNEep1mIThQKzYJZmpeW2i5auO57sx2TgEW8EF8VMsS8Aig&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJR0uVZR4ujjkRI6DVLuoSYPI"
     },
-    "price": 650,
+    "price": 1200,
     "location": "India",
     "country": "India",
     "geometry": {
@@ -1090,7 +1092,7 @@ module.exports = [
         25.3099848
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1101,12 +1103,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.020Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Pilgrim Teerth Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1650,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1117,7 +1119,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS7vuyK7ukvZAUDP1IZX-1vTtDVq7B8KHNiaT1K3T_JQZal8eAYcp6KwJ8PeqfTPZfe0dng4F1mYqOBIeOnrbz1b51t6RoGzFhaxCixK_sTfy0PhZY9wX4pgz8fZGsWbXu1e9bzMB2omQFJhvmJj7-S-aIqeSgLD_VOeqinMNmUNqHPBJ2ZegxjgMjffDiFnw2zC2BP6x2500RpCFRlpTDf1fYhC4h-RrCGLdOgkLWC1o1UntfKhwLhFe75RFO8ZRm8CbbcWPklF6zo2a-Fqo7Ebdy3vmfehOm5FuV6eTcZ5Wvtgy3bz2Zav2CjwqG-386Ns1ZOKyD8Tby-S67_VhGgpHKDjZSlyzwCV8wbpv_weeCJQMLn3DdxEJBqmJBjb_qi4D0oAZ5UsF-ey7bJrVBUDWgz1YujNq3AGPRXXbPnoiv7dx6cKuCTRr-O87Sj&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ-ZqHzBcvjjkRHySa_IjTH18"
     },
-    "price": 650,
+    "price": 1250,
     "location": "Gate no. 1, Varanasi",
     "country": "India",
     "geometry": {
@@ -1127,7 +1129,7 @@ module.exports = [
         25.3178696
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1138,12 +1140,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.028Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Temple View Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1154,8 +1156,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRu-ji24HYtz8O02q4H9Yk8vhHkBYrr6aOikRl5NYP8hbKVnljEQyMQN3hxAYOcBZobtkSwRBWG2gnCT7RyJ_cy2N65kj3Haj-Y5n2MahipY7u5Py2YaVAKCcYIqh7aC5EqLTT9wUwHQdIGempM5kV19566OaT0dEBI6mE8N02bbQRscsA9MC5uXQDXtug7SKHsnENtqhLoAMafD0c7Pme7GoPLUxWy_ySqlD1qQu2JMizHJAdf7AWjmhC8m7bV402L3hsdK_SL8fLsypKlWKp8_n5mux1G_Hc-y7nFWQILF_Z_pGQddBK0psxHxg4aPrBlEtf1Bi6VeITATppREtN39-BVxs6IV_-YGgUk3EIHirfezbQo_DMD3oISSXyU1yiHzkOFggfFUk4AbY7PA_O1A6Hjn_BBtNnunE1IoVZvZASa&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ0w0IQDcvjjkRrUNXj5tfdfI"
     },
-    "price": 650,
-    "location": "D23/2 Hathi Pathak, Varanasi",
+    "price": 1350,
+    "location": "Hathi Pathak, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1164,7 +1166,7 @@ module.exports = [
         25.3044965
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1175,12 +1177,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.035Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Comfortable Heritage Rest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1850,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1228,8 +1230,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR9THJTYIIzTwDikIAn_zCC8Zlf7xgBKzeYk-Fb8uZbc2AbhxMZVKDDHaOZ95cgVOcsprBkXO8l0ynCD6kVJQJZhmbq6_-uKk9Ldq3dyri7sUVfiWd1b2Fd1nnMZz7EKHshMQ-rtVsQ17pQ6HqlsJUfgWx4PH9WS8GdOKwn3nE0tjm3tJW3DxcEEM0p7sxzd-fNvBwQm_0zC4vAO8MBl4P4xcYFDZLZ8rB0uNK63oi_ek9Z4RQaWvt2pe9pzHAaUr2dRyjgXV18n3JUhvE6crsUUSLRRdAIxTD7vNeNurgEBJnmLNvr_ZpKMudwbenLaKxRiZhNxHArZg071iNpAHLXRIokmFyzBeW9F2k92MG4nlXI1WNpmnxWV2d9s91Xr6cA5FFkj27pNTBGjyhqdkOhq5rXBvK3IevceCcHzCyLOQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJHVJzTPktjjkR_HVLF1xX7-A"
     },
-    "price": 650,
-    "location": "h Ghat, Varanasi",
+    "price": 1100,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1238,7 +1240,7 @@ module.exports = [
         25.3116584
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 94,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1249,12 +1251,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.585Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Clean Pilgrim Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1500,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1265,8 +1267,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTaduA6P0PmzOjf4i7Auhu95uLgyvrSiaphLTSEMm6jJscM11DdOYWqkD1Qo2mMdX_830zqPnBjpmOaUUVQQ7r1tP4okJpnJXe6HxyinuwrbGrwUX6--Eitim-yoqxUw3kVMF3Ef2lOeF2l_02sskmDUJ4672VF5RENzJWmC4WrUmRZQO-muOmEndH_3Btwf1nivANHpD-sWmYaBzEWs7E1WobkAWaHhoM4RBd_nOQbQICv6_dk99wADVUrP1EESc5-cXyLQ8YvRDTcHS55hVFnH5l6_rK0vDzqEv_muzoWzKFNMzWVyHSSoMcnZcsTr4TsN34dBT1JpGp_pUSbqOifaoHZQfWNKChADGvxRQ1scokkCe-RrGuaguwd1yVE_VlIH3G0XpfRTX6cCtt0KTGUDX31ReFQecv931SH4IVGao6T9WDzizaV-7QnCA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJS3yu59cxjjkR_3RmrFLMLiw"
     },
-    "price": 650,
-    "location": "h Ghat, Varanasi",
+    "price": 1350,
+    "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1275,7 +1277,7 @@ module.exports = [
         25.3005846
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 92,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1286,12 +1288,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.594Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Comfortable Budget Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1850,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1302,7 +1304,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQDKc4miwVtG5hMg4C3eUy4QOrUJIIX3NbSom6fdJ2Rc52E8kkmNRKJekRkA64GTT1qKxpSBgPpwkRQgtFRl3pQ0jAOkVrV4rsKCw54hQFnhs-p2_gM0aIOISQQATdY0Q9uJlKD5BxAMFManONjDD_CYqcdaoTEgbPW-0iNk1NHU9xYthOmABGZbdmvXRYh-08kyRuBGWmtvaPnHnSXfxPAeNTAVhI5kfAUn8KTZtAjgShe0aASp_yFrM9S9lgimCrTuyfywn8e3a2-0wZI7V90ucexoLVw42vmE54DC-03691w3gbZFfepB2AK6OeWAZVtVK2Ri-EXwRvK-6RuFD3bjNhcoprEAPx2ab-6JSkTOFhmAg9-_qeOzMCBtewv3VcO7gnRykwTYhzZL1PRqEEQqSDckbfjKbccNI6edmuUjQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJR8X2X9szjjkRk3vsMMIonL4"
     },
-    "price": 650,
+    "price": 1150,
     "location": "Gali (Siddhivinayak Mandir, Varanasi",
     "country": "India",
     "geometry": {
@@ -1312,7 +1314,7 @@ module.exports = [
         25.3034716
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 94,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1323,12 +1325,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.601Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Temple-Side Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1600,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1339,7 +1341,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSTdDVAeObNVVJD5TBAQbfNsnBjyblDCsYa1wEJUc0-gLK1pdfSMvFKP843woZBcrh0kR-3ERzKY2n2YzLHwOQ5c4f7TmQSBU9lPfaSlXIgGi-t1Znt8HJf_zAYyHAGzxmq7Y0ltIHEewY2Uu_EdFItRyN2QjkXNXCmWk8yDJZU0T-mXDaxfqKg7UDk9dBaT8khuDaLtU6e1dm0nB5C-6y9zBbAWCRaqGa_Vd-I5EiOCrF7-WwjsmbJxYXZKMr03BPk6YPYeH8XfRh0nMvdV6_Mx2R5R7MnSCXiJBdNb_kWMIQgjNYVfI5-Fpe15CP3IfqX4kygr_vxeoyZbiAS_etbNYfew8ozUma5UBb7Pq8mdEm7JnJy4FVB2B2QnJpcqTPO84FS-jpE_mGLRs9B0qWaD_dBYOS3MstF2IS0S2-waQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJX_UK9VJLhTkR4wWy017yqKM"
     },
-    "price": 650,
+    "price": 1850,
     "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1349,7 +1351,7 @@ module.exports = [
         25.3576979
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1360,12 +1362,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.301Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Eco Farm Stay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2600,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1376,8 +1378,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQvlKQYwIER5YDmEE5vlLorEU3n_HUNTIQj4G1ZiwgrzS3w1SoZWGNMWYAhkR-BBx3VcY1zTNhZfBV4JIAoDRWcTc2qZQ2AMi1N87_cj87xUoA-hAut2yYEEFQGgY2KqDBcRQsMA_LORJ_5Bxmbk14doSK8-MBtE7o2gR7fuhNuBStgdz5psu3k2z5dbDkSfx_HcUqWQus_E6cEgbEuRX_OPznHkGldGSCtjzVCIPcwaQIeJewRF1bJs8Gc08yGUAOJg4wJ_sABmJu6nMcOdZTmS6VthcUYVeigJM7yTkqZ_2YQcsbWFtIRpBvs75QWNdA6T-apEZetzzC362WI569HNJL_1B_DhwkXFAPyu3k7B7SJ5SUuc_HjRws4ofHrEB_oEriGEky7vH9aXEmk5sq65ZK0NDUr6BTVsCzscA3f4A&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJRXzcMw1LhTkRoTjWmXraSFw"
     },
-    "price": 650,
-    "location": "Highway 2 Allahabad -Varanasi Road Jhushi, Prayagraj",
+    "price": 1450,
+    "location": "Allahabad -Varanasi Road Jhushi, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1386,7 +1388,7 @@ module.exports = [
         25.4287879
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1397,12 +1399,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.309Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Pilgrim Highway Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1413,7 +1415,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRQIm2dTgZFTJDW-9VSRy7-H0IO7MdOXKq-MLaxDMAGxqt_o00292ui6zUvEayhVTd6wqduyZ530SFCnsymx_O2M_dOmGtx7o6bQAGXlGtUfGVfy_dQfzI14EbYfJ_Nu-QLJfvDZIwVXPBio3JaHdwukt7NDXizKA2IwWUsLCgquYJc_GDJpDzx4d4MK8k8rR8dO9hr7ka4ZzGe7Mm9PRC9SNzwu1i7lVfwSSViGpcnqEyV283FFrkDPFVAXP8VxlT-thj265Yyqgzivc_EiQ1bRdmA-FqU4k02yHc6QIb-jN5sknEJZ0oL_2dh4dIM1fDh5ooA4jsuRiye95jiVHNJE1nok_9xoQx0_FWzTJbWMyBtN_iGF0YQwZIENsmH-5UOTU3VEE5XhKAjmC50KpF3orF5g7WA0oVXYmNbFpHaBywH&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJq3dDMNlLhTkRKe3RrkpD7pU"
     },
-    "price": 650,
+    "price": 1250,
     "location": "Floor, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1423,7 +1425,7 @@ module.exports = [
         25.4224443
       ]
     },
-    "category": "Ashram",
+    "category": "City",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1434,12 +1436,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.317Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "City Transit Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1450,7 +1452,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT1cOpuLVXi0sd5_mqbn8Ryy4YA4l63XZmAdBR4j0ecvbFMLau4YrWsoIzzvCWu2tna_houImTI8wbzqMdQ_CD0BFZZ3cZT6eeA-OU9FsOyw8ktiEPoub8IkzQ0ox8FiOvihLlM7LHwLQrvnijemcjWmg1Ljc2SwIhoacWgtFnCdsN03n31pEgaaRRQRUMtvcaNwh4TAPpTTHV8Xm8mrrAwCxkf8QSZ9XzG1gqj3Z-Mcr1IS_Pc_VMNEhrjR8tqZanx1_hwAAqZlcmhh-ozyezKTw3NEDnHi6nFMt9gBHt7982Q-W75Ce6eK8rPE2bcmzco7SIwCo_m0mmkfz3DDoM0IgvgaSLMOZzXncbgM5XYwY6dZfz2LL3Z9qJpmMfUzLLI2DqM60KL6f0uGdNivZb72bykIFa0fkusmXN328HR9RVQrOZcqNCwuXfVdUYA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJk_wGOSzLmjkR03YlykFHVII"
     },
-    "price": 650,
+    "price": 3200,
     "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1460,7 +1462,7 @@ module.exports = [
         25.467248
       ]
     },
-    "category": "Ashram",
+    "category": "Heritage",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1471,12 +1473,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.325Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Colonial Heritage Boutique Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 4600,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1488,7 +1490,7 @@ module.exports = [
       "filename": "places_ChIJvTlJHwLLmjkRWztCK11DG9o"
     },
     "price": 4500,
-    "location": "Mauza Naseebpur Bakhtiara, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1534,7 +1536,7 @@ module.exports = [
         25.4517903
       ]
     },
-    "category": "Rooms",
+    "category": "City",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1545,7 +1547,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.916Z",
-    "propertyType": "Deluxe City Hotel Room",
+    "propertyType": "Executive City Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
@@ -1561,7 +1563,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRorAAA2QJA6QuHBN8ucgejdxFDFJqv0YSaoLItgczcmYAJh-jGSL9bcU7Px8F9IN5W3JWoNJgeAXNBOJnvzQTmxl93pjIgKfM6-wyG6yvYU4HWoHwjrnPilbRPC72y_99joerVloOak3YOjZMMmbqbatHh6bI2uiiCboV4G4Q_BfD9kNtFPR2_0adT7uag7C4rgY2PAtA_fYzOKAwWINRDdfxMlV4Cg4adn7bmhdbTBKVnHcSaM7_4ooAo4BDRu_35BOig5ocGJpvgr1maLCB8CmeTyXjE6t3NVrMpQQYL5CFziisZ6wsa_8mnxiPQ2DpzeZlDpEbdzAcKm22MuDKzuHbAw4_Fv_sjFQJ0OdyVaHmMbhQXgxiKBXxPHDUyIkv2Y02-7XdND-KRJ-eHGYG0CslH_dYuM7T4Lv8gSJZFo0GzdlcptlGFDRzyaQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ0SMHXdfKmjkRn2OfxpEBX3U"
     },
-    "price": 650,
+    "price": 1450,
     "location": "Multi Functional Complex, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1571,7 +1573,7 @@ module.exports = [
         25.4464199
       ]
     },
-    "category": "Ashram",
+    "category": "City",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1582,12 +1584,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.922Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Multi-Functional City Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1598,7 +1600,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTO3DKrm9aGqPlklPQdxxViK42fFjkRfg4QXeKJZ2xUjNnM1L_VvUp5FOZ5y8mhntYJRiPMJTRcZYqFCvZzFVf9ah_QE_AaMuWIPc89QOeqDCZLCB1sp7hFj7rKvF8WpAZ10bf-OW_IWjnVrcICdgHvf2MacuRuz8hTJMhGZ7B0vaqyZWsrH8aYXKil0twYzQ8UUNa00tjpcRBSET_FdvUrCAzCZwTSw2xxoAjxMPEb4sVHDKiIZzx7t5ulQXZUd4Df0u0NxqAeLMZY1i7S2uapkPWwpiBBcQ_RnB_sk6CnM8EI6th1A2OzhM4PO4B0zz2m8Xi9d0d2wMMT6_BP_DfEP3EgHE8-mAE_UN7yO4lwtIx0I79UuKfWhbWFt-4fsn8hEHLBHuGiBe0OKEEVLiiwg-RyIayhqHu7WRE33NIjo8GcMxD-upQYXBxi3WSb&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ4TWvWdbKmjkRzMaJ23xcD3Q"
     },
-    "price": 650,
+    "price": 1350,
     "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1608,7 +1610,7 @@ module.exports = [
         25.44305
       ]
     },
-    "category": "Ashram",
+    "category": "City",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1619,12 +1621,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.928Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "City Transit Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1635,7 +1637,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRCg0i_CSSX9EwqPv4BdRU6mSYjubOypoEW1LcC04oIyFksPVf4QSqjFSi5fQQQazkNEHOnu_e10u9UwqsSNhYB1Gwy8fL9yjy6u1zs6dOg_L278dNjfdunnzjc2CFz7ApwTiC9mENLiU-DFcdzxfX1tXZ9ZNW9Cy9zqxy_UILth0BoQT6TT5ln9_6CuE-IcGjJ2n_d6grdp3ML_jGmXw5DqNvvoIr08Q8s3pMNzAnbvA5RB_WqHBMrb75EsHSDfaDHWpGQ6dmmcXdxLNfXJJPXVvfN8ocR9t1z033cwzIM63VXxZm2IqJbCPTDPLninNkQ7SZ99X5yKLJQyIbyyL7Mlaoqh_UxH_U_NBWBXFVgPnfQpCCbZ1P4_TNw2BZ6jLL_NIhj6zn6aBE6LAH3d3D00Tm1epNtVu48qKmkjpu9MuOf-mtECtX81lcYKIsj&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJnSs2u-HKmjkRmlIF6PGCleU"
     },
-    "price": 650,
+    "price": 1550,
     "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1645,7 +1647,7 @@ module.exports = [
         25.4508898
       ]
     },
-    "category": "Ashram",
+    "category": "City",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1656,12 +1658,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.934Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Executive City Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2200,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1672,7 +1674,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSzAamEqRHaxaFD15FZcA254ZV9gPRW33q1zBrCf25h4ij1RbxPxApg3aBfYXyvAQzCtNxKFchdcZBdzgyp4mM48c_QWCGRJ-fjEXVKgpGg5nrNMn4pNGLdldkKw3KYoqYNgOLsNVmx1lIN6-lLgXBnCMnVpbA1B4DWW4R-Pov22hamOqOU3TH8RbvKU0XIX--pq2DE3CWGrEWwK01SDw0Ku1AGrcWQuKTPuf_Z1rQRdUqmAKigtV5763C40guQHzXBx6YzqE7D5y3I1LszvP4-coBuyDVZ-f3si7sGmdUM30tpXQ3GSTq2ztiC4gfUTgJbk5mGIis1zndQq1CPBntXOeiJi7W6hD1O-ZTvZMTcQycPfVZOl8ZMsj6FanSgX-0p9G9zL4jFx_XIhwHUN-uFDnE7I_TWPmSbPv8149-f34I&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJt_yku87LmjkRVgoAVQC1c-s"
     },
-    "price": 650,
+    "price": 3400,
     "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1682,7 +1684,7 @@ module.exports = [
         25.4698333
       ]
     },
-    "category": "Ashram",
+    "category": "Heritage",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1693,12 +1695,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:53.314Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Grand Heritage Courtyard Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 4800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1968,7 +1970,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTBXhS9fn6O40t4-dYgILNoVPYmm7GTTNBz8I45GVdLKM5RkLZvxu_kKiG3zBkeZOQzJJRN0nInBFPoyO3ClkDz7Xtqmnb8o1OxV67qX1f_fSdfU2Vd1ukcxp0-gCgr_FIhhv5UxcL9gcuang6isrgpOelPkVw3I3birsvbNZXuCK6f2d01W69A5PuLRew6fidmEqsCktwhp02a5mdqr_gSpDBagw0qDV9Hs3kCLr-klIpIGV1V_l9K8wFEPgMqCv4y_WjYjOrpsCa5kEDrDkTvHfYlqzXUR8vGte9Z1LIYV1e4havuMie1jUhYtIUixNP8qkR-RVJn0LWzVzFAqHFU0fE5yxdnXZ-PmU_ePvENDpKOmHLtFlSOBUYaVIEx8OGVS3XCxYzk5kbF0kxzl9q7SoS-5-VDlBCE0HkMN4iTdFOmVBWxSvXNXtfq8Oyq&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJPX5n_z1HCTkRvBrK9dj9vrE"
     },
-    "price": 650,
+    "price": 2100,
     "location": "Marg, Haridwar",
     "country": "India",
     "geometry": {
@@ -1978,7 +1980,7 @@ module.exports = [
         29.9461681
       ]
     },
-    "category": "Ashram",
+    "category": "Heritage",
     "fairsafeScore": 96,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -1989,12 +1991,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:55.574Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Vedic Heritage Haveli Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2042,7 +2044,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSKcL-6SuQjwOMDjHsTPD0Z0xJnq5VT_fdvFwptQZARkmwp3cap9gntjumb7D-J_5WdLA33xeRp9zH6C5LiMZQopQD-186QqpVkT35QDVFL0J4e0QlMAmViUpQ6et7vxU_MQV0YZY6xopE-YBvDvEdlEK5nm8X7G6v_1QW817-xnX1RlhVNGEcIq5u2Js-Gk0qAg0XIa_dufCLroFGK9ju5xjk0a3x50tgvWR28GFLr0BzZw6IF0spTHsvd5x3Zw4fO2oj0WaeIRjtaySe8FA6m8SP7-xBGUoQ8ACo4RMYgf5onqBtAQgI_GW8axYb1C1K-PG2FD0dpCAnt2XPelHQZWKT0L4ars6rdzIEsU7qsapl3luGK8RI7pk9RmecudHtQ2yKT7PoFEZbGF387R0wR44at9CvaB3WNKzdmZ-Qbww&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ_5JhIgBHCTkRklDYMNaYi-E"
     },
-    "price": 650,
+    "price": 1450,
     "location": "Shiv Murti Gali, Haridwar",
     "country": "India",
     "geometry": {
@@ -2052,7 +2054,7 @@ module.exports = [
         29.9465989
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2063,12 +2065,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:55.585Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Riverfront City Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2079,7 +2081,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTJ3OMO9IZt5H3BUoOYJDTXVf2_XXkTQQhKUKIVMM6SlKJSQJgU9goulK9iiB3m6IfQS7bmQyKwYBR4Z0QuDT2x5piuei7mtNbpbUbajvj-Hq8br-80iqqO3CbSNiebn5a5368cTWLgGrAY_U5GDCPL1RYulEnqfl9wMTYenxUeiUDKgaHo8fdX0HFRWxa8azw_PDrNGasx2dW0lhldY0o_C6SwxWYdoXDf3QOFHEHpWDL9tUopk3C5Ygm0kbQ0y7CIWoqO3idZ5-i7iSfpEzh95k9FKPmxt4iiU3MARXmkvqJoTLw5zioyf82JPDgHIF4ce25gzeECTB9eMjGaBPHNtgKseg8VtRIxe5F1TKSdLTOFctXjkjvEtukUe16hV7i8KsQW-GJs9JfD6OqScfZ5svl8tq4JIQbBXg3vhZLMrg2veX8Dk0gIDSJ-g5DO&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJsRHncgpHCTkRf4b4ehEYwCI"
     },
-    "price": 650,
+    "price": 2200,
     "location": "Puram Colony, Haridwar",
     "country": "India",
     "geometry": {
@@ -2089,7 +2091,7 @@ module.exports = [
         29.9860739
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 94,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2100,12 +2102,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:55.591Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Modern Resort Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2116,7 +2118,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSXttdT1lPhO0CNziN5FLFosVToRpwoWYnvfuF8wXT1LGOMzF5s0P363dB2_oqJT1jG43mcJK9R38uOeafqFPqxLYCmarGxWqadgjM2WfMJWsPmDOFtdcTlL-BSBVBRyYQcZgP0-ayPUxLjgYTWnTwFvTN30YORrlJKx7ke0K5XrSRtklW8oQ8pmIfKepECEVKh0K1x0lrRUU8XeP3vIn5DyR2AmiXPynAiFNypkyfDc9a5GBViCiF_fGiVnO3_QBIPM18mUXK3gpQZC-fS5rSM_NjqFGofDsj04kDXlU2X7iE72CBJIVEnsjBIopx9jYokQx7-zLXzQ7c2hfM0c_fx0opOXTPYg2x-0_C9BRRuvTZnu0D4vv6MYVXx3mQqy5s4QYc2Mf0C6fXpi4iJYl1lJHKmzsLf0y61Ky6iy4n5X3CS_14AN-8h0bJUsDsp&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJxUVJOnc_CTkRZ9OEI-NdNcI"
     },
-    "price": 650,
+    "price": 2600,
     "location": "Sai veda wellness retreat, Haridwar",
     "country": "India",
     "geometry": {
@@ -2126,7 +2128,7 @@ module.exports = [
         29.9987779
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2137,12 +2139,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.184Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Wellness & Spa Retreat Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2153,7 +2155,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQDzNS6Fs35pSIVFsyejcCS9nKpunT4MrHkBNFFA-t01PYY9Ua5TITitmF_vEZdRFgDZaskpWTgkJlgkjEaZcfsuukh5AiH9kQ_zjaWR4J49fr1lG9xFyHaUrgKV8oSwS8D6-ZdRWglh1F1o5-XhHGgydYjD104-nKaIMpc-I0GCfTXqdk__hfuuoRNilNKqbGflSHGyCWTIrDCjbvk6uSg_Dj9CCDJF1fpFvr3cKINni-yvpieDcylLZSflpY_cQpVRJVGVaBMcUx2t28p4hr7fAf524vaHKkK3bC_0HXvPbNAH23M-4igkv2jVH7xmirrIdGjGcTWZgXEr_CWhyM09YAuXHna0zIrCG_KsavvikrY23lJfh5oCniF63ZIVLsDmCQ0ONuQ_ogbSKqNXAeC0kWhYwP7MbLPAi4q4fG7u_yO&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJFciZH1VHCTkR5spCBfMkdMA"
     },
-    "price": 550,
+    "price": 750,
     "location": "Kalan, Haridwar",
     "country": "India",
     "geometry": {
@@ -2174,12 +2176,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.191Z",
-    "propertyType": "Peaceful Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 1100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2190,7 +2192,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQJkdrTgeH69grf8Je75EZZjUIMrdtcqUOOv85rq7qHEiFSa27uUCW-j2A5cLTncy6e0AaAUlTuFPlRpOPvqooAHbgRObx-OiY_oPM9Ujy-fnZZU_D4BodZ7hXY3y1GnXxqlVvFyy0QI00jjEKti_0rrTG2tSrFNK2lgKj2ZyrKHjIFiBeyMq4yru-8qJA3lVlVZolE0j7Yy7HcWH8EGTGoenR5XLZD_4h3K7jeVP2VFhVAe5nbjvjXD4SRuQBgaRYMlQ5h1Sf2mg927PHmfv-fAHvGRmkumK7J7o-XMbijIWzPRwbE3yYEllIGQ4nJCEMUZIelDHCUEMRciLW0HmFCp9LsjqPK7DLKpuXJ8ecZHZJ51MyiDQ_EyP0McKzq4mMXhrmeqZjh5i7P6Ew3WaFdKazpkMGwWMtGvfEudWFEO7qwJxEwHUhw46PGGXt0&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJmTlOcCVGCTkRGwBTqrXSLQM"
     },
-    "price": 650,
+    "price": 1850,
     "location": "C015, Haridwar",
     "country": "India",
     "geometry": {
@@ -2200,7 +2202,7 @@ module.exports = [
         29.9303151
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 100,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2211,12 +2213,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.197Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Holistic Wellness Retreat",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2600,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2375,7 +2377,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ4pK2DRJAmCuH3m24_xOTOddfqKt9d8ycuGSKSfS-EMvCOo7JJ-sALThCr1Nuwxl5DpM4jiW0Lf9-Wstjp7mOIKh73Cpr2MGcoVBU6b4DfF3AuXOlYsPA1275LWSBzJmoXimrNGF35oI-dLrAaRor_AMQiC4CcIi-Ows3yd2ylzTTX-Dp1jTVzriunkjA3ntxEKbqLyr30t9xbOVc4Zm-e4WLMaD2WmvfP9YdFvPbfA1hhbIrSSaCvI1D5F3v4CfXm7eXhBX04jGA6Zx6eI-RMJp_dIQXgl_W3rySVPLTqV0BXH1BPPIeXu4LYjoKGWipQZi_9rRuwOIqdTaSClq6p7WjPEhO0OsWt-2m9JgZygKnzjYM7hhI_mJezAgpQQfU-aGfZmVkjM1b_yBSyfl_KE_qQ95CcXlQjAriFEaQygd32&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJO1OnB8xHCTkRZRru11T4mjA"
     },
-    "price": 500,
+    "price": 1150,
     "location": "Opp. Jairam ashram no. 1, Haridwar",
     "country": "India",
     "geometry": {
@@ -2385,7 +2387,7 @@ module.exports = [
         29.9652208
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2396,12 +2398,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.620Z",
-    "propertyType": "Pilgrim Yatri Nivas Room",
+    "propertyType": "Comfortable Yatri Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 700,
+    "marketOtaPrice": 1650,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2412,7 +2414,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQHCPHFddvM5g9YohDgzeEOkLvQC7m54kpnHfEhBCYrrGVMjOqOrTTwJton-C-_ytAW6__q67chgJUDCxeyJ5sJi2SFqUbtAhM-c-7bruQV_UYqb59VBm2Uf6OO6n6QxTc7K8cP_bD6sVy7DfscTpP3M1Nqhi6tG0HGDXDM3VnC_DOCwjStilKUkz7moElFcNQZGCmH2OZRslHk7tSfTnupPteeYQyING8VLP8BZF80blYQBdi5yvTyodHtLrqALQLFssP1oygUmt7XOwp77vMsKDnKqoKkcZsG5nu2a8eFkQVPyPmfyzxh33xbXX-7qBGFbq4te1D52DnKhIMtaL8ZE1E0th1TDnfWbHF7R4wzv7gQ8fupl8do7-faczMaAMd3pmtMT0TGMaGjXn96RjYnw64vuqwt5g2RoXQ2Sw57R7YQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJOVco3ZYXCTkRsQ-1nbpXmSQ"
     },
-    "price": 650,
+    "price": 1650,
     "location": "Road, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2433,12 +2435,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.383Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Meditation & Spiritual Stay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2400,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2449,7 +2451,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSRjQfkuhLYAWasxH_JXpahGRmYjQoyLY47QnDdj7iezcU8kA3vJTju2IfTS7HQJZiHloEZZdI49kg9x5iS7SHY0R2M9CqewzrRROnweAYtgrrKkHsZhk11DaZkZ9xo86d2OF2GvgGejedU-yol7ztiB1myPxGz1mmy8amqbmTFpesXJucYz-EOvqxvEg-ExTlgwKDzPUxK4TlEDjgyUy6HghSWtzaYiVDMaKgCC5VgJ6i2aLhafTBSFmA-x6ILhqG4OE7oeUuAeqkULTUrUNRsxpwRKtfphcCJzOy_70Udj4ipsPZmo9VI1T1lV6pKBizozpMcxgUuYoX8_AAJ-Hi3es52YfT58mI_cuQrJ-LLEBV4QTB_JRYNnljSF3ar2Bg96E_KJu18suRktnTqigFP0h2OfbCzQ7DFv5qzcDQuMLhI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJIa1CFEUWCTkRoIDk9fqYvMw"
     },
-    "price": 650,
+    "price": 1450,
     "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2470,12 +2472,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.390Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Traditional Yoga Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2000,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2486,7 +2488,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTkmU9atYUKkBUu3hmyHrPJ10cAFKrd419gTP0p-MtGGfGd8HBEZG58NUH88isauOgDZEuxwQhn9uB7w6E_r7PAt6RDLqZ48neRrsOZeXjqzciB7vc6e9HPw3jgkYLvX0wHDKYzvCXQvEkKGgdDszNaVbztr7rjoGgSb8bTeqJeSxp8xfuGCwEVNL-RIxvms72rFuL8fmzvxTT1oVXlJJrWYTEi1o09or8f0XJ_aYSAeZyPEzIeqDngIDq6M76AFdYqHPBTmByhhM814vb3C6RQJpBB3XrT_BOWt-gAR2SdQReC5C2pC6MCjUlJagPIIcjmk_zB1rN7ae0moEzGvRqGP14hARs08YLF7XYtu2TizNuPhFNGFkQHTIzpVP5e4WcLDxVsDC6DNLNNKUHSnn9gwMkflS4KiZ1hOHmoCQCn6pgVU0QrBV_fQnZdyF56&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJOx6lEBEWCTkRrXc9ptIO-Fc"
     },
-    "price": 650,
+    "price": 1250,
     "location": "Jhadi, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2507,12 +2509,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.396Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "AOL Spiritual Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2523,7 +2525,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRz1MbIST3w0c-W67-3GtClVfwhdO1qP1xmYzx5c3oLYi3xCWTR-8sAm5iOv1xvXOXHdXODcaj0hR9phzsjSABq5Ec84VnqJODRQSuGehzOWZvAr6xeQdR8HV1_1x1FQNTma12Te5W4R3fvGSo1Xu1zNwrmKpBx_myAX4J4cc4JeSh1XfADut4lej7i-uyf2y9dFSlP3ti0ztBW4P9rCf76pq4dorygIh5VA4HZkdVD-JhXVPzcURB8PR3qSNaj3VzpkCKXxGDLk3UbYIJ8gRsdL_VXcts25WIDTWpdIb1GQNO9n6fr5f-ZCcz2nq1oKB4lk0L5gmMifdCcxP7oSleJvDPSQxuT3fOcd6FYDpkHBZHL037XPSn-GFV5Wv0_CxAsxNT2p5kKNSm05_87rwmhCIFSnhs-tNimw8sckHLFUI-EKkJBv13cOmfrAg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJrWCswo4XCTkRqcJ-vCMzhR4"
     },
-    "price": 650,
+    "price": 1650,
     "location": "Cafe, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2544,12 +2546,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.402Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Meditation & Spiritual Stay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2400,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2560,7 +2562,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTZG_4cZBylm6kjYfetf-4o7rArFV-1IUuZR3YnA8xgSfMURC2pYylIFc5YpgEkzRhIjRDcH3ZI6VWAp-F5br8_UoPNBSSBjMQBbQDUeD-zYeuGAZCh2Nt_kzcZ0PTJcFQnxs0kmqYrJ-9RjFEG9n9TJ8rRIff_WtRCsrWjUhJspnEDYcq5WA-t3CvK7R0tnRrZ79URR06-t3t-Yj9HfGcDAVtPNwChmUErZtDq2G1vLJTpZx_4e9oJWaiURMZxAytcrKX-UAJ0TxN571crdKwUQcg4DxtqQ1frh3TWUCRX4mbKkTzqJr-RFmdZ1Bf4EzeQvl1K0AESoJ67wqBetrGqZOPfU6I5G_nyVYZz6mhaibYZpRe0O4DksfDbErX2xwAkEM8uBC8aPoyZCj5Ecb_SXT9q464U8X3GMtJdccbJZigXI5c8t641yPcCVA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJvcuGHsMXCTkR2ctj1duKl7c"
     },
-    "price": 650,
+    "price": 1200,
     "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2581,12 +2583,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.409Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Ganga Valley Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1700,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2634,7 +2636,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ-3DZXHV_AFa1Eycibwa92aEOdbeP5XDzyomB4MUvCsa5r0pxlUzJ4lBYtDxAtLEY5iy83d449T2StwlxuIWWe02mrpAwJQ7jVcmpWBdezjfFbTrXUq_w9zZp8KmHpBWz3yYcQDjBvzNQsKQCgP7tjA_FX9quGessVEMe5YrnXv_eSVcght2-CeJPDZ-LRDGtWm9yoJyTwwtLVHGYR9RzWZ2FvMtgnGV5aCl4DxX02T91f1i-u_6kIZBUdaHqWBZ_WY-CG-cJfLnJtt-q7yQX7UoCR6Mc-98Pu5XM9g6Nyjc3fHTZIowVtEA_krNgPrkzs83xM3Keqj1a0nJ7gxEyknqjwD_-rasOysKx1Jw-iy6YRqEx31YdhEJ1CMvwadM2M4XIY9shpjQmnar1u8Nk29_Ag_1v1vytLgCeb6d2XnQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJpfNuhKsWCTkRSrLI9zkbv0o"
     },
-    "price": 650,
+    "price": 2200,
     "location": "road 7 km from tapovan rishikesh paliyal gaon, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2644,7 +2646,7 @@ module.exports = [
         30.1096566
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2655,12 +2657,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.648Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Valley View Resort Cottage",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3200,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2671,7 +2673,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTANYb0dCGLafaDQoJRqN-eKRuyTQRJM0LyXNWBH2ZhRd8wEIJYL7CmAmIRRvCSORuXdkKkweJ4NDvw-NoSPg_TS8NxfdWhy8jYoWv6Rkm33snxrei2pkrY8GqXPqCaCYwPZ78qB7Ujs75nc_DyvmrrAyWvQgx1pzpAETuzD8YvbnKFrhBoj1Q_TycPXo5B0on49lzdEhvRGBwNOQKG6EUD2wUO84C8PtMZRYLUl51U12776WHdbQ5niWicAzBRgRsiBz4zFXfzTQqSZ_ELDDEdhdecPR7LMPrAX27KCVHRph3yRqxhaT2Zw2MgEK5lH87Cpv0IkrXyH9m9jt7ieSJQz_OL8M1DEVvv1HlPfOMrMF22GTW0C52ov4Zi8PXRbiyTMAzijiOLTeop-KwmYmzW_vp4-wI5YRafA8wPnYpfe8c&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ0V5wYh8VCTkRPRgyRo_F7FY"
     },
-    "price": 650,
+    "price": 2800,
     "location": "Ghat, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2681,7 +2683,7 @@ module.exports = [
         30.0926152
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 94,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2692,12 +2694,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.655Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Riverside Forest Resort Cottage",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 4000,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2708,7 +2710,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRoGEQKAYbm3R-fyklfFPfcG9_Pb4_BOh_TUeQs9-CS5n6Mj8D2VklPo1pPXjVNcF5OEK3KhDsi6JpzqRMObVuqN7lB0fntUChIXXlHy29sTHK_l94F59eKFO3I0za5FFdc9JpXSNuB7hUoWNVz1_YI19PBGUiIqd86-PqD9gu2qli9NLFRCTQT5M3vzCd5O-A5cTnWoREKVWpO0PIe1MF6b7kg9mmbAPQWlXY90yGC4o_VqPCrr6bqQDg-ZePxcD57sfWRnuDmGG95Pa3BTefxQy_0uoUAmoCRqXvvD0iEjR9WsP4wn8hVIEoSxVz7hcx6y1B8GS-KyOxngimpVGtz-_m9XcNLoMdZnOCw5tgGMTUu4NUDzOddimdkYzPw4WP1E3sFGSRu0_wCctil9Y7RPO1XG2xyfecBe7J7D44zgg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJBXxVxEQWCTkRJVzTXsZgn0s"
     },
-    "price": 650,
+    "price": 2100,
     "location": "Jhula, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2718,7 +2720,7 @@ module.exports = [
         30.1314066
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2729,12 +2731,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.662Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Riverside Hotel Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3000,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2745,7 +2747,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ_YGtlnqRHe6PT2823ZRhQ6VJx1u4F5fUzB8Z6PLuVNu0pbTfE5WjGNJvSQEiHYjkTJymcwIRic7DuPtT4z3Z7qjaIk4Z9vbv8C4dPziu832MUos1yEiifiW0UoaTZ943ppcGSZgBFxZFujvh37kT_PObfcEfDrEAaHoSKOtmthuJgiFzuTYw22FqzC7cXAKokR9qxVh2DzIYDAjxEhEgdzADsoGIziiScJnCHMvyAFsXgAuqcvAtSpkyNGAymAVCuB4VcNrhxKX9vLoY516osLVK8rDhfANO1lYT6OWkCOtHFjhpe1Q8f_jPzVcbpZmC-MRGvIp7EDGNjuc2V7ruc9ccWjnaExl7qgYO_VcqO4c5ScgGSf_DCM06rJv8mrcawCqRphNB4QCUtHIlm2gRcels15Eko9OT3b-XSomPlQ7eOvyTTfWUxvku8fO27&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJs4_oZnUVCTkR-_TWH53dPNI"
     },
-    "price": 650,
+    "price": 2600,
     "location": "Road, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2755,7 +2757,7 @@ module.exports = [
         30.0728563
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2766,12 +2768,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.669Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Jungle Eco-Resort Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2782,7 +2784,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQCukMFK-02V5pH2AUnEjZ7IPaxaOT9GL5p9NktThdwGEWvqmVToMeyAZDCSDjbG_P5Fqxe7fx9Vfgv6BoqS36cXM2A7eeFyGmbLJ94a8RDiOOK130Taz73hbeLHRDSL49Jz_qGmjdYGLEUY9VVPg2R0UF_HVu7j42glBdiLLB7WhYOR0_w0Q5ElAySumK43SldKX4VnZiYR6ns9iSXcNtNumoV2i1OQQo3_dOQA_-sVqpewGMAIQGamjc3IXvxAJf2VFHj99aB4dPwM2QAHTwJmBKYMV8LJueal9ydjPKTYGMNnv4NhaZGA6jb1Ebyrirm6KB9hXmuNP6cTMQF_GsSkyz-3sWBk7K-yVYq19pAylHhnzqt83KUgc1BCP0AbWVP0uXv_oA9jTAZqjL9qLdpnDiQoAkTghmj0SyDEwMn7P-KRk3YNYtMtfRSrg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJDWphgt4XCTkRLhB1XVaV138"
     },
-    "price": 650,
+    "price": 3200,
     "location": "Rd, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2792,7 +2794,7 @@ module.exports = [
         30.1342317
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 96,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2803,12 +2805,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.065Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Boutique Yoga Retreat Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 4500,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2856,7 +2858,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ5QfDsBR1NjMcSSwJzr0RVXmtSVAv161dDnFBO-FyL1tABR8yaDIEflokIpQ5lul0-LmZ1Vibtbhqfc0TmympuBv1SOrZC9at7kWFkdgUaBsb57XIjHYWgxGsXcYhBgGd6GxSJX4HrYFFkbOFXKwmbEc8jlqjEij2OEzpyyilvPH3pvrUyGgaFkXYDgQrRiW9z3FnOIXyVh5-qB1g0_ccaUey53ABxwwwdqaJHe5PmMEQMRpKtzHcs6kFAI36KIakG6dnEzuXt7Uc96f3cSuzwP2-GxIua48Uj10MVEsUJrOhJpZ0NgLRCB3m92z1Xpk1nvQGrozxj6KFi0NwLy1-C5T82zakV8tMxM6cbYYZWKvPCe-ngxL_HPIayb7UGXE08BxHRnfnph8aFOxXp3GiXlWO0ZitDzhdn1I7JszyYS6IbEn25eLsFzWuaayDQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ7YNo_C8RCTkROrfDswnC7js"
     },
-    "price": 650,
+    "price": 2400,
     "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2866,7 +2868,7 @@ module.exports = [
         30.1383247
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2877,12 +2879,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.079Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Himalayan Eco-Retreat",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3500,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2930,7 +2932,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRbHQrw41aGFwno6U5xdyTLokoE8O7AHpUYGi4neaywO8Bjkol48TpHKsyHMV244__XCSmuWBWoGyrZI2_OtTAGj5iKomcssAidz2FoCs_la8fStTIJMYSPY-pxqsYxgM7PIpg0yKZdHmOekOYO80e9w1YXghv1r4YFl2zddFlvWHUXwQWVS0mKz-hjJ_sKyhHPWq8DXVAQqBA-tPvaQL5LvVGLomTjhEAwulMF6_7PJ0IaTYyGX80IV_MWc4XL4w-HWSA7aBRaj4fLxCAPdMi5hQTcee3mFFA8usmMJFEKSFLbp4cu4PULlg0p04NCEPrDwtblY2jzPOzKc1zyMO5iHeKVcCqS4PibhB5NSE2rf2zm6SJKfg6x7xGEhQ077jMPQCX3vnKjkEk87TDTMHj02PFpcGxherxPmvpOoBk&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ4_UQeQAVCTkRqq0fB_5-AKw"
     },
-    "price": 650,
+    "price": 3400,
     "location": "near Jumpin Heights, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2940,7 +2942,7 @@ module.exports = [
         30.0770587
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 90,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2951,12 +2953,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.091Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Riverside Resort & Lawn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 4800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3004,7 +3006,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT4d9Y0DH1Qjbb8BQVa-SVAhdUpsmDSvrKzqprXTWp8p6F2c9eCyEFpBYgAsRjHR-Llz1apwTWQVlAkrWHWgnKe9X7XBAgSBggOGzkttZNn-v06hBs8LXN1vu0lY3mChyZzpGSzicPJ4F8KBYtqi04dPaH8k1zl1rf8oiMe_jj--23F0kPlPvLcccYCiDpXsEoAZSAvYoGzQrMkAhZjqHhEdnd9TDCulTPgqXTtYD0zDZbPF6tQIkSOUJvPGvdx8h2UZ21mcH7Yy2Q21PKzUWknu7Ofsauhae1b_CBaGGcdVDqWrPWNcIlzyA-Ab6JIA7YXPL896iByiXfgUy0bcoQVpOMX5svK-8VcRHFcfYoFS-LdKi0dDkXPj_voTvzo79n5_hmUFsbTnd-CjHa-rdFWF8ueYFOgzsCq2_wJiRaEGA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJDc767rT03TsRNir-QJFVw24"
     },
-    "price": 650,
+    "price": 1250,
     "location": "Raja Nagar, Nashik",
     "country": "India",
     "geometry": {
@@ -3014,7 +3016,7 @@ module.exports = [
         19.9332535
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3025,12 +3027,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.765Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Comfortable Budget Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3078,7 +3080,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRngyLUHEGdepNOQfwaXK8JTUmCd91TT9R5SJSSKuOkDxcPGmxXuvx4kj7ONuazW_oDT0Fk0bbBY2Ts2_YdpaL7_VKA11NbPUIdsraEy4Md3gI3r8aMlaLzOEJpeQ58mM7odHtlnCC0k5t2CXI_UeLdL68-2TRUmLniqapGM529fHSQdajMZbbRr9aVHXBAWMjVqXIv-xDZKS3oSc8nFDXxoQIwveMbf4_rUk9jUtJbGxh2AeO6zqxXDKL27wlJyp3Y24fa5jkd2fuJ0yLcwyXd5YjZ_As7reSy55sehd6P2-8iNMnON-BIBEpYuQgh-5i_WQlzH9JC7Eee9hNUs101iClIpER2hPxylKFsyepr_8NLALf1TdvJ5Ia2rdE6Mg-vubN6Px5-I02oYB6kvcxgD_AmcnJj_oSwwGT-AcUNV3k&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJb8PtIcr03TsRvIAdJLQg8qw"
     },
-    "price": 650,
+    "price": 1350,
     "location": "India",
     "country": "India",
     "geometry": {
@@ -3088,7 +3090,7 @@ module.exports = [
         19.9369511
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3099,12 +3101,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.779Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Modern City Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1850,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3115,7 +3117,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRlZ3LVDXUGAmHsu6UX6mKAf4ijEvQz28qspqb37QV6idQN6PQISyZxxnD3gc1x8g8kbJisNK1bzB8NiH5UoqhODaRYC41QlQzvSr6FI2NeaUXe9DfSDrKvLklaYXpjH6Ht__j3MKeiquaPFOEk2LXJR_W_1S3RMsqkeib-ckCX8RssZPu-Em2-OUgXDzo8UQz0UFVgrOxRLQx15pk9Ziwonv2qqeKwKqOrpKkCDuayGLmpIoyjrxO7TMwdRm1WHQFI7DDXrvBCG6lbpoEw-58qjGoomNmTdgCwVNF6flDnNOF_tb9RE2020ooYibBSvV5bTBJQDZBo28mEmhGyCN9ULuvVeb9gXTqve2zpxT5PqmL5cefxc-BjUAXDiI18WNfXJB_Tdwp6leYuzMnruso5RdK37RQooFrwZncRbYn6qQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJu1_X8VeV3TsRNPmq8Oq9AW8"
     },
-    "price": 500,
+    "price": 1200,
     "location": "Wadi, Nashik",
     "country": "India",
     "geometry": {
@@ -3125,7 +3127,7 @@ module.exports = [
         20.0056771
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3136,12 +3138,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.336Z",
-    "propertyType": "Pilgrim Yatri Nivas Room",
+    "propertyType": "Yatri Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 700,
+    "marketOtaPrice": 1700,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3152,7 +3154,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ57B-ykP2BsK1ZJPM_qAx6TKd0SnK0XU3NBi0g855ZGtgrwLXX8MONy9LU7GS18wnN65Xml8PNtsOlL8VgWrF9jl0YQUxemkpACRm7Xj3ETctP--z06bL0YGudVy6pK8PV_PDldsVwKa25-9Kpu1eJWPJWD9ZBljSQRooZd7byrE8G21Nxcl7LKzsO918RlBLIKI_RtmbwxJ3mSTea1xUFUWgYntggFZ12m7QotQygmpRYPCBm1BqbvQncSi3lAV7-3NdhnGXLOE96O7Mt7JfcK_3eF4m-SP4shOEBnxocWdyb6u1LOI6nfXShjclg7PssboRoKvDEJTAvRh7wZxQ_HXqBCOrVhuiWhHGz2VSZ8110TV7cQvK6HKiEc65CsNs993cPBUkHM_dkt9anV6X8dYy_ZeSlfpJH0ifZbtcYUwL7OvBGAM2MyfzWw4FY&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJVVVVRK3r3TsRbsEBaSVJriY"
     },
-    "price": 650,
+    "price": 1350,
     "location": "Peth Rd, Nashik",
     "country": "India",
     "geometry": {
@@ -3162,7 +3164,7 @@ module.exports = [
         20.01205
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3173,12 +3175,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.342Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Panchavati Pilgrim Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3189,7 +3191,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR65_MinxqBJOGg0jZriHIy6YiVzx8JqLufpxdRwj32Lzt7PZ9WOlufRtFTWQdu4N028gCGclFHgQXKh-FlRZQRZHPvRbuW_nwrqNQRdAmR-bSy5HUWl1mMhZRagX0Uu1gK3k5i7KASJjsXvXvfxyuejMyr6LpwCT5nTzZc3zofdbuJX-dDfSMiAScgXtl65hM_HXBDgaRyT-cU6xMlEOed4GF1ekmW7CD7ii9ZF0eV1S6V8ofX35asGLlwXOj91SgqFJxwP9Sj-mM1gkyINpi224MAJb2Vf45Yu2SmA4XTkgVT6lnR8Ng1YtBUeArOe6AXB8S4UX2XztZC1CQnXTI4zIAhgTL7wY4V0VKF6xU8zikXW2oiG6v6X4EJSyTnXGX0B5BqddCbbCYnwB-HjBROWyxRNyrMSTjKVLSoZwmvqNU8&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqwwXk-3r3TsRqZSQvh92ZSI"
     },
-    "price": 650,
+    "price": 1650,
     "location": "Hotel Balaji Inn, Nashik",
     "country": "India",
     "geometry": {
@@ -3199,7 +3201,7 @@ module.exports = [
         20.0123186
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3210,12 +3212,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.348Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Executive City Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2350,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3226,7 +3228,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTNzsk9rYCEZL8tfUb-wa6uFESBdMP1T54WNBXJw5gNWObCfiKs-pr3HbA2V80t8MsTeByuOkGSJwX1OMA_YxaH5PYZRlkddaQGuE-Jh7cH18eJkmx4MxoTEVzPVzdHjphbDJmNFymEf0y2B4QpGUS8aNANfRp_o9jgb6OzSTur8fCfdgsww4HruHM9pguwhMI5neVqnsP5U2p9fSoM7TjLnnG2KCqfvy9RNR85GlCqWCfDqWlQj4wAgvE6DLnyv0xBwzKXJp_Aj0VzGQVpHllmnm_ITFkWUDTws5aENDAAJv8XRhEK82CLQrpnrKqgfGS_aGfqwLuzYifm9WbtTEt3mfGS_bw_wlA8x8pYPPypElWXxoYx2tC0C_gQuc-qXQWPfaW2waVgyBx7vl6fHTx5Q_112DMXtXakkGsiwHi4zyIxTjb7pwJOB2PNyw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJPVwmSALr3TsRTHXPzg11iLo"
     },
-    "price": 650,
+    "price": 1250,
     "location": "Nagar, Nashik",
     "country": "India",
     "geometry": {
@@ -3236,7 +3238,7 @@ module.exports = [
         20.0065885
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 92,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3247,12 +3249,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.353Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Pilgrim Family Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3263,7 +3265,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTBzbhpFowdQZv7xrxd2YJkspN3Qe1A-lq1cDKFGpxpNH_TlfwtTlFLTdvTn2aTFC7Tsi1csNNwotNF_Z14PyvHpITLPF-05MdaZ-YIrd0iQqQf2EdA_7eg_8DoNP3pYl7MzfHeispXMAMxS0POotr8SUFESvK4ERrc_hHPDyRZvYHs2UIjHChCrt07QGWRcWqJ_nF3mtFXtBuZFYMxGUz6TtVVWYhZpjnPgb4mQGgKS_NAatR_6TT1yojEgZp9aU-4HIq4GSHMIJWnXxLStCbX3xksDbJewT9n9oepN6bjw6TV69suN8r3D4RPeyjouApsSXr2-ZuzuPoquPV8-b0PGZ9OoXtoXw1vVmrgInmLwiXOwy4Yov32_6si0GggrGeXm2bUXkOUyo0qNwR9thLWh5f5_bXQoAe9sFy2vQFq8mQS&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJS-fyOgHr3TsRaYpH3jAjkpg"
     },
-    "price": 650,
+    "price": 1100,
     "location": "Tower, Nashik",
     "country": "India",
     "geometry": {
@@ -3273,7 +3275,7 @@ module.exports = [
         20.009452
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3284,12 +3286,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.360Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Classic Transit Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1550,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3300,7 +3302,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSUiD3VdjoPZ5eQB5YI4BXv-9JD9Cswh9KZDbzdmLCSqdTvEAhp70zV06mjYPWQnVjkWzD0fLMgh1HAHcDz7uxBhIvmKQlG4SbkpqSBpFDu65LlxBtHaRJhzfWkJ6W6U2-j8Jhq2P0XVVnFcK9mwA2E3HqUa85VtLUesNl3rnlRHbExzcAqAA8B1eDFrcZDjDPhhPmWGGjOU6QPKKL5hWf80FzvDbjlaXi9R4ojQ9i-mEefQoMpyUsaGVmeONR4boeL8aE01MizFfbNMuMp-uaa8nafWfIZjzJlHXZJalyuTLFn-oRH2NBg6UUkwfr3B9_zQQHeoaOKUsqZ4SyoC-czoyj3oBQ3tb6x90-8nrlaXuc6PMi3qRO-s-tZxBkOlmwjSIp1fSfxaovYD2PTXNiDz5G5NbzCbR2tWAKaXw91hOLcuEpda6jirKlOSQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJwb0VAZ2F3TsRhSYUTmhPK7k"
     },
-    "price": 650,
+    "price": 3600,
     "location": "Gut no 98, Nashik",
     "country": "India",
     "geometry": {
@@ -3310,7 +3312,7 @@ module.exports = [
         19.7190411
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3321,12 +3323,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.944Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Scenic Nature Resort",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 5000,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3337,7 +3339,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR0pQxzmHZn_Q7VoR-B0S4W4Q-25z_q_SGdURzuDMt29Vr_aZsjbpI9CdvrAdv80Yfuyh1FmGmUSLpXtQ9OMgjAjIgN5tCLwztWLPbYn8rQRM3SW4kvhelW7vzDPQ-3zOWjxC_P4-eOEir2DpDbHwaDoeubjhff_jomUcrU-7xTS7VzavAObewlPAfA8bFof68h2Dmh6uIQ5gz1uJBRjcOBZHDWVrJJel98TcHqBrKXukVV3bokk5mnoOV3Nuimm49e0JJQKhvudK6f8cErhJRSwWWGspRXQPdUxT6IQAg9-EMxOfPTyXKwN49yUSZKEloZaG7S1oOZRsmhksC6gsEn1D6hULb9pQmzHlaT7eJAyrVpkKaCELDAVn-jFvKtNRS2yS2rjcK3yz7PPVudXuDlZPblnmJlGnFa9tlk46KEmns8&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJrwRRp0KL3TsREle7riMu33U"
     },
-    "price": 650,
+    "price": 1850,
     "location": "Road, Nashik",
     "country": "India",
     "geometry": {
@@ -3347,7 +3349,7 @@ module.exports = [
         19.8732885
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3358,12 +3360,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.949Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Eco Nature Retreat",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2600,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3374,7 +3376,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRYGp59lxgF_DThQDypBDj3Tvx6tAB3CGBi8rJNYIC_cwacrqijpq4HeXY8eGOsAJM2iwNHLclddck_HaxJpR0NjEzb0I1EFdVCN1fn0LsOu5HvG0eTvS1bzRtFBYixQqv1PIBX7YAlXrBiI6T-FIFQl8zkSSREPvfUHe_uSuO1CjeOIdLAbtf7Mik1OJtwOi7rSaiLkP1DLnM4C3D-GHRP4ES47WoGPY4epIWkK83QarrQ7Q8pqeH9_2GJK5pIUBXtidrc5blIaNMg5fLJHiBg9JsNEu0V1x0BvV1GSUzC69qUMDJ-geOGt-ixlaYlvOUib-FKtfgLZeNueD0RI-Ohei2rwLrhxrQ7jXG1QF0R-t_ALesHBKzzp-VmGj3fV8W7ZuNIt2q93kW05NExxJq6INMcF5jF7CMw96EGEbFOQg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ-dtgrrXx3TsRDgeTzkm53UI"
     },
-    "price": 650,
+    "price": 2800,
     "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
@@ -3384,7 +3386,7 @@ module.exports = [
         20.0609985
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3395,12 +3397,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.957Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Trimbak Lake Resort",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3411,7 +3413,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR_qks0fNjp41MHS6_7thvWyUOspNJMDEodH4e4AjXSCnj2BlBEZ8h3aaQetUPu7skTIHgyCS7-KTRA_uLH_shg0WJbNCtYXfZpbp4VUIg7WcUEEjxs6sPrKlLYhGf_3QsOILQ8De46eNmh3UWkcp24mR-OLMkHp5e7BcGUpMshdw1IFmdMIpKlM5MCoZIZ_Q9-PSta0LJwrhdR90fG9aH1yegPaLo2uqYH46FPQXBoXR7zR7NaWF40itVSlimlXD6NiMerUMWbU8rYs-zI3eF-blQH3v4F6WD-yTHrfwwI3V6TS8AQJ2fTeI377xAW5SKEXVfXVAkAE0Qs8Wt3VH0xJ-3lgauxE4bG8zTOqKYCjhK0cyZxxLSrhwe7vweaThsUhS33Mg_L6fxXDpjN54ld2tyDu7aQqYwsUH987Y-rqQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ_______03TsRIUWIroAj748"
     },
-    "price": 650,
+    "price": 6800,
     "location": "near Yogavidyadham, Nashik",
     "country": "India",
     "geometry": {
@@ -3421,7 +3423,7 @@ module.exports = [
         19.9691918
       ]
     },
-    "category": "Ashram",
+    "category": "Luxe",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3432,12 +3434,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.963Z",
-    "propertyType": "Sacred Pilgrim Room",
-    "maxGuests": 2,
-    "bedrooms": 1,
-    "beds": 2,
-    "baths": 1,
-    "marketOtaPrice": 900,
+    "propertyType": "Luxury Private Soul Retreat (ELIVAAS)",
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "beds": 4,
+    "baths": 3,
+    "marketOtaPrice": 9500,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3448,7 +3450,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXROFdDIx7JxN_tB4BgfX9-9k1BVUzyDlF_nqUwhMZXdl5-Cs2AKXdSkV4LaLTEvYpdMJeq0tp8OwKW7rumFwFYuBXmTr2pXyLIbSiauPSQQZjyvwcoPLPeGy8uzIcyJ8cW6mqhnb4z6PBmaAxM0dyI4HmvpgMxrux8InVrgPtx-iT-MrsyA4PK19Lh_EcOOyA2rfLCSLpoAyf4Dg0CHCmRwnGhR6Rt56HcaFngsHyOZXc4fWJsb_13FHB3ch_NLnTmCWRQoHretFClFuQuNWYM6mGgoW-5YbH94oC56JTsW2lQDp5FCPOwex6TbUUrg95tVyAPMahiZga0p21D2WxQtBMy7MvciAWplyiS-oZJZH4l0q1DhRwbU54oxZvPaPkPGIhauca0kAPq8AlCC-iOr_QPf9afyFKlopQOIZ10&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqymjj7Zj5zsRAE6lngoam1M"
     },
-    "price": 650,
+    "price": 2400,
     "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
@@ -3458,7 +3460,7 @@ module.exports = [
         19.7816945
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3469,12 +3471,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.969Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Mountain Agro Farm Resort",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3400,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3506,7 +3508,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.555Z",
-    "propertyType": "Boutique Pilgrim Hotel Room",
+    "propertyType": "Boutique Spiritual Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
@@ -3522,7 +3524,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQA4B5oCfFLDyFL9j6aE2oTFVJCmh0HbY1W8noFTfTQ4UgT2JNOYPMHMqRto0n5yrucAL6V7TqW58Gg_reWBLhxjAVoA9oxAXAeq75d036jnexIyPCksRIzzVWYXsWG_bmJuf-LdkkIVkMUaX5oiJu9rEUig3pKeiSW5O37yKFeM8WbXcQpYBSNkSiPwe8h9k_HlR6IdmW-NLrxd2ksyvVZRc9Z9Z7O0R1Y-V4W822SfS5z7lfCAFklyGiHzWoef_mmU3zvT3K2l6aQ2FVVp6muX6oRNfUdCEygIBcuEuov-8Iijf44Ehpyk8CYTcEnKiVXErEEtmY1A2Puwx27N-f9Mv-MalW-_UJfhilIy6nzqiaT2Ciy2ZEhwN7j6g6pFNRbxBJzgiZ263_iRqOqkFKYfrNmZystEYCqO0J2NqSwW_PncAfG_4MCzMidBy0J&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJl48GObIHmjkRG8P-92NwaVc"
     },
-    "price": 650,
+    "price": 1450,
     "location": "of Union Bank, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3532,7 +3534,7 @@ module.exports = [
         26.8004758
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3543,12 +3545,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.563Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Air-Conditioned Pilgrim Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3559,7 +3561,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTQeLRPkwFzMgmlAjka8Mxy15y1GUdquVP6TzS3FQ62r-NjoqOsAulzNFB7ZCxtTA01HbwlJWmP2n5z8bxltUheMBM0DTKKvHJKd71qzr9pgfjxb3817svufuEZsHSQufjrt6GwIlXyh5k9u423Iv4hlvvNDr-eqBYoIRoS-TiB7S1Ro8Ad6hJ8q9StJ75viqyp1WB9bxQbeG3EHJmtM3neQ68WF-9WgvYVJzYVRBUgPiZp3yeP_5LvR6h1c78G-KEBkdLaDhf0VfxrB6fjlYsnq8scD98rrAwK41Q9yG5eFJXbWBN3kGToUO2mM3igSCo32Y_XyPX9Iu-8URr7WVQq-zGlEJuXCO7ZcOdhM690Cpupfe36ZY3w-ugbxkaf4bZMaDfC4wcwm63NpjWSgdhxXJ7u4Om86e21DjelCyK8id46Dl6lkOiLsZosdyKo&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJS19HnpYHmjkRQ1S-iMNWOqw"
     },
-    "price": 650,
+    "price": 1350,
     "location": "Union Bank Ram, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3569,7 +3571,7 @@ module.exports = [
         26.7996162
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3580,12 +3582,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.569Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Family Pilgrim Homestay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1950,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3596,7 +3598,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTspFKZyOcAbRqf3esnAd11_NnUJVTUUx8mc_Qf9cZApSD96L6TtzG3-pGpf4iBovgjhxNEmJarNlQV3IEFLY3DykZ6RFuNWFarOhb9T8ChBymDMGq0hcs_vFu4CiOcEB64u2C96lhUtFlHvhnKD8RoooSDabT6szt32ohPwH9dZTJQh5UJivQYMQ5O1Hw7isCrSIiIEWmBfIT2sZvj0X2oMO95X1OZFh14IcLbQABFQc3bKsfeuOS-1aogpr32Lyn6BdP136ZoKBJWAeumw2sIJZUvwVK7oDbv06YJmF6ILgjDiRmEakPgw_WMbrIqPpUg3pEUSDXYMmfVmezGBLx3_AQYfGaRB2YrF-qB9fdN1pcOfWJt7z1HZEoFcLK8EulBzh9A3trojwGLzBFRr2eLzFpXY7hRKOAuSpCW3Y8&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJE6dWPt0HmjkRI_zWqSEn8-E"
     },
-    "price": 650,
+    "price": 1400,
     "location": "Road, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3606,7 +3608,7 @@ module.exports = [
         26.7891847
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 96,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3617,12 +3619,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.576Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Pilgrim Guest House",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2000,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3633,7 +3635,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQgq_AZde0yBEUgtmG_rCvJMWNobBDq-akhHVHiXzb4Y6FTtdxU2yMaVbExUOSMBHegNNVDalJbhcKpCRSG2g-vFnkq1YbxeQH6RCChOdr1tW7d2Odh0tng8URAanL-8Z1owE3IvUS5Ab4Dh6aDonL7yEP77wM1ZZSXy1rDVZecDA8ikSG0Q17VOcYEaRdpLmUTgtKaadfxHR6x03OzKLql3Up3JyImN8dmoThK7lY3GyOGIoZjS_0phZnzR4u8azg9CM35ViFsG_paXdxaDub3g2AOoc7LbxV6K_u1_WEw9PpfZ-an6guYGcPq5i38gEk8aJ9XU4oxBczvMBuY1Ts_qR1LY2dohHbEmxVXPxCtkDuD7NdJc_-5gCMRMhvO4qFglTmJrj7setwQa0or0FUoqW7e5EsDT9tFZpZUWDJLel3Y&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ7xMzMPUHmjkRO7Ay3f2DSNw"
     },
-    "price": 650,
+    "price": 1450,
     "location": "India",
     "country": "India",
     "geometry": {
@@ -3643,7 +3645,7 @@ module.exports = [
         26.7899214
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3654,12 +3656,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.581Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Boutique Pilgrim Homestay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3691,7 +3693,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.117Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Devotional Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -3707,7 +3709,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT-IW1pvCzlfJhME1m3Xgym1X4h9l_v_kqe4ZeSpWzY1cTFFsTPQe5dxcMQtIGlq4c4YsdZ4OlgNiiL4xe_ochS-XoQkRx5GHCP2j3yRPEQlewimEmFcnBrKugd-su-y9LQpV7S0ma-AVzwKzU9lA4fHhKq2eMUpCkHboHcwUWHgSz3UEFcpqdERBH1beP7ydtLZ2qMFZlXfutzkRWVEyjzcKxZEXg0_XV_tL0uR9AOVT2DR9DpNtls31o58N-KMZlOSAO016e6W0yW2VRtmFNPmk_znyQ3oh54qyNpouua4dn5Lw1qkVuFiHZjtOlCRh2lyTCIyCoJVAZOLrMAnzfYjSDEMbP9k-zAixVFxmfYl7pnWFD_h4G-Rfdg6rrfUiRlJMS1pwiY5CnLwHDQZcK3V4J0mzDaJJ6onMa51vDDCx3BkydCJAgapVl-bA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJnXmrO1gHmjkRmMZZ3oingBE"
     },
-    "price": 650,
+    "price": 1650,
     "location": "Janki Vihar Awas Yojna, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3717,7 +3719,7 @@ module.exports = [
         26.7899576
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3728,12 +3730,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.124Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Modern Saryu Guest Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2350,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3765,7 +3767,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.131Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Devotional Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -3802,7 +3804,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.136Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Devotional Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -3818,7 +3820,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ5_w52bKNcFBPa0nSsHvKAtPwynd32DzRujhvCg17BJGyUYqeQjAZH6Qa45m5-x_FtF_1NAYdy5NT6ei8Nky0nqVCQ9CWn2ozhDvvmH73BiE32oT1pzeCuu3zlptZvYAbqa3R7FQ2A2ipnBM37yu_f4sr0NmkVVsp_4HzoAHE-NcCngZ7OKgEjDISvyOU7vIiLccFLWv18sdrPmLvbQ01TmLBg_iZvBQ4h0fX9uEAOcgP16eoMm3-7dSHG91p3F3KaemM20SW_0ydhzSMUURm4Qc1D8XRsU8C4zLyqSqRGTqJuVmYV7IwaGvGXWf_GhCeDYY-I6ji2_xBpxvEqZToO2DGJlUfkHySi2DcbZrLrR8WEu_hOn85u-AgknQnuQ194FRm5-HEa1-CS4tOLthDQgVo-OYwDoFLJ5JQez2sqLw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJeSalhtYHmjkR__bNvetaBuM"
     },
-    "price": 650,
+    "price": 1250,
     "location": "Lal Kothi ke Peeche Shaheed Marg, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3828,7 +3830,7 @@ module.exports = [
         26.7950208
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 98,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -3839,12 +3841,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.141Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Cozy Ayodhya Homestay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3855,7 +3857,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQdy1QRs4x_9Wx28PG8xK9RNufURsAAqHxlLEMqK3Jfssbni-ELTdicRI6Sx8uNjOPr_rlXI4TPw3a9Mb51NvhUE2rsIy2381HxaOVyuufcanPsD0hEAvvgWsp9sRPfV2X_nSQ7Nf-F5HjPZu_Flhy0_zNi9aiTz71aCeGaxYeuWR_8tXsTb0hIdRbriz9KL18-bpGdj7ipSTIdLj8ccMMPtAd-agSJkfSVIbZBzJ-jSV_Az6J5RB2hyodbXolfodDRKjXCvMIW1FFshnLpD_3AEBPqocfhB-pJXMQ_-T4Cdz_Xqj_96e4S97HwRpF6qA1IRfaFumgqsaA1jVMsLEdtV5FC4gwcWo1jcwyRT3dOvsSo4MGx37iajbIYGd4HVqZbpYImgbL70-CtRRhud0qqPBI3eDKMz5mTrOJlqxkQ9xYjbrCBq5HC_SFqoXI2&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJP_tAo2RvczkRk49W78lVB_k"
     },
-    "price": 650,
+    "price": 1150,
     "location": "Shree Ji Vatika Colony, Mathura",
     "country": "India",
     "geometry": {
@@ -3876,12 +3878,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.670Z",
-    "propertyType": "Corridor Pilgrim Guest House",
+    "propertyType": "Ashram Guest House Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1650,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3950,7 +3952,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.683Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Devotional Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -3987,7 +3989,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.688Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Devotional Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -4003,7 +4005,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ4GK4X_jycYDPSM0vQqDCA_6iWnU8oZdY5TBRlAHbPJIfIYOnPVljDb-oefczWJQXIQmCmF7ZvXgyF9GsB60nhLg2Skw6z0Y5JGHn6mTwAfvJOEtSSgsj4TKnAXOLLTdPvgMaaXhNEVb2VaZBL-POpCzvh9y4ODJTn5AZ7l6noCyN5uUuIX-l3DB6z4YEVj3ANBVEZfFUdcwHVDfwiF0wv8Y2npMM_aukxs6C5nmFpU6VT8CQ8sfqA4us6OUQKm-np6AjpKgwxUXuZD1kl7XDlQ7aGeU_qhjP07bEycXuyDdU_VdUwknsyE8e4w93-jz_TQrcET0NVQ65O22VaIaJEzzb2s9YlWZKq9epqjXaFF9xhafTjlPgDEQffBI95I-aBLWuo4E7wCJBoItm6tcTNgZe2q6sh6G_Q5DMUQsx8VC2RSch3KA8Ki37ZOQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJP_wNsfhvczkRrY7Z25TcqgY"
     },
-    "price": 650,
+    "price": 750,
     "location": "Road, Mathura",
     "country": "India",
     "geometry": {
@@ -4024,12 +4026,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.694Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Vrindavan Seva Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1050,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -4040,7 +4042,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQdC2MnsZRMgX7UBpDmuM8k9oh_VTsitUin7N2glGQv_vLiYvkHmVx0uLzCSy3c8AUiDkhVSi9ArfZfzkuPyiglqSUsMePdSBLt-hw6KkvkpOZxNv9PRrpQ6k2h8phbRVFKBnrzarhlpPUnBEuSSQRdHKDZhDvy_J_jsHjtxXXieq8h83C5_PflWfxJ2r754gGymrbxB2qu8Kd86Smz_kkaijExQFUeNVXd4hGsewTOYiQMGkv9_6fwHYgNNeRG7Ytde4dR0o3c21JYvbv2Qug7sa4btOT6rVh2lyuu69efU40E-6n0dBFVxMwH4AwmWO8jrlzjGkusXLNugPCfSl296STmI1bX1n4OQqUFk86OKqpntljFidtEKpYJPRlHbg163W5MZ1jTj-N2RBsLVm_6SIbaFsY0JdacsQFyaUPZF2m5&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJH0l43w1xczkRTHZ8SNCI5CM"
     },
-    "price": 650,
+    "price": 1450,
     "location": "Swami Ghat, Mathura",
     "country": "India",
     "geometry": {
@@ -4050,7 +4052,7 @@ module.exports = [
         27.5063425
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -4061,12 +4063,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.196Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Swami Ghat Family Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -4077,7 +4079,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQPvS8CQVbbRcomYxPyNK5YyoWi3lCnXNClapJ0xawJu-BQtujukl4lx4Ps6IbA3gv_tXfv13963aDlHhvI-SAn_6ySoSujld-V76iMI60_xVhHhiqKsW47DPHkfibysx8pRmCynaFI_WfAqfxARSzjE1O-kV3bmphCz5YLrq9PiZ0lQYQ-F-NcDDTcILt08hnhl4sPaJ6id_2dpUyh4nQqwSB-zslDix5-aScZJW6GcV8LXYmok0lG-obJFr8tF4p9XNnEWdmtUWJAjLYj5wB-LjTSTvvRh8NF9fZG4ADgTyEPAs8uZK2netKzWPkksXWnetGuPOj43h4RaB5R4scE9tORUXn8SBMUwE-G1aipDgUwf-nESyxn4VWanPYDTIOEzucbHTkPLz-3uK1bdLgc3_W4XLdhMFdJyMldXfcCZdE&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJnVTetxBxczkRTHCMTey7620"
     },
-    "price": 650,
+    "price": 1350,
     "location": "Arya Samaj Road, Mathura",
     "country": "India",
     "geometry": {
@@ -4087,7 +4089,7 @@ module.exports = [
         27.4987175
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -4098,12 +4100,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.202Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Arya Samaj Road Hotel",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1950,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -4114,7 +4116,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQh53khbi99icoQNDFNcQdjsPeHqE_O-bxbqH2IWIb1FgNzSrmNULh83F60rREkLuoSzaLgnX2XLL957v29uYVMlCPj-9t6eLBl67wGqSl_P7mPMeX0X-OmsrqHKhoKxcoI7p8op6w7OtY1xRmr0WO8pjQ-yRKC23itSwNS3NDThQAMid0k0p08UxBJ1OvQHaZKh-9hIuBKo3aJoUtUJaMETDI_0U8rdvaBCFcsX3GSOfuWPwswsXYMJ0LjlM106ejtlm5xeSUprPU6on-i8FUVxeSWaPmsRj3uUTw7FAiXD0dZf547d9sdsT1l16GnwSKALd4ZiDgakSDx8qCxRd2mH1egFwbTTR_WuCyTY8hjVj_vFF9ssHwRvZ93NDwHrVmS6cLc33ZsAyAEmQsrVgLSalRVdX7USVJexAMcwZOvkS0&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJFfL9WBhxczkRz3Inn_iU3CY"
     },
-    "price": 650,
+    "price": 1450,
     "location": "Road, Mathura",
     "country": "India",
     "geometry": {
@@ -4124,7 +4126,7 @@ module.exports = [
         27.4946989
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -4135,12 +4137,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.209Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Modern Mathura Residency",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2100,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -4151,7 +4153,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTZtWBwFnbQJkv5QJls2F7k85aQKG07RPjC2r3iXXXdUX_raVADxaqXv85YG_MDgnxpE5lHRa8ic4YrgreVteICAlYaW7q6YLJ7hsFooCrvrXIqjlKBeIdelxDLpcKOwTib_5vE57AIhuGL4KGNEg-WwLbgO3UfRDUISv_yjcPzRENa9O0ss8A0dklMW1M6Db4i_2t3tGr91y9fyY20OQ54Rn8SYxA_sMfMowQHlITLo79ZuozIO1J6MXYEO2GeFXSsv1McYWqAthGmS2OGZ_ZlRlwgMCGn_7OlxNPXE5tjcdYtNXyyqEk1H2Uf-et4JbJpupOgaWaEQ3zOSfFCDB8O3sjpSNRafLUz2lGzi-WhFm-mxfJxduBdz-v0btIY1j-KkmBe939tU2Gub1eQttPPUNX1iowsw4npIo6sNNOsbCcJjQ3vWbfJw1w_iRJF&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqQrM3RZxczkRzDTSABgQg_U"
     },
-    "price": 650,
+    "price": 1350,
     "location": "Floor, Mathura",
     "country": "India",
     "geometry": {
@@ -4161,7 +4163,7 @@ module.exports = [
         27.4974194
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -4172,12 +4174,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.215Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Mathura Pilgrim Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 1900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -4188,7 +4190,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRIn_Lg4KQxXl4Hsz0K9T2GtbhhSem_RVj7m6JfZc01g8mjvIRMWYblOZCiSpWToTBgrBQviL1kaJJdU3EvLwqPXKU8-qriPzItE-QfYam3-ZVv0w96g-Nvs741i7RKDqhRk1PRho85TERzY9txL9vNFx0A5xMGjZTwSv2SfxJNxLnxn3rJTc2_lYWpR64Zo8veORuJ5z_pQlMt8JkU471MLWR_zIie0He3kAq6qj_2qrpPPs5hUAyUD7O-pw0QlnGxXLvUB-aiNl1X3_Z5TxrQoaKaou0uUjFhC0nPeDPkJTaJmoxoF2XnZ6PRYkvmO98BIItKeL91I7nsWag4AmFiSUQkdbdldlqzWQzCvTR5iBO9k9xVu5yz5B_KhuGCzsvGe6JLcficx6rkLDKVQm1Elo1bNyid4dT_b5yfiqJBcEMeeLNz16-nElbRE5Wl&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJTVolSgBxczkR-OjVwb90TEw"
     },
-    "price": 650,
+    "price": 1550,
     "location": "near Dwarkadhish Mandir Swami Ghat, Mathura",
     "country": "India",
     "geometry": {
@@ -4198,7 +4200,7 @@ module.exports = [
         27.5062204
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 96,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -4209,12 +4211,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.221Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Yamuna Riverfront Inn",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 2200,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -5210,7 +5212,7 @@ module.exports = [
       "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.539Z",
-    "propertyType": "Rajasthani Heritage Room",
+    "propertyType": "Rajasthani Heritage Villa Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
@@ -5248,7 +5250,7 @@ module.exports = [
       "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.546Z",
-    "propertyType": "Rajasthani Heritage Room",
+    "propertyType": "Rajasthani Heritage Villa Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
@@ -5341,7 +5343,7 @@ module.exports = [
       "filename": "places_ChIJAX_Fz0fJ5zsRLcGhlxi7v_Q"
     },
     "price": 4500,
-    "location": "India",
+    "location": "Bandra West, Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5379,7 +5381,7 @@ module.exports = [
       "filename": "places_ChIJQ2QahWDJ5zsRP7yfBRXcuhs"
     },
     "price": 2100,
-    "location": "ACHWA RESIDENCY, Mumbai",
+    "location": "Andheri West, Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5417,7 +5419,7 @@ module.exports = [
       "filename": "places_ChIJ6YrjqtnJ5zsRZ7Di820LQ1A"
     },
     "price": 3200,
-    "location": "West, Mumbai",
+    "location": "Bandra Kurla Complex (BKC), Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5455,7 +5457,7 @@ module.exports = [
       "filename": "places_ChIJ39dyZvnJ5zsRe9B5tSwNao0"
     },
     "price": 2100,
-    "location": "West, Mumbai",
+    "location": "Santacruz West, Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5492,8 +5494,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ8QpUp3KdeuPCf5IxnEO9_jEHp-B7aAJX7C4RPyzJwvqIlAqz4ZsTO8_NucXCOXOHa8-v7xl7vRnXXpBDSHUesX7ODVcEyw_DQhi0-B8ejkaFeR2gUYY1yvSup61E7TsJMEsV0LQVfDnI5xWxbgp9m5M5C57b_p8luvvNhPBoB4EMvjHoYkkm4Mdt65YsDUkWIex6AIfFYq9uLTCN-MtQp1eEi-8ZeZI5Ij6w3w2KXqHKpyntBnqlYJqGyk21dMluNuCWaAsqoDV6VxU-Vj-bt0ObX2deDS4S2Vi2YZ7t-8duKzaIINj3butEGclwmNgsEQ-MQKHAaX6sGLq9CumcV8AOQJApPSx9-6HC74KHqZz8BBNJEX6jeGstM0mOyRrwRPe6tpEdmCTl6fa8n48JlPvBu9J5UU6N6f-2POBxZUaY&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJTVIgeL3J5zsR4qS3PIA3FhE"
     },
-    "price": 650,
-    "location": "Floor, Mumbai",
+    "price": 4200,
+    "location": "Juhu Beach, Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5502,7 +5504,7 @@ module.exports = [
         19.1011444
       ]
     },
-    "category": "Ashram",
+    "category": "City",
     "fairsafeScore": 90,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
@@ -5514,12 +5516,12 @@ module.exports = [
       "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.375Z",
-    "propertyType": "Corridor Pilgrim Lodge",
+    "propertyType": "Boutique Hotel in Juhu Beach",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 5800,
     "realRating": 4.5,
     "realReviewCount": 16
   },
@@ -5806,7 +5808,7 @@ module.exports = [
         10.0425109
       ]
     },
-    "category": "Mountains",
+    "category": "Trending",
     "fairsafeScore": 98,
     "amenities": [
       "Panoramic Mountain and Pine Views",
@@ -6089,7 +6091,7 @@ module.exports = [
       "Balcony with Scenic View"
     ],
     "createdAt": "2026-09-02T20:15:02.423Z",
-    "propertyType": "Backwater Canal Homestay",
+    "propertyType": "Plantation Homestay",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
@@ -6142,7 +6144,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTWeKzOfKQuTutHcp0paoKe0dtq6LG2hVnU75F7NnNO8xRA6Fyj7wkyq5FnnSqgCGuzFSNAnd_rAind5IhEh4aTqVcKn-L-7FsZQsewMszv-armsH5tQxrFq-MNg8pbEEUvoIKjAw7M0BQW6PAq-BSQSqvhU4gVNYdJYKeBk_fTJmgXNnH4Nwfgd92atNd6dpr6VX_WBTLjxQjyrG0HcDfoKb9wt6nSjHK7FPtXJSU_qMLdJn0KO12_2rXvGxk4v83cGhzLsZqBIIAsweuPxqUu2_M7AiCR4vrxcmzBqa5PHts8EifALQTQ8fsQn_a6vQFYB4l2R52ZAdai7_lMyDwl2t_XbcaQO1kH0XovasVYwLlbpiVgWHs1b2HBLu8CaJ3oRnir1EKP1GByjRyV2BRK39B-We2v-zicJIL85PV3sfdgpCfHm0430L1fNg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJxSjIGXYTCTkR62CQDhQR_2Q"
     },
-    "price": 650,
+    "price": 2400,
     "location": ".5 Km ahead from Jumpin Heights, Rishikesh",
     "country": "India",
     "geometry": {
@@ -6152,7 +6154,7 @@ module.exports = [
         30.0669191
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 96,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -6163,12 +6165,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T20:15:03.154Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Himalayan Eco-Retreat",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3500,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -6179,8 +6181,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSARQsIOdEkFyKT8Q6IOva54XFKhAm_E4s67XE1OHfQEI69DewlajTVrfcihvNi2iza2-7yiWmGHR-Z0UgBuLz55lhxhef_0Px-eakuzRCOBwRnxTAZZMI3gz-gNbT5nYggo5PtKJQxYfBt_MFH_eSIIqCU-IougkJFWoLdrnxniXoKwPUWl31XrsVLaUoutxB4I_8Kdjr0YPGHWfpcdThjFELhWI3JCRd-Y8tDrKHMZPofCa2T_Ks2p05CyOocApRLcOnoFBIZWWRBL1kM5OOZ5svr62gLMZz46JzMWc7fCHMI0VzcadEoc91ScXF2IWDOzTn6J4A6S4u0b7LsSBJCALblIwogf38mIlkvwO8cjf6aEpGG_QQ2-G0OO5UcMfBSDYARYqV4erFix-gwR-wskSWinLwkHtQLnoAcCJcc0TAg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJZXsm0-MxjjkR_r_ihMhhGsQ"
     },
-    "price": 650,
-    "location": "D22/10 Bengali Tola Road Near Chausatthi Temple Bengali Tola, Varanasi",
+    "price": 2200,
+    "location": "Bengali Tola, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -6189,7 +6191,7 @@ module.exports = [
         25.3043422
       ]
     },
-    "category": "Ashram",
+    "category": "Heritage",
     "fairsafeScore": 90,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -6200,12 +6202,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T20:15:03.963Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Ghat-Facing Heritage Hotel Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 3000,
     "realRating": 4.4,
     "realReviewCount": 18
   }

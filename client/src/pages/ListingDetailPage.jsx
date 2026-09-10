@@ -41,7 +41,7 @@ const TIER_PHOTOS = {
     'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=800&q=80', // Sacred river ghat morning
     'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80', // Clean serene room with natural light
     'https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=800&q=80', // Spiritual temple courtyard
-    'https://images.unsplash.com/photo-1609334761849-77a471675867?auto=format&fit=crop&w=800&q=80', // Evening aarti lamps
+    'https://images.unsplash.com/photo-1571536802807-30451e3955d8?auto=format&fit=crop&w=800&q=80', // Evening aarti lamps
   ],
   mountains: [
     'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80', // Alpine wooden bedroom with natural light
@@ -69,6 +69,8 @@ const TIER_PHOTOS = {
   ]
 };
 
+const FALLBACK_PHOTO = 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80';
+
 export function getComplementaryPhotos(listing) {
   if (!listing) return TIER_PHOTOS.beachCottage;
   const t = (listing.title || '').toLowerCase();
@@ -83,6 +85,16 @@ export function getComplementaryPhotos(listing) {
       'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80', // Deodar cedar pine forest balcony view
       'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80', // Wood armchairs by pine window
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80', // Mountain peaks & pine valley
+    ];
+  }
+
+  // Specific real-world benchmark for Aaditya Ashram Sewa Samiti matching Agoda
+  if (t.includes('aaditya ashram') || t.includes('aditya ashram')) {
+    return [
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80', // Clean serene room with natural light
+      'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=800&q=80', // Sacred river ghat morning
+      'https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=800&q=80', // Spiritual temple courtyard
+      'https://images.unsplash.com/photo-1571536802807-30451e3955d8?auto=format&fit=crop&w=800&q=80', // Evening aarti lamps
     ];
   }
 
@@ -346,6 +358,7 @@ export default function ListingDetailPage() {
           <img
             src={gallery[0]}
             alt={listing.title}
+            onError={(e) => { e.currentTarget.src = FALLBACK_PHOTO; }}
             style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
             onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
             onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -362,6 +375,7 @@ export default function ListingDetailPage() {
             <img
               src={img}
               alt={`Photo ${i + 2}`}
+              onError={(e) => { e.currentTarget.src = FALLBACK_PHOTO; }}
               style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
               onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
               onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -804,6 +818,7 @@ export default function ListingDetailPage() {
           <img
             src={gallery[lightboxIndex]}
             alt={`Gallery ${lightboxIndex + 1}`}
+            onError={(e) => { e.currentTarget.src = FALLBACK_PHOTO; }}
             style={{ maxWidth: '90%', maxHeight: '80vh', objectFit: 'contain', borderRadius: '12px' }}
           />
 
