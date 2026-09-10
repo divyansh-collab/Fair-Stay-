@@ -808,117 +808,35 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 /* ==========================================================================
-   Luxury Interactive Footer
+   Clean & Simple Footer
    ========================================================================== */
-.footer-wrapper {
-  background: #0b1120;
-  color: #94a3b8;
-  margin-top: 80px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.footer-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20%;
-  width: 60%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 90, 95, 0.6), rgba(255, 120, 80, 0.6), transparent);
-}
-
-.footer-perk-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  padding: 20px 22px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footer-perk-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 90, 95, 0.35);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-}
-
-.footer-tab-btn {
-  padding: 8px 18px;
-  border-radius: 9999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #94a3b8;
-  background: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.footer-tab-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.footer-tab-btn.active {
-  color: #ffffff;
-  background: rgba(255, 90, 95, 0.18);
-  border-color: rgba(255, 90, 95, 0.4);
-}
-
-.footer-link-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: #cbd5e1;
-  font-size: 0.82rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.footer-link-pill:hover {
-  background: rgba(255, 90, 95, 0.12);
-  border-color: rgba(255, 90, 95, 0.4);
-  color: #ff5a5f;
-  transform: translateY(-2px);
-}
-
-.footer-newsletter-box {
-  background: linear-gradient(135deg, rgba(255, 90, 95, 0.12) 0%, rgba(30, 41, 59, 0.5) 100%);
-  border: 1px solid rgba(255, 90, 95, 0.25);
-  border-radius: 20px;
-  padding: 28px 32px;
-  position: relative;
-  overflow: hidden;
-}
-
-.footer-social-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
-  color: #cbd5e1;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+.footer-simple-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-family: inherit;
   cursor: pointer;
   text-decoration: none;
+  text-align: left;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
 }
 
-.footer-social-btn:hover {
-  background: rgba(255, 90, 95, 0.2);
-  border-color: #ff5a5f;
+.footer-simple-link:hover {
   color: #ff5a5f;
-  transform: translateY(-2px) scale(1.08);
+  transform: translateX(2px);
+}
+
+.footer-sub-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-sub-link:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
 }
 
