@@ -29,13 +29,70 @@ import ReviewSection from '../components/ReviewSection';
 import DateRangePicker, { formatDisplayDate } from '../components/DateRangePicker';
 import { toast } from 'react-hot-toast';
 
-// 4 complementary fallback high-res photos for luxury 5-photo bento grid
-const COMPLEMENTARY_PHOTOS = [
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80',
-];
+// Tier-matched high-resolution complementary photos for 5-photo bento gallery
+const TIER_PHOTOS = {
+  beachCottage: [
+    'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=800&q=80', // Cozy wooden cottage bedroom
+    'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80', // Tropical palm veranda
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80', // Pristine beach shore
+    'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=80', // Sunset through coconut palms
+  ],
+  ashram: [
+    'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=800&q=80', // Sacred river ghat morning
+    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80', // Clean serene room with natural light
+    'https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=800&q=80', // Spiritual temple courtyard
+    'https://images.unsplash.com/photo-1609334761849-77a471675867?auto=format&fit=crop&w=800&q=80', // Evening aarti lamps
+  ],
+  mountains: [
+    'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80', // Pine wood bedroom
+    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80', // Mountain valley view
+    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80', // Cozy rustic interior
+    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80', // Alpine pine forest
+  ],
+  heritage: [
+    'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80', // Historic stone archway
+    'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80', // Heritage courtyard
+    'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80', // Traditional Rajasthani suite
+    'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80', // Historic rooftop terrace
+  ],
+  city: [
+    'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80', // Minimalist sunlit living room
+    'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80', // Modern kitchen
+    'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80', // Contemporary bedroom
+    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80', // Modern clean bathroom
+  ],
+  luxeVilla: [
+    'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80', // Private pool deck
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', // Open-plan living pavilion
+    'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80', // Luxury bedroom suite
+    'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=800&q=80', // Designer bathroom
+  ]
+};
+
+export function getComplementaryPhotos(listing) {
+  if (!listing) return TIER_PHOTOS.beachCottage;
+  const t = (listing.title || '').toLowerCase();
+  const loc = (listing.location || '').toLowerCase();
+  const cat = (listing.category || '').toLowerCase();
+  const pType = (listing.propertyType || '').toLowerCase();
+
+  if (pType.includes('villa') || cat === 'luxe') {
+    return TIER_PHOTOS.luxeVilla;
+  }
+  if (loc.includes('goa') || cat === 'beachfront' || pType.includes('cottage') || t.includes('palolem') || t.includes('baga') || t.includes('utopia')) {
+    return TIER_PHOTOS.beachCottage;
+  }
+  if (cat === 'ashram' || pType.includes('ashram') || pType.includes('pilgrim') || /haridwar|varanasi|kashi|rishikesh|ayodhya|mathura|prayagraj|nashik/i.test(loc)) {
+    return TIER_PHOTOS.ashram;
+  }
+  if (cat === 'mountains' || /manali|himachal|munnar/i.test(loc) || pType.includes('chalet')) {
+    return TIER_PHOTOS.mountains;
+  }
+  if (cat === 'heritage' || cat === 'haveli' || /jaipur|udaipur|rajasthan/i.test(loc) || pType.includes('haveli')) {
+    return TIER_PHOTOS.heritage;
+  }
+  return TIER_PHOTOS.city;
+}
 
 export function getCleanFestivalName(name) {
   if (!name) return 'Festival';
@@ -186,7 +243,8 @@ export default function ListingDetailPage() {
   }
 
   const mainPhoto = listing.image?.url || 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80';
-  const gallery = [mainPhoto, ...COMPLEMENTARY_PHOTOS];
+  const complementary = getComplementaryPhotos(listing);
+  const gallery = [mainPhoto, ...complementary];
 
   const basePrice = Number(listing.price) || 3500;
   const inDate = checkIn ? new Date(checkIn) : new Date();
@@ -330,16 +388,16 @@ export default function ListingDetailPage() {
           {/* Room Specifications */}
           <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '24px', marginBottom: '24px' }}>
             <h2 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '6px' }}>
-              Entire vacation villa hosted by Verified Superhost
+              {listing.propertyType || 'Vacation Stay'} hosted by {listing.owner?.username || 'Verified Host'}
             </h2>
             <div style={{ display: 'flex', gap: '16px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-              <span>{listing.maxGuests || 4} guests</span>
+              <span>{listing.maxGuests || 2} {listing.maxGuests === 1 ? 'guest' : 'guests'}</span>
               <span>•</span>
-              <span>{listing.bedrooms || 2} bedrooms</span>
+              <span>{listing.bedrooms || 1} {listing.bedrooms === 1 ? 'bedroom' : 'bedrooms'}</span>
               <span>•</span>
-              <span>{listing.beds || 2} beds</span>
+              <span>{listing.beds || 1} {listing.beds === 1 ? 'bed' : 'beds'}</span>
               <span>•</span>
-              <span>{listing.baths || 2} baths</span>
+              <span>{listing.baths || 1} {listing.baths === 1 ? 'bath' : 'baths'}</span>
             </div>
           </div>
 
@@ -379,13 +437,11 @@ export default function ListingDetailPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
               {(listing.amenities && listing.amenities.length > 0 ? listing.amenities : [
                 'High-Speed Wi-Fi (100+ Mbps)',
-                'Private Swimming Pool',
                 'Air Conditioning',
                 'Dedicated Workspace',
-                'Fully Equipped Kitchen',
                 'Free Parking On-Premises',
                 'Scenic Balcony Views',
-                'Pet Friendly'
+                'Private Bathroom'
               ]).map((am, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ color: '#ff5a5f' }}>✓</span>
@@ -404,17 +460,28 @@ export default function ListingDetailPage() {
               <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
                 <Bed size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
                 <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Bedroom 1</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>1 King size bed • Ensuite bath</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+                  {listing.beds > 1 ? '1 Double / Queen bed • Ensuite bath' : '1 Double bed • Ensuite bath'}
+                </div>
               </div>
-              <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
-                <Bed size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
-                <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Bedroom 2</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>1 Queen bed • Scenic view</div>
-              </div>
+              {(listing.bedrooms || 1) >= 2 && (
+                <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
+                  <Bed size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
+                  <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Bedroom 2</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>1 Queen bed • Scenic view</div>
+                </div>
+              )}
+              {(listing.bedrooms || 1) >= 3 && (
+                <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
+                  <Bed size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
+                  <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Bedroom 3</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>2 Single beds • Garden view</div>
+                </div>
+              )}
               <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
                 <Sparkles size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
-                <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Living area</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>1 Plush sofa bed lounge</div>
+                <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Living / Veranda</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Plush relaxation lounge</div>
               </div>
             </div>
           </div>

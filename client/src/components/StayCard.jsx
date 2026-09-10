@@ -222,7 +222,7 @@ export default function StayCard({ listing, showTax }) {
               <Star size={13} style={{ fill: '#eab308', color: '#eab308' }} />
               <span>{averageRating}</span>
               <span style={{ color: 'var(--text-muted)', fontWeight: '400', fontSize: '0.75rem' }}>
-                ({listing.reviews?.length || 18})
+                ({listing.reviews ? listing.reviews.length : 2})
               </span>
             </div>
           </div>
@@ -246,11 +246,11 @@ export default function StayCard({ listing, showTax }) {
 
           {/* Capacity Info */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
-            <span>{listing.maxGuests || 4} guests</span>
+            <span>{listing.maxGuests || 2} {listing.maxGuests === 1 ? 'guest' : 'guests'}</span>
             <span>•</span>
-            <span>{listing.bedrooms || 2} bds</span>
+            <span>{listing.bedrooms || 1} {listing.bedrooms === 1 ? 'bd' : 'bds'}</span>
             <span>•</span>
-            <span>{listing.baths || 2} baths</span>
+            <span>{listing.baths || 1} {listing.baths === 1 ? 'bath' : 'baths'}</span>
           </div>
 
           {/* Pricing Row */}

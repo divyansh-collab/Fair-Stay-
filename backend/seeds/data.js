@@ -20,21 +20,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.299Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Family Guest House",
@@ -43,7 +43,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTaWclzGEeWhO8lh9SqMmUZHrYwacLygKld6GCNeYaVyFLKUXs3f2l44xtOmyHKxC_vp4MP_EWwpTMA_MXrj-YQk0wv7a5GbgKgVGeTfkmE5qkdvQ23SpHh8yUy4Kea1CSQ8Hm7bSR0pzqV7o5OGMEwslMu6IRabFN5qWxDV210lNCVSgpLS43veJIl0j4B_gMAQuhqv4Giq219aWXJW9vykBiNJfHNZ-u6LpmQGfPZc0KMFU94d_VS0Taij-q0jJ_GwSc71mXljjwQY4xtgxZ7MngSt3UI_OXuehMHx0_Znelmr1-l8UMDOlF2yohb9jQ4nNVpjRzgoHmEsgXtAydLO1v6vBtR5mOJ5o1r9RXbM9LRHxmFCr1MDz-JeUja6ASAhUCGF4Kc5AgdFql6PJj2Ie8plSxbYG-NTNDsPdwcvoYz&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ53K-N-IxjjkRIGKYvyK-vsc"
     },
-    "price": 1670,
+    "price": 1200,
     "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
@@ -56,21 +56,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 86,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.315Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1680
   },
   {
     "title": "Hotel JSR Ganga",
@@ -92,21 +92,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 85,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.321Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Ganga darshanam guest house",
@@ -115,7 +115,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ8gO5M80RPWZVsp8VTCug5xIdMbHnN4xIYkM2aMaGXG_XQ8veYBGEz1vYRuSALNbn_8ruGvxR3f_vlkqYksEBs1l3a-0LKXE1fYBboieUPAb6gae2m2L6jVAfe_0AFC_hDw789t85uNGXnOBJOPkVvjhCaygwd9Y825vnoqlR2aw24Af-ZgRpTkpCgUY_bqvTzDYR4yKvC-_sp-EvAcSw3MrijrFGoVX4w9a5uW51OC15HuKFjvoK7IrTk33MIkTobu80V9k1_9XdqVm4nl0_1WiJskPwhbT69tSE5aORSVNiYdTnkwaRXiFF1DhY1C4L9SEVN_d_pZ2i9ObiY5Yllpyq75CzmP0p_kNqigJb7Fv4x1ydMy7LRnESlSBuiZuWqmEnMzXrLHB4G2D0h8RLutFXrKIE1-tjFo0jRZxiOJpYUDaHeQbPtSlfJsxOn&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJid-qow0xjjkR789xemI4Jg0"
     },
-    "price": 1310,
+    "price": 1200,
     "location": "Dashashwamedh Ghat, Varanasi",
     "country": "India",
     "geometry": {
@@ -128,21 +128,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.327Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1680
   },
   {
     "title": "Triveni Sangam Hotels and Resorts",
@@ -161,24 +161,24 @@ module.exports = [
         25.4054966
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 92,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.103Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "TAT Stays",
@@ -197,24 +197,24 @@ module.exports = [
         25.4318938
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 100,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.109Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Hotel Triveni Darshan",
@@ -223,7 +223,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTSuZHGoOGJZkm0om0mb-9NsXhKQLG6YNZbcXXa_pmTKeXGJ9O2amXKrzrISGxW8FhrK6IzjqWN-Akt1QnsR18P1_esuPOrNRu-NFFLRCz6RJa967-2omiEL0qH4ZUaUcsw-Cp6vut3RiKRDML6vL8UsvN1fC-iQqdvOsZEksCWsVMJbpj533zbPb4573nNY6IPwOZY_hy0KekobUBTXD-iUuoIGwt3cb71HW3_Nplq7jgOnGz4v-uDakXOqzFh0E_Abvqb9eCsP7WkWT8oeUVxEhG1V5_3Veun-OvUZfpQvycM-N3N9AYP4B7HHWHrMkJDfwluXhyZUI_rNrQvZRXtD9pYwqd_3CAg54LKcpsCvfXpoZ1lTMqA8T-2a2Eq8458BHot3XT4A0vbbGSIVhCooMHIC1BS8BYfMbnxfku-KDzt&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJAbAzjU41hTkRXhbnd9DUdww"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "32A, Prayagraj",
     "country": "India",
     "geometry": {
@@ -233,24 +233,24 @@ module.exports = [
         25.4293997
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 85,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.114Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Treebo Divine Stay Prayagraj",
@@ -269,24 +269,24 @@ module.exports = [
         25.4544174
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.120Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Shri Prem Nagar Ashram, Haridwar",
@@ -295,7 +295,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQDp10QI_HnPsAsX28dNiTUHas_f7w4VjV2nprSTGSeBPwoejemNackQ6ihmbabc21UeBMvfWfDD6R1YFkNPJM6wug-tB-DfDSAOytO-cdui5DjQWAKnlENQSzGuItCkD9P2jReQmJMU8ugRz-pPe6I3qO8yNh9aLxYRfTwy-y-JUWv92cyPvzdkA7MQM2PSTOprxOfE8SMboTaLFv9T6BpTdSCaYtW8gKFuKhApP-kpUQcSbtTkFStiVS8Isml9AvwsrKX0WfrRrk369PKqiyGz1q4DgoyU3slqZPlpT4zY1xwBSwo1N8lhjmEJCZNqsEawoWIZPN6OOpTtTusXvqGdpxuTjgAdCxdi5CxQjOqe9k0FhTp7aOK0D84rex_spxriyZaNlx8kQaKha6HGPQW6xBoW9DGPBhkFiolsrqGohLI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ-___6qBICTkRLKqthpJUwoc"
     },
-    "price": 9900,
+    "price": 950,
     "location": "Jwalapur Rd, Haridwar",
     "country": "India",
     "geometry": {
@@ -305,25 +305,24 @@ module.exports = [
         29.9326251
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.615Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 14652
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 1330
   },
   {
     "title": "Saptrishi Ashram, Haridwar",
@@ -332,7 +331,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT9phqZFqjIHgsSeQ7uJCsEs5YI3MwKAbxY37XTD8_2hENl580Okp9_mKzsTrqk66V6lAFBh9RfhUcBDTUuJs9fnEm5hkP4VSWHfRovFplU7qM0ic_kbO8zW0a_inIn9Y2RlwCkFOvJFPHS-cM4_sVpA0bupgyKvTE5D1OW-Jlwh7dvVUT1yfSOJdT5NQrcZmKhWuPXwFJ-AldSRZggBJDzxb0T9mldluzKMUfLna4dhcqQphSFIv3ijDJQtJmVlxuJhX_D70DSgnL9sL83mITt3Va7ZUUDFikhS65eJwsPXcUX4HCJo_Glt1FjUzeulhVxIq9ZhQE4oSOFUTAcsGumfYL5ThhHZhmsmZnJFizGKcktY1eXtvN1HWguHalTlRHCMlLlnnUi1UGQPvVSVAFstWsYBDBiavZ7uXGdXgdIm10gPKwfn5K4J0EBtdOL&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJe__OfVFHCTkRgrGTxPUq0SE"
     },
-    "price": 15300,
+    "price": 850,
     "location": "Bhoopatwala, Haridwar",
     "country": "India",
     "geometry": {
@@ -342,25 +341,24 @@ module.exports = [
         29.9882402
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.620Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 22644
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 1190
   },
   {
     "title": "Harihar Aashram, Haridwar",
@@ -369,7 +367,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXThM3YztpUZl3WQG791FXnEzgmWFGodazOX5LuEUzJbWSbYpXBtdYu-CIMEnDsrFMUp-w-SKKAXHBGYueTpTTtRe8ItJZ2eA4VGq5TGxTQuPSkJcwwFIrn1SiOYF-Oex70Lmczh9iv_lRIFVcpTUK-y-1SbY993Re3cbGW9hgMpYyKNEXmlp8Ax3jvEWkN7X_VzNYbpcDGTuWOzfBq3fkynuNklwVC0vtu2Fb0tMCIqkvjnji5-iwSlwZh8LnXBym06DAZj8WD6MpdmdEuPmMhyDF8vZ_WLlpQmVjGKfubsFAaNKwmg5WI0d47C6w0WeLu3p8Yo03h0Fl03EPrtPu8c2TElY20rikKpEKcoTTMIJXU44w-yPkd_5S-JVta03B1A-RDo64meykDeI0btvVHbtzRfbKECX1BuUkL2mQY23Q&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ5Vs1NIlHCTkR71WRUpoJiQA"
     },
-    "price": 15300,
+    "price": 900,
     "location": "Temple Complex, Haridwar",
     "country": "India",
     "geometry": {
@@ -379,25 +377,24 @@ module.exports = [
         29.9325363
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 92,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.625Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 22644
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 1260
   },
   {
     "title": "Shantikunj Gayatri Parivar",
@@ -406,7 +403,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRlkPHO8k80AC6c7M26-DRcLgYbnHOv-cDRhnySp2E4lMeohHCKoXh5V20yEQvTUptzNeVavfl4ygTKix8CLb4xhITj7tbnE3MLk6_dXEdNf6TvYLyGj9yi99O9Ru6Y8N202x84h2yZSSJ7r_S_o8RvDuXudmc5lzV-N9JAm1mjxFDos-oFEvQaY4USVP3JnGQ3CMrtgyRN4Dp4m1AvJ9e_DvzKa8_TcOSY2SbN0pRsenPfWEqKul_fAbIs_THfiu5rWwCEf2DdYjEwUfjiPfYmXm15UpzxXPaDirdfshIWMGP8g4HWrc_omOiKxWOC3G2ugLOwMNSb_zY4oNuIUF9DTwURBXzuFdP1EEtN3yflHk40pf_iVPsbcXOdH0V6T1MJfxU4RaZi9MI4bRpzaw3fo8ZPtMGgMSugv6W2mC-1n3bm&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ8Wp7K1hHCTkRLIPEpbeuy3c"
     },
-    "price": 10800,
+    "price": 650,
     "location": "Shantikunj, Haridwar",
     "country": "India",
     "geometry": {
@@ -416,25 +413,24 @@ module.exports = [
         29.992474
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 92,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:50.631Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 1,
+    "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 15984
+    "marketOtaPrice": 910
   },
   {
     "title": "Maharishi Ayurveda Rishikesh",
@@ -443,7 +439,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT5LpcagaPOV00YCqblWO3VpHjy5lDHdISQf6QvzTUtQotkgm_TuxmD0dUnSv54EQy7wNjNvhZREwl9_A6FJM4r4M3zSaydVwmuEP2yM2A4RVZTX7p7vYxX4M61G4zYWcrg8TfvN_EY8ToYSyHZ4lKiBn97_iR8MV99maccdFqdrg7tZeUx2tuL4G_9gn47Cmo0FA08G9S8hxa0Ef5FhaFUYqc11xGwqAjRsFANzVFXy998EuUZdylHqvUzuWAlJq9j55duuty-6NBZQRUpYi5xsXrew3wpIephu7-Iy9BlzQwQqXnVDd8Ee0p_svQFIPuny3KgKBnSL9OjlTDTofbZJmi4-QfT9hAk-oCytRYPjhnB1rOpETN-jANUfKnZ2Jgxh1IXpKpDWftZMLSCG8E7wQNJdHvrshNOM8mN2q4rzw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJOYpkKhUXCTkRIc0CwjBll9E"
     },
-    "price": 1310,
+    "price": 3800,
     "location": "Mahila Dhyan Vidyapeeth, Rishikesh",
     "country": "India",
     "geometry": {
@@ -453,7 +449,7 @@ module.exports = [
         30.1303843
       ]
     },
-    "category": "Pools",
+    "category": "Rooms",
     "fairsafeScore": 94,
     "amenities": [
       "Temple & Ghat Proximity (<300m)",
@@ -465,12 +461,12 @@ module.exports = [
       "Early Morning Boat Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.236Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Himalayan Yoga and Ayurveda Suite",
     "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 5200
   },
   {
     "title": "Arogyadham Retreat | Luxury Hotel In Rishikesh",
@@ -489,24 +485,24 @@ module.exports = [
         30.1311279
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.240Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "R&R Retreat RNR Retreat Tapovan Rishikesh",
@@ -515,7 +511,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSOIqH5MD3rodjENwmdd3qhwTwmlLuPrVpZLNEI9Usl0NKZ6kdQDO7u_8SFYLywpqdjMlMiLsERhOGDUQCHCMEBUSEzynHNhI5yJr6zjS90dBu-zNuqY-owymXllPWsJ5W7WdTe4OzzxO78LIQnEx9eWsRLJDbRFIw1agvOG9l6tvUlSfZbtnJ9MiB-XO7gK5f3xQXxCp9ffkMdmSA6-IiF2BsTcyNzVgocbQIqi-CiX9XxGOQEpBaWU4Zmi0M-nD2rCjjOHmg5irybkDdVHT9KMh6QVbQt2BxHRcKBdU7dRdfYYXxaT5HmvbM6kGddUaItI9qks94nZjlwKqc0e6kTCvHSJ7DkfiMDdguZCBz5NxyIO5wujowNZd-7wO8iX1UCaDLzRSW-bAcBT3thy5v7qGoilunlCaJleIZ3IsKYDICFWlyYVuLgkyP7S4-R&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ3_sBKnEXCTkRLlMtnsWAm7Y"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Deccon Valley, Rishikesh",
     "country": "India",
     "geometry": {
@@ -525,24 +521,24 @@ module.exports = [
         30.1330253
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.245Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Tree Aura Retreat",
@@ -561,24 +557,24 @@ module.exports = [
         30.1273934
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 94,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.250Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Hotel Sahyadri- Top/Best Hotel in Trimbakeshwar",
@@ -597,24 +593,24 @@ module.exports = [
         19.9353738
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 85,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.845Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Mango Shack Villa",
@@ -633,24 +629,24 @@ module.exports = [
         19.9513493
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.849Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Maheshwari Bhakt Nivas",
@@ -669,24 +665,24 @@ module.exports = [
         19.9350904
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 85,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.853Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Shiv Prasad Bhakti Nivas",
@@ -695,7 +691,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSNFfVGjQqdUJlizwtyrAR2Ly7e6ldTrFOSEVfw4RDyGvhypKFB6f5XgTASXBqJFQvXJoYqAzio_W5Yw3rz5NNYxEcZu5JCTtA4OExoNds4X24hZmQkaIv62Ek5otzWH8UVvZerqMauua8-Hqlu3hKWefSLZswT7SHjPjAgq15n311cmFfE-jfB8DN4C9Ss2b-hdNDxYK3DVMMUMtNwdojoESVJz0x6CMszw_ApRqD8jJZNhER3ChE-oRXkGDeUg-jlz_vOqrQrXICUg2cyLN7-_tCcKI3BJsuiFZPD0Jfd9cnUp3-zINELjmkdR9aTOejxZBnc_p9XR6ci9Y6tdCw7aAI_zMaLS4-zpB8SYkGWcjzuLdUx5VBqLYiTsO06VVeXrf-pbIufTkSfxig_R18VwNO9xot_hZQMpgjsohSIWYwmni0FJ7uGqjtr9lyd&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJZRVfy8v03TsRRvBeQAxHi-E"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "WGPM+644, Nashik",
     "country": "India",
     "geometry": {
@@ -705,24 +701,24 @@ module.exports = [
         19.9355125
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 85,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.858Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "AADITYA ASHRAM SEVA SAMITI",
@@ -731,7 +727,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTqBxC8GDlfvW62xTHtvzIxUyGQcCNM1bNrmGCGIC1ojI9Kuk3XdIrcuVUK3cBkE9ex1ODtnorfgvq3llooB7a-oeF5wr03essG8R5yJeDyPpllWVz4X7IHyrlkEEPqfo7LIq7FTXhGNRBG-xXMFrPSpx2J3goLp_PlFO_ZEMSnXp8rBVJ6GhacUg79HQX0Rme7luI-WKeOjq6ZprM5coQGMI5KqXsEXDxKIPuGHDtgVBdZSSqOPAH1ya5TqueN_0I5oFJChCJvZgSstVilueATLcLhKK0TQiDMDkchZ5EqDE2zjPurap9O_hKRmzFRz0bLAkwkGahqOfVWHd-puaoncyawtd7MSxRUvt0WkWVBpL2XzmpyIaIC0c9CjSJmff-SdRhGERohZ_RFLl9T6grNqvaRBMGxsmELG3HVUfDWEMa4Z1niyL2bAXQYNele&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJcTHDGJAvjjkR79bR7c5faKQ"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "D-62/4, Varanasi",
     "country": "India",
     "geometry": {
@@ -744,21 +740,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.430Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "Shree Gayatri Charitable Trust",
@@ -767,7 +763,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTOogCb_muyluLR2_3kiqIB0_jspbkmXnUE_cdFpSIC--xhjWtLhb6Rt2KLy7rNqg1KbcPSFlImlxMjFXkRGsjNEwjHCYEhw1YCUdv8PIiyMXoNL7L1pxW135N9XYIVLTwzac6MHXbo97Y-YffDyuKiqY8jxqQTkXUDzVaXce5Wv-5uotQHRlof8B2v0iRUpqPAzNl2JV29mlGKgw7lrvalfpKcT_0h4I4BKdaVfvT9B-XQzTrgWtdeNoLe80ZfcxkLv3u6Qd-yhwzokNB6D5tTxz9QPQn3MYhKYPDB4xGTo-S0iDSBbBux-xpeUDXwPVr9wer1XeTtPsf1g1MmK7yEFid2XJ_BZ1K2UYiXEczyXSnWrWG-utSN_K3sJncLl_8jsV_IXelrFXxZsEYryqrrJ3hAC1s9lV0e6IZuGxGOE9EWk5OJrZCTzlnKMw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJB5p8jx0ujjkR7mk14cfglFY"
     },
-    "price": 950,
+    "price": 750,
     "location": "Saibaba temple, Varanasi",
     "country": "India",
     "geometry": {
@@ -780,21 +776,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.452Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1050
   },
   {
     "title": "Cycle Swamy Ashramam-Kashi (Varanasi)",
@@ -816,21 +812,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.462Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Sree Ramataraka Andhra Ashramam",
@@ -839,7 +835,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRelETdatH1kHL26avWs-o8qf1O0DSA3X_HjffqRwr23_z4AB8nLnQ1d7enk7WIrNFyb5xvuvbr3PMkjAuu9BOg5_pkRvr9o8ciFigsCP-uVKTrpiKavL3Gd2_rdW3SQjxkEZXzts2lxQu8m7fJk3vrrksJfbWXqh3pVhxbUtgp9mjLPVipGqTxKhObXnTxfYzjUvFZc-cDpFhawSBUR1FBvdowqqF0aX1bdX32i_llAVVoUiHNSFNUnAk5BBULBkI6SYNKMKKXslJttEjr50AiXsDDKHjENp_iMaUWZ-lFAgeAfKtSB7GtO-YOEevj7GgaVvEVQeJgi2P406Q4i8tfMsvRj51Ehg_Ppazl6wbGu6ZatnihOhVaq2p4Tz0zdAhmE8X_gh_sT0s3m-b7NK9pZ8c3-WXaes-mgRx5CSpJ9w&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJP4CvgeMxjjkRGtMqZhfXrQ8"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "B.14/92, Varanasi",
     "country": "India",
     "geometry": {
@@ -852,21 +848,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.469Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "Paramhans Ashram",
@@ -888,21 +884,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.475Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Heritage Haveli",
@@ -911,7 +907,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT02rNKizxZl9QDST7gwcvLxf2sR2PdM79eB_-HasM7wNP-n_uQFEJDaXHwNi02DOtkupYvHaxf4NNRShZH9CmbUABAWHMZCG72ZSwwZ2LB9GN6zBzfDf4oQ5HJQrNW_Cl2_qLseHm5fI8NjiLT21auIZF1HOtBwSZ5cTybfVjfiA1zFMjPyEBrz261A51JIXDR3bW8dQGgnCEM9iGXPsc2uHFCE0WRy2qGoYuQXt8EZIpeiIvIobB6D-a5DSqpAuJwCOP5-xAbi_K7NDWKMVJ_Vx5eMehcoyj3beWzZg2p8HCjSN_1wBOZqoUWBkPli4KoyjYLFAvEnbYIcW3mYhcE61tf8TzrBq_PFdVDrLkrhVeX5cqhietYbNL1xMZjxuAxjNlFjmlGWgzzixZv8oET5js_My-BqQ6r_MB6cj24Bg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJh1EMQAIvjjkRMqBtcv7X8pY"
     },
-    "price": 13500,
+    "price": 1350,
     "location": "C 21/102, Varanasi",
     "country": "India",
     "geometry": {
@@ -921,25 +917,24 @@ module.exports = [
         25.3227071
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.307Z",
-    "propertyType": "Royal Heritage Haveli Suite",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 19980
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 1890
   },
   {
     "title": "Narayana Haveli - Varanasi",
@@ -948,7 +943,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS-7jO9J4p9VHpANgLnBr2wuUgfzmtZI3LY-_Jn5Wpwc5zx5Pq9SbIJ43Azm6ROsbODbPqmz2Q8KLHA6H9-Elo-ftZwebHi3BKXu2yQBGTC5wmMwHssjtVxFAfon2wcebsknI62dkLNYbYY6cP6qmermJBX2S18JOat9g7Swt3m0WVSB2JnGyKRHx4UpF92N68rNIfsqNxgK76keSqc6zENwPtPas9uquRoGrka_XTdJKBOQlGa5adP7HmBIo3cDKDlZlTcCc7obxVSVgMntFimAaBe4eRCaBBUlF2FGgzY3ROhKXwMzw59pm6VqfnGglhyGt8FsBxEjPH8AnRDHPZwOivpa5OWaTCCJtCOkJsQY7BxaVA6cihNJ6Z36ZeyEZanw21VPrlS7JB853kuFaxicVTDf40Xy3a-XSxivgj28ERR&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJI9_eZpQxjjkRN2c2TQ3JqDg"
     },
-    "price": 14400,
+    "price": 1350,
     "location": "D 27/18, Varanasi",
     "country": "India",
     "geometry": {
@@ -958,25 +953,24 @@ module.exports = [
         25.3029237
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.320Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 1,
+    "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 21312
+    "marketOtaPrice": 1890
   },
   {
     "title": "Dwivedi Hotels Palace On Steps",
@@ -985,7 +979,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSp249uKr8VPsf20yz6VT59HfOgInSKw0z0dE65ZbOwOKyk0dVmqhAPv1bWgvaQuyIPPSFMIv6li4OA6hQeZvl9JP_enDHmO0Pg4YfzC9vlW48i8b66Oomfe0MT-ievh5bcUugVrEUGw6loW1RbFHg0wRgVUqlhRr8eoHx0mE0yyHyst7_AZX7Hz2sUWZnnikMf3OHIpTmz_Y_Ruk-wSmq8kzfDhjEbmRuNYo5dEI9QtmEW7KnMV-LMf-irzSoBwzKrdpdBpe1T4OhxxrO4qXauUepmwueo_9Sh1teAsDj5fm9L-Q0fXt9d9VgW_dOYKsAcmbpNRD_ovG_rquaMaVeEJjB-3ouN5O6as4bPZ1rX8PrJwCvNKzGCDAlI79hJn3sNVN6Cqb9YurfdEQ-qTFzKF7BaTrn2Vnptk8f6O2aQRQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJMS1Hk-ExjjkRkeQC0GwH53g"
     },
-    "price": 15300,
+    "price": 1350,
     "location": "D21, Varanasi",
     "country": "India",
     "geometry": {
@@ -995,25 +989,24 @@ module.exports = [
         25.304756
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.329Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 22644
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 1890
   },
   {
     "title": "Hotel Varanasi Heritage",
@@ -1022,7 +1015,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRCpSm0k5lsPQP3fqXPgcDFpgnutYCrjwDnouyum4scQkM8HhnIBG28hXMdmLuY9SaCH0cyDZey0jC2SlrLh33Z88wZKmGc5VTFACaUXDtKiVJXbYrbZrMYJnEjwsvsMAtKSFetCEliccTYSNPPmgZwJCCHSE0Q0WRRhnRaSu2r_eIZ7v9nnLLtF_oKuDkL0UGaSfZ-oKynoyc4nxz0tMzee8cvn0mBGXZ8yWSWnE65-YnEZW-uvACBZv5ba4Mg14r_vt2Thf08Kkci4n3-Z6iBMnh6GtRVoMhEJ_gyfgB5Zx-rpsv2Qu5dJ1XAjSOhhF1Kyypm2phqFIuRpJRWUT2z8IaRKPqnKde_Yg5Q3zG3hRHemQ6RzhBlv0eGesPRTQcN0QAlwfh4aQp7Cv6PA3vfRAIpxEaVhQ8ocpMvnYJWWw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ6zi3eKoxjjkROzuIYiINm_g"
     },
-    "price": 14400,
+    "price": 1350,
     "location": "B2/50A, Varanasi",
     "country": "India",
     "geometry": {
@@ -1032,25 +1025,24 @@ module.exports = [
         25.2907189
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.335Z",
-    "propertyType": "Royal Heritage Haveli Suite",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 1,
+    "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 21312
+    "marketOtaPrice": 1890
   },
   {
     "title": "Teerth Guest House",
@@ -1059,7 +1051,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQnOWil9huzJPcYXYKTcyjWcg24vkBiIGT9SRnYyjkBpigX0Cw5mT1VT77WksRryY5V8aUv3vhIgWWGLaF308wM1yhwjL8RrsqVhxWM1zd-flsQxShDmycRS9KV7f8m_wgCdCvNtTV8xZnCaCY5bTuoj4TTgdujuM5WXdgRMBOjb-MRo69cihMj-KodULbQ2QLivXsygroasdsdLzbgTwYKKm6sPVuAXWoVB-nWCHWP0uOqFX3562Lr69dPsMXTvZu5kOdXtCzA4yxQ5_37Ln7Oh16d2eNrOMicGK3864qhEAyDk-KrZwHGkEbiqvLojFGYHpGjnTKVlyLuAzSRFxhKCE4AjwpJ-9Kf-1K2WSjOxJhCeNEJ7cfFLD6NHgfVr6keBW_PZ9ZDdV3mNEep1mIThQKzYJZmpeW2i5auO57sx2TgEW8EF8VMsS8Aig&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJR0uVZR4ujjkRI6DVLuoSYPI"
     },
-    "price": 1190,
+    "price": 1200,
     "location": "Varanasi",
     "country": "India",
     "geometry": {
@@ -1069,24 +1061,24 @@ module.exports = [
         25.3099848
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.020Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1680
   },
   {
     "title": "Shri Shri Kashi Vishwanath Guest House",
@@ -1095,7 +1087,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS7vuyK7ukvZAUDP1IZX-1vTtDVq7B8KHNiaT1K3T_JQZal8eAYcp6KwJ8PeqfTPZfe0dng4F1mYqOBIeOnrbz1b51t6RoGzFhaxCixK_sTfy0PhZY9wX4pgz8fZGsWbXu1e9bzMB2omQFJhvmJj7-S-aIqeSgLD_VOeqinMNmUNqHPBJ2ZegxjgMjffDiFnw2zC2BP6x2500RpCFRlpTDf1fYhC4h-RrCGLdOgkLWC1o1UntfKhwLhFe75RFO8ZRm8CbbcWPklF6zo2a-Fqo7Ebdy3vmfehOm5FuV6eTcZ5Wvtgy3bz2Zav2CjwqG-386Ns1ZOKyD8Tby-S67_VhGgpHKDjZSlyzwCV8wbpv_weeCJQMLn3DdxEJBqmJBjb_qi4D0oAZ5UsF-ey7bJrVBUDWgz1YujNq3AGPRXXbPnoiv7dx6cKuCTRr-O87Sj&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ-ZqHzBcvjjkRHySa_IjTH18"
     },
-    "price": 950,
+    "price": 1200,
     "location": "Gate no. 1, Varanasi",
     "country": "India",
     "geometry": {
@@ -1105,24 +1097,24 @@ module.exports = [
         25.3178696
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.028Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1680
   },
   {
     "title": "Banaras Rest House",
@@ -1131,7 +1123,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRu-ji24HYtz8O02q4H9Yk8vhHkBYrr6aOikRl5NYP8hbKVnljEQyMQN3hxAYOcBZobtkSwRBWG2gnCT7RyJ_cy2N65kj3Haj-Y5n2MahipY7u5Py2YaVAKCcYIqh7aC5EqLTT9wUwHQdIGempM5kV19566OaT0dEBI6mE8N02bbQRscsA9MC5uXQDXtug7SKHsnENtqhLoAMafD0c7Pme7GoPLUxWy_ySqlD1qQu2JMizHJAdf7AWjmhC8m7bV402L3hsdK_SL8fLsypKlWKp8_n5mux1G_Hc-y7nFWQILF_Z_pGQddBK0psxHxg4aPrBlEtf1Bi6VeITATppREtN39-BVxs6IV_-YGgUk3EIHirfezbQo_DMD3oISSXyU1yiHzkOFggfFUk4AbY7PA_O1A6Hjn_BBtNnunE1IoVZvZASa&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ0w0IQDcvjjkRrUNXj5tfdfI"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "D23/2 Hathi Pathak, Varanasi",
     "country": "India",
     "geometry": {
@@ -1141,24 +1133,24 @@ module.exports = [
         25.3044965
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.035Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "Shree Krishana Dharamshala Trust",
@@ -1167,7 +1159,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQrnoO7G1iIrLADai7Rps_RTZfjeJuvT5FJbsaML57mXjRpwtiKsKAAohdA8Zg4OXwmFVMBjvYYfpUE4s2BlCLHFsgsr-Pa-0PbwK26sBfD7lJQA8C5gYQ9S39yVdRc83VLok-ls7OVokWgPlaS8FQoZSE_Tj1tBDB2IQhluTFvUgaRulH_cPzpVgM6gVrUNUoV-H2nWQX2gjtneEV_DSwDl3HwOl1ohRZjQFQcm8RsxIl2gIhP7xEKeib_9jUc5YaojAVw9uwGeIhW7mmyMKds-35DRGqP8P-e-viAcMSt4c2B17VcGqEcvz673zM-cyK_kVWHyHpPMBkWm7c1rdZ_Kn3BKh9nD3KB0DY19NBuvkVP9eKwWD8TGgYdHL2my2VBN9bFffA-TZXk2b7dxemx0GP0sCPOEhDBblWXgi0&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJVaHyVuEtjjkRcJHUKfViit0"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "कैंट रेलवे स्टेशन, Varanasi",
     "country": "India",
     "geometry": {
@@ -1177,24 +1169,24 @@ module.exports = [
         25.3251257
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.041Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "G.M. GUEST HOUSE",
@@ -1203,7 +1195,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR9THJTYIIzTwDikIAn_zCC8Zlf7xgBKzeYk-Fb8uZbc2AbhxMZVKDDHaOZ95cgVOcsprBkXO8l0ynCD6kVJQJZhmbq6_-uKk9Ldq3dyri7sUVfiWd1b2Fd1nnMZz7EKHshMQ-rtVsQ17pQ6HqlsJUfgWx4PH9WS8GdOKwn3nE0tjm3tJW3DxcEEM0p7sxzd-fNvBwQm_0zC4vAO8MBl4P4xcYFDZLZ8rB0uNK63oi_ek9Z4RQaWvt2pe9pzHAaUr2dRyjgXV18n3JUhvE6crsUUSLRRdAIxTD7vNeNurgEBJnmLNvr_ZpKMudwbenLaKxRiZhNxHArZg071iNpAHLXRIokmFyzBeW9F2k92MG4nlXI1WNpmnxWV2d9s91Xr6cA5FFkj27pNTBGjyhqdkOhq5rXBvK3IevceCcHzCyLOQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJHVJzTPktjjkR_HVLF1xX7-A"
     },
-    "price": 1430,
+    "price": 1200,
     "location": "1, Varanasi",
     "country": "India",
     "geometry": {
@@ -1213,24 +1205,24 @@ module.exports = [
         25.3116584
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 94,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.585Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1680
   },
   {
     "title": "Ganga Putra Inn",
@@ -1239,7 +1231,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTaduA6P0PmzOjf4i7Auhu95uLgyvrSiaphLTSEMm6jJscM11DdOYWqkD1Qo2mMdX_830zqPnBjpmOaUUVQQ7r1tP4okJpnJXe6HxyinuwrbGrwUX6--Eitim-yoqxUw3kVMF3Ef2lOeF2l_02sskmDUJ4672VF5RENzJWmC4WrUmRZQO-muOmEndH_3Btwf1nivANHpD-sWmYaBzEWs7E1WobkAWaHhoM4RBd_nOQbQICv6_dk99wADVUrP1EESc5-cXyLQ8YvRDTcHS55hVFnH5l6_rK0vDzqEv_muzoWzKFNMzWVyHSSoMcnZcsTr4TsN34dBT1JpGp_pUSbqOifaoHZQfWNKChADGvxRQ1scokkCe-RrGuaguwd1yVE_VlIH3G0XpfRTX6cCtt0KTGUDX31ReFQecv931SH4IVGao6T9WDzizaV-7QnCA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJS3yu59cxjjkR_3RmrFLMLiw"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "B, Varanasi",
     "country": "India",
     "geometry": {
@@ -1249,24 +1241,24 @@ module.exports = [
         25.3005846
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 92,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.594Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "Siddhivinayak Temple Guest House",
@@ -1275,7 +1267,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQDKc4miwVtG5hMg4C3eUy4QOrUJIIX3NbSom6fdJ2Rc52E8kkmNRKJekRkA64GTT1qKxpSBgPpwkRQgtFRl3pQ0jAOkVrV4rsKCw54hQFnhs-p2_gM0aIOISQQATdY0Q9uJlKD5BxAMFManONjDD_CYqcdaoTEgbPW-0iNk1NHU9xYthOmABGZbdmvXRYh-08kyRuBGWmtvaPnHnSXfxPAeNTAVhI5kfAUn8KTZtAjgShe0aASp_yFrM9S9lgimCrTuyfywn8e3a2-0wZI7V90ucexoLVw42vmE54DC-03691w3gbZFfepB2AK6OeWAZVtVK2Ri-EXwRvK-6RuFD3bjNhcoprEAPx2ab-6JSkTOFhmAg9-_qeOzMCBtewv3VcO7gnRykwTYhzZL1PRqEEQqSDckbfjKbccNI6edmuUjQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJR8X2X9szjjkRk3vsMMIonL4"
     },
-    "price": 950,
+    "price": 1200,
     "location": "Ganesh Gali (Siddhivinayak Mandir, Varanasi",
     "country": "India",
     "geometry": {
@@ -1285,24 +1277,24 @@ module.exports = [
         25.3034716
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 94,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.601Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1680
   },
   {
     "title": "Living Green Farms",
@@ -1311,7 +1303,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSTdDVAeObNVVJD5TBAQbfNsnBjyblDCsYa1wEJUc0-gLK1pdfSMvFKP843woZBcrh0kR-3ERzKY2n2YzLHwOQ5c4f7TmQSBU9lPfaSlXIgGi-t1Znt8HJf_zAYyHAGzxmq7Y0ltIHEewY2Uu_EdFItRyN2QjkXNXCmWk8yDJZU0T-mXDaxfqKg7UDk9dBaT8khuDaLtU6e1dm0nB5C-6y9zBbAWCRaqGa_Vd-I5EiOCrF7-WwjsmbJxYXZKMr03BPk6YPYeH8XfRh0nMvdV6_Mx2R5R7MnSCXiJBdNb_kWMIQgjNYVfI5-Fpe15CP3IfqX4kygr_vxeoyZbiAS_etbNYfew8ozUma5UBb7Pq8mdEm7JnJy4FVB2B2QnJpcqTPO84FS-jpE_mGLRs9B0qWaD_dBYOS3MstF2IS0S2-waQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJX_UK9VJLhTkR4wWy017yqKM"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "726, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1321,24 +1313,24 @@ module.exports = [
         25.3576979
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.301Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "Hotel Triveni Sangam and restaurant",
@@ -1357,24 +1349,24 @@ module.exports = [
         25.4287879
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.309Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Anita Inn",
@@ -1383,7 +1375,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRQIm2dTgZFTJDW-9VSRy7-H0IO7MdOXKq-MLaxDMAGxqt_o00292ui6zUvEayhVTd6wqduyZ530SFCnsymx_O2M_dOmGtx7o6bQAGXlGtUfGVfy_dQfzI14EbYfJ_Nu-QLJfvDZIwVXPBio3JaHdwukt7NDXizKA2IwWUsLCgquYJc_GDJpDzx4d4MK8k8rR8dO9hr7ka4ZzGe7Mm9PRC9SNzwu1i7lVfwSSViGpcnqEyV283FFrkDPFVAXP8VxlT-thj265Yyqgzivc_EiQ1bRdmA-FqU4k02yHc6QIb-jN5sknEJZ0oL_2dh4dIM1fDh5ooA4jsuRiye95jiVHNJE1nok_9xoQx0_FWzTJbWMyBtN_iGF0YQwZIENsmH-5UOTU3VEE5XhKAjmC50KpF3orF5g7WA0oVXYmNbFpHaBywH&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJq3dDMNlLhTkRKe3RrkpD7pU"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "Second Floor, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1393,24 +1385,24 @@ module.exports = [
         25.4224443
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.317Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "The British Kothi",
@@ -1429,24 +1421,24 @@ module.exports = [
         25.467248
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.325Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Radisson Hotel Prayagraj",
@@ -1455,7 +1447,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSyaGhwr3hKMrfhwCWKBCM7WhW5Fz9OLViMIHSWr2dwiyWtcQVE0MHDTEHvXJEW5vJzIzZWSKLJu6cSYHXlVYtS2JwjDu6Odb2aCNSiFT0s6sRnprFLjTcd8gsOEBaETr2kGDya4US0Rne5gAHgKQtOyY46tTDvlXIhMmXThuA_SCxlQBn_QvHVIbxP8gw-FK-6UZWGhdtoeMawKttS8V_06yxN91xYYqahIcoI6AQmBMpA83rzKode6fjamiM00RPQvuyHvcqkF3e7iDwMHHH5Y7Ai3S60n5MO93R9AEH9SikZ0Ou6zfdY65MThCUbwgrjUqHtUA_4cZ67sQhPBQG4MB5DZ3Q3hCI8ThLxGwc8NM6j2n7WbFY3RqRHzu8YI8WpXbQvE0v7FK4l2YFrDDEfbKbYei_N-99HYAj7nClK_yNesLihIs9sPLdJ2g&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJvTlJHwLLmjkRWztCK11DG9o"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "Mauza Naseebpur Bakhtiara, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1465,24 +1457,24 @@ module.exports = [
         25.4648385
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.910Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "Hotel Saroma Portico Prayagraj",
@@ -1501,24 +1493,24 @@ module.exports = [
         25.4517903
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.916Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Max Hotel Prayagraj",
@@ -1537,24 +1529,24 @@ module.exports = [
         25.4464199
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.922Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Hotel Prayag",
@@ -1573,24 +1565,24 @@ module.exports = [
         25.44305
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.928Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Millennium Inn, Prayagraj",
@@ -1599,7 +1591,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRCg0i_CSSX9EwqPv4BdRU6mSYjubOypoEW1LcC04oIyFksPVf4QSqjFSi5fQQQazkNEHOnu_e10u9UwqsSNhYB1Gwy8fL9yjy6u1zs6dOg_L278dNjfdunnzjc2CFz7ApwTiC9mENLiU-DFcdzxfX1tXZ9ZNW9Cy9zqxy_UILth0BoQT6TT5ln9_6CuE-IcGjJ2n_d6grdp3ML_jGmXw5DqNvvoIr08Q8s3pMNzAnbvA5RB_WqHBMrb75EsHSDfaDHWpGQ6dmmcXdxLNfXJJPXVvfN8ocR9t1z033cwzIM63VXxZm2IqJbCPTDPLninNkQ7SZ99X5yKLJQyIbyyL7Mlaoqh_UxH_U_NBWBXFVgPnfQpCCbZ1P4_TNw2BZ6jLL_NIhj6zn6aBE6LAH3d3D00Tm1epNtVu48qKmkjpu9MuOf-mtECtX81lcYKIsj&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJnSs2u-HKmjkRmlIF6PGCleU"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "07F/06A, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1609,24 +1601,24 @@ module.exports = [
         25.4508898
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.934Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "The Heritage Grand Villa & Courtyard",
@@ -1635,7 +1627,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSzAamEqRHaxaFD15FZcA254ZV9gPRW33q1zBrCf25h4ij1RbxPxApg3aBfYXyvAQzCtNxKFchdcZBdzgyp4mM48c_QWCGRJ-fjEXVKgpGg5nrNMn4pNGLdldkKw3KYoqYNgOLsNVmx1lIN6-lLgXBnCMnVpbA1B4DWW4R-Pov22hamOqOU3TH8RbvKU0XIX--pq2DE3CWGrEWwK01SDw0Ku1AGrcWQuKTPuf_Z1rQRdUqmAKigtV5763C40guQHzXBx6YzqE7D5y3I1LszvP4-coBuyDVZ-f3si7sGmdUM30tpXQ3GSTq2ztiC4gfUTgJbk5mGIis1zndQq1CPBntXOeiJi7W6hD1O-ZTvZMTcQycPfVZOl8ZMsj6FanSgX-0p9G9zL4jFx_XIhwHUN-uFDnE7I_TWPmSbPv8149-f34I&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJt_yku87LmjkRVgoAVQC1c-s"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1645,24 +1637,24 @@ module.exports = [
         25.4698333
       ]
     },
-    "category": "Luxe",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:53.314Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Shri Narayanam Dharamshala",
@@ -1681,24 +1673,24 @@ module.exports = [
         25.4466649
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:53.933Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Bangad Dharamshala Prayag",
@@ -1717,24 +1709,24 @@ module.exports = [
         25.4405479
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:53.940Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Sri Marvadi Agrawal Dharamshala",
@@ -1753,24 +1745,24 @@ module.exports = [
         25.4371045
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:53.947Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Rastogi Dharamshala Mori Daraganj",
@@ -1789,24 +1781,24 @@ module.exports = [
         25.4432566
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:53.953Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Shri Chini Dharmada Dharamshala",
@@ -1815,7 +1807,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTgsunPjxIl9OZrJ22U6iho1F7tr6DhVw7FL3yqfFpd_Opjg1zT4v61Evlwb1aoIxQK-eCzhQZb52W9QgNvau1XfAkG0XOEq5QKcK9kqsRUH45O1WawJ-CTdfdA5TNjvGlH6FV_EPBlyuG2NH8NycodGZpkoZRd14s0Jf4uGq61PxBe0Wqsz2yRnoeQP8gELr3L3Ob4rUjkQJfm5gnb6Fd51w2yb6D5IwvYxjTU03Y9m4QsiKptF6rWIspiw6LxALcawMgK8DZPSM7pOFueO67roQDukD_Vq0qFSmAJ2AiIB2fNXOM6XyleT4gpzwCe6GNEqBJMH-xiKRezRz-QBh-Xt8kBJAE41wgKNdaMD2R1i8IUe5zbuerP6sS4GUrvQ-nGUJpX5rgoxx5LxlGaVAeOFMIFEJAhB6Q2DxNRRrzswA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJE-ND97_LmjkRI68WW4m6pAY"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "Zero Road, Prayagraj",
     "country": "India",
     "geometry": {
@@ -1825,24 +1817,24 @@ module.exports = [
         25.4394153
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:53.960Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "Shri Karnwal Ashram",
@@ -1864,21 +1856,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:54.351Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Hari Ganga Niwas, Haridwar - IHCL SeleQtions",
@@ -1887,7 +1879,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSmg-GVENbdzA_r9IRQLGFraZKZOm1v4DR1HcM3FdAzYSRlujG-OZAPeUi3uNRwaXnmSzGy9QE-d4LXEecbgUsBBJFP9cw72ow-qqTXei5KGeo2Ew_-5tkVysj3MF922v1WOIUcTQ4Wh7Etl6crOU_xOb7kh3tl2xPSJeK81JWUbf9X3doGfLtOyYtybuAV_nzqfEps2xcpwRI9uiBHqmgFLNxdg3vU2hWo1wXBC7bUWY4DuzU-XGQurUaLteVzYIgirH8QO2zEUo3qSe7MyQA2a_4DCKeM598tN6jN_Wd7f2T9gZTz8HcJPqrlVr3jWaRGxx9OpgO2OaC6dNrtGb9W8y4b3GG5xX7kKon-sw1BR5S33MEJN-2vLt2BxnawNKGnRI2B1gpKfVpUsinsdVmWeeiPTv3XCwF7D_K1UohFBmAlJ0FZWjOXZ3kKVA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJu9JsqwRHCTkR5VDY1hOu-Oo"
     },
-    "price": 9900,
+    "price": 5800,
     "location": "21, Haridwar",
     "country": "India",
     "geometry": {
@@ -1897,7 +1889,7 @@ module.exports = [
         29.9519366
       ]
     },
-    "category": "Haveli",
+    "category": "Heritage",
     "fairsafeScore": 88,
     "amenities": [
       "Historic Courtyard View",
@@ -1910,12 +1902,12 @@ module.exports = [
       "Daily Folk Music Performance"
     ],
     "createdAt": "2026-09-02T19:56:55.567Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 14652
+    "propertyType": "Boutique Heritage Riverfront Suite",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 7800
   },
   {
     "title": "Arina Vedic Haveli",
@@ -1924,7 +1916,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTBXhS9fn6O40t4-dYgILNoVPYmm7GTTNBz8I45GVdLKM5RkLZvxu_kKiG3zBkeZOQzJJRN0nInBFPoyO3ClkDz7Xtqmnb8o1OxV67qX1f_fSdfU2Vd1ukcxp0-gCgr_FIhhv5UxcL9gcuang6isrgpOelPkVw3I3birsvbNZXuCK6f2d01W69A5PuLRew6fidmEqsCktwhp02a5mdqr_gSpDBagw0qDV9Hs3kCLr-klIpIGV1V_l9K8wFEPgMqCv4y_WjYjOrpsCa5kEDrDkTvHfYlqzXUR8vGte9Z1LIYV1e4havuMie1jUhYtIUixNP8qkR-RVJn0LWzVzFAqHFU0fE5yxdnXZ-PmU_ePvENDpKOmHLtFlSOBUYaVIEx8OGVS3XCxYzk5kbF0kxzl9q7SoS-5-VDlBCE0HkMN4iTdFOmVBWxSvXNXtfq8Oyq&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJPX5n_z1HCTkRvBrK9dj9vrE"
     },
-    "price": 10800,
+    "price": 1350,
     "location": "Niranjani Akhara Marg, Haridwar",
     "country": "India",
     "geometry": {
@@ -1934,25 +1926,24 @@ module.exports = [
         29.9461681
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:55.574Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 1,
+    "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 15984
+    "marketOtaPrice": 1890
   },
   {
     "title": "Ganga Lahari Haridwar",
@@ -1961,7 +1952,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSlN1b602aya15mN7fifn1IWlJj8AYKvjgYRcwhTl5GHuxYDsWcCpm5V_6dr9Q2UGmPy4yEDnVJwq0pthxT7xG4Wn0uphDSH1fY1MDFPpP5SaPO8_HLiJJce8qVKPY2vutN5XPHPHwqDVY75ylaulfo0GLcUrrivAInh-UbcC1F7llDZ1cUWcbaob6xcCX87mCDOP--gfK1CGYwSjJ4h5sMDsS5Nwm0UZ5Rl9HQHA3ZaAvDaQCR2J1epw0ZEnbcoxAz32GSobGszNSzKnQ9t6RuzriNKKlGJgvFeA0okV6PCsfOsjJDezW09J4mEpHAanGPPKCnxYJilHJ3W-mJxcPw8rMUA3NUGlLoVo9lR83jDGOCL6D4n9eqOiv2IB9S1yCwXN-zsNlgdCQz0TRbENiaoaXsSu3qW7DimGFqItAYCg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ9Xw0QBtHCTkRvUoJpQ-w_Z4"
     },
-    "price": 13500,
+    "price": 5800,
     "location": "opposite Deen Dayal Parking, Haridwar",
     "country": "India",
     "geometry": {
@@ -1971,7 +1962,7 @@ module.exports = [
         29.9540357
       ]
     },
-    "category": "Haveli",
+    "category": "Heritage",
     "fairsafeScore": 88,
     "amenities": [
       "Historic Courtyard View",
@@ -1984,12 +1975,12 @@ module.exports = [
       "Daily Folk Music Performance"
     ],
     "createdAt": "2026-09-02T19:56:55.580Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 19980
+    "propertyType": "Boutique Heritage Riverfront Suite",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 7800
   },
   {
     "title": "HOTEL HARI GANGA",
@@ -1998,7 +1989,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSKcL-6SuQjwOMDjHsTPD0Z0xJnq5VT_fdvFwptQZARkmwp3cap9gntjumb7D-J_5WdLA33xeRp9zH6C5LiMZQopQD-186QqpVkT35QDVFL0J4e0QlMAmViUpQ6et7vxU_MQV0YZY6xopE-YBvDvEdlEK5nm8X7G6v_1QW817-xnX1RlhVNGEcIq5u2Js-Gk0qAg0XIa_dufCLroFGK9ju5xjk0a3x50tgvWR28GFLr0BzZw6IF0spTHsvd5x3Zw4fO2oj0WaeIRjtaySe8FA6m8SP7-xBGUoQ8ACo4RMYgf5onqBtAQgI_GW8axYb1C1K-PG2FD0dpCAnt2XPelHQZWKT0L4ars6rdzIEsU7qsapl3luGK8RI7pk9RmecudHtQ2yKT7PoFEZbGF387R0wR44at9CvaB3WNKzdmZ-Qbww&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ_5JhIgBHCTkRklDYMNaYi-E"
     },
-    "price": 12600,
+    "price": 1350,
     "location": "Shiv Murti Gali, Haridwar",
     "country": "India",
     "geometry": {
@@ -2008,25 +1999,24 @@ module.exports = [
         29.9465989
       ]
     },
-    "category": "Haveli",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:55.585Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 1,
+    "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 18648
+    "marketOtaPrice": 1890
   },
   {
     "title": "Hotel Haveli Resort Roots",
@@ -2035,7 +2025,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTJ3OMO9IZt5H3BUoOYJDTXVf2_XXkTQQhKUKIVMM6SlKJSQJgU9goulK9iiB3m6IfQS7bmQyKwYBR4Z0QuDT2x5piuei7mtNbpbUbajvj-Hq8br-80iqqO3CbSNiebn5a5368cTWLgGrAY_U5GDCPL1RYulEnqfl9wMTYenxUeiUDKgaHo8fdX0HFRWxa8azw_PDrNGasx2dW0lhldY0o_C6SwxWYdoXDf3QOFHEHpWDL9tUopk3C5Ygm0kbQ0y7CIWoqO3idZ5-i7iSfpEzh95k9FKPmxt4iiU3MARXmkvqJoTLw5zioyf82JPDgHIF4ce25gzeECTB9eMjGaBPHNtgKseg8VtRIxe5F1TKSdLTOFctXjkjvEtukUe16hV7i8KsQW-GJs9JfD6OqScfZ5svl8tq4JIQbBXg3vhZLMrg2veX8Dk0gIDSJ-g5DO&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJsRHncgpHCTkRf4b4ehEYwCI"
     },
-    "price": 11700,
+    "price": 5800,
     "location": "Shardha Puram Colony, Haridwar",
     "country": "India",
     "geometry": {
@@ -2045,7 +2035,7 @@ module.exports = [
         29.9860739
       ]
     },
-    "category": "Haveli",
+    "category": "Heritage",
     "fairsafeScore": 94,
     "amenities": [
       "Historic Courtyard View",
@@ -2058,12 +2048,12 @@ module.exports = [
       "Daily Folk Music Performance"
     ],
     "createdAt": "2026-09-02T19:56:55.591Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 17316
+    "propertyType": "Boutique Heritage Riverfront Suite",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 7800
   },
   {
     "title": "Sai Veda Wellness by YANA Healthcare",
@@ -2072,7 +2062,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSXttdT1lPhO0CNziN5FLFosVToRpwoWYnvfuF8wXT1LGOMzF5s0P363dB2_oqJT1jG43mcJK9R38uOeafqFPqxLYCmarGxWqadgjM2WfMJWsPmDOFtdcTlL-BSBVBRyYQcZgP0-ayPUxLjgYTWnTwFvTN30YORrlJKx7ke0K5XrSRtklW8oQ8pmIfKepECEVKh0K1x0lrRUU8XeP3vIn5DyR2AmiXPynAiFNypkyfDc9a5GBViCiF_fGiVnO3_QBIPM18mUXK3gpQZC-fS5rSM_NjqFGofDsj04kDXlU2X7iE72CBJIVEnsjBIopx9jYokQx7-zLXzQ7c2hfM0c_fx0opOXTPYg2x-0_C9BRRuvTZnu0D4vv6MYVXx3mQqy5s4QYc2Mf0C6fXpi4iJYl1lJHKmzsLf0y61Ky6iy4n5X3CS_14AN-8h0bJUsDsp&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJxUVJOnc_CTkRZ9OEI-NdNcI"
     },
-    "price": 1430,
+    "price": 3800,
     "location": "Sai veda wellness retreat, Haridwar",
     "country": "India",
     "geometry": {
@@ -2094,12 +2084,12 @@ module.exports = [
       "Early Morning Boat Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.184Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Himalayan Yoga and Ayurveda Suite",
     "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 5200
   },
   {
     "title": "Shri Santosh Puri Ashram (YogAnga Retreat)",
@@ -2108,7 +2098,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQDzNS6Fs35pSIVFsyejcCS9nKpunT4MrHkBNFFA-t01PYY9Ua5TITitmF_vEZdRFgDZaskpWTgkJlgkjEaZcfsuukh5AiH9kQ_zjaWR4J49fr1lG9xFyHaUrgKV8oSwS8D6-ZdRWglh1F1o5-XhHGgydYjD104-nKaIMpc-I0GCfTXqdk__hfuuoRNilNKqbGflSHGyCWTIrDCjbvk6uSg_Dj9CCDJF1fpFvr3cKINni-yvpieDcylLZSflpY_cQpVRJVGVaBMcUx2t28p4hr7fAf524vaHKkK3bC_0HXvPbNAH23M-4igkv2jVH7xmirrIdGjGcTWZgXEr_CWhyM09YAuXHna0zIrCG_KsavvikrY23lJfh5oCniF63ZIVLsDmCQ0ONuQ_ogbSKqNXAeC0kWhYwP7MbLPAi4q4fG7u_yO&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJFciZH1VHCTkR5spCBfMkdMA"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "Haripur Kalan, Haridwar",
     "country": "India",
     "geometry": {
@@ -2118,24 +2108,24 @@ module.exports = [
         29.9917656
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 94,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.191Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "Spiritual Yatra (Wellness & Retreats)",
@@ -2144,7 +2134,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQJkdrTgeH69grf8Je75EZZjUIMrdtcqUOOv85rq7qHEiFSa27uUCW-j2A5cLTncy6e0AaAUlTuFPlRpOPvqooAHbgRObx-OiY_oPM9Ujy-fnZZU_D4BodZ7hXY3y1GnXxqlVvFyy0QI00jjEKti_0rrTG2tSrFNK2lgKj2ZyrKHjIFiBeyMq4yru-8qJA3lVlVZolE0j7Yy7HcWH8EGTGoenR5XLZD_4h3K7jeVP2VFhVAe5nbjvjXD4SRuQBgaRYMlQ5h1Sf2mg927PHmfv-fAHvGRmkumK7J7o-XMbijIWzPRwbE3yYEllIGQ4nJCEMUZIelDHCUEMRciLW0HmFCp9LsjqPK7DLKpuXJ8ecZHZJ51MyiDQ_EyP0McKzq4mMXhrmeqZjh5i7P6Ew3WaFdKazpkMGwWMtGvfEudWFEO7qwJxEwHUhw46PGGXt0&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJmTlOcCVGCTkRGwBTqrXSLQM"
     },
-    "price": 1190,
+    "price": 3800,
     "location": "C015, Haridwar",
     "country": "India",
     "geometry": {
@@ -2166,12 +2156,12 @@ module.exports = [
       "Early Morning Boat Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.197Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Himalayan Yoga and Ayurveda Suite",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 5200
   },
   {
     "title": "Basantidevi Yatri Nivas haridwar",
@@ -2180,7 +2170,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTCI0vKQ05GuaJGaP6aV0VMeC0wEikNz4euvVVjax93J_XaXqsablhIAklSfyowvqu6j3Hch38Th_bzvz0K6AzoE_J2nNZespgj2LKLhZ1EVopw0tCc3BsB7AsW22NiBOmGfEGuHQjLq7Cavc6FWAyTOeOGx3nSSCwOPwmFfvuddB_RP_sRXsBsCaHBGp8gzlii_7L0N_oIYNow05X196e75QrWRCoikFYvoT6s3Xj_K35nJ3ef9ynFyi0pwrvAygagyo3I1zTn67ky1mUIPD4NNeK8gBjVfAlRJnDmFc0qUrCMTglnhvJQlbgrVKichDAWrvlpTuZSWDrhk5DS72hsaKvd8hRKjROR5UwiALyW9XXYwbdleDsl8GaHmgWNBF0LOCReyBGfUqP9rUgrdt6N5-WtrPjDk-Fqvo8s77Cd8Ck&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJnbfc_wBHCTkR_HwoRpeqSzA"
     },
-    "price": 1070,
+    "price": 750,
     "location": "Himalaya Depot Gali Number 1, Haridwar",
     "country": "India",
     "geometry": {
@@ -2190,24 +2180,24 @@ module.exports = [
         29.9486684
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.594Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1050
   },
   {
     "title": "basanti devi yatri nivas",
@@ -2216,7 +2206,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR-wY_alxAecpR9hQXtdevu6lCK-yvxlD7xWSgk_irpzWLVV5CTUk5AlrnS_ifFq8MdTmOcUC1T0SqGsHbSrq1IhmBZZdP3fWJ1JMPLq9mgYo6l5mOyTf1Nmeh5YwbFR6KzxP0svXGkh1UX9cMWdTBZEIgWa4ZjnwzJLF2NKaXfIwOJbkyM2CIt5o58s6fRhfgEiYscl8t3wiEHgbFppwjhIwDkzc-_7MSc8m2Olk8fSTpoDrvQeUOm1Jh-nlsgWtWNlW1KGGdYKllOWw4wUsM4N2EP-39IwBU6dYltokJ5KSc7QR_dPcRo2GcmHo4VY0iaGK5UlhHB4taO9V0Mzsdq4dtuYTFDiLUJSkq2Q0TbjUctPtN2B9AP0bpvju2NDAYMv4FFDNbalvmlpBmVg97wjVaPNY2-GUx3PmWEDLsKhBbv0MMA6q_rKN88QhfY&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJL87OMldHCTkRjUvrl24Yn1U"
     },
-    "price": 1550,
+    "price": 750,
     "location": "no 1, Haridwar",
     "country": "India",
     "geometry": {
@@ -2226,24 +2216,24 @@ module.exports = [
         29.9489806
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 100,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.600Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1050
   },
   {
     "title": "agarwal yatri nivas",
@@ -2252,7 +2242,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSf7BphnNJWGOfRYAMbnaj0a2qv7Akvo8EzZWnXW-nnNBnJDq-dcNIOou_J45ducmyhlKOH5ZDCnKBl_9gaWty9YrdMHmW6NJbUznIBvqthTgBL2D8vgnR_BznMqz_OseS_Ua-DbLp0GOrXH4hCV_HgQAQRDumK_Lh69YBQt6Pob85lMD-UAMqkmNh8K6Wq1kWUUMb19iwo5__uRdYXRc6v3yXuWRXzkv4qq7va1CqeCyrAf44sfh6WxN4xCbkH_Ay8fcQzUPOnRHw0WiKJHJhxPaFJTeeIq0LKExU4EZgbrfLZDDAqnUTGGPvMcgt1bFT9HkAoNbjJPwP5iiAxXseIXR3KJW3l3tSw9Bf1uPFL3hzYsQ7uW-8jzOx6c_9mDKuFIieZ1BmYpN0cuKsIBMwgaXkncYFHHLfYD1C1OZeCmcFK&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJAesgawBHCTkRZzZOEHiDY3k"
     },
-    "price": 1430,
+    "price": 750,
     "location": "W5H3+M8M, Haridwar",
     "country": "India",
     "geometry": {
@@ -2262,24 +2252,24 @@ module.exports = [
         29.9293585
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.607Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1050
   },
   {
     "title": "Leela Yatri Bhavan",
@@ -2288,7 +2278,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSqfGQmms8QzZc_366GIiV8Or9UgJ3pyJ1sq8uAhoYPp5IduyEjXt6RalWvWqujs6yU2-0UzpL381qiryXekA7fIXqZeCKvCeRqjuCn-zopOBhccUVqoZDqXbZjquqMrWnTIcC3vyd3FW5Nudi8m0SxGuCXz2qQ55tUEkLA8cQnbuXyX7RHzTUjNmJe6_ffqN7I5OjVJ9buPGLVk_0d9OanOdxqdcHUBSP0LEHZA0kq1lkF1lT9xjMcAVQQS-wiSNyfh86OPUE4E4IJfX_h7wBT7RECtwO6krn7jFgDJxsOFh8U1HjGsjcYnY5xkv5TQeUvltSEKOT49fT_hox0YJ0uO8D0hIgI6I0oC_ApzE844TNGBGwdPlNWYHtLxpreUSrzW5orsrKSJ8eNG_z1Zil0d5LPxKF70nXKvjWzw7c&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJKVf1X1VGCTkR7FcugTFouaw"
     },
-    "price": 1070,
+    "price": 750,
     "location": "W5V4+PHW Niranjani Akhara bag, Haridwar",
     "country": "India",
     "geometry": {
@@ -2298,24 +2288,24 @@ module.exports = [
         29.9443718
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.613Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1050
   },
   {
     "title": "Hotel Yatri Niwas",
@@ -2324,7 +2314,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ4pK2DRJAmCuH3m24_xOTOddfqKt9d8ycuGSKSfS-EMvCOo7JJ-sALThCr1Nuwxl5DpM4jiW0Lf9-Wstjp7mOIKh73Cpr2MGcoVBU6b4DfF3AuXOlYsPA1275LWSBzJmoXimrNGF35oI-dLrAaRor_AMQiC4CcIi-Ows3yd2ylzTTX-Dp1jTVzriunkjA3ntxEKbqLyr30t9xbOVc4Zm-e4WLMaD2WmvfP9YdFvPbfA1hhbIrSSaCvI1D5F3v4CfXm7eXhBX04jGA6Zx6eI-RMJp_dIQXgl_W3rySVPLTqV0BXH1BPPIeXu4LYjoKGWipQZi_9rRuwOIqdTaSClq6p7WjPEhO0OsWt-2m9JgZygKnzjYM7hhI_mJezAgpQQfU-aGfZmVkjM1b_yBSyfl_KE_qQ95CcXlQjAriFEaQygd32&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJO1OnB8xHCTkRZRru11T4mjA"
     },
-    "price": 1430,
+    "price": 750,
     "location": "Opp. Jairam ashram no. 1, Haridwar",
     "country": "India",
     "geometry": {
@@ -2334,24 +2324,24 @@ module.exports = [
         29.9652208
       ]
     },
-    "category": "Budget",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.620Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1050
   },
   {
     "title": "Real Happiness - Meditation in India",
@@ -2360,7 +2350,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQHCPHFddvM5g9YohDgzeEOkLvQC7m54kpnHfEhBCYrrGVMjOqOrTTwJton-C-_ytAW6__q67chgJUDCxeyJ5sJi2SFqUbtAhM-c-7bruQV_UYqb59VBm2Uf6OO6n6QxTc7K8cP_bD6sVy7DfscTpP3M1Nqhi6tG0HGDXDM3VnC_DOCwjStilKUkz7moElFcNQZGCmH2OZRslHk7tSfTnupPteeYQyING8VLP8BZF80blYQBdi5yvTyodHtLrqALQLFssP1oygUmt7XOwp77vMsKDnKqoKkcZsG5nu2a8eFkQVPyPmfyzxh33xbXX-7qBGFbq4te1D52DnKhIMtaL8ZE1E0th1TDnfWbHF7R4wzv7gQ8fupl8do7-faczMaAMd3pmtMT0TGMaGjXn96RjYnw64vuqwt5g2RoXQ2Sw57R7YQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJOVco3ZYXCTkRsQ-1nbpXmSQ"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Secret Waterfall Road, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2373,21 +2363,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.383Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Anand Prakash Yoga Ashram & Yoga Teacher Training Center",
@@ -2396,7 +2386,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSRjQfkuhLYAWasxH_JXpahGRmYjQoyLY47QnDdj7iezcU8kA3vJTju2IfTS7HQJZiHloEZZdI49kg9x5iS7SHY0R2M9CqewzrRROnweAYtgrrKkHsZhk11DaZkZ9xo86d2OF2GvgGejedU-yol7ztiB1myPxGz1mmy8amqbmTFpesXJucYz-EOvqxvEg-ExTlgwKDzPUxK4TlEDjgyUy6HghSWtzaYiVDMaKgCC5VgJ6i2aLhafTBSFmA-x6ILhqG4OE7oeUuAeqkULTUrUNRsxpwRKtfphcCJzOy_70Udj4ipsPZmo9VI1T1lV6pKBizozpMcxgUuYoX8_AAJ-Hi3es52YfT58mI_cuQrJ-LLEBV4QTB_JRYNnljSF3ar2Bg96E_KJu18suRktnTqigFP0h2OfbCzQ7DFv5qzcDQuMLhI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJIa1CFEUWCTkRoIDk9fqYvMw"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "48JG+HFM, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2409,21 +2399,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.390Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "The Art Of Living–Rishikesh Ashram (AOL–Rishikesh Ashram)",
@@ -2445,21 +2435,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 94,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.396Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Himalayan Yog Ashram",
@@ -2468,7 +2458,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRz1MbIST3w0c-W67-3GtClVfwhdO1qP1xmYzx5c3oLYi3xCWTR-8sAm5iOv1xvXOXHdXODcaj0hR9phzsjSABq5Ec84VnqJODRQSuGehzOWZvAr6xeQdR8HV1_1x1FQNTma12Te5W4R3fvGSo1Xu1zNwrmKpBx_myAX4J4cc4JeSh1XfADut4lej7i-uyf2y9dFSlP3ti0ztBW4P9rCf76pq4dorygIh5VA4HZkdVD-JhXVPzcURB8PR3qSNaj3VzpkCKXxGDLk3UbYIJ8gRsdL_VXcts25WIDTWpdIb1GQNO9n6fr5f-ZCcz2nq1oKB4lk0L5gmMifdCcxP7oSleJvDPSQxuT3fOcd6FYDpkHBZHL037XPSn-GFV5Wv0_CxAsxNT2p5kKNSm05_87rwmhCIFSnhs-tNimw8sckHLFUI-EKkJBv13cOmfrAg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJrWCswo4XCTkRqcJ-vCMzhR4"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Secret Garden Cafe, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2481,21 +2471,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.402Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Kailash Yoga Ashram",
@@ -2504,7 +2494,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTZG_4cZBylm6kjYfetf-4o7rArFV-1IUuZR3YnA8xgSfMURC2pYylIFc5YpgEkzRhIjRDcH3ZI6VWAp-F5br8_UoPNBSSBjMQBbQDUeD-zYeuGAZCh2Nt_kzcZ0PTJcFQnxs0kmqYrJ-9RjFEG9n9TJ8rRIff_WtRCsrWjUhJspnEDYcq5WA-t3CvK7R0tnRrZ79URR06-t3t-Yj9HfGcDAVtPNwChmUErZtDq2G1vLJTpZx_4e9oJWaiURMZxAytcrKX-UAJ0TxN571crdKwUQcg4DxtqQ1frh3TWUCRX4mbKkTzqJr-RFmdZ1Bf4EzeQvl1K0AESoJ67wqBetrGqZOPfU6I5G_nyVYZz6mhaibYZpRe0O4DksfDbErX2xwAkEM8uBC8aPoyZCj5Ecb_SXT9q464U8X3GMtJdccbJZigXI5c8t641yPcCVA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJvcuGHsMXCTkR2ctj1duKl7c"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2517,21 +2507,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:57.409Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "jüSTa Rasa Retreat & Spa, Rishikesh",
@@ -2540,7 +2530,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR-YCjzYYO9quUXT5Cn2G1LoLbQKIJmYu6g7rgOuxB5G1Ec9g9ny6wn4fewPFASXXknnvmtFkaEV3BCUbYBDBxBWNSxBRQFN3yWLDMm7h4v_MA-Qq-Cs2bZY7O76z97nyYS7GYSF0WFBANmAfYdthPRN2Fr1AUStGYACy7uLJuZsS7LSJGz0gTS67_tQ22SaeNMOBR6Qx9VIrgUbCPjU3VheepdtKFOF_8aLe65st9zoU3oDSHM6civwtQ_XuVrE86FjQYl-MeqSvF55Ie6NSITx-uYrllN007hqJrjJrBMXACwtfOSmI3qjr73SrJ4l2qVkwLE_jMQf9Cvux2QfxiJqe7i-qkdvxqJzQUplmBNa0IT6eW1BqKtnEaC0sH9eCyFVUpc0KQrYCVwT7mmk7mzfiL8PCen-fzB5Oae7mjlJBI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJEwxxMHoVCTkRgKIgg8MZOME"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "Mohan Chatti, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2550,24 +2540,24 @@ module.exports = [
         30.0633937
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.642Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "Nature valley resort Rishikesh",
@@ -2576,7 +2566,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ-3DZXHV_AFa1Eycibwa92aEOdbeP5XDzyomB4MUvCsa5r0pxlUzJ4lBYtDxAtLEY5iy83d449T2StwlxuIWWe02mrpAwJQ7jVcmpWBdezjfFbTrXUq_w9zZp8KmHpBWz3yYcQDjBvzNQsKQCgP7tjA_FX9quGessVEMe5YrnXv_eSVcght2-CeJPDZ-LRDGtWm9yoJyTwwtLVHGYR9RzWZ2FvMtgnGV5aCl4DxX02T91f1i-u_6kIZBUdaHqWBZ_WY-CG-cJfLnJtt-q7yQX7UoCR6Mc-98Pu5XM9g6Nyjc3fHTZIowVtEA_krNgPrkzs83xM3Keqj1a0nJ7gxEyknqjwD_-rasOysKx1Jw-iy6YRqEx31YdhEJ1CMvwadM2M4XIY9shpjQmnar1u8Nk29_Ag_1v1vytLgCeb6d2XnQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJpfNuhKsWCTkRSrLI9zkbv0o"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "Rattapani neelkanth road 7 km from tapovan rishikesh paliyal gaon, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2586,24 +2576,24 @@ module.exports = [
         30.1096566
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.648Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "Creek Forest - Riverside Boutique Resort, Gattughat, Rishikesh",
@@ -2622,24 +2612,24 @@ module.exports = [
         30.0926152
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 94,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.655Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "SKI Hotels & Resorts, Rishikesh",
@@ -2658,24 +2648,24 @@ module.exports = [
         30.1314066
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.662Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Anandvan Jungle Resort by Dev Group of Hotels Rishikesh Real",
@@ -2694,24 +2684,24 @@ module.exports = [
         30.0728563
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.669Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Roots & Peaks - Luxury Yoga Retreats in Rishikesh",
@@ -2720,7 +2710,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQCukMFK-02V5pH2AUnEjZ7IPaxaOT9GL5p9NktThdwGEWvqmVToMeyAZDCSDjbG_P5Fqxe7fx9Vfgv6BoqS36cXM2A7eeFyGmbLJ94a8RDiOOK130Taz73hbeLHRDSL49Jz_qGmjdYGLEUY9VVPg2R0UF_HVu7j42glBdiLLB7WhYOR0_w0Q5ElAySumK43SldKX4VnZiYR6ns9iSXcNtNumoV2i1OQQo3_dOQA_-sVqpewGMAIQGamjc3IXvxAJf2VFHj99aB4dPwM2QAHTwJmBKYMV8LJueal9ydjPKTYGMNnv4NhaZGA6jb1Ebyrirm6KB9hXmuNP6cTMQF_GsSkyz-3sWBk7K-yVYq19pAylHhnzqt83KUgc1BCP0AbWVP0uXv_oA9jTAZqjL9qLdpnDiQoAkTghmj0SyDEwMn7P-KRk3YNYtMtfRSrg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJDWphgt4XCTkRLhB1XVaV138"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Secret Waterfall Rd, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2730,24 +2720,24 @@ module.exports = [
         30.1342317
       ]
     },
-    "category": "Luxe",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.065Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "ONENESS Rishikesh by Ganga Kinare - a Luxury Wilderness Resort",
@@ -2756,7 +2746,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ2R7YUzNNfFpq7whnVmg-jzWNVUBg_bk_omoJaSBsbIneBxznqmiRlF6Qo7VWYmY1svLQ6kgCiHmwZkxmPM9Jn_ps3kMq_XyYTZWLjz8maM7BmOoz1nM2ONvOQ9QU0HyHaDQ5twPa4XLz_uVjh2ZNw1ADVFWgkkZnqMeSfqqJJFXIPJGWNxOSqKM3FuLzL1WYzYWBa-tZGVcOFv6CdeCuCe6qI9j8qwfAqpseMJ0UpI7wrynp3ZLISaqcRQIXueyq628paPcm2hpaw6DHqEjs6f79Q82QkJ-Rdf_YEU6ek-EpZdsTRrNqMW28Y9HLA3B6y-RSWEczhlq0WPzfeh1S9n07BVMN8ESRYqlV6--D0XJwdPFVtV_WytElo8AFMqxa8XcWaZS66etZUtzwOHnFlicdU3Fhf_bxmIZ0VdQYrGlG3Se_IUi3hn4KoqMXw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJhwa8K4YTCTkRz3y4nHdYxOA"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "Rishikesh, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2766,24 +2756,24 @@ module.exports = [
         30.06873389999999
       ]
     },
-    "category": "Luxe",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.071Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "High Bank Himalayan Retreat",
@@ -2792,7 +2782,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ5QfDsBR1NjMcSSwJzr0RVXmtSVAv161dDnFBO-FyL1tABR8yaDIEflokIpQ5lul0-LmZ1Vibtbhqfc0TmympuBv1SOrZC9at7kWFkdgUaBsb57XIjHYWgxGsXcYhBgGd6GxSJX4HrYFFkbOFXKwmbEc8jlqjEij2OEzpyyilvPH3pvrUyGgaFkXYDgQrRiW9z3FnOIXyVh5-qB1g0_ccaUey53ABxwwwdqaJHe5PmMEQMRpKtzHcs6kFAI36KIakG6dnEzuXt7Uc96f3cSuzwP2-GxIua48Uj10MVEsUJrOhJpZ0NgLRCB3m92z1Xpk1nvQGrozxj6KFi0NwLy1-C5T82zakV8tMxM6cbYYZWKvPCe-ngxL_HPIayb7UGXE08BxHRnfnph8aFOxXp3GiXlWO0ZitDzhdn1I7JszyYS6IbEn25eLsFzWuaayDQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ7YNo_C8RCTkROrfDswnC7js"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Shivpuri, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2802,24 +2792,24 @@ module.exports = [
         30.1383247
       ]
     },
-    "category": "Luxe",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.079Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Aranyam River Retreat",
@@ -2828,7 +2818,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTYlAm4SFzAEXnxj5o4RRC4Z5hFE4aSyLH_bZC-Kxk5q9azzk_XO8ZmkIjOYnawdCDQnIbyCZmiD4UVeZg3sKEsps7ZIuEnd5UQPtj3k7v7fK5wEuUnF4PcQmDj6DCcsVHJVtgDcMpHB_9ufpzXG_GuiJsdgMrAcd0Z3Zx6cp3RzRBQ1DxLGqlSWTpAmYLIMgH9-p01BToNCf_lpk_mZzi08zTMAAhi6nEmeUEbT7D3oKlBDG1fSl07kvvR6IfMTRh86tqys7lQw4YZvV_UYG-M7B1RF01CNywhDpoInve90YGXwTasjLfaKqNTSWve_JnMYc4frmpkkg_0kge3iiuvhC4QyvJhKGjYQDYBCkpH8LtDjorLKjInYlEWiyA4bTRYxsRcM0omAw3vzgp19CdqSE7PaEpUyA_YoVy2CmyN4JMlaBVv0XxGWXDEkCMT&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJB_l5MWOGCTkR6e-rz5ww6mI"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "Village Sinduri, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2838,24 +2828,24 @@ module.exports = [
         30.059565
       ]
     },
-    "category": "Luxe",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.084Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "Samsara River Resort | Destination Wedding in Rishikesh",
@@ -2874,24 +2864,24 @@ module.exports = [
         30.0770587
       ]
     },
-    "category": "Luxe",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.091Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Niranjani Akhada Bhaktnivas Trimbakeshwar",
@@ -2900,7 +2890,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT3Pf4AF9MYWLavJG0sjLbVO6It6PL2TcjiVFfajNEDb-XqvJgI8oP25k-9WmHxCbxkc3yGYiO2qTfByHQv21Lu9m72sWhWyE-Vq2vMr3RSz7KMLQXxlpfN5JczJaPZGiPF5VRpzQPUDcUCLKJukBOmWGxot57Ap_zVurmRGuqFHOVLef8EROpDmddTqHjxUecjOQ5yCiFsM_1heIAaext6BDbdBwpq0xt5_21gfuCd1wt2a4Gdg83OiZr4M714FobG3N_qQxE4uZEnGU64jUezM-73Dq1oINyB__4SFvHWoKX35pLTfbfaKVXCMHsHbAroylwori8cCXxDN5pitEF7OLQoqH0AaJMPNLTyNKqBogU71k6Mi2okrsAH3PC3mK4Z6DIENE8EjoL-TB9Q4QEM0NhV2DWG6DGHQG6Da9TgmA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJPV6lqbX03TsRnUyvgUkkRMc"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Shree Kshetra Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
@@ -2910,24 +2900,24 @@ module.exports = [
         19.9343125
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.757Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Hotel Shiva`s Inn",
@@ -2946,24 +2936,24 @@ module.exports = [
         19.9332535
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.765Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Gurukurpa Bhakt Nivas",
@@ -2972,7 +2962,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRo1RPwjaR-WPTvPlYZZKVV7E9xFOiGFjFpVvt4DmvruxnubfMc8PTl36jSRWQDsC_rRviFjgYLaqacIUiT4Kl3wAkSq7zZEoIUYF-NLO2xFUjHq33sQSg6iL7LdOfkqSAR1aXKf2r4MqNAx9LhuTOXFzLD5bmFw376D2jdotwBQ5XUcJoZigLpYcf8fdmTg6PFX8h55TIVq-5OJCjmRJlZonxWkRPR3c6AwArW7h7UhLKuf1d7ubEu-rJRfXKhxaQIT19cTULlPbgWLAp_-iPaNK3e27nFVxKpgIuHGfTeeA3q6XlY6KK0cEy6lq5o14Zoo3Q-7fkk26XuLXP7hiuMzP9onBS0_ItKl4YbyTsByKs6-1kgPgRIktnjhGDXwpVWcy6JY0pEo5yKzadzCC4otE66f0mpZY7VPUtQ5wpF3A&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJJZoXZACT2zsRgh4lZItyLnc"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "Ganpati Mandir Road, Nashik",
     "country": "India",
     "geometry": {
@@ -2982,24 +2972,24 @@ module.exports = [
         20.0237221
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.771Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "Hotel Midtown Inn",
@@ -3018,24 +3008,24 @@ module.exports = [
         19.9369511
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.779Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Hotel Panchavati Yatri",
@@ -3044,7 +3034,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRlZ3LVDXUGAmHsu6UX6mKAf4ijEvQz28qspqb37QV6idQN6PQISyZxxnD3gc1x8g8kbJisNK1bzB8NiH5UoqhODaRYC41QlQzvSr6FI2NeaUXe9DfSDrKvLklaYXpjH6Ht__j3MKeiquaPFOEk2LXJR_W_1S3RMsqkeib-ckCX8RssZPu-Em2-OUgXDzo8UQz0UFVgrOxRLQx15pk9Ziwonv2qqeKwKqOrpKkCDuayGLmpIoyjrxO7TMwdRm1WHQFI7DDXrvBCG6lbpoEw-58qjGoomNmTdgCwVNF6flDnNOF_tb9RE2020ooYibBSvV5bTBJQDZBo28mEmhGyCN9ULuvVeb9gXTqve2zpxT5PqmL5cefxc-BjUAXDiI18WNfXJB_Tdwp6leYuzMnruso5RdK37RQooFrwZncRbYn6qQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJu1_X8VeV3TsRNPmq8Oq9AW8"
     },
-    "price": 1310,
+    "price": 750,
     "location": "Chandak Wadi, Nashik",
     "country": "India",
     "geometry": {
@@ -3054,24 +3044,24 @@ module.exports = [
         20.0056771
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.336Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1050
   },
   {
     "title": "Hotel Bhakti Sankul - Hotel in Panchavati",
@@ -3090,24 +3080,24 @@ module.exports = [
         20.01205
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.342Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "FabHotel Balaji Inn",
@@ -3126,24 +3116,24 @@ module.exports = [
         20.0123186
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.348Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Hotel Vrindavan",
@@ -3152,7 +3142,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTNzsk9rYCEZL8tfUb-wa6uFESBdMP1T54WNBXJw5gNWObCfiKs-pr3HbA2V80t8MsTeByuOkGSJwX1OMA_YxaH5PYZRlkddaQGuE-Jh7cH18eJkmx4MxoTEVzPVzdHjphbDJmNFymEf0y2B4QpGUS8aNANfRp_o9jgb6OzSTur8fCfdgsww4HruHM9pguwhMI5neVqnsP5U2p9fSoM7TjLnnG2KCqfvy9RNR85GlCqWCfDqWlQj4wAgvE6DLnyv0xBwzKXJp_Aj0VzGQVpHllmnm_ITFkWUDTws5aENDAAJv8XRhEK82CLQrpnrKqgfGS_aGfqwLuzYifm9WbtTEt3mfGS_bw_wlA8x8pYPPypElWXxoYx2tC0C_gQuc-qXQWPfaW2waVgyBx7vl6fHTx5Q_112DMXtXakkGsiwHi4zyIxTjb7pwJOB2PNyw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJPVwmSALr3TsRTHXPzg11iLo"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Takale Nagar, Nashik",
     "country": "India",
     "geometry": {
@@ -3162,24 +3152,24 @@ module.exports = [
         20.0065885
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 92,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.353Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Hotel New Punjab Lodging & Boarding",
@@ -3198,24 +3188,24 @@ module.exports = [
         20.009452
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.360Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Rainforest By Aralia",
@@ -3224,7 +3214,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSUiD3VdjoPZ5eQB5YI4BXv-9JD9Cswh9KZDbzdmLCSqdTvEAhp70zV06mjYPWQnVjkWzD0fLMgh1HAHcDz7uxBhIvmKQlG4SbkpqSBpFDu65LlxBtHaRJhzfWkJ6W6U2-j8Jhq2P0XVVnFcK9mwA2E3HqUa85VtLUesNl3rnlRHbExzcAqAA8B1eDFrcZDjDPhhPmWGGjOU6QPKKL5hWf80FzvDbjlaXi9R4ojQ9i-mEefQoMpyUsaGVmeONR4boeL8aE01MizFfbNMuMp-uaa8nafWfIZjzJlHXZJalyuTLFn-oRH2NBg6UUkwfr3B9_zQQHeoaOKUsqZ4SyoC-czoyj3oBQ3tb6x90-8nrlaXuc6PMi3qRO-s-tZxBkOlmwjSIp1fSfxaovYD2PTXNiDz5G5NbzCbR2tWAKaXw91hOLcuEpda6jirKlOSQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJwb0VAZ2F3TsRhSYUTmhPK7k"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "Gut no 98, Nashik",
     "country": "India",
     "geometry": {
@@ -3234,24 +3224,24 @@ module.exports = [
         19.7190411
       ]
     },
-    "category": "New",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.944Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "Nature View Park, Kharoli",
@@ -3270,24 +3260,24 @@ module.exports = [
         19.8732885
       ]
     },
-    "category": "New",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.949Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Little Cove Resort",
@@ -3296,7 +3286,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRYGp59lxgF_DThQDypBDj3Tvx6tAB3CGBi8rJNYIC_cwacrqijpq4HeXY8eGOsAJM2iwNHLclddck_HaxJpR0NjEzb0I1EFdVCN1fn0LsOu5HvG0eTvS1bzRtFBYixQqv1PIBX7YAlXrBiI6T-FIFQl8zkSSREPvfUHe_uSuO1CjeOIdLAbtf7Mik1OJtwOi7rSaiLkP1DLnM4C3D-GHRP4ES47WoGPY4epIWkK83QarrQ7Q8pqeH9_2GJK5pIUBXtidrc5blIaNMg5fLJHiBg9JsNEu0V1x0BvV1GSUzC69qUMDJ-geOGt-ixlaYlvOUib-FKtfgLZeNueD0RI-Ohei2rwLrhxrQ7jXG1QF0R-t_ALesHBKzzp-VmGj3fV8W7ZuNIt2q93kW05NExxJq6INMcF5jF7CMw96EGEbFOQg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ-dtgrrXx3TsRDgeTzkm53UI"
     },
-    "price": 1430,
+    "price": 1350,
     "location": "Nagalwadi, Nashik",
     "country": "India",
     "geometry": {
@@ -3306,24 +3296,24 @@ module.exports = [
         20.0609985
       ]
     },
-    "category": "New",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.957Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2145
+    "marketOtaPrice": 1890
   },
   {
     "title": "Energise Soul Retreat by ELIVAAS",
@@ -3342,24 +3332,24 @@ module.exports = [
         19.9691918
       ]
     },
-    "category": "New",
+    "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.963Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Grand Mountain View Agro Farms & Resorts",
@@ -3368,7 +3358,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXROFdDIx7JxN_tB4BgfX9-9k1BVUzyDlF_nqUwhMZXdl5-Cs2AKXdSkV4LaLTEvYpdMJeq0tp8OwKW7rumFwFYuBXmTr2pXyLIbSiauPSQQZjyvwcoPLPeGy8uzIcyJ8cW6mqhnb4z6PBmaAxM0dyI4HmvpgMxrux8InVrgPtx-iT-MrsyA4PK19Lh_EcOOyA2rfLCSLpoAyf4Dg0CHCmRwnGhR6Rt56HcaFngsHyOZXc4fWJsb_13FHB3ch_NLnTmCWRQoHretFClFuQuNWYM6mGgoW-5YbH94oC56JTsW2lQDp5FCPOwex6TbUUrg95tVyAPMahiZga0p21D2WxQtBMy7MvciAWplyiS-oZJZH4l0q1DhRwbU54oxZvPaPkPGIhauca0kAPq8AlCC-iOr_QPf9afyFKlopQOIZ10&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqymjj7Zj5zsRAE6lngoam1M"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Khodala-Take Harsha Rd, Nashik",
     "country": "India",
     "geometry": {
@@ -3378,24 +3368,24 @@ module.exports = [
         19.7816945
       ]
     },
-    "category": "New",
+    "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.969Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "The Ramayana Hotel, Ayodhya",
@@ -3414,24 +3404,24 @@ module.exports = [
         26.7703674
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.555Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Raghunandan Guest House",
@@ -3440,7 +3430,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQA4B5oCfFLDyFL9j6aE2oTFVJCmh0HbY1W8noFTfTQ4UgT2JNOYPMHMqRto0n5yrucAL6V7TqW58Gg_reWBLhxjAVoA9oxAXAeq75d036jnexIyPCksRIzzVWYXsWG_bmJuf-LdkkIVkMUaX5oiJu9rEUig3pKeiSW5O37yKFeM8WbXcQpYBSNkSiPwe8h9k_HlR6IdmW-NLrxd2ksyvVZRc9Z9Z7O0R1Y-V4W822SfS5z7lfCAFklyGiHzWoef_mmU3zvT3K2l6aQ2FVVp6muX6oRNfUdCEygIBcuEuov-8Iijf44Ehpyk8CYTcEnKiVXErEEtmY1A2Puwx27N-f9Mv-MalW-_UJfhilIy6nzqiaT2Ciy2ZEhwN7j6g6pFNRbxBJzgiZ263_iRqOqkFKYfrNmZystEYCqO0J2NqSwW_PncAfG_4MCzMidBy0J&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJl48GObIHmjkRG8P-92NwaVc"
     },
-    "price": 1550,
+    "price": 1200,
     "location": "Infront of Union Bank, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3450,24 +3440,24 @@ module.exports = [
         26.8004758
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.563Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1680
   },
   {
     "title": "Nirmala Sadan Homestay Ayodhya",
@@ -3486,24 +3476,24 @@ module.exports = [
         26.7996162
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.569Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Shree Ram Sharanam Guest House",
@@ -3512,7 +3502,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTspFKZyOcAbRqf3esnAd11_NnUJVTUUx8mc_Qf9cZApSD96L6TtzG3-pGpf4iBovgjhxNEmJarNlQV3IEFLY3DykZ6RFuNWFarOhb9T8ChBymDMGq0hcs_vFu4CiOcEB64u2C96lhUtFlHvhnKD8RoooSDabT6szt32ohPwH9dZTJQh5UJivQYMQ5O1Hw7isCrSIiIEWmBfIT2sZvj0X2oMO95X1OZFh14IcLbQABFQc3bKsfeuOS-1aogpr32Lyn6BdP136ZoKBJWAeumw2sIJZUvwVK7oDbv06YJmF6ILgjDiRmEakPgw_WMbrIqPpUg3pEUSDXYMmfVmezGBLx3_AQYfGaRB2YrF-qB9fdN1pcOfWJt7z1HZEoFcLK8EulBzh9A3trojwGLzBFRr2eLzFpXY7hRKOAuSpCW3Y8&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJE6dWPt0HmjkRI_zWqSEn8-E"
     },
-    "price": 1670,
+    "price": 1200,
     "location": "4/4/5 Railway Station Road, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3522,24 +3512,24 @@ module.exports = [
         26.7891847
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.576Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1680
   },
   {
     "title": "Paarijaat Homestay Ayodhya",
@@ -3548,7 +3538,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQgq_AZde0yBEUgtmG_rCvJMWNobBDq-akhHVHiXzb4Y6FTtdxU2yMaVbExUOSMBHegNNVDalJbhcKpCRSG2g-vFnkq1YbxeQH6RCChOdr1tW7d2Odh0tng8URAanL-8Z1owE3IvUS5Ab4Dh6aDonL7yEP77wM1ZZSXy1rDVZecDA8ikSG0Q17VOcYEaRdpLmUTgtKaadfxHR6x03OzKLql3Up3JyImN8dmoThK7lY3GyOGIoZjS_0phZnzR4u8azg9CM35ViFsG_paXdxaDub3g2AOoc7LbxV6K_u1_WEw9PpfZ-an6guYGcPq5i38gEk8aJ9XU4oxBczvMBuY1Ts_qR1LY2dohHbEmxVXPxCtkDuD7NdJc_-5gCMRMhvO4qFglTmJrj7setwQa0or0FUoqW7e5EsDT9tFZpZUWDJLel3Y&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ7xMzMPUHmjkRO7Ay3f2DSNw"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Ayodhya",
     "country": "India",
     "geometry": {
@@ -3558,24 +3548,24 @@ module.exports = [
         26.7899214
       ]
     },
-    "category": "Trending",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:03.581Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Ashram - Shri Ram Harshnam",
@@ -3584,7 +3574,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXShbd_VX837xwpA9qaLkBltUgEPH1XjTwF5pRTiGhudj30NJM5EWO6rsle-AaoYq0NRcQl4uJ18jc9JB18_t46fAScR_gUYJTAmjLRlGwgAV987_kd-hPkbHcbDhgSWSTnhOeN1k6iBmNtzh3LEWrNP2o7TjWZFHRbp3ZMg0mqjxGYRpF8aIS7Qa6dqF_lOF7_uC_dwW-cuRIKzRQ5uceOqI1auyH3QM4iQoLx2B-wOdJ0bDfJ5h1XisPdzu5SDdEaMlCV1ytqo9MGKzSuTqj4vSkRwCwPHukIOn8MNu9EJ0-GV8fFNGQeOZD3lvMlEI1XOT6YK-yqnITOHMT-QPY4CmvS2Jp4297df-NJYdrxQWO9K-RWHFDzaBF7mw8r4uUNlEISdJN8VHZcnOwZ0N2GFFm7lqqqAFtznH-4tIqF6Ym9vfMFWfTO9XtU3h8bJ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJOSqaLwAHmjkRcZkfpx_X-hM"
     },
-    "price": 1550,
+    "price": 1350,
     "location": "Charushila, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3597,21 +3587,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.117Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2325
+    "marketOtaPrice": 1890
   },
   {
     "title": "AG Saryu Stay",
@@ -3633,21 +3623,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.124Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Sri Ram samujh das aashram",
@@ -3656,7 +3646,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTatqi6xY1mNrhEfgqAu-n98fPy89ZOKqtYWd1M_7sNesn_CzhIT8ECNal-cBj_5EcMLuRyZZzwYWZLhHu1L8n5KXrCRQp_ywX6HqSbxh82SAUX35GHncI2OIXnT_p3vibBmEyT5w4aG8MoKVxQf0E-hqjpcnpSobjjIEpLLN57QuoJu6uwVqgWP3FDomussvb5-bxxhAH7DZbfAV0WIWA5p7g7uBZMdU79TspSLZ21DOIVsXAyYjKeOKoyHSZZyyC8psjAANyqdYNPkqklRGMMkhyYAViPLqqpO65mDeUHsND_MoaeLCWsQ-tmRht6tFqwXn4MNiaUYvWI0tPnuFtQmY0sE-hvqGeQoxv01jyRo-0Njuw-1H2teYDtdo0B4TYdNhA7HyICe-uVggO-v5ga3CCmIic7GYsUOtRwpgRl3g&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ3Tfj1IMHmjkR5Zo8wb1xIyk"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Vip Marg Hanuman garhi Ayodhya dham uttar pradesh near ram mandir & Hanuman garhi, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3669,21 +3659,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.131Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Ashram Ayodhya",
@@ -3705,21 +3695,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.136Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Narsingh Sadan Home Stay",
@@ -3728,7 +3718,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ5_w52bKNcFBPa0nSsHvKAtPwynd32DzRujhvCg17BJGyUYqeQjAZH6Qa45m5-x_FtF_1NAYdy5NT6ei8Nky0nqVCQ9CWn2ozhDvvmH73BiE32oT1pzeCuu3zlptZvYAbqa3R7FQ2A2ipnBM37yu_f4sr0NmkVVsp_4HzoAHE-NcCngZ7OKgEjDISvyOU7vIiLccFLWv18sdrPmLvbQ01TmLBg_iZvBQ4h0fX9uEAOcgP16eoMm3-7dSHG91p3F3KaemM20SW_0ydhzSMUURm4Qc1D8XRsU8C4zLyqSqRGTqJuVmYV7IwaGvGXWf_GhCeDYY-I6ji2_xBpxvEqZToO2DGJlUfkHySi2DcbZrLrR8WEu_hOn85u-AgknQnuQ194FRm5-HEa1-CS4tOLthDQgVo-OYwDoFLJ5JQez2sqLw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJeSalhtYHmjkR__bNvetaBuM"
     },
-    "price": 1670,
+    "price": 1350,
     "location": "Lal Kothi ke Peeche Shaheed Marg, Ayodhya",
     "country": "India",
     "geometry": {
@@ -3741,21 +3731,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.141Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 2505
+    "marketOtaPrice": 1890
   },
   {
     "title": "Shree Kubja Krishna Ashram | Guest House",
@@ -3764,7 +3754,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQdy1QRs4x_9Wx28PG8xK9RNufURsAAqHxlLEMqK3Jfssbni-ELTdicRI6Sx8uNjOPr_rlXI4TPw3a9Mb51NvhUE2rsIy2381HxaOVyuufcanPsD0hEAvvgWsp9sRPfV2X_nSQ7Nf-F5HjPZu_Flhy0_zNi9aiTz71aCeGaxYeuWR_8tXsTb0hIdRbriz9KL18-bpGdj7ipSTIdLj8ccMMPtAd-agSJkfSVIbZBzJ-jSV_Az6J5RB2hyodbXolfodDRKjXCvMIW1FFshnLpD_3AEBPqocfhB-pJXMQ_-T4Cdz_Xqj_96e4S97HwRpF6qA1IRfaFumgqsaA1jVMsLEdtV5FC4gwcWo1jcwyRT3dOvsSo4MGx37iajbIYGd4HVqZbpYImgbL70-CtRRhud0qqPBI3eDKMz5mTrOJlqxkQ9xYjbrCBq5HC_SFqoXI2&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJP_tAo2RvczkRk49W78lVB_k"
     },
-    "price": 1070,
+    "price": 1200,
     "location": "Shree Ji Vatika Colony, Mathura",
     "country": "India",
     "geometry": {
@@ -3777,21 +3767,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 98,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.670Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1680
   },
   {
     "title": "Bhargava Ashram Yatri Niwas",
@@ -3800,7 +3790,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRxhpzZz76Tbi51tC0ACeiVNkUFe9a96CYEM-JilO3Er6i2bIKgHqHVb1QF5qFIlH-Xlb4DSchS9Pi-1UwF2zTiZxOzSYs1Rk9aS1Za87GQApWJIf0rVu3eifdPABT4AM2qPNc2hnpuvby2Z2R-MPioxU3MT9FRk5lRTULkZWVihKz_FIp5Cn7NyDFQx5nLNjocl2qjBk_8frxrFN0Jy7QLvSfnQBH9yjxYZTsBlleOeNCUoeYy35S7JBjbpoiyG3fPK8gx6p_cVraeZDenYNN-G4ZAv-fZ1aJKdLGuldBdzZ58AKPMg52omykjWnI4BF_-UO9VVarWLGgAFW73zL0PGZz1gAU-HE057JTCWtzVnLmVcVu-OnQFAM-wB31italR0TyabxzHwwqgX5xo2PNFVgxyy97mBRLiTzJa3uQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJLZU4yZBvczkRwgsB8OnIIZQ"
     },
-    "price": 1190,
+    "price": 750,
     "location": "Bhargava bhawan, Mathura",
     "country": "India",
     "geometry": {
@@ -3813,21 +3803,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.678Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1050
   },
   {
     "title": "Shri Radhe Shyam Ashram",
@@ -3849,21 +3839,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.683Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Sacred Ashram Guest Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "SHRI SHYAM SEWA ASHRAM (CHHATTISGARH BHAWAN)",
@@ -3885,21 +3875,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.688Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Radha Madhav Ashram Vrindavan",
@@ -3921,21 +3911,21 @@ module.exports = [
     "category": "Ashram",
     "fairsafeScore": 94,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:04.694Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Sacred Ashram Guest Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Saurav Palace",
@@ -3954,24 +3944,24 @@ module.exports = [
         27.5063425
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.196Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 1330
   },
   {
     "title": "Hotel Krishna Palace",
@@ -3990,24 +3980,24 @@ module.exports = [
         27.4987175
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.202Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Madhav Muskan Residency",
@@ -4026,24 +4016,24 @@ module.exports = [
         27.4946989
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.209Z",
-    "propertyType": "Sacred Ashram Room",
+    "propertyType": "Pilgrim Yatri Nivas Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1965
+    "marketOtaPrice": 1834
   },
   {
     "title": "Hotel Shyam Inn",
@@ -4062,24 +4052,24 @@ module.exports = [
         27.4974194
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 88,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.215Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Shri Ji River View Inn",
@@ -4098,24 +4088,24 @@ module.exports = [
         27.5062204
       ]
     },
-    "category": "Rooms",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.221Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1785
+    "marketOtaPrice": 1666
   },
   {
     "title": "Azara Beach House Luxury Villa",
@@ -4134,7 +4124,7 @@ module.exports = [
         15.5123024
       ]
     },
-    "category": "Beachfront",
+    "category": "Luxe",
     "fairsafeScore": 98,
     "amenities": [
       "Private Swimming Pool",
@@ -4152,7 +4142,7 @@ module.exports = [
     "bedrooms": 3,
     "beds": 4,
     "baths": 3,
-    "marketOtaPrice": 34875
+    "marketOtaPrice": 32625
   },
   {
     "title": "White Coco, Luxurious Villa/Bungalow In Goa.",
@@ -4171,7 +4161,7 @@ module.exports = [
         15.5598309
       ]
     },
-    "category": "Beachfront",
+    "category": "Luxe",
     "fairsafeScore": 98,
     "amenities": [
       "Private Swimming Pool",
@@ -4189,7 +4179,7 @@ module.exports = [
     "bedrooms": 4,
     "beds": 5,
     "baths": 4,
-    "marketOtaPrice": 47275
+    "marketOtaPrice": 44225
   },
   {
     "title": "The Baga Beach Resort",
@@ -4198,7 +4188,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRhDbbK6JRPEohhZDSZI3cZEzoA8vXcf1EE0Na6kYyyyWQ0N_cvpJCYs5HecUv30bz_mLW8fuFqbhqZBUD7tBSJnNp5JI6waFTBw_TM8hVzoXI3fzYpqcjRRqgH0cnoDQ52u2P7KLbMPjXcSpP-AIyWwA39Rgl1S75nrY7M6UfbjC41a3pjLKjeT-U5rObksBQQZ9OntMPIWjb7rYPpxSpys02QjxMd_XWTC_lBcSrU0eE5LVmAZ_dRd3TZd9hMJVldTTvkj5bi04WEBt5ec8HNn2IcaRhm-2y76OfuYHH8_j8HhjpB3xCyFFaErb9TDdde0X9sG83ZBuQTViBO8pJpyUt9zKUbVN6DaAIC8ryEz5kriDd59e4WGb3r6OvLJEKIFrESnjkDiGzq41EdNakt28vyoxISdtTWxy0Sg1iSSw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJOalAKBzqvzsRUjWXsiTAW64"
     },
-    "price": 30500,
+    "price": 4800,
     "location": "7/225/A, Goa",
     "country": "India",
     "geometry": {
@@ -4211,22 +4201,20 @@ module.exports = [
     "category": "Beachfront",
     "fairsafeScore": 90,
     "amenities": [
-      "Private Swimming Pool",
-      "Beach Access (100m)",
-      "High-Speed Wi-Fi (250 Mbps)",
-      "Air Conditioning in All Rooms",
-      "Dedicated Villa Chef on Request",
-      "Outdoor BBQ & Sun Loungers",
-      "Free Parking On-Premises",
-      "En-Suite Bathrooms with Jacuzzi"
+      "Beachfront Resort Pool Access",
+      "Air Conditioning",
+      "Free High-Speed Wi-Fi",
+      "En-Suite Bathroom",
+      "Complimentary Breakfast",
+      "On-site Restaurant and Bar"
     ],
     "createdAt": "2026-09-02T20:14:55.596Z",
-    "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 7,
-    "bedrooms": 5,
-    "beds": 6,
-    "baths": 5,
-    "marketOtaPrice": 47275
+    "propertyType": "Deluxe Beach Resort Room",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 6400
   },
   {
     "title": "Baga Beach Front",
@@ -4235,7 +4223,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR3QGRSMPfsRfSdSmcGnEpdClBx38xdEzXgGSALfRTaDQjOcez2EBTzx-_COKGO7Q4Duuw4_IqTdo5Y2FjS09jt-R3NpR-C7egwHLhbsQ6CCXoPdCElwloSHJ44hNap8ovbJ1qj65cR99KnXJHb2VEnU-ORW6WN0jqv1gGmW9IxexkjJRO1BXWSAJekLnQUPNUMmMHoyqhDUNbCiqckwjg-SbQfAXgr4koERVrs9cnZnP1DiDiaUE2HGJHr7LLVBbo2AMwqhqGR86hnmWbhhIVldZHXDZYa4HJnTkUJXNXlQxIjEFe_b9GvS9HvZJr_mjsaseuUsFzgpeCEB_gMa6einLRrD6rZLiXiqbghmTbxgDEyjVcDB4Iyhc6p7RA0U5fgkpg8sNP5VcZEhwbYgYfvAhVtVjNVuhd0EmuSk6J-PK0hDfbj8wqE59BfMdfr&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJxyXfDFbrvzsRj7F_jxfiqNY"
     },
-    "price": 23500,
+    "price": 2400,
     "location": "7/2401, Goa",
     "country": "India",
     "geometry": {
@@ -4258,12 +4246,12 @@ module.exports = [
       "En-Suite Bathrooms with Jacuzzi"
     ],
     "createdAt": "2026-09-02T20:14:55.603Z",
-    "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 7,
-    "bedrooms": 4,
-    "beds": 5,
-    "baths": 4,
-    "marketOtaPrice": 36425
+    "propertyType": "Coastal Beachfront Room",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 3200
   },
   {
     "title": "Casa Pallazzo Luxury Villa",
@@ -4282,7 +4270,7 @@ module.exports = [
         15.5702126
       ]
     },
-    "category": "Beachfront",
+    "category": "Luxe",
     "fairsafeScore": 98,
     "amenities": [
       "Private Swimming Pool",
@@ -4296,11 +4284,11 @@ module.exports = [
     ],
     "createdAt": "2026-09-02T20:14:55.610Z",
     "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 9,
+    "maxGuests": 8,
     "bedrooms": 4,
     "beds": 5,
     "baths": 4,
-    "marketOtaPrice": 39525
+    "marketOtaPrice": 36975
   },
   {
     "title": "Sea Shades Cottages I Private Jacuzzi I Plunge Pool",
@@ -4309,7 +4297,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTQ6hrPozx7WXuV4juMgxIRCUr4cUoGXcY3RCaixaxtMwsPVFI9kQCMT4erk1HRhIvOQu-td5mcJTcRi5FCvW9TF57I4AQY3LRBnpbKo1YLMMPCjHpYzpXEW8ZPdDpWXYzxtsbjw0-jHQv6X_N7sqdBuB7_4sslf6A9jdPxX25evjRR8G3CjzTGx9wkMe00-0iEoM3sepbmZJ7Pi_RSuHMto3vZcrzA8xq5QZp5LxLgVEw82jEfoLoLvo5ebENlr1W3bzZsodVpcidgO8KM8p7nb502Kxm5A7Xb_Dp1aZ5UfPgS99qJfHBhMRgK5Rr9Y6ms_b_2jThHd8Av8ufndLYZ34nC2fdoA1n9wEEjylg5hq6r6E-FwsfhaqrAkY95faZFwtYUZ4lp2J7y079_ENzTQSPA6IqNLZDZMQC4rjWVoh-Bzi7lKGtaaceM8Q&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJwyZw0l9FvjsRzPJ8623imG0"
     },
-    "price": 27500,
+    "price": 3200,
     "location": "Mohanbagh, Goa",
     "country": "India",
     "geometry": {
@@ -4319,25 +4307,24 @@ module.exports = [
         15.0075009
       ]
     },
-    "category": "Pools",
+    "category": "Beachfront",
     "fairsafeScore": 100,
     "amenities": [
-      "Private Swimming Pool",
-      "Beach Access (100m)",
-      "High-Speed Wi-Fi (250 Mbps)",
-      "Air Conditioning in All Rooms",
-      "Dedicated Villa Chef on Request",
-      "Outdoor BBQ & Sun Loungers",
-      "Free Parking On-Premises",
-      "En-Suite Bathrooms with Jacuzzi"
+      "Beach Access (Walking Distance)",
+      "Air Conditioning and Ceiling Fan",
+      "Free Wi-Fi",
+      "Private Attached Bathroom",
+      "Garden / Sea Breeze Veranda",
+      "Daily Housekeeping",
+      "Beach Towels and Umbrellas"
     ],
     "createdAt": "2026-09-02T20:14:56.422Z",
-    "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 7,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 42625
+    "propertyType": "Tropical Beach Cottage",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 4320
   },
   {
     "title": "Cocos Beach Resort",
@@ -4346,7 +4333,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSxP6tKGvMRLZ9YoJyYOUoF8wQOsTlVm_z5YTRuBlaeSaPSI6j2_4aX9-o3f3_cgCrzk90tp0Qlscltv-qOrk60y2gY7upCB3sQkNmtoRvFm19jp49lm0yi7sUfT03Q6esBF9iDUOEfXoGPHfyVSvBd-ouq2dQJHjdx2ng87_EvWkCYkruXbmTXruqlnBm0U8gfygThh3PbMYXsO6BAPhhGr9by84p1DetJ-GNlM8t9bX0uaR4D5fU3J8VOMUTJVKW4xCmK1LOuBykt8YNuWIYfBLcbDirUEHgoFQwlcFZ9Yvys0KdjmVFFxwUqClNM8Ek-yhZkUt0FtszKreSnphMGQKGitJ9IqZfdqnYgG-PCXWeONK-46xOma5kQDjkFiyWTLnvbrl74VF6bsnpkTxbY6CR0cFaac619fNkFCQYfq9xo&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJL3vHrz5FvjsRi3G6CoAczGo"
     },
-    "price": 27500,
+    "price": 2100,
     "location": "Mohan bhag, Goa",
     "country": "India",
     "geometry": {
@@ -4356,34 +4343,33 @@ module.exports = [
         15.0080706
       ]
     },
-    "category": "Pools",
+    "category": "Beachfront",
     "fairsafeScore": 90,
     "amenities": [
-      "Private Swimming Pool",
-      "Beach Access (100m)",
-      "High-Speed Wi-Fi (250 Mbps)",
-      "Air Conditioning in All Rooms",
-      "Dedicated Villa Chef on Request",
-      "Outdoor BBQ & Sun Loungers",
-      "Free Parking On-Premises",
-      "En-Suite Bathrooms with Jacuzzi"
+      "Beach Access (Walking Distance)",
+      "Air Conditioning and Ceiling Fan",
+      "Free Wi-Fi",
+      "Private Attached Bathroom",
+      "Garden / Sea Breeze Veranda",
+      "Daily Housekeeping",
+      "Beach Towels and Umbrellas"
     ],
     "createdAt": "2026-09-02T20:14:56.431Z",
-    "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 7,
-    "bedrooms": 5,
-    "beds": 6,
-    "baths": 5,
-    "marketOtaPrice": 42625
+    "propertyType": "Tropical Beach Cottage",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 2835
   },
   {
     "title": "Village Utopia Cottages, Tropical Paradise ,Palolem Beach ,South Goa",
-    "description": "Village Utopia Cottages, Tropical Paradise ,Palolem Beach ,South Goa is a verified vacation accommodation situated at Palolem Beach Rd, Palolem, Canacona, Goa 403702, India. Featuring premium hospitality, scenic views, high-speed Wi-Fi, air conditioning, modern interiors, and effortless proximity to local attractions and dining.",
+    "description": "Village Utopia Cottages offers authentic eco-friendly beach cottage living nestled among swaying palms at Palolem Beach, South Goa. Walk barefoot to the golden sands in 1 minute, relax on your private wooden veranda, and enjoy fair, honest pricing without OTA surge markups.",
     "image": {
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS73cHO7nhMYs5xygUUH7j2lo32bo_5d079o44tEA-dZuFdaIS44TBN2JAc9M_9H8jOsej6ArSuW8sP13PlQobIfRQpRmW8sAnSrBwnjd3dYTaV8VIxlfd0ALvI4gqtCC19MAE-pWqNdPL1WKklt3i8l2LeOyfakSVf4VlSWIZQJz7hBYz2EBeTTrXa5EydDoGs2YqtfIB-_GvlHQ_rFVEG_U_nOGKvahHyKqkgRiEAXhDibyfMKKxs_wPpAUOjoCHH03iI0q1utmsfuqYy5g2rFc87vHPPXIEjJvzXqRJpLCmSEXLC8VOkndUYFU4Qug21LhaRtO7dboU1Xze_QXPkkMB73UJnoy7suOGp_zqfnNbXbGlJTeEEZXWbG4QSq1e6C7LncqatqCwCAjgHq0RwRsq_12XEUQma_5A6f_vVxQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJq-JebY9FvjsR3VuH2pjDU0c"
     },
-    "price": 26500,
+    "price": 1450,
     "location": "Palolem Beach Rd, Goa",
     "country": "India",
     "geometry": {
@@ -4393,25 +4379,25 @@ module.exports = [
         15.0147194
       ]
     },
-    "category": "Pools",
+    "category": "Beachfront",
     "fairsafeScore": 90,
     "amenities": [
-      "Private Swimming Pool",
-      "Beach Access (100m)",
-      "High-Speed Wi-Fi (250 Mbps)",
-      "Air Conditioning in All Rooms",
-      "Dedicated Villa Chef on Request",
-      "Outdoor BBQ & Sun Loungers",
-      "Free Parking On-Premises",
-      "En-Suite Bathrooms with Jacuzzi"
+      "Direct Palolem Beach Access (50m)",
+      "High-Speed Wi-Fi",
+      "Air Conditioning and Ceiling Fan",
+      "Veranda with Palm Garden View",
+      "Private Attached Bathroom",
+      "Eco-friendly Wooden Architecture",
+      "Daily Housekeeping",
+      "Scooter Rental and Kayak Assistance"
     ],
     "createdAt": "2026-09-02T20:14:56.438Z",
-    "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 6,
-    "bedrooms": 4,
-    "beds": 5,
-    "baths": 4,
-    "marketOtaPrice": 41075
+    "propertyType": "Cozy Tropical Beach Cottage",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 1850
   },
   {
     "title": "Hitide Beach Resort",
@@ -4420,7 +4406,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQnLRkV5kq9gc1hz80t0LaSQRiH3PAG3OYhbjNfXTInANArTlIhZLiad8uS3fILF9Ml6Ai2cjYPXr2XpO9LzpUymSzCeAH5s3K_NpAJlu6w_yQiIP7TgZ-HcldRt_ZO98S1YDnn55-wRHfJ3u7yXfXj4lzDTmFc8ruBMu7g5OuTMvVf-m8exs8q9rsgBSGdeJFrrMcfD2HZ3TxcL92fiQT-E_qT2yAcpbrjtAey-C7099pi33Nwk4l2sm5x15vFeGRdpgVkDqDqg5cPTnsaEiBiIMB0YqS6TA6W8OpSlDjh5d127j_x4INEDcMCjKFHgd4bjFCwLATtVm2v1iodVFY4y7RRJtFkDrt9fo-bCXydvTbYBm76LgqdR-scFh_lTl2_52nL3yQB-CA6LkjyqjA_wgKwNvJEWt2urlRGZhzTjA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJE3kdulJFvjsRXllArDc20Yg"
     },
-    "price": 24500,
+    "price": 1850,
     "location": "After Royal Italy, Goa",
     "country": "India",
     "geometry": {
@@ -4430,25 +4416,24 @@ module.exports = [
         15.007217
       ]
     },
-    "category": "Pools",
+    "category": "Beachfront",
     "fairsafeScore": 90,
     "amenities": [
-      "Private Swimming Pool",
-      "Beach Access (100m)",
-      "High-Speed Wi-Fi (250 Mbps)",
-      "Air Conditioning in All Rooms",
-      "Dedicated Villa Chef on Request",
-      "Outdoor BBQ & Sun Loungers",
-      "Free Parking On-Premises",
-      "En-Suite Bathrooms with Jacuzzi"
+      "Beach Access (Walking Distance)",
+      "Air Conditioning and Ceiling Fan",
+      "Free Wi-Fi",
+      "Private Attached Bathroom",
+      "Garden / Sea Breeze Veranda",
+      "Daily Housekeeping",
+      "Beach Towels and Umbrellas"
     ],
     "createdAt": "2026-09-02T20:14:56.445Z",
-    "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 6,
-    "bedrooms": 5,
-    "beds": 6,
-    "baths": 5,
-    "marketOtaPrice": 37975
+    "propertyType": "Tropical Beach Cottage",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 2498
   },
   {
     "title": "Oxygen Palolem",
@@ -4457,7 +4442,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTUqXZJqBUPVt-v0XVybLl1tKJDipbc1BoClG9Dsl6j3UBZtFHO_6SmWLW3zSrxZsTr1dF-ntlSATn1PpzlB0ilrJRMPKkkRMBxWdSLcjpIiD6KxcrrkULir7Ob4Yd6V8jBe8p1yp-M88bIz8wJLNcaRnFvcT83W98k5489RiGwdLxQ1bgVwcI67XTmwf3l74IgZXVykD6GP8iJULNkEPzLFhnryTWN5rfyZOH_CiikKk0l3diT9XX_ZuAWHZaEaZhnr3bFLhiuVqchI4RmX76vjRuqFf948_bHzh9UEdmiTJBAa0d4k2L2IU1LU6drC44X3ucQr2Ny8a_jfKvyo_U841rLf5PbYyqCcZ85v--vFf9_gc85DWfymMf4nYYEc5ll8nJu1S3CK97G6sKFJqNSxMOYYujU_tYQ6bprG3Q&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJbUMP5FBFvjsRNqnynMsOBAE"
     },
-    "price": 27500,
+    "price": 1950,
     "location": "227C+8R5, Goa",
     "country": "India",
     "geometry": {
@@ -4467,25 +4452,24 @@ module.exports = [
         15.0130803
       ]
     },
-    "category": "Pools",
+    "category": "Beachfront",
     "fairsafeScore": 90,
     "amenities": [
-      "Private Swimming Pool",
-      "Beach Access (100m)",
-      "High-Speed Wi-Fi (250 Mbps)",
-      "Air Conditioning in All Rooms",
-      "Dedicated Villa Chef on Request",
-      "Outdoor BBQ & Sun Loungers",
-      "Free Parking On-Premises",
-      "En-Suite Bathrooms with Jacuzzi"
+      "Beach Access (Walking Distance)",
+      "Air Conditioning and Ceiling Fan",
+      "Free Wi-Fi",
+      "Private Attached Bathroom",
+      "Garden / Sea Breeze Veranda",
+      "Daily Housekeeping",
+      "Beach Towels and Umbrellas"
     ],
     "createdAt": "2026-09-02T20:14:56.454Z",
-    "propertyType": "Entire Luxury Beachfront Villa",
-    "maxGuests": 7,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 42625
+    "propertyType": "Tropical Beach Cottage",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 2633
   },
   {
     "title": "The Wooden Chalet, Manali",
@@ -4494,7 +4478,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRR_OT7gobsyCy32gtFKnroPS19vkGEZ3jEihtyrALX4est8TPigOAwRrP7vRgbi3hV4Z3GA86vb6noEOETA9ihoh43ZiCQqIqkVgUdME07CRfP4SNFAhD-GByC4YGsog2SMECsYedrWKxyIF_A-COvLvdCReKcdYC6h6z53Pq9vhaxUgzYxKqSPCScIcrloIydxrZRR3SJqlp5A6wXa_RnNoOTBimNwmo4yE7DO4OvXbOKirwHXx-YX7-1iCkus7q4wSLy57igemIS_lnJebzDFLxgTB7dgP4ZPan5AHxD27xEKj-vrDxxBo9EX80tbV-KULIjM1R0mI_FjaAGD360ZFk8mwBAiNekiW2mGZdCctYZuWzrFfDUy5QissQ8Q2wbecoVBvdvI_VGHEuoc6XjvqIXr21GTxpJ7ktL_v5YDFSiJzZwz0_I2tsewA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJuRrOuyljBDkRkrPA0SRvwoA"
     },
-    "price": 8800,
+    "price": 5800,
     "location": "Old Manali, Himachal Pradesh",
     "country": "India",
     "geometry": {
@@ -4507,22 +4491,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 98,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.279Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 4,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 12760
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Forest Wood Cottage",
@@ -4531,7 +4514,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSoc6368A2r0YKUtolkzTO1GN2Q6Tj1UFvrr-cP1R0PFV4U9NBixhHwOLfQfJ9ePN89AjKc8xvT0Xku8odzmgeXpA97zBssAd-bsI40URhDNaf1KZn2ZFhhXVU-je0eeX90VeqAyMm_bjuvF5gawgR4yEVMDOi6A48UOZpFBPE0yzmrh_Bbtm5AyBDgSnvSRr0nVwKG4YbRzHmLgKmDYs5i-MzJHZCOgi50LR4z17cCTThLGJkuS3VxUE8ldIkxY50BUCJGk2xbJyWUrVqdYqcT7KXvP5Ljc7HMV_KTnIDjOMr_wRm-KbxPEenIKlw9oWIYQcqT0S2-iR9p8hNSbN_SRuxv7EqDAlRMhN1VJhEKZHGBnnn-5E3YlZMGiMx00Podugb2Hn_3v1XJbC75J-ouYyTvbGb62-nGvx_sOag&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJbVVzyBuHBDkR_IUBvBinous"
     },
-    "price": 8800,
+    "price": 5800,
     "location": "Forest Wood, Manali",
     "country": "India",
     "geometry": {
@@ -4544,22 +4527,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 92,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.285Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 5,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 12760
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "The Pine Chalet Manali - Shobla Cottages",
@@ -4568,7 +4550,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSuhYEL-W4Cm4gxVe77c8gb505hgtPP_om20uubkLljw7owv71Zcd4iJkSs-r9WQjo4oTrIJH4USjIofOy3sBjFQpHExRYuWCiI6-X0r4EL5eZO5jGhaR0c7PGW61LmeTRAyLDZMZrd2_EEtOq683szIDNAQIRZC7rv_n9HFcSUNqXIbSpmqiHVa67Vzjie_669j7b06EBmYscrlsmoWBn4PdXJ1C12ad2D0eeWfw7zZRf-Mb38Hri0P1ioc3D3fs85xnc6phhPTjMiMNdIzdwHsVnTjxl8_Dt8E-vcH-GsS3BTRu02oVkHfAavyKGsmM24stCiEg5wA3-bT60l57_h_uw8d7FCZ5Ex_M2aVw6aOKLyDB3y6t78ci0opdtxMEtbF3VIy_Kumb4dLmgsndJfUFCBzZL2lBU0grbhIR-7dT2ECl0CV7Fag_e-4g&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ1SQeApOHBDkR3e0Tz3ghiFQ"
     },
-    "price": 6400,
+    "price": 5800,
     "location": "Goshal Rd, Manali",
     "country": "India",
     "geometry": {
@@ -4581,22 +4563,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 90,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.292Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 6,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 9280
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Wood Valley Cottages",
@@ -4605,7 +4586,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSqMt7FbCWmY0_cozuBYad36NNgf27MBROH3kIUjLdUVSUapYPiW8GxzCrPEv-wbOANncTqK86E0rzxjRo1qlJ4ESiFqjD5Uh4aonNVeQkNdY2X8muoBD9DEmPKuAl-Pjh6HIi14LedldXDQA0a4DZx56KL86N-hssuQiBbX_oXSJV6clGLsHvIM0Xsn21V_VHreYWkwOnL8Qc1_hn2bWIp981xCXn0y9M_TPC8AUU4IJgkd75sItbqrY4eib_acXnjbOeTHxU-AfGz1V2BRGDKNpKE0veJT8Wq12huAKHhu0vi9WwI-KccuXbAb3azQbQrhIWkkxXC5QrvwS3lOoYZRbAztIL5bJHWVL0mQxXu0wbFURJn1V3ZBjaa25GpRmiskGLfP89xj_78_ZTBd0-zptcuB2tDyT82G5LZxH_ddaZC&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJp6qq6gKIBDkRSxIWGSY39y4"
     },
-    "price": 7200,
+    "price": 5800,
     "location": "Near Hotel Sunpark, Manali",
     "country": "India",
     "geometry": {
@@ -4618,22 +4599,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 96,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.300Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 10440
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Himalayan Wood Cottage Manali",
@@ -4642,7 +4622,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSGCWycQR1H7DVgGZexiHASYph5SGelnjmx8Y3GY5Xolbtx1s8GlBz_06-V3JoGO5ly9VMD86Ptzc06bkpgdNYQUviTfW6jbuRYYIIY1M0ShQpuEJDYYSlvvaCg11bPjzuH7dvU7egy0gBH-qOi8Qf71i3FIkWwUsodHdNdwRy6q-i1dh7ZBI05KXz07CZ6rjyjiLAWMIp_uMlkFNekJXlqrqbQd8d4y8oWUKUbYSbPb06OoEvY-CXk6tHFpwYkpbLhIN88sxVeKQ7UEl28xHM_q98nbbFByFv4sfXi0cFBAwRbGZceL-QuFI2VL1G3XBI_NmOn0J4yfD63O1rgAITKoy7Psi20lXUZzSkOJ4QBwIqymWX3NKU2YKlGIeQhMAew2K1KfNmSxAbfBRrMwkoIKLOz9CPGH1ALwxb6d9HtGhEB&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJZZoGfwBjBDkRa0msKpE2KFU"
     },
-    "price": 8800,
+    "price": 5800,
     "location": "Hampta pass road, Manali",
     "country": "India",
     "geometry": {
@@ -4655,22 +4635,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 96,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.310Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 5,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 12760
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Foressta - a Luxury Boutique Villa",
@@ -4689,25 +4668,24 @@ module.exports = [
         32.1520741
       ]
     },
-    "category": "Countryside",
+    "category": "Mountains",
     "fairsafeScore": 96,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.942Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 6,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 8120
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 7728
   },
   {
     "title": "Orchards House - The Hidden Tribe",
@@ -4726,25 +4704,24 @@ module.exports = [
         32.2549545
       ]
     },
-    "category": "Countryside",
+    "category": "Mountains",
     "fairsafeScore": 92,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.952Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 4,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 8120
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 7728
   },
   {
     "title": "Padma Villa - Mountain Estate in Manali",
@@ -4753,7 +4730,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTJzlj1qaKBbUO7IW9NLGFoxRXcwHIxa569fTWI_g8cSgxEKz29cU1h0yl-J6rP3tR9_mPn1xTaFh-A8Gx9m0xbTWFefuyFyNUlvI4PgFYiFj0bFE5ZluVadIKWoDSgg-aTAMcrdEn8LY3LNj6qKzDqOjtqYMIEJByqkDJsSkh6HWsnvyIBaXzEpL6DiMnigBnEZ63R_ONu2xKuGIXlLyQ0f2gMfUq8sWxMMC_-fZhfPZVXadZc7rt6wkaa4ja3KL9kc7sqJzm5Q01PEVmrP9-sdj1xvcfsYCmFypJo3fZDjIDxm0pRf2GlWJlsOwQXBgWBbRWKV6mWRMmtpOFRQKAsfq_HtCMYa1NvGFBZrj6MfWp915IuvuWrM39K0P5iDiR7jclxAZuSrcFOQ3Q5hnSnZEr3k6C_ec7nZ_-eNn7K3BKqP1Zt1b844SZ0NLlK&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJX2LZnStjBDkRrZKonEKar-Y"
     },
-    "price": 8000,
+    "price": 5800,
     "location": "Village, Manali",
     "country": "India",
     "geometry": {
@@ -4763,25 +4740,24 @@ module.exports = [
         32.2122531
       ]
     },
-    "category": "Countryside",
+    "category": "Mountains",
     "fairsafeScore": 94,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.960Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 5,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 11600
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Forest View Retreat",
@@ -4800,25 +4776,24 @@ module.exports = [
         32.2465655
       ]
     },
-    "category": "Countryside",
+    "category": "Mountains",
     "fairsafeScore": 90,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.965Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 6,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 8120
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 7728
   },
   {
     "title": "Royal Heritage Haveli Jaipur",
@@ -4827,7 +4802,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRa6wuvKSHr30FUlEy8fj9h6eZoRCzIJmSjl74x5Zbwuz6SNBvtwxpebHNUusN7EZWlPVVxybjSFa28sakJfgQODMjuUwSEj3lOszX_B5ZIN9Hvkb4RpMqP85SWthYuX3ly6FC0O9kyK7nG1iGZZS25hIlLYvuXGEQ2gCEZYWj8S3ZdX0doEcUfXghLZHwfca_Dkqk5ZQkV0nMaze5463fLcG9d8w0P4ysyrwde3GAy2wyWcY8Ec8Fn2sBmOsuLUMwmXl43BcB6O1lIU4vzjvgPU-JrnJGSJ4X1379QzHzF7sZsE-newYVqdsA8K9rTEIjDXOjeks56CmXT8gZBeBuhK_FDIPDd1QnG1GsWX9UUCJooGkIW6oAFikLHy3LGz_33akI2JDoPWGjfJYTsQRy8wLVd-wFjX0mp55ZJojY&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ4f5ISZy2bTkR_x3gAjbG66s"
     },
-    "price": 14400,
+    "price": 9800,
     "location": "& 117, Jaipur",
     "country": "India",
     "geometry": {
@@ -4842,20 +4817,19 @@ module.exports = [
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:58.770Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 21312
+    "marketOtaPrice": 13916
   },
   {
     "title": "Umaid Haveli-A Heritage Style Hotel & Resort",
@@ -4864,7 +4838,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQGLcX7EEJ1DKtr5Dgl3p9kEJC1d680kApnx9Io2YBnGcs0S6uKY84rXOtllxMiSG0cGAls9vRkM0EKgFheAn5LC_RUsOTUOFwO7_Tnlj-nVcWQrJTW-TjKO4Ig4fkKx_5jvBqsnvaOvgcQmYQTmOuN5U5tuIRX2B7_4PyfOYsQCNfU7GKsyhe6UKoAgFj_H2oWt2XHPa5oU8VphDBlwZL88rAnMyzgFChElxkBlrw-aLnCoOoALcsL9L4wX40e0lbnDRKiP_w0RBl8YCQZOf2SXideqcUCiHGiKyoKb8pedQmuo69HuwU3ciD2URjzlSF0QBMJsWWua_TBB5qaz-8HJg7Th00pDY8MAG6hz8YYrmBqXhD8tKzNhJR4sS87P-NJ7wh-LeGqqxvLIu_ppH1zkiibDhWiBpHLmD4M7s0&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqw70p_mvbTkRrpkEQVBvk0c"
     },
-    "price": 13500,
+    "price": 9800,
     "location": "Arya College Rd, Jaipur",
     "country": "India",
     "geometry": {
@@ -4879,20 +4853,19 @@ module.exports = [
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:58.778Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 19980
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 13916
   },
   {
     "title": "WelcomHeritage Traditional Haveli",
@@ -4901,7 +4874,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQZ6-XMs5wBInXH1Q73WUXr6FlaqlJcrzwi2a_Ve50uvNe3ia30SqcVUex3BpNsY4uLOApvLomkYFq273eeAABspWyYoJ0kAQddUj169QdbQ42r_DVGqyizQtZ6A7uCB9dBnUs0iKDpSgMopzXtXjphDJuQQQbmJfLXJc5e2_dBH3ezZHq79ctxsp19KeiRWY4kk4bGDCDaIZoc62oLPUe99uK8z-eDkzfAwp5scBwb17ERTl49i5m5yRUdJDndsxwvjbyN5qtyf3kfS4OBsIHg2GSpNo9rNUOXHDs4UXwibfVpgEiQ-TSWpmSQ-6qJA5Rvlh0An0mMbg5VcGu68A24rVXlRMp7wNxuwJSRBu8y44mMRT6hTaxl025KCVvZTAzsYZ6eI-7KH8zxqJERHEVilUYpKcBg-lBFMZ3_phZZ2yhnlFwzy6xSXs_q_39b&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ61BEmfGzbTkRERSYD7d_Dc8"
     },
-    "price": 10800,
+    "price": 9800,
     "location": "AC-4-C, Jaipur",
     "country": "India",
     "geometry": {
@@ -4916,20 +4889,19 @@ module.exports = [
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:58.784Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 15984
+    "marketOtaPrice": 13916
   },
   {
     "title": "Pearl Palace Heritage",
@@ -4938,7 +4910,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSvBoVAS1NTmI1xmL1EdTXRiRCPbpPclR5_6OhFpdcKfxw6K3XsYscBalX6XS6bDbVKh5JxKCybQU10th1GLhsFWsIlLFh8nAj-8WhZ6nXpk_8gOiPmZYT4Hve7FXJAli9pgRhBKk-IkRy60vglKRJw7bxSke8ZZCFIqZmgcmUuwtR50XbMLMuXYRS3ow1n-uYbw4tne-6xCYd9Myh-njYgviw9x0wpTNK_9qrEH-IKyrUoOt77tYlbp7PNz-nsU6Qp53awiYPtbPKjXU0zH6bcr97D0nTVyd17UzWQFtNoV5cBkP8699vT6drwascjg2mkTzD0IoVKjFsv1eivHwxMDsCaeqZr2ApOdy17v0vpLYLUOi8a7RFgoVzt7YGGVxWdCMa6BlbBkxWhb7FGY5-TXXhA68pqPVplCstRSgb0K9j0&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ7RlVqwm0bTkRZISybPIzj7s"
     },
-    "price": 11700,
+    "price": 9800,
     "location": "54, Jaipur",
     "country": "India",
     "geometry": {
@@ -4953,20 +4925,19 @@ module.exports = [
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:58.790Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 17316
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 13916
   },
   {
     "title": "Jaipur Haveli",
@@ -4990,20 +4961,19 @@ module.exports = [
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:58.797Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 13320
+    "marketOtaPrice": 12780
   },
   {
     "title": "Sarasiruham Resort - Private Pool Villa in Udaipur",
@@ -5012,7 +4982,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTnRZfa6br94oDAAheQWWz2GppMqTXaQIikZr0M7VyFd5L10On6SdrPofF_mweUYCjYG11jmAx7oX-doxykxSto-Lw0g_loMN9cz9f0neVZuq_Zjei9VJHaGdJFK_0W3UwVqiAVVzGADm_dfyodsBlsEMgrZKyEcmy6aV1KFxk7-7r6CEv7K0oIG8__YjA9r2kqIV9QPIUAXQvgRuDG8qYrpU6YP2A9FfnAhjHhh_kxWDpQhPwXe8pQQjbxOwF0U7IEC5kGAmZdPGU_qiPdI2y_iCcyFoQvVc0h_U5rnVe8h3LegMyPVfD-fsFYaUu5uSJb6g8D0FRQBF2B0TXbG1Rqh8WApW8BJRLjfquqjiXshZz_esUwB44O7F72OAUmwqa-forh6Cepa7cyfG1RIX01QKNlHXF9_Ui_i5sBPRdj6g&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJZ5_7AhrjZzkRgoFontGzHUQ"
     },
-    "price": 11700,
+    "price": 9800,
     "location": "Lake Bagela, Udaipur",
     "country": "India",
     "geometry": {
@@ -5022,25 +4992,24 @@ module.exports = [
         24.7392945
       ]
     },
-    "category": "Trending",
+    "category": "Heritage",
     "fairsafeScore": 98,
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.532Z",
     "propertyType": "Royal Heritage Haveli Suite",
     "maxGuests": 2,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 17316
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 13916
   },
   {
     "title": "The Udaipur Luxurious Villa",
@@ -5049,7 +5018,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQsIEO1AlrRufuJ0Pu8PKdvr4lVuZfAWz-SaM664PcKirtTl67rVDUGloHIKUC3EfKj9A29A7tgxv6IUN69B8qO5f_V2G55MODx9kG-DWVYMYBdDY4uWaL1iyfbYcKPZYESWJyiUUC5ULQ2YJJvmLkJuhYG8EmzWH-V8A5Q20566bJ4VYT-FFeivFlg-_5K76JvVpf_R9OfMC5RDU_qyzx1WUpKOg0wOVHFgr2lDZtCkfs8--_sy0j5unDXIIvrHY8w-mvnuXMp-puhS-JoUH5XUKlbp9iF7kQK1MUjd8tsFTW2wqpMsvTgNF62mvAhfjEHl00aatCDSOU_11IFsaA_x2_s1vfBnjvErbSF6zzcj6yX7U4oNKDtbNs0nPk9LuwRh9UqoyAD9v9jjILR0snrzG4kUxxVZwcoJPWTpIo3I4xC&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJG2qpjbT7ZzkRcNjBu0oW-hE"
     },
-    "price": 13500,
+    "price": 9800,
     "location": "The Study, Udaipur",
     "country": "India",
     "geometry": {
@@ -5059,25 +5028,24 @@ module.exports = [
         24.6217458
       ]
     },
-    "category": "Trending",
+    "category": "Heritage",
     "fairsafeScore": 96,
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.539Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 19980
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 13916
   },
   {
     "title": "Daranga boutique villas a home stay",
@@ -5086,7 +5054,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRuLS6DJ4OT_K7dwDzNVX1Kr3Se2JuQ1IF1CSQnUUEFxGQSjHJ9xoTywn_eDC3IOS0Ir6Hh1si9c-7788T7dM3V20jTfGO-mDUbTMLw9Cl2ZhZ-7uODluIwTaotLAWF9N4e4RRb6M9DFILTnMG8QP_lYFl3-WLmHFSo1Jz1AFeFyo8ao7PCO1Yq2cKs8QQrZ8m9WeEU9jnOgjInU2h-dCV-nR1du6YiUe59Oim2N4EGNTOIPefLDcI7WuBSFZG_l5yHoH7idEeVIADjCEuN5vdAsfDrNi2nWxQQXX3xPYoHFfvyj26m0M3YOTd-NMBRGi8R2-QpTjXvSwbMVD9pDFqrkrptBI39c2McdbE7ARNpPUifTVMGXX19CitTHJcsUEOFyzagBZeyPxL-N79K2lGON0s-GyQoSlXidxLvMsLHOw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ4aF1n0bvZzkREOagIG0WPp4"
     },
-    "price": 15300,
+    "price": 9800,
     "location": "Jeevan Tara, Udaipur",
     "country": "India",
     "geometry": {
@@ -5096,25 +5064,24 @@ module.exports = [
         24.5312876
       ]
     },
-    "category": "Trending",
+    "category": "Heritage",
     "fairsafeScore": 92,
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.546Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 22644
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 13916
   },
   {
     "title": "Essentia Luxury Resort & Spa Udaipur",
@@ -5123,7 +5090,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS4XcQpEZoz71mN-PWUbdWy_VJZIb-69kjvgcO8W9cVpqs2NzEcIzP_GLSYwI3zSYVvg1wt0jEOdu6L4lTrWt7qKvMKMnaWjf0U8NgqJ4ynPqL-oME_DWtC-WnHAa6qGyHYVhgG5wHjYvM9Af5i4zfvgeG5g9nK7svX2gk4iT3ihaR3L-WeBlGedPlWdWdN4rsE9L9RknRZZWqWcyyOkq4urp90uyoFmrdSDj6QOn0IfLtM6KGNrGh9hmMB64kofaDBzVh1PC_XbTVQCAgAdbjFyor4RSFLQ-SSbIGh2NSXRn3JgLSNlsRA_dgwgx6p6Zx26IcKGfsVf4T8d2GsxiFlRDfHkTie-PMJzULV4_5AsWvB66Ms3UrPlc4fuFGjhgyVrBknC-KLTb5QPFDY8f2Pt5poaB1KtgbPMT3S-RjXJg86&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJm-0BIvTpZzkReHQsYYa2saU"
     },
-    "price": 12600,
+    "price": 9800,
     "location": "SS Hills Main Jhamar, Udaipur",
     "country": "India",
     "geometry": {
@@ -5133,25 +5100,24 @@ module.exports = [
         24.5303789
       ]
     },
-    "category": "Trending",
+    "category": "Heritage",
     "fairsafeScore": 92,
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.551Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 18648
+    "marketOtaPrice": 13916
   },
   {
     "title": "Aranya Vilas by Mertia Hospitality",
@@ -5160,7 +5126,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRB7oCrpm0gmnft7WQSCXGmozB1h4dRypcaO4OSBevsSRnWpbKbmeakFnhd4p-Gc0kQEoaV8lIuUffkdTUTUs1_BAn1ygWikgYnKgTrE9hUy2uyQCeUWkD5zfBzIcybHih-dnfno47wO6u7Mg5jf2blQdCD1umQ6yd9p_xoBG7da5thoS5CyKPhjLZqWD23CmkHrxIZR30uxnuXQTUpnfcX2IVOxn4NIQWo9rCyXl5ex6meX2RypOn9lk2Og6qF_9n7AedLV0wqyyv5sqacu-OyH90BgU6K41e6XnqX-F3Qp4Bk-5oc0Ho47A0W_qIW1xEvOq994tlQrQsk2Zf5W5v30gzPta5jnDRZkwbrWOb2ww_g7GOMgo5xAVcgGAdSfCdizslzlsHw06_n9obnFw2Y5VDXAOMISj68G8cvwkkSvNI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJRwmOdazlZzkRCw2gA8e2n2s"
     },
-    "price": 9900,
+    "price": 9800,
     "location": "Doodh Talai Road, Udaipur",
     "country": "India",
     "geometry": {
@@ -5170,25 +5136,24 @@ module.exports = [
         24.5726583
       ]
     },
-    "category": "Trending",
+    "category": "Heritage",
     "fairsafeScore": 90,
     "amenities": [
       "Historic Courtyard View",
       "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
+      "Traditional Rajasthani Dining",
       "Swimming Pool",
       "Air Conditioning",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.556Z",
     "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 14652
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "baths": 1,
+    "marketOtaPrice": 13916
   },
   {
     "title": "Theory9 - Premium Serviced Apartments in Mumbai | Bandra",
@@ -5211,20 +5176,20 @@ module.exports = [
     "fairsafeScore": 92,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.350Z",
     "propertyType": "Boutique Serviced Apartment",
-    "maxGuests": 3,
-    "bedrooms": 2,
-    "beds": 2,
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 8094
+    "marketOtaPrice": 7695
   },
   {
     "title": "THE BNB HOMES",
@@ -5247,12 +5212,12 @@ module.exports = [
     "fairsafeScore": 96,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.356Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5260,7 +5225,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5964
+    "marketOtaPrice": 5670
   },
   {
     "title": "Corporate Luxury Stays BKC, Bandra East",
@@ -5283,12 +5248,12 @@ module.exports = [
     "fairsafeScore": 100,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.363Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5296,7 +5261,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 7384
+    "marketOtaPrice": 7020
   },
   {
     "title": "Orbit Serviced Apartments",
@@ -5319,12 +5284,12 @@ module.exports = [
     "fairsafeScore": 98,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.368Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5332,7 +5297,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5964
+    "marketOtaPrice": 5670
   },
   {
     "title": "Juhu Residency Boutique Hotel",
@@ -5355,12 +5320,12 @@ module.exports = [
     "fairsafeScore": 90,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.375Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5368,7 +5333,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 7384
+    "marketOtaPrice": 7020
   },
   {
     "title": "315Work Avenue IND1 - Coworking Space",
@@ -5387,16 +5352,16 @@ module.exports = [
         12.9833352
       ]
     },
-    "category": "Workation",
+    "category": "City",
     "fairsafeScore": 96,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.762Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5404,7 +5369,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5964
+    "marketOtaPrice": 5670
   },
   {
     "title": "WorkDen - Executive 1 - 100ft road",
@@ -5423,16 +5388,16 @@ module.exports = [
         12.9690124
       ]
     },
-    "category": "Workation",
+    "category": "City",
     "fairsafeScore": 90,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.768Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5440,7 +5405,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5964
+    "marketOtaPrice": 5670
   },
   {
     "title": "WorkDen - Executive 2 - 100ft road",
@@ -5459,16 +5424,16 @@ module.exports = [
         12.9726728
       ]
     },
-    "category": "Workation",
+    "category": "City",
     "fairsafeScore": 92,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.775Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5476,7 +5441,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5964
+    "marketOtaPrice": 5670
   },
   {
     "title": "WorkDen - Executive 3, Indiranagar",
@@ -5495,24 +5460,24 @@ module.exports = [
         12.9707712
       ]
     },
-    "category": "Workation",
+    "category": "City",
     "fairsafeScore": 90,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.782Z",
     "propertyType": "Boutique Serviced Apartment",
-    "maxGuests": 3,
-    "bedrooms": 2,
-    "beds": 2,
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 6674
+    "marketOtaPrice": 6345
   },
   {
     "title": "Olsen Spaces Indiranagar",
@@ -5531,16 +5496,16 @@ module.exports = [
         12.9727255
       ]
     },
-    "category": "Workation",
+    "category": "City",
     "fairsafeScore": 100,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Ergonomic Work Desk & Office Chair",
+      "Dedicated Ergonomic Work Desk",
       "Air Conditioning",
-      "Smart 55\" 4K TV with Netflix",
-      "Fully Equipped Modern Kitchen",
-      "In-Unit Washer & Dryer",
-      "Prime Cafe & Metro Connectivity"
+      "Smart 50 inch 4K TV with OTT",
+      "Fully Equipped Modern Kitchenette",
+      "In-Unit Washer",
+      "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.788Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5548,7 +5513,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5964
+    "marketOtaPrice": 5670
   },
   {
     "title": "Aveda Mountains and Mist",
@@ -5557,7 +5522,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQLQ_hldaafTVPw4GVh25y5KABCfuc8rBDKn51YKB8YGj5Tyipphb38MwWucHdFUKuol-nSJAmQBT0090VZyIdUigDgnchU_eglz8PdY7C7UpGmj4Kk5Wc9PPQNCmOFqXonfkZLisuRKVXsV4CCun5qnzC2YYBIH3qH_Y8FWQOpW5lJDDejpU8GDxGwo8DZNIhlOZgtnzb6jx8zN-UlI1hvm1z838aoFobqOAZmpUS1GZUzPf4K-WOrSHFclsOClFrRLE0nuqys5MuH0mrIUxTpfqwYXcRQ4YEkEYAEG40QnbsWtXeWvcBOwspUtyy1Rk3L8mveNdSYLvW9bbb2hecsMseGw6GuYEd_xpzKJgkIvNfKNSVods6K2J7GTYCx7nft-_h1EerYetlFWi0VX3Z2ipVsTAIhrbhuCsyQ1XSDCA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJbWEwUbOjBzsReTXgoNzRBng"
     },
-    "price": 8800,
+    "price": 5800,
     "location": "Near Chenkulam Dam, Munnar",
     "country": "India",
     "geometry": {
@@ -5570,22 +5535,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 94,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:15:01.581Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 6,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 12760
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Tea Valley Resort",
@@ -5594,7 +5558,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTyx9fYwtRxs7VZRQevloL3zlPw0twn7Gbz-M0_0kzrNGvW3Bxwaae9On9xAOTrSNFiNW60o9j0MPEnCqvKnPJ6ZnEgz25dHkV3A1ahzeNV-92Jn1DRQz2Iw_p-8AjOZyX04tq0PCxxEgaDvwi2N6GJ-YvG3MgjEDD-TX0Ij5ZorQP_ZaaoQhO5zUuj9gZkBe209neIrNGOTJfS73_WvEgAx-ob1Y1_i6d5FLnQT_mQy3k7xDo42i_ZwQAzZV5g76NMN863VLZVhjLV25HBmlZtD-EdWFeFcSsGtsjyPq9rqI5CwjBwVYklJFic8VH1VGjul89c6eCz5g6N-NIwr4yvcuNnzblr8oa-Hfzp0Z5mMBDB99laNUU5gRLdYl6vj-zReG9Z9ZUt3-U0qdhAHWZFqBQabq_-_LopY0hnOYw1wOSS&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJf-mQCwOZBzsRRnOFTvF9Sic"
     },
-    "price": 8000,
+    "price": 5800,
     "location": "Bisonvally Road, Munnar",
     "country": "India",
     "geometry": {
@@ -5607,22 +5571,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 90,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:15:01.587Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 11600
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Flower Valley Plantation Homestay",
@@ -5631,7 +5594,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTJfVxZFrzJZfaBeBTV7npWMKyD2SqkivvlExjRa4EX-XbeUoHTAA1lknOTEiMLmt73N57q_HKceCNtHMuyit25UjaFSI2i53N0oP_Q-TMGOjd2HrPjz40wUYUAExEvf91WaskIDoa4nioNpqRi6pufJ6ujtwp4QKqqbOAxGaoViWwobNdR5WOu7IHflb-rRMlNgkCuhl7TowB1NMFxiYdNe7LBxPGaDwc8zzbaiLdhplAW_7BtYlxYi-iRGyD55uePMmEqpDWtZG8eW0vESj8lWSZ8YCdfU1xC2J5SfZsSjoMeXN9NYiizwtWLNSeaaQ1Gb9YbnrCKK1ePaAFu_msKiIdLtrAmw0wPkgmVQhea1Lg098xO2poDyj6FeFs2jfd2FQOmp8H1KLYpr9mftPPw_tA74Xl9Jd1kB3aQASI2Zg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJDQVzJFWWBzsR-xhABiCYH6w"
     },
-    "price": 6400,
+    "price": 5800,
     "location": "Kurisupara, Munnar",
     "country": "India",
     "geometry": {
@@ -5644,22 +5607,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 98,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:15:01.594Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 4,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 9280
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Secret Valley Plantation Resort Munnar",
@@ -5668,7 +5630,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ5YDNPbGCP9htniPCn714JVWN1I4e5wxFIl-d2qwHnunyqpxpf2Kkcd9tE2Az5FHQ-siWHtQtjP4blzNPYhoaZwW8pCIxwn-QBi05P4gEdsbJ5kaR4rQtiiYsNO7KiMsttSurIBosg46hJNdMiRnmH9tB7fdI8xVrUFNPMaALwhF6fQIrmzfJiUluBV3upIRX_hKIT3wlLG19SdpZbaj7xYx0exzkWfAgHImbyBJ6MetYU76sRNkoLJWNjjJnoM67W33Qs1hxsOUfS2DnrLXaecrVeBgH3-FwFqzEBKQNVaZPTozAojVffOyhaU56zRnDf4D4WG4JkP_3TWj0a5aadohryIj64vvWIWpimtuolhdqgn2qydW1bHqr3p4dwrej5uN-v8L24rwoZ07d7LRCmSim4u-XpgqzcVJGtpLiDYbHh&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJL8jyp0qZBzsRpRERfazoOIk"
     },
-    "price": 7200,
+    "price": 5800,
     "location": "Byepass Road Chithirapuram Munnar, Munnar",
     "country": "India",
     "geometry": {
@@ -5681,22 +5643,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 98,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:15:01.601Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 5,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 10440
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 8004
   },
   {
     "title": "Munnar Mountain View Cottage",
@@ -5718,22 +5679,21 @@ module.exports = [
     "category": "Mountains",
     "fairsafeScore": 94,
     "amenities": [
-      "Panoramic Mountain & Snow Views",
-      "Indoor Wood-Fired Fireplace",
-      "Heated Electric Blankets",
-      "High-Speed Wi-Fi (150 Mbps)",
-      "Private Pine-View Balcony",
-      "Outdoor Bonfire & BBQ Setup",
-      "24/7 Hot Water Facility",
-      "Kitchen with Microwave & Refrigerator"
+      "Panoramic Mountain and Pine Views",
+      "Electric Room Heating / Blankets",
+      "High-Speed Wi-Fi (100 Mbps)",
+      "Balcony with Scenic Valley View",
+      "24/7 Hot Water",
+      "Complimentary Mountain Tea / Coffee",
+      "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:15:01.607Z",
     "propertyType": "Himalayan Cedar Wood Chalet",
-    "maxGuests": 5,
-    "bedrooms": 3,
-    "beds": 4,
-    "baths": 3,
-    "marketOtaPrice": 8120
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 7728
   },
   {
     "title": "Waves and Dales Alleppey Houseboats",
@@ -5742,7 +5702,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTImhZF3u9C6VNYD-yQqNEclppw-6WBDK0WkVA8cB9ZONieu6Ucc2AQK27HB0y3KGoW2Ov4ruoSke3jAe7Zclt8S5nm8aHg2z7MeosPiZ7EM5KcbMIGN_eJBci5AEC3BmCjVQbMp1_ZXPYt6BgVXSvQl5EQbWZtTVQduI5VGJymYjmEWrOcqgGkg2SBqXLLTnAO31H3ehSAjV-JDmg72bYcrSZwH2KjH8-76SuXVc3fjBgRloLv8vOHTDE_iJ1PUi-0Q7OOhxR48NejB5u4GHORZ5WYUOV_7Yp7ednQAtwZkNUbMgJ40QSGNJs6hZv9gHUzg7LAodYbFepzrM0hmlCGeLw0l9u4ndnJb5Wus2P_HAd8CugkYQmfTelYCuv-1O1Muj2B1LgyzsAgyf6qE-1vQSZKpxXN0qwh_h10rY7cH07-&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJr2kgBhiECDsR008WUMr-uGk"
     },
-    "price": 4400,
+    "price": 5800,
     "location": "Finishing Point, Alleppey",
     "country": "India",
     "geometry": {
@@ -5765,12 +5725,12 @@ module.exports = [
       "Balcony with Scenic View"
     ],
     "createdAt": "2026-09-02T20:15:02.399Z",
-    "propertyType": "Cozy Vacation Homestay",
-    "maxGuests": 3,
+    "propertyType": "Private Deluxe Backwater Houseboat",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5940
+    "marketOtaPrice": 8120
   },
   {
     "title": "Backwater De Cruze Alleppey Houseboats",
@@ -5779,7 +5739,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTRH0J6RPyFQ_8vNy8Z7_4D0tRaezzYixDESaLmCTZ1-od_PUo3Y1ZNc7e6ugMNjzEX85No4gLX2VA_u_shm5n57zOQF4GfX46hEkXgjGeQOG9kFXw1e5Hp9fnmaZafGjasBQx9NvVzqw-JNtrag9zGwaKp0Nkc_q6O1T3ZJ7HtiC04wkjxtT5y4-Au8c0tf3qooWXnnz2NZCXOvkaVaqgJKdE54EOreO3pI7VJ50ACCeJyA_r9DI9flBiyshJ3pjPbu73el-yDfZX5cOULuDWHrd4WnVOn4Wb45XZ7vyHmci6m55zY8khBdQq-5tHoJrf88WAtoV9a7UZlqztN0069bjBwdDyiupyJw1OXD0f1nwQj5zJu0r7JTqOVk1ju-nAfci5AgJhyZXvYa1zPDc8is-UkKaIrKeuLDrANhOSU4QfW&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ9f8UKCqFCDsRmiz87y091MI"
     },
-    "price": 3200,
+    "price": 5800,
     "location": "Pallathuruthy Bridge, Alleppey",
     "country": "India",
     "geometry": {
@@ -5802,12 +5762,12 @@ module.exports = [
       "Balcony with Scenic View"
     ],
     "createdAt": "2026-09-02T20:15:02.405Z",
-    "propertyType": "Cozy Vacation Homestay",
-    "maxGuests": 3,
+    "propertyType": "Private Deluxe Backwater Houseboat",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 4320
+    "marketOtaPrice": 8120
   },
   {
     "title": "Alleppey Backwater Cruise",
@@ -5816,7 +5776,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRZ-WpVypEq8zIv_48Cw8L8BV8ezgSNlDZObRtP72O14byHQHxTjYx4Uzq9g5PgHtUZidMoV98kFj2bhZYlDQa3PVLJC7BJXYWDl_ASJezT3XL_PM4I6ssZTFM3NgNyG-p5lG2BiNQIeqfyZ5qsOml84B0sxfSZ2Gq-EJC_8QLaYeOWZjgyqR99jij_EsDiDaba2jjhlfP0es2-Kr4iUz6wSDTCm5zmU57Z6c7dJpC7DZdePQaTooyURQsq9ftd3ycK-VhYz7cx8502Hb-UWy04ONFaXEVaR_orr5vOqereqDJhwYlf9ofi4kfW-GtAYFZuemmxJtcEZ0maSsZuNlvILwTJIiFUT4YUcYXa-B9d6_lyb6clAqLrqqShii5QRokkCB8c7uMoH8UgQvLlgYajxeTLvQpAKWTCqevVGZbolx2K4zCXgk_QAWgAKQ&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJb-4Hh_-FCDsRbnis__u9kfE"
     },
-    "price": 4400,
+    "price": 5800,
     "location": "District court, Alleppey",
     "country": "India",
     "geometry": {
@@ -5839,12 +5799,12 @@ module.exports = [
       "Balcony with Scenic View"
     ],
     "createdAt": "2026-09-02T20:15:02.412Z",
-    "propertyType": "Cozy Vacation Homestay",
-    "maxGuests": 3,
+    "propertyType": "Private Deluxe Backwater Houseboat",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5940
+    "marketOtaPrice": 8120
   },
   {
     "title": "Lake Queen by LEDD Houseboats",
@@ -5853,7 +5813,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT4e6SlYd89bh6vXWZPTfyWr2VniqObM17ppA6yPPrJWdGAxSoCwZOoYJmO2JWTKnLxlnWabu8jn5ex90XppoteEcCW1YIy8cMSmXYTCSN3LHy1ECcjCyE3Zk2YAj3haACcf2QjhDd2wpR_T0DyRfc8QOSTkTuxH1BcDdedwI30qhgMLk-ZP0DX8ysowqJ-Q8Du_zfj5wicLA_Sh9egBVfUOF61GXhlN3WAnZCPzCG69NJW7ng_48Nf2GIC2RGlVXynb11Q3yJHxaVxkF5EslLGPjLCDC9oRLJ-QoFlqwUQxHHDoqlPtJh5wJEBfO-rYmelFTxDVQ1ZvJ80Ge7kLM8O0xmQTfWuWJN0uLKbhgCeS08r6cht3hpis0JqyqXoRECSyPGQsT7muSOk2NeBO3-KPanawX7UmxSsnlolOzmbp6ID&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJMf15dX2DCDsRm4D-kOWkBns"
     },
-    "price": 4000,
+    "price": 5800,
     "location": "Church Road, Alleppey",
     "country": "India",
     "geometry": {
@@ -5876,12 +5836,12 @@ module.exports = [
       "Balcony with Scenic View"
     ],
     "createdAt": "2026-09-02T20:15:02.418Z",
-    "propertyType": "Cozy Vacation Homestay",
-    "maxGuests": 3,
+    "propertyType": "Private Deluxe Backwater Houseboat",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5400
+    "marketOtaPrice": 8120
   },
   {
     "title": "Alleppey Backwaters",
@@ -5890,7 +5850,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTI8WrJVsfmwpHIrBUZF-7h_ViOhg7dTw4eUDDf-FWEukKuVncC73aggYlvxTWwErc2FxYSVuWC2K_pbTZwmeKUBHRqp1CcDzjYnFq_Lgjdmg3Zzh1N7oLEoXFrSN01lCCaQVMrahJGUA7CBSUnHeviIRaeS_2mOeAbAQDSzsKCODePNADUwajiO9J1vKIT-vIQZVL_qjxu0zzu4pTh9JPbThwsqAounSYkn69IcRSerGwkLm8ZtfjqjhlBADL_7OfRaWMTfGYVtvbGzXv6R7tUJ8w4wKVaIWDEEMdxsShUTSD_S7ihIeGCyOEFxIShzKWIh_N1GlpD1P4ZPG71cSIBbjYm8hNWAI02hfVcvbs6I2M5DkpFoJ7VKN4wOlq0P63A5pEWOByp0sexNs4kKuiZ46YcHHnadAW72fmgyHDFPg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJW73fGQyECDsRDlRAOLRvKHU"
     },
-    "price": 4400,
+    "price": 2600,
     "location": "Punnamada, Alleppey",
     "country": "India",
     "geometry": {
@@ -5913,12 +5873,12 @@ module.exports = [
       "Balcony with Scenic View"
     ],
     "createdAt": "2026-09-02T20:15:02.423Z",
-    "propertyType": "Cozy Vacation Homestay",
-    "maxGuests": 3,
+    "propertyType": "Backwater Canal Homestay",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 5940
+    "marketOtaPrice": 3640
   },
   {
     "title": "Veda5 Ayurveda & Yoga Retreat Rishikesh",
@@ -5927,7 +5887,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS6hOlUKWmeNQAxhTHFW3mKYl0XtnK4COQdhBb3H-wVRXtI0O_WsEX08TIZYoOyE_0yXLefvT7nd1ZqrEEkCpkvLZngbNo5NxZRsyOB1S1H_XRDikw0jvet0XVLbx5srPHOAmYzv3fm33o90V7w6KJWQnOEdTigRvw2LgGKux7V3ITrTsFIBB_N_gGZB4yXI1d_95xDPNfA_m0IishA16v7bOfXEI6CJAbplBE1_77hZyEWqUXk5GnE5ofTwpRwqxNlY05NUYqk9UPymeQ6oawLmn-PbBSNtlUNc0dzqyhftDHl0FrKA9s3whWvwlRR_83ITY7MATm1AyBvG9U5qgg92UFFmiNWYpOblbOMY_Y1RKtvZUlbsT_Q79Dk1F_teLRCvj4duqIFc_rESGFzvxaHauTVju7TrT5YFJASozYhtA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJMbfsZgAUCTkR_n0O1pwcWHM"
     },
-    "price": 950,
+    "price": 3800,
     "location": "Veda5 Wellness Ayurveda & Yoga Retreat Ratta Pani, Rishikesh",
     "country": "India",
     "geometry": {
@@ -5937,7 +5897,7 @@ module.exports = [
         30.1004143
       ]
     },
-    "category": "Pools",
+    "category": "Rooms",
     "fairsafeScore": 92,
     "amenities": [
       "Temple & Ghat Proximity (<300m)",
@@ -5949,12 +5909,12 @@ module.exports = [
       "Early Morning Boat Assistance"
     ],
     "createdAt": "2026-09-02T20:15:03.148Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Himalayan Yoga and Ayurveda Suite",
+    "maxGuests": 2,
     "bedrooms": 1,
-    "beds": 2,
+    "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 1425
+    "marketOtaPrice": 5200
   },
   {
     "title": "Antrix Resorts & Retreat",
@@ -5973,24 +5933,24 @@ module.exports = [
         30.0669191
       ]
     },
-    "category": "Pools",
+    "category": "Ashram",
     "fairsafeScore": 96,
     "amenities": [
-      "Temple & Ghat Proximity (<300m)",
+      "Temple and Holy Ghat Proximity (<400m)",
       "Pure Vegetarian Sattvic Meals",
       "24/7 Hot Water for Sacred Snan",
-      "Complimentary Morning Aarti Kit",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Luggage Storage & Cloakroom",
-      "Early Morning Boat Assistance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T20:15:03.154Z",
-    "propertyType": "Sacred Ashram Room",
-    "maxGuests": 3,
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1605
+    "marketOtaPrice": 1498
   },
   {
     "title": "Dwivedi Hotels Sri Omkar Palace",
@@ -5999,7 +5959,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSARQsIOdEkFyKT8Q6IOva54XFKhAm_E4s67XE1OHfQEI69DewlajTVrfcihvNi2iza2-7yiWmGHR-Z0UgBuLz55lhxhef_0Px-eakuzRCOBwRnxTAZZMI3gz-gNbT5nYggo5PtKJQxYfBt_MFH_eSIIqCU-IougkJFWoLdrnxniXoKwPUWl31XrsVLaUoutxB4I_8Kdjr0YPGHWfpcdThjFELhWI3JCRd-Y8tDrKHMZPofCa2T_Ks2p05CyOocApRLcOnoFBIZWWRBL1kM5OOZ5svr62gLMZz46JzMWc7fCHMI0VzcadEoc91ScXF2IWDOzTn6J4A6S4u0b7LsSBJCALblIwogf38mIlkvwO8cjf6aEpGG_QQ2-G0OO5UcMfBSDYARYqV4erFix-gwR-wskSWinLwkHtQLnoAcCJcc0TAg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJZXsm0-MxjjkR_r_ihMhhGsQ"
     },
-    "price": 15300,
+    "price": 1350,
     "location": "D22/10 Bengali Tola Road Near Chausatthi Temple Bengali Tola, Varanasi",
     "country": "India",
     "geometry": {
@@ -6009,24 +5969,23 @@ module.exports = [
         25.3043422
       ]
     },
-    "category": "Heritage",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
-      "Historic Courtyard View",
-      "Heritage Jharokha Seating",
-      "Royal Rajasthani Dining",
-      "Swimming Pool",
-      "Air Conditioning",
+      "Temple and Holy Ghat Proximity (<400m)",
+      "Pure Vegetarian Sattvic Meals",
+      "24/7 Hot Water for Sacred Snan",
+      "Peaceful Meditation Hall",
       "High-Speed Wi-Fi",
-      "Complimentary Heritage Architecture Walk",
-      "Daily Folk Music Performance"
+      "Luggage Cloakroom Assistance",
+      "Early Morning Aarti Assistance"
     ],
     "createdAt": "2026-09-02T20:15:03.963Z",
-    "propertyType": "Royal Heritage Haveli Suite",
-    "maxGuests": 3,
-    "bedrooms": 2,
-    "beds": 3,
-    "baths": 2,
-    "marketOtaPrice": 22644
+    "propertyType": "Pilgrim Yatri Nivas Room",
+    "maxGuests": 2,
+    "bedrooms": 1,
+    "beds": 2,
+    "baths": 1,
+    "marketOtaPrice": 1890
   }
 ];
