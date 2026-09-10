@@ -26,6 +26,7 @@ import CheckoutModal from '../components/CheckoutModal';
 import RoomTicketModal from '../components/RoomTicketModal';
 import ListingMap from '../components/ListingMap';
 import ReviewSection from '../components/ReviewSection';
+import DateRangePicker, { formatDisplayDate } from '../components/DateRangePicker';
 import { toast } from 'react-hot-toast';
 
 // 4 complementary fallback high-res photos for luxury 5-photo bento grid
@@ -47,8 +48,8 @@ export default function ListingDetailPage() {
   const defaultOut = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
   const [checkIn, setCheckIn] = useState(defaultIn);
   const [checkOut, setCheckOut] = useState(defaultOut);
-  const checkInRef = useRef(null);
-  const checkOutRef = useRef(null);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [calendarStep, setCalendarStep] = useState('checkIn');
   const [guests, setGuests] = useState(1);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isTicketOpen, setIsTicketOpen] = useState(false);
@@ -572,96 +573,77 @@ export default function ListingDetailPage() {
             )}
 
             {/* Check-In / Check-Out Box */}
-            <div style={{ border: '1px solid var(--border-hover)', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px', background: 'var(--bg-input)' }}>
+            <div
+              style={{
+                position: 'relative',
+                border: isCalendarOpen ? '1px solid #ff5a5f' : '1px solid var(--border-hover)',
+                borderRadius: '14px',
+                marginBottom: '16px',
+                background: 'var(--bg-input)',
+                boxShadow: isCalendarOpen ? '0 0 0 3px rgba(255, 90, 95, 0.15)' : 'none',
+                transition: 'all 0.2s ease',
+              }}
+            >
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: '1px solid var(--border-hover)' }}>
+                {/* Check-In Trigger */}
                 <div
                   onClick={() => {
-                    try { checkInRef.current?.showPicker?.(); } catch (e) { checkInRef.current?.focus?.(); }
+                    setCalendarStep('checkIn');
+                    setIsCalendarOpen(true);
                   }}
                   style={{
                     padding: '10px 14px',
                     borderRight: '1px solid var(--border-hover)',
                     cursor: 'pointer',
-                    transition: 'background 0.15s ease'
+                    background: isCalendarOpen && calendarStep === 'checkIn' ? 'rgba(255, 90, 95, 0.08)' : 'transparent',
+                    transition: 'background 0.15s ease',
+                    borderTopLeftRadius: '13px',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2px' }}>
-                    <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', cursor: 'pointer' }}>Check-in</label>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '3px' }}>
+                    <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', cursor: 'pointer' }}>
+                      Check-in
+                    </label>
                     <Calendar size={13} style={{ color: '#ff5a5f', pointerEvents: 'none' }} />
                   </div>
-                  <input
-                    ref={checkInRef}
-                    type="date"
-                    value={checkIn}
-                    min={new Date().toISOString().split('T')[0]}
-                    onChange={(e) => setCheckIn(e.target.value)}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      try { e.currentTarget.showPicker?.(); } catch (err) {}
-                    }}
-                    onFocus={(e) => {
-                      try { e.currentTarget.showPicker?.(); } catch (err) {}
-                    }}
-                    style={{
-                      width: '100%',
-                      border: 'none',
-                      outline: 'none',
-                      fontSize: '0.84rem',
-                      fontWeight: '600',
-                      fontFamily: 'inherit',
-                      color: 'var(--text-primary)',
-                      background: 'transparent',
-                      cursor: 'pointer'
-                    }}
-                  />
+                  <div style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-primary)', whiteSpace: 'nowrap' }}>
+                    {formatDisplayDate(checkIn)}
+                  </div>
                 </div>
+
+                {/* Check-Out Trigger */}
                 <div
                   onClick={() => {
-                    try { checkOutRef.current?.showPicker?.(); } catch (e) { checkOutRef.current?.focus?.(); }
+                    setCalendarStep('checkOut');
+                    setIsCalendarOpen(true);
                   }}
                   style={{
                     padding: '10px 14px',
                     cursor: 'pointer',
-                    transition: 'background 0.15s ease'
+                    background: isCalendarOpen && calendarStep === 'checkOut' ? 'rgba(255, 90, 95, 0.08)' : 'transparent',
+                    transition: 'background 0.15s ease',
+                    borderTopRightRadius: '13px',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2px' }}>
-                    <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', cursor: 'pointer' }}>Check-out</label>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '3px' }}>
+                    <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', cursor: 'pointer' }}>
+                      Check-out
+                    </label>
                     <Calendar size={13} style={{ color: '#ff5a5f', pointerEvents: 'none' }} />
                   </div>
-                  <input
-                    ref={checkOutRef}
-                    type="date"
-                    value={checkOut}
-                    min={checkIn || new Date().toISOString().split('T')[0]}
-                    onChange={(e) => setCheckOut(e.target.value)}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      try { e.currentTarget.showPicker?.(); } catch (err) {}
-                    }}
-                    onFocus={(e) => {
-                      try { e.currentTarget.showPicker?.(); } catch (err) {}
-                    }}
-                    style={{
-                      width: '100%',
-                      border: 'none',
-                      outline: 'none',
-                      fontSize: '0.84rem',
-                      fontWeight: '600',
-                      fontFamily: 'inherit',
-                      color: 'var(--text-primary)',
-                      background: 'transparent',
-                      cursor: 'pointer'
-                    }}
-                  />
+                  <div style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-primary)', whiteSpace: 'nowrap' }}>
+                    {formatDisplayDate(checkOut)}
+                  </div>
                 </div>
               </div>
+
+              {/* Guests Dropdown */}
               <div style={{ padding: '10px 14px' }}>
                 <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Guests</label>
                 <select
                   value={guests}
                   onChange={(e) => setGuests(Number(e.target.value))}
-                  style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.82rem', fontFamily: 'inherit', background: 'transparent', color: 'var(--text-primary)' }}
+                  style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.82rem', fontFamily: 'inherit', background: 'transparent', color: 'var(--text-primary)', cursor: 'pointer' }}
                 >
                   <option value="1" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>1 guest</option>
                   <option value="2" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>2 guests</option>
@@ -669,6 +651,19 @@ export default function ListingDetailPage() {
                   <option value="6" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>6 guests</option>
                 </select>
               </div>
+
+              {/* Luxury Floating Calendar Popover */}
+              <DateRangePicker
+                checkIn={checkIn}
+                checkOut={checkOut}
+                initialStep={calendarStep}
+                isOpen={isCalendarOpen}
+                onClose={() => setIsCalendarOpen(false)}
+                onDatesChange={({ checkIn: newIn, checkOut: newOut }) => {
+                  setCheckIn(newIn);
+                  setCheckOut(newOut);
+                }}
+              />
             </div>
 
             {/* Direct Reserve Button opening Checkout Modal */}
