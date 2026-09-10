@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, Globe, Menu, User, Sparkles, Luggage, Sun, Moon, X, Shield } from 'lucide-react';
 import api from '../services/api';
@@ -58,28 +58,50 @@ export default function Navbar({ onSearch, currentSearch }) {
     <header style={{ position: 'sticky', top: 0, zIndex: 1000, background: navBg, backdropFilter: 'blur(20px)', borderBottom: '1px solid ' + navBorder, boxShadow: '0 1px 12px rgba(0,0,0,0.06)' }}>
       <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px', gap: '16px' }}>
 
-        {/* Brand Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
-          <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #ff5a5f 0%, #ff6b50 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', boxShadow: '0 4px 10px rgba(255,90,95,0.3)' }}>
-            <Sparkles size={20} />
+        {/* Brand Logo - Previous Version Style */}
+        <Link to="/" className="brand-hover-effect" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', flexShrink: 0 }}>
+          <div className="brand-icon-wrapper shadow-sm">
+            <span style={{ fontSize: '1.4rem' }}>🏡</span>
           </div>
-          <div style={{ display: 'none', flexDirection: 'column' }} className="nav-brand-text">
-            <span style={{ fontSize: '1.3rem', fontWeight: '800', letterSpacing: '-0.5px', color: '#ff5a5f' }}>FairStay</span>
-            <span style={{ fontSize: '0.6rem', fontWeight: '700', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '-4px' }}>MERN EDITION</span>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span className="brand-title">FairStay<span className="brand-dot">.</span></span>
+            <span className="brand-subtitle">VACATION RENTALS & HOMES</span>
           </div>
-          <span style={{ fontSize: '1.3rem', fontWeight: '800', color: '#ff5a5f', letterSpacing: '-0.5px' }} className="nav-logo-text">FairStay</span>
         </Link>
 
-        {/* Search Bar — hidden on mobile */}
-        <div style={{ position: 'relative', flex: '1', maxWidth: '460px' }} className="nav-search-wrapper">
-          <form onSubmit={handleSearchSubmit} style={{ display: 'flex', alignItems: 'center', background: searchBg, border: '1px solid ' + navBorder, borderRadius: '9999px', padding: '6px 12px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-            <Search size={18} style={{ color: '#94a3b8', marginRight: '8px', flexShrink: 0 }} />
-            <input type="text" placeholder="Search destinations, villas, pools..." value={query}
+        {/* Center Search Capsule (Airbnb Style) — hidden on mobile */}
+        <div style={{ position: 'relative', flex: '0 1 auto' }} className="nav-search-wrapper">
+          <form onSubmit={handleSearchSubmit} className="search-capsule" style={{ margin: 0 }}>
+            <input
+              type="text"
+              placeholder="Anywhere"
+              value={query}
               onChange={(e) => setQuery(e.target.value)}
-              style={{ border: 'none', outline: 'none', width: '100%', fontSize: '0.88rem', fontFamily: 'inherit', background: 'transparent', color: inputText }} />
-            {query && (<button type="button" onClick={() => { setQuery(''); if (onSearch) onSearch(''); }} style={{ color: '#94a3b8', background: 'none', border: 'none', cursor: 'pointer', padding: '2px 6px' }}>✕</button>)}
-            <button type="submit" className="btn-coral" style={{ padding: '5px 14px', fontSize: '0.8rem', marginLeft: '6px' }}>Search</button>
+              style={{
+                border: 'none',
+                outline: 'none',
+                background: 'transparent',
+                fontSize: '0.86rem',
+                fontWeight: '700',
+                fontFamily: 'inherit',
+                color: inputText,
+                width: query ? '240px' : '78px',
+                transition: 'width 0.2s ease',
+              }}
+            />
+            {!query && (
+              <>
+                <div className="search-capsule-divider" />
+                <span className="capsule-sub-text" style={{ whiteSpace: 'nowrap', fontWeight: '500' }}>Any week</span>
+                <div className="search-capsule-divider" />
+                <span className="capsule-sub-text" style={{ whiteSpace: 'nowrap', color: '#94a3b8' }}>Add guests</span>
+              </>
+            )}
+            <button type="submit" className="search-btn-circle" style={{ border: 'none', cursor: 'pointer' }} aria-label="Search">
+              <Search size={14} color="#ffffff" strokeWidth={2.5} />
+            </button>
           </form>
+
           {suggestions.length > 0 && (
             <div style={{ position: 'absolute', top: '108%', left: 0, right: 0, background: dropBg, border: '1px solid ' + navBorder, borderRadius: '16px', boxShadow: '0 12px 28px rgba(0,0,0,0.12)', zIndex: 200, overflow: 'hidden' }}>
               {suggestions.map((item) => (
@@ -98,29 +120,44 @@ export default function Navbar({ onSearch, currentSearch }) {
           )}
         </div>
 
-        {/* Desktop Right Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }} className="nav-right-desktop">
-          <Link to="/trips" style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '7px 14px', borderRadius: '9999px', border: '1px solid ' + navBorder, background: 'transparent', fontSize: '0.84rem', fontWeight: '600', color: navText, textDecoration: 'none', whiteSpace: 'nowrap' }}>
-            <Luggage size={15} style={{ color: '#ff5a5f' }} /><span>My Trips</span>
+        {/* Desktop Right Actions - Previous Version Style */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }} className="nav-right-desktop">
+          {/* List Your Property */}
+          <Link to="/host" className="btn-nav-action">
+            <span style={{ fontSize: '1rem', color: '#ff5a5f' }}>🏠</span>
+            <span>List Your Property</span>
           </Link>
-          <Link to="/host" style={{ padding: '7px 14px', borderRadius: '9999px', border: '1px solid ' + navBorder, background: 'transparent', fontSize: '0.84rem', fontWeight: '600', color: navText, textDecoration: 'none', whiteSpace: 'nowrap' }}>Host a Stay</Link>
 
-          {/* Theme Toggle */}
-          <button onClick={toggleTheme} title="Toggle dark/light mode"
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', border: '1px solid ' + navBorder, background: 'transparent', cursor: 'pointer', color: navText }}>
-            {isDark ? <Sun size={17} style={{ color: '#fbbf24' }} /> : <Moon size={17} style={{ color: '#6366f1' }} />}
+          {/* Theme Toggle Button */}
+          <button onClick={toggleTheme} className="btn-wishlist-nav" title="Toggle Light / Dark theme">
+            {isDark ? <Sun size={18} style={{ color: '#fbbf24' }} /> : <Moon size={18} style={{ color: '#0ea5e9' }} />}
           </button>
 
-          {/* User / Auth Dropdown */}
+          {/* Wishlist Saved Button */}
+          <Link to="/trips" className="btn-wishlist-nav" title="Saved Stays & Wishlist">
+            <span style={{ fontSize: '1.1rem', color: '#ff5a5f' }}>❤️</span>
+          </Link>
+
+          {/* User Menu Capsule */}
           <div style={{ position: 'relative' }} ref={dropdownRef}>
-            <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '5px 10px', borderRadius: '9999px', border: '1px solid ' + navBorder, background: 'transparent', cursor: 'pointer' }}>
+            <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="user-menu-btn">
               <Menu size={18} style={{ color: navText === '#f8fafc' ? '#94a3b8' : '#475569' }} />
-              {user?.profilePhoto?.url
-                ? <img src={user.profilePhoto.url} alt={user.username} style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }} />
-                : <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#ff5a5f', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', fontWeight: '700' }}>
+              <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+                {user?.profilePhoto?.url ? (
+                  <img src={user.profilePhoto.url} alt={user.username} className="user-avatar-thumb" />
+                ) : (
+                  <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: '#ff5a5f', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', fontWeight: '700' }}>
                     {user ? user.username?.[0]?.toUpperCase() : <User size={16} />}
-                  </div>}
+                  </div>
+                )}
+                {/* Online emerald dot */}
+                {user && <span className="online-status-dot" />}
+              </div>
+              {user && (
+                <span style={{ fontSize: '0.86rem', fontWeight: '700', color: navText }}>
+                  {user.username}
+                </span>
+              )}
             </button>
             {isDropdownOpen && (
               <div style={{ position: 'absolute', right: 0, top: '115%', width: '220px', background: dropBg, borderRadius: '16px', border: '1px solid ' + navBorder, boxShadow: '0 10px 30px rgba(0,0,0,0.15)', padding: '8px 0', zIndex: 300 }}>

@@ -77,7 +77,15 @@ export default function HomePage({ searchQuery, onClearSearch }) {
 
   return (
     <div>
-      {/* Hero Banner (hidden when filtering for instant focus) */}
+      {/* Category Filter Rail (Matching Previous Version Mockup directly below Navbar) */}
+      <CategoryRail
+        activeCategory={activeCategory}
+        onSelectCategory={handleCategorySelect}
+        showTax={showTax}
+        onToggleTax={setShowTax}
+      />
+
+      {/* Panoramic Scenic Sunset Villa Hero Banner */}
       {!isFilterActive && (
         <Hero
           activeDestination={activeDestination}
@@ -85,22 +93,8 @@ export default function HomePage({ searchQuery, onClearSearch }) {
         />
       )}
 
-      {/* Category Filter Rail with Tax Toggle and Price Filter */}
-      <CategoryRail
-        activeCategory={activeCategory}
-        onSelectCategory={handleCategorySelect}
-        showTax={showTax}
-        onToggleTax={setShowTax}
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        onPriceChange={(min, max) => {
-          setMinPrice(min);
-          setMaxPrice(max);
-        }}
-      />
-
       {/* Main Stays Container */}
-      <main className="container-custom" style={{ padding: '32px 24px 60px' }}>
+      <main id="listingsGridView" className="container-custom" style={{ padding: '32px 24px 60px' }}>
         {/* Results Header Bar */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
           <div>

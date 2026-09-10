@@ -76,21 +76,29 @@ export default function AiConciergeDrawer() {
           zIndex: 999,
           display: 'flex',
           alignItems: 'center',
-          gap: '8px',
-          padding: '12px 20px',
+          gap: '10px',
+          padding: '12px 24px',
           borderRadius: '9999px',
-          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+          background: 'linear-gradient(90deg, #ff6b4a 0%, #ff416c 100%)',
           color: '#ffffff',
           fontWeight: '700',
-          fontSize: '0.88rem',
-          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.25)',
-          border: '1px solid rgba(255, 90, 95, 0.3)',
+          fontSize: '0.92rem',
+          boxShadow: '0 8px 25px rgba(255, 65, 108, 0.45)',
+          border: 'none',
           cursor: 'pointer',
+          transition: 'all 0.25s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
+          e.currentTarget.style.boxShadow = '0 12px 30px rgba(255, 65, 108, 0.6)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'none';
+          e.currentTarget.style.boxShadow = '0 8px 25px rgba(255, 65, 108, 0.45)';
         }}
       >
-        <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#4ade80', display: 'inline-block' }} />
-        <Sparkles size={16} style={{ color: '#ff5a5f' }} />
-        <span>Ask AI Concierge</span>
+        <Sparkles size={17} style={{ color: '#ffffff' }} />
+        <span>FairStay AI Trip Assistant</span>
       </button>
 
       {/* Drawer Backdrop */}
