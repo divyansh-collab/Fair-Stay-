@@ -37,6 +37,11 @@ const COMPLEMENTARY_PHOTOS = [
   'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80',
 ];
 
+export function getCleanFestivalName(name) {
+  if (!name) return 'Festival';
+  return name.replace(/\s*&.*$/, '').trim();
+}
+
 export default function ListingDetailPage() {
   const { id } = useParams();
   const [listing, setListing] = useState(null);
@@ -519,17 +524,20 @@ export default function ListingDetailPage() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '5px',
-                      fontSize: '0.74rem',
+                      fontSize: '0.78rem',
                       fontWeight: '700',
-                      padding: '3px 8px',
-                      borderRadius: '6px',
-                      marginTop: '4px',
+                      padding: '4px 10px',
+                      borderRadius: '8px',
+                      marginTop: '6px',
                       background: isSurge ? 'rgba(239, 68, 68, 0.08)' : 'rgba(34, 197, 94, 0.08)',
-                      color: isSurge ? '#ef4444' : '#16a34a',
-                      border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`
+                      color: isSurge ? '#dc2626' : '#15803d',
+                      border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.22)' : 'rgba(34, 197, 94, 0.22)'}`
                     }}>
-                      <span>{seasonalPricing.emoji || '🔥'}</span>
-                      <span>{seasonalPricing.signedPercentage} {seasonalPricing.festivalName.split(' ')[0] || 'Seasonal'} {isSurge ? 'Surge' : 'Discount'}</span>
+                      <span>{seasonalPricing.emoji || (isSurge ? '🔥' : '🌿')}</span>
+                      <span>
+                        {seasonalPricing.signedPercentage} {getCleanFestivalName(seasonalPricing.festivalName)} {isSurge ? 'Surge' : 'Discount'}
+                        {' '}({effectiveNightlyRate - basePrice >= 0 ? '+' : ''}₹{Math.abs(effectiveNightlyRate - basePrice).toLocaleString('en-IN')}/night)
+                      </span>
                     </div>
                   </div>
                 ) : (
@@ -657,12 +665,34 @@ export default function ListingDetailPage() {
               You won't be charged yet
             </div>
 
-            {/* Short & Simple Price Breakdown */}
+            {/* Short & Transparent Price Breakdown */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-light)', paddingTop: '16px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span>₹{effectiveNightlyRate.toLocaleString('en-IN')} × {nights} {nights === 1 ? 'night' : 'nights'}</span>
                 <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}>₹{staySubtotal.toLocaleString('en-IN')}</span>
               </div>
+
+              {hasImpact && (
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  fontSize: '0.82rem',
+                  fontWeight: '600',
+                  color: isSurge ? '#dc2626' : '#15803d',
+                  background: isSurge ? 'rgba(239, 68, 68, 0.06)' : 'rgba(34, 197, 94, 0.06)',
+                  padding: '7px 10px',
+                  borderRadius: '6px',
+                  border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.16)' : 'rgba(34, 197, 94, 0.16)'}`,
+                }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <span>{seasonalPricing.emoji || (isSurge ? '🪔' : '🌿')}</span>
+                    <span>Includes {getCleanFestivalName(seasonalPricing.festivalName)} ({seasonalPricing.signedPercentage})</span>
+                  </span>
+                  <span>{seasonalAdjustment >= 0 ? '+' : ''}₹{seasonalAdjustment.toLocaleString('en-IN')}</span>
+                </div>
+              )}
+
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span>Taxes & GST ({Math.round(gstRate * 100)}%)</span>
                 <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}>₹{gstAmount.toLocaleString('en-IN')}</span>
