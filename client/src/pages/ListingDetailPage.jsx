@@ -22,7 +22,6 @@ import {
   ChevronRight
 } from 'lucide-react';
 import api from '../services/api';
-import FestivalPricingWidget from '../components/FestivalPricingWidget';
 import CheckoutModal from '../components/CheckoutModal';
 import RoomTicketModal from '../components/RoomTicketModal';
 import ListingMap from '../components/ListingMap';
@@ -388,8 +387,90 @@ export default function ListingDetailPage() {
             </div>
           </div>
 
-          {/* Real-time Festival & Seasonal Price Intelligence */}
-          <FestivalPricingWidget listing={listing} />
+          {/* Sleeping Arrangements */}
+          <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '28px', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
+              Where you'll sleep
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '14px' }}>
+              <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
+                <Bed size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
+                <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Bedroom 1</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>1 King size bed • Ensuite bath</div>
+              </div>
+              <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
+                <Bed size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
+                <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Bedroom 2</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>1 Queen bed • Scenic view</div>
+              </div>
+              <div style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border-light)', background: 'var(--bg-card)', transition: 'transform 0.2s, box-shadow 0.2s' }}>
+                <Sparkles size={22} style={{ color: '#ff5a5f', marginBottom: '10px' }} />
+                <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '2px' }}>Living area</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>1 Plush sofa bed lounge</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Host Profile Card */}
+          <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '28px', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', padding: '18px 22px', borderRadius: '18px', background: 'var(--bg-card)', border: '1px solid var(--border-light)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'linear-gradient(135deg, #ff5a5f 0%, #ff7b80 100%)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '1.2rem', boxShadow: '0 2px 8px rgba(255,90,95,0.3)' }}>
+                  {listing.owner?.username ? listing.owner.username.charAt(0).toUpperCase() : 'H'}
+                </div>
+                <div>
+                  <div style={{ fontWeight: '800', fontSize: '1rem', color: 'var(--text-primary)' }}>
+                    Hosted by {listing.owner?.username || 'Verified Superhost'}
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ color: '#16a34a', fontWeight: '700' }}>✓ Verified Host</span>
+                    <span>•</span>
+                    <span>100% Response Rate</span>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => toast.success(`Connected with ${listing.owner?.username || 'Host'}! Direct messaging active.`)}
+                style={{ padding: '8px 18px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontWeight: '700', fontSize: '0.82rem', cursor: 'pointer' }}
+              >
+                Contact Host
+              </button>
+            </div>
+          </div>
+
+          {/* Things to Know / House Rules */}
+          <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '28px', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '14px' }}>
+              Things to know
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '18px', fontSize: '0.84rem' }}>
+              <div>
+                <div style={{ fontWeight: '800', color: 'var(--text-primary)', marginBottom: '6px' }}>House Rules</div>
+                <div style={{ color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span>Check-in: 2:00 PM – 10:00 PM</span>
+                  <span>Checkout: 11:00 AM</span>
+                  <span>Smoke-free environment</span>
+                </div>
+              </div>
+              <div>
+                <div style={{ fontWeight: '800', color: 'var(--text-primary)', marginBottom: '6px' }}>Health & Safety</div>
+                <div style={{ color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span>Keyless digital pass entry</span>
+                  <span>Security lock on bedroom</span>
+                  <span>First aid kit on-premises</span>
+                </div>
+              </div>
+              <div>
+                <div style={{ fontWeight: '800', color: 'var(--text-primary)', marginBottom: '6px' }}>Cancellation Policy</div>
+                <div style={{ color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span>100% full refund up to 24h</span>
+                  <span>FairSafe Price Guarantee</span>
+                  <span>Zero hidden service fees</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Location Map */}
           <div style={{ marginTop: '32px', marginBottom: '24px' }}>
