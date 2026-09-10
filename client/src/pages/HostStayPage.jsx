@@ -196,6 +196,31 @@ export default function HostStayPage() {
                 <span style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '4px', display: 'block' }}>
                   Statutory GST slab: {price > 7500 ? '18% Luxury Hotel GST' : (price <= 1000 ? '0% GST (Exempt)' : '12% Hotel GST')}
                 </span>
+
+                {/* Host Pricing Intelligence (Section 14 of FairStay Spec) */}
+                <div style={{ background: 'rgba(255, 90, 95, 0.05)', border: '1px solid rgba(255, 90, 95, 0.2)', borderRadius: '12px', padding: '12px 14px', marginTop: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', fontWeight: '800', color: '#ff5a5f', marginBottom: '4px' }}>
+                    <Sparkles size={14} /> FairStay Dynamic Pricing Intelligence
+                  </div>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', margin: '0 0 6px', lineHeight: 1.45 }}>
+                    {location.toLowerCase().includes('varanasi')
+                      ? `In Varanasi, peak events like Dev Deepawali typically command a +40% surge (Suggested: ₹${Math.round(price * 1.4).toLocaleString('en-IN')}). On regular days, FairStay preserves your direct ₹${price.toLocaleString('en-IN')} baseline with 0% surge.`
+                      : location.toLowerCase().includes('goa')
+                      ? `In Goa, Sunburn Week commands up to +45% surge (Suggested: ₹${Math.round(price * 1.45).toLocaleString('en-IN')}), while Diwali maintains your baseline rate with 0% surge.`
+                      : location.toLowerCase().includes('manali')
+                      ? `In Manali, winter snowfall and summer heatwave escape drive +35% demand (Suggested: ₹${Math.round(price * 1.35).toLocaleString('en-IN')}), with off-peak discounts in monsoon.`
+                      : location.toLowerCase().includes('jaipur')
+                      ? `In Jaipur, JLF & winter weddings bring +35% demand (Suggested: ₹${Math.round(price * 1.35).toLocaleString('en-IN')}), while desert summer trends 30% lower.`
+                      : `FairStay protects your earnings by explaining price adjustments to guests based strictly on authentic regional event calendars and local seasonal demand.`}
+                  </p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                    <span>✓ Complete Host Autonomy</span>
+                    <span>•</span>
+                    <span>✓ Transparent Guest Explanations</span>
+                    <span>•</span>
+                    <span>✓ Zero Hidden Markups</span>
+                  </div>
+                </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>

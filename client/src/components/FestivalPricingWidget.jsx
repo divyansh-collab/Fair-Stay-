@@ -138,6 +138,63 @@ export default function FestivalPricingWidget({ listing }) {
         </div>
       </div>
 
+      {/* Fair Price Meter (Visual Transparency Layer) */}
+      <div style={{ background: 'var(--bg-card)', padding: '16px', borderRadius: '12px', border: '1px solid var(--border-light)', marginBottom: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap', gap: '6px' }}>
+          <span style={{ fontSize: '0.78rem', fontWeight: '800', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <span>📊</span> FairStay Price Meter
+          </span>
+          <span style={{
+            fontSize: '0.72rem',
+            fontWeight: '700',
+            padding: '3px 8px',
+            borderRadius: '6px',
+            background: isSurge ? (prediction.percentage >= 30 ? 'rgba(239, 68, 68, 0.12)' : 'rgba(234, 179, 8, 0.12)') : isDiscount ? 'rgba(34, 197, 94, 0.12)' : 'rgba(14, 165, 233, 0.12)',
+            color: isSurge ? (prediction.percentage >= 30 ? '#dc2626' : '#ca8a04') : isDiscount ? '#16a34a' : '#0284c7',
+          }}>
+            {isSurge ? (prediction.percentage >= 30 ? '🔴 High Demand Event Rate' : '🟡 Above Typical Seasonal Rate') : isDiscount ? '🌿 Below Typical Off-Peak Savings' : '🟢 Fair Baseline Rate (0% Surge)'}
+          </span>
+        </div>
+
+        {/* Progress Track */}
+        <div style={{ position: 'relative', height: '8px', background: 'linear-gradient(to right, #22c55e 0%, #0ea5e9 33%, #eab308 66%, #ef4444 100%)', borderRadius: '9999px', margin: '14px 0 20px' }}>
+          {/* Position Indicator Needle */}
+          <div style={{
+            position: 'absolute',
+            top: '-5px',
+            left: `${isDiscount ? Math.max(5, 22 + (prediction.rawPercentage * 0.6)) : isNeutral ? 33 : Math.min(95, 33 + (prediction.rawPercentage * 1.35))}%`,
+            transform: 'translateX(-50%)',
+            width: '18px',
+            height: '18px',
+            background: '#ffffff',
+            border: `3px solid ${isSurge ? '#ef4444' : isDiscount ? '#16a34a' : '#0ea5e9'}`,
+            borderRadius: '50%',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.25)',
+            transition: 'all 0.3s ease',
+          }} />
+        </div>
+
+        {/* Meter Labels */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', fontSize: '0.68rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+          <div>
+            <span style={{ display: 'block', fontWeight: '700', color: '#16a34a' }}>Off-Peak</span>
+            <span>₹{Math.round(basePrice * 0.75).toLocaleString('en-IN')}</span>
+          </div>
+          <div>
+            <span style={{ display: 'block', fontWeight: '700', color: '#0ea5e9' }}>Fair Baseline</span>
+            <span>₹{Number(basePrice).toLocaleString('en-IN')}</span>
+          </div>
+          <div>
+            <span style={{ display: 'block', fontWeight: '700', color: '#ca8a04' }}>Moderate</span>
+            <span>₹{Math.round(basePrice * 1.2).toLocaleString('en-IN')}</span>
+          </div>
+          <div>
+            <span style={{ display: 'block', fontWeight: '700', color: '#dc2626' }}>Peak Event</span>
+            <span>₹{Math.round(basePrice * 1.45).toLocaleString('en-IN')}</span>
+          </div>
+        </div>
+      </div>
+
       {/* Area Context Explanation */}
       <div style={{ background: 'var(--bg-card)', padding: '14px 16px', borderRadius: '10px', border: '1px solid var(--border-light)', fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '12px' }}>
         <div style={{ fontWeight: '700', color: 'var(--text-primary)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
