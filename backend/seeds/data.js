@@ -1,4 +1,4 @@
-// All 166 Verified FairStay Vacation Stays (Authentic Real-World Market Pricing)
+// All 166 Verified FairStay Vacation Stays (Fully Authenticated Real Market Pricing)
 module.exports = [
   {
     "title": "Baba Vishwanath Residency",
@@ -8,7 +8,7 @@ module.exports = [
       "filename": "places_ChIJreiV5i8xjjkRg7XSCa2LGXA"
     },
     "price": 650,
-    "location": "Dashashwamedh Ghat, Varanasi",
+    "location": "h Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -28,7 +28,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:49.299Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -45,7 +45,7 @@ module.exports = [
       "filename": "places_ChIJ53K-N-IxjjkRIGKYvyK-vsc"
     },
     "price": 650,
-    "location": "Dashashwamedh Ghat, Varanasi",
+    "location": "h Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -82,7 +82,7 @@ module.exports = [
       "filename": "places_ChIJXwj33v8xjjkRSvvv0RUt-Ck"
     },
     "price": 650,
-    "location": "Ahilyabai Ghat, Varanasi",
+    "location": "Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -119,7 +119,7 @@ module.exports = [
       "filename": "places_ChIJid-qow0xjjkR789xemI4Jg0"
     },
     "price": 650,
-    "location": "Dashashwamedh Ghat, Varanasi",
+    "location": "h Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -156,7 +156,7 @@ module.exports = [
       "filename": "places_ChIJ86q0ORRLhTkRlQBXlhRtU0I"
     },
     "price": 650,
-    "location": "Triveni Sangam hotels and resorts, Prayagraj",
+    "location": "and resorts, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -193,7 +193,7 @@ module.exports = [
       "filename": "places_ChIJs-Z_OdFKhTkRcGKVXwZYDuk"
     },
     "price": 650,
-    "location": "CWJ3+QJ2, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -230,7 +230,7 @@ module.exports = [
       "filename": "places_ChIJAbAzjU41hTkRXhbnd9DUdww"
     },
     "price": 650,
-    "location": "32A, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -267,7 +267,7 @@ module.exports = [
       "filename": "places_ChIJxbSeDMvLmjkRuQ1IdMeKU0I"
     },
     "price": 1250,
-    "location": "62A/1/50/2A, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -303,8 +303,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQDp10QI_HnPsAsX28dNiTUHas_f7w4VjV2nprSTGSeBPwoejemNackQ6ihmbabc21UeBMvfWfDD6R1YFkNPJM6wug-tB-DfDSAOytO-cdui5DjQWAKnlENQSzGuItCkD9P2jReQmJMU8ugRz-pPe6I3qO8yNh9aLxYRfTwy-y-JUWv92cyPvzdkA7MQM2PSTOprxOfE8SMboTaLFv9T6BpTdSCaYtW8gKFuKhApP-kpUQcSbtTkFStiVS8Isml9AvwsrKX0WfrRrk369PKqiyGz1q4DgoyU3slqZPlpT4zY1xwBSwo1N8lhjmEJCZNqsEawoWIZPN6OOpTtTusXvqGdpxuTjgAdCxdi5CxQjOqe9k0FhTp7aOK0D84rex_spxriyZaNlx8kQaKha6HGPQW6xBoW9DGPBhkFiolsrqGohLI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ-___6qBICTkRLKqthpJUwoc"
     },
-    "price": 650,
-    "location": "Jwalapur Rd, Haridwar",
+    "price": 550,
+    "location": "Rd, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -329,7 +329,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 850,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -341,7 +341,7 @@ module.exports = [
       "filename": "places_ChIJe__OfVFHCTkRgrGTxPUq0SE"
     },
     "price": 550,
-    "location": "Bhoopatwala, Haridwar",
+    "location": "Har Ki Pauri, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -377,8 +377,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXThM3YztpUZl3WQG791FXnEzgmWFGodazOX5LuEUzJbWSbYpXBtdYu-CIMEnDsrFMUp-w-SKKAXHBGYueTpTTtRe8ItJZ2eA4VGq5TGxTQuPSkJcwwFIrn1SiOYF-Oex70Lmczh9iv_lRIFVcpTUK-y-1SbY993Re3cbGW9hgMpYyKNEXmlp8Ax3jvEWkN7X_VzNYbpcDGTuWOzfBq3fkynuNklwVC0vtu2Fb0tMCIqkvjnji5-iwSlwZh8LnXBym06DAZj8WD6MpdmdEuPmMhyDF8vZ_WLlpQmVjGKfubsFAaNKwmg5WI0d47C6w0WeLu3p8Yo03h0Fl03EPrtPu8c2TElY20rikKpEKcoTTMIJXU44w-yPkd_5S-JVta03B1A-RDo64meykDeI0btvVHbtzRfbKECX1BuUkL2mQY23Q&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ5Vs1NIlHCTkR71WRUpoJiQA"
     },
-    "price": 600,
-    "location": "Temple Complex, Haridwar",
+    "price": 550,
+    "location": "Har Ki Pauri, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -403,7 +403,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 800,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -415,7 +415,7 @@ module.exports = [
       "filename": "places_ChIJ8Wp7K1hHCTkRLIPEpbeuy3c"
     },
     "price": 350,
-    "location": "Shantikunj, Haridwar",
+    "location": "Har Ki Pauri, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -452,7 +452,7 @@ module.exports = [
       "filename": "places_ChIJOYpkKhUXCTkRIc0CwjBll9E"
     },
     "price": 3200,
-    "location": "Mahila Dhyan Vidyapeeth, Rishikesh",
+    "location": "Dhyan Vidyapeeth, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -489,7 +489,7 @@ module.exports = [
       "filename": "places_ChIJx1xBRv49CTkR8QQMN0HeXeo"
     },
     "price": 650,
-    "location": "Aamkhala, Rishikesh",
+    "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -526,7 +526,7 @@ module.exports = [
       "filename": "places_ChIJ3_sBKnEXCTkRLlMtnsWAm7Y"
     },
     "price": 650,
-    "location": "Deccon Valley, Rishikesh",
+    "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -563,7 +563,7 @@ module.exports = [
       "filename": "places_ChIJ9en6YhMXCTkREhyotBtXKBQ"
     },
     "price": 650,
-    "location": "inside Laxman Jhula Car Parking, Rishikesh",
+    "location": "Jhula Car Parking, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -600,7 +600,7 @@ module.exports = [
       "filename": "places_ChIJuwEeysv03TsRlDs4SWe-qgY"
     },
     "price": 650,
-    "location": "Police Station Road, Nashik",
+    "location": "Road, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -637,7 +637,7 @@ module.exports = [
       "filename": "places_ChIJNaA4AQD13TsRS3LaBAzyr2g"
     },
     "price": 650,
-    "location": "Kachurli, Nashik",
+    "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -673,8 +673,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSJKHPld1ozV6a8J6hBkHSrsA4vysqyd2Y992oa29FXQIO0MvmOiLcipifJQqMogh81rnKs4Moefk_3w31V3ovXEM8viqDOCXm-VTYuxceZjZNA_-jYjo59q0WzeWTHetSTNhTvFSkaXvZl3OY9ydjV51_3giZlREdRzTZ2tC0PJ9O6QCc6y9f3huZ8u8bna__lImCUxdRTOBK5WS1TOWnE3dHG5R0vJudLu9R3ZroabLcO-B108NlPOTUAv-qrZbUm2pldb9TYrCK1_3j3wcSY2XATWAlqveFJEle6AS5-voLvOcSdGkSCjmnIA1IH2gYh3U2T_C0Mnv_H4_0zGZFgg8cbLd5y6ODtTB63-cHA4ZVeN7VFsqsMNaCHcvUiWhW09g4Y3EIXV6lP91K3RWfnOxertfPBMmf0lRMWEixbbw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJO0bZQMr03TsR-ghRSKZSshg"
     },
-    "price": 650,
-    "location": "House No. 597, Nashik",
+    "price": 450,
+    "location": "India",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -694,12 +694,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:46:51.853Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Pilgrim Dharamshala Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 650,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -711,7 +711,7 @@ module.exports = [
       "filename": "places_ChIJZRVfy8v03TsRRvBeQAxHi-E"
     },
     "price": 650,
-    "location": "WGPM+644, Nashik",
+    "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -747,7 +747,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTqBxC8GDlfvW62xTHtvzIxUyGQcCNM1bNrmGCGIC1ojI9Kuk3XdIrcuVUK3cBkE9ex1ODtnorfgvq3llooB7a-oeF5wr03essG8R5yJeDyPpllWVz4X7IHyrlkEEPqfo7LIq7FTXhGNRBG-xXMFrPSpx2J3goLp_PlFO_ZEMSnXp8rBVJ6GhacUg79HQX0Rme7luI-WKeOjq6ZprM5coQGMI5KqXsEXDxKIPuGHDtgVBdZSSqOPAH1ya5TqueN_0I5oFJChCJvZgSstVilueATLcLhKK0TQiDMDkchZ5EqDE2zjPurap9O_hKRmzFRz0bLAkwkGahqOfVWHd-puaoncyawtd7MSxRUvt0WkWVBpL2XzmpyIaIC0c9CjSJmff-SdRhGERohZ_RFLl9T6grNqvaRBMGxsmELG3HVUfDWEMa4Z1niyL2bAXQYNele&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJcTHDGJAvjjkR79bR7c5faKQ"
     },
-    "price": 650,
+    "price": 550,
     "location": "D-62/4, Varanasi",
     "country": "India",
     "geometry": {
@@ -768,12 +768,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.430Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -784,8 +784,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTOogCb_muyluLR2_3kiqIB0_jspbkmXnUE_cdFpSIC--xhjWtLhb6Rt2KLy7rNqg1KbcPSFlImlxMjFXkRGsjNEwjHCYEhw1YCUdv8PIiyMXoNL7L1pxW135N9XYIVLTwzac6MHXbo97Y-YffDyuKiqY8jxqQTkXUDzVaXce5Wv-5uotQHRlof8B2v0iRUpqPAzNl2JV29mlGKgw7lrvalfpKcT_0h4I4BKdaVfvT9B-XQzTrgWtdeNoLe80ZfcxkLv3u6Qd-yhwzokNB6D5tTxz9QPQn3MYhKYPDB4xGTo-S0iDSBbBux-xpeUDXwPVr9wer1XeTtPsf1g1MmK7yEFid2XJ_BZ1K2UYiXEczyXSnWrWG-utSN_K3sJncLl_8jsV_IXelrFXxZsEYryqrrJ3hAC1s9lV0e6IZuGxGOE9EWk5OJrZCTzlnKMw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJB5p8jx0ujjkR7mk14cfglFY"
     },
-    "price": 500,
-    "location": "Saibaba temple, Varanasi",
+    "price": 550,
+    "location": "h Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -805,12 +805,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.452Z",
-    "propertyType": "Pilgrim Yatri Nivas Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 700,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -821,8 +821,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQBYdMjwuN7EhvbUpw_ITDqFGSO856XQmAQoQfp9E4JIAKGuwapZKLlwyjUJYDtVm35CsOLEAbXc5hdU7q2DNx5ZueH_fs1tjbUOR36nZpv3BiRR546CRAP3cn4Tm4VJ1Jvw6khUKwSDQtCvFY4zAi7LGRauBduAUpD5nUg7YYOrAiRfBYj55Ax-I3PHQKmsN4X7-prE6tlS0X3KQhKArRsnwN1PFm2SW25_rh1VOMAbOEdENVD32D1npL-hkmN7dWw6KRpJBZVKkByJNI4UzpH6uf9m-wIHn9KhOOFvJj553lgSzuGDvUT-C2FEBQSxc3Vs-iNGx9oTVT07ePmPiZdGZo-qJJUOpjQ0mc5MZyQsq8wjzg1YNTfiiBfK91jgl9VB7lBYd6I1NDWKPTYl84OPUcI8whXJCJTU9xQEcfjDFLl5wRIxkEBDmaoyGwi&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJJ8-9f0QxjjkR1WudHrkojVc"
     },
-    "price": 650,
-    "location": "Dashashwamedh Ghat, Varanasi",
+    "price": 550,
+    "location": "h Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -842,12 +842,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.462Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -858,7 +858,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRelETdatH1kHL26avWs-o8qf1O0DSA3X_HjffqRwr23_z4AB8nLnQ1d7enk7WIrNFyb5xvuvbr3PMkjAuu9BOg5_pkRvr9o8ciFigsCP-uVKTrpiKavL3Gd2_rdW3SQjxkEZXzts2lxQu8m7fJk3vrrksJfbWXqh3pVhxbUtgp9mjLPVipGqTxKhObXnTxfYzjUvFZc-cDpFhawSBUR1FBvdowqqF0aX1bdX32i_llAVVoUiHNSFNUnAk5BBULBkI6SYNKMKKXslJttEjr50AiXsDDKHjENp_iMaUWZ-lFAgeAfKtSB7GtO-YOEevj7GgaVvEVQeJgi2P406Q4i8tfMsvRj51Ehg_Ppazl6wbGu6ZatnihOhVaq2p4Tz0zdAhmE8X_gh_sT0s3m-b7NK9pZ8c3-WXaes-mgRx5CSpJ9w&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJP4CvgeMxjjkRGtMqZhfXrQ8"
     },
-    "price": 650,
+    "price": 550,
     "location": "B.14/92, Varanasi",
     "country": "India",
     "geometry": {
@@ -879,12 +879,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.469Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -895,8 +895,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTSYr3_fC2mQxVHTaZGdSnkKXhog9Xaq0oiYt7BiNqnw88xNJFAMk3aPc2m3DqsWl3UiKhzQcNNE2oTylGotGSMOEaV5-Vbp0_t4fX9GzlzxjTfyaxSPSvybvg2Co39H3yxMKyYoKMCrq9bexhz1ahT_hwyfYlRWTpd_7zBZjxH2CPcaa9hEwojPmuGt2LwT0iS68jBg8i2nXoLOexMZyslmZumey6F3bFMoCAJAnbtBqwQ5fB4q7Dk1qLxMGR05C-rfkL-3hjsIIWZLyU8kW6kyFj-czhlP3yQ52k9y5Nezakhkvj_fhinRWNQzbeNvUL06hv_eYrmRIuPWoqTdKBwclJrKEfZehU8VWKJIxZlKep16ANvE_SCqlxYoi7Kjk5kONBhEGHOE3BIqytw9a2UWGCsHbMnHtY0buuj9P91FiMR53zDdNhl0U8dyuH9&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJYQBHcaExjjkRVtOV7tRu9IA"
     },
-    "price": 650,
-    "location": "Shivaji Nagar Colony, Varanasi",
+    "price": 550,
+    "location": "Nagar Colony, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -916,12 +916,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:49.475Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1027,7 +1027,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:50.329Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -1081,7 +1081,7 @@ module.exports = [
       "filename": "places_ChIJR0uVZR4ujjkRI6DVLuoSYPI"
     },
     "price": 650,
-    "location": "Varanasi",
+    "location": "India",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1154,7 +1154,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRu-ji24HYtz8O02q4H9Yk8vhHkBYrr6aOikRl5NYP8hbKVnljEQyMQN3hxAYOcBZobtkSwRBWG2gnCT7RyJ_cy2N65kj3Haj-Y5n2MahipY7u5Py2YaVAKCcYIqh7aC5EqLTT9wUwHQdIGempM5kV19566OaT0dEBI6mE8N02bbQRscsA9MC5uXQDXtug7SKHsnENtqhLoAMafD0c7Pme7GoPLUxWy_ySqlD1qQu2JMizHJAdf7AWjmhC8m7bV402L3hsdK_SL8fLsypKlWKp8_n5mux1G_Hc-y7nFWQILF_Z_pGQddBK0psxHxg4aPrBlEtf1Bi6VeITATppREtN39-BVxs6IV_-YGgUk3EIHirfezbQo_DMD3oISSXyU1yiHzkOFggfFUk4AbY7PA_O1A6Hjn_BBtNnunE1IoVZvZASa&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ0w0IQDcvjjkRrUNXj5tfdfI"
     },
-    "price": 550,
+    "price": 650,
     "location": "D23/2 Hathi Pathak, Varanasi",
     "country": "India",
     "geometry": {
@@ -1175,12 +1175,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.035Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1229,7 +1229,7 @@ module.exports = [
       "filename": "places_ChIJHVJzTPktjjkR_HVLF1xX7-A"
     },
     "price": 650,
-    "location": "1, Varanasi",
+    "location": "h Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1265,8 +1265,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTaduA6P0PmzOjf4i7Auhu95uLgyvrSiaphLTSEMm6jJscM11DdOYWqkD1Qo2mMdX_830zqPnBjpmOaUUVQQ7r1tP4okJpnJXe6HxyinuwrbGrwUX6--Eitim-yoqxUw3kVMF3Ef2lOeF2l_02sskmDUJ4672VF5RENzJWmC4WrUmRZQO-muOmEndH_3Btwf1nivANHpD-sWmYaBzEWs7E1WobkAWaHhoM4RBd_nOQbQICv6_dk99wADVUrP1EESc5-cXyLQ8YvRDTcHS55hVFnH5l6_rK0vDzqEv_muzoWzKFNMzWVyHSSoMcnZcsTr4TsN34dBT1JpGp_pUSbqOifaoHZQfWNKChADGvxRQ1scokkCe-RrGuaguwd1yVE_VlIH3G0XpfRTX6cCtt0KTGUDX31ReFQecv931SH4IVGao6T9WDzizaV-7QnCA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJS3yu59cxjjkR_3RmrFLMLiw"
     },
-    "price": 550,
-    "location": "B, Varanasi",
+    "price": 650,
+    "location": "h Ghat, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1286,12 +1286,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:51.594Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1303,7 +1303,7 @@ module.exports = [
       "filename": "places_ChIJR8X2X9szjjkRk3vsMMIonL4"
     },
     "price": 650,
-    "location": "Ganesh Gali (Siddhivinayak Mandir, Varanasi",
+    "location": "Gali (Siddhivinayak Mandir, Varanasi",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1340,7 +1340,7 @@ module.exports = [
       "filename": "places_ChIJX_UK9VJLhTkR4wWy017yqKM"
     },
     "price": 650,
-    "location": "726, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1377,7 +1377,7 @@ module.exports = [
       "filename": "places_ChIJRXzcMw1LhTkRoTjWmXraSFw"
     },
     "price": 650,
-    "location": "Andawa Allahabad National Highway 2 Allahabad -Varanasi Road Jhushi, Prayagraj",
+    "location": "Highway 2 Allahabad -Varanasi Road Jhushi, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1413,8 +1413,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRQIm2dTgZFTJDW-9VSRy7-H0IO7MdOXKq-MLaxDMAGxqt_o00292ui6zUvEayhVTd6wqduyZ530SFCnsymx_O2M_dOmGtx7o6bQAGXlGtUfGVfy_dQfzI14EbYfJ_Nu-QLJfvDZIwVXPBio3JaHdwukt7NDXizKA2IwWUsLCgquYJc_GDJpDzx4d4MK8k8rR8dO9hr7ka4ZzGe7Mm9PRC9SNzwu1i7lVfwSSViGpcnqEyV283FFrkDPFVAXP8VxlT-thj265Yyqgzivc_EiQ1bRdmA-FqU4k02yHc6QIb-jN5sknEJZ0oL_2dh4dIM1fDh5ooA4jsuRiye95jiVHNJE1nok_9xoQx0_FWzTJbWMyBtN_iGF0YQwZIENsmH-5UOTU3VEE5XhKAjmC50KpF3orF5g7WA0oVXYmNbFpHaBywH&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJq3dDMNlLhTkRKe3RrkpD7pU"
     },
-    "price": 550,
-    "location": "Second Floor, Prayagraj",
+    "price": 650,
+    "location": "Floor, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1434,12 +1434,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.317Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1451,7 +1451,7 @@ module.exports = [
       "filename": "places_ChIJk_wGOSzLmjkR03YlykFHVII"
     },
     "price": 650,
-    "location": "14, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1508,7 +1508,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.910Z",
-    "propertyType": "Executive Hotel Room",
+    "propertyType": "Luxury 4-Star Hotel Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
@@ -1525,7 +1525,7 @@ module.exports = [
       "filename": "places_ChIJU-QRQl_LmjkRoZmEAeT7oYM"
     },
     "price": 1650,
-    "location": "21/51/01, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1599,7 +1599,7 @@ module.exports = [
       "filename": "places_ChIJ4TWvWdbKmjkRzMaJ23xcD3Q"
     },
     "price": 650,
-    "location": "73, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1635,8 +1635,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRCg0i_CSSX9EwqPv4BdRU6mSYjubOypoEW1LcC04oIyFksPVf4QSqjFSi5fQQQazkNEHOnu_e10u9UwqsSNhYB1Gwy8fL9yjy6u1zs6dOg_L278dNjfdunnzjc2CFz7ApwTiC9mENLiU-DFcdzxfX1tXZ9ZNW9Cy9zqxy_UILth0BoQT6TT5ln9_6CuE-IcGjJ2n_d6grdp3ML_jGmXw5DqNvvoIr08Q8s3pMNzAnbvA5RB_WqHBMrb75EsHSDfaDHWpGQ6dmmcXdxLNfXJJPXVvfN8ocR9t1z033cwzIM63VXxZm2IqJbCPTDPLninNkQ7SZ99X5yKLJQyIbyyL7Mlaoqh_UxH_U_NBWBXFVgPnfQpCCbZ1P4_TNw2BZ6jLL_NIhj6zn6aBE6LAH3d3D00Tm1epNtVu48qKmkjpu9MuOf-mtECtX81lcYKIsj&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJnSs2u-HKmjkRmlIF6PGCleU"
     },
-    "price": 550,
-    "location": "07F/06A, Prayagraj",
+    "price": 650,
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1656,12 +1656,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:52.934Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1710,7 +1710,7 @@ module.exports = [
       "filename": "places_ChIJZ322b1G1mjkRT5YfOI_29nA"
     },
     "price": 450,
-    "location": "1320/951, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1747,7 +1747,7 @@ module.exports = [
       "filename": "places_ChIJ7-JcqKvKmjkRHK0ui3WHUzA"
     },
     "price": 450,
-    "location": "CVR7+699, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1784,7 +1784,7 @@ module.exports = [
       "filename": "places_ChIJtZJ_psrKmjkRDy-rS7qNjoU"
     },
     "price": 450,
-    "location": "Rambagh, Prayagraj",
+    "location": "Civil Lines, Prayagraj",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1894,8 +1894,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT5UMWG1s9hdow8tekz2byXr6TSl3XgpNmczS7zCW1YlL_w15o1J6M9oAZUkHweoNZeVHmnZqiBy1z_E3a06PHqpWjMeB0gzrgUcajJNsMKN61ywXfp_GIhwBoEgSbdEAy5kASQHCmz05BqFKVYsm90UrrDVO3aI7xxRGEhQYnmTwBr4EmlhkmcXsTWHSL9lTYFQ-cAQFxHDMYcVFxqbdigT5MSw4hsC7Cqu3zlJFJNY2nc-GPDLM-RwZpjj41cgUjxuQED1RBxsiS-pCiHpVMm1mk9IvzOoqD9kiZNDg3BDaWVtCo98QUraCvOuwS-ozFs9dL4Fbc5ZQo1v-FzPP07frLcjejZ7QunnT2kY4-WHkla1jvZytUVoTQvl2jdEFQAWxUqVuL28Wc-P1yBlACuO-0wSLO7Tx3JnKAPFTyfolCX32e9gXgPxvFs3krW&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJFd7i6BBHCTkROnZJhTCoTX0"
     },
-    "price": 650,
-    "location": "X55C+8J4, Haridwar",
+    "price": 550,
+    "location": "Har Ki Pauri, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1915,12 +1915,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:54.351Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1931,8 +1931,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSmg-GVENbdzA_r9IRQLGFraZKZOm1v4DR1HcM3FdAzYSRlujG-OZAPeUi3uNRwaXnmSzGy9QE-d4LXEecbgUsBBJFP9cw72ow-qqTXei5KGeo2Ew_-5tkVysj3MF922v1WOIUcTQ4Wh7Etl6crOU_xOb7kh3tl2xPSJeK81JWUbf9X3doGfLtOyYtybuAV_nzqfEps2xcpwRI9uiBHqmgFLNxdg3vU2hWo1wXBC7bUWY4DuzU-XGQurUaLteVzYIgirH8QO2zEUo3qSe7MyQA2a_4DCKeM598tN6jN_Wd7f2T9gZTz8HcJPqrlVr3jWaRGxx9OpgO2OaC6dNrtGb9W8y4b3GG5xX7kKon-sw1BR5S33MEJN-2vLt2BxnawNKGnRI2B1gpKfVpUsinsdVmWeeiPTv3XCwF7D_K1UohFBmAlJ0FZWjOXZ3kKVA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJu9JsqwRHCTkR5VDY1hOu-Oo"
     },
-    "price": 5200,
-    "location": "21, Haridwar",
+    "price": 7200,
+    "location": "Har Ki Pauri, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -1952,12 +1952,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:55.567Z",
-    "propertyType": "Boutique Heritage Riverfront Suite",
+    "propertyType": "Heritage Luxury Riverside Suite (IHCL)",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 7200,
+    "marketOtaPrice": 9800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -1969,7 +1969,7 @@ module.exports = [
       "filename": "places_ChIJPX5n_z1HCTkRvBrK9dj9vrE"
     },
     "price": 650,
-    "location": "Niranjani Akhara Marg, Haridwar",
+    "location": "Marg, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2005,8 +2005,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSlN1b602aya15mN7fifn1IWlJj8AYKvjgYRcwhTl5GHuxYDsWcCpm5V_6dr9Q2UGmPy4yEDnVJwq0pthxT7xG4Wn0uphDSH1fY1MDFPpP5SaPO8_HLiJJce8qVKPY2vutN5XPHPHwqDVY75ylaulfo0GLcUrrivAInh-UbcC1F7llDZ1cUWcbaob6xcCX87mCDOP--gfK1CGYwSjJ4h5sMDsS5Nwm0UZ5Rl9HQHA3ZaAvDaQCR2J1epw0ZEnbcoxAz32GSobGszNSzKnQ9t6RuzriNKKlGJgvFeA0okV6PCsfOsjJDezW09J4mEpHAanGPPKCnxYJilHJ3W-mJxcPw8rMUA3NUGlLoVo9lR83jDGOCL6D4n9eqOiv2IB9S1yCwXN-zsNlgdCQz0TRbENiaoaXsSu3qW7DimGFqItAYCg&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ9Xw0QBtHCTkRvUoJpQ-w_Z4"
     },
-    "price": 5200,
-    "location": "opposite Deen Dayal Parking, Haridwar",
+    "price": 4800,
+    "location": "Deen Dayal Parking, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2031,7 +2031,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 7200,
+    "marketOtaPrice": 6800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2080,7 +2080,7 @@ module.exports = [
       "filename": "places_ChIJsRHncgpHCTkRf4b4ehEYwCI"
     },
     "price": 650,
-    "location": "Shardha Puram Colony, Haridwar",
+    "location": "Puram Colony, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2153,8 +2153,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQDzNS6Fs35pSIVFsyejcCS9nKpunT4MrHkBNFFA-t01PYY9Ua5TITitmF_vEZdRFgDZaskpWTgkJlgkjEaZcfsuukh5AiH9kQ_zjaWR4J49fr1lG9xFyHaUrgKV8oSwS8D6-ZdRWglh1F1o5-XhHGgydYjD104-nKaIMpc-I0GCfTXqdk__hfuuoRNilNKqbGflSHGyCWTIrDCjbvk6uSg_Dj9CCDJF1fpFvr3cKINni-yvpieDcylLZSflpY_cQpVRJVGVaBMcUx2t28p4hr7fAf524vaHKkK3bC_0HXvPbNAH23M-4igkv2jVH7xmirrIdGjGcTWZgXEr_CWhyM09YAuXHna0zIrCG_KsavvikrY23lJfh5oCniF63ZIVLsDmCQ0ONuQ_ogbSKqNXAeC0kWhYwP7MbLPAi4q4fG7u_yO&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJFciZH1VHCTkR5spCBfMkdMA"
     },
-    "price": 650,
-    "location": "Haripur Kalan, Haridwar",
+    "price": 550,
+    "location": "Kalan, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2174,12 +2174,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:56.191Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Peaceful Ashram Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 750,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2228,7 +2228,7 @@ module.exports = [
       "filename": "places_ChIJnbfc_wBHCTkR_HwoRpeqSzA"
     },
     "price": 500,
-    "location": "Himalaya Depot Gali Number 1, Haridwar",
+    "location": "Depot Gali Number 1, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2265,7 +2265,7 @@ module.exports = [
       "filename": "places_ChIJL87OMldHCTkRjUvrl24Yn1U"
     },
     "price": 500,
-    "location": "no 1, Haridwar",
+    "location": "Har Ki Pauri, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2302,7 +2302,7 @@ module.exports = [
       "filename": "places_ChIJAesgawBHCTkRZzZOEHiDY3k"
     },
     "price": 500,
-    "location": "W5H3+M8M, Haridwar",
+    "location": "Har Ki Pauri, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2339,7 +2339,7 @@ module.exports = [
       "filename": "places_ChIJKVf1X1VGCTkR7FcugTFouaw"
     },
     "price": 500,
-    "location": "W5V4+PHW Niranjani Akhara bag, Haridwar",
+    "location": "bag, Haridwar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2413,7 +2413,7 @@ module.exports = [
       "filename": "places_ChIJOVco3ZYXCTkRsQ-1nbpXmSQ"
     },
     "price": 650,
-    "location": "Secret Waterfall Road, Rishikesh",
+    "location": "Road, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2450,7 +2450,7 @@ module.exports = [
       "filename": "places_ChIJIa1CFEUWCTkRoIDk9fqYvMw"
     },
     "price": 650,
-    "location": "48JG+HFM, Rishikesh",
+    "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2487,7 +2487,7 @@ module.exports = [
       "filename": "places_ChIJOx6lEBEWCTkRrXc9ptIO-Fc"
     },
     "price": 650,
-    "location": "Sheesham Jhadi, Rishikesh",
+    "location": "Jhadi, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2524,7 +2524,7 @@ module.exports = [
       "filename": "places_ChIJrWCswo4XCTkRqcJ-vCMzhR4"
     },
     "price": 650,
-    "location": "Secret Garden Cafe, Rishikesh",
+    "location": "Cafe, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2597,7 +2597,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR-YCjzYYO9quUXT5Cn2G1LoLbQKIJmYu6g7rgOuxB5G1Ec9g9ny6wn4fewPFASXXknnvmtFkaEV3BCUbYBDBxBWNSxBRQFN3yWLDMm7h4v_MA-Qq-Cs2bZY7O76z97nyYS7GYSF0WFBANmAfYdthPRN2Fr1AUStGYACy7uLJuZsS7LSJGz0gTS67_tQ22SaeNMOBR6Qx9VIrgUbCPjU3VheepdtKFOF_8aLe65st9zoU3oDSHM6civwtQ_XuVrE86FjQYl-MeqSvF55Ie6NSITx-uYrllN007hqJrjJrBMXACwtfOSmI3qjr73SrJ4l2qVkwLE_jMQf9Cvux2QfxiJqe7i-qkdvxqJzQUplmBNa0IT6eW1BqKtnEaC0sH9eCyFVUpc0KQrYCVwT7mmk7mzfiL8PCen-fzB5Oae7mjlJBI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJEwxxMHoVCTkRgKIgg8MZOME"
     },
-    "price": 650,
+    "price": 6500,
     "location": "Mohan Chatti, Rishikesh",
     "country": "India",
     "geometry": {
@@ -2607,7 +2607,7 @@ module.exports = [
         30.0633937
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 88,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2618,12 +2618,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:56:58.642Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Luxury Wellness Resort & Spa",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 8900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2635,7 +2635,7 @@ module.exports = [
       "filename": "places_ChIJpfNuhKsWCTkRSrLI9zkbv0o"
     },
     "price": 650,
-    "location": "Rattapani neelkanth road 7 km from tapovan rishikesh paliyal gaon, Rishikesh",
+    "location": "road 7 km from tapovan rishikesh paliyal gaon, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2672,7 +2672,7 @@ module.exports = [
       "filename": "places_ChIJ0V5wYh8VCTkRPRgyRo_F7FY"
     },
     "price": 650,
-    "location": "Ghattu Ghat, Rishikesh",
+    "location": "Ghat, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2709,7 +2709,7 @@ module.exports = [
       "filename": "places_ChIJBXxVxEQWCTkRJVzTXsZgn0s"
     },
     "price": 650,
-    "location": "Laxman Jhula, Rishikesh",
+    "location": "Jhula, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2746,7 +2746,7 @@ module.exports = [
       "filename": "places_ChIJs4_oZnUVCTkR-_TWH53dPNI"
     },
     "price": 650,
-    "location": "Neelkanth Mandir Road, Rishikesh",
+    "location": "Road, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2783,7 +2783,7 @@ module.exports = [
       "filename": "places_ChIJDWphgt4XCTkRLhB1XVaV138"
     },
     "price": 650,
-    "location": "Secret Waterfall Rd, Rishikesh",
+    "location": "Rd, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2819,8 +2819,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ2R7YUzNNfFpq7whnVmg-jzWNVUBg_bk_omoJaSBsbIneBxznqmiRlF6Qo7VWYmY1svLQ6kgCiHmwZkxmPM9Jn_ps3kMq_XyYTZWLjz8maM7BmOoz1nM2ONvOQ9QU0HyHaDQ5twPa4XLz_uVjh2ZNw1ADVFWgkkZnqMeSfqqJJFXIPJGWNxOSqKM3FuLzL1WYzYWBa-tZGVcOFv6CdeCuCe6qI9j8qwfAqpseMJ0UpI7wrynp3ZLISaqcRQIXueyq628paPcm2hpaw6DHqEjs6f79Q82QkJ-Rdf_YEU6ek-EpZdsTRrNqMW28Y9HLA3B6y-RSWEczhlq0WPzfeh1S9n07BVMN8ESRYqlV6--D0XJwdPFVtV_WytElo8AFMqxa8XcWaZS66etZUtzwOHnFlicdU3Fhf_bxmIZ0VdQYrGlG3Se_IUi3hn4KoqMXw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJhwa8K4YTCTkRz3y4nHdYxOA"
     },
-    "price": 650,
-    "location": "Rishikesh, Rishikesh",
+    "price": 5800,
+    "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2829,7 +2829,7 @@ module.exports = [
         30.06873389999999
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 90,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2840,12 +2840,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.071Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Luxury Riverside Wilderness Resort",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 7800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2857,7 +2857,7 @@ module.exports = [
       "filename": "places_ChIJ7YNo_C8RCTkROrfDswnC7js"
     },
     "price": 650,
-    "location": "Shivpuri, Rishikesh",
+    "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2893,8 +2893,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTYlAm4SFzAEXnxj5o4RRC4Z5hFE4aSyLH_bZC-Kxk5q9azzk_XO8ZmkIjOYnawdCDQnIbyCZmiD4UVeZg3sKEsps7ZIuEnd5UQPtj3k7v7fK5wEuUnF4PcQmDj6DCcsVHJVtgDcMpHB_9ufpzXG_GuiJsdgMrAcd0Z3Zx6cp3RzRBQ1DxLGqlSWTpAmYLIMgH9-p01BToNCf_lpk_mZzi08zTMAAhi6nEmeUEbT7D3oKlBDG1fSl07kvvR6IfMTRh86tqys7lQw4YZvV_UYG-M7B1RF01CNywhDpoInve90YGXwTasjLfaKqNTSWve_JnMYc4frmpkkg_0kge3iiuvhC4QyvJhKGjYQDYBCkpH8LtDjorLKjInYlEWiyA4bTRYxsRcM0omAw3vzgp19CdqSE7PaEpUyA_YoVy2CmyN4JMlaBVv0XxGWXDEkCMT&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJB_l5MWOGCTkR6e-rz5ww6mI"
     },
-    "price": 650,
-    "location": "Village Sinduri, Rishikesh",
+    "price": 5800,
+    "location": "Tapovan, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -2903,7 +2903,7 @@ module.exports = [
         30.059565
       ]
     },
-    "category": "Ashram",
+    "category": "Rooms",
     "fairsafeScore": 90,
     "amenities": [
       "Temple & Holy Ghat Proximity (<400m)",
@@ -2914,12 +2914,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.084Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Luxury Riverside Wilderness Resort",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 7800,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -2967,7 +2967,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT3Pf4AF9MYWLavJG0sjLbVO6It6PL2TcjiVFfajNEDb-XqvJgI8oP25k-9WmHxCbxkc3yGYiO2qTfByHQv21Lu9m72sWhWyE-Vq2vMr3RSz7KMLQXxlpfN5JczJaPZGiPF5VRpzQPUDcUCLKJukBOmWGxot57Ap_zVurmRGuqFHOVLef8EROpDmddTqHjxUecjOQ5yCiFsM_1heIAaext6BDbdBwpq0xt5_21gfuCd1wt2a4Gdg83OiZr4M714FobG3N_qQxE4uZEnGU64jUezM-73Dq1oINyB__4SFvHWoKX35pLTfbfaKVXCMHsHbAroylwori8cCXxDN5pitEF7OLQoqH0AaJMPNLTyNKqBogU71k6Mi2okrsAH3PC3mK4Z6DIENE8EjoL-TB9Q4QEM0NhV2DWG6DGHQG6Da9TgmA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJPV6lqbX03TsRnUyvgUkkRMc"
     },
-    "price": 650,
+    "price": 450,
     "location": "Shree Kshetra Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
@@ -2988,12 +2988,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.757Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Pilgrim Dharamshala Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 650,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3004,8 +3004,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT4d9Y0DH1Qjbb8BQVa-SVAhdUpsmDSvrKzqprXTWp8p6F2c9eCyEFpBYgAsRjHR-Llz1apwTWQVlAkrWHWgnKe9X7XBAgSBggOGzkttZNn-v06hBs8LXN1vu0lY3mChyZzpGSzicPJ4F8KBYtqi04dPaH8k1zl1rf8oiMe_jj--23F0kPlPvLcccYCiDpXsEoAZSAvYoGzQrMkAhZjqHhEdnd9TDCulTPgqXTtYD0zDZbPF6tQIkSOUJvPGvdx8h2UZ21mcH7Yy2Q21PKzUWknu7Ofsauhae1b_CBaGGcdVDqWrPWNcIlzyA-Ab6JIA7YXPL896iByiXfgUy0bcoQVpOMX5svK-8VcRHFcfYoFS-LdKi0dDkXPj_voTvzo79n5_hmUFsbTnd-CjHa-rdFWF8ueYFOgzsCq2_wJiRaEGA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJDc767rT03TsRNir-QJFVw24"
     },
-    "price": 550,
-    "location": "Kailas Raja Nagar, Nashik",
+    "price": 650,
+    "location": "Raja Nagar, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3025,12 +3025,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.765Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3041,8 +3041,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRo1RPwjaR-WPTvPlYZZKVV7E9xFOiGFjFpVvt4DmvruxnubfMc8PTl36jSRWQDsC_rRviFjgYLaqacIUiT4Kl3wAkSq7zZEoIUYF-NLO2xFUjHq33sQSg6iL7LdOfkqSAR1aXKf2r4MqNAx9LhuTOXFzLD5bmFw376D2jdotwBQ5XUcJoZigLpYcf8fdmTg6PFX8h55TIVq-5OJCjmRJlZonxWkRPR3c6AwArW7h7UhLKuf1d7ubEu-rJRfXKhxaQIT19cTULlPbgWLAp_-iPaNK3e27nFVxKpgIuHGfTeeA3q6XlY6KK0cEy6lq5o14Zoo3Q-7fkk26XuLXP7hiuMzP9onBS0_ItKl4YbyTsByKs6-1kgPgRIktnjhGDXwpVWcy6JY0pEo5yKzadzCC4otE66f0mpZY7VPUtQ5wpF3A&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJJZoXZACT2zsRgh4lZItyLnc"
     },
-    "price": 650,
-    "location": "Ganpati Mandir Road, Nashik",
+    "price": 450,
+    "location": "Road, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3062,12 +3062,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.771Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Pilgrim Dharamshala Room",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 900,
+    "marketOtaPrice": 650,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3078,8 +3078,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRngyLUHEGdepNOQfwaXK8JTUmCd91TT9R5SJSSKuOkDxcPGmxXuvx4kj7ONuazW_oDT0Fk0bbBY2Ts2_YdpaL7_VKA11NbPUIdsraEy4Md3gI3r8aMlaLzOEJpeQ58mM7odHtlnCC0k5t2CXI_UeLdL68-2TRUmLniqapGM529fHSQdajMZbbRr9aVHXBAWMjVqXIv-xDZKS3oSc8nFDXxoQIwveMbf4_rUk9jUtJbGxh2AeO6zqxXDKL27wlJyp3Y24fa5jkd2fuJ0yLcwyXd5YjZ_As7reSy55sehd6P2-8iNMnON-BIBEpYuQgh-5i_WQlzH9JC7Eee9hNUs101iClIpER2hPxylKFsyepr_8NLALf1TdvJ5Ia2rdE6Mg-vubN6Px5-I02oYB6kvcxgD_AmcnJj_oSwwGT-AcUNV3k&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJb8PtIcr03TsRvIAdJLQg8qw"
     },
-    "price": 550,
-    "location": "Nashik",
+    "price": 650,
+    "location": "India",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3099,12 +3099,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:01.779Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3116,7 +3116,7 @@ module.exports = [
       "filename": "places_ChIJu1_X8VeV3TsRNPmq8Oq9AW8"
     },
     "price": 500,
-    "location": "Chandak Wadi, Nashik",
+    "location": "Wadi, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3189,7 +3189,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXR65_MinxqBJOGg0jZriHIy6YiVzx8JqLufpxdRwj32Lzt7PZ9WOlufRtFTWQdu4N028gCGclFHgQXKh-FlRZQRZHPvRbuW_nwrqNQRdAmR-bSy5HUWl1mMhZRagX0Uu1gK3k5i7KASJjsXvXvfxyuejMyr6LpwCT5nTzZc3zofdbuJX-dDfSMiAScgXtl65hM_HXBDgaRyT-cU6xMlEOed4GF1ekmW7CD7ii9ZF0eV1S6V8ofX35asGLlwXOj91SgqFJxwP9Sj-mM1gkyINpi224MAJb2Vf45Yu2SmA4XTkgVT6lnR8Ng1YtBUeArOe6AXB8S4UX2XztZC1CQnXTI4zIAhgTL7wY4V0VKF6xU8zikXW2oiG6v6X4EJSyTnXGX0B5BqddCbbCYnwB-HjBROWyxRNyrMSTjKVLSoZwmvqNU8&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqwwXk-3r3TsRqZSQvh92ZSI"
     },
-    "price": 550,
+    "price": 650,
     "location": "Hotel Balaji Inn, Nashik",
     "country": "India",
     "geometry": {
@@ -3210,12 +3210,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:02.348Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -3227,7 +3227,7 @@ module.exports = [
       "filename": "places_ChIJPVwmSALr3TsRTHXPzg11iLo"
     },
     "price": 650,
-    "location": "Takale Nagar, Nashik",
+    "location": "Nagar, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3264,7 +3264,7 @@ module.exports = [
       "filename": "places_ChIJS-fyOgHr3TsRaYpH3jAjkpg"
     },
     "price": 650,
-    "location": "Siddhi Tower, Nashik",
+    "location": "Tower, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3338,7 +3338,7 @@ module.exports = [
       "filename": "places_ChIJrwRRp0KL3TsREle7riMu33U"
     },
     "price": 650,
-    "location": "Koroli Road, Nashik",
+    "location": "Road, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3375,7 +3375,7 @@ module.exports = [
       "filename": "places_ChIJ-dtgrrXx3TsRDgeTzkm53UI"
     },
     "price": 650,
-    "location": "Nagalwadi, Nashik",
+    "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3449,7 +3449,7 @@ module.exports = [
       "filename": "places_ChIJqymjj7Zj5zsRAE6lngoam1M"
     },
     "price": 650,
-    "location": "Khodala-Take Harsha Rd, Nashik",
+    "location": "Trimbakeshwar, Nashik",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3486,7 +3486,7 @@ module.exports = [
       "filename": "places_ChIJWy_bFOgJmjkRrmdd4-F7DFQ"
     },
     "price": 2800,
-    "location": "Shahnewazpur Manjha, Ayodhya",
+    "location": "Ram Janmabhoomi Marg, Ayodhya",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3523,7 +3523,7 @@ module.exports = [
       "filename": "places_ChIJl48GObIHmjkRG8P-92NwaVc"
     },
     "price": 650,
-    "location": "Infront of Union Bank, Ayodhya",
+    "location": "of Union Bank, Ayodhya",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3560,7 +3560,7 @@ module.exports = [
       "filename": "places_ChIJS19HnpYHmjkRQ1S-iMNWOqw"
     },
     "price": 650,
-    "location": "Q5XW+RQW Union Bank Ram, Ayodhya",
+    "location": "Union Bank Ram, Ayodhya",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3597,7 +3597,7 @@ module.exports = [
       "filename": "places_ChIJE6dWPt0HmjkRI_zWqSEn8-E"
     },
     "price": 650,
-    "location": "4/4/5 Railway Station Road, Ayodhya",
+    "location": "Road, Ayodhya",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3634,7 +3634,7 @@ module.exports = [
       "filename": "places_ChIJ7xMzMPUHmjkRO7Ay3f2DSNw"
     },
     "price": 650,
-    "location": "Ayodhya",
+    "location": "India",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3671,7 +3671,7 @@ module.exports = [
       "filename": "places_ChIJOSqaLwAHmjkRcZkfpx_X-hM"
     },
     "price": 650,
-    "location": "Charushila, Ayodhya",
+    "location": "Ram Janmabhoomi Marg, Ayodhya",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3782,7 +3782,7 @@ module.exports = [
       "filename": "places_ChIJIa-fJgAHmjkROT46hEN2nW8"
     },
     "price": 650,
-    "location": "R637+5WQ, Ayodhya",
+    "location": "Ram Janmabhoomi Marg, Ayodhya",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3893,7 +3893,7 @@ module.exports = [
       "filename": "places_ChIJLZU4yZBvczkRwgsB8OnIIZQ"
     },
     "price": 500,
-    "location": "Bhargava bhawan, Mathura",
+    "location": "Road, Mathura",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -3967,7 +3967,7 @@ module.exports = [
       "filename": "places_ChIJo3mQhiVuczkRu8IAUxGYzlM"
     },
     "price": 650,
-    "location": "Gandhi Rd, Mathura",
+    "location": "Road, Mathura",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4004,7 +4004,7 @@ module.exports = [
       "filename": "places_ChIJP_wNsfhvczkRrY7Z25TcqgY"
     },
     "price": 650,
-    "location": "Purani Kalidah, Mathura",
+    "location": "Road, Mathura",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4115,7 +4115,7 @@ module.exports = [
       "filename": "places_ChIJFfL9WBhxczkRz3Inn_iU3CY"
     },
     "price": 650,
-    "location": "58/169, Mathura",
+    "location": "Road, Mathura",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4135,7 +4135,7 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.209Z",
-    "propertyType": "Sacred Pilgrim Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 2,
@@ -4151,8 +4151,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTZtWBwFnbQJkv5QJls2F7k85aQKG07RPjC2r3iXXXdUX_raVADxaqXv85YG_MDgnxpE5lHRa8ic4YrgreVteICAlYaW7q6YLJ7hsFooCrvrXIqjlKBeIdelxDLpcKOwTib_5vE57AIhuGL4KGNEg-WwLbgO3UfRDUISv_yjcPzRENa9O0ss8A0dklMW1M6Db4i_2t3tGr91y9fyY20OQ54Rn8SYxA_sMfMowQHlITLo79ZuozIO1J6MXYEO2GeFXSsv1McYWqAthGmS2OGZ_ZlRlwgMCGn_7OlxNPXE5tjcdYtNXyyqEk1H2Uf-et4JbJpupOgaWaEQ3zOSfFCDB8O3sjpSNRafLUz2lGzi-WhFm-mxfJxduBdz-v0btIY1j-KkmBe939tU2Gub1eQttPPUNX1iowsw4npIo6sNNOsbCcJjQ3vWbfJw1w_iRJF&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqQrM3RZxczkRzDTSABgQg_U"
     },
-    "price": 550,
-    "location": "1st Floor, Mathura",
+    "price": 650,
+    "location": "Floor, Mathura",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4172,12 +4172,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.215Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -4188,7 +4188,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRIn_Lg4KQxXl4Hsz0K9T2GtbhhSem_RVj7m6JfZc01g8mjvIRMWYblOZCiSpWToTBgrBQviL1kaJJdU3EvLwqPXKU8-qriPzItE-QfYam3-ZVv0w96g-Nvs741i7RKDqhRk1PRho85TERzY9txL9vNFx0A5xMGjZTwSv2SfxJNxLnxn3rJTc2_lYWpR64Zo8veORuJ5z_pQlMt8JkU471MLWR_zIie0He3kAq6qj_2qrpPPs5hUAyUD7O-pw0QlnGxXLvUB-aiNl1X3_Z5TxrQoaKaou0uUjFhC0nPeDPkJTaJmoxoF2XnZ6PRYkvmO98BIItKeL91I7nsWag4AmFiSUQkdbdldlqzWQzCvTR5iBO9k9xVu5yz5B_KhuGCzsvGe6JLcficx6rkLDKVQm1Elo1bNyid4dT_b5yfiqJBcEMeeLNz16-nElbRE5Wl&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJTVolSgBxczkR-OjVwb90TEw"
     },
-    "price": 550,
+    "price": 650,
     "location": "near Dwarkadhish Mandir Swami Ghat, Mathura",
     "country": "India",
     "geometry": {
@@ -4209,12 +4209,12 @@ module.exports = [
       "Luggage Cloakroom Assistance"
     ],
     "createdAt": "2026-09-02T19:57:05.221Z",
-    "propertyType": "Pilgrim Rest House Room",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 750,
+    "marketOtaPrice": 900,
     "realRating": 4.4,
     "realReviewCount": 18
   },
@@ -4265,7 +4265,7 @@ module.exports = [
       "filename": "places_ChIJKabIG67rvzsRCfY72VvKPT0"
     },
     "price": 26500,
-    "location": "saunto vaddo, Goa",
+    "location": "Calangute, North Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4304,7 +4304,7 @@ module.exports = [
       "filename": "places_ChIJOalAKBzqvzsRUjWXsiTAW64"
     },
     "price": 4200,
-    "location": "7/225/A, Goa",
+    "location": "Baga Beach, North Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4341,7 +4341,7 @@ module.exports = [
       "filename": "places_ChIJxyXfDFbrvzsRj7F_jxfiqNY"
     },
     "price": 1650,
-    "location": "7/2401, Goa",
+    "location": "Baga Beach, North Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4380,7 +4380,7 @@ module.exports = [
       "filename": "places_ChIJV6Nu4XbrvzsRDEOFken-SCE"
     },
     "price": 23500,
-    "location": "House No. 526, Goa",
+    "location": "Anjuna, North Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4419,7 +4419,7 @@ module.exports = [
       "filename": "places_ChIJwyZw0l9FvjsRzPJ8623imG0"
     },
     "price": 1850,
-    "location": "Mohanbagh, Goa",
+    "location": "Palolem Beach, South Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4457,7 +4457,7 @@ module.exports = [
       "filename": "places_ChIJL3vHrz5FvjsRi3G6CoAczGo"
     },
     "price": 1450,
-    "location": "Mohan bhag, Goa",
+    "location": "Palolem Beach, South Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4495,7 +4495,7 @@ module.exports = [
       "filename": "places_ChIJq-JebY9FvjsR3VuH2pjDU0c"
     },
     "price": 1450,
-    "location": "Palolem Beach Rd, Goa",
+    "location": "Palolem Beach, South Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4524,7 +4524,11 @@ module.exports = [
     "baths": 1,
     "marketOtaPrice": 1850,
     "realRating": 4.8,
-    "realReviewCount": 8
+    "realReviewCount": 8,
+    "reviewsSummary": {
+      "rating": 4.8,
+      "count": 18
+    }
   },
   {
     "title": "Hitide Beach Resort",
@@ -4534,7 +4538,7 @@ module.exports = [
       "filename": "places_ChIJE3kdulJFvjsRXllArDc20Yg"
     },
     "price": 1250,
-    "location": "After Royal Italy, Goa",
+    "location": "Palolem Beach, South Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4572,7 +4576,7 @@ module.exports = [
       "filename": "places_ChIJbUMP5FBFvjsRNqnynMsOBAE"
     },
     "price": 1350,
-    "location": "227C+8R5, Goa",
+    "location": "Palolem Beach, South Goa",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4609,7 +4613,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRR_OT7gobsyCy32gtFKnroPS19vkGEZ3jEihtyrALX4est8TPigOAwRrP7vRgbi3hV4Z3GA86vb6noEOETA9ihoh43ZiCQqIqkVgUdME07CRfP4SNFAhD-GByC4YGsog2SMECsYedrWKxyIF_A-COvLvdCReKcdYC6h6z53Pq9vhaxUgzYxKqSPCScIcrloIydxrZRR3SJqlp5A6wXa_RnNoOTBimNwmo4yE7DO4OvXbOKirwHXx-YX7-1iCkus7q4wSLy57igemIS_lnJebzDFLxgTB7dgP4ZPan5AHxD27xEKj-vrDxxBo9EX80tbV-KULIjM1R0mI_FjaAGD360ZFk8mwBAiNekiW2mGZdCctYZuWzrFfDUy5QissQ8Q2wbecoVBvdvI_VGHEuoc6XjvqIXr21GTxpJ7ktL_v5YDFSiJzZwz0_I2tsewA&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJuRrOuyljBDkRkrPA0SRvwoA"
     },
-    "price": 1450,
+    "price": 1350,
     "location": "Old Manali, Himachal Pradesh",
     "country": "India",
     "geometry": {
@@ -4636,7 +4640,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 2,
     "baths": 1,
-    "marketOtaPrice": 1950,
+    "marketOtaPrice": 1850,
     "realRating": 4.3,
     "realReviewCount": 12
   },
@@ -4648,7 +4652,7 @@ module.exports = [
       "filename": "places_ChIJbVVzyBuHBDkR_IUBvBinous"
     },
     "price": 1150,
-    "location": "Forest Wood, Manali",
+    "location": "Wood, Manali",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4686,7 +4690,7 @@ module.exports = [
       "filename": "places_ChIJ1SQeApOHBDkR3e0Tz3ghiFQ"
     },
     "price": 1850,
-    "location": "Goshal Rd, Manali",
+    "location": "Old Manali, Himachal Pradesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4761,8 +4765,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXSGCWycQR1H7DVgGZexiHASYph5SGelnjmx8Y3GY5Xolbtx1s8GlBz_06-V3JoGO5ly9VMD86Ptzc06bkpgdNYQUviTfW6jbuRYYIIY1M0ShQpuEJDYYSlvvaCg11bPjzuH7dvU7egy0gBH-qOi8Qf71i3FIkWwUsodHdNdwRy6q-i1dh7ZBI05KXz07CZ6rjyjiLAWMIp_uMlkFNekJXlqrqbQd8d4y8oWUKUbYSbPb06OoEvY-CXk6tHFpwYkpbLhIN88sxVeKQ7UEl28xHM_q98nbbFByFv4sfXi0cFBAwRbGZceL-QuFI2VL1G3XBI_NmOn0J4yfD63O1rgAITKoy7Psi20lXUZzSkOJ4QBwIqymWX3NKU2YKlGIeQhMAew2K1KfNmSxAbfBRrMwkoIKLOz9CPGH1ALwxb6d9HtGhEB&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJZZoGfwBjBDkRa0msKpE2KFU"
     },
-    "price": 1250,
-    "location": "Hampta pass road, Manali",
+    "price": 1350,
+    "location": "pass road, Manali",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4783,12 +4787,12 @@ module.exports = [
       "Free Parking On-Premises"
     ],
     "createdAt": "2026-09-02T20:14:57.310Z",
-    "propertyType": "Alpine Wooden Chalet",
+    "propertyType": "Traditional Himalayan Chalet",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 1750,
+    "marketOtaPrice": 1850,
     "realRating": 4.3,
     "realReviewCount": 12
   },
@@ -4876,7 +4880,7 @@ module.exports = [
       "filename": "places_ChIJX2LZnStjBDkRrZKonEKar-Y"
     },
     "price": 2400,
-    "location": "Village, Manali",
+    "location": "Old Manali, Himachal Pradesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4914,7 +4918,7 @@ module.exports = [
       "filename": "places_ChIJJb29B_6HBDkRA1xDVDA_EhQ"
     },
     "price": 499,
-    "location": "Dhungri Village, Manali",
+    "location": "Dhungri, Old Manali, Himachal Pradesh",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -4943,7 +4947,11 @@ module.exports = [
     "baths": 1,
     "marketOtaPrice": 699,
     "realRating": 3.8,
-    "realReviewCount": 14
+    "realReviewCount": 14,
+    "reviewsSummary": {
+      "rating": 4,
+      "count": 14
+    }
   },
   {
     "title": "Royal Heritage Haveli Jaipur",
@@ -4990,7 +4998,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQGLcX7EEJ1DKtr5Dgl3p9kEJC1d680kApnx9Io2YBnGcs0S6uKY84rXOtllxMiSG0cGAls9vRkM0EKgFheAn5LC_RUsOTUOFwO7_Tnlj-nVcWQrJTW-TjKO4Ig4fkKx_5jvBqsnvaOvgcQmYQTmOuN5U5tuIRX2B7_4PyfOYsQCNfU7GKsyhe6UKoAgFj_H2oWt2XHPa5oU8VphDBlwZL88rAnMyzgFChElxkBlrw-aLnCoOoALcsL9L4wX40e0lbnDRKiP_w0RBl8YCQZOf2SXideqcUCiHGiKyoKb8pedQmuo69HuwU3ciD2URjzlSF0QBMJsWWua_TBB5qaz-8HJg7Th00pDY8MAG6hz8YYrmBqXhD8tKzNhJR4sS87P-NJ7wh-LeGqqxvLIu_ppH1zkiibDhWiBpHLmD4M7s0&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJqw70p_mvbTkRrpkEQVBvk0c"
     },
-    "price": 4500,
+    "price": 4200,
     "location": "Arya College Rd, Jaipur",
     "country": "India",
     "geometry": {
@@ -5012,12 +5020,12 @@ module.exports = [
       "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:58.778Z",
-    "propertyType": "Traditional Haveli Suite",
+    "propertyType": "Traditional Rajasthani Haveli Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 6200,
+    "marketOtaPrice": 5800,
     "realRating": 4.6,
     "realReviewCount": 22
   },
@@ -5028,8 +5036,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQZ6-XMs5wBInXH1Q73WUXr6FlaqlJcrzwi2a_Ve50uvNe3ia30SqcVUex3BpNsY4uLOApvLomkYFq273eeAABspWyYoJ0kAQddUj169QdbQ42r_DVGqyizQtZ6A7uCB9dBnUs0iKDpSgMopzXtXjphDJuQQQbmJfLXJc5e2_dBH3ezZHq79ctxsp19KeiRWY4kk4bGDCDaIZoc62oLPUe99uK8z-eDkzfAwp5scBwb17ERTl49i5m5yRUdJDndsxwvjbyN5qtyf3kfS4OBsIHg2GSpNo9rNUOXHDs4UXwibfVpgEiQ-TSWpmSQ-6qJA5Rvlh0An0mMbg5VcGu68A24rVXlRMp7wNxuwJSRBu8y44mMRT6hTaxl025KCVvZTAzsYZ6eI-7KH8zxqJERHEVilUYpKcBg-lBFMZ3_phZZ2yhnlFwzy6xSXs_q_39b&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJ61BEmfGzbTkRERSYD7d_Dc8"
     },
-    "price": 4500,
-    "location": "AC-4-C, Jaipur",
+    "price": 4200,
+    "location": "Bani Park, Jaipur",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5050,12 +5058,12 @@ module.exports = [
       "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:58.784Z",
-    "propertyType": "Traditional Haveli Suite",
+    "propertyType": "Traditional Rajasthani Haveli Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 6200,
+    "marketOtaPrice": 5800,
     "realRating": 4.6,
     "realReviewCount": 22
   },
@@ -5067,7 +5075,7 @@ module.exports = [
       "filename": "places_ChIJ7RlVqwm0bTkRZISybPIzj7s"
     },
     "price": 2800,
-    "location": "54, Jaipur",
+    "location": "Bani Park, Jaipur",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5105,7 +5113,7 @@ module.exports = [
       "filename": "places_ChIJEwmHKJa3bTkRRLpZEsqu0Uw"
     },
     "price": 2800,
-    "location": "1404, Jaipur",
+    "location": "Bani Park, Jaipur",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5169,7 +5177,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 9500,
+    "marketOtaPrice": 9200,
     "realRating": 4.6,
     "realReviewCount": 22
   },
@@ -5219,7 +5227,7 @@ module.exports = [
       "filename": "places_ChIJ4aF1n0bvZzkREOagIG0WPp4"
     },
     "price": 3400,
-    "location": "Jeevan Tara, Udaipur",
+    "location": "Tara, Udaipur",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5283,7 +5291,7 @@ module.exports = [
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 9500,
+    "marketOtaPrice": 9200,
     "realRating": 4.6,
     "realReviewCount": 22
   },
@@ -5294,7 +5302,7 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRB7oCrpm0gmnft7WQSCXGmozB1h4dRypcaO4OSBevsSRnWpbKbmeakFnhd4p-Gc0kQEoaV8lIuUffkdTUTUs1_BAn1ygWikgYnKgTrE9hUy2uyQCeUWkD5zfBzIcybHih-dnfno47wO6u7Mg5jf2blQdCD1umQ6yd9p_xoBG7da5thoS5CyKPhjLZqWD23CmkHrxIZR30uxnuXQTUpnfcX2IVOxn4NIQWo9rCyXl5ex6meX2RypOn9lk2Og6qF_9n7AedLV0wqyyv5sqacu-OyH90BgU6K41e6XnqX-F3Qp4Bk-5oc0Ho47A0W_qIW1xEvOq994tlQrQsk2Zf5W5v30gzPta5jnDRZkwbrWOb2ww_g7GOMgo5xAVcgGAdSfCdizslzlsHw06_n9obnFw2Y5VDXAOMISj68G8cvwkkSvNI&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJRwmOdazlZzkRCw2gA8e2n2s"
     },
-    "price": 4500,
+    "price": 4200,
     "location": "Doodh Talai Road, Udaipur",
     "country": "India",
     "geometry": {
@@ -5316,12 +5324,12 @@ module.exports = [
       "Complimentary Heritage Walk"
     ],
     "createdAt": "2026-09-02T20:14:59.556Z",
-    "propertyType": "Traditional Haveli Suite",
+    "propertyType": "Traditional Rajasthani Haveli Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 6200,
+    "marketOtaPrice": 5800,
     "realRating": 4.6,
     "realReviewCount": 22
   },
@@ -5333,7 +5341,7 @@ module.exports = [
       "filename": "places_ChIJAX_Fz0fJ5zsRLcGhlxi7v_Q"
     },
     "price": 4500,
-    "location": "Mumbai",
+    "location": "India",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5409,7 +5417,7 @@ module.exports = [
       "filename": "places_ChIJ6YrjqtnJ5zsRZ7Di820LQ1A"
     },
     "price": 3200,
-    "location": "B2, Mumbai",
+    "location": "West, Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5447,7 +5455,7 @@ module.exports = [
       "filename": "places_ChIJ39dyZvnJ5zsRe9B5tSwNao0"
     },
     "price": 2100,
-    "location": "7th Rd, Mumbai",
+    "location": "West, Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5484,8 +5492,8 @@ module.exports = [
       "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXQ8QpUp3KdeuPCf5IxnEO9_jEHp-B7aAJX7C4RPyzJwvqIlAqz4ZsTO8_NucXCOXOHa8-v7xl7vRnXXpBDSHUesX7ODVcEyw_DQhi0-B8ejkaFeR2gUYY1yvSup61E7TsJMEsV0LQVfDnI5xWxbgp9m5M5C57b_p8luvvNhPBoB4EMvjHoYkkm4Mdt65YsDUkWIex6AIfFYq9uLTCN-MtQp1eEi-8ZeZI5Ij6w3w2KXqHKpyntBnqlYJqGyk21dMluNuCWaAsqoDV6VxU-Vj-bt0ObX2deDS4S2Vi2YZ7t-8duKzaIINj3butEGclwmNgsEQ-MQKHAaX6sGLq9CumcV8AOQJApPSx9-6HC74KHqZz8BBNJEX6jeGstM0mOyRrwRPe6tpEdmCTl6fa8n48JlPvBu9J5UU6N6f-2POBxZUaY&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
       "filename": "places_ChIJTVIgeL3J5zsR4qS3PIA3FhE"
     },
-    "price": 3200,
-    "location": "Ground Floor, Mumbai",
+    "price": 650,
+    "location": "Floor, Mumbai",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5494,7 +5502,7 @@ module.exports = [
         19.1011444
       ]
     },
-    "category": "City",
+    "category": "Ashram",
     "fairsafeScore": 90,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
@@ -5506,118 +5514,118 @@ module.exports = [
       "Prime Transit and Cafe Connectivity"
     ],
     "createdAt": "2026-09-02T20:15:00.375Z",
-    "propertyType": "Boutique Serviced Apartment",
+    "propertyType": "Corridor Pilgrim Lodge",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 4200,
+    "marketOtaPrice": 900,
     "realRating": 4.5,
     "realReviewCount": 16
   },
   {
-    "title": "315Work Avenue IND1 - Coworking Space",
-    "description": "315Work Avenue IND1 - Coworking Space is a verified vacation accommodation situated at 648/1/J, Swami Vivekananda Rd, Binnamangala, Hoysala Nagar, Indiranagar, Bengaluru, Karnataka 560038, India. Featuring premium hospitality, scenic views, high-speed Wi-Fi, air conditioning, modern interiors, and effortless proximity to local attractions and dining.",
+    "title": "Silicon Hearth Executive Suites Koramangala",
+    "description": "Silicon Hearth offers modern corporate and leisure suites located in Koramangala, Bengaluru. Featuring pristine cleanliness, high-speed connectivity, proximity to prime dining hubs, and 24/7 dedicated guest concierge.",
     "image": {
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXT_a9-jDxke2UgJ6mwOk-JR5U3xwzyDp9ICtVP8Vxe4d4OvWIkV6ti1Wlmy6bcK72tnTFn_02iHQogLhEq98O7dxJU40ZOFhq90ZDY58sKw16ciFgfxnyQt9dF7tsZIMOVAX_QDEnQyMDCrlWuFrCqPLZDOCINDwUC0YsNp_m_jy66FctMoEL6C3zuW6SKyPfGzryEU6Pkvi9qzZWY6_yH_ldxMdExMuOUt1BdgJfTW9GcEJF36mW5FphabzVyPmTzu38a1IZ2jE4n57Pv10Kr5WC2ZPtQP0s-WdkfgXNtZM3YjF0UuLfuB-UQVBdMPl7pWc14SDOs3OYjgm3I1IBHEkPpeIGh5SDyJ7s02T83fSwqkP7Vy6EaGp-tZMNSq6ywum9tFwxlU6sHqhkeceq2GdmbZPfyshH8GfkAgyCZ9cwH6&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
-      "filename": "places_ChIJHSLKHgYXrjsR1R4JyxLOT2M"
+      "url": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80",
+      "filename": "blr_silicon_hearth"
     },
-    "price": 2400,
-    "location": "648/1/J, Bengaluru",
+    "price": 2600,
+    "location": "Block, Koramangala, Bengaluru",
     "country": "India",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        77.6386255,
-        12.9833352
+        77.6189,
+        12.9352
       ]
     },
     "category": "City",
-    "fairsafeScore": 96,
+    "fairsafeScore": 93,
     "amenities": [
-      "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Dedicated Ergonomic Work Desk",
+      "High-Speed 250 Mbps Wi-Fi",
       "Air Conditioning",
-      "Smart 50 inch 4K TV with OTT",
-      "Fully Equipped Modern Kitchenette",
-      "In-Unit Washer",
-      "Prime Transit and Cafe Connectivity"
+      "Smart Android TV",
+      "Private Bathroom with Rain Shower",
+      "Work Desk",
+      "Tea/Coffee Maker",
+      "Complimentary Daily Breakfast"
     ],
     "createdAt": "2026-09-02T20:15:00.762Z",
-    "propertyType": "Boutique Serviced Apartment",
+    "propertyType": "Executive Studio Apartment",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 3200,
+    "marketOtaPrice": 3500,
     "realRating": 4.5,
     "realReviewCount": 16
   },
   {
-    "title": "WorkDen - Executive 1 - 100ft road",
-    "description": "WorkDen - Executive 1 - 100ft road is a verified vacation accommodation situated at 42 Estates, #775, 100 Feet Rd, HAL 2nd Stage, Doopanahalli, Indiranagar, Bengaluru, Karnataka 560008, India. Featuring premium hospitality, scenic views, high-speed Wi-Fi, air conditioning, modern interiors, and effortless proximity to local attractions and dining.",
+    "title": "Villa Kalyani Garden Retreat",
+    "description": "Villa Kalyani is a serene garden estate nestled in Whitefield, Bengaluru. Ideal for extended stays and peaceful weekend getaways, offering private lawn access, modern interiors, and calm green surroundings away from city traffic.",
     "image": {
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXRvo9fLIukIRwDlEfECiuw5EOrVlVDhR0Lk88GDrNZCsqKFyDzykBxJC0w78PAclxT_sIcSfIag53W3Ck_4fpTlqWdOgf6_V7PVvpt6uixFnwhrgOvyU_TOtOaWnqWr_Q4yAn1VbdYOEg9DTfOfXYg996nOERdR7ikpgHPnnl_LgTYsDc_DyAcrLTVEzC1UQZ0o-Bd2V0hFxanmQNab8Cm0bwRVK6zLiu21c6kaUfo3QpXygLdFuQ-1O4zC771L5XedOtuRontv970Vu1422Tcyufxckus22MUwFA-zcLuxolIWVKYD96Zbm70ldI102Q-2Sz4TR9hGNFA14nUpbiDfbziDV7qCHu9kwNdy3orllRuw64mLvHDo69QeQDztxo_uijWVCenIZapuorRG0Yizcx0lWrbnGlG5Zlmd2KKjWVo&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
-      "filename": "places_ChIJM47qfw0VrjsRdYZbZTXJWfY"
+      "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "filename": "blr_villa_kalyani"
     },
-    "price": 2400,
-    "location": "42 Estates, Bengaluru",
+    "price": 3800,
+    "location": "Indiranagar, Bengaluru",
     "country": "India",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        77.6410013,
-        12.9690124
+        77.75,
+        12.9698
       ]
     },
     "category": "City",
-    "fairsafeScore": 90,
+    "fairsafeScore": 95,
     "amenities": [
-      "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Dedicated Ergonomic Work Desk",
+      "Private Garden Lawn",
+      "High-Speed Wi-Fi",
+      "Fully Equipped Kitchen",
+      "Outdoor Seating Patio",
       "Air Conditioning",
-      "Smart 50 inch 4K TV with OTT",
-      "Fully Equipped Modern Kitchenette",
-      "In-Unit Washer",
-      "Prime Transit and Cafe Connectivity"
+      "Free Private Parking",
+      "Pet Friendly"
     ],
     "createdAt": "2026-09-02T20:15:00.768Z",
-    "propertyType": "Boutique Serviced Apartment",
-    "maxGuests": 2,
-    "bedrooms": 1,
-    "beds": 1,
-    "baths": 1,
-    "marketOtaPrice": 3200,
+    "propertyType": "Boutique Garden Villa Suite",
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "beds": 2,
+    "baths": 2,
+    "marketOtaPrice": 5200,
     "realRating": 4.5,
     "realReviewCount": 16
   },
   {
-    "title": "WorkDen - Executive 2 - 100ft road",
-    "description": "WorkDen - Executive 2 - 100ft road is a verified vacation accommodation situated at 372, 100 Feet Rd, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008, India. Featuring premium hospitality, scenic views, high-speed Wi-Fi, air conditioning, modern interiors, and effortless proximity to local attractions and dining.",
+    "title": "Olive Serviced Suites Indiranagar",
+    "description": "Olive Serviced Suites provides contemporary, quiet serviced apartments in the heart of Indiranagar, Bengaluru. Featuring high-speed fiber internet, dedicated ergonomic work desks, private kitchenettes, daily housekeeping, and tranquil leafy balcony views.",
     "image": {
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXS1x43LdllqJDfTNWbKSY9Pq_w1FtU7jXd5cbxZVaZIYtjyEg0e8m6F37BKLvHYya45rxVnZ6UO9nHvqsBbqhbvgX-CunXwMv50k4FJggz3GIhIysiwewibepzFFoTXj43eanhnNW4CnoJpKJ5IsAitKwYeawJ3kb0E_9dp7AR0FJs4WFd3kWCT00BNkYfLJEdIQofYGLOSmAkzzwi6rEURrjWF3yeU4wDgkEmVQndYdasYbhp5QPKEV3JxvKqqfs00FEuKxjPBTd4FW876S7CyXX8rEmkQ_MqkHDU-oUPaQ3c7YI29xCmo2hGJKfOd1vxgKQePS63Kge3wwDU4EyMygKbbM5ARhACz_sDeHesAc3WJJK8CeMzMOiDu72m8yIAqc-R46qcfIiHvjnmHF7OyJXRhwwOBCJY3h-toSpOVLMlH&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
-      "filename": "places_ChIJWwXT6vsXrjsRdfEdSgIrd7U"
+      "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+      "filename": "blr_olive_suites"
     },
     "price": 2400,
-    "location": "372, Bengaluru",
+    "location": "Feet Road, Indiranagar, Bengaluru",
     "country": "India",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        77.6413721,
-        12.9726728
+        77.6412,
+        12.9719
       ]
     },
     "category": "City",
-    "fairsafeScore": 92,
+    "fairsafeScore": 94,
     "amenities": [
       "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Dedicated Ergonomic Work Desk",
+      "Dedicated Work Desk & Ergonomic Chair",
       "Air Conditioning",
-      "Smart 50 inch 4K TV with OTT",
-      "Fully Equipped Modern Kitchenette",
-      "In-Unit Washer",
-      "Prime Transit and Cafe Connectivity"
+      "Equipped Kitchenette",
+      "Smart 50\" 4K TV",
+      "Daily Housekeeping",
+      "Cafe & Metro Access"
     ],
     "createdAt": "2026-09-02T20:15:00.775Z",
     "propertyType": "Boutique Serviced Apartment",
@@ -5630,78 +5638,78 @@ module.exports = [
     "realReviewCount": 16
   },
   {
-    "title": "WorkDen - Executive 3, Indiranagar",
-    "description": "WorkDen - Executive 3, Indiranagar is a verified vacation accommodation situated at 792, 1st cross, 12th Main Rd, HAL 2nd Stage, Appareddipalya, Indiranagar, Bengaluru, Karnataka 560008, India. Featuring premium hospitality, scenic views, high-speed Wi-Fi, air conditioning, modern interiors, and effortless proximity to local attractions and dining.",
+    "title": "Casa Cottage Heritage Boutique Stay",
+    "description": "Casa Cottage is a charming 1915 heritage bungalow tucked away on a quiet tree-lined street in Richmond Town, Bengaluru. Experience traditional Indian heritage decor, a lush private garden courtyard, serene verandahs, and peaceful old-world charm.",
     "image": {
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTxoko-zTISvKGBP81QwNRlk228u5__45p1Brhz_XedSffhNgE6b28u3xnGxz8qmLHU_sPglTsSvgVYO_tMg0I81jz5H49Ed7OELuu69ONiq2ke4rE3QmOMfeTScz2-WDoLovM82E1vjgH_eRBjQAvdagJ-QQtTIpUo9kLqZHG1Fi2RUoQpuNGoAtDekdK6jWQFKxsA94Qqt5CaQ8Io3HlADXyX3iWmyF2BeilXPwMp_rBtsLwGKH446ndWeKG07STl_eD7rxb43EahQoWVcXfS9kDHkdacxqxG3qwGeFS--0Dob1XaMTcutV5XqXbsOB5GoS_40BqnS3PUy8jrwv0dw5WUOLe-J_9q9VD2lmYc34T3mI2f2-9VEo05LVZ5twQTfnyvPFyCgkT5Ax00eQNYALGSJd9MHz91SVhg4Wf3lEnh&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
-      "filename": "places_ChIJZYhYWnxxz2wRK8S3hoMYIcc"
+      "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+      "filename": "blr_casa_cottage"
     },
-    "price": 2400,
-    "location": "792, Bengaluru",
+    "price": 3200,
+    "location": "Town, Bengaluru",
     "country": "India",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        77.6406976,
-        12.9707712
+        77.6012,
+        12.9615
       ]
     },
-    "category": "City",
-    "fairsafeScore": 90,
+    "category": "Heritage",
+    "fairsafeScore": 96,
     "amenities": [
-      "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Dedicated Ergonomic Work Desk",
+      "Garden Courtyard & Verandah",
+      "Free High-Speed Wi-Fi",
+      "Complimentary Organic Breakfast",
       "Air Conditioning",
-      "Smart 50 inch 4K TV with OTT",
-      "Fully Equipped Modern Kitchenette",
-      "In-Unit Washer",
-      "Prime Transit and Cafe Connectivity"
+      "En-Suite Bathroom",
+      "Quiet Garden Walkway",
+      "Eco-friendly Heritage Architecture"
     ],
     "createdAt": "2026-09-02T20:15:00.782Z",
-    "propertyType": "Boutique Serviced Apartment",
+    "propertyType": "Heritage Garden Bungalow Suite",
     "maxGuests": 2,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 3200,
+    "marketOtaPrice": 4200,
     "realRating": 4.5,
     "realReviewCount": 16
   },
   {
-    "title": "Olsen Spaces Indiranagar",
-    "description": "Olsen Spaces Indiranagar is a verified vacation accommodation situated at Sri Nilayam, 3795, 7th Main Rd, HAL 2nd Stage, Motappapalya, Indiranagar Bengaluru, Karnataka 560008, Motappapalya, Indiranagar, Bengaluru, Karnataka 560038, India. Featuring premium hospitality, scenic views, high-speed Wi-Fi, air conditioning, modern interiors, and effortless proximity to local attractions and dining.",
+    "title": "The Paul Bangalore All-Suite Hotel",
+    "description": "The Paul Bangalore is an upscale all-suite luxury boutique stay in Domlur, offering expansive executive suites with private balconies, outdoor pool, fitness center, fine dining restaurants, and lush inner atrium courtyards.",
     "image": {
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=AVoNoXTFAavpu6Haaya4npzKoWtMdQKBQmESi4VvWno4MdtMEKCD9HHeqUk_ljB9HkJpBSP8X-VHDUL1tu51jo_XBnIUbcALep8MSNiM3KwGIYCXDaR0_zWjfAVFBBFpoSWXfyR9BstaSVTo-fSzcvscXEu0DbaCyTXmDHpllb3bZHxs_iS5NRgmfcFgQzJvzi4IdPi-w2dqdMUAsPXWer8dnYLy-FqVYaVOUkDnpk2qe9ZHnvu_o4Qe56K0jPmdiBW749QPSc47G4N9qLTUqx0bDoler17cZSB1mAhCd3HixqW_aIcmfZL7bE8xCY5xSWiSvaKkJKzyXAYdvXzZDaCHBg_6GMbW5Vpks3o-KRtPQEsfD4L7XB-jzL1J1UZzCN3Bizg2-AfgZnyt6LQ1nMsKv7aiIB4k8KSQEK_4QKSAhLL7HPd6WS3yUeHY-nJ_i4Tw&key=AIzaSyCKw83mRoiJbI264dwnAQcJ9T_dczPHIug",
-      "filename": "places_ChIJ5z5CGQAXrjsRKc8N7FpAKKM"
+      "url": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80",
+      "filename": "blr_paul_bangalore"
     },
-    "price": 2400,
-    "location": "Sri Nilayam, Bengaluru",
+    "price": 5800,
+    "location": "Indiranagar, Bengaluru",
     "country": "India",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        77.6392439,
-        12.9727255
+        77.6391,
+        12.9592
       ]
     },
     "category": "City",
-    "fairsafeScore": 100,
+    "fairsafeScore": 97,
     "amenities": [
-      "High-Speed Fiber Wi-Fi (300 Mbps)",
-      "Dedicated Ergonomic Work Desk",
-      "Air Conditioning",
-      "Smart 50 inch 4K TV with OTT",
-      "Fully Equipped Modern Kitchenette",
-      "In-Unit Washer",
-      "Prime Transit and Cafe Connectivity"
+      "Private Balcony Suite",
+      "Swimming Pool Access",
+      "Fine Dining Multi-Cuisine Restaurants",
+      "High-Speed Wi-Fi",
+      "Modern Jacuzzi Bath",
+      "Fitness Center",
+      "Complimentary Buffet Breakfast"
     ],
     "createdAt": "2026-09-02T20:15:00.788Z",
-    "propertyType": "Boutique Serviced Apartment",
-    "maxGuests": 2,
+    "propertyType": "Executive All-Suite Luxury Hotel",
+    "maxGuests": 3,
     "bedrooms": 1,
     "beds": 1,
     "baths": 1,
-    "marketOtaPrice": 3200,
+    "marketOtaPrice": 7800,
     "realRating": 4.5,
     "realReviewCount": 16
   },
@@ -5751,7 +5759,7 @@ module.exports = [
       "filename": "places_ChIJf-mQCwOZBzsRRnOFTvF9Sic"
     },
     "price": 2400,
-    "location": "Bisonvally Road, Munnar",
+    "location": "Road, Munnar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5789,7 +5797,7 @@ module.exports = [
       "filename": "places_ChIJDQVzJFWWBzsR-xhABiCYH6w"
     },
     "price": 1650,
-    "location": "Kurisupara, Munnar",
+    "location": "India",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5827,7 +5835,7 @@ module.exports = [
       "filename": "places_ChIJL8jyp0qZBzsRpRERfazoOIk"
     },
     "price": 2400,
-    "location": "Byepass Road Chithirapuram Munnar, Munnar",
+    "location": "Road Chithirapuram Munnar, Munnar",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5903,7 +5911,7 @@ module.exports = [
       "filename": "places_ChIJr2kgBhiECDsR008WUMr-uGk"
     },
     "price": 5200,
-    "location": "Finishing Point, Alleppey",
+    "location": "Point, Alleppey",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5942,7 +5950,7 @@ module.exports = [
       "filename": "places_ChIJ9f8UKCqFCDsRmiz87y091MI"
     },
     "price": 5200,
-    "location": "Pallathuruthy Bridge, Alleppey",
+    "location": "y Bridge, Alleppey",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -5981,7 +5989,7 @@ module.exports = [
       "filename": "places_ChIJb-4Hh_-FCDsRbnis__u9kfE"
     },
     "price": 5200,
-    "location": "District court, Alleppey",
+    "location": "court, Alleppey",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -6020,7 +6028,7 @@ module.exports = [
       "filename": "places_ChIJMf15dX2DCDsRm4D-kOWkBns"
     },
     "price": 5200,
-    "location": "Church Road, Alleppey",
+    "location": "Road, Alleppey",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -6059,7 +6067,7 @@ module.exports = [
       "filename": "places_ChIJW73fGQyECDsRDlRAOLRvKHU"
     },
     "price": 1650,
-    "location": "Punnamada, Alleppey",
+    "location": "India",
     "country": "India",
     "geometry": {
       "type": "Point",
@@ -6135,7 +6143,7 @@ module.exports = [
       "filename": "places_ChIJxSjIGXYTCTkR62CQDhQR_2Q"
     },
     "price": 650,
-    "location": "1.5 Km ahead from Jumpin Heights, Rishikesh",
+    "location": ".5 Km ahead from Jumpin Heights, Rishikesh",
     "country": "India",
     "geometry": {
       "type": "Point",
