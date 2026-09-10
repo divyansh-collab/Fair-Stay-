@@ -500,7 +500,7 @@ export default function ListingDetailPage() {
         <div>
           <div style={{ position: 'sticky', top: '100px', background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '20px', padding: '28px', boxShadow: 'var(--shadow-md)' }}>
             {/* Price Header */}
-            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: hasImpact ? '12px' : '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '16px' }}>
               <div>
                 {hasImpact ? (
                   <div>
@@ -524,12 +524,12 @@ export default function ListingDetailPage() {
                       padding: '3px 8px',
                       borderRadius: '6px',
                       marginTop: '4px',
-                      background: isSurge ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 197, 94, 0.1)',
+                      background: isSurge ? 'rgba(239, 68, 68, 0.08)' : 'rgba(34, 197, 94, 0.08)',
                       color: isSurge ? '#ef4444' : '#16a34a',
-                      border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.25)' : 'rgba(34, 197, 94, 0.25)'}`
+                      border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`
                     }}>
                       <span>{seasonalPricing.emoji || '🔥'}</span>
-                      <span>{seasonalPricing.signedPercentage} {seasonalPricing.festivalName}</span>
+                      <span>{seasonalPricing.signedPercentage} {seasonalPricing.festivalName.split(' ')[0] || 'Seasonal'} {isSurge ? 'Surge' : 'Discount'}</span>
                     </div>
                   </div>
                 ) : (
@@ -548,29 +548,6 @@ export default function ListingDetailPage() {
                 <span>4.96</span>
               </div>
             </div>
-
-            {/* Dynamic Festival / Seasonal Alert Banner */}
-            {hasImpact && (
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '10px 12px',
-                borderRadius: '12px',
-                marginBottom: '16px',
-                fontSize: '0.78rem',
-                fontWeight: '600',
-                background: isSurge ? 'rgba(239, 68, 68, 0.07)' : 'rgba(34, 197, 94, 0.07)',
-                border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`,
-                color: isSurge ? '#dc2626' : '#15803d',
-                lineHeight: 1.45
-              }}>
-                <span style={{ fontSize: '1.1rem' }}>{seasonalPricing.emoji || '🔥'}</span>
-                <div>
-                  <strong>{seasonalPricing.festivalName}:</strong> {isSurge ? `Fair Dynamic Surge (${seasonalPricing.signedPercentage})` : `Seasonal Discount (${seasonalPricing.signedPercentage})`} applied for {listing.location || 'this city'}.
-                </div>
-              </div>
-            )}
 
             {/* Check-In / Check-Out Box */}
             <div
@@ -666,47 +643,36 @@ export default function ListingDetailPage() {
               />
             </div>
 
-            {/* Direct Reserve Button opening Checkout Modal */}
+            {/* Direct Reserve Button */}
             <button
               type="button"
               onClick={() => setIsCheckoutOpen(true)}
               className="btn-coral"
-              style={{ width: '100%', padding: '14px', fontSize: '1rem', marginBottom: '14px', cursor: 'pointer' }}
+              style={{ width: '100%', padding: '14px', fontSize: '1rem', marginBottom: '8px', cursor: 'pointer' }}
             >
-              Reserve via FairStay
+              Reserve
             </button>
 
-            <div style={{ textAlign: 'center', fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '20px' }}>
-              You won't be charged yet • Instant 100% full refund guarantee
+            <div style={{ textAlign: 'center', fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
+              You won't be charged yet
             </div>
 
-            {/* Price Calculations */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-light)', paddingTop: '16px' }}>
+            {/* Short & Simple Price Breakdown */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-light)', paddingTop: '16px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span>Base rate (₹{basePrice.toLocaleString('en-IN')} × {nights} {nights === 1 ? 'night' : 'nights'})</span>
-                <span>₹{baseSubtotal.toLocaleString('en-IN')}</span>
+                <span>₹{effectiveNightlyRate.toLocaleString('en-IN')} × {nights} {nights === 1 ? 'night' : 'nights'}</span>
+                <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}>₹{staySubtotal.toLocaleString('en-IN')}</span>
               </div>
-              {hasImpact && (
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  color: isSurge ? '#ef4444' : '#16a34a',
-                  fontWeight: '600'
-                }}>
-                  <span>{seasonalPricing.emoji || '🔥'} {seasonalPricing.festivalName} ({seasonalPricing.signedPercentage})</span>
-                  <span>{seasonalAdjustment >= 0 ? '+' : ''}₹{seasonalAdjustment.toLocaleString('en-IN')}</span>
-                </div>
-              )}
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span>Statutory GST ({Math.round(gstRate * 100)}%)</span>
-                <span>₹{gstAmount.toLocaleString('en-IN')}</span>
+                <span>Taxes & GST ({Math.round(gstRate * 100)}%)</span>
+                <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}>₹{gstAmount.toLocaleString('en-IN')}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#16a34a', fontWeight: '600' }}>
-                <span>FairStay Service Fee</span>
-                <span>₹0 (Waived)</span>
+                <span>FairStay Service fee</span>
+                <span>Free</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '14px', fontSize: '1rem', fontWeight: '800', color: 'var(--text-primary)' }}>
-                <span>Total Amount</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '14px', fontSize: '1.05rem', fontWeight: '800', color: 'var(--text-primary)' }}>
+                <span>Total</span>
                 <span>₹{totalAmount.toLocaleString('en-IN')}</span>
               </div>
             </div>

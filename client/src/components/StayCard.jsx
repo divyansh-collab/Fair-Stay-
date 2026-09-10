@@ -162,6 +162,35 @@ export default function StayCard({ listing, showTax }) {
             <ShieldCheck size={13} style={{ color: '#4ade80' }} />
             <span>FairSafe {listing.fairsafeScore || 96}</span>
           </div>
+
+          {/* Festival Impact Tag (Bottom Right on Photo) */}
+          {hasFestivalImpact && (
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '12px',
+                right: '12px',
+                background: fest.rawPercentage > 0 ? 'rgba(220, 38, 38, 0.92)' : 'rgba(21, 128, 61, 0.92)',
+                backdropFilter: 'blur(8px)',
+                padding: '3px 8px',
+                borderRadius: '8px',
+                fontSize: '0.72rem',
+                fontWeight: '800',
+                color: '#ffffff',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                zIndex: 2,
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
+                letterSpacing: '0.2px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '3px',
+              }}
+              title={fest.explanation}
+            >
+              <span>{fest.emoji}</span>
+              <span>{fest.signedPercentage} {fest.rawPercentage < 0 ? 'Off' : 'Surge'}</span>
+            </div>
+          )}
         </div>
 
         {/* Content Body */}
@@ -225,67 +254,24 @@ export default function StayCard({ listing, showTax }) {
           </div>
 
           {/* Pricing Row */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '10px', marginTop: 'auto', gap: '8px' }}>
-            <div style={{ minWidth: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', whiteSpace: 'nowrap' }}>
-                {hasFestivalImpact && (
-                  <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', textDecoration: 'line-through', marginRight: '2px' }}>
-                    ₹{displayBasePrice.toLocaleString('en-IN')}
-                  </span>
-                )}
-                <span style={{ fontSize: '1.14rem', fontWeight: '800', letterSpacing: '-0.3px', color: hasFestivalImpact && fest.rawPercentage < 0 ? '#16a34a' : 'var(--text-primary)' }}>
-                  ₹{displayPrice.toLocaleString('en-IN')}
+          <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '10px', marginTop: 'auto' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', whiteSpace: 'nowrap' }}>
+              <span style={{ fontSize: '1.18rem', fontWeight: '800', letterSpacing: '-0.3px', color: hasFestivalImpact && fest.rawPercentage < 0 ? '#16a34a' : 'var(--text-primary)' }}>
+                ₹{displayPrice.toLocaleString('en-IN')}
+              </span>
+              <span style={{ fontSize: '0.84rem', fontWeight: '500', color: 'var(--text-secondary)' }}>
+                / night
+              </span>
+              {hasFestivalImpact && (
+                <span style={{ fontSize: '0.86rem', color: 'var(--text-muted)', textDecoration: 'line-through', marginLeft: '2px' }}>
+                  ₹{displayBasePrice.toLocaleString('en-IN')}
                 </span>
-                <span style={{ fontSize: '0.82rem', fontWeight: '500', color: 'var(--text-secondary)' }}>
-                  / night
-                </span>
-              </div>
-              {showTax && (
-                <div style={{ fontSize: '0.7rem', color: '#16a34a', fontWeight: '600', marginTop: '2px', whiteSpace: 'nowrap' }}>
-                  Total ₹{(displayPrice + taxAmount).toLocaleString('en-IN')} incl. GST
-                </div>
               )}
             </div>
-
-            {hasFestivalImpact ? (
-              <span
-                style={{
-                  fontSize: '0.68rem',
-                  fontWeight: '800',
-                  color: fest.rawPercentage > 0 ? '#b91c1c' : '#15803d',
-                  background: fest.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.08)' : 'rgba(34, 197, 94, 0.08)',
-                  border: `1px solid ${fest.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.22)' : 'rgba(34, 197, 94, 0.22)'}`,
-                  padding: '3px 8px',
-                  borderRadius: '6px',
-                  whiteSpace: 'nowrap',
-                  flexShrink: 0,
-                  letterSpacing: '0.2px',
-                }}
-                title={fest.explanation}
-              >
-                {fest.emoji} {fest.signedPercentage} {fest.rawPercentage < 0 ? 'Discount' : 'Surge'}
-              </span>
-            ) : (
-              <span
-                style={{
-                  fontSize: '0.68rem',
-                  fontWeight: '700',
-                  color: '#059669',
-                  background: 'rgba(16, 185, 129, 0.08)',
-                  border: '1px solid rgba(16, 185, 129, 0.22)',
-                  padding: '3px 8px',
-                  borderRadius: '6px',
-                  whiteSpace: 'nowrap',
-                  flexShrink: 0,
-                  letterSpacing: '0.2px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '3px',
-                }}
-                title="Direct host rate — 0% holiday markup or surge"
-              >
-                ✨ Direct Rate
-              </span>
+            {showTax && (
+              <div style={{ fontSize: '0.72rem', color: '#16a34a', fontWeight: '600', marginTop: '2px', whiteSpace: 'nowrap' }}>
+                Total ₹{(displayPrice + taxAmount).toLocaleString('en-IN')} incl. GST
+              </div>
             )}
           </div>
         </div>
