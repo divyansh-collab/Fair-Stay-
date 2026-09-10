@@ -31,6 +31,12 @@ export default function AiConciergeDrawer() {
     }
   }, [messages, isOpen]);
 
+  useEffect(() => {
+    const handleOpenAi = () => setIsOpen(true);
+    window.addEventListener('open-fairstay-ai', handleOpenAi);
+    return () => window.removeEventListener('open-fairstay-ai', handleOpenAi);
+  }, []);
+
   const handleSend = async (textToSend) => {
     const query = textToSend || input;
     if (!query.trim() || loading) return;

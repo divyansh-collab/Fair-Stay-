@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import CategoryRail from '../components/CategoryRail';
 import StayCard from '../components/StayCard';
 import api from '../services/api';
-import { Sparkles, MapPin, Frown } from 'lucide-react';
+import { Sparkles, MapPin, Frown, Compass, Loader2, ArrowUp, CheckCircle2 } from 'lucide-react';
 
 export default function HomePage({ searchQuery, onClearSearch }) {
   const [listings, setListings] = useState([]);
@@ -178,25 +178,89 @@ export default function HomePage({ searchQuery, onClearSearch }) {
               ))}
             </div>
 
-            {/* Pagination / Load More */}
-            {page < totalPages && (
-              <div style={{ textAlign: 'center', marginTop: '48px' }}>
-                <button
-                  onClick={handleLoadMore}
-                  disabled={loadingMore}
-                  className="btn-outline-coral"
-                  style={{
-                    padding: '12px 32px',
-                    fontSize: '0.95rem',
-                    fontWeight: '700',
-                    borderRadius: '9999px',
-                    cursor: loadingMore ? 'wait' : 'pointer',
-                  }}
-                >
-                  {loadingMore ? 'Loading More Stays...' : `Load More Stays (${listings.length} of ${totalListings})`}
-                </button>
+            {/* Interactive Load More Section */}
+            <div className="load-more-section" style={{ marginTop: '56px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+              
+              {/* Visual Progress Bar & Tracker */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%', maxWidth: '380px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-secondary)' }}>
+                  <span>Showing {listings.length} of {totalListings || listings.length} stays</span>
+                  <span style={{ color: '#ff5a5f' }}>{Math.min(100, Math.round((listings.length / (totalListings || listings.length)) * 100))}% explored</span>
+                </div>
+                
+                {/* Progress Track */}
+                <div style={{ width: '100%', height: '7px', background: 'var(--border-light)', borderRadius: '9999px', overflow: 'hidden', position: 'relative' }}>
+                  <div
+                    style={{
+                      height: '100%',
+                      width: `${Math.min(100, Math.round((listings.length / (totalListings || listings.length)) * 100))}%`,
+                      background: 'linear-gradient(90deg, #ff5a5f 0%, #ff7b54 50%, #10b981 100%)',
+                      borderRadius: '9999px',
+                      transition: 'width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                      boxShadow: '0 0 10px rgba(255, 90, 95, 0.5)',
+                    }}
+                  />
+                </div>
               </div>
-            )}
+
+              {/* Load More Button or Catalog Complete Card */}
+              {page < totalPages ? (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+                  <button
+                    onClick={handleLoadMore}
+                    disabled={loadingMore}
+                    className="interactive-load-more-btn"
+                  >
+                    {loadingMore ? (
+                      <>
+                        <Loader2 size={18} className="spin-loader" />
+                        <span>Fetching Verified Sanctuaries...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Compass size={18} className="compass-icon" />
+                        <span>Discover More Stays</span>
+                        <span className="load-more-badge">+{Math.min(12, (totalListings || 0) - listings.length)}</span>
+                      </>
+                    )}
+                  </button>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                    Direct host pricing • 100% verified authentic photos
+                  </span>
+                </div>
+              ) : (
+                <div className="catalog-complete-card">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.15)', color: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div style={{ textAlign: 'left' }}>
+                      <h4 style={{ fontSize: '0.96rem', fontWeight: '800', color: 'var(--text-primary)', margin: 0 }}>
+                        You've viewed all {listings.length} verified stays!
+                      </h4>
+                      <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', margin: 0 }}>
+                        All authentic properties across India are currently displayed.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '16px' }}>
+                    <button
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="btn-outline-pill"
+                    >
+                      <ArrowUp size={14} /> Back to Top
+                    </button>
+                    <button
+                      onClick={() => window.dispatchEvent(new CustomEvent('open-fairstay-ai'))}
+                      className="btn-coral-pill"
+                    >
+                      <Sparkles size={14} /> Ask AI Concierge
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </>
         )}
 
