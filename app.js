@@ -1,3 +1,16 @@
+/**
+ * ============================================================================
+ * 🏨 FAIRSTAY SERVER ENGINE (The "Front Desk & General Manager")
+ * ============================================================================
+ * What this file does (in plain English):
+ * 1. Boots up the web server on port 8080 (or your cloud port).
+ * 2. Connects to our secure MongoDB database vault holding all listings and users.
+ * 3. Handles guest security, logins, and session memory.
+ * 4. Routes customer requests to the right service counters (API, stays, bookings).
+ * 5. Serves the modern React frontend application to visitors' browsers.
+ * ============================================================================
+ */
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }

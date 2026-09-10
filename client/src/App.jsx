@@ -1,3 +1,20 @@
+/**
+ * ============================================================================
+ * 📱 FAIRSTAY STOREFRONT SWITCHBOARD (The "Grand Lobby Navigator")
+ * ============================================================================
+ * What this file does (in plain English):
+ * 1. The top-level master conductor for the entire user interface.
+ * 2. Glues the Navbar at top and Footer at bottom on every screen.
+ * 3. Switches the center view when guests click links:
+ *    - '/' -> HomePage (Browse villas, filter by city or beach)
+ *    - '/listings/:id' -> ListingDetailPage (5-photo bento grid, reviews, map)
+ *    - '/my-trips' -> MyTripsPage (See your confirmed bookings)
+ *    - '/host' -> HostStayPage (List your home for guests)
+ *    - '/admin' -> AdminPage (Secret manager dashboard for bookings/revenue)
+ * 4. Floats the AI Concierge assistant in the bottom corner of every page.
+ * ============================================================================
+ */
+
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';

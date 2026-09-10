@@ -1,3 +1,16 @@
+/**
+ * ============================================================================
+ * 🛎️ FAIRSTAY API SERVICE COUNTER (The "Hotel Reception & Clerk Desk")
+ * ============================================================================
+ * What this file does (in plain English):
+ * 1. Takes requests from visitors browsing our website on their phones or laptops.
+ * 2. Fetches matching vacation stays from our database vault based on filters.
+ * 3. Calculates festival surge discounts and FairSafe transparent totals.
+ * 4. Books rooms, records guest reviews, and connects to the Gemini AI Concierge.
+ * 5. Hands data back in clean, universal format (JSON) that the React screen displays.
+ * ============================================================================
+ */
+
 const express = require('express');
 const router = express.Router();
 const Listing = require('../models/listing');
