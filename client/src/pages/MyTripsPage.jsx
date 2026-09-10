@@ -95,10 +95,10 @@ export default function MyTripsPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ff5a5f', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
             <Luggage size={16} /> My Reservations & Room Passes
           </div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: '900', color: '#0f172a', margin: '4px 0 6px' }}>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: '900', color: 'var(--text-primary)', margin: '4px 0 6px' }}>
             My Trips & Boarding Passes
           </h1>
-          <p style={{ color: '#64748b', fontSize: '0.9rem', margin: 0 }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0 }}>
             Manage your verified stays, view assigned suite numbers, access keyless door PINs, and download check-in vouchers.
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function MyTripsPage() {
       </div>
 
       {/* Filter Tabs */}
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', borderBottom: '1px solid #e2e8f0', paddingBottom: '12px' }}>
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', borderBottom: '1px solid var(--border-light)', paddingBottom: '12px' }}>
         <button
           onClick={() => setFilterStatus('all')}
           style={{
@@ -118,8 +118,8 @@ export default function MyTripsPage() {
             borderRadius: '9999px',
             fontWeight: '700',
             fontSize: '0.85rem',
-            background: filterStatus === 'all' ? '#0f172a' : '#f1f5f9',
-            color: filterStatus === 'all' ? '#ffffff' : '#475569',
+            background: filterStatus === 'all' ? 'var(--text-primary)' : 'var(--bg-secondary)',
+            color: filterStatus === 'all' ? 'var(--bg-main)' : 'var(--text-secondary)',
             cursor: 'pointer',
             border: 'none',
           }}
@@ -134,8 +134,8 @@ export default function MyTripsPage() {
             borderRadius: '9999px',
             fontWeight: '700',
             fontSize: '0.85rem',
-            background: filterStatus === 'confirmed' ? '#10b981' : '#f1f5f9',
-            color: filterStatus === 'confirmed' ? '#ffffff' : '#475569',
+            background: filterStatus === 'confirmed' ? '#10b981' : 'var(--bg-secondary)',
+            color: filterStatus === 'confirmed' ? '#ffffff' : 'var(--text-secondary)',
             cursor: 'pointer',
             border: 'none',
           }}
@@ -150,8 +150,8 @@ export default function MyTripsPage() {
             borderRadius: '9999px',
             fontWeight: '700',
             fontSize: '0.85rem',
-            background: filterStatus === 'cancelled' ? '#ef4444' : '#f1f5f9',
-            color: filterStatus === 'cancelled' ? '#ffffff' : '#475569',
+            background: filterStatus === 'cancelled' ? '#ef4444' : 'var(--bg-secondary)',
+            color: filterStatus === 'cancelled' ? '#ffffff' : 'var(--text-secondary)',
             cursor: 'pointer',
             border: 'none',
           }}
@@ -164,21 +164,21 @@ export default function MyTripsPage() {
       {loading && (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '24px' }}>
           {[1, 2, 3].map((n) => (
-            <div key={n} style={{ background: '#fff', borderRadius: '20px', border: '1px solid #e2e8f0', height: '280px', animation: 'pulse 1.5s infinite' }} />
+            <div key={n} style={{ background: 'var(--bg-card)', borderRadius: '20px', border: '1px solid var(--border-light)', height: '280px', animation: 'pulse 1.5s infinite' }} />
           ))}
         </div>
       )}
 
       {/* Empty State */}
       {!loading && filteredBookings.length === 0 && (
-        <div style={{ textAlign: 'center', padding: '80px 20px', background: '#ffffff', borderRadius: '24px', border: '1px solid #e2e8f0' }}>
-          <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#f1f5f9', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', marginBottom: '16px' }}>
+        <div style={{ textAlign: 'center', padding: '80px 20px', background: 'var(--bg-card)', borderRadius: '24px', border: '1px solid var(--border-light)' }}>
+          <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'var(--bg-secondary)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)', marginBottom: '16px' }}>
             <Luggage size={32} />
           </div>
-          <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0f172a', marginBottom: '6px' }}>
+          <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '6px' }}>
             No trips found
           </h3>
-          <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '20px' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '20px' }}>
             {filterStatus === 'all'
               ? "You haven't reserved any sanctuaries yet. Discover verified properties across Goa, Manali, Jaipur, and beyond."
               : `You have no ${filterStatus} bookings.`}
@@ -203,18 +203,18 @@ export default function MyTripsPage() {
               <div
                 key={b._id}
                 style={{
-                  background: '#ffffff',
+                  background: 'var(--bg-card)',
                   borderRadius: '24px',
-                  border: '1px solid #e2e8f0',
+                  border: '1px solid var(--border-light)',
                   overflow: 'hidden',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.05)',
+                  boxShadow: 'var(--shadow-md)',
                   display: 'flex',
                   flexDirection: 'column',
                   transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                 }}
               >
                 {/* Stay Image & Status Header */}
-                <div style={{ position: 'relative', width: '100%', height: '180px', backgroundColor: '#e2e8f0' }}>
+                <div style={{ position: 'relative', width: '100%', height: '180px', backgroundColor: 'var(--bg-secondary)' }}>
                   <img
                     src={listing.image?.url || 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80'}
                     alt={listing.title || 'Stay'}
@@ -255,27 +255,27 @@ export default function MyTripsPage() {
                 {/* Booking Body Content */}
                 <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.15rem', fontWeight: '800', color: '#0f172a', margin: '0 0 6px', lineHeight: 1.3 }}>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)', margin: '0 0 6px', lineHeight: 1.3 }}>
                       {listing.title || 'Luxury Sanctuary Stay'}
                     </h3>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#64748b', fontSize: '0.85rem', marginBottom: '14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '14px' }}>
                       <MapPin size={14} style={{ color: '#ff5a5f' }} />
                       <span>{listing.location || 'India'}</span>
                     </div>
 
                     {/* Schedule & Specs Box */}
-                    <div style={{ background: '#f8fafc', borderRadius: '14px', padding: '12px 14px', border: '1px solid #e2e8f0', marginBottom: '16px', fontSize: '0.8rem' }}>
+                    <div style={{ background: 'var(--bg-secondary)', borderRadius: '14px', padding: '12px 14px', border: '1px solid var(--border-light)', marginBottom: '16px', fontSize: '0.8rem' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                        <span style={{ color: '#64748b' }}>Schedule:</span>
-                        <strong style={{ color: '#0f172a' }}>
+                        <span style={{ color: 'var(--text-secondary)' }}>Schedule:</span>
+                        <strong style={{ color: 'var(--text-primary)' }}>
                           {inDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })} – {outDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })}
                         </strong>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                        <span style={{ color: '#64748b' }}>Occupancy:</span>
-                        <strong style={{ color: '#0f172a' }}>{b.guests || 1} guest{(b.guests || 1) > 1 ? 's' : ''}</strong>
+                        <span style={{ color: 'var(--text-secondary)' }}>Occupancy:</span>
+                        <strong style={{ color: 'var(--text-primary)' }}>{b.guests || 1} guest{(b.guests || 1) > 1 ? 's' : ''}</strong>
                       </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e2e8f0', paddingTop: '6px', color: '#059669' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '6px', color: '#10b981' }}>
                         <span>Total Paid:</span>
                         <strong style={{ fontSize: '0.92rem' }}>₹{Number(b.totalPrice || 0).toLocaleString('en-IN')}</strong>
                       </div>

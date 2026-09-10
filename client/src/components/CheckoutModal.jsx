@@ -163,38 +163,38 @@ export default function CheckoutModal({
 
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 99999, background: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }}>
-      <div style={{ background: '#ffffff', borderRadius: '24px', width: '100%', maxWidth: '820px', maxHeight: '92vh', overflowY: 'auto', boxShadow: '0 25px 60px rgba(0,0,0,0.3)', position: 'relative' }}>
+      <div style={{ background: 'var(--bg-card)', borderRadius: '24px', width: '100%', maxWidth: '820px', maxHeight: '92vh', overflowY: 'auto', boxShadow: '0 25px 60px rgba(0,0,0,0.3)', position: 'relative', border: '1px solid var(--border-light)' }}>
         
         {/* Modal Header */}
-        <div style={{ padding: '20px 28px', borderBottom: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: '#fff', zIndex: 10 }}>
+        <div style={{ padding: '20px 28px', borderBottom: '1px solid var(--border-light)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: 'var(--bg-card)', zIndex: 10 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#ecfdf5', color: '#059669', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(16, 185, 129, 0.12)', color: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Lock size={16} />
             </div>
             <div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0f172a', margin: 0 }}>Confirm & Pay</h3>
-              <span style={{ fontSize: '0.75rem', color: '#64748b' }}>256-bit encrypted checkout with FairSafe direct host guarantee</span>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--text-primary)', margin: 0 }}>Confirm & Pay</h3>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>256-bit encrypted checkout with FairSafe direct host guarantee</span>
             </div>
           </div>
           <button 
             onClick={onClose} 
             disabled={isProcessing}
-            style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', border: 'none' }}
+            style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', border: 'none' }}
           >
-            <X size={18} style={{ color: '#475569' }} />
+            <X size={18} style={{ color: 'var(--text-secondary)' }} />
           </button>
         </div>
 
         {/* Processing State Overlay */}
         {isProcessing && (
           <div style={{ padding: '80px 24px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '380px' }}>
-            <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: '#fff1f2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ff5a5f', marginBottom: '24px' }}>
+            <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: 'rgba(255, 90, 95, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ff5a5f', marginBottom: '24px' }}>
               <Loader2 size={38} className="spin-loader" style={{ animation: 'spin 1s linear infinite' }} />
             </div>
-            <h4 style={{ fontSize: '1.3rem', fontWeight: '800', color: '#0f172a', marginBottom: '8px' }}>
+            <h4 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '8px' }}>
               Securing Your Reservation
             </h4>
-            <p style={{ color: '#64748b', fontSize: '0.95rem', maxWidth: '360px', margin: '0 auto' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: '360px', margin: '0 auto' }}>
               {processingStep}
             </p>
             <style>{`
@@ -209,7 +209,7 @@ export default function CheckoutModal({
             {/* Left Column: Payment Methods & Guest Form */}
             <div>
               {/* Payment Method Selector Tabs */}
-              <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: '800', textTransform: 'uppercase', color: '#475569', marginBottom: '10px' }}>
+              <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '10px' }}>
                 Select Payment Method
               </label>
               
@@ -220,15 +220,15 @@ export default function CheckoutModal({
                   style={{
                     padding: '12px',
                     borderRadius: '12px',
-                    border: `2px solid ${paymentMethod === 'upi' ? '#ff5a5f' : '#e2e8f0'}`,
-                    background: paymentMethod === 'upi' ? '#fff5f5' : '#ffffff',
+                    border: `2px solid ${paymentMethod === 'upi' ? '#ff5a5f' : 'var(--border-light)'}`,
+                    background: paymentMethod === 'upi' ? 'rgba(255, 90, 95, 0.1)' : 'var(--bg-card)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
                     cursor: 'pointer',
                     fontWeight: '700',
                     fontSize: '0.85rem',
-                    color: paymentMethod === 'upi' ? '#ff5a5f' : '#0f172a',
+                    color: paymentMethod === 'upi' ? '#ff5a5f' : 'var(--text-primary)',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -242,15 +242,15 @@ export default function CheckoutModal({
                   style={{
                     padding: '12px',
                     borderRadius: '12px',
-                    border: `2px solid ${paymentMethod === 'card' ? '#ff5a5f' : '#e2e8f0'}`,
-                    background: paymentMethod === 'card' ? '#fff5f5' : '#ffffff',
+                    border: `2px solid ${paymentMethod === 'card' ? '#ff5a5f' : 'var(--border-light)'}`,
+                    background: paymentMethod === 'card' ? 'rgba(255, 90, 95, 0.1)' : 'var(--bg-card)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
                     cursor: 'pointer',
                     fontWeight: '700',
                     fontSize: '0.85rem',
-                    color: paymentMethod === 'card' ? '#ff5a5f' : '#0f172a',
+                    color: paymentMethod === 'card' ? '#ff5a5f' : 'var(--text-primary)',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -264,15 +264,15 @@ export default function CheckoutModal({
                   style={{
                     padding: '12px',
                     borderRadius: '12px',
-                    border: `2px solid ${paymentMethod === 'netbanking' ? '#ff5a5f' : '#e2e8f0'}`,
-                    background: paymentMethod === 'netbanking' ? '#fff5f5' : '#ffffff',
+                    border: `2px solid ${paymentMethod === 'netbanking' ? '#ff5a5f' : 'var(--border-light)'}`,
+                    background: paymentMethod === 'netbanking' ? 'rgba(255, 90, 95, 0.1)' : 'var(--bg-card)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
                     cursor: 'pointer',
                     fontWeight: '700',
                     fontSize: '0.85rem',
-                    color: paymentMethod === 'netbanking' ? '#ff5a5f' : '#0f172a',
+                    color: paymentMethod === 'netbanking' ? '#ff5a5f' : 'var(--text-primary)',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -286,15 +286,15 @@ export default function CheckoutModal({
                   style={{
                     padding: '12px',
                     borderRadius: '12px',
-                    border: `2px solid ${paymentMethod === 'property' ? '#10b981' : '#e2e8f0'}`,
-                    background: paymentMethod === 'property' ? '#ecfdf5' : '#ffffff',
+                    border: `2px solid ${paymentMethod === 'property' ? '#10b981' : 'var(--border-light)'}`,
+                    background: paymentMethod === 'property' ? 'rgba(16, 185, 129, 0.1)' : 'var(--bg-card)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
                     cursor: 'pointer',
                     fontWeight: '700',
                     fontSize: '0.85rem',
-                    color: paymentMethod === 'property' ? '#059669' : '#0f172a',
+                    color: paymentMethod === 'property' ? '#10b981' : 'var(--text-primary)',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -304,15 +304,15 @@ export default function CheckoutModal({
               </div>
 
               {/* Dynamic Payment Details Body */}
-              <div style={{ background: '#f8fafc', borderRadius: '16px', padding: '16px', marginBottom: '20px', border: '1px solid #e2e8f0' }}>
+              <div style={{ background: 'var(--bg-secondary)', borderRadius: '16px', padding: '16px', marginBottom: '20px', border: '1px solid var(--border-light)' }}>
                 {paymentMethod === 'upi' && (
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ fontSize: '0.82rem', fontWeight: '700', color: '#0f172a' }}>Google Pay, PhonePe, Paytm, BHIM</span>
+                      <span style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-primary)' }}>Google Pay, PhonePe, Paytm, BHIM</span>
                       <button 
                         type="button" 
                         onClick={() => setShowQr(!showQr)} 
-                        style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.78rem', color: '#ff5a5f', fontWeight: '700', cursor: 'pointer' }}
+                        style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.78rem', color: '#ff5a5f', fontWeight: '700', cursor: 'pointer', background: 'none', border: 'none' }}
                       >
                         <QrCode size={14} />
                         {showQr ? 'Use UPI ID' : 'Scan QR Code'}
@@ -320,7 +320,7 @@ export default function CheckoutModal({
                     </div>
 
                     {showQr ? (
-                      <div style={{ textAlign: 'center', padding: '16px', background: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ textAlign: 'center', padding: '16px', background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-light)' }}>
                         <div style={{ display: 'inline-block', padding: '12px', background: '#fff', borderRadius: '8px', border: '2px dashed #ff5a5f' }}>
                           <svg width="120" height="120" viewBox="0 0 100 100">
                             <rect width="100" height="100" fill="white" />
@@ -338,19 +338,19 @@ export default function CheckoutModal({
                             <rect x="50" y="75" width="25" height="10" fill="#ff5a5f" />
                           </svg>
                         </div>
-                        <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '8px' }}>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
                           Scan with any UPI app to pay ₹{finalPayable.toLocaleString('en-IN')}
                         </div>
                       </div>
                     ) : (
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: '#64748b', marginBottom: '4px' }}>Virtual Payment Address (VPA)</label>
+                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Virtual Payment Address (VPA)</label>
                         <input
                           type="text"
                           value={upiId}
                           onChange={(e) => setUpiId(e.target.value)}
                           placeholder="e.g. yourname@okhdfcbank"
-                          style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                          style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                         />
                       </div>
                     )}
@@ -360,35 +360,35 @@ export default function CheckoutModal({
                 {paymentMethod === 'card' && (
                   <div>
                     <div style={{ marginBottom: '10px' }}>
-                      <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: '#64748b', marginBottom: '4px' }}>Card Number</label>
+                      <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Card Number</label>
                       <input
                         type="text"
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
                         placeholder="4532 8920 1928 3491"
-                        style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none', letterSpacing: '1px' }}
+                        style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none', letterSpacing: '1px' }}
                       />
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: '#64748b', marginBottom: '4px' }}>Expiry</label>
+                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Expiry</label>
                         <input
                           type="text"
                           value={cardExpiry}
                           onChange={(e) => setCardExpiry(e.target.value)}
                           placeholder="MM/YY"
-                          style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                          style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                         />
                       </div>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: '#64748b', marginBottom: '4px' }}>CVV</label>
+                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>CVV</label>
                         <input
                           type="password"
                           value={cardCvv}
                           onChange={(e) => setCardCvv(e.target.value)}
                           placeholder="•••"
                           maxLength={4}
-                          style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                          style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                         />
                       </div>
                     </div>
@@ -397,11 +397,11 @@ export default function CheckoutModal({
 
                 {paymentMethod === 'netbanking' && (
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: '#64748b', marginBottom: '8px' }}>Select Bank</label>
+                    <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '8px' }}>Select Bank</label>
                     <select
                       value={bank}
                       onChange={(e) => setBank(e.target.value)}
-                      style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', background: '#fff', outline: 'none' }}
+                      style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                     >
                       <option value="HDFC">HDFC Bank</option>
                       <option value="ICICI">ICICI Bank</option>
@@ -413,11 +413,11 @@ export default function CheckoutModal({
                 )}
 
                 {paymentMethod === 'property' && (
-                  <div style={{ color: '#047857', fontSize: '0.85rem' }}>
+                  <div style={{ color: '#10b981', fontSize: '0.85rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '700', marginBottom: '4px' }}>
                       <CheckCircle2 size={16} /> Zero Advance Payment
                     </div>
-                    <p style={{ margin: 0, fontSize: '0.78rem', color: '#065f46' }}>
+                    <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
                       Your suite will be confirmed and held immediately. Pay ₹{finalPayable.toLocaleString('en-IN')} via Cash, Card, or UPI upon arrival.
                     </p>
                   </div>
@@ -427,21 +427,21 @@ export default function CheckoutModal({
               {/* Guest Details */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: '#475569', marginBottom: '4px' }}>Primary Guest Full Name</label>
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Primary Guest Full Name</label>
                   <input
                     type="text"
                     value={guestName}
                     onChange={(e) => setGuestName(e.target.value)}
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                    style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: '#475569', marginBottom: '4px' }}>Email for Room Pass & Confirmation</label>
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Email for Room Pass & Confirmation</label>
                   <input
                     type="email"
                     value={guestEmail}
                     onChange={(e) => setGuestEmail(e.target.value)}
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                    style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
               </div>
@@ -450,7 +450,7 @@ export default function CheckoutModal({
             {/* Right Column: Reservation & Price Breakdown */}
             <div>
               {/* Stay Preview Card */}
-              <div style={{ display: 'flex', gap: '14px', padding: '14px', background: '#f8fafc', borderRadius: '16px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', gap: '14px', padding: '14px', background: 'var(--bg-secondary)', borderRadius: '16px', border: '1px solid var(--border-light)', marginBottom: '20px' }}>
                 <img 
                   src={listing.image?.url || 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=400&q=80'} 
                   alt={listing.title} 
@@ -458,25 +458,25 @@ export default function CheckoutModal({
                 />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: '0.72rem', fontWeight: '700', color: '#ff5a5f', textTransform: 'uppercase' }}>{listing.category || 'Featured'}</div>
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: '800', color: '#0f172a', margin: '2px 0 4px', lineHeight: 1.2 }}>{listing.title}</h4>
-                  <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{listing.location}</div>
-                  <div style={{ fontSize: '0.72rem', color: '#059669', fontWeight: '700', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <h4 style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-primary)', margin: '2px 0 4px', lineHeight: 1.2 }}>{listing.title}</h4>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{listing.location}</div>
+                  <div style={{ fontSize: '0.72rem', color: '#10b981', fontWeight: '700', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <ShieldCheck size={13} /> FairSafe Score {listing.fairsafeScore || 96}/100
                   </div>
                 </div>
               </div>
 
               {/* Trip Dates & Specs */}
-              <div style={{ background: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '12px 16px', marginBottom: '20px', fontSize: '0.82rem' }}>
+              <div style={{ background: 'var(--bg-card)', borderRadius: '12px', border: '1px solid var(--border-light)', padding: '12px 16px', marginBottom: '20px', fontSize: '0.82rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                  <span style={{ color: '#64748b' }}>Dates:</span>
-                  <span style={{ fontWeight: '700', color: '#0f172a' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>Dates:</span>
+                  <span style={{ fontWeight: '700', color: 'var(--text-primary)' }}>
                     {inDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })} – {outDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })} ({nights} {nights === 1 ? 'night' : 'nights'})
                   </span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#64748b' }}>Guests:</span>
-                  <span style={{ fontWeight: '700', color: '#0f172a' }}>{guests} guest{guests > 1 ? 's' : ''}</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Guests:</span>
+                  <span style={{ fontWeight: '700', color: 'var(--text-primary)' }}>{guests} guest{guests > 1 ? 's' : ''}</span>
                 </div>
               </div>
 
@@ -489,7 +489,7 @@ export default function CheckoutModal({
                     placeholder="Coupon: FAIRSTAY10"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    style={{ width: '100%', padding: '8px 12px 8px 36px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.82rem', textTransform: 'uppercase', outline: 'none' }}
+                    style={{ width: '100%', padding: '8px 12px 8px 36px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.82rem', textTransform: 'uppercase', outline: 'none' }}
                   />
                 </div>
                 <button type="submit" className="btn-outline" style={{ padding: '8px 14px', fontSize: '0.82rem' }}>
@@ -497,32 +497,32 @@ export default function CheckoutModal({
                 </button>
               </form>
               {promoMessage && (
-                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: appliedDiscount > 0 ? '#059669' : '#dc2626', marginBottom: '14px' }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: appliedDiscount > 0 ? '#10b981' : '#ef4444', marginBottom: '14px' }}>
                   {promoMessage}
                 </div>
               )}
 
               {/* Price Breakdown */}
-              <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#475569' }}>
+              <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)' }}>
                   <span>₹{basePrice.toLocaleString('en-IN')} × {nights} nights</span>
                   <span>₹{staySubtotal.toLocaleString('en-IN')}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#475569' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)' }}>
                   <span>Statutory GST ({gstRate * 100}%)</span>
                   <span>₹{gstAmount.toLocaleString('en-IN')}</span>
                 </div>
                 {appliedDiscount > 0 && (
-                  <div style={{ display: 'flex', justifyContent: 'space-between', color: '#059669', fontWeight: '700' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', color: '#10b981', fontWeight: '700' }}>
                     <span>Promo Code Discount</span>
                     <span>-₹{appliedDiscount.toLocaleString('en-IN')}</span>
                   </div>
                 )}
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#059669', fontWeight: '600' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#10b981', fontWeight: '600' }}>
                   <span>FairStay Direct Service Fee</span>
                   <span>₹0 (Waived)</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '2px solid #0f172a', paddingTop: '12px', fontSize: '1.15rem', fontWeight: '800', color: '#0f172a' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '2px solid var(--border-light)', paddingTop: '12px', fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)' }}>
                   <span>Total Amount</span>
                   <span>₹{finalPayable.toLocaleString('en-IN')}</span>
                 </div>

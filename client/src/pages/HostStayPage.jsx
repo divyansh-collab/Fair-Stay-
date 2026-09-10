@@ -104,10 +104,10 @@ export default function HostStayPage() {
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#fff1f2', color: '#ff5a5f', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>
           <Building size={14} /> FairStay Host Portal
         </div>
-        <h1 style={{ fontSize: '2rem', fontWeight: '900', color: '#0f172a', margin: '0 0 8px' }}>
+        <h1 style={{ fontSize: '2rem', fontWeight: '900', color: 'var(--text-primary)', margin: '0 0 8px' }}>
           List Your Sanctuary on FairStay
         </h1>
-        <p style={{ color: '#64748b', fontSize: '0.95rem', margin: 0, maxWidth: '700px' }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', margin: 0, maxWidth: '700px' }}>
           Welcome discerning guests with full pricing autonomy, direct host earnings, zero intermediary markups, and FairSafe verification.
         </p>
       </div>
@@ -125,31 +125,31 @@ export default function HostStayPage() {
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           
           {/* Card 1: Core Details */}
-          <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '24px', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#0f172a', marginBottom: '16px' }}>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '20px', padding: '24px', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
               1. Basic Property Information
             </h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: '#475569', marginBottom: '6px' }}>Property Title</label>
+                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '6px' }}>Property Title</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Royal Sunset Heritage Villa with Private Pool"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none' }}
+                  style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none' }}
                 />
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: '#475569', marginBottom: '6px' }}>Category</label>
+                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '6px' }}>Category</label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '0.9rem', background: '#fff', outline: 'none' }}
+                    style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none' }}
                   >
                     {CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>{cat}</option>
@@ -158,14 +158,14 @@ export default function HostStayPage() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: '#475569', marginBottom: '6px' }}>City, State</label>
+                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '6px' }}>City, State</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. North Goa, Goa"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none' }}
+                    style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none' }}
                   />
                 </div>
               </div>
@@ -173,16 +173,16 @@ export default function HostStayPage() {
           </div>
 
           {/* Card 2: Pricing & Sizing */}
-          <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '24px', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#0f172a', marginBottom: '16px' }}>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '20px', padding: '24px', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
               2. Nightly Rate & Capacity
             </h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: '#475569', marginBottom: '6px' }}>Direct Host Nightly Rate (₹)</label>
+                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '6px' }}>Direct Host Nightly Rate (₹)</label>
                 <div style={{ position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: '14px', top: '10px', fontWeight: '800', color: '#0f172a' }}>₹</span>
+                  <span style={{ position: 'absolute', left: '14px', top: '10px', fontWeight: '800', color: 'var(--text-primary)' }}>₹</span>
                   <input
                     type="number"
                     required
@@ -190,90 +190,90 @@ export default function HostStayPage() {
                     step={100}
                     value={price}
                     onChange={(e) => setPrice(Number(e.target.value))}
-                    style={{ width: '100%', padding: '10px 14px 10px 32px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none', fontWeight: '700' }}
+                    style={{ width: '100%', padding: '10px 14px 10px 32px', borderRadius: '12px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.9rem', outline: 'none', fontWeight: '700' }}
                   />
                 </div>
-                <span style={{ fontSize: '0.72rem', color: '#64748b', marginTop: '4px', display: 'block' }}>
+                <span style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '4px', display: 'block' }}>
                   Statutory GST slab: {price > 7500 ? '18% Luxury Hotel GST' : (price <= 1000 ? '0% GST (Exempt)' : '12% Hotel GST')}
                 </span>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: '#475569', marginBottom: '4px' }}>Max Guests</label>
+                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Max Guests</label>
                   <input
                     type="number"
                     min={1}
                     value={maxGuests}
                     onChange={(e) => setMaxGuests(Number(e.target.value))}
-                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: '#475569', marginBottom: '4px' }}>Bedrooms</label>
+                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Bedrooms</label>
                   <input
                     type="number"
                     min={1}
                     value={bedrooms}
                     onChange={(e) => setBedrooms(Number(e.target.value))}
-                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: '#475569', marginBottom: '4px' }}>Beds</label>
+                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Beds</label>
                   <input
                     type="number"
                     min={1}
                     value={beds}
                     onChange={(e) => setBeds(Number(e.target.value))}
-                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: '#475569', marginBottom: '4px' }}>Baths</label>
+                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>Baths</label>
                   <input
                     type="number"
                     min={1}
                     value={baths}
                     onChange={(e) => setBaths(Number(e.target.value))}
-                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                    style={{ width: '100%', padding: '8px', borderRadius: '10px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: '#475569', marginBottom: '6px' }}>Sanctuary Description</label>
+                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '6px' }}>Sanctuary Description</label>
                 <textarea
                   rows={3}
                   placeholder="Describe your property's view, serenity, amenities, and unique highlights..."
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none', resize: 'vertical' }}
+                  style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none', resize: 'vertical' }}
                 />
               </div>
             </div>
           </div>
 
           {/* Card 3: Photography */}
-          <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '24px', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#0f172a', marginBottom: '16px' }}>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '20px', padding: '24px', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
               3. Photography
             </h3>
 
             <div style={{ marginBottom: '14px' }}>
-              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: '#475569', marginBottom: '6px' }}>Main High-Res Photo URL</label>
+              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '6px' }}>Main High-Res Photo URL</label>
               <input
                 type="url"
                 required
                 placeholder="https://images.unsplash.com/..."
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
-                style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '0.85rem', outline: 'none' }}
+                style={{ width: '100%', padding: '10px 14px', borderRadius: '12px', border: '1px solid var(--border-hover)', background: 'var(--bg-input)', color: 'var(--text-primary)', fontSize: '0.85rem', outline: 'none' }}
               />
             </div>
 
             <div>
-              <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#64748b', display: 'block', marginBottom: '8px' }}>Or choose from verified high-res sanctuaries:</span>
+              <span style={{ fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', display: 'block', marginBottom: '8px' }}>Or choose from verified high-res sanctuaries:</span>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {SAMPLE_PHOTOS.map((p) => (
                   <button
@@ -283,9 +283,9 @@ export default function HostStayPage() {
                     style={{
                       padding: '6px 12px',
                       borderRadius: '8px',
-                      border: `1px solid ${imageUrl === p.url ? '#ff5a5f' : '#e2e8f0'}`,
-                      background: imageUrl === p.url ? '#fff1f2' : '#f8fafc',
-                      color: imageUrl === p.url ? '#ff5a5f' : '#475569',
+                      border: `1px solid ${imageUrl === p.url ? '#ff5a5f' : 'var(--border-light)'}`,
+                      background: imageUrl === p.url ? 'rgba(255, 90, 95, 0.12)' : 'var(--bg-secondary)',
+                      color: imageUrl === p.url ? '#ff5a5f' : 'var(--text-secondary)',
                       fontSize: '0.75rem',
                       fontWeight: '700',
                       cursor: 'pointer',
@@ -321,7 +321,7 @@ export default function HostStayPage() {
 
         {/* Right Column: Live Stay Card Preview */}
         <div style={{ position: 'sticky', top: '100px' }}>
-          <div style={{ fontSize: '0.78rem', fontWeight: '800', textTransform: 'uppercase', color: '#64748b', letterSpacing: '1px', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <div style={{ fontSize: '0.78rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', letterSpacing: '1px', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
             <Sparkles size={14} style={{ color: '#ff5a5f' }} />
             <span>Live Guest Feed Preview</span>
           </div>
@@ -341,27 +341,27 @@ export default function HostStayPage() {
                 <ShieldCheck size={12} style={{ color: '#4ade80' }} />
                 <span>FairSafe 98</span>
               </div>
-              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(6px)', padding: '3px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: '700', color: '#1e293b' }}>
+              <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(6px)', padding: '3px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: '700', color: '#fff' }}>
                 {category}
               </div>
             </div>
 
             <div style={{ padding: '16px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', color: '#64748b', fontWeight: '500' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', color: 'var(--text-secondary)', fontWeight: '500' }}>
                   <MapPin size={13} style={{ color: '#ff5a5f' }} />
                   <span>{location || 'Destination City'}</span>
                 </div>
-                <div style={{ fontSize: '0.82rem', fontWeight: '700', color: '#0f172a' }}>
+                <div style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-primary)' }}>
                   ⭐ 5.0 (New)
                 </div>
               </div>
 
-              <h3 style={{ fontSize: '0.98rem', fontWeight: '700', color: '#0f172a', margin: '4px 0 8px', lineHeight: 1.3 }}>
+              <h3 style={{ fontSize: '0.98rem', fontWeight: '700', color: 'var(--text-primary)', margin: '4px 0 8px', lineHeight: 1.3 }}>
                 {title || 'Your Handcrafted Vacation Sanctuary'}
               </h3>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.75rem', color: '#64748b', marginBottom: '12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '12px' }}>
                 <span>{maxGuests} guests</span>
                 <span>•</span>
                 <span>{bedrooms} bds</span>
@@ -369,12 +369,12 @@ export default function HostStayPage() {
                 <span>{baths} baths</span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', borderTop: '1px solid #f1f5f9', paddingTop: '10px' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '10px' }}>
                 <div>
-                  <span style={{ fontSize: '1.15rem', fontWeight: '800', color: '#0f172a' }}>
+                  <span style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)' }}>
                     ₹{Number(price || 4500).toLocaleString('en-IN')}
                   </span>
-                  <span style={{ fontSize: '0.8rem', color: '#64748b', marginLeft: '4px' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginLeft: '4px' }}>
                     / night
                   </span>
                 </div>
@@ -385,8 +385,8 @@ export default function HostStayPage() {
             </div>
           </div>
 
-          <div style={{ background: '#f8fafc', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '16px', marginTop: '20px', fontSize: '0.78rem', color: '#64748b' }}>
-            <div style={{ fontWeight: '700', color: '#0f172a', marginBottom: '4px' }}>
+          <div style={{ background: 'var(--bg-card)', borderRadius: '16px', border: '1px solid var(--border-light)', padding: '16px', marginTop: '20px', fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+            <div style={{ fontWeight: '700', color: 'var(--text-primary)', marginBottom: '4px' }}>
               🛡️ FairStay Host Guarantee
             </div>
             Direct payouts to bank or UPI, zero intermediary deductions, and seasonal festival pricing control with complete freedom.

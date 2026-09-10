@@ -34,7 +34,7 @@ export default function CategoryRail({
   onToggleTax 
 }) {
   return (
-    <div className="category-filter-wrapper" style={{ borderBottom: '1px solid var(--border-light)', background: 'var(--bg-primary)', position: 'sticky', top: '72px', zIndex: 900 }}>
+    <div className="filter-wrapper" style={{ borderBottom: '1px solid var(--border-light)', background: 'var(--bg-main)', position: 'relative', zIndex: 10 }}>
       <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'nowrap', minHeight: '68px' }}>
         {/* Horizontal Category Scroll Rail */}
         <div className="category-rail" style={{ display: 'flex', alignItems: 'center', gap: '32px', overflowX: 'auto', padding: '12px 0 6px', flex: 1 }}>
@@ -62,7 +62,7 @@ export default function CategoryRail({
             style={{ 
               fontSize: '0.84rem', 
               fontWeight: '600', 
-              color: 'var(--text-secondary)', 
+              color: 'var(--text-primary)', 
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               margin: 0

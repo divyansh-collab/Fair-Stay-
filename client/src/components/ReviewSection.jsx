@@ -39,17 +39,17 @@ export default function ReviewSection({ listingId, reviews: initialReviews = [],
 
   return (
     <div style={{ marginTop: '32px' }}>
-      <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '12px' }}>Reviews ({reviews.length}) • {avgRating} ★</h3>
+      <h3 style={{ fontSize: '1.2rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>Reviews ({reviews.length}) • {avgRating} ★</h3>
 
       {reviews.length === 0 && (
-        <p style={{ fontSize: '0.95rem', color: '#64748b' }}>
+        <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
           🖊️ No reviews yet. Be the first to share your experience!
         </p>
       )}
 
       {/* Existing reviews */}
       {reviews.map((rev) => (
-        <div key={rev._id} style={{ display: 'flex', gap: '12px', marginBottom: '16px', paddingBottom: '12px', borderBottom: '1px solid #e2e8f0' }}>
+        <div key={rev._id} style={{ display: 'flex', gap: '12px', marginBottom: '16px', paddingBottom: '12px', borderBottom: '1px solid var(--border-light)' }}>
           {rev.author?.profilePhoto?.url ? (
             <img src={rev.author.profilePhoto.url} alt={rev.author.username} style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover' }} />
           ) : (
@@ -59,20 +59,20 @@ export default function ReviewSection({ listingId, reviews: initialReviews = [],
           )}
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: '600', color: '#0f172a' }}>{rev.author?.username || 'Anonymous'}</span>
-              <span style={{ fontSize: '0.8rem', color: '#64748b' }}>{formatDate(rev.createdAt)}</span>
+              <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}>{rev.author?.username || 'Anonymous'}</span>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{formatDate(rev.createdAt)}</span>
             </div>
-            <div style={{ margin: '4px 0' }}>
+            <div style={{ margin: '4px 0', color: '#eab308' }}>
               {'★'.repeat(rev.rating)}{'☆'.repeat(5 - rev.rating)}
             </div>
-            <p style={{ margin: 0, color: '#334155', lineHeight: 1.4 }}>{rev.comment}</p>
+            <p style={{ margin: 0, color: 'var(--text-primary)', opacity: 0.9, lineHeight: 1.4 }}>{rev.comment}</p>
           </div>
         </div>
       ))}
 
       {/* Write a Review Form */}
-      <form onSubmit={handleSubmit} style={{ marginTop: '24px', padding: '16px', border: '1px solid #e2e8f0', borderRadius: '12px', background: '#f8fafc' }}>
-        <h4 style={{ marginBottom: '8px', fontWeight: '600' }}>Write a Review</h4>
+      <form onSubmit={handleSubmit} style={{ marginTop: '24px', padding: '16px', border: '1px solid var(--border-light)', borderRadius: '12px', background: 'var(--bg-secondary)' }}>
+        <h4 style={{ marginBottom: '8px', fontWeight: '700', color: 'var(--text-primary)' }}>Write a Review</h4>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
           {[1, 2, 3, 4, 5].map((star) => (
             <svg key={star} onClick={() => handleStarClick(star)} onMouseEnter={() => setHoverRating(star)} onMouseLeave={() => setHoverRating(0)}
@@ -82,7 +82,7 @@ export default function ReviewSection({ listingId, reviews: initialReviews = [],
           ))}
         </div>
         <textarea placeholder="Share your thoughts (min 10 characters)" value={comment} onChange={(e) => setComment(e.target.value)}
-          rows={3} style={{ width: '100%', borderRadius: '6px', border: '1px solid #e2e8f0', padding: '8px', resize: 'vertical', fontFamily: 'inherit' }} />
+          rows={3} style={{ width: '100%', borderRadius: '6px', border: '1px solid var(--border-hover)', background: 'var(--bg-card)', color: 'var(--text-primary)', padding: '8px', resize: 'vertical', fontFamily: 'inherit', outline: 'none' }} />
         <button type="submit" disabled={submitting} className="btn-coral"
           style={{ marginTop: '8px', padding: '8px 16px', fontWeight: '600', background: '#ff5a5f', color: '#fff', border: 'none', borderRadius: '6px', cursor: submitting ? 'wait' : 'pointer' }}>
           {submitting ? 'Posting...' : 'Post Review'}

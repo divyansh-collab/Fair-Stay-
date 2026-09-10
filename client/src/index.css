@@ -4,7 +4,10 @@
   --primary-coral-hover: #e0484d;
   --coral-glow: rgba(255, 90, 95, 0.25);
   --bg-main: #f8fafc;
+  --bg-primary: #ffffff;
   --bg-card: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --bg-input: #ffffff;
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #94a3b8;
@@ -32,8 +35,11 @@
 [data-theme="dark"],
 [data-bs-theme="dark"] {
   --bg-main: #0b0f19;
+  --bg-primary: #151c2c;
   --bg-card: #151c2c;
-  --text-primary: #f1f5f9;
+  --bg-secondary: #1e293b;
+  --bg-input: #1a2333;
+  --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   --border-light: #243048;

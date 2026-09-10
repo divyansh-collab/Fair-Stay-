@@ -134,10 +134,10 @@ export default function ListingDetailPage() {
       <div className="container-custom" style={{ padding: '100px 24px', textAlign: 'center' }}>
         <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
           <div style={{ width: '42px', height: '42px', border: '3px solid #ff5a5f', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
-          <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0f172a' }}>
+          <div style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-primary)' }}>
             Loading Sanctuary Details...
           </div>
-          <p style={{ color: '#64748b', fontSize: '0.88rem' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
             Fetching verified photos, real-time rates & FairSafe credentials...
           </p>
         </div>
@@ -148,11 +148,11 @@ export default function ListingDetailPage() {
   if (!listing) {
     return (
       <div className="container-custom" style={{ padding: '100px 24px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '480px', margin: '0 auto', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '24px', padding: '40px 24px', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#0f172a', marginBottom: '10px' }}>
+        <div style={{ maxWidth: '480px', margin: '0 auto', background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '24px', padding: '40px 24px', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '10px' }}>
             Stay Not Found
           </h2>
-          <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '24px', lineHeight: 1.6 }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '24px', lineHeight: 1.6 }}>
             The vacation sanctuary or room you are looking for may have been booked, updated, or moved.
           </p>
           <Link to="/" className="btn-coral">
@@ -177,37 +177,37 @@ export default function ListingDetailPage() {
     <div className="container-custom" style={{ padding: '32px 24px 80px' }}>
       {/* Top Breadcrumb & Actions */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-        <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#475569', fontWeight: '600', fontSize: '0.85rem' }}>
+        <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--text-secondary)', fontWeight: '600', fontSize: '0.85rem' }}>
           <ArrowLeft size={16} />
           <span>Back to Stays</span>
         </Link>
         <div style={{ display: 'flex', gap: '12px' }}>
           <button
             onClick={handleShare}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#0f172a', fontWeight: '600', cursor: 'pointer', background: '#f1f5f9', padding: '6px 12px', borderRadius: '8px', border: 'none' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: 'var(--text-primary)', fontWeight: '600', cursor: 'pointer', background: 'var(--bg-secondary)', border: '1px solid var(--border-light)', padding: '6px 14px', borderRadius: '8px' }}
           >
             <Share2 size={16} /> Share
           </button>
           <button
             onClick={toggleWishlist}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: isSaved ? '#ff5a5f' : '#0f172a', fontWeight: '600', cursor: 'pointer', background: isSaved ? '#ffe4e6' : '#f1f5f9', padding: '6px 12px', borderRadius: '8px', border: 'none' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: isSaved ? '#ff5a5f' : 'var(--text-primary)', fontWeight: '600', cursor: 'pointer', background: isSaved ? 'rgba(255, 90, 95, 0.15)' : 'var(--bg-secondary)', border: '1px solid var(--border-light)', padding: '6px 14px', borderRadius: '8px' }}
           >
-            <Heart size={16} fill={isSaved ? '#ff5a5f' : 'none'} color={isSaved ? '#ff5a5f' : '#0f172a'} /> {isSaved ? 'Saved' : 'Save'}
+            <Heart size={16} fill={isSaved ? '#ff5a5f' : 'none'} color={isSaved ? '#ff5a5f' : 'currentColor'} /> {isSaved ? 'Saved' : 'Save'}
           </button>
         </div>
       </div>
 
       {/* Title & Location Header */}
       <div style={{ marginBottom: '20px' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: '800', color: '#0f172a', lineHeight: 1.25, marginBottom: '8px' }}>
+        <h1 style={{ fontSize: '1.8rem', fontWeight: '800', color: 'var(--text-primary)', lineHeight: 1.25, marginBottom: '8px' }}>
           {listing.title}
         </h1>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem', color: '#475569' }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: '700', color: '#0f172a' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: '700', color: 'var(--text-primary)' }}>
             <Star size={14} style={{ fill: '#eab308', color: '#eab308' }} />
             {listing.reviews && listing.reviews.length > 0
               ? (listing.reviews.reduce((acc, r) => acc + (Number(r.rating) || 5), 0) / listing.reviews.length).toFixed(1)
-              : '4.9'} • <u style={{ fontWeight: '600', color: '#64748b' }}>{listing.reviews?.length || 0} {listing.reviews?.length === 1 ? 'review' : 'reviews'}</u>
+              : '4.9'} • <u style={{ fontWeight: '600', color: 'var(--text-muted)' }}>{listing.reviews?.length || 0} {listing.reviews?.length === 1 ? 'review' : 'reviews'}</u>
           </span>
           <span>•</span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
@@ -261,13 +261,13 @@ export default function ListingDetailPage() {
             position: 'absolute',
             bottom: '16px',
             right: '16px',
-            background: '#ffffff',
-            border: '1px solid #0f172a',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-hover)',
             padding: '8px 16px',
             borderRadius: '10px',
             fontSize: '0.82rem',
             fontWeight: '700',
-            color: '#0f172a',
+            color: 'var(--text-primary)',
             boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
             cursor: 'pointer',
           }}
@@ -281,11 +281,11 @@ export default function ListingDetailPage() {
         {/* Left Column */}
         <div>
           {/* Room Specifications */}
-          <div style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: '24px', marginBottom: '24px' }}>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0f172a', marginBottom: '6px' }}>
+          <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '24px', marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '6px' }}>
               Entire vacation villa hosted by Verified Superhost
             </h2>
-            <div style={{ display: 'flex', gap: '16px', fontSize: '0.9rem', color: '#64748b' }}>
+            <div style={{ display: 'flex', gap: '16px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
               <span>{listing.maxGuests || 4} guests</span>
               <span>•</span>
               <span>{listing.bedrooms || 2} bedrooms</span>
@@ -297,39 +297,39 @@ export default function ListingDetailPage() {
           </div>
 
           {/* Highlights */}
-          <div style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: '24px', marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '24px', marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div style={{ display: 'flex', gap: '14px' }}>
               <Wifi size={20} style={{ color: '#ff5a5f', flexShrink: 0 }} />
               <div>
-                <div style={{ fontWeight: '700', fontSize: '0.92rem', color: '#0f172a' }}>Ultra Fast 100+ Mbps Wi-Fi</div>
-                <div style={{ fontSize: '0.82rem', color: '#64748b' }}>Verified fiber broadband perfect for remote work and 4K streaming.</div>
+                <div style={{ fontWeight: '700', fontSize: '0.92rem', color: 'var(--text-primary)' }}>Ultra Fast 100+ Mbps Wi-Fi</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>Verified fiber broadband perfect for remote work and 4K streaming.</div>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '14px' }}>
               <ShieldCheck size={20} style={{ color: '#16a34a', flexShrink: 0 }} />
               <div>
-                <div style={{ fontWeight: '700', fontSize: '0.92rem', color: '#0f172a' }}>Direct Host Pricing</div>
-                <div style={{ fontSize: '0.82rem', color: '#64748b' }}>No arbitrary 300% OTA markups. You pay direct host rates.</div>
+                <div style={{ fontWeight: '700', fontSize: '0.92rem', color: 'var(--text-primary)' }}>Direct Host Pricing</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>No arbitrary 300% OTA markups. You pay direct host rates.</div>
               </div>
             </div>
           </div>
 
           {/* Description */}
-          <div style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: '24px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#0f172a', marginBottom: '12px' }}>
+          <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '24px', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '12px' }}>
               About this sanctuary
             </h3>
-            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '0.92rem', color: 'var(--text-primary)', opacity: 0.9, lineHeight: 1.7 }}>
               {listing.description}
             </p>
           </div>
 
           {/* Amenities */}
-          <div style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: '24px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#0f172a', marginBottom: '16px' }}>
+          <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '24px', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
               What this place offers
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px', fontSize: '0.88rem', color: '#334155' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
               {(listing.amenities && listing.amenities.length > 0 ? listing.amenities : [
                 'High-Speed Wi-Fi (100+ Mbps)',
                 'Private Swimming Pool',
@@ -353,7 +353,7 @@ export default function ListingDetailPage() {
 
           {/* Location Map */}
           <div style={{ marginTop: '32px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0f172a', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
               Where you'll be
             </h3>
             <ListingMap listing={listing} />
@@ -374,56 +374,56 @@ export default function ListingDetailPage() {
 
         {/* Right Column: Sticky Booking Widget */}
         <div>
-          <div style={{ position: 'sticky', top: '100px', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '28px', boxShadow: '0 12px 36px rgba(0,0,0,0.08)' }}>
+          <div style={{ position: 'sticky', top: '100px', background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '20px', padding: '28px', boxShadow: 'var(--shadow-md)' }}>
             {/* Price Header */}
             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '20px' }}>
               <div>
-                <span style={{ fontSize: '1.6rem', fontWeight: '800', color: '#0f172a' }}>
+                <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-primary)' }}>
                   ₹{basePrice.toLocaleString('en-IN')}
                 </span>
-                <span style={{ fontSize: '0.9rem', color: '#64748b', marginLeft: '4px' }}>
+                <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginLeft: '4px' }}>
                   / night
                 </span>
               </div>
-              <div style={{ fontSize: '0.85rem', fontWeight: '700', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Star size={14} style={{ fill: '#eab308', color: '#eab308' }} />
                 <span>4.96</span>
               </div>
             </div>
 
             {/* Check-In / Check-Out Box */}
-            <div style={{ border: '1px solid #cbd5e1', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: '1px solid #cbd5e1' }}>
-                <div style={{ padding: '10px 14px', borderRight: '1px solid #cbd5e1' }}>
-                  <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: '#475569' }}>Check-in</label>
+            <div style={{ border: '1px solid var(--border-hover)', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px', background: 'var(--bg-input)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: '1px solid var(--border-hover)' }}>
+                <div style={{ padding: '10px 14px', borderRight: '1px solid var(--border-hover)' }}>
+                  <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Check-in</label>
                   <input
                     type="date"
                     value={checkIn}
                     onChange={(e) => setCheckIn(e.target.value)}
-                    style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.8rem', fontFamily: 'inherit', color: '#0f172a' }}
+                    style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.8rem', fontFamily: 'inherit', color: 'var(--text-primary)', background: 'transparent' }}
                   />
                 </div>
                 <div style={{ padding: '10px 14px' }}>
-                  <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: '#475569' }}>Check-out</label>
+                  <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Check-out</label>
                   <input
                     type="date"
                     value={checkOut}
                     onChange={(e) => setCheckOut(e.target.value)}
-                    style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.8rem', fontFamily: 'inherit', color: '#0f172a' }}
+                    style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.8rem', fontFamily: 'inherit', color: 'var(--text-primary)', background: 'transparent' }}
                   />
                 </div>
               </div>
               <div style={{ padding: '10px 14px' }}>
-                <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: '#475569' }}>Guests</label>
+                <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Guests</label>
                 <select
                   value={guests}
                   onChange={(e) => setGuests(Number(e.target.value))}
-                  style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.82rem', fontFamily: 'inherit', background: 'transparent' }}
+                  style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.82rem', fontFamily: 'inherit', background: 'transparent', color: 'var(--text-primary)' }}
                 >
-                  <option value="1">1 guest</option>
-                  <option value="2">2 guests</option>
-                  <option value="4">4 guests</option>
-                  <option value="6">6 guests</option>
+                  <option value="1" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>1 guest</option>
+                  <option value="2" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>2 guests</option>
+                  <option value="4" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>4 guests</option>
+                  <option value="6" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>6 guests</option>
                 </select>
               </div>
             </div>
@@ -438,12 +438,12 @@ export default function ListingDetailPage() {
               Reserve via FairStay
             </button>
 
-            <div style={{ textAlign: 'center', fontSize: '0.78rem', color: '#64748b', marginBottom: '20px' }}>
+            <div style={{ textAlign: 'center', fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '20px' }}>
               You won't be charged yet • Instant 100% full refund guarantee
             </div>
 
             {/* Price Calculations */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', color: '#475569', borderTop: '1px solid #f1f5f9', paddingTop: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-light)', paddingTop: '16px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span>₹{basePrice.toLocaleString('en-IN')} × {nights} nights</span>
                 <span>₹{staySubtotal.toLocaleString('en-IN')}</span>
@@ -456,7 +456,7 @@ export default function ListingDetailPage() {
                 <span>FairStay Service Fee</span>
                 <span>₹0 (Waived)</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e2e8f0', paddingTop: '14px', fontSize: '1rem', fontWeight: '800', color: '#0f172a' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '14px', fontSize: '1rem', fontWeight: '800', color: 'var(--text-primary)' }}>
                 <span>Total before taxes & fees</span>
                 <span>₹{totalAmount.toLocaleString('en-IN')}</span>
               </div>

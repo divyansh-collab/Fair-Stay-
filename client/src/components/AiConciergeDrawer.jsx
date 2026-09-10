@@ -118,8 +118,8 @@ export default function AiConciergeDrawer() {
           bottom: 0,
           width: '100%',
           maxWidth: '440px',
-          background: '#ffffff',
-          boxShadow: '-8px 0 32px rgba(0, 0, 0, 0.2)',
+          background: 'var(--bg-card)',
+          boxShadow: '-8px 0 32px rgba(0, 0, 0, 0.4)',
           zIndex: 1001,
           display: 'flex',
           flexDirection: 'column',
@@ -128,17 +128,17 @@ export default function AiConciergeDrawer() {
         }}
       >
         {/* Drawer Header */}
-        <div style={{ padding: '20px', borderBottom: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#f8fafc' }}>
+        <div style={{ padding: '20px', borderBottom: '1px solid var(--border-light)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'var(--bg-secondary)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #ff5a5f 0%, #ff6b50 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
               <Bot size={20} />
             </div>
             <div>
-              <div style={{ fontWeight: '800', fontSize: '1rem', color: '#0f172a' }}>FairStay AI Concierge</div>
+              <div style={{ fontWeight: '800', fontSize: '1rem', color: 'var(--text-primary)' }}>FairStay AI Concierge</div>
               <div style={{ fontSize: '0.72rem', color: '#16a34a', fontWeight: '600' }}>● Powered by Gemini 1.5 Flash</div>
             </div>
           </div>
-          <button onClick={() => setIsOpen(false)} style={{ color: '#64748b', padding: '6px', cursor: 'pointer' }}>
+          <button onClick={() => setIsOpen(false)} style={{ color: 'var(--text-secondary)', padding: '6px', cursor: 'pointer', background: 'none', border: 'none' }}>
             <X size={20} />
           </button>
         </div>
@@ -156,7 +156,7 @@ export default function AiConciergeDrawer() {
               }}
             >
               {m.role === 'assistant' && (
-                <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(255, 90, 95, 0.1)', color: '#ff5a5f', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(255, 90, 95, 0.15)', color: '#ff5a5f', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Sparkles size={14} />
                 </div>
               )}
@@ -166,8 +166,8 @@ export default function AiConciergeDrawer() {
                   borderRadius: '14px',
                   fontSize: '0.85rem',
                   lineHeight: 1.5,
-                  background: m.role === 'user' ? '#ff5a5f' : '#f1f5f9',
-                  color: m.role === 'user' ? '#ffffff' : '#0f172a',
+                  background: m.role === 'user' ? '#ff5a5f' : 'var(--bg-secondary)',
+                  color: m.role === 'user' ? '#ffffff' : 'var(--text-primary)',
                   borderBottomRightRadius: m.role === 'user' ? '4px' : '14px',
                   borderBottomLeftRadius: m.role === 'assistant' ? '4px' : '14px',
                 }}
@@ -179,10 +179,10 @@ export default function AiConciergeDrawer() {
 
           {loading && (
             <div style={{ display: 'flex', gap: '8px', alignSelf: 'flex-start' }}>
-              <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(255, 90, 95, 0.1)', color: '#ff5a5f', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(255, 90, 95, 0.15)', color: '#ff5a5f', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Sparkles size={14} />
               </div>
-              <div style={{ padding: '10px 16px', borderRadius: '14px', background: '#f1f5f9', color: '#64748b', fontSize: '0.82rem' }}>
+              <div style={{ padding: '10px 16px', borderRadius: '14px', background: 'var(--bg-secondary)', color: 'var(--text-secondary)', fontSize: '0.82rem' }}>
                 Thinking...
               </div>
             </div>
@@ -190,38 +190,64 @@ export default function AiConciergeDrawer() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Quick Prompts */}
-        <div style={{ padding: '10px 16px', borderTop: '1px solid #f1f5f9', background: '#f8fafc', display: 'flex', gap: '6px', overflowX: 'auto', scrollbarWidth: 'none' }}>
-          {QUICK_PROMPTS.map((prompt, i) => (
+        {/* Prompt Suggestions */}
+        <div style={{ padding: '10px 16px', borderTop: '1px solid var(--border-light)', background: 'var(--bg-secondary)', display: 'flex', gap: '6px', overflowX: 'auto', scrollbarWidth: 'none' }}>
+          {QUICK_PROMPTS.map((s, idx) => (
             <button
-              key={i}
-              onClick={() => handleSend(prompt)}
-              style={{ flexShrink: 0, padding: '6px 12px', borderRadius: '9999px', background: '#fff', border: '1px solid #e2e8f0', fontSize: '0.72rem', color: '#475569', cursor: 'pointer', whiteSpace: 'nowrap' }}
+              key={idx}
+              onClick={() => handleSend(s)}
+              style={{
+                flexShrink: 0,
+                padding: '6px 12px',
+                borderRadius: '9999px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-light)',
+                fontSize: '0.72rem',
+                color: 'var(--text-secondary)',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+              }}
             >
-              {prompt}
+              {s}
             </button>
           ))}
         </div>
 
-        {/* Input Bar */}
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSend();
-          }}
-          style={{ padding: '16px', borderTop: '1px solid #e2e8f0', display: 'flex', gap: '8px', background: '#fff' }}
-        >
+        {/* Input Footer */}
+        <form onSubmit={(e) => { e.preventDefault(); handleSend(); }} style={{ padding: '16px', borderTop: '1px solid var(--border-light)', display: 'flex', gap: '8px', background: 'var(--bg-card)' }}>
           <input
             type="text"
             placeholder="Ask about stays, Goa villas, Manali cottages..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            style={{ flex: 1, padding: '10px 14px', borderRadius: '9999px', border: '1px solid #cbd5e1', fontSize: '0.85rem', fontFamily: 'inherit', outline: 'none' }}
+            style={{
+              flex: 1,
+              padding: '10px 14px',
+              borderRadius: '9999px',
+              border: '1px solid var(--border-hover)',
+              background: 'var(--bg-secondary)',
+              color: 'var(--text-primary)',
+              fontSize: '0.85rem',
+              fontFamily: 'inherit',
+              outline: 'none',
+            }}
           />
           <button
             type="submit"
             disabled={!input.trim() || loading}
-            style={{ width: '40px', height: '40px', borderRadius: '50%', background: input.trim() ? '#ff5a5f' : '#cbd5e1', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: input.trim() ? 'pointer' : 'default', transition: 'background 0.2s' }}
+            style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: input.trim() ? '#ff5a5f' : 'var(--border-light)',
+              color: '#fff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: input.trim() ? 'pointer' : 'default',
+              border: 'none',
+              transition: 'background 0.2s',
+            }}
           >
             <Send size={16} />
           </button>

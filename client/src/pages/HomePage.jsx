@@ -98,7 +98,7 @@ export default function HomePage({ searchQuery, onClearSearch }) {
         {/* Results Header Bar */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
           <div>
-            <h2 style={{ fontSize: '1.4rem', fontWeight: '800', color: '#0f172a' }}>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-primary)' }}>
               {searchQuery
                 ? `Results for "${searchQuery}"`
                 : activeDestination
@@ -107,7 +107,7 @@ export default function HomePage({ searchQuery, onClearSearch }) {
                 ? `${activeCategory} Stays`
                 : 'Explore Verified Stays across India'}
             </h2>
-            <span style={{ fontSize: '0.85rem', color: '#64748b' }}>
+            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
               {loading ? 'Finding stays...' : `${totalListings || listings.length} stays found with direct host pricing`}
             </span>
           </div>
@@ -157,12 +157,12 @@ export default function HomePage({ searchQuery, onClearSearch }) {
         {loading && (
           <div className="stays-grid">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-              <div key={n} style={{ background: '#fff', borderRadius: '20px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
-                <div style={{ width: '100%', aspectRatio: '4/3', background: '#e2e8f0', animation: 'pulse 1.5s infinite' }} />
+              <div key={n} style={{ background: 'var(--bg-card)', borderRadius: '20px', border: '1px solid var(--border-light)', overflow: 'hidden' }}>
+                <div style={{ width: '100%', aspectRatio: '4/3', background: 'var(--border-light)', animation: 'pulse 1.5s infinite' }} />
                 <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ height: '14px', width: '60%', background: '#e2e8f0', borderRadius: '4px' }} />
-                  <div style={{ height: '18px', width: '85%', background: '#e2e8f0', borderRadius: '4px' }} />
-                  <div style={{ height: '16px', width: '40%', background: '#e2e8f0', borderRadius: '4px', marginTop: '8px' }} />
+                  <div style={{ height: '14px', width: '60%', background: 'var(--border-light)', borderRadius: '4px' }} />
+                  <div style={{ height: '18px', width: '85%', background: 'var(--border-light)', borderRadius: '4px' }} />
+                  <div style={{ height: '16px', width: '40%', background: 'var(--border-light)', borderRadius: '4px', marginTop: '8px' }} />
                 </div>
               </div>
             ))}
@@ -173,25 +173,24 @@ export default function HomePage({ searchQuery, onClearSearch }) {
         {!loading && listings.length > 0 && (
           <>
             <div className="stays-grid">
-              {listings.map((item) => (
-                <StayCard key={item._id} listing={item} showTax={showTax} />
+              {listings.map((stay) => (
+                <StayCard key={stay._id} listing={stay} showTax={showTax} />
               ))}
             </div>
 
-            {/* Load More Button */}
+            {/* Pagination / Load More */}
             {page < totalPages && (
-              <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <div style={{ textAlign: 'center', marginTop: '48px' }}>
                 <button
-                  type="button"
                   onClick={handleLoadMore}
                   disabled={loadingMore}
-                  className="btn-coral"
+                  className="btn-outline-coral"
                   style={{
                     padding: '12px 32px',
                     fontSize: '0.95rem',
-                    borderRadius: '12px',
+                    fontWeight: '700',
+                    borderRadius: '9999px',
                     cursor: loadingMore ? 'wait' : 'pointer',
-                    opacity: loadingMore ? 0.7 : 1,
                   }}
                 >
                   {loadingMore ? 'Loading More Stays...' : `Load More Stays (${listings.length} of ${totalListings})`}
@@ -203,14 +202,14 @@ export default function HomePage({ searchQuery, onClearSearch }) {
 
         {/* Empty State */}
         {!loading && listings.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '80px 20px', background: '#fff', borderRadius: '24px', border: '1px solid #e2e8f0' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#f1f5f9', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', marginBottom: '16px' }}>
+          <div style={{ textAlign: 'center', padding: '80px 20px', background: 'var(--bg-card)', borderRadius: '24px', border: '1px solid var(--border-light)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'var(--bg-secondary)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', marginBottom: '16px' }}>
               <Frown size={32} />
             </div>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0f172a', marginBottom: '8px' }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '8px' }}>
               No Stays Found Matching Your Criteria
             </h3>
-            <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '20px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '20px' }}>
               Try broadening your location filter, clearing search keywords, or selecting another category.
             </p>
             <button

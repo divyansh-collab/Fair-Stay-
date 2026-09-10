@@ -138,7 +138,7 @@ export default function StayCard({ listing, showTax }) {
           </div>
 
           {/* Category Tag */}
-          <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(6px)', padding: '3px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: '700', color: '#1e293b' }}>
+          <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(6px)', padding: '4px 9px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: '700', color: '#ffffff' }}>
             {listing.category || 'Trending'}
           </div>
         </div>
@@ -147,26 +147,26 @@ export default function StayCard({ listing, showTax }) {
         <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', flex: 1 }}>
           {/* Location & Rating */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', color: '#64748b', fontWeight: '500' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', color: 'var(--text-secondary)', fontWeight: '500' }}>
               <MapPin size={13} style={{ color: '#ff5a5f' }} />
               <span>{listing.location || 'India'}</span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#0f172a' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-primary)' }}>
               <Star size={13} style={{ fill: '#eab308', color: '#eab308' }} />
               <span>{averageRating}</span>
-              <span style={{ color: '#94a3b8', fontWeight: '400', fontSize: '0.75rem' }}>
+              <span style={{ color: 'var(--text-muted)', fontWeight: '400', fontSize: '0.75rem' }}>
                 ({listing.reviews?.length || 18})
               </span>
             </div>
           </div>
 
           {/* Stay Title */}
-          <h3 style={{ fontSize: '0.98rem', fontWeight: '700', color: '#0f172a', lineHeight: 1.35, marginBottom: '8px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <h3 style={{ fontSize: '0.98rem', fontWeight: '700', color: 'var(--text-primary)', lineHeight: 1.35, marginBottom: '8px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {listing.title}
           </h3>
 
           {/* Capacity Info */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.75rem', color: '#64748b', marginBottom: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '12px' }}>
             <span>{listing.maxGuests || 4} guests</span>
             <span>•</span>
             <span>{listing.bedrooms || 2} bds</span>
@@ -175,12 +175,12 @@ export default function StayCard({ listing, showTax }) {
           </div>
 
           {/* Pricing Row */}
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', borderTop: '1px solid #f1f5f9', paddingTop: '10px', marginTop: 'auto' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', borderTop: '1px solid var(--border-light)', paddingTop: '10px', marginTop: 'auto' }}>
             <div>
-              <span style={{ fontSize: '1.15rem', fontWeight: '800', color: '#0f172a' }}>
+              <span style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)' }}>
                 ₹{displayPrice.toLocaleString('en-IN')}
               </span>
-              <span style={{ fontSize: '0.8rem', color: '#64748b', marginLeft: '4px' }}>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginLeft: '4px' }}>
                 / night
               </span>
               {showTax && (

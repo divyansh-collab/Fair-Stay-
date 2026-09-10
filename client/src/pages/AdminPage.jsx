@@ -30,7 +30,8 @@ function StatCard({ icon: Icon, label, value, accent = "#ff5a5f" }) {
   return (
     <div
       style={{
-        background: "#fff",
+        background: "var(--bg-card)",
+        border: "1px solid var(--border-light)",
         borderRadius: 16,
         padding: "22px 24px",
         display: "flex",
@@ -56,8 +57,8 @@ function StatCard({ icon: Icon, label, value, accent = "#ff5a5f" }) {
         <Icon size={22} color={accent} strokeWidth={2} />
       </div>
       <div>
-        <div style={{ fontSize: 13, color: "#64748b", marginBottom: 4 }}>{label}</div>
-        <div style={{ fontSize: 22, fontWeight: 700, color: "#0f172a" }}>{value}</div>
+        <div style={{ fontSize: 13, color: "var(--text-secondary)", marginBottom: 4 }}>{label}</div>
+        <div style={{ fontSize: 22, fontWeight: 700, color: "var(--text-primary)" }}>{value}</div>
       </div>
     </div>
   );
@@ -67,11 +68,11 @@ function StatCard({ icon: Icon, label, value, accent = "#ff5a5f" }) {
 
 function StatusBadge({ status }) {
   const map = {
-    confirmed: { bg: "#dcfce7", color: "#166534" },
-    pending:   { bg: "#fef9c3", color: "#854d0e" },
-    cancelled: { bg: "#fee2e2", color: "#991b1b" },
+    confirmed: { bg: "rgba(16, 185, 129, 0.15)", color: "#10b981" },
+    pending:   { bg: "rgba(245, 158, 11, 0.15)", color: "#f59e0b" },
+    cancelled: { bg: "rgba(239, 68, 68, 0.15)", color: "#ef4444" },
   };
-  const s = map[status?.toLowerCase()] || { bg: "#f1f5f9", color: "#475569" };
+  const s = map[status?.toLowerCase()] || { bg: "var(--bg-secondary)", color: "var(--text-secondary)" };
   return (
     <span
       style={{
@@ -94,12 +95,12 @@ function StatusBadge({ status }) {
 
 function ScrollTable({ children }) {
   return (
-    <div style={{ overflowX: "auto", borderRadius: 14, boxShadow: "0 1px 8px rgba(0,0,0,0.07)" }}>
+    <div style={{ overflowX: "auto", borderRadius: 14, boxShadow: "0 1px 8px rgba(0,0,0,0.07)", border: "1px solid var(--border-light)" }}>
       <table
         style={{
           width: "100%",
           borderCollapse: "collapse",
-          background: "#fff",
+          background: "var(--bg-card)",
           borderRadius: 14,
           overflow: "hidden",
           fontSize: 14,
@@ -114,8 +115,8 @@ function ScrollTable({ children }) {
 const TH_STYLE = {
   padding: "12px 16px",
   textAlign: "left",
-  background: "#f1f5f9",
-  color: "#475569",
+  background: "var(--bg-secondary)",
+  color: "var(--text-secondary)",
   fontWeight: 600,
   fontSize: 12,
   textTransform: "uppercase",
@@ -125,7 +126,7 @@ const TH_STYLE = {
 
 function TD({ children, style = {} }) {
   return (
-    <td style={{ padding: "12px 16px", color: "#0f172a", verticalAlign: "middle", ...style }}>
+    <td style={{ padding: "12px 16px", color: "var(--text-primary)", verticalAlign: "middle", ...style }}>
       {children}
     </td>
   );
@@ -148,7 +149,7 @@ function ListingsTable({ listings }) {
       </thead>
       <tbody>
         {listings.map((l, i) => (
-          <tr key={l._id || i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc" }}>
+          <tr key={l._id || i} style={{ background: i % 2 === 0 ? "var(--bg-card)" : "var(--bg-secondary)" }}>
             <TD>
               <span style={{ fontWeight: 600 }}>{l.title || "—"}</span>
             </TD>
@@ -186,7 +187,7 @@ function ListingsTable({ listings }) {
 
 function BookingsTable({ bookings }) {
   if (!bookings.length) {
-    return <p style={{ color: "#94a3b8", textAlign: "center", padding: 32 }}>No bookings found.</p>;
+    return <p style={{ color: "var(--text-secondary)", textAlign: "center", padding: 32 }}>No bookings found.</p>;
   }
   return (
     <ScrollTable>
@@ -199,7 +200,7 @@ function BookingsTable({ bookings }) {
       </thead>
       <tbody>
         {bookings.map((b, i) => (
-          <tr key={b._id || i} style={{ background: i % 2 === 0 ? "#fff" : "#f8fafc" }}>
+          <tr key={b._id || i} style={{ background: i % 2 === 0 ? "var(--bg-card)" : "var(--bg-secondary)" }}>
             <TD>
               <span style={{ fontWeight: 600 }}>
                 {b.user?.username || b.guestName || "—"}
@@ -233,19 +234,20 @@ function AccessDenied() {
     >
       <div
         style={{
-          background: "#fff",
+          background: "var(--bg-card)",
+          border: "1px solid var(--border-light)",
           borderRadius: 20,
           padding: "48px 40px",
           textAlign: "center",
           maxWidth: 420,
-          boxShadow: "0 4px 24px rgba(0,0,0,0.09)",
+          boxShadow: "var(--shadow-md)",
         }}
       >
         <ShieldAlert size={52} color="#ff5a5f" strokeWidth={1.5} style={{ marginBottom: 16 }} />
-        <h2 style={{ margin: "0 0 10px", color: "#0f172a", fontSize: 22, fontWeight: 700 }}>
+        <h2 style={{ margin: "0 0 10px", color: "var(--text-primary)", fontSize: 22, fontWeight: 700 }}>
           Access Denied
         </h2>
-        <p style={{ margin: 0, color: "#64748b", fontSize: 15 }}>
+        <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: 15 }}>
           Administrators Only — you do not have permission to view this page.
         </p>
       </div>
@@ -299,8 +301,8 @@ export default function AdminPage() {
   );
 
   const TAB_BTN = (label, id) => ({
-    background: activeTab === id ? "#ff5a5f" : "#f1f5f9",
-    color: activeTab === id ? "#fff" : "#475569",
+    background: activeTab === id ? "#ff5a5f" : "var(--bg-secondary)",
+    color: activeTab === id ? "#fff" : "var(--text-secondary)",
     border: "none",
     borderRadius: 10,
     padding: "9px 22px",
@@ -314,7 +316,7 @@ export default function AdminPage() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#f8fafc",
+        background: "var(--bg-main)",
         padding: "32px 24px",
         fontFamily: "inherit",
       }}
@@ -325,10 +327,10 @@ export default function AdminPage() {
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <BarChart3 size={28} color="#ff5a5f" strokeWidth={2} />
           <div>
-            <h1 style={{ margin: 0, fontSize: 26, fontWeight: 800, color: "#0f172a" }}>
+            <h1 style={{ margin: 0, fontSize: 26, fontWeight: 800, color: "var(--text-primary)" }}>
               Admin Dashboard
             </h1>
-            <p style={{ margin: 0, fontSize: 14, color: "#64748b" }}>
+            <p style={{ margin: 0, fontSize: 14, color: "var(--text-secondary)" }}>
               FairStay platform overview
             </p>
           </div>
@@ -336,7 +338,7 @@ export default function AdminPage() {
 
         {/* Stat Cards */}
         {loading ? (
-          <p style={{ color: "#94a3b8" }}>Loading stats…</p>
+          <p style={{ color: "var(--text-secondary)" }}>Loading stats…</p>
         ) : (
           <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
             <StatCard icon={Hotel}         label="Total Listings"      value={listings.length}           accent="#ff5a5f" />
@@ -358,17 +360,17 @@ export default function AdminPage() {
 
         {/* Tables */}
         {loading ? (
-          <p style={{ color: "#94a3b8" }}>Loading data…</p>
+          <p style={{ color: "var(--text-secondary)" }}>Loading data…</p>
         ) : activeTab === "listings" ? (
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: "#0f172a" }}>
+            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: "var(--text-primary)" }}>
               All Listings ({listings.length})
             </h2>
             <ListingsTable listings={listings} />
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: "#0f172a" }}>
+            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: "var(--text-primary)" }}>
               All Bookings ({bookings.length})
             </h2>
             <BookingsTable bookings={bookings} />
