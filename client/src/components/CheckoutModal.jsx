@@ -62,11 +62,29 @@ export default function CheckoutModal({
   const nights = Math.max(1, Math.ceil((outDate - inDate) / (1000 * 60 * 60 * 24)));
   
   const basePrice = Number(listing.price) || 3500;
-  const effectiveNightly = propEffectiveRate || (seasonalPricing?.multiplier ? Math.round(basePrice * seasonalPricing.multiplier) : (listing.effectivePrice || basePrice));
+  const multiplier = seasonalPricing?.multiplier || 
+    (seasonalPricing?.percentage && seasonalPricing?.direction === 'higher' ? (1 + Number(seasonalPricing.percentage) / 100) : 
+     seasonalPricing?.percentage && seasonalPricing?.direction === 'lower' ? (1 - Number(seasonalPricing.percentage) / 100) : 1.0);
+  const effectiveNightly = propEffectiveRate 
+    ? propEffectiveRate 
+    : (seasonalPricing?.effectivePrice && seasonalPricing.effectivePrice !== basePrice)
+      ? seasonalPricing.effectivePrice
+      : Math.round(basePrice * multiplier);
   const baseSubtotal = basePrice * nights;
   const seasonalAdjustment = (effectiveNightly - basePrice) * nights;
   const staySubtotal = effectiveNightly * nights;
-  const hasImpact = seasonalPricing && seasonalPricing.rawPercentage !== 0 && seasonalPricing.festivalId !== 'standard';
+
+  const isSurge = seasonalPricing && (
+    (seasonalPricing.rawPercentage && seasonalPricing.rawPercentage > 0) ||
+    seasonalPricing.direction === 'higher' ||
+    (seasonalPricing.signedPercentage && String(seasonalPricing.signedPercentage).startsWith('+'))
+  );
+  const isDiscount = seasonalPricing && (
+    (seasonalPricing.rawPercentage && seasonalPricing.rawPercentage < 0) ||
+    seasonalPricing.direction === 'lower' ||
+    (seasonalPricing.signedPercentage && String(seasonalPricing.signedPercentage).startsWith('-'))
+  );
+  const hasImpact = seasonalPricing && (isSurge || isDiscount) && seasonalPricing.festivalId !== 'standard';
 
   const gstRate = effectiveNightly > 7500 ? 0.18 : (effectiveNightly <= 1000 ? 0 : 0.12);
   const gstAmount = Math.round(staySubtotal * gstRate);
@@ -495,14 +513,14 @@ export default function CheckoutModal({
                   marginBottom: '16px',
                   fontSize: '0.78rem',
                   fontWeight: '600',
-                  background: seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.08)' : 'rgba(34, 197, 94, 0.08)',
-                  color: seasonalPricing.rawPercentage > 0 ? '#dc2626' : '#15803d',
-                  border: `1px solid ${seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`,
+                  background: isSurge ? 'rgba(239, 68, 68, 0.08)' : 'rgba(34, 197, 94, 0.08)',
+                  color: isSurge ? '#dc2626' : '#15803d',
+                  border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`,
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px'
                 }}>
-                  <span>{seasonalPricing.emoji}</span>
+                  <span>{seasonalPricing.emoji || '🔥'}</span>
                   <span>{seasonalPricing.festivalName}: {seasonalPricing.signedPercentage} Fair Dynamic Adjustment applied</span>
                 </div>
               )}
@@ -539,10 +557,10 @@ export default function CheckoutModal({
                   <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    color: seasonalPricing.rawPercentage > 0 ? '#ef4444' : '#16a34a',
+                    color: isSurge ? '#ef4444' : '#16a34a',
                     fontWeight: '600'
                   }}>
-                    <span>{seasonalPricing.emoji} {seasonalPricing.festivalName} ({seasonalPricing.signedPercentage})</span>
+                    <span>{seasonalPricing.emoji || '🔥'} {seasonalPricing.festivalName} ({seasonalPricing.signedPercentage})</span>
                     <span>{seasonalAdjustment >= 0 ? '+' : ''}₹{seasonalAdjustment.toLocaleString('en-IN')}</span>
                   </div>
                 )}

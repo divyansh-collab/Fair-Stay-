@@ -187,8 +187,12 @@ export default function ListingDetailPage() {
   const diffTime = outDate.getTime() - inDate.getTime();
   const nights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
 
-  const multiplier = seasonalPricing?.multiplier || 1.0;
-  const effectiveNightlyRate = Math.round(basePrice * multiplier);
+  const multiplier = seasonalPricing?.multiplier || 
+    (seasonalPricing?.percentage && seasonalPricing?.direction === 'higher' ? (1 + Number(seasonalPricing.percentage) / 100) : 
+     seasonalPricing?.percentage && seasonalPricing?.direction === 'lower' ? (1 - Number(seasonalPricing.percentage) / 100) : 1.0);
+  const effectiveNightlyRate = (seasonalPricing?.effectivePrice && seasonalPricing.effectivePrice !== basePrice)
+    ? seasonalPricing.effectivePrice 
+    : Math.round(basePrice * multiplier);
   const baseSubtotal = basePrice * nights;
   const seasonalAdjustment = (effectiveNightlyRate - basePrice) * nights;
   const staySubtotal = effectiveNightlyRate * nights;
@@ -197,7 +201,17 @@ export default function ListingDetailPage() {
   const gstAmount = Math.round(staySubtotal * gstRate);
   const totalAmount = staySubtotal + gstAmount;
 
-  const hasImpact = seasonalPricing && seasonalPricing.rawPercentage !== 0 && seasonalPricing.festivalId !== 'standard';
+  const isSurge = seasonalPricing && (
+    (seasonalPricing.rawPercentage && seasonalPricing.rawPercentage > 0) ||
+    seasonalPricing.direction === 'higher' ||
+    (seasonalPricing.signedPercentage && String(seasonalPricing.signedPercentage).startsWith('+'))
+  );
+  const isDiscount = seasonalPricing && (
+    (seasonalPricing.rawPercentage && seasonalPricing.rawPercentage < 0) ||
+    seasonalPricing.direction === 'lower' ||
+    (seasonalPricing.signedPercentage && String(seasonalPricing.signedPercentage).startsWith('-'))
+  );
+  const hasImpact = seasonalPricing && (isSurge || isDiscount) && seasonalPricing.festivalId !== 'standard';
 
   return (
     <div className="container-custom" style={{ padding: '32px 24px 80px' }}>
@@ -407,7 +421,7 @@ export default function ListingDetailPage() {
                 {hasImpact ? (
                   <div>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '1.65rem', fontWeight: '800', color: seasonalPricing.rawPercentage > 0 ? 'var(--text-primary)' : '#16a34a' }}>
+                      <span style={{ fontSize: '1.65rem', fontWeight: '800', color: isSurge ? 'var(--text-primary)' : '#16a34a' }}>
                         ₹{effectiveNightlyRate.toLocaleString('en-IN')}
                       </span>
                       <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
@@ -426,11 +440,11 @@ export default function ListingDetailPage() {
                       padding: '3px 8px',
                       borderRadius: '6px',
                       marginTop: '4px',
-                      background: seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 197, 94, 0.1)',
-                      color: seasonalPricing.rawPercentage > 0 ? '#ef4444' : '#16a34a',
-                      border: `1px solid ${seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.25)' : 'rgba(34, 197, 94, 0.25)'}`
+                      background: isSurge ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 197, 94, 0.1)',
+                      color: isSurge ? '#ef4444' : '#16a34a',
+                      border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.25)' : 'rgba(34, 197, 94, 0.25)'}`
                     }}>
-                      <span>{seasonalPricing.emoji}</span>
+                      <span>{seasonalPricing.emoji || '🔥'}</span>
                       <span>{seasonalPricing.signedPercentage} {seasonalPricing.festivalName}</span>
                     </div>
                   </div>
@@ -462,14 +476,14 @@ export default function ListingDetailPage() {
                 marginBottom: '16px',
                 fontSize: '0.78rem',
                 fontWeight: '600',
-                background: seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.07)' : 'rgba(34, 197, 94, 0.07)',
-                border: `1px solid ${seasonalPricing.rawPercentage > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`,
-                color: seasonalPricing.rawPercentage > 0 ? '#dc2626' : '#15803d',
+                background: isSurge ? 'rgba(239, 68, 68, 0.07)' : 'rgba(34, 197, 94, 0.07)',
+                border: `1px solid ${isSurge ? 'rgba(239, 68, 68, 0.2)' : 'rgba(34, 197, 94, 0.2)'}`,
+                color: isSurge ? '#dc2626' : '#15803d',
                 lineHeight: 1.45
               }}>
-                <span style={{ fontSize: '1.1rem' }}>{seasonalPricing.emoji}</span>
+                <span style={{ fontSize: '1.1rem' }}>{seasonalPricing.emoji || '🔥'}</span>
                 <div>
-                  <strong>{seasonalPricing.festivalName}:</strong> {seasonalPricing.rawPercentage > 0 ? `Fair Dynamic Surge (${seasonalPricing.signedPercentage})` : `Seasonal Discount (${seasonalPricing.signedPercentage})`} applied for {listing.location || 'this city'}.
+                  <strong>{seasonalPricing.festivalName}:</strong> {isSurge ? `Fair Dynamic Surge (${seasonalPricing.signedPercentage})` : `Seasonal Discount (${seasonalPricing.signedPercentage})`} applied for {listing.location || 'this city'}.
                 </div>
               </div>
             )}
@@ -535,10 +549,10 @@ export default function ListingDetailPage() {
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  color: seasonalPricing.rawPercentage > 0 ? '#ef4444' : '#16a34a',
+                  color: isSurge ? '#ef4444' : '#16a34a',
                   fontWeight: '600'
                 }}>
-                  <span>{seasonalPricing.emoji} {seasonalPricing.festivalName} ({seasonalPricing.signedPercentage})</span>
+                  <span>{seasonalPricing.emoji || '🔥'} {seasonalPricing.festivalName} ({seasonalPricing.signedPercentage})</span>
                   <span>{seasonalAdjustment >= 0 ? '+' : ''}₹{seasonalAdjustment.toLocaleString('en-IN')}</span>
                 </div>
               )}

@@ -305,13 +305,20 @@ Output valid JSON strictly with this schema:
       const difference = Math.round(normalPrice * (percentage / 100));
       const effectivePrice = normalPrice + difference;
 
+      const rawPercentage = percentage;
+      const multiplier = 1 + (rawPercentage / 100);
+
       return {
         success: true,
         aiPowered: true,
+        festivalId: baselineFestival.festivalId || 'standard',
         festivalName: parsed.festivalName || baselineImpact.festivalName,
+        emoji: baselineFestival.emoji || '✨',
         direction: parsed.direction || baselineImpact.direction,
         percentage: Math.abs(percentage),
         signedPercentage: percentage > 0 ? `+${percentage}%` : percentage < 0 ? `${percentage}%` : '0%',
+        rawPercentage,
+        multiplier,
         basePrice: normalPrice,
         effectivePrice,
         difference,
@@ -333,13 +340,22 @@ Output valid JSON strictly with this schema:
   }
 
   // 3. Fallback to High-Precision Local Deterministic Engine
+  const rawPercentage = baselineFestival.rawPercentage !== undefined 
+    ? baselineFestival.rawPercentage 
+    : (baselineImpact.direction === 'lower' ? -Math.abs(baselineImpact.percentage) : baselineImpact.percentage);
+  const multiplier = baselineFestival.multiplier || (1 + rawPercentage / 100);
+
   return {
     success: true,
     aiPowered: false,
+    festivalId: baselineFestival.festivalId || 'standard',
     festivalName: baselineImpact.festivalName,
+    emoji: baselineFestival.emoji || '✨',
     direction: baselineImpact.direction,
     percentage: Math.abs(baselineImpact.percentage),
-    signedPercentage: baselineImpact.percentage >= 0 ? `+${baselineImpact.percentage}%` : `${baselineImpact.percentage}%`,
+    signedPercentage: rawPercentage > 0 ? `+${rawPercentage}%` : rawPercentage < 0 ? `${rawPercentage}%` : '0%',
+    rawPercentage,
+    multiplier,
     basePrice: baselineImpact.normalPrice,
     effectivePrice: baselineImpact.effectivePrice,
     difference: baselineImpact.difference,
