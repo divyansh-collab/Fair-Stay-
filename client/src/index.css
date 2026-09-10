@@ -209,9 +209,9 @@ button {
 .stay-card-img-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  background-color: #e2e8f0;
+  background-color: var(--bg-secondary);
 }
 
 .stay-card-img {
@@ -222,14 +222,14 @@ button {
 }
 
 .stay-card:hover .stay-card-img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .fairsafe-badge {
   position: absolute;
-  top: 12px;
+  bottom: 12px;
   left: 12px;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(8px);
   color: #ffffff;
   font-size: 0.72rem;
@@ -239,6 +239,9 @@ button {
   display: flex;
   align-items: center;
   gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 
 /* Responsive Grid */

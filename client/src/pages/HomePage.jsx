@@ -157,8 +157,8 @@ export default function HomePage({ searchQuery, onClearSearch }) {
         {loading && (
           <div className="stays-grid">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-              <div key={n} style={{ background: 'var(--bg-card)', borderRadius: '20px', border: '1px solid var(--border-light)', overflow: 'hidden' }}>
-                <div style={{ width: '100%', aspectRatio: '4/3', background: 'var(--border-light)', animation: 'pulse 1.5s infinite' }} />
+              <div key={n} style={{ background: 'var(--bg-card)', borderRadius: '16px', border: '1px solid var(--border-light)', overflow: 'hidden' }}>
+                <div style={{ width: '100%', aspectRatio: '16/10', background: 'var(--border-light)', animation: 'pulse 1.5s infinite' }} />
                 <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <div style={{ height: '14px', width: '60%', background: 'var(--border-light)', borderRadius: '4px' }} />
                   <div style={{ height: '18px', width: '85%', background: 'var(--border-light)', borderRadius: '4px' }} />

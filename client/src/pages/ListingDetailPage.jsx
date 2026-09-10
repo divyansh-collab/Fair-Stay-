@@ -212,7 +212,7 @@ export default function ListingDetailPage() {
           <span>•</span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
             <MapPin size={14} style={{ color: '#ff5a5f' }} />
-            {listing.location}, India
+            {listing.location && listing.location.toLowerCase().includes('india') ? listing.location : `${listing.location}, India`}
           </span>
           <span>•</span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#16a34a', fontWeight: '700' }}>

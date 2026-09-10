@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, TrendingUp, TrendingDown, Info, ShieldCheck, Sparkles } from 'lucide-react';
+import { Calendar, TrendingUp, TrendingDown, Info, ShieldCheck, Sparkles, Compass } from 'lucide-react';
 import api from '../services/api';
 
 export default function FestivalPricingWidget({ listing }) {
@@ -52,24 +52,27 @@ export default function FestivalPricingWidget({ listing }) {
 
   if (!prediction) return null;
 
-  const isSurge = prediction.percentage > 0 && prediction.direction !== 'lower';
-  const isDiscount = prediction.direction === 'lower';
+  const isSurge = prediction.rawPercentage > 0;
+  const isDiscount = prediction.rawPercentage < 0;
+  const isNeutral = !isSurge && !isDiscount;
+
+  const cityName = prediction.destination || destination || 'Local City';
 
   return (
-    <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '20px', marginTop: '24px' }}>
-      {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px', flexWrap: 'wrap', gap: '10px' }}>
+    <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '22px', marginTop: '28px', boxShadow: '0 2px 12px rgba(0,0,0,0.03)' }}>
+      {/* City-Centric Cultural Header */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px', flexWrap: 'wrap', gap: '10px' }}>
         <div>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.72rem', fontWeight: '700', color: '#ff5a5f', background: 'rgba(255, 90, 95, 0.1)', padding: '4px 10px', borderRadius: '9999px', marginBottom: '6px' }}>
-            <Sparkles size={12} /> Live Festival & Seasonal Intelligence
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.72rem', fontWeight: '800', color: '#ff5a5f', background: 'rgba(255, 90, 95, 0.1)', padding: '4px 10px', borderRadius: '9999px', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <Compass size={12} /> {cityName} Cultural & Seasonal Intelligence
           </span>
-          <h4 style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-primary)' }}>
-            {prediction.emoji || '🎉'} {prediction.festivalName}
+          <h4 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)', margin: 0 }}>
+            {prediction.emoji || '⚖️'} {prediction.festivalName}
           </h4>
         </div>
 
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: isSurge ? '#ef4444' : isDiscount ? '#16a34a' : '#ff5a5f' }}>
+          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: isSurge ? '#ef4444' : isDiscount ? '#16a34a' : '#ff5a5f', lineHeight: 1.1 }}>
             {loading ? '...' : prediction.signedPercentage}
           </div>
           <span style={{ fontSize: '0.72rem', fontWeight: '600', color: 'var(--text-secondary)' }}>
@@ -81,15 +84,15 @@ export default function FestivalPricingWidget({ listing }) {
       {/* Selectors */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '16px' }}>
         <div>
-          <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '4px' }}>
-            Select City Event:
+          <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>
+            {cityName} Specific Events:
           </label>
           <select
             value={selectedFestival}
             onChange={handleFestivalChange}
-            style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-hover)', fontSize: '0.82rem', fontFamily: 'inherit', background: 'var(--bg-card)', color: 'var(--text-primary)' }}
+            style={{ width: '100%', padding: '9px 12px', borderRadius: '8px', border: '1px solid var(--border-hover)', fontSize: '0.82rem', fontFamily: 'inherit', background: 'var(--bg-card)', color: 'var(--text-primary)', outline: 'none' }}
           >
-            <option value="" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>Current Season</option>
+            <option value="" style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>Standard Regular Season</option>
             {prediction.availableEvents && prediction.availableEvents.map((ev) => (
               <option key={ev.id} value={ev.id} style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>
                 {ev.emoji} {ev.name} ({ev.direction === 'lower' ? '-' : '+'}{Math.abs(ev.defaultPercentage)}%)
@@ -99,14 +102,14 @@ export default function FestivalPricingWidget({ listing }) {
         </div>
 
         <div>
-          <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '4px' }}>
+          <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-secondary)', marginBottom: '4px' }}>
             Or Check In Date:
           </label>
           <input
             type="date"
             value={checkInDate}
             onChange={handleDateChange}
-            style={{ width: '100%', padding: '7px 12px', borderRadius: '8px', border: '1px solid var(--border-hover)', fontSize: '0.82rem', fontFamily: 'inherit', background: 'var(--bg-card)', color: 'var(--text-primary)' }}
+            style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-hover)', fontSize: '0.82rem', fontFamily: 'inherit', background: 'var(--bg-card)', color: 'var(--text-primary)', outline: 'none' }}
           />
         </div>
       </div>
@@ -127,7 +130,7 @@ export default function FestivalPricingWidget({ listing }) {
           </span>
         </div>
 
-        <div style={{ background: 'linear-gradient(135deg, #ff5a5f 0%, #ff6b50 100%)', color: '#fff', padding: '12px', borderRadius: '10px' }}>
+        <div style={{ background: 'linear-gradient(135deg, #ff5a5f 0%, #ff6b50 100%)', color: '#fff', padding: '12px', borderRadius: '10px', boxShadow: '0 2px 8px rgba(255, 90, 95, 0.25)' }}>
           <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.9, marginBottom: '2px' }}>Effective Rate</span>
           <span style={{ fontSize: '1rem', fontWeight: '800' }}>
             ₹{Number(prediction.effectivePrice || basePrice).toLocaleString('en-IN')}
@@ -136,19 +139,30 @@ export default function FestivalPricingWidget({ listing }) {
       </div>
 
       {/* Area Context Explanation */}
-      <div style={{ background: 'var(--bg-card)', padding: '12px 16px', borderRadius: '10px', border: '1px solid var(--border-light)', fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '12px' }}>
+      <div style={{ background: 'var(--bg-card)', padding: '14px 16px', borderRadius: '10px', border: '1px solid var(--border-light)', fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '12px' }}>
         <div style={{ fontWeight: '700', color: 'var(--text-primary)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
           <Info size={14} style={{ color: '#ff5a5f' }} />
-          <span>Local Area Pricing Dynamics</span>
+          <span>{cityName} Hospitality Dynamics</span>
         </div>
         {prediction.explanation}
       </div>
 
+      {/* Cultural & Tradition Policy Card */}
+      {prediction.whyNotDiwali && (
+        <div style={{ background: 'rgba(14, 165, 233, 0.07)', border: '1px solid rgba(14, 165, 233, 0.2)', padding: '12px 16px', borderRadius: '10px', fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '14px' }}>
+          <div style={{ fontWeight: '700', color: '#0284c7', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+            <ShieldCheck size={14} style={{ color: '#0284c7' }} />
+            <span>Cultural FairStay Guarantee</span>
+          </div>
+          {prediction.whyNotDiwali}
+        </div>
+      )}
+
       {/* Market Indicators */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.72rem', color: 'var(--text-secondary)', flexWrap: 'wrap', gap: '8px' }}>
-        <span>🏨 Area Compression: <strong style={{ color: 'var(--text-primary)' }}>{prediction.occupancyRate || 'Normal'}</strong></span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.74rem', color: 'var(--text-secondary)', flexWrap: 'wrap', gap: '10px', paddingTop: '4px' }}>
+        <span>🏨 Area Compression: <strong style={{ color: 'var(--text-primary)' }}>{prediction.occupancyRate || 'Standard'}</strong></span>
         <span>🌤️ Climate: <strong style={{ color: 'var(--text-primary)' }}>{prediction.weatherIndex || 'Pleasant'}</strong></span>
-        <span style={{ color: '#16a34a', fontWeight: '600' }}>✓ Zero Host Restrictions</span>
+        <span style={{ color: '#16a34a', fontWeight: '700' }}>✓ Zero Arbitrary Markups</span>
       </div>
     </div>
   );

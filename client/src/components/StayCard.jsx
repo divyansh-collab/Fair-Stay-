@@ -8,6 +8,21 @@ const FALLBACK_SCRUBBER_PHOTOS = [
   'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80',
 ];
 
+export function formatCleanLocation(locStr = '') {
+  if (!locStr) return 'India';
+  const parts = locStr.split(',').map((p) => p.trim()).filter(Boolean);
+  if (parts.length <= 1) return parts[0] || 'India';
+  const last = parts[parts.length - 1];
+  const secondLast = parts[parts.length - 2];
+  if (/india/i.test(last)) {
+    return secondLast ? `${secondLast}, India` : 'India';
+  }
+  if (secondLast.length > 20) {
+    return last;
+  }
+  return `${secondLast}, ${last}`;
+}
+
 export default function StayCard({ listing, showTax }) {
   const navigate = useNavigate();
   const [isSaved, setIsSaved] = useState(false);
@@ -101,7 +116,27 @@ export default function StayCard({ listing, showTax }) {
             }}
           />
 
-          {/* Wishlist Heart Button */}
+          {/* Category Tag (Top Left) */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '12px',
+              left: '12px',
+              background: 'rgba(15, 23, 42, 0.75)',
+              backdropFilter: 'blur(8px)',
+              padding: '4px 10px',
+              borderRadius: '8px',
+              fontSize: '0.7rem',
+              fontWeight: '700',
+              color: '#ffffff',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              zIndex: 2,
+            }}
+          >
+            {listing.category || 'Trending'}
+          </div>
+
+          {/* Wishlist Heart Button (Top Right) */}
           <button
             type="button"
             onClick={toggleWishlist}
@@ -109,8 +144,8 @@ export default function StayCard({ listing, showTax }) {
             style={{
               position: 'absolute',
               top: '12px',
-              left: '12px',
-              background: 'rgba(255, 255, 255, 0.85)',
+              right: '12px',
+              background: 'rgba(255, 255, 255, 0.9)',
               backdropFilter: 'blur(8px)',
               border: 'none',
               borderRadius: '50%',
@@ -121,6 +156,8 @@ export default function StayCard({ listing, showTax }) {
               justifyContent: 'center',
               cursor: 'pointer',
               zIndex: 2,
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+              transition: 'transform 0.15s ease',
             }}
           >
             <Heart
@@ -131,27 +168,68 @@ export default function StayCard({ listing, showTax }) {
             />
           </button>
 
-          {/* FairSafe Quality Badge */}
+          {/* FairSafe Quality Badge (Bottom Left) */}
           <div className="fairsafe-badge">
-            <ShieldCheck size={12} style={{ color: '#4ade80' }} />
+            <ShieldCheck size={13} style={{ color: '#4ade80' }} />
             <span>FairSafe {listing.fairsafeScore || 96}</span>
           </div>
 
-          {/* Category Tag */}
-          <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(6px)', padding: '4px 9px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: '700', color: '#ffffff' }}>
-            {listing.category || 'Trending'}
+          {/* Photo Scrubber Dots Indicator (Bottom Right) */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '12px',
+              right: '12px',
+              display: 'flex',
+              gap: '4px',
+              zIndex: 2,
+              background: 'rgba(15, 23, 42, 0.55)',
+              backdropFilter: 'blur(6px)',
+              padding: '3px 6px',
+              borderRadius: '9999px',
+            }}
+          >
+            {[0, 1, 2].map((idx) => (
+              <span
+                key={idx}
+                style={{
+                  width: '5px',
+                  height: '5px',
+                  borderRadius: '50%',
+                  background: photoIndex === idx ? '#ffffff' : 'rgba(255,255,255,0.4)',
+                  transition: 'background 0.2s ease',
+                }}
+              />
+            ))}
           </div>
         </div>
 
         {/* Content Body */}
-        <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', flex: 1, gap: '4px' }}>
           {/* Location & Rating */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', color: 'var(--text-secondary)', fontWeight: '500' }}>
-              <MapPin size={13} style={{ color: '#ff5a5f' }} />
-              <span>{listing.location || 'India'}</span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                fontSize: '0.82rem',
+                color: 'var(--text-secondary)',
+                fontWeight: '600',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                flex: 1,
+                minWidth: 0,
+              }}
+              title={listing.location}
+            >
+              <MapPin size={13} style={{ color: '#ff5a5f', flexShrink: 0 }} />
+              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {formatCleanLocation(listing.location)}
+              </span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-primary)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-primary)', flexShrink: 0 }}>
               <Star size={13} style={{ fill: '#eab308', color: '#eab308' }} />
               <span>{averageRating}</span>
               <span style={{ color: 'var(--text-muted)', fontWeight: '400', fontSize: '0.75rem' }}>
@@ -161,12 +239,24 @@ export default function StayCard({ listing, showTax }) {
           </div>
 
           {/* Stay Title */}
-          <h3 style={{ fontSize: '0.98rem', fontWeight: '700', color: 'var(--text-primary)', lineHeight: 1.35, marginBottom: '8px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <h3
+            style={{
+              fontSize: '0.98rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              lineHeight: 1.35,
+              margin: '2px 0 4px',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            }}
+            title={listing.title}
+          >
             {listing.title}
           </h3>
 
           {/* Capacity Info */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
             <span>{listing.maxGuests || 4} guests</span>
             <span>•</span>
             <span>{listing.bedrooms || 2} bds</span>
@@ -190,7 +280,7 @@ export default function StayCard({ listing, showTax }) {
               )}
             </div>
 
-            <span style={{ fontSize: '0.72rem', fontWeight: '600', color: '#ff5a5f', background: 'rgba(255, 90, 95, 0.08)', padding: '3px 8px', borderRadius: '4px' }}>
+            <span style={{ fontSize: '0.72rem', fontWeight: '700', color: '#ff5a5f', background: 'rgba(255, 90, 95, 0.08)', padding: '3px 8px', borderRadius: '4px', letterSpacing: '0.3px' }}>
               Direct Rate
             </span>
           </div>

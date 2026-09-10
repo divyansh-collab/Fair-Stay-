@@ -568,8 +568,11 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
   // 1. Retrieve the specific city's local event calendar
   const cityKey = normalizeCityKey(location);
   const cityEvents = getDestinationEvents(location);
+  const cityName = location ? location.split(',')[0].trim() : 'this destination';
 
   let matchedFestival = null;
+  let isGenericMismatch = false;
+  let mismatchEventName = '';
 
   // 2. Query matching: Prioritize the city's specific local events
   if (festivalQuery) {
@@ -585,56 +588,68 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
     // Specific city event aliases
     if (!matchedFestival) {
       if (q.includes('jlf') || q.includes('literature')) {
-        matchedFestival = DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_jlf');
+        matchedFestival = DESTINATION_CALENDARS.jaipur ? DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_jlf') : null;
       } else if (q.includes('sunburn')) {
-        matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_sunburn');
+        matchedFestival = DESTINATION_CALENDARS.goa ? DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_sunburn') : null;
       } else if (q.includes('carnival')) {
         matchedFestival = cityKey === 'manali'
-          ? DESTINATION_CALENDARS.manali.find((f) => f.id === 'manali_winter_carnival')
-          : DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_carnival');
+          ? (DESTINATION_CALENDARS.manali ? DESTINATION_CALENDARS.manali.find((f) => f.id === 'manali_winter_carnival') : null)
+          : (DESTINATION_CALENDARS.goa ? DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_carnival') : null);
       } else if (q.includes('pushkar') || q.includes('camel')) {
-        matchedFestival = DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_pushkar');
+        matchedFestival = DESTINATION_CALENDARS.jaipur ? DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_pushkar') : null;
       } else if (q.includes('onam') || q.includes('boat')) {
-        matchedFestival = DESTINATION_CALENDARS.kerala.find((f) => f.id === 'kerala_onam');
+        matchedFestival = DESTINATION_CALENDARS.kerala ? DESTINATION_CALENDARS.kerala.find((f) => f.id === 'kerala_onam') : null;
       } else if (q.includes('dev deepawali') || q.includes('dev diwali')) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
+        matchedFestival = DESTINATION_CALENDARS.spiritual ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali') : null;
       } else if (q.includes('shivratri')) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_maha_shivratri');
+        matchedFestival = DESTINATION_CALENDARS.spiritual ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_maha_shivratri') : null;
       } else if (q.includes('magh') || q.includes('kumbh')) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_magh_mela');
+        matchedFestival = DESTINATION_CALENDARS.spiritual ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_magh_mela') : null;
       } else if (q.includes('deepotsav')) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
+        matchedFestival = DESTINATION_CALENDARS.spiritual ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav') : null;
       } else if (q.includes('yoga')) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_yoga');
+        matchedFestival = DESTINATION_CALENDARS.spiritual ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_yoga') : null;
+      } else if (q.includes('ganesh') || q.includes('ganpati')) {
+        matchedFestival = DESTINATION_CALENDARS.mumbai ? DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_ganeshotsav') : null;
       }
     }
 
-    // Fallback search across general / national events if explicitly queried
+    // Strict Cultural Guard: If query is for a national holiday but city does NOT celebrate it with travel surges
     if (!matchedFestival) {
-      if (q.includes('raksha') || q.includes('rakhi') || q === 'rakshabandhan') {
-        matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'rakshabandhan');
-      } else if (q.includes('diwali') || q.includes('deepawali')) {
-        matchedFestival = cityKey === 'spiritual' && (loc.includes('varanasi') || loc.includes('kashi'))
-          ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali')
-          : FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+      if (q.includes('diwali') || q.includes('deepawali')) {
+        if (cityKey === 'spiritual' && (loc.includes('varanasi') || loc.includes('kashi'))) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
+        } else if (cityKey === 'spiritual' && loc.includes('ayodhya')) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
+        } else if (cityKey === 'general') {
+          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+        } else {
+          // Leisure destinations: Goa, Manali, Kerala, Jaipur, Mumbai
+          isGenericMismatch = true;
+          mismatchEventName = 'Diwali';
+        }
       } else if (q === 'holi' || q.includes('holi ') || q.startsWith('holi') || q.includes(' holi')) {
-        matchedFestival = cityKey === 'spiritual' && loc.includes('mathura')
-          ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_braj_holi')
-          : FESTIVALS_CATALOG.find((f) => f.id === 'holi');
-      } else if (q.includes('new year') || q.includes('nye')) {
-        matchedFestival = cityKey === 'goa'
-          ? DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_sunburn')
-          : FESTIVALS_CATALOG.find((f) => f.id === 'new_year');
-      } else if (q.includes('christmas') || q.includes('xmas')) {
-        matchedFestival = cityKey === 'goa'
-          ? DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_sunburn')
-          : FESTIVALS_CATALOG.find((f) => f.id === 'christmas');
-      } else if (q.includes('monsoon') || q.includes('rain') || q.includes('off-season') || q.includes('discount')) {
-        matchedFestival = cityEvents.find((f) => f.direction === 'lower') || FESTIVALS_CATALOG.find((f) => f.id === 'monsoon_discount');
-      } else if (q.includes('summer') || q.includes('heat')) {
-        matchedFestival = cityEvents.find((f) => f.id.includes('summer')) || FESTIVALS_CATALOG.find((f) => f.id === 'summer_mountains');
-      } else {
-        matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === q);
+        if (cityKey === 'spiritual' && (loc.includes('mathura') || loc.includes('vrindavan'))) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_braj_holi');
+        } else if (cityKey === 'general') {
+          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'holi');
+        } else {
+          isGenericMismatch = true;
+          mismatchEventName = 'Holi';
+        }
+      } else if (q.includes('raksha') || q.includes('rakhi') || q === 'rakshabandhan') {
+        if (cityKey === 'general') {
+          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'rakshabandhan');
+        } else {
+          isGenericMismatch = true;
+          mismatchEventName = 'Raksha Bandhan';
+        }
+      } else if (q.includes('new year') || q.includes('nye') || q.includes('christmas')) {
+        if (cityKey === 'goa') {
+          matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_sunburn');
+        } else if (cityKey === 'general') {
+          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === (q.includes('new year') || q.includes('nye') ? 'new_year' : 'christmas'));
+        }
       }
     }
   }
@@ -644,7 +659,7 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
   const month = date.getMonth();
   const day = date.getDate();
 
-  if (!matchedFestival) {
+  if (!matchedFestival && !isGenericMismatch) {
     // City-first date matching
     if (cityKey === 'goa') {
       if ((month === 11 && day >= 20) || (month === 0 && day <= 5)) {
@@ -690,18 +705,52 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
       } else if (month === 5 || month === 6) {
         matchedFestival = DESTINATION_CALENDARS.kerala.find((f) => f.id === 'kerala_monsoon_ayurveda');
       }
+    } else if (cityKey === 'mumbai') {
+      if (month === 8 && day >= 1 && day <= 15) {
+        matchedFestival = DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_ganeshotsav');
+      } else if (month === 6 || month === 7) {
+        matchedFestival = DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_monsoon_ghats');
+      } else if (month >= 10 || month <= 1) {
+        matchedFestival = DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_winter_coastal');
+      }
     } else if (cityKey === 'spiritual') {
-      if ((month === 10 && day >= 5) || (month === 9 && day >= 25)) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
-      } else if ((month === 1 && day >= 15) || (month === 2 && day <= 10)) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_maha_shivratri');
-      } else if (month === 0 || month === 1) {
-        matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_magh_mela');
+      if (loc.includes('varanasi') || loc.includes('kashi')) {
+        if ((month === 10 && day >= 8 && day <= 28) || (month === 9 && day >= 25)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
+        } else if ((month === 1 && day >= 15) || (month === 2 && day <= 10)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_maha_shivratri');
+        }
+      } else if (loc.includes('prayagraj') || loc.includes('allahabad')) {
+        if (month === 0 || (month === 1 && day <= 28)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_magh_mela');
+        }
+      } else if (loc.includes('ayodhya')) {
+        if ((month === 9 && day >= 20) || (month === 10 && day <= 10)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
+        } else if (month === 2 && day >= 20 || (month === 3 && day <= 10)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
+        }
+      } else if (loc.includes('rishikesh') || loc.includes('haridwar')) {
+        if (month === 2 && day <= 20) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_yoga');
+        }
+      } else if (loc.includes('mathura') || loc.includes('vrindavan')) {
+        if (month === 2 && day >= 5 && day <= 25) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_braj_holi');
+        } else if (month === 7 && day >= 10 && day <= 31) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_braj_holi');
+        }
+      } else {
+        if ((month === 10 && day >= 5) || (month === 9 && day >= 25)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
+        } else if (month === 0 || month === 1) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_magh_mela');
+        }
       }
     }
 
-    // Universal fallback if date is outside specific city events
-    if (!matchedFestival) {
+    // Generic fallback ONLY applies to unclassified general locations
+    if (!matchedFestival && cityKey === 'general') {
       if ((month === 11 && day >= 20) || (month === 0 && day <= 5)) {
         matchedFestival = day >= 30 || day <= 2 
           ? FESTIVALS_CATALOG.find((f) => f.id === 'new_year')
@@ -718,33 +767,56 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
     }
   }
 
-  let basePercentage = matchedFestival ? matchedFestival.defaultPercentage : 0;
-  let festivalName = matchedFestival ? matchedFestival.name : 'Standard Regular Season';
-  let emoji = matchedFestival ? matchedFestival.emoji : '⚖️';
+  let basePercentage = 0;
+  let festivalName = 'Standard Regular Season';
+  let emoji = '⚖️';
   let demandLevel = 'Normal';
+  let customExplanation = '';
+  let customWhyNotDiwali = '';
+
+  if (isGenericMismatch) {
+    basePercentage = 0;
+    festivalName = `${mismatchEventName} (Standard Host Rate in ${cityName})`;
+    emoji = '⚖️';
+    demandLevel = 'Standard Host Rate (0% Holiday Surge)';
+    customExplanation = `In ${cityName}, hotel rates do NOT increase for ${mismatchEventName}. Domestic travelers celebrate ${mismatchEventName} at home with family pujas, so leisure hotel occupancy remains standard. Hosts maintain their direct baseline rate with 0% holiday markup.`;
+    customWhyNotDiwali = `In ${cityName}, generic national holidays like ${mismatchEventName} do not drive leisure room compression. Local pricing is governed strictly by coastal/mountain weather, seasonal tourism influx, and regional cultural celebrations.`;
+  } else if (matchedFestival) {
+    basePercentage = matchedFestival.defaultPercentage;
+    festivalName = matchedFestival.name;
+    emoji = matchedFestival.emoji;
+    demandLevel = matchedFestival.direction === 'lower' ? 'Off-Season Promotional Discount' : 'Peak Local Event Surge';
+  } else {
+    basePercentage = 0;
+    festivalName = 'Standard Regular Season';
+    emoji = '⚖️';
+    demandLevel = 'Standard Normal Rate';
+    customExplanation = `Standard regular season in ${cityName}. Stays maintain 100% transparent baseline rates with steady year-round pricing (0% surge).`;
+    customWhyNotDiwali = `In ${cityName}, rates are governed strictly by local weather patterns, seasonal tourism influx, and regional events, not generic holidays.`;
+  }
 
   // Apply host-specific percentage calculation
-  let percentage = isListingObj
+  let percentage = isListingObj && basePercentage !== 0
     ? getHostSpecificPercentage(listingOrLocation, basePercentage)
     : basePercentage;
 
   let direction = percentage > 0 ? 'higher' : percentage < 0 ? 'lower' : 'standard';
 
   // Generate destination-aware AI customer explanation
-  let explanation = '';
-  const cityName = location ? location.split(',')[0].trim() : 'this destination';
-
-  if (percentage > 0) {
-    explanation = `Area seasonal trend: Rates in ${cityName} typically adjust by +${percentage}% during ${festivalName} reflecting local event demand and peak area occupancy. Hosts retain full pricing freedom with direct, transparent rates.`;
-    demandLevel = percentage >= 30 ? 'Peak Local Event Surge' : 'Seasonal Holiday Demand';
-  } else if (percentage < 0) {
-    explanation = `Off-peak season savings: Stays in ${cityName} trend ${Math.abs(percentage)}% lower during ${festivalName} below standard baseline rates.`;
-    demandLevel = 'Off-Season Promotional Discount';
-  } else {
-    explanation = matchedFestival
-      ? `Standard baseline rate: Stays in ${cityName} maintain standard pricing during ${festivalName} with steady demand.`
-      : `Standard regular season in ${cityName}. Enjoy 100% transparent baseline rates with steady year-round pricing.`;
-    demandLevel = 'Standard Normal Rate';
+  let explanation = customExplanation;
+  if (!explanation) {
+    if (percentage > 0) {
+      explanation = `Area seasonal trend: Rates in ${cityName} typically adjust by +${percentage}% during ${festivalName} reflecting local event demand and peak area occupancy. Hosts retain full pricing freedom with direct, transparent rates.`;
+      demandLevel = percentage >= 30 ? 'Peak Local Event Surge' : 'Seasonal Holiday Demand';
+    } else if (percentage < 0) {
+      explanation = `Off-peak season savings: Stays in ${cityName} trend ${Math.abs(percentage)}% lower during ${festivalName} below standard baseline rates.`;
+      demandLevel = 'Off-Season Promotional Discount';
+    } else {
+      explanation = matchedFestival
+        ? `Standard baseline rate: Stays in ${cityName} maintain standard pricing during ${festivalName} with steady demand.`
+        : `Standard regular season in ${cityName}. Enjoy 100% transparent baseline rates with steady year-round pricing.`;
+      demandLevel = 'Standard Normal Rate';
+    }
   }
 
   const multiplier = 1 + percentage / 100;
@@ -775,9 +847,9 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
     weatherIndex: matchedFestival && matchedFestival.weatherIndex
       ? matchedFestival.weatherIndex
       : (percentage < 0 ? 'Off-season climate slowdown' : 'Pleasant travel weather'),
-    whyNotDiwali: matchedFestival && matchedFestival.whyNotDiwali
+    whyNotDiwali: customWhyNotDiwali || (matchedFestival && matchedFestival.whyNotDiwali
       ? matchedFestival.whyNotDiwali
-      : 'National religious holidays see domestic travelers staying home for family pujas. Hotel compression in this leisure destination is strictly governed by local weather patterns and regional event calendars.',
+      : 'National religious holidays see domestic travelers staying home for family pujas. Hotel compression in this leisure destination is strictly governed by local weather patterns and regional event calendars.'),
   };
 }
 

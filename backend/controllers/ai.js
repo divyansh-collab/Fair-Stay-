@@ -71,7 +71,7 @@ module.exports.predictFestivalPrice = async (req, res) => {
       ...prediction,
       destination: resolvedDestination,
       availableEvents: cityEvents,
-      availableFestivals: FESTIVALS_CATALOG.map((f) => ({
+      availableFestivals: cityEvents.map((f) => ({
         id: f.id,
         name: f.name,
         emoji: f.emoji,
