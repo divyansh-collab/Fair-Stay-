@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Star, MapPin, Users, Bed, Bath, ShieldCheck } from 'lucide-react';
+import { Star, MapPin, Users, Bed, Bath, ShieldCheck, Heart } from 'lucide-react';
+
+const FALLBACK_SCRUBBER_PHOTOS = [
+  'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80',
+];
 
 export default function StayCard({ listing, showTax }) {
   const navigate = useNavigate();
+  const [isSaved, setIsSaved] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  useEffect(() => {
+    if (!listing?._id) return;
+    try {
+      const saved = JSON.parse(localStorage.getItem('fairstay_wishlist') || '[]');
+      setIsSaved(saved.includes(listing._id));
+    } catch (e) {}
+  }, [listing?._id]);
+
   if (!listing) return null;
+
+  const toggleWishlist = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      const saved = JSON.parse(localStorage.getItem('fairstay_wishlist') || '[]');
+      let updated;
+      if (saved.includes(listing._id)) {
+        updated = saved.filter(id => id !== listing._id);
+        setIsSaved(false);
+      } else {
+        updated = [...saved, listing._id];
+        setIsSaved(true);
+      }
+      localStorage.setItem('fairstay_wishlist', JSON.stringify(updated));
+    } catch (err) {}
+  };
 
   const basePrice = Number(listing.price) || 0;
   // Indian GST slab calculation: <=7500: 12%, >7500: 18%
@@ -42,10 +76,22 @@ export default function StayCard({ listing, showTax }) {
           flex: 1,
         }}
       >
-        {/* Photo Container */}
-        <div className="stay-card-img-wrap">
+        {/* Photo Container with scrubber */}
+        <div
+          className="stay-card-img-wrap"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const fraction = x / rect.width;
+            if (fraction < 0.33) setPhotoIndex(0);
+            else if (fraction < 0.66) setPhotoIndex(1);
+            else setPhotoIndex(2);
+          }}
+          onMouseLeave={() => setPhotoIndex(0)}
+          style={{ position: 'relative' }}
+        >
           <img
-            src={imageUrl}
+            src={photoIndex === 0 ? imageUrl : FALLBACK_SCRUBBER_PHOTOS[photoIndex]}
             alt={listing.title}
             className="stay-card-img"
             loading="lazy"
@@ -54,6 +100,36 @@ export default function StayCard({ listing, showTax }) {
               e.currentTarget.src = 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80';
             }}
           />
+
+          {/* Wishlist Heart Button */}
+          <button
+            type="button"
+            onClick={toggleWishlist}
+            aria-label="Save stay"
+            style={{
+              position: 'absolute',
+              top: '12px',
+              left: '12px',
+              background: 'rgba(255, 255, 255, 0.85)',
+              backdropFilter: 'blur(8px)',
+              border: 'none',
+              borderRadius: '50%',
+              width: '32px',
+              height: '32px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              zIndex: 2,
+            }}
+          >
+            <Heart
+              size={16}
+              fill={isSaved ? '#ff5a5f' : 'rgba(0,0,0,0.2)'}
+              color={isSaved ? '#ff5a5f' : '#ffffff'}
+              strokeWidth={2}
+            />
+          </button>
 
           {/* FairSafe Quality Badge */}
           <div className="fairsafe-badge">

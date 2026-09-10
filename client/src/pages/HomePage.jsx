@@ -8,33 +8,59 @@ import { Sparkles, MapPin, Frown } from 'lucide-react';
 export default function HomePage({ searchQuery, onClearSearch }) {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [activeCategory, setActiveCategory] = useState('');
   const [activeDestination, setActiveDestination] = useState('');
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
   const [showTax, setShowTax] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalListings, setTotalListings] = useState(0);
 
   useEffect(() => {
-    loadListings();
-  }, [activeCategory, activeDestination, searchQuery]);
+    setPage(1);
+    loadListings(1, true);
+  }, [activeCategory, activeDestination, searchQuery, minPrice, maxPrice]);
 
-  const loadListings = async () => {
-    setLoading(true);
+  const loadListings = async (pageNum = 1, isReset = false) => {
+    if (isReset) setLoading(true);
+    else setLoadingMore(true);
+
     try {
-      const params = {};
+      const params = { page: pageNum, limit: 12 };
       if (activeCategory) params.category = activeCategory;
-      if (activeDestination) params.location = activeDestination;
+      if (activeDestination) params.destination = activeDestination;
       if (searchQuery) params.search = searchQuery;
+      if (minPrice) params.minPrice = minPrice;
+      if (maxPrice) params.maxPrice = maxPrice;
 
       const res = await api.getListings(params);
       if (res && res.success && res.data) {
-        setListings(res.data);
+        if (isReset) {
+          setListings(res.data);
+        } else {
+          setListings((prev) => [...prev, ...res.data]);
+        }
+        setTotalPages(res.totalPages || 1);
+        setTotalListings(res.total || res.count || res.data.length);
       } else {
-        setListings([]);
+        if (isReset) setListings([]);
       }
     } catch (err) {
       console.error('Failed to load listings:', err);
-      setListings([]);
+      if (isReset) setListings([]);
     } finally {
       setLoading(false);
+      setLoadingMore(false);
+    }
+  };
+
+  const handleLoadMore = () => {
+    if (page < totalPages) {
+      const nextPage = page + 1;
+      setPage(nextPage);
+      loadListings(nextPage, false);
     }
   };
 
@@ -47,7 +73,7 @@ export default function HomePage({ searchQuery, onClearSearch }) {
   };
 
   // Only show hero when no filters or search are active
-  const isFilterActive = Boolean(activeCategory || activeDestination || searchQuery);
+  const isFilterActive = Boolean(activeCategory || activeDestination || searchQuery || minPrice || maxPrice);
 
   return (
     <div>
@@ -59,12 +85,18 @@ export default function HomePage({ searchQuery, onClearSearch }) {
         />
       )}
 
-      {/* Category Filter Rail with Tax Toggle */}
+      {/* Category Filter Rail with Tax Toggle and Price Filter */}
       <CategoryRail
         activeCategory={activeCategory}
         onSelectCategory={handleCategorySelect}
         showTax={showTax}
         onToggleTax={setShowTax}
+        minPrice={minPrice}
+        maxPrice={maxPrice}
+        onPriceChange={(min, max) => {
+          setMinPrice(min);
+          setMaxPrice(max);
+        }}
       />
 
       {/* Main Stays Container */}
@@ -82,13 +114,13 @@ export default function HomePage({ searchQuery, onClearSearch }) {
                 : 'Explore Verified Stays across India'}
             </h2>
             <span style={{ fontSize: '0.85rem', color: '#64748b' }}>
-              {loading ? 'Finding stays...' : `${listings.length} stays found with direct host pricing`}
+              {loading ? 'Finding stays...' : `${totalListings || listings.length} stays found with direct host pricing`}
             </span>
           </div>
 
           {/* Active Filter Clear Tags */}
           {isFilterActive && (
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
               {activeDestination && (
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#e0f2fe', color: '#0284c7', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
                   <MapPin size={12} /> {activeDestination}
@@ -99,6 +131,12 @@ export default function HomePage({ searchQuery, onClearSearch }) {
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#fef3c7', color: '#d97706', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
                   {activeCategory}
                   <button onClick={() => setActiveCategory('')} style={{ color: '#d97706', marginLeft: '4px', cursor: 'pointer' }}>✕</button>
+                </span>
+              )}
+              {(minPrice || maxPrice) && (
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#dcfce7', color: '#15803d', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
+                  ₹{minPrice || 0} - ₹{maxPrice || 'Any'}
+                  <button onClick={() => { setMinPrice(''); setMaxPrice(''); }} style={{ color: '#15803d', marginLeft: '4px', cursor: 'pointer' }}>✕</button>
                 </span>
               )}
               {searchQuery && (
@@ -139,11 +177,34 @@ export default function HomePage({ searchQuery, onClearSearch }) {
 
         {/* Stays Grid */}
         {!loading && listings.length > 0 && (
-          <div className="stays-grid">
-            {listings.map((item) => (
-              <StayCard key={item._id} listing={item} showTax={showTax} />
-            ))}
-          </div>
+          <>
+            <div className="stays-grid">
+              {listings.map((item) => (
+                <StayCard key={item._id} listing={item} showTax={showTax} />
+              ))}
+            </div>
+
+            {/* Load More Button */}
+            {page < totalPages && (
+              <div style={{ textAlign: 'center', marginTop: '40px' }}>
+                <button
+                  type="button"
+                  onClick={handleLoadMore}
+                  disabled={loadingMore}
+                  className="btn-coral"
+                  style={{
+                    padding: '12px 32px',
+                    fontSize: '0.95rem',
+                    borderRadius: '12px',
+                    cursor: loadingMore ? 'wait' : 'pointer',
+                    opacity: loadingMore ? 0.7 : 1,
+                  }}
+                >
+                  {loadingMore ? 'Loading More Stays...' : `Load More Stays (${listings.length} of ${totalListings})`}
+                </button>
+              </div>
+            )}
+          </>
         )}
 
         {/* Empty State */}

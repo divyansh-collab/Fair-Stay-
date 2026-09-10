@@ -31,6 +31,10 @@ const userRouter = require('./backend/routes/users');
 const aiRouter = require('./backend/routes/ai');
 const apiRouter = require('./backend/routes/api');
 
+// Security
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+
 const dbUrl = process.env.ATLAS_URI || process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/fairstay';
 
 // Connect to MongoDB with automatic fallback
@@ -61,11 +65,24 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'frontend', 'views'));
 
 // Middlewares
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(helmet({
+  contentSecurityPolicy: false,  // disabled so inline scripts and CDN scripts work
+  crossOriginEmbedderPolicy: false,
+}));
+app.use(express.urlencoded({ extended: true, limit: '5mb' }));
+app.use(express.json({ limit: '5mb' }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'frontend', 'public')));
 app.use(express.static(path.join(__dirname, 'client', 'dist')));
+
+// Rate limiting — 150 requests per 15 min per IP on API routes
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 150,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: 'Too many requests. Please try again after 15 minutes.' },
+});
 
 // Mongo Session Store using the primary database
 const store = MongoStore.create({
@@ -173,8 +190,17 @@ app.use('/listings', listingRouter);
 app.use('/listings/:id/reviews', reviewRouter);
 app.use('/', bookingRouter);
 app.use('/', userRouter);
-app.use('/ai', aiRouter);
-app.use('/api', apiRouter);
+app.use('/ai', aiLimiter = rateLimit({ windowMs: 60 * 1000, max: 30 }), aiRouter);
+app.use('/api', apiLimiter, apiRouter);
+
+// GET /api/me — Return session user for React SPA auth awareness
+app.get('/api/me', (req, res) => {
+  if (req.isAuthenticated() && req.user) {
+    const { _id, username, email, phone, profilePhoto, isAdmin, createdAt } = req.user;
+    return res.json({ success: true, user: { _id, username, email, phone, profilePhoto, isAdmin, createdAt } });
+  }
+  return res.json({ success: true, user: null });
+});
 
 // 404 Handler
 app.all('*', (req, res, next) => {

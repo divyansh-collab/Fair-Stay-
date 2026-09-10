@@ -25,6 +25,9 @@ import api from '../services/api';
 import FestivalPricingWidget from '../components/FestivalPricingWidget';
 import CheckoutModal from '../components/CheckoutModal';
 import RoomTicketModal from '../components/RoomTicketModal';
+import ListingMap from '../components/ListingMap';
+import ReviewSection from '../components/ReviewSection';
+import { toast } from 'react-hot-toast';
 
 // 4 complementary fallback high-res photos for luxury 5-photo bento grid
 const COMPLEMENTARY_PHOTOS = [
@@ -50,6 +53,51 @@ export default function ListingDetailPage() {
   const [isTicketOpen, setIsTicketOpen] = useState(false);
   const [confirmedBooking, setConfirmedBooking] = useState(null);
   const [keylessPin, setKeylessPin] = useState('8492');
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    try {
+      const savedList = JSON.parse(localStorage.getItem('fairstay_wishlist') || '[]');
+      setIsSaved(savedList.includes(id));
+    } catch (e) {}
+  }, [id]);
+
+  const toggleWishlist = () => {
+    try {
+      const savedList = JSON.parse(localStorage.getItem('fairstay_wishlist') || '[]');
+      let updated;
+      if (savedList.includes(id)) {
+        updated = savedList.filter(item => item !== id);
+        setIsSaved(false);
+        toast('Removed from saved stays', { icon: '💔' });
+      } else {
+        updated = [...savedList, id];
+        setIsSaved(true);
+        toast.success('Saved to your wishlist! ❤️');
+      }
+      localStorage.setItem('fairstay_wishlist', JSON.stringify(updated));
+    } catch (e) {}
+  };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: listing?.title || 'FairStay',
+          text: `Check out ${listing?.title || 'this stay'} on FairStay!`,
+          url: window.location.href,
+        });
+        toast.success('Shared successfully!');
+      } catch (e) {}
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        toast.success('Stay link copied to clipboard!');
+      } catch (e) {
+        toast.error('Could not copy link');
+      }
+    }
+  };
 
   useEffect(() => {
     loadListing();
@@ -134,11 +182,17 @@ export default function ListingDetailPage() {
           <span>Back to Stays</span>
         </Link>
         <div style={{ display: 'flex', gap: '12px' }}>
-          <button style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#0f172a', fontWeight: '600', cursor: 'pointer' }}>
+          <button
+            onClick={handleShare}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#0f172a', fontWeight: '600', cursor: 'pointer', background: '#f1f5f9', padding: '6px 12px', borderRadius: '8px', border: 'none' }}
+          >
             <Share2 size={16} /> Share
           </button>
-          <button style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#0f172a', fontWeight: '600', cursor: 'pointer' }}>
-            <Heart size={16} /> Save
+          <button
+            onClick={toggleWishlist}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: isSaved ? '#ff5a5f' : '#0f172a', fontWeight: '600', cursor: 'pointer', background: isSaved ? '#ffe4e6' : '#f1f5f9', padding: '6px 12px', borderRadius: '8px', border: 'none' }}
+          >
+            <Heart size={16} fill={isSaved ? '#ff5a5f' : 'none'} color={isSaved ? '#ff5a5f' : '#0f172a'} /> {isSaved ? 'Saved' : 'Save'}
           </button>
         </div>
       </div>
@@ -151,7 +205,9 @@ export default function ListingDetailPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem', color: '#475569' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: '700', color: '#0f172a' }}>
             <Star size={14} style={{ fill: '#eab308', color: '#eab308' }} />
-            4.96 • <u style={{ fontWeight: '600', color: '#64748b' }}>24 reviews</u>
+            {listing.reviews && listing.reviews.length > 0
+              ? (listing.reviews.reduce((acc, r) => acc + (Number(r.rating) || 5), 0) / listing.reviews.length).toFixed(1)
+              : '4.9'} • <u style={{ fontWeight: '600', color: '#64748b' }}>{listing.reviews?.length || 0} {listing.reviews?.length === 1 ? 'review' : 'reviews'}</u>
           </span>
           <span>•</span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
@@ -294,6 +350,26 @@ export default function ListingDetailPage() {
 
           {/* Real-time Festival & Seasonal Price Intelligence */}
           <FestivalPricingWidget listing={listing} />
+
+          {/* Location Map */}
+          <div style={{ marginTop: '32px', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0f172a', marginBottom: '16px' }}>
+              Where you'll be
+            </h3>
+            <ListingMap listing={listing} />
+          </div>
+
+          {/* Real Guest Reviews & Community Ratings */}
+          <ReviewSection
+            listingId={listing._id}
+            reviews={listing.reviews || []}
+            onReviewAdded={(newReview) => {
+              setListing((prev) => ({
+                ...prev,
+                reviews: [newReview, ...(prev.reviews || [])],
+              }));
+            }}
+          />
         </div>
 
         {/* Right Column: Sticky Booking Widget */}
@@ -438,6 +514,7 @@ export default function ListingDetailPage() {
           setConfirmedBooking(booking);
           setKeylessPin(pin || '8492');
           setIsTicketOpen(true);
+          toast.success('Reservation confirmed! Room pass generated 🎉');
         }}
       />
 

@@ -29,12 +29,20 @@ const CATEGORIES = [
   { id: 'Countryside', label: 'Countryside', icon: Compass },
 ];
 
-export default function CategoryRail({ activeCategory, onSelectCategory, showTax, onToggleTax }) {
+export default function CategoryRail({ 
+  activeCategory, 
+  onSelectCategory, 
+  showTax, 
+  onToggleTax,
+  minPrice,
+  maxPrice,
+  onPriceChange
+}) {
   return (
     <div style={{ borderBottom: '1px solid #e2e8f0', background: '#ffffff', position: 'sticky', top: '80px', zIndex: 900 }}>
-      <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}>
+      <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'nowrap' }}>
         {/* Horizontal Category Scroll Rail */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', overflowX: 'auto', padding: '12px 0', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', overflowX: 'auto', padding: '12px 0', scrollbarWidth: 'none', msOverflowStyle: 'none', flex: 1 }}>
           {CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             const isActive = (activeCategory || 'All') === cat.id;
@@ -51,10 +59,30 @@ export default function CategoryRail({ activeCategory, onSelectCategory, showTax
           })}
         </div>
 
+        {/* Price Filter Inputs */}
+        <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', background: '#f8fafc', padding: '6px 10px', borderRadius: '9999px', border: '1px solid #e2e8f0' }}>
+          <span style={{ color: '#64748b', fontWeight: '600' }}>Price:</span>
+          <input
+            type="number"
+            placeholder="Min ₹"
+            value={minPrice || ''}
+            onChange={(e) => onPriceChange?.(e.target.value, maxPrice)}
+            style={{ width: '65px', padding: '3px 6px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.75rem', outline: 'none' }}
+          />
+          <span style={{ color: '#94a3b8' }}>-</span>
+          <input
+            type="number"
+            placeholder="Max ₹"
+            value={maxPrice || ''}
+            onChange={(e) => onPriceChange?.(minPrice, e.target.value)}
+            style={{ width: '65px', padding: '3px 6px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.75rem', outline: 'none' }}
+          />
+        </div>
+
         {/* Display Total before Taxes Pill */}
         <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 14px', border: '1px solid #e2e8f0', borderRadius: '9999px', background: '#f8fafc', fontSize: '0.78rem', fontWeight: '600', color: '#334155' }}>
           <span>Display total before taxes</span>
-          <label style={{ position: 'relative', display: 'inline-block', width: '36px', height: '20px', cursor: 'pointer' }}>
+          <label style={{ position: 'relative', display: 'inline-block', width: '36px', height: '20px', cursor: 'pointer', margin: 0 }}>
             <input
               type="checkbox"
               checked={showTax}

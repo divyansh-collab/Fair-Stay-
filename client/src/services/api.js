@@ -62,6 +62,25 @@ export const api = {
     const res = await axios.post(`${API_BASE}/listings`, listingData);
     return res.data;
   },
+
+  // 8. Reviews
+  async submitReview(listingId, data) {
+    const res = await axios.post(`${API_BASE}/reviews/${listingId}`, data);
+    return res.data;
+  },
+
+  // 9. Availability
+  async getAvailability(listingId) {
+    const res = await axios.get(`${API_BASE}/listings/${listingId}/availability`);
+    return res.data;
+  },
+
+  // Direct axios passthroughs for flexibility
+  get: axios.get,
+  post: axios.post,
+  put: axios.put,
+  delete: axios.delete,
 };
 
 export default api;
+

@@ -2,22 +2,38 @@ const express = require('express');
 const router = express.Router();
 const Listing = require('../models/listing');
 const Booking = require('../models/booking');
+const Review = require('../models/review');
 const User = require('../models/user');
 const { getFestivalPricing } = require('../utils/festivals');
 const { parseNaturalLanguageSearch, generatePilgrimChatResponse } = require('../utils/gemini');
+const { isLoggedIn } = require('../middleware');
+
+// Soft-auth helper: resolve user from session or fall back to first DB user (for demo mode)
+async function resolveUser(req) {
+  if (req.user) return req.user._id;
+  const first = await User.findOne().lean();
+  return first ? first._id : null;
+}
 
 // GET /api/listings - Fetch all listings with filtering
 router.get('/listings', async (req, res) => {
   try {
-    const { category, location, minPrice, maxPrice, search } = req.query;
+    const { category, location, minPrice, maxPrice, search, destination, page = 1, limit = 12 } = req.query;
     const filter = {};
+    const pageNum = Math.max(1, parseInt(page, 10) || 1);
+    const pageSize = Math.min(48, Math.max(1, parseInt(limit, 10) || 12));
+    const skip = (pageNum - 1) * pageSize;
 
     if (category && category !== 'All') {
       filter.category = category;
     }
 
-    if (location) {
-      filter.location = { $regex: location.trim(), $options: 'i' };
+    const locationQuery = location || destination;
+    if (locationQuery) {
+      filter.$or = [
+        { location: { $regex: locationQuery.trim(), $options: 'i' } },
+        { country: { $regex: locationQuery.trim(), $options: 'i' } },
+      ];
     } else if (search) {
       filter.$or = [
         { title: { $regex: search.trim(), $options: 'i' } },
@@ -32,10 +48,16 @@ router.get('/listings', async (req, res) => {
       if (maxPrice) filter.price.$lte = Number(maxPrice);
     }
 
-    const listings = await Listing.find(filter).populate('reviews');
+    const [listings, total] = await Promise.all([
+      Listing.find(filter).populate('reviews', 'rating').skip(skip).limit(pageSize),
+      Listing.countDocuments(filter),
+    ]);
     res.json({
       success: true,
       count: listings.length,
+      total,
+      page: pageNum,
+      totalPages: Math.ceil(total / pageSize),
       data: listings,
     });
   } catch (err) {
@@ -210,11 +232,7 @@ router.post('/bookings', async (req, res) => {
     const outDate = checkOut ? new Date(checkOut) : new Date(Date.now() + 2 * 24 * 60 * 60 * 1000);
     const nights = Math.max(1, Math.ceil((outDate - inDate) / (1000 * 60 * 60 * 24)));
 
-    let userId = req.user ? req.user._id : null;
-    if (!userId) {
-      const defaultUser = await User.findOne();
-      userId = defaultUser ? defaultUser._id : listing.owner;
-    }
+    let userId = await resolveUser(req);
 
     const destPrefix = (listing.location || 'STAY').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 3) || 'STY';
     const randomSuiteNum = Math.floor(100 + Math.random() * 900);
@@ -348,6 +366,47 @@ router.post('/listings', async (req, res) => {
 
     await newListing.save();
     res.status(201).json({ success: true, data: newListing });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+
+
+// ─────────────────────────────────────────────
+// REVIEWS API
+// ─────────────────────────────────────────────
+
+// POST /api/reviews/:listingId — Submit a review for a listing
+router.post('/reviews/:listingId', async (req, res) => {
+  try {
+    const { listingId } = req.params;
+    const { rating, comment } = req.body;
+    if (!rating || !comment) {
+      return res.status(400).json({ success: false, error: 'Rating and comment are required.' });
+    }
+    const listing = await Listing.findById(listingId);
+    if (!listing) {
+      return res.status(404).json({ success: false, error: 'Listing not found.' });
+    }
+    const authorId = await resolveUser(req);
+    const review = new Review({ rating: Number(rating), comment: comment.trim(), author: authorId });
+    await review.save();
+    listing.reviews.push(review._id);
+    await listing.save();
+    const populated = await Review.findById(review._id).populate('author', 'username profilePhoto');
+    res.status(201).json({ success: true, review: populated });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET /api/listings/:id/availability — Return booked date ranges for availability calendar
+router.get('/listings/:id/availability', async (req, res) => {
+  try {
+    const bookings = await Booking.find({ listing: req.params.id, status: { $ne: 'cancelled' } })
+      .select('checkIn checkOut');
+    res.json({ success: true, bookedRanges: bookings.map(b => ({ start: b.checkIn, end: b.checkOut })) });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
