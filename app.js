@@ -169,13 +169,23 @@ app.use((req, res, next) => {
   next();
 });
 
-// Serve FairStay React (MERN) Client SPA at Root
+// Serve FairStay React (MERN) Client SPA for all main routes
 const clientDistPath = path.join(__dirname, 'client', 'dist');
 if (fs.existsSync(clientDistPath)) {
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(clientDistPath, 'index.html'));
-  });
-  app.get(['/app', '/app/*', '/stay/:id', '/listing/:id', '/trips', '/host', '/ticket/:id'], (req, res) => {
+  const spaRoutes = [
+    '/',
+    '/listings',
+    '/listings/:id',
+    '/stay/:id',
+    '/listing/:id',
+    '/trips',
+    '/host',
+    '/ticket/:id',
+    '/admin',
+    '/app',
+    '/app/*'
+  ];
+  app.get(spaRoutes, (req, res) => {
     res.sendFile(path.join(clientDistPath, 'index.html'));
   });
 } else {

@@ -32,6 +32,7 @@ export default function App() {
             <div style={{ flex: 1 }}>
               <Routes>
                 <Route path="/" element={<HomePage searchQuery={searchQuery} onClearSearch={handleClearSearch} />} />
+                <Route path="/listings" element={<HomePage searchQuery={searchQuery} onClearSearch={handleClearSearch} />} />
                 <Route path="/listing/:id" element={<ListingDetailPage />} />
                 <Route path="/listings/:id" element={<ListingDetailPage />} />
                 <Route path="/stay/:id" element={<ListingDetailPage />} />

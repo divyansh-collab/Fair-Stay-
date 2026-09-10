@@ -173,7 +173,7 @@ module.exports.verifyEmailOtp = async (req, res, next) => {
       req.flash('success', `🎉 Account approved and activated! Welcome to FairStay, ${user.username}!`);
       req.session.save((saveErr) => {
         if (saveErr) console.error('Session save error on OTP verify:', saveErr);
-        res.redirect('/listings');
+        res.redirect('/');
       });
     });
   } catch (err) {
@@ -264,9 +264,9 @@ module.exports.login = async (req, res) => {
 
   const username = req.user ? req.user.username : 'Traveler';
   req.flash('success', `Welcome back, ${username}! Have a wonderful stay.`);
-  let redirectUrl = res.locals.redirectUrl || '/listings';
+  let redirectUrl = res.locals.redirectUrl || '/';
   if (typeof redirectUrl !== 'string' || !redirectUrl.startsWith('/') || redirectUrl.startsWith('//')) {
-    redirectUrl = '/listings';
+    redirectUrl = '/';
   }
   delete req.session.redirectUrl;
   req.session.save((err) => {
@@ -281,7 +281,7 @@ module.exports.logout = (req, res, next) => {
     req.flash('success', 'Logged out successfully. See you again soon!');
     req.session.save((saveErr) => {
       if (saveErr) console.error('Session save error on logout:', saveErr);
-      res.redirect('/listings');
+      res.redirect('/');
     });
   });
 };
