@@ -349,11 +349,11 @@ export default function ListingDetailPage() {
       </div>
 
       {/* 5-Photo Luxury Bento Showcase */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gridTemplateRows: '200px 200px', gap: '10px', borderRadius: '20px', overflow: 'hidden', marginBottom: '40px', position: 'relative' }}>
+      <div className="bento-gallery-grid">
         {/* Main Hero Photo */}
         <div
           onClick={() => setLightboxIndex(0)}
-          style={{ gridRow: 'span 2', cursor: 'pointer', overflow: 'hidden', background: '#e2e8f0' }}
+          className="bento-hero-item"
         >
           <img
             src={gallery[0]}
@@ -370,7 +370,7 @@ export default function ListingDetailPage() {
           <div
             key={i}
             onClick={() => setLightboxIndex(i + 1)}
-            style={{ cursor: 'pointer', overflow: 'hidden', background: '#e2e8f0' }}
+            className="bento-sub-item"
           >
             <img
               src={img}
@@ -406,7 +406,7 @@ export default function ListingDetailPage() {
       </div>
 
       {/* Content Split: Details on Left, Booking Card on Right */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 2fr) minmax(320px, 1fr)', gap: '48px' }}>
+      <div className="detail-content-layout">
         {/* Left Column */}
         <div>
           {/* Room Specifications */}
@@ -458,7 +458,7 @@ export default function ListingDetailPage() {
             <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
               What this place offers
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '14px', fontSize: '0.88rem', color: 'var(--text-primary)' }}>
               {(listing.amenities && listing.amenities.length > 0 ? listing.amenities : [
                 'High-Speed Wi-Fi (100+ Mbps)',
                 'Air Conditioning',
@@ -593,8 +593,8 @@ export default function ListingDetailPage() {
         </div>
 
         {/* Right Column: Sticky Booking Widget */}
-        <div>
-          <div style={{ position: 'sticky', top: '100px', background: 'var(--bg-card)', border: '1px solid var(--border-light)', borderRadius: '20px', padding: '28px', boxShadow: 'var(--shadow-md)' }}>
+        <div className="detail-booking-column">
+          <div className="detail-booking-card">
             {/* Price Header */}
             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '16px' }}>
               <div>

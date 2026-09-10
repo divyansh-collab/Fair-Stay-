@@ -119,7 +119,7 @@ export default function HostStayPage() {
       )}
 
       {/* Form & Live Preview Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '40px', alignItems: 'start' }}>
+      <div className="host-stay-grid">
         
         {/* Left Column: Form Controls */}
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>

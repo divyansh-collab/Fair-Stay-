@@ -87,7 +87,7 @@ export default function RoomTicketModal({
             </div>
 
             {/* Room Number & Keyless PIN Hero Section */}
-            <div style={{ padding: '24px', background: 'var(--bg-secondary)', borderBottom: '2px dashed var(--border-light)', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '20px', alignItems: 'center' }}>
+            <div className="room-ticket-hero-grid">
               <div>
                 <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '1px' }}>
                   Assigned Room Suite
@@ -114,7 +114,7 @@ export default function RoomTicketModal({
             </div>
 
             {/* Property & Stay Details */}
-            <div style={{ padding: '24px', display: 'grid', gridTemplateColumns: '1fr 140px', gap: '20px', alignItems: 'center' }}>
+            <div className="room-ticket-details-grid">
               <div>
                 <h4 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-primary)', margin: '0 0 6px' }}>
                   {listing.title || 'Luxury Vacation Stay'}

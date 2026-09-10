@@ -162,7 +162,7 @@ export default function MyTripsPage() {
 
       {/* Loading Skeletons */}
       {loading && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '24px' }}>
+        <div className="trips-grid">
           {[1, 2, 3].map((n) => (
             <div key={n} style={{ background: 'var(--bg-card)', borderRadius: '20px', border: '1px solid var(--border-light)', height: '280px', animation: 'pulse 1.5s infinite' }} />
           ))}
@@ -191,7 +191,7 @@ export default function MyTripsPage() {
 
       {/* Trips Grid */}
       {!loading && filteredBookings.length > 0 && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '24px' }}>
+        <div className="trips-grid">
           {filteredBookings.map((b) => {
             const listing = b.listing || {};
             const inDate = new Date(b.checkIn || Date.now());
