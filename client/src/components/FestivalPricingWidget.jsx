@@ -109,7 +109,9 @@ export default function FestivalPricingWidget({ listing }) {
             type="date"
             value={checkInDate}
             onChange={handleDateChange}
-            style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-hover)', fontSize: '0.82rem', fontFamily: 'inherit', background: 'var(--bg-card)', color: 'var(--text-primary)', outline: 'none' }}
+            onClick={(e) => { try { e.currentTarget.showPicker?.(); } catch (err) {} }}
+            onFocus={(e) => { try { e.currentTarget.showPicker?.(); } catch (err) {} }}
+            style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-hover)', fontSize: '0.82rem', fontFamily: 'inherit', background: 'var(--bg-card)', color: 'var(--text-primary)', outline: 'none', cursor: 'pointer' }}
           />
         </div>
       </div>

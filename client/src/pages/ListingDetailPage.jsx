@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   Star, 
@@ -47,6 +47,8 @@ export default function ListingDetailPage() {
   const defaultOut = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
   const [checkIn, setCheckIn] = useState(defaultIn);
   const [checkOut, setCheckOut] = useState(defaultOut);
+  const checkInRef = useRef(null);
+  const checkOutRef = useRef(null);
   const [guests, setGuests] = useState(1);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isTicketOpen, setIsTicketOpen] = useState(false);
@@ -572,22 +574,85 @@ export default function ListingDetailPage() {
             {/* Check-In / Check-Out Box */}
             <div style={{ border: '1px solid var(--border-hover)', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px', background: 'var(--bg-input)' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: '1px solid var(--border-hover)' }}>
-                <div style={{ padding: '10px 14px', borderRight: '1px solid var(--border-hover)' }}>
-                  <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Check-in</label>
+                <div
+                  onClick={() => {
+                    try { checkInRef.current?.showPicker?.(); } catch (e) { checkInRef.current?.focus?.(); }
+                  }}
+                  style={{
+                    padding: '10px 14px',
+                    borderRight: '1px solid var(--border-hover)',
+                    cursor: 'pointer',
+                    transition: 'background 0.15s ease'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2px' }}>
+                    <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', cursor: 'pointer' }}>Check-in</label>
+                    <Calendar size={13} style={{ color: '#ff5a5f', pointerEvents: 'none' }} />
+                  </div>
                   <input
+                    ref={checkInRef}
                     type="date"
                     value={checkIn}
+                    min={new Date().toISOString().split('T')[0]}
                     onChange={(e) => setCheckIn(e.target.value)}
-                    style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.8rem', fontFamily: 'inherit', color: 'var(--text-primary)', background: 'transparent' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      try { e.currentTarget.showPicker?.(); } catch (err) {}
+                    }}
+                    onFocus={(e) => {
+                      try { e.currentTarget.showPicker?.(); } catch (err) {}
+                    }}
+                    style={{
+                      width: '100%',
+                      border: 'none',
+                      outline: 'none',
+                      fontSize: '0.84rem',
+                      fontWeight: '600',
+                      fontFamily: 'inherit',
+                      color: 'var(--text-primary)',
+                      background: 'transparent',
+                      cursor: 'pointer'
+                    }}
                   />
                 </div>
-                <div style={{ padding: '10px 14px' }}>
-                  <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Check-out</label>
+                <div
+                  onClick={() => {
+                    try { checkOutRef.current?.showPicker?.(); } catch (e) { checkOutRef.current?.focus?.(); }
+                  }}
+                  style={{
+                    padding: '10px 14px',
+                    cursor: 'pointer',
+                    transition: 'background 0.15s ease'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2px' }}>
+                    <label style={{ display: 'block', fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-secondary)', cursor: 'pointer' }}>Check-out</label>
+                    <Calendar size={13} style={{ color: '#ff5a5f', pointerEvents: 'none' }} />
+                  </div>
                   <input
+                    ref={checkOutRef}
                     type="date"
                     value={checkOut}
+                    min={checkIn || new Date().toISOString().split('T')[0]}
                     onChange={(e) => setCheckOut(e.target.value)}
-                    style={{ width: '100%', border: 'none', outline: 'none', fontSize: '0.8rem', fontFamily: 'inherit', color: 'var(--text-primary)', background: 'transparent' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      try { e.currentTarget.showPicker?.(); } catch (err) {}
+                    }}
+                    onFocus={(e) => {
+                      try { e.currentTarget.showPicker?.(); } catch (err) {}
+                    }}
+                    style={{
+                      width: '100%',
+                      border: 'none',
+                      outline: 'none',
+                      fontSize: '0.84rem',
+                      fontWeight: '600',
+                      fontFamily: 'inherit',
+                      color: 'var(--text-primary)',
+                      background: 'transparent',
+                      cursor: 'pointer'
+                    }}
                   />
                 </div>
               </div>

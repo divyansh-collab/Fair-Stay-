@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Star, MapPin, Users, Bed, Bath, ShieldCheck, Heart } from 'lucide-react';
 
-const FALLBACK_SCRUBBER_PHOTOS = [
-  'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80',
-];
-
 export function formatCleanLocation(locStr = '') {
   if (!locStr) return 'India';
   const parts = locStr.split(',').map((p) => p.trim()).filter(Boolean);
@@ -26,7 +20,6 @@ export function formatCleanLocation(locStr = '') {
 export default function StayCard({ listing, showTax }) {
   const navigate = useNavigate();
   const [isSaved, setIsSaved] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
 
   useEffect(() => {
     if (!listing?._id) return;
@@ -96,22 +89,13 @@ export default function StayCard({ listing, showTax }) {
           flex: 1,
         }}
       >
-        {/* Photo Container with scrubber */}
+        {/* Photo Container */}
         <div
           className="stay-card-img-wrap"
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const fraction = x / rect.width;
-            if (fraction < 0.33) setPhotoIndex(0);
-            else if (fraction < 0.66) setPhotoIndex(1);
-            else setPhotoIndex(2);
-          }}
-          onMouseLeave={() => setPhotoIndex(0)}
-          style={{ position: 'relative' }}
+          style={{ position: 'relative', overflow: 'hidden' }}
         >
           <img
-            src={photoIndex === 0 ? imageUrl : FALLBACK_SCRUBBER_PHOTOS[photoIndex]}
+            src={imageUrl}
             alt={listing.title}
             className="stay-card-img"
             loading="lazy"
@@ -177,35 +161,6 @@ export default function StayCard({ listing, showTax }) {
           <div className="fairsafe-badge">
             <ShieldCheck size={13} style={{ color: '#4ade80' }} />
             <span>FairSafe {listing.fairsafeScore || 96}</span>
-          </div>
-
-          {/* Photo Scrubber Dots Indicator (Bottom Right) */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '12px',
-              right: '12px',
-              display: 'flex',
-              gap: '4px',
-              zIndex: 2,
-              background: 'rgba(15, 23, 42, 0.55)',
-              backdropFilter: 'blur(6px)',
-              padding: '3px 6px',
-              borderRadius: '9999px',
-            }}
-          >
-            {[0, 1, 2].map((idx) => (
-              <span
-                key={idx}
-                style={{
-                  width: '5px',
-                  height: '5px',
-                  borderRadius: '50%',
-                  background: photoIndex === idx ? '#ffffff' : 'rgba(255,255,255,0.4)',
-                  transition: 'background 0.2s ease',
-                }}
-              />
-            ))}
           </div>
         </div>
 
