@@ -44,10 +44,10 @@ const TIER_PHOTOS = {
     'https://images.unsplash.com/photo-1609334761849-77a471675867?auto=format&fit=crop&w=800&q=80', // Evening aarti lamps
   ],
   mountains: [
-    'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80', // Pine wood bedroom
-    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80', // Mountain valley view
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80', // Cozy rustic interior
-    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80', // Alpine pine forest
+    'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80', // Alpine wooden bedroom with natural light
+    'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80', // Deodar pine forest and Himalayan ridge
+    'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80', // Pine wood seating by forest window
+    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80', // Misty pine mountain valley
   ],
   heritage: [
     'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80', // Historic stone archway
@@ -76,6 +76,16 @@ export function getComplementaryPhotos(listing) {
   const cat = (listing.category || '').toLowerCase();
   const pType = (listing.propertyType || '').toLowerCase();
 
+  // Specific real-world benchmark for Forest View Retreat matching Agoda
+  if (t.includes('forest view retreat')) {
+    return [
+      'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80', // Wooden bedroom with red runner and balcony
+      'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80', // Deodar cedar pine forest balcony view
+      'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80', // Wood armchairs by pine window
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80', // Mountain peaks & pine valley
+    ];
+  }
+
   if (pType.includes('villa') || cat === 'luxe') {
     return TIER_PHOTOS.luxeVilla;
   }
@@ -85,7 +95,7 @@ export function getComplementaryPhotos(listing) {
   if (cat === 'ashram' || pType.includes('ashram') || pType.includes('pilgrim') || /haridwar|varanasi|kashi|rishikesh|ayodhya|mathura|prayagraj|nashik/i.test(loc)) {
     return TIER_PHOTOS.ashram;
   }
-  if (cat === 'mountains' || /manali|himachal|munnar/i.test(loc) || pType.includes('chalet')) {
+  if (cat === 'mountains' || /manali|himachal|munnar/i.test(loc) || pType.includes('chalet') || pType.includes('mountain') || pType.includes('lodge')) {
     return TIER_PHOTOS.mountains;
   }
   if (cat === 'heritage' || cat === 'haveli' || /jaipur|udaipur|rajasthan/i.test(loc) || pType.includes('haveli')) {
@@ -620,7 +630,11 @@ export default function ListingDetailPage() {
               </div>
               <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Star size={14} style={{ fill: '#eab308', color: '#eab308' }} />
-                <span>4.96</span>
+                <span>
+                  {listing.reviews && listing.reviews.length > 0
+                    ? (listing.reviews.reduce((acc, r) => acc + (Number(r.rating) || 4), 0) / listing.reviews.length).toFixed(1)
+                    : (listing.realRating ? Number(listing.realRating).toFixed(1) : '4.5')}
+                </span>
               </div>
             </div>
 
