@@ -62,6 +62,19 @@ const DESTINATION_CALENDARS = {
       summary: 'Vibrant Goan spring folk celebration with traditional temple processions, float parades, and cultural tourism across Panaji and Margao.',
     },
     {
+      id: 'goa_diwali',
+      name: 'Diwali Narkasur Carnival & Beach Holiday',
+      emoji: '🪔',
+      defaultPercentage: 25,
+      direction: 'higher',
+      dateRange: 'Oct 20 – Nov 10',
+      startMonth: 9,
+      startDay: 20,
+      endMonth: 10,
+      endDay: 10,
+      summary: 'Famous giant Narkasur effigy parades on Diwali eve followed by festive beach vacationers across North and South Goa.',
+    },
+    {
       id: 'goa_monsoon',
       name: 'Monsoon Green Season Off-Peak Discount',
       emoji: '🌧️',
@@ -128,6 +141,19 @@ const DESTINATION_CALENDARS = {
       endMonth: 7,
       endDay: 12,
       summary: 'Spectacular royal processions of Goddess Teej through the Old Pink City with traditional Rajasthani folk music and heritage tourism.',
+    },
+    {
+      id: 'jaipur_diwali',
+      name: 'Diwali Pink City Grand Illuminations',
+      emoji: '🪔',
+      defaultPercentage: 35,
+      direction: 'higher',
+      dateRange: 'Oct 20 – Nov 10',
+      startMonth: 9,
+      startDay: 20,
+      endMonth: 10,
+      endDay: 10,
+      summary: 'Jaipur’s world-famous heritage market illuminations (Johari Bazaar, MI Road) attract hundreds of thousands of domestic and international visitors.',
     },
     {
       id: 'jaipur_summer',
@@ -198,6 +224,19 @@ const DESTINATION_CALENDARS = {
       summary: 'Pleasant mountain autumn temperatures, fruit picking in apple orchards, and pre-winter road trips to Rohtang and Atal Tunnel.',
     },
     {
+      id: 'manali_diwali',
+      name: 'Diwali Long Weekend Autumn Escape',
+      emoji: '🪔',
+      defaultPercentage: 25,
+      direction: 'higher',
+      dateRange: 'Oct 20 – Nov 10',
+      startMonth: 9,
+      startDay: 20,
+      endMonth: 10,
+      endDay: 10,
+      summary: 'Crisp pre-winter Himalayan weather and holiday family road trips fill pine chalets and valley resorts across Manali.',
+    },
+    {
       id: 'manali_monsoon',
       name: 'Monsoon Landslide Risk Off-Peak Discount',
       emoji: '⛈️',
@@ -240,6 +279,19 @@ const DESTINATION_CALENDARS = {
       summary: 'Crisp mountain mist in Munnar tea estates and ideal tranquil weather for Alleppey backwater houseboats and heritage homestays.',
     },
     {
+      id: 'kerala_diwali',
+      name: 'Diwali Holiday Long Weekend',
+      emoji: '🪔',
+      defaultPercentage: 20,
+      direction: 'higher',
+      dateRange: 'Oct 20 – Nov 10',
+      startMonth: 9,
+      startDay: 20,
+      endMonth: 10,
+      endDay: 10,
+      summary: 'Extended festive long weekend triggers high holiday bookings across Munnar tea bungalows and Alleppey backwater houseboats.',
+    },
+    {
       id: 'kerala_monsoon_ayurveda',
       name: 'Monsoon Ayurvedic Rejuvenation Season',
       emoji: '🌿',
@@ -267,6 +319,19 @@ const DESTINATION_CALENDARS = {
       endMonth: 8,
       endDay: 15,
       summary: 'Maharashtra’s largest public festival with Lalbaugcha Raja pandal tours, beach immersions, and coastal staycation demand across Mumbai and Alibaug.',
+    },
+    {
+      id: 'mumbai_diwali',
+      name: 'Diwali Coastal Villa Staycation & New Year',
+      emoji: '🪔',
+      defaultPercentage: 25,
+      direction: 'higher',
+      dateRange: 'Oct 20 – Nov 10',
+      startMonth: 9,
+      startDay: 20,
+      endMonth: 10,
+      endDay: 10,
+      summary: 'Diwali family staycations and extended holiday celebrations create heavy demand for luxury villas in Alibaug and Lonavala.',
     },
     {
       id: 'mumbai_monsoon_ghats',
@@ -311,6 +376,19 @@ const DESTINATION_CALENDARS = {
       summary: 'Millions of glowing earthen diyas illuminate all 84 Varanasi ghats on Kartik Poornima, attracting pilgrims from around the world.',
     },
     {
+      id: 'varanasi_diwali',
+      name: 'Diwali & Annakut Ghats Illuminations',
+      emoji: '🪔',
+      defaultPercentage: 35,
+      direction: 'higher',
+      dateRange: 'Oct 15 – Nov 12',
+      startMonth: 9,
+      startDay: 15,
+      endMonth: 10,
+      endDay: 12,
+      summary: 'Diwali illuminations across the Ganges ghats and Annakut celebrations at Kashi Vishwanath temple drive peak pilgrim tourism.',
+    },
+    {
       id: 'varanasi_maha_shivratri',
       name: 'Maha Shivratri & Shravan Sacred Month',
       emoji: '🔱',
@@ -337,30 +415,82 @@ const DESTINATION_CALENDARS = {
       summary: 'Annual sacred bathing pilgrimage at the Triveni Sangam confluence with millions of sadhus and pilgrims requiring riverside accommodation.',
     },
     {
+      id: 'prayagraj_diwali',
+      name: 'Deepawali & Sangam Kartik Holy Snan',
+      emoji: '🪔',
+      defaultPercentage: 30,
+      direction: 'higher',
+      dateRange: 'Oct 15 – Nov 15',
+      startMonth: 9,
+      startDay: 15,
+      endMonth: 10,
+      endDay: 15,
+      summary: 'Sacred Kartik snan at the Triveni Sangam during Deepawali festive weeks brings devotees nationwide.',
+    },
+    {
       id: 'ayodhya_deepotsav',
       name: 'Ayodhya Deepotsav & Ram Navami',
       emoji: '🪔',
-      defaultPercentage: 35,
+      defaultPercentage: 40,
       direction: 'higher',
-      dateRange: 'Oct 20 – Nov 5 & March 25 – April 10',
+      dateRange: 'Oct 20 – Nov 10 & March 25 – April 10',
       startMonth: 9,
       startDay: 20,
       endMonth: 10,
-      endDay: 5,
+      endDay: 10,
       summary: 'World-record diya lighting along the Saryu River and Ram Mandir celebrations driving massive sacred accommodation demand.',
     },
     {
+      id: 'rishikesh_diwali',
+      name: 'Deepawali & Holy Ganga Aarti Festivities',
+      emoji: '🪔',
+      defaultPercentage: 30,
+      direction: 'higher',
+      dateRange: 'Oct 15 – Nov 20',
+      startMonth: 9,
+      startDay: 15,
+      endMonth: 10,
+      endDay: 20,
+      summary: 'Tens of thousands of floating diyas at Triveni Ghat and spiritual pilgrims celebrating Deepawali on the sacred Ganges drive peak ashram and boutique resort bookings.',
+    },
+    {
       id: 'rishikesh_yoga',
-      name: 'International Yoga Festival & Ganga Dussehra',
+      name: 'International Yoga Festival & Spring Retreats',
       emoji: '🧘',
       defaultPercentage: 25,
       direction: 'higher',
-      dateRange: 'March 1 – March 15',
+      dateRange: 'March 1 – March 20',
       startMonth: 2,
       startDay: 1,
       endMonth: 2,
-      endDay: 15,
+      endDay: 20,
       summary: 'Global spiritual seekers converge on the yoga capital of the world for ashram teachings, meditation, and holy Ganga dips.',
+    },
+    {
+      id: 'rishikesh_autumn_adventure',
+      name: 'Autumn Rafting & Himalayan Trekking Peak',
+      emoji: '🚣',
+      defaultPercentage: 25,
+      direction: 'higher',
+      dateRange: 'Sept 20 – Nov 30',
+      startMonth: 8,
+      startDay: 20,
+      endMonth: 10,
+      endDay: 30,
+      summary: 'Post-monsoon river opening, grade III/IV white-water rafting, and camping along Shivpuri and Tapovan with high adventure travel demand.',
+    },
+    {
+      id: 'rishikesh_ganga_dussehra',
+      name: 'Ganga Dussehra Sacred River Confluence',
+      emoji: '🌊',
+      defaultPercentage: 30,
+      direction: 'higher',
+      dateRange: 'May 20 – June 15',
+      startMonth: 4,
+      startDay: 20,
+      endMonth: 5,
+      endDay: 15,
+      summary: 'Millions gather for holy purification dips celebrating the descent of River Ganga, creating peak summer accommodation demand.',
     },
     {
       id: 'mathura_braj_holi',
@@ -374,6 +504,19 @@ const DESTINATION_CALENDARS = {
       endMonth: 2,
       endDay: 22,
       summary: 'Legendary week-long color festival and Krishna Janmashtami celebrations in Barsana, Nandgaon, Vrindavan, and Mathura.',
+    },
+    {
+      id: 'mathura_diwali',
+      name: 'Deepawali & Govardhan Annakut Parikrama',
+      emoji: '🪔',
+      defaultPercentage: 35,
+      direction: 'higher',
+      dateRange: 'Oct 18 – Nov 15',
+      startMonth: 9,
+      startDay: 18,
+      endMonth: 10,
+      endDay: 15,
+      summary: 'Devotees perform the sacred 21-km Govardhan Parikrama and celebrate Annakut in Vrindavan and Mathura.',
     },
   ],
 
@@ -491,23 +634,23 @@ function getDestinationEvents(location = '') {
   const cityKey = normalizeCityKey(location);
   const events = DESTINATION_CALENDARS[cityKey] || DESTINATION_CALENDARS.general;
 
-  // For spiritual corridor, prioritize city-specific events if Varanasi / Prayagraj / Ayodhya
+  // For spiritual corridor, prioritize city-specific events if Varanasi / Prayagraj / Ayodhya / Rishikesh / Mathura
   const loc = String(location || '').toLowerCase();
   if (cityKey === 'spiritual') {
     if (loc.includes('varanasi') || loc.includes('kashi')) {
-      return events.filter((e) => e.id.startsWith('varanasi') || e.id === 'christmas' || e.id === 'diwali');
+      return events.filter((e) => e.id.startsWith('varanasi'));
     }
     if (loc.includes('prayagraj') || loc.includes('allahabad')) {
-      return events.filter((e) => e.id.startsWith('prayagraj') || e.id.startsWith('varanasi'));
+      return events.filter((e) => e.id.startsWith('prayagraj'));
     }
     if (loc.includes('ayodhya')) {
-      return events.filter((e) => e.id.startsWith('ayodhya') || e.id.startsWith('varanasi'));
+      return events.filter((e) => e.id.startsWith('ayodhya'));
     }
     if (loc.includes('rishikesh') || loc.includes('haridwar')) {
-      return events.filter((e) => e.id.startsWith('rishikesh') || e.id.startsWith('varanasi'));
+      return events.filter((e) => e.id.startsWith('rishikesh'));
     }
     if (loc.includes('mathura') || loc.includes('vrindavan')) {
-      return events.filter((e) => e.id.startsWith('mathura') || e.id.startsWith('varanasi'));
+      return events.filter((e) => e.id.startsWith('mathura'));
     }
   }
 
@@ -531,27 +674,21 @@ function getHostSpecificPercentage(listingOrObj, basePercentage) {
     return 0;
   }
 
-  // 3. Otherwise, derive an individual host policy based on the unique property attributes
-  const idStr = String(listingOrObj._id || listingOrObj.id || listingOrObj.title || '');
+  // Discounts stay discounts (e.g. -25%, -30%, -35%)
+  if (basePercentage < 0) return basePercentage;
+
+  // 3. Otherwise, derive an individual host policy with subtle pricing autonomy (+/- 3%) around the base percentage
+  const idStr = String(listingOrObj._id || listingOrObj.id || listingOrObj.title || 'stay');
   let hash = 0;
   for (let i = 0; i < idStr.length; i++) {
     hash = (hash * 31 + idStr.charCodeAt(i)) % 1000;
   }
 
-  // Some hosts maintain 0% surge (no markup during peak events)
-  if (hash % 7 === 0) return 0;
-
-  // Some hosts offer promotional discounts (-5% to -10%)
-  if (hash % 19 === 0) return -10;
-
-  // Discounts stay discounts
-  if (basePercentage < 0) return basePercentage;
-
-  // Variety around the base percentage: e.g. base 35% -> 28%, 32%, 35%, 38%
-  const offset = ((hash % 11) - 5); // -5 to +5
+  // Subtle variety around base surge (e.g. base 35% -> 32%, 34%, 35%, 37%) - never drops to 0 during peak festivals
+  const offset = ((hash % 7) - 3); // -3 to +3
   const finalPercent = basePercentage + offset;
 
-  return Math.max(5, Math.min(45, finalPercent));
+  return Math.max(5, Math.min(50, finalPercent));
 }
 
 /**
@@ -614,40 +751,55 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
       }
     }
 
-    // Strict Cultural Guard: If query is for a national holiday but city does NOT celebrate it with travel surges
+    // Strict Cultural Guard & National Holiday Routing: Match authentic city festival
     if (!matchedFestival) {
       if (q.includes('diwali') || q.includes('deepawali')) {
-        if (cityKey === 'spiritual' && (loc.includes('varanasi') || loc.includes('kashi'))) {
-          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
-        } else if (cityKey === 'spiritual' && loc.includes('ayodhya')) {
-          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
-        } else if (cityKey === 'general') {
-          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+        if (cityKey === 'spiritual') {
+          if (loc.includes('varanasi') || loc.includes('kashi')) {
+            matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali') ||
+                              DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_diwali');
+          } else if (loc.includes('rishikesh') || loc.includes('haridwar')) {
+            matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_diwali');
+          } else if (loc.includes('ayodhya')) {
+            matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
+          } else if (loc.includes('prayagraj') || loc.includes('allahabad')) {
+            matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_diwali');
+          } else if (loc.includes('mathura') || loc.includes('vrindavan')) {
+            matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_diwali');
+          } else {
+            matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali') ||
+                              FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+          }
+        } else if (cityKey === 'goa') {
+          matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_diwali') ||
+                            FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+        } else if (cityKey === 'jaipur') {
+          matchedFestival = DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_diwali') ||
+                            FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+        } else if (cityKey === 'manali') {
+          matchedFestival = DESTINATION_CALENDARS.manali.find((f) => f.id === 'manali_diwali') ||
+                            FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+        } else if (cityKey === 'kerala') {
+          matchedFestival = DESTINATION_CALENDARS.kerala.find((f) => f.id === 'kerala_diwali') ||
+                            FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
+        } else if (cityKey === 'mumbai') {
+          matchedFestival = DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_diwali') ||
+                            FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
         } else {
-          // Leisure destinations: Goa, Manali, Kerala, Jaipur, Mumbai
-          isGenericMismatch = true;
-          mismatchEventName = 'Diwali';
+          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
         }
       } else if (q === 'holi' || q.includes('holi ') || q.startsWith('holi') || q.includes(' holi')) {
         if (cityKey === 'spiritual' && (loc.includes('mathura') || loc.includes('vrindavan'))) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_braj_holi');
-        } else if (cityKey === 'general') {
-          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'holi');
         } else {
-          isGenericMismatch = true;
-          mismatchEventName = 'Holi';
+          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'holi');
         }
       } else if (q.includes('raksha') || q.includes('rakhi') || q === 'rakshabandhan') {
-        if (cityKey === 'general') {
-          matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'rakshabandhan');
-        } else {
-          isGenericMismatch = true;
-          mismatchEventName = 'Raksha Bandhan';
-        }
+        matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === 'rakshabandhan');
       } else if (q.includes('new year') || q.includes('nye') || q.includes('christmas')) {
         if (cityKey === 'goa') {
           matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_sunburn');
-        } else if (cityKey === 'general') {
+        } else {
           matchedFestival = FESTIVALS_CATALOG.find((f) => f.id === (q.includes('new year') || q.includes('nye') ? 'new_year' : 'christmas'));
         }
       }
@@ -668,6 +820,8 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
         matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_carnival');
       } else if (month === 2 && day >= 12 && day <= 28) {
         matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_shigmo');
+      } else if ((month === 9 && day >= 18) || (month === 10 && day <= 10)) {
+        matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_diwali');
       } else if (month >= 5 && month <= 8) {
         matchedFestival = DESTINATION_CALENDARS.goa.find((f) => f.id === 'goa_monsoon');
       } else if (month === 9 || (month === 10 && day <= 15)) {
@@ -676,6 +830,8 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
     } else if (cityKey === 'jaipur') {
       if (month === 0 && day >= 12 && day <= 30) {
         matchedFestival = DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_jlf');
+      } else if ((month === 9 && day >= 18) || (month === 10 && day <= 10)) {
+        matchedFestival = DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_diwali');
       } else if (month === 10 && day <= 15) {
         matchedFestival = DESTINATION_CALENDARS.jaipur.find((f) => f.id === 'jaipur_pushkar');
       } else if (month >= 10 || month <= 1) {
@@ -690,6 +846,8 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
         matchedFestival = DESTINATION_CALENDARS.manali.find((f) => f.id === 'manali_winter_carnival');
       } else if (month >= 4 && month <= 5) {
         matchedFestival = DESTINATION_CALENDARS.manali.find((f) => f.id === 'manali_summer_escape');
+      } else if ((month === 9 && day >= 18) || (month === 10 && day <= 10)) {
+        matchedFestival = DESTINATION_CALENDARS.manali.find((f) => f.id === 'manali_diwali');
       } else if (month === 9 && day >= 8 && day <= 25) {
         matchedFestival = DESTINATION_CALENDARS.manali.find((f) => f.id === 'manali_kullu_dussehra');
       } else if (month === 8) {
@@ -700,6 +858,8 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
     } else if (cityKey === 'kerala') {
       if ((month === 7 && day >= 15) || (month === 8 && day <= 15)) {
         matchedFestival = DESTINATION_CALENDARS.kerala.find((f) => f.id === 'kerala_onam');
+      } else if ((month === 9 && day >= 18) || (month === 10 && day <= 10)) {
+        matchedFestival = DESTINATION_CALENDARS.kerala.find((f) => f.id === 'kerala_diwali');
       } else if (month >= 10 || month <= 1) {
         matchedFestival = DESTINATION_CALENDARS.kerala.find((f) => f.id === 'kerala_winter_backwaters');
       } else if (month === 5 || month === 6) {
@@ -708,6 +868,8 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
     } else if (cityKey === 'mumbai') {
       if (month === 8 && day >= 1 && day <= 15) {
         matchedFestival = DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_ganeshotsav');
+      } else if ((month === 9 && day >= 18) || (month === 10 && day <= 10)) {
+        matchedFestival = DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_diwali');
       } else if (month === 6 || month === 7) {
         matchedFestival = DESTINATION_CALENDARS.mumbai.find((f) => f.id === 'mumbai_monsoon_ghats');
       } else if (month >= 10 || month <= 1) {
@@ -715,34 +877,50 @@ function getFestivalPricing(listingOrLocation = '', checkInDate = null, festival
       }
     } else if (cityKey === 'spiritual') {
       if (loc.includes('varanasi') || loc.includes('kashi')) {
-        if ((month === 10 && day >= 8 && day <= 28) || (month === 9 && day >= 25)) {
-          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
-        } else if ((month === 1 && day >= 15) || (month === 2 && day <= 10)) {
+        // Continuous Deepawali & Dev Deepawali season (Oct 15 through Nov 30)
+        if ((month === 9 && day >= 15) || (month === 10 && day <= 30)) {
+          matchedFestival = (month === 10 && day >= 8)
+            ? DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali')
+            : (DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_diwali') ||
+               DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali'));
+        } else if ((month === 1 && day >= 15) || (month === 2 && day <= 10) || (month === 6 && day >= 15) || (month === 7 && day <= 15)) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_maha_shivratri');
+        }
+      } else if (loc.includes('rishikesh') || loc.includes('haridwar')) {
+        // Continuous Deepawali & Holy Ganga festivities (Oct 15 through Nov 20)
+        if ((month === 9 && day >= 15) || (month === 10 && day <= 20)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_diwali');
+        } else if (month === 2 && day <= 20) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_yoga');
+        } else if ((month === 8 && day >= 20) || (month === 9 && day < 15)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_autumn_adventure');
+        } else if ((month === 4 && day >= 20) || (month === 5 && day <= 15)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_ganga_dussehra');
         }
       } else if (loc.includes('prayagraj') || loc.includes('allahabad')) {
         if (month === 0 || (month === 1 && day <= 28)) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_magh_mela');
+        } else if ((month === 9 && day >= 15) || (month === 10 && day <= 20)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_diwali');
         }
       } else if (loc.includes('ayodhya')) {
-        if ((month === 9 && day >= 20) || (month === 10 && day <= 10)) {
+        if ((month === 9 && day >= 15) || (month === 10 && day <= 15)) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
         } else if (month === 2 && day >= 20 || (month === 3 && day <= 10)) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'ayodhya_deepotsav');
-        }
-      } else if (loc.includes('rishikesh') || loc.includes('haridwar')) {
-        if (month === 2 && day <= 20) {
-          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'rishikesh_yoga');
         }
       } else if (loc.includes('mathura') || loc.includes('vrindavan')) {
         if (month === 2 && day >= 5 && day <= 25) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_braj_holi');
         } else if (month === 7 && day >= 10 && day <= 31) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_braj_holi');
+        } else if ((month === 9 && day >= 18) || (month === 10 && day <= 15)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'mathura_diwali');
         }
       } else {
-        if ((month === 10 && day >= 5) || (month === 9 && day >= 25)) {
-          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali');
+        if ((month === 9 && day >= 15) || (month === 10 && day <= 30)) {
+          matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'varanasi_dev_deepawali') ||
+                            FESTIVALS_CATALOG.find((f) => f.id === 'diwali');
         } else if (month === 0 || month === 1) {
           matchedFestival = DESTINATION_CALENDARS.spiritual.find((f) => f.id === 'prayagraj_magh_mela');
         }

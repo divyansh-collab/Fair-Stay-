@@ -41,6 +41,7 @@ router.get('/listings', async (req, res) => {
       filter.category = category;
     }
 
+    let detectedFestival = req.query.festival || null;
     const locationQuery = location || destination;
     if (locationQuery) {
       filter.$or = [
@@ -48,11 +49,26 @@ router.get('/listings', async (req, res) => {
         { country: { $regex: locationQuery.trim(), $options: 'i' } },
       ];
     } else if (search) {
-      filter.$or = [
-        { title: { $regex: search.trim(), $options: 'i' } },
-        { location: { $regex: search.trim(), $options: 'i' } },
-        { description: { $regex: search.trim(), $options: 'i' } },
-      ];
+      const searchStr = search.trim().toLowerCase();
+      const festKeywords = ['diwali', 'deepawali', 'dev deepawali', 'sunburn', 'yoga', 'carnival', 'kumbh', 'holi', 'new year', 'christmas', 'onam', 'dussehra'];
+      const matchedKw = festKeywords.find(kw => searchStr.includes(kw));
+      if (matchedKw) {
+        detectedFestival = detectedFestival || matchedKw;
+        const cleaned = searchStr.replace(new RegExp(`\\b${matchedKw}\\b`, 'gi'), '').replace(/\bin\b/gi, '').trim();
+        if (cleaned.length >= 2) {
+          filter.$or = [
+            { title: { $regex: cleaned, $options: 'i' } },
+            { location: { $regex: cleaned, $options: 'i' } },
+            { description: { $regex: cleaned, $options: 'i' } },
+          ];
+        }
+      } else {
+        filter.$or = [
+          { title: { $regex: search.trim(), $options: 'i' } },
+          { location: { $regex: search.trim(), $options: 'i' } },
+          { description: { $regex: search.trim(), $options: 'i' } },
+        ];
+      }
     }
 
     if (minPrice || maxPrice) {
@@ -71,7 +87,7 @@ router.get('/listings', async (req, res) => {
 
     const dataWithPricing = listings.map((l) => {
       const obj = l.toObject();
-      const fest = getFestivalPricing(l, dateObj, req.query.festival || null);
+      const fest = getFestivalPricing(l, dateObj, detectedFestival);
       obj.festivalPricing = {
         festivalId: fest.festivalId,
         festivalName: fest.festivalName,
@@ -280,8 +296,10 @@ router.post('/bookings', async (req, res) => {
     const keylessPin = String(Math.floor(1000 + Math.random() * 9000));
 
     const basePrice = listing.price || 3500;
-    const staySubtotal = basePrice * nights;
-    const gstRate = basePrice > 7500 ? 0.18 : (basePrice <= 1000 ? 0 : 0.12);
+    const fest = getFestivalPricing(listing, inDate);
+    const effectiveNightly = Math.round(basePrice * fest.multiplier);
+    const staySubtotal = effectiveNightly * nights;
+    const gstRate = effectiveNightly > 7500 ? 0.18 : (effectiveNightly <= 1000 ? 0 : 0.12);
     const gst = Math.round(staySubtotal * gstRate);
     const finalCalculated = Math.max(0, staySubtotal + gst - Number(discount || 0));
     const finalAmount = totalPrice !== undefined ? Number(totalPrice) : finalCalculated;
@@ -295,7 +313,7 @@ router.post('/bookings', async (req, res) => {
       guests: Number(guests) || 1,
       guestName: guestName.trim(),
       guestEmail: guestEmail.trim(),
-      pricePerNight: basePrice,
+      pricePerNight: effectiveNightly,
       totalPrice: finalAmount,
       status: 'confirmed',
       roomNumber,

@@ -6,7 +6,7 @@
 [![Express.js](https://img.shields.io/badge/express-4.21.2-blue.svg)](https://expressjs.com/)
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-green.svg)](https://www.mongodb.com/atlas)
 [![Google Gemini AI](https://img.shields.io/badge/Google%20Gemini-AI%20Concierge-orange.svg)](https://deepmind.google/technologies/gemini/)
-[![Tests Coverage](https://img.shields.io/badge/tests-82%2F82%20passed%20(100%25)-success.svg)](https://github.com/divyansh-collab/Fair-Stay-)
+[![Tests Coverage](https://img.shields.io/badge/tests-96%2F96%20passed%20(100%25)-success.svg)](https://github.com/divyansh-collab/Fair-Stay-)
 [![Live Deployment](https://img.shields.io/badge/Render-Live%20Production-blueviolet.svg)](https://fair-stay.onrender.com)
 
 **FairStay** is a production-ready, full-stack **MERN** (MongoDB, Express, React, Node.js) vacation rental platform engineered with signature Airbnb elegance, 3D spatial motion physics, transparent area pricing (**FairSafe™**), 100% organic Google Places photography, and an intelligent AI Trip Assistant powered by **Google Gemini 1.5 Flash**.

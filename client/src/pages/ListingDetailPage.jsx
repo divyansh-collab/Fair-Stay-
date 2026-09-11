@@ -27,6 +27,7 @@ import RoomTicketModal from '../components/RoomTicketModal';
 import ListingMap from '../components/ListingMap';
 import ReviewSection from '../components/ReviewSection';
 import DateRangePicker, { formatDisplayDate } from '../components/DateRangePicker';
+import FestivalPricingWidget from '../components/FestivalPricingWidget';
 import { toast } from 'react-hot-toast';
 
 // Tier-matched high-resolution complementary photos for 5-photo bento gallery
@@ -570,6 +571,12 @@ export default function ListingDetailPage() {
               </div>
             </div>
           </div>
+
+          {/* City-Centric Festival & Seasonal Pricing Simulator */}
+          <FestivalPricingWidget 
+            listing={listing} 
+            onPricingChange={(pred) => setSeasonalPricing(pred)} 
+          />
 
           {/* Location Map */}
           <div style={{ marginTop: '32px', marginBottom: '24px' }}>

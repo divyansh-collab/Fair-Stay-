@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, TrendingUp, TrendingDown, Info, ShieldCheck, Sparkles, Compass } from 'lucide-react';
 import api from '../services/api';
 
-export default function FestivalPricingWidget({ listing }) {
+export default function FestivalPricingWidget({ listing, onPricingChange }) {
   const [prediction, setPrediction] = useState(null);
   const [selectedFestival, setSelectedFestival] = useState('');
   const [checkInDate, setCheckInDate] = useState('');
@@ -23,6 +23,9 @@ export default function FestivalPricingWidget({ listing }) {
         checkInDate: dateVal || undefined,
       });
       setPrediction(data);
+      if (onPricingChange && data) {
+        onPricingChange(data);
+      }
     } catch (err) {
       console.error('Failed to load festival prediction:', err);
     } finally {

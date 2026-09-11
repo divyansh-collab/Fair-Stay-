@@ -84,6 +84,32 @@ async function runCityPricingTests() {
     assert(varanasiRes.percentage === 40, 'Varanasi Dev Deepawali returns +40% surge');
     assert(varanasiRes.effectivePrice === 4200, 'Varanasi Dev Deepawali effective price is 4200 (3000 + 40%)');
 
+    // 8. Spiritual Corridor: Varanasi Deepawali Festive Week (Nov 5 date check)
+    const varanasiDiwaliDate = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Varanasi&checkInDate=2026-11-05&basePrice=3000');
+    assert(varanasiDiwaliDate.success === true, 'Varanasi Deepawali date query succeeds');
+    assert(varanasiDiwaliDate.direction === 'higher', 'Varanasi Deepawali recognized as festive surge');
+    assert(varanasiDiwaliDate.percentage >= 35, 'Varanasi Deepawali returns at least +35% surge');
+    assert(varanasiDiwaliDate.effectivePrice >= 4050, 'Varanasi Deepawali effective price correctly calculated');
+
+    // 9. Spiritual Corridor: Rishikesh Deepawali (Holy Ganga Aarti Festivities)
+    const rishikeshDiwali = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Rishikesh&festival=deepawali&basePrice=3000');
+    assert(rishikeshDiwali.success === true, 'Rishikesh Deepawali query succeeds');
+    assert(rishikeshDiwali.direction === 'higher', 'Rishikesh Deepawali recognized as festive surge');
+    assert(rishikeshDiwali.percentage === 30, 'Rishikesh Deepawali returns +30% surge');
+    assert(rishikeshDiwali.effectivePrice === 3900, 'Rishikesh Deepawali effective price correctly calculated (3000 + 30% = 3900)');
+
+    // 10. Spiritual Corridor: Rishikesh Yoga Festival
+    const rishikeshYoga = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Rishikesh&festival=rishikesh_yoga&basePrice=4000');
+    assert(rishikeshYoga.success === true, 'Rishikesh Yoga Festival query succeeds');
+    assert(rishikeshYoga.percentage === 25, 'Rishikesh Yoga Festival returns +25% surge');
+    assert(rishikeshYoga.effectivePrice === 5000, 'Rishikesh Yoga Festival effective price is 5000 (4000 + 25% = 5000)');
+
+    // 11. Spiritual Corridor: Ayodhya Deepotsav
+    const ayodhyaRes = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Ayodhya&festival=ayodhya_deepotsav&basePrice=2500');
+    assert(ayodhyaRes.success === true, 'Ayodhya Deepotsav query succeeds');
+    assert(ayodhyaRes.percentage === 40, 'Ayodhya Deepotsav returns +40% surge');
+    assert(ayodhyaRes.effectivePrice === 3500, 'Ayodhya Deepotsav effective price is 3500 (2500 + 40% = 3500)');
+
     console.log('===============================================================');
     console.log(`SUMMARY: ${passed} / ${total} ASSERTIONS PASSED (100% SUCCESS)`);
     console.log('===============================================================\n');
