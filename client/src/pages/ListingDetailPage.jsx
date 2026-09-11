@@ -27,7 +27,6 @@ import RoomTicketModal from '../components/RoomTicketModal';
 import ListingMap from '../components/ListingMap';
 import ReviewSection from '../components/ReviewSection';
 import DateRangePicker, { formatDisplayDate } from '../components/DateRangePicker';
-import FestivalPricingWidget from '../components/FestivalPricingWidget';
 import { toast } from 'react-hot-toast';
 
 // Tier-matched high-resolution complementary photos for 5-photo bento gallery
@@ -572,12 +571,6 @@ export default function ListingDetailPage() {
             </div>
           </div>
 
-          {/* City-Centric Festival & Seasonal Pricing Simulator */}
-          <FestivalPricingWidget 
-            listing={listing} 
-            onPricingChange={(pred) => setSeasonalPricing(pred)} 
-          />
-
           {/* Location Map */}
           <div style={{ marginTop: '32px', marginBottom: '24px' }}>
             <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '16px' }}>
@@ -600,8 +593,8 @@ export default function ListingDetailPage() {
         </div>
 
         {/* Right Column: Sticky Booking Widget */}
-        <div className="detail-booking-column">
-          <div className="detail-booking-card">
+        <div className="detail-booking-column" style={{ position: 'relative', zIndex: isCalendarOpen ? 1001 : 10 }}>
+          <div className="detail-booking-card" style={{ zIndex: isCalendarOpen ? 1002 : 10 }}>
             {/* Price Header */}
             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '16px' }}>
               <div>

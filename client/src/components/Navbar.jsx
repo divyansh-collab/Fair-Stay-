@@ -12,16 +12,34 @@ export default function Navbar({ onSearch, currentSearch }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
+  const searchContainerRef = useRef(null);
   const { user, logout } = useAuth();
   const { theme, toggleTheme, isDark } = useTheme();
 
   useEffect(() => { setQuery(currentSearch || ''); }, [currentSearch]);
 
-  // Close dropdown on outside click
+  // Close dropdown and search suggestions on outside click or Escape key
   useEffect(() => {
-    const handler = (e) => { if (dropdownRef.current && !dropdownRef.current.contains(e.target)) setIsDropdownOpen(false); };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
+    const handleOutsideClick = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target)) {
+        setSuggestions([]);
+      }
+    };
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSuggestions([]);
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   useEffect(() => {
@@ -70,7 +88,7 @@ export default function Navbar({ onSearch, currentSearch }) {
         </Link>
 
         {/* Center Search Capsule (Airbnb Style) — hidden on mobile */}
-        <div style={{ position: 'relative', flex: '0 1 auto' }} className="nav-search-wrapper">
+        <div style={{ position: 'relative', flex: '0 1 auto' }} className="nav-search-wrapper" ref={searchContainerRef}>
           <form onSubmit={handleSearchSubmit} className="search-capsule" style={{ margin: 0 }}>
             <input
               type="text"
@@ -85,11 +103,34 @@ export default function Navbar({ onSearch, currentSearch }) {
                 fontWeight: '700',
                 fontFamily: 'inherit',
                 color: inputText,
-                width: query ? '240px' : '78px',
+                width: query ? '220px' : '78px',
                 transition: 'width 0.2s ease',
               }}
             />
-            {!query && (
+            {query ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setQuery('');
+                  setSuggestions([]);
+                  if (onSearch) onSearch('');
+                }}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  padding: '2px 4px',
+                  cursor: 'pointer',
+                  color: '#94a3b8',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+                title="Clear search"
+                aria-label="Clear search"
+              >
+                <X size={14} />
+              </button>
+            ) : (
               <>
                 <div className="search-capsule-divider" />
                 <span className="capsule-sub-text" style={{ whiteSpace: 'nowrap', fontWeight: '500' }}>Any week</span>
@@ -103,15 +144,45 @@ export default function Navbar({ onSearch, currentSearch }) {
           </form>
 
           {suggestions.length > 0 && (
-            <div style={{ position: 'absolute', top: '108%', left: 0, right: 0, background: dropBg, border: '1px solid ' + navBorder, borderRadius: '16px', boxShadow: '0 12px 28px rgba(0,0,0,0.12)', zIndex: 200, overflow: 'hidden' }}>
+            <div
+              style={{
+                position: 'absolute',
+                top: '108%',
+                left: 0,
+                right: 0,
+                background: dropBg,
+                border: '1px solid ' + navBorder,
+                borderRadius: '16px',
+                boxShadow: '0 12px 28px rgba(0,0,0,0.16)',
+                zIndex: 200,
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 14px 4px', borderBottom: '1px solid ' + navBorder }}>
+                <span style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.5px' }}>
+                  Stays matching "{query}"
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setSuggestions([])}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8', padding: '2px', display: 'flex', alignItems: 'center' }}
+                  title="Close"
+                  aria-label="Close suggestions"
+                >
+                  <X size={13} />
+                </button>
+              </div>
               {suggestions.map((item) => (
-                <div key={item._id} onClick={() => handleSelectSuggestion(item)}
+                <div
+                  key={item._id}
+                  onClick={() => handleSelectSuggestion(item)}
                   style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 16px', cursor: 'pointer', borderBottom: '1px solid ' + navBorder }}
                   onMouseEnter={(e) => (e.currentTarget.style.background = isDark ? '#0f172a' : '#f8fafc')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = dropBg)}>
+                  onMouseLeave={(e) => (e.currentTarget.style.background = dropBg)}
+                >
                   <img src={item.image?.url} alt={item.title} style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }} />
-                  <div>
-                    <div style={{ fontSize: '0.85rem', fontWeight: '600', color: navText }}>{item.title}</div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: '0.85rem', fontWeight: '600', color: navText, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</div>
                     <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{item.location} • ₹{item.price?.toLocaleString('en-IN')}/night</div>
                   </div>
                 </div>

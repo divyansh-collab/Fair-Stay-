@@ -11,7 +11,6 @@ export default function HomePage({ searchQuery, onClearSearch }) {
   const [loadingMore, setLoadingMore] = useState(false);
   const [activeCategory, setActiveCategory] = useState('');
   const [activeDestination, setActiveDestination] = useState('');
-  const [activeFestival, setActiveFestival] = useState('');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [showTax, setShowTax] = useState(false);
@@ -22,7 +21,7 @@ export default function HomePage({ searchQuery, onClearSearch }) {
   useEffect(() => {
     setPage(1);
     loadListings(1, true);
-  }, [activeCategory, activeDestination, activeFestival, searchQuery, minPrice, maxPrice]);
+  }, [activeCategory, activeDestination, searchQuery, minPrice, maxPrice]);
 
   const loadListings = async (pageNum = 1, isReset = false) => {
     if (isReset) setLoading(true);
@@ -32,7 +31,6 @@ export default function HomePage({ searchQuery, onClearSearch }) {
       const params = { page: pageNum, limit: 12 };
       if (activeCategory) params.category = activeCategory;
       if (activeDestination) params.destination = activeDestination;
-      if (activeFestival) params.festival = activeFestival;
       if (searchQuery) params.search = searchQuery;
       if (minPrice) params.minPrice = minPrice;
       if (maxPrice) params.maxPrice = maxPrice;
@@ -97,79 +95,12 @@ export default function HomePage({ searchQuery, onClearSearch }) {
 
       {/* Main Stays Container */}
       <main id="listingsGridView" className="container-custom" style={{ padding: '32px 24px 60px' }}>
-        {/* Festive Season & Dynamic Pricing Simulator Bar */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          overflowX: 'auto',
-          padding: '4px 0 18px',
-          marginBottom: '20px',
-          borderBottom: '1px solid var(--border-light)'
-        }}>
-          <span style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontSize: '0.78rem',
-            fontWeight: '800',
-            color: '#ff5a5f',
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px',
-            flexShrink: 0,
-            marginRight: '6px'
-          }}>
-            <Sparkles size={14} /> Price Season:
-          </span>
-          {[
-            { id: '', label: '🌿 Current Date / Regular', desc: 'Standard Direct Rates' },
-            { id: 'deepawali', label: '🪔 Deepawali & Diwali', desc: 'Peak Festive Surge (+25% to +40%)' },
-            { id: 'dev deepawali', label: '🪔 Dev Deepawali', desc: 'Varanasi Ghats Kartik Surge (+40%)' },
-            { id: 'sunburn', label: '🎆 Sunburn & NYE', desc: 'Goa Coastal Peak (+45%)' },
-            { id: 'winter carnival', label: '❄️ Winter Snow Peak', desc: 'Manali Alpine Peak (+35%)' },
-            { id: 'jlf', label: '📚 Jaipur Literature Fest', desc: 'Jaipur Heritage Compression (+35%)' },
-            { id: 'yoga', label: '🧘 Yoga & Ganga Fest', desc: 'Rishikesh Retreats (+25%)' },
-          ].map((season) => {
-            const isSelected = activeFestival === season.id;
-            return (
-              <button
-                key={season.id}
-                onClick={() => setActiveFestival(season.id)}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '7px 14px',
-                  borderRadius: '9999px',
-                  fontSize: '0.82rem',
-                  fontWeight: isSelected ? '800' : '600',
-                  background: isSelected ? '#ff5a5f' : 'var(--bg-secondary)',
-                  color: isSelected ? '#ffffff' : 'var(--text-primary)',
-                  border: isSelected ? '1px solid #ff5a5f' : '1px solid var(--border-light)',
-                  cursor: 'pointer',
-                  whiteSpace: 'nowrap',
-                  transition: 'all 0.2s ease',
-                  boxShadow: isSelected ? '0 2px 8px rgba(255, 90, 95, 0.35)' : 'none'
-                }}
-                type="button"
-                title={season.desc}
-              >
-                <span>{season.label}</span>
-              </button>
-            );
-          })}
-        </div>
-
         {/* Results Header Bar */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
           <div>
             <h2 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-primary)' }}>
               {searchQuery
                 ? `Results for "${searchQuery}"`
-                : activeFestival === 'deepawali'
-                ? 'Diwali & Deepawali Festive Stays'
-                : activeFestival === 'dev deepawali'
-                ? 'Dev Deepawali Sacred Ghat Stays'
                 : activeDestination
                 ? `Featured Stays in ${activeDestination}`
                 : activeCategory

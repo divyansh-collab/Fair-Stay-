@@ -70,8 +70,15 @@ export default function DateRangePicker({
         onClose();
       }
     };
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
@@ -161,51 +168,55 @@ export default function DateRangePicker({
         right: '0',
         background: 'var(--bg-card)',
         border: '1px solid var(--border-hover)',
-        borderRadius: '16px',
-        padding: '18px',
-        boxShadow: '0 20px 45px -8px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0,0,0,0.15)',
-        zIndex: 1050,
+        borderRadius: '20px',
+        padding: '18px 18px 16px',
+        boxShadow: '0 24px 50px -10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 90, 95, 0.18)',
+        zIndex: 10005,
         color: 'var(--text-primary)',
-        animation: 'fadeIn 0.15s ease',
-        minWidth: '300px',
+        animation: 'fadeIn 0.18s ease-out',
+        minWidth: '310px',
+        maxHeight: 'min(580px, calc(100vh - 150px))',
+        overflowY: 'auto',
       }}
     >
-      {/* Header Tabs */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', borderBottom: '1px solid var(--border-light)', paddingBottom: '12px' }}>
-        <div style={{ display: 'flex', gap: '6px' }}>
+      {/* Step Selector Tabs & Close Button */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px', borderBottom: '1px solid var(--border-light)', paddingBottom: '12px' }}>
+        <div style={{ display: 'flex', gap: '8px' }}>
           <button
             type="button"
             onClick={() => setStep('checkIn')}
             style={{
-              padding: '6px 12px',
-              borderRadius: '8px',
-              fontSize: '0.78rem',
+              padding: '7px 12px',
+              borderRadius: '10px',
+              fontSize: '0.8rem',
               fontWeight: '700',
-              border: 'none',
+              border: step === 'checkIn' ? '1px solid #ff5a5f' : '1px solid var(--border-light)',
               cursor: 'pointer',
               background: step === 'checkIn' ? '#ff5a5f' : 'var(--bg-secondary)',
               color: step === 'checkIn' ? '#ffffff' : 'var(--text-secondary)',
+              boxShadow: step === 'checkIn' ? '0 2px 8px rgba(255, 90, 95, 0.3)' : 'none',
               transition: 'all 0.15s ease',
             }}
           >
-            Check-in: {checkIn ? formatDisplayDate(checkIn) : 'Pick'}
+            Check-in: {checkIn ? formatDisplayDate(checkIn) : 'Pick date'}
           </button>
           <button
             type="button"
             onClick={() => setStep('checkOut')}
             style={{
-              padding: '6px 12px',
-              borderRadius: '8px',
-              fontSize: '0.78rem',
+              padding: '7px 12px',
+              borderRadius: '10px',
+              fontSize: '0.8rem',
               fontWeight: '700',
-              border: 'none',
+              border: step === 'checkOut' ? '1px solid #ff5a5f' : '1px solid var(--border-light)',
               cursor: 'pointer',
               background: step === 'checkOut' ? '#ff5a5f' : 'var(--bg-secondary)',
               color: step === 'checkOut' ? '#ffffff' : 'var(--text-secondary)',
+              boxShadow: step === 'checkOut' ? '0 2px 8px rgba(255, 90, 95, 0.3)' : 'none',
               transition: 'all 0.15s ease',
             }}
           >
-            Check-out: {checkOut ? formatDisplayDate(checkOut) : 'Pick'}
+            Check-out: {checkOut ? formatDisplayDate(checkOut) : 'Pick date'}
           </button>
         </div>
 
@@ -213,77 +224,98 @@ export default function DateRangePicker({
           type="button"
           onClick={onClose}
           style={{
-            background: 'none',
-            border: 'none',
+            background: 'var(--bg-secondary)',
+            border: '1px solid var(--border-light)',
             cursor: 'pointer',
             color: 'var(--text-secondary)',
-            padding: '4px',
+            width: '30px',
+            height: '30px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             borderRadius: '50%',
+            transition: 'all 0.15s ease',
           }}
+          title="Close calendar"
           aria-label="Close calendar"
         >
-          <X size={18} />
+          <X size={16} />
         </button>
       </div>
 
-      {/* Month Navigator */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', padding: '0 4px' }}>
-        <span style={{ fontSize: '0.98rem', fontWeight: '800', letterSpacing: '-0.2px' }}>
-          {MONTH_NAMES[currentMonth]} {currentYear}
-        </span>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <button
-            type="button"
-            onClick={prevMonth}
-            disabled={isPrevDisabled}
-            style={{
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              border: '1px solid var(--border-light)',
-              background: 'var(--bg-card)',
-              color: isPrevDisabled ? 'var(--text-muted)' : 'var(--text-primary)',
-              cursor: isPrevDisabled ? 'not-allowed' : 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.15s ease',
-              opacity: isPrevDisabled ? 0.35 : 1,
-            }}
-            aria-label="Previous month"
-          >
-            <ChevronLeft size={16} />
-          </button>
-          <button
-            type="button"
-            onClick={nextMonth}
-            style={{
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              border: '1px solid var(--border-light)',
-              background: 'var(--bg-card)',
-              color: 'var(--text-primary)',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.15s ease',
-            }}
-            aria-label="Next month"
-          >
-            <ChevronRight size={16} />
-          </button>
+      {/* Prominent Month Navigator: [ < Previous Month ]  [ Month Year ]  [ Next Month > ] */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', padding: '0 4px' }}>
+        {/* Previous Month Button */}
+        <button
+          type="button"
+          onClick={prevMonth}
+          disabled={isPrevDisabled}
+          style={{
+            width: '38px',
+            height: '38px',
+            borderRadius: '12px',
+            border: '1.5px solid var(--border-hover)',
+            background: 'var(--bg-secondary)',
+            color: isPrevDisabled ? 'var(--text-muted)' : 'var(--text-primary)',
+            cursor: isPrevDisabled ? 'not-allowed' : 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'all 0.15s ease',
+            opacity: isPrevDisabled ? 0.3 : 1,
+          }}
+          title="Previous month"
+          aria-label="Previous month"
+        >
+          <ChevronLeft size={20} strokeWidth={2.5} />
+        </button>
+
+        {/* Current Month & Year Display */}
+        <div style={{ textAlign: 'center' }}>
+          <span style={{ fontSize: '1.05rem', fontWeight: '800', letterSpacing: '-0.3px', color: 'var(--text-primary)' }}>
+            {MONTH_NAMES[currentMonth]} {currentYear}
+          </span>
         </div>
+
+        {/* Forward / Next Month Button (High contrast, signature coral highlight) */}
+        <button
+          type="button"
+          onClick={nextMonth}
+          style={{
+            width: '38px',
+            height: '38px',
+            borderRadius: '12px',
+            border: '1.5px solid #ff5a5f',
+            background: 'rgba(255, 90, 95, 0.12)',
+            color: '#ff5a5f',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'all 0.15s ease',
+            boxShadow: '0 2px 10px rgba(255, 90, 95, 0.25)',
+          }}
+          title="Next month (Forward)"
+          aria-label="Next month"
+        >
+          <ChevronRight size={20} strokeWidth={2.5} />
+        </button>
       </div>
 
-      {/* Weekday headers */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', textAlign: 'center', marginBottom: '6px' }}>
+      {/* Weekday Column Headers */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', textAlign: 'center', marginBottom: '8px' }}>
         {WEEKDAYS.map((wd) => (
-          <div key={wd} style={{ fontSize: '0.7rem', fontWeight: '800', color: 'var(--text-secondary)', padding: '4px 0' }}>
+          <div
+            key={wd}
+            style={{
+              fontSize: '0.72rem',
+              fontWeight: '800',
+              color: 'var(--text-secondary)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              padding: '2px 0'
+            }}
+          >
             {wd}
           </div>
         ))}
@@ -295,7 +327,7 @@ export default function DateRangePicker({
         onMouseLeave={() => setHoverDate(null)}
       >
         {Array.from({ length: firstDayOfMonth }).map((_, i) => (
-          <div key={`empty-${i}`} style={{ height: '34px' }} />
+          <div key={`empty-${i}`} style={{ height: '36px' }} />
         ))}
 
         {Array.from({ length: daysInMonth }).map((_, i) => {
@@ -320,6 +352,7 @@ export default function DateRangePicker({
           let color = 'var(--text-primary)';
           let borderRadius = '8px';
           let fontWeight = '500';
+          let boxShadow = 'none';
 
           if (isPast) {
             color = 'var(--text-muted)';
@@ -330,8 +363,9 @@ export default function DateRangePicker({
             fontWeight = '800';
             borderRadius = isCheckIn ? '10px 0 0 10px' : '0 10px 10px 0';
             if (isCheckIn && isCheckOut) borderRadius = '10px';
+            boxShadow = '0 2px 8px rgba(255, 90, 95, 0.4)';
           } else if (isInRange) {
-            bg = 'rgba(255, 90, 95, 0.12)';
+            bg = 'rgba(255, 90, 95, 0.14)';
             color = '#ff5a5f';
             fontWeight = '700';
             borderRadius = '0';
@@ -345,12 +379,12 @@ export default function DateRangePicker({
               onClick={() => handleDateClick(day)}
               onMouseEnter={() => !isPast && setHoverDate(dateObj)}
               style={{
-                height: '34px',
-                border: isToday && !isCheckIn && !isCheckOut ? '1px dashed #ff5a5f' : 'none',
+                height: '36px',
+                border: isToday && !isCheckIn && !isCheckOut ? '1.5px dashed #ff5a5f' : 'none',
                 background: bg,
                 color: color,
                 borderRadius: borderRadius,
-                fontSize: '0.82rem',
+                fontSize: '0.84rem',
                 fontWeight: fontWeight,
                 cursor: isPast ? 'not-allowed' : 'pointer',
                 display: 'flex',
@@ -360,6 +394,7 @@ export default function DateRangePicker({
                 outline: 'none',
                 padding: 0,
                 opacity: isPast ? 0.35 : 1,
+                boxShadow: boxShadow,
               }}
             >
               {day}
@@ -368,21 +403,23 @@ export default function DateRangePicker({
         })}
       </div>
 
-      {/* Quick Suggestions */}
-      <div style={{ display: 'flex', gap: '6px', marginTop: '12px', paddingTop: '10px', borderTop: '1px solid var(--border-light)', overflowX: 'auto' }}>
+      {/* Quick Selection Presets */}
+      <div style={{ display: 'flex', gap: '6px', marginTop: '14px', paddingTop: '10px', borderTop: '1px solid var(--border-light)', overflowX: 'auto', scrollbarWidth: 'none' }}>
         <button
           type="button"
           onClick={() => handleSelectQuick(0, 2)}
           style={{
-            padding: '4px 10px',
+            flexShrink: 0,
+            padding: '5px 12px',
             borderRadius: '9999px',
             border: '1px solid var(--border-light)',
             background: 'var(--bg-secondary)',
-            fontSize: '0.72rem',
-            fontWeight: '600',
+            fontSize: '0.74rem',
+            fontWeight: '700',
             color: 'var(--text-secondary)',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
+            transition: 'all 0.15s ease',
           }}
         >
           ⚡ This Weekend (2n)
@@ -391,27 +428,48 @@ export default function DateRangePicker({
           type="button"
           onClick={() => handleSelectQuick(7, 3)}
           style={{
-            padding: '4px 10px',
+            flexShrink: 0,
+            padding: '5px 12px',
             borderRadius: '9999px',
             border: '1px solid var(--border-light)',
             background: 'var(--bg-secondary)',
-            fontSize: '0.72rem',
-            fontWeight: '600',
+            fontSize: '0.74rem',
+            fontWeight: '700',
             color: 'var(--text-secondary)',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
+            transition: 'all 0.15s ease',
           }}
         >
           🌴 Next Week (3n)
         </button>
+        <button
+          type="button"
+          onClick={() => handleSelectQuick(0, 7)}
+          style={{
+            flexShrink: 0,
+            padding: '5px 12px',
+            borderRadius: '9999px',
+            border: '1px solid var(--border-light)',
+            background: 'var(--bg-secondary)',
+            fontSize: '0.74rem',
+            fontWeight: '700',
+            color: 'var(--text-secondary)',
+            cursor: 'pointer',
+            whiteSpace: 'nowrap',
+            transition: 'all 0.15s ease',
+          }}
+        >
+          ✨ 7 Nights
+        </button>
       </div>
 
       {/* Bottom Summary & Apply Bar */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', paddingTop: '10px', borderTop: '1px solid var(--border-light)' }}>
-        <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>
-          <strong style={{ color: 'var(--text-primary)' }}>{nightsCount} {nightsCount === 1 ? 'night' : 'nights'}</strong> stay
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '14px', paddingTop: '12px', borderTop: '1px solid var(--border-light)' }}>
+        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+          <strong style={{ color: 'var(--text-primary)', fontSize: '0.88rem' }}>{nightsCount} {nightsCount === 1 ? 'night' : 'nights'}</strong> stay
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <button
             type="button"
             onClick={() => {
@@ -424,11 +482,12 @@ export default function DateRangePicker({
             style={{
               background: 'transparent',
               border: 'none',
-              fontSize: '0.76rem',
+              fontSize: '0.78rem',
               fontWeight: '700',
               color: 'var(--text-secondary)',
               textDecoration: 'underline',
               cursor: 'pointer',
+              padding: '4px 6px',
             }}
           >
             Reset
@@ -437,20 +496,22 @@ export default function DateRangePicker({
             type="button"
             onClick={onClose}
             style={{
-              padding: '6px 14px',
-              borderRadius: '8px',
+              padding: '8px 18px',
+              borderRadius: '10px',
               background: '#ff5a5f',
               color: '#ffffff',
               border: 'none',
-              fontSize: '0.78rem',
-              fontWeight: '700',
+              fontSize: '0.82rem',
+              fontWeight: '800',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
-              gap: '4px',
+              gap: '6px',
+              boxShadow: '0 4px 14px rgba(255, 90, 95, 0.35)',
+              transition: 'all 0.15s ease',
             }}
           >
-            <Check size={14} /> Apply Dates
+            <Check size={15} strokeWidth={2.5} /> Apply Dates
           </button>
         </div>
       </div>
