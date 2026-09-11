@@ -37,6 +37,7 @@ export default function DateRangePicker({
   isOpen,
   onClose,
   initialStep = 'checkIn',
+  style: customStyle = {},
 }) {
   const popupRef = useRef(null);
 
@@ -177,6 +178,7 @@ export default function DateRangePicker({
         minWidth: '310px',
         maxHeight: 'min(580px, calc(100vh - 150px))',
         overflowY: 'auto',
+        ...customStyle,
       }}
     >
       {/* Step Selector Tabs & Close Button */}

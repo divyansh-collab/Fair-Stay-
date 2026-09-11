@@ -31,7 +31,7 @@ async function resolveUser(req) {
 // GET /api/listings - Fetch all listings with filtering
 router.get('/listings', async (req, res) => {
   try {
-    const { category, location, minPrice, maxPrice, search, destination, page = 1, limit = 12 } = req.query;
+    const { category, location, minPrice, maxPrice, search, destination, guests, page = 1, limit = 12 } = req.query;
     const filter = {};
     const pageNum = Math.max(1, parseInt(page, 10) || 1);
     const pageSize = Math.min(48, Math.max(1, parseInt(limit, 10) || 12));
@@ -75,6 +75,13 @@ router.get('/listings', async (req, res) => {
       filter.price = {};
       if (minPrice) filter.price.$gte = Number(minPrice);
       if (maxPrice) filter.price.$lte = Number(maxPrice);
+    }
+
+    if (guests) {
+      const g = parseInt(guests, 10);
+      if (g > 0) {
+        filter.maxGuests = { $gte: g };
+      }
     }
 
     const [listings, total] = await Promise.all([
@@ -186,16 +193,21 @@ router.get('/listings/:id', async (req, res) => {
 router.get(['/destinations', '/corridors'], async (req, res) => {
   try {
     const destinations = [
-      { name: 'Goa', title: 'Sun, Sand & Beachfront Villas', key: 'goa', state: 'Goa' },
+      { name: 'Prayagraj', title: 'Triveni Sangam & Sacred Spiritual Stays', key: 'prayagraj', state: 'Uttar Pradesh' },
+      { name: 'Haridwar', title: 'Sacred Ganga Ghats & Ashram Sanctuaries', key: 'haridwar', state: 'Uttarakhand' },
+      { name: 'Rishikesh', title: 'Himalayan River & Yoga Retreats', key: 'rishikesh', state: 'Uttarakhand' },
       { name: 'Manali', title: 'Snowy Peaks & Alpine Chalets', key: 'manali', state: 'Himachal Pradesh' },
+      { name: 'Varanasi', title: 'Ancient Ghats & Heritage Stays', key: 'varanasi', state: 'Uttar Pradesh' },
+      { name: 'Goa', title: 'Sun, Sand & Beachfront Villas', key: 'goa', state: 'Goa' },
       { name: 'Jaipur', title: 'Pink City & Royal Havelis', key: 'jaipur', state: 'Rajasthan' },
+      { name: 'Shimla', title: 'Pine Valleys & Colonial Retreats', key: 'shimla', state: 'Himachal Pradesh' },
       { name: 'Udaipur', title: 'City of Lakes & Boutique Resorts', key: 'udaipur', state: 'Rajasthan' },
+      { name: 'Munnar', title: 'Tea Plantations & Misty Mountains', key: 'munnar', state: 'Kerala' },
+      { name: 'Ayodhya', title: 'Ram Mandir & Sacred Saryu Stays', key: 'ayodhya', state: 'Uttar Pradesh' },
+      { name: 'Mathura', title: 'Braj & Krishna Janmabhoomi Stays', key: 'mathura', state: 'Uttar Pradesh' },
       { name: 'Mumbai', title: 'Modern City Lofts & Apartments', key: 'mumbai', state: 'Maharashtra' },
       { name: 'Bengaluru', title: 'Tech City Workations & Lofts', key: 'bengaluru', state: 'Karnataka' },
-      { name: 'Munnar', title: 'Tea Plantations & Misty Mountains', key: 'munnar', state: 'Kerala' },
       { name: 'Alleppey', title: 'Backwater Houseboats & Canals', key: 'alleppey', state: 'Kerala' },
-      { name: 'Varanasi', title: 'Ancient Ghats & Heritage Stays', key: 'varanasi', state: 'Uttar Pradesh' },
-      { name: 'Rishikesh', title: 'Himalayan River & Yoga Retreats', key: 'rishikesh', state: 'Uttarakhand' },
     ];
 
     const results = await Promise.all(
@@ -211,6 +223,7 @@ router.get(['/destinations', '/corridors'], async (req, res) => {
       success: true,
       destinations: results,
       corridors: results, // backwards compatibility
+      data: results,
     });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });

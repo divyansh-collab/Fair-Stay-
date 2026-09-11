@@ -3,9 +3,10 @@ import Hero from '../components/Hero';
 import CategoryRail from '../components/CategoryRail';
 import StayCard from '../components/StayCard';
 import api from '../services/api';
-import { Sparkles, MapPin, Frown, Compass, Loader2, ArrowUp, CheckCircle2 } from 'lucide-react';
+import { Sparkles, MapPin, Frown, Compass, Loader2, ArrowUp, CheckCircle2, Calendar as CalendarIcon, Users } from 'lucide-react';
+import { formatDisplayDate } from '../components/DateRangePicker';
 
-export default function HomePage({ searchQuery, onClearSearch }) {
+export default function HomePage({ searchQuery = '', searchFilter = {}, onClearSearch }) {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -18,10 +19,27 @@ export default function HomePage({ searchQuery, onClearSearch }) {
   const [totalPages, setTotalPages] = useState(1);
   const [totalListings, setTotalListings] = useState(0);
 
+  const effectiveDestination = searchFilter.destination || activeDestination;
+  const effectiveSearch = searchFilter.search || (typeof searchQuery === 'string' ? searchQuery : '');
+  const effectiveCheckIn = searchFilter.checkIn || '';
+  const effectiveCheckOut = searchFilter.checkOut || '';
+  const effectiveGuests = searchFilter.guests || 1;
+
   useEffect(() => {
     setPage(1);
     loadListings(1, true);
-  }, [activeCategory, activeDestination, searchQuery, minPrice, maxPrice]);
+  }, [
+    activeCategory,
+    activeDestination,
+    searchFilter.destination,
+    searchFilter.search,
+    searchFilter.checkIn,
+    searchFilter.checkOut,
+    searchFilter.guests,
+    searchQuery,
+    minPrice,
+    maxPrice
+  ]);
 
   const loadListings = async (pageNum = 1, isReset = false) => {
     if (isReset) setLoading(true);
@@ -30,8 +48,11 @@ export default function HomePage({ searchQuery, onClearSearch }) {
     try {
       const params = { page: pageNum, limit: 12 };
       if (activeCategory) params.category = activeCategory;
-      if (activeDestination) params.destination = activeDestination;
-      if (searchQuery) params.search = searchQuery;
+      if (effectiveDestination) params.destination = effectiveDestination;
+      if (effectiveSearch) params.search = effectiveSearch;
+      if (effectiveGuests > 1) params.guests = effectiveGuests;
+      if (effectiveCheckIn) params.checkIn = effectiveCheckIn;
+      if (effectiveCheckOut) params.checkOut = effectiveCheckOut;
       if (minPrice) params.minPrice = minPrice;
       if (maxPrice) params.maxPrice = maxPrice;
 
@@ -73,7 +94,16 @@ export default function HomePage({ searchQuery, onClearSearch }) {
   };
 
   // Only show hero when no filters or search are active
-  const isFilterActive = Boolean(activeCategory || activeDestination || searchQuery || minPrice || maxPrice);
+  const isFilterActive = Boolean(
+    activeCategory ||
+    effectiveDestination ||
+    effectiveSearch ||
+    (effectiveGuests && effectiveGuests > 1) ||
+    effectiveCheckIn ||
+    effectiveCheckOut ||
+    minPrice ||
+    maxPrice
+  );
 
   return (
     <div>
@@ -99,10 +129,10 @@ export default function HomePage({ searchQuery, onClearSearch }) {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
           <div>
             <h2 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-primary)' }}>
-              {searchQuery
-                ? `Results for "${searchQuery}"`
-                : activeDestination
-                ? `Featured Stays in ${activeDestination}`
+              {effectiveDestination
+                ? `Stays in ${effectiveDestination}${effectiveGuests > 1 ? ` for ${effectiveGuests} guests` : ''}`
+                : effectiveSearch
+                ? `Results for "${effectiveSearch}"`
                 : activeCategory
                 ? `${activeCategory} Stays`
                 : 'Explore Verified Stays across India'}
@@ -115,37 +145,83 @@ export default function HomePage({ searchQuery, onClearSearch }) {
           {/* Active Filter Clear Tags */}
           {isFilterActive && (
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-              {activeDestination && (
+              {effectiveDestination && (
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#e0f2fe', color: '#0284c7', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
-                  <MapPin size={12} /> {activeDestination}
-                  <button onClick={() => setActiveDestination('')} style={{ color: '#0284c7', marginLeft: '4px', cursor: 'pointer' }}>✕</button>
+                  <MapPin size={12} /> {effectiveDestination}
+                  <button
+                    onClick={() => {
+                      setActiveDestination('');
+                      if (onClearSearch) onClearSearch('destination');
+                    }}
+                    style={{ color: '#0284c7', marginLeft: '4px', cursor: 'pointer', background: 'none', border: 'none' }}
+                  >
+                    ✕
+                  </button>
+                </span>
+              )}
+              {(effectiveCheckIn || effectiveCheckOut) && (
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#f0fdf4', color: '#16a34a', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
+                  <CalendarIcon size={12} /> {effectiveCheckIn ? formatDisplayDate(effectiveCheckIn).replace(/,\s*\d{4}/, '') : 'Any'} – {effectiveCheckOut ? formatDisplayDate(effectiveCheckOut).replace(/,\s*\d{4}/, '') : 'Any'}
+                  <button
+                    onClick={() => {
+                      if (onClearSearch) {
+                        onClearSearch('checkIn');
+                        onClearSearch('checkOut');
+                      }
+                    }}
+                    style={{ color: '#16a34a', marginLeft: '4px', cursor: 'pointer', background: 'none', border: 'none' }}
+                  >
+                    ✕
+                  </button>
+                </span>
+              )}
+              {effectiveGuests > 1 && (
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#fdf4ff', color: '#c026d3', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
+                  <Users size={12} /> {effectiveGuests} guests
+                  <button
+                    onClick={() => {
+                      if (onClearSearch) onClearSearch('guests');
+                    }}
+                    style={{ color: '#c026d3', marginLeft: '4px', cursor: 'pointer', background: 'none', border: 'none' }}
+                  >
+                    ✕
+                  </button>
                 </span>
               )}
               {activeCategory && (
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#fef3c7', color: '#d97706', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
                   {activeCategory}
-                  <button onClick={() => setActiveCategory('')} style={{ color: '#d97706', marginLeft: '4px', cursor: 'pointer' }}>✕</button>
+                  <button onClick={() => setActiveCategory('')} style={{ color: '#d97706', marginLeft: '4px', cursor: 'pointer', background: 'none', border: 'none' }}>✕</button>
                 </span>
               )}
               {(minPrice || maxPrice) && (
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#dcfce7', color: '#15803d', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
                   ₹{minPrice || 0} - ₹{maxPrice || 'Any'}
-                  <button onClick={() => { setMinPrice(''); setMaxPrice(''); }} style={{ color: '#15803d', marginLeft: '4px', cursor: 'pointer' }}>✕</button>
+                  <button onClick={() => { setMinPrice(''); setMaxPrice(''); }} style={{ color: '#15803d', marginLeft: '4px', cursor: 'pointer', background: 'none', border: 'none' }}>✕</button>
                 </span>
               )}
-              {searchQuery && (
+              {effectiveSearch && (
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#ffe4e6', color: '#e11d48', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
-                  "{searchQuery}"
-                  <button onClick={onClearSearch} style={{ color: '#e11d48', marginLeft: '4px', cursor: 'pointer' }}>✕</button>
+                  "{effectiveSearch}"
+                  <button
+                    onClick={() => {
+                      if (onClearSearch) onClearSearch('search');
+                    }}
+                    style={{ color: '#e11d48', marginLeft: '4px', cursor: 'pointer', background: 'none', border: 'none' }}
+                  >
+                    ✕
+                  </button>
                 </span>
               )}
               <button
                 onClick={() => {
                   setActiveDestination('');
                   setActiveCategory('');
-                  onClearSearch && onClearSearch();
+                  setMinPrice('');
+                  setMaxPrice('');
+                  if (onClearSearch) onClearSearch();
                 }}
-                style={{ fontSize: '0.78rem', color: '#ff5a5f', fontWeight: '700', textDecoration: 'underline', cursor: 'pointer' }}
+                style={{ fontSize: '0.78rem', color: '#ff5a5f', fontWeight: '700', textDecoration: 'underline', cursor: 'pointer', background: 'none', border: 'none' }}
               >
                 Reset all
               </button>

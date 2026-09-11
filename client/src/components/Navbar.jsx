@@ -1,36 +1,69 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Search, Globe, Menu, User, Sparkles, Luggage, Sun, Moon, X, Shield } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Search, Globe, Menu, User, Sparkles, Luggage, Sun, Moon, X, Shield, MapPin, Calendar as CalendarIcon, Users, Check } from 'lucide-react';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
+import DateRangePicker, { formatDisplayDate } from './DateRangePicker';
 
-export default function Navbar({ onSearch, currentSearch }) {
-  const [query, setQuery] = useState(currentSearch || '');
-  const [suggestions, setSuggestions] = useState([]);
+const POPULAR_DESTINATIONS = [
+  { name: 'Prayagraj', state: 'Uttar Pradesh', desc: 'Triveni Sangam & Sacred Ghats', icon: '🕉️' },
+  { name: 'Haridwar', state: 'Uttarakhand', desc: 'Ganga Aarti & Ashram Sanctuaries', icon: '🌊' },
+  { name: 'Rishikesh', state: 'Uttarakhand', desc: 'Yoga Capital & River Retreats', icon: '🧘' },
+  { name: 'Manali', state: 'Himachal Pradesh', desc: 'Snowy Chalets & Alpine Valleys', icon: '🏔️' },
+  { name: 'Varanasi', state: 'Uttar Pradesh', desc: 'Dashashwamedh Ghat & Kashi Stays', icon: '🪔' },
+  { name: 'Goa', state: 'Goa', desc: 'Beachfront Villas & Coastal Sunburn', icon: '🌴' },
+  { name: 'Jaipur', state: 'Rajasthan', desc: 'Royal Havelis & Pink City Palaces', icon: '🏰' },
+  { name: 'Shimla', state: 'Himachal Pradesh', desc: 'Colonial Hills & Pine Ridges', icon: '❄️' },
+  { name: 'Udaipur', state: 'Rajasthan', desc: 'Pichola Lakefront Luxury', icon: '🛶' },
+  { name: 'Munnar', state: 'Kerala', desc: 'Tea Plantations & Misty Mountains', icon: '🌿' },
+  { name: 'Ayodhya', state: 'Uttar Pradesh', desc: 'Ram Mandir & Sacred Saryu Stays', icon: '🛕' },
+  { name: 'Mathura', state: 'Uttar Pradesh', desc: 'Braj & Krishna Janmabhoomi Stays', icon: '🦚' },
+  { name: 'Mumbai', state: 'Maharashtra', desc: 'Modern City Lofts & Sea-Facing Suites', icon: '🏙️' },
+];
+
+export default function Navbar({ onSearch, currentFilters = {}, currentSearch = '' }) {
+  const [activeDropdown, setActiveDropdown] = useState(null); // 'location' | 'dates' | 'guests' | null
+  const [destination, setDestination] = useState(currentFilters.destination || '');
+  const [locationInput, setLocationInput] = useState(currentFilters.destination || currentSearch || '');
+  const [checkIn, setCheckIn] = useState(currentFilters.checkIn || '');
+  const [checkOut, setCheckOut] = useState(currentFilters.checkOut || '');
+  const [adults, setAdults] = useState(Math.max(1, currentFilters.guests || 1));
+  const [children, setChildren] = useState(0);
+  const [destSuggestions, setDestSuggestions] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navigate = useNavigate();
+  const routeLocation = useLocation();
   const dropdownRef = useRef(null);
   const searchContainerRef = useRef(null);
   const { user, logout } = useAuth();
   const { theme, toggleTheme, isDark } = useTheme();
 
-  useEffect(() => { setQuery(currentSearch || ''); }, [currentSearch]);
+  const totalGuests = adults + children;
 
-  // Close dropdown and search suggestions on outside click or Escape key
+  useEffect(() => {
+    if (currentFilters.destination !== undefined) setDestination(currentFilters.destination);
+    if (currentFilters.checkIn !== undefined) setCheckIn(currentFilters.checkIn);
+    if (currentFilters.checkOut !== undefined) setCheckOut(currentFilters.checkOut);
+    if (currentFilters.guests) setAdults(currentFilters.guests);
+    if (currentSearch) setLocationInput(currentSearch);
+  }, [currentFilters, currentSearch]);
+
+  // Close dropdown and search popovers on outside click or Escape key
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsDropdownOpen(false);
       }
       if (searchContainerRef.current && !searchContainerRef.current.contains(e.target)) {
-        setSuggestions([]);
+        setActiveDropdown(null);
       }
     };
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
-        setSuggestions([]);
+        setActiveDropdown(null);
         setIsDropdownOpen(false);
       }
     };
@@ -42,34 +75,61 @@ export default function Navbar({ onSearch, currentSearch }) {
     };
   }, []);
 
+  // Live auto-suggest when typing in location input
   useEffect(() => {
-    if (!query.trim() || query.length < 2) { setSuggestions([]); return; }
+    if (!locationInput.trim() || locationInput.length < 2) {
+      setDestSuggestions([]);
+      return;
+    }
     const timer = setTimeout(async () => {
       try {
-        const data = await api.searchListings(query);
-        if (data && data.results) setSuggestions(data.results.slice(0, 5));
-      } catch (err) { console.error('Auto-suggest error:', err); }
+        const data = await api.searchListings(locationInput);
+        if (data && data.results) setDestSuggestions(data.results.slice(0, 4));
+      } catch (err) {
+        console.error('Auto-suggest error:', err);
+      }
     }, 250);
     return () => clearTimeout(timer);
-  }, [query]);
+  }, [locationInput]);
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    setSuggestions([]);
-    if (onSearch) onSearch(query);
+  const handleSelectDestination = (destName) => {
+    setDestination(destName);
+    setLocationInput(destName);
+    setDestSuggestions([]);
+    // Smoothly advance to date selection
+    setActiveDropdown('dates');
   };
 
-  const handleSelectSuggestion = (item) => {
-    setQuery(item.title);
-    setSuggestions([]);
+  const handleExecuteSearch = (e) => {
+    if (e) e.preventDefault();
+    setActiveDropdown(null);
+    setDestSuggestions([]);
+
+    const filters = {
+      destination: destination.trim(),
+      checkIn: checkIn || '',
+      checkOut: checkOut || '',
+      guests: totalGuests,
+      search: destination ? '' : locationInput.trim(),
+    };
+
+    if (onSearch) {
+      onSearch(filters);
+    }
+
+    if (routeLocation.pathname !== '/' && routeLocation.pathname !== '/listings') {
+      navigate('/');
+    }
+  };
+
+  const handleSelectStay = (item) => {
+    setActiveDropdown(null);
     navigate('/stay/' + item._id);
   };
 
   const navBg = isDark ? 'rgba(15,23,42,0.95)' : 'rgba(255,255,255,0.95)';
   const navText = isDark ? '#f8fafc' : '#0f172a';
   const navBorder = isDark ? 'rgba(255,255,255,0.1)' : '#e2e8f0';
-  const searchBg = isDark ? '#1e293b' : '#fff';
-  const inputText = isDark ? '#f8fafc' : '#0f172a';
   const dropBg = isDark ? '#1e293b' : '#fff';
 
   return (
@@ -87,106 +147,351 @@ export default function Navbar({ onSearch, currentSearch }) {
           </div>
         </Link>
 
-        {/* Center Search Capsule (Airbnb Style) — hidden on mobile */}
+        {/* Center 3-Segment Interactive Search Capsule (Airbnb Style) */}
         <div style={{ position: 'relative', flex: '0 1 auto' }} className="nav-search-wrapper" ref={searchContainerRef}>
-          <form onSubmit={handleSearchSubmit} className="search-capsule" style={{ margin: 0 }}>
-            <input
-              type="text"
-              placeholder="Anywhere"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              style={{
-                border: 'none',
-                outline: 'none',
-                background: 'transparent',
-                fontSize: '0.86rem',
-                fontWeight: '700',
-                fontFamily: 'inherit',
-                color: inputText,
-                width: query ? '220px' : '78px',
-                transition: 'width 0.2s ease',
-              }}
-            />
-            {query ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setQuery('');
-                  setSuggestions([]);
-                  if (onSearch) onSearch('');
-                }}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  padding: '2px 4px',
-                  cursor: 'pointer',
-                  color: '#94a3b8',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-                title="Clear search"
-                aria-label="Clear search"
-              >
-                <X size={14} />
-              </button>
-            ) : (
-              <>
-                <div className="search-capsule-divider" />
-                <span className="capsule-sub-text" style={{ whiteSpace: 'nowrap', fontWeight: '500' }}>Any week</span>
-                <div className="search-capsule-divider" />
-                <span className="capsule-sub-text" style={{ whiteSpace: 'nowrap', color: '#94a3b8' }}>Add guests</span>
-              </>
-            )}
-            <button type="submit" className="search-btn-circle" style={{ border: 'none', cursor: 'pointer' }} aria-label="Search">
-              <Search size={14} color="#ffffff" strokeWidth={2.5} />
-            </button>
-          </form>
-
-          {suggestions.length > 0 && (
+          <div className="search-capsule-3seg">
+            {/* Segment 1: Where */}
             <div
-              style={{
-                position: 'absolute',
-                top: '108%',
-                left: 0,
-                right: 0,
-                background: dropBg,
-                border: '1px solid ' + navBorder,
-                borderRadius: '16px',
-                boxShadow: '0 12px 28px rgba(0,0,0,0.16)',
-                zIndex: 200,
-                overflow: 'hidden',
-              }}
+              className={`capsule-segment ${activeDropdown === 'location' ? 'active' : ''}`}
+              onClick={() => setActiveDropdown(activeDropdown === 'location' ? null : 'location')}
+              title="Search destinations"
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 14px 4px', borderBottom: '1px solid ' + navBorder }}>
-                <span style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.5px' }}>
-                  Stays matching "{query}"
-                </span>
+              <span className="seg-label">Where</span>
+              <span className="seg-value" title={destination || 'Anywhere in India'}>
+                {destination || 'Anywhere'}
+              </span>
+              {destination && (
                 <button
                   type="button"
-                  onClick={() => setSuggestions([])}
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8', padding: '2px', display: 'flex', alignItems: 'center' }}
-                  title="Close"
-                  aria-label="Close suggestions"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setDestination('');
+                    setLocationInput('');
+                    if (onSearch) onSearch({ destination: '', checkIn, checkOut, guests: totalGuests });
+                  }}
+                  className="seg-clear-btn"
+                  title="Clear location"
                 >
-                  <X size={13} />
+                  <X size={10} />
+                </button>
+              )}
+            </div>
+
+            <div className="search-capsule-divider" />
+
+            {/* Segment 2: When */}
+            <div
+              className={`capsule-segment ${activeDropdown === 'dates' ? 'active' : ''}`}
+              onClick={() => setActiveDropdown(activeDropdown === 'dates' ? null : 'dates')}
+              title="Pick trip dates"
+            >
+              <span className="seg-label">When</span>
+              <span className="seg-value" title={checkIn && checkOut ? `${formatDisplayDate(checkIn)} – ${formatDisplayDate(checkOut)}` : 'Any week'}>
+                {checkIn && checkOut
+                  ? `${formatDisplayDate(checkIn).replace(/,\s*\d{4}/, '')} – ${formatDisplayDate(checkOut).replace(/,\s*\d{4}/, '')}`
+                  : 'Any week'}
+              </span>
+              {checkIn && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCheckIn('');
+                    setCheckOut('');
+                    if (onSearch) onSearch({ destination, checkIn: '', checkOut: '', guests: totalGuests });
+                  }}
+                  className="seg-clear-btn"
+                  title="Clear dates"
+                >
+                  <X size={10} />
+                </button>
+              )}
+            </div>
+
+            <div className="search-capsule-divider" />
+
+            {/* Segment 3: Who */}
+            <div
+              className={`capsule-segment ${activeDropdown === 'guests' ? 'active' : ''}`}
+              onClick={() => setActiveDropdown(activeDropdown === 'guests' ? null : 'guests')}
+              title="Add number of guests"
+            >
+              <span className="seg-label">Who</span>
+              <span className="seg-value">
+                {totalGuests > 1 ? `${totalGuests} guests` : 'Add guests'}
+              </span>
+              {totalGuests > 1 && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setAdults(1);
+                    setChildren(0);
+                    if (onSearch) onSearch({ destination, checkIn, checkOut, guests: 1 });
+                  }}
+                  className="seg-clear-btn"
+                  title="Reset guests"
+                >
+                  <X size={10} />
+                </button>
+              )}
+            </div>
+
+            {/* Search Execute Button */}
+            <button
+              type="button"
+              onClick={handleExecuteSearch}
+              className="search-btn-circle"
+              aria-label="Search"
+              title="Search verified stays"
+            >
+              <Search size={15} color="#ffffff" strokeWidth={2.5} />
+            </button>
+          </div>
+
+          {/* Popover 1: Where (Location Dropdown) */}
+          {activeDropdown === 'location' && (
+            <div className="nav-popover nav-popover-location" style={{ background: dropBg, borderColor: navBorder }}>
+              <div style={{ position: 'relative', marginBottom: '12px' }}>
+                <Search size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', pointerEvents: 'none' }} />
+                <input
+                  type="text"
+                  placeholder="Search destinations (e.g. Prayagraj, Haridwar, Manali)..."
+                  value={locationInput}
+                  onChange={(e) => setLocationInput(e.target.value)}
+                  className="dest-search-input"
+                  autoFocus
+                />
+                {locationInput && (
+                  <button
+                    type="button"
+                    onClick={() => { setLocationInput(''); setDestination(''); }}
+                    style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '2px' }}
+                  >
+                    <X size={14} />
+                  </button>
+                )}
+              </div>
+
+              {/* Suggestions if typed */}
+              {destSuggestions.length > 0 && (
+                <div style={{ marginBottom: '14px', borderBottom: '1px solid ' + navBorder, paddingBottom: '10px' }}>
+                  <div style={{ fontSize: '0.72rem', fontWeight: '800', color: '#ff5a5f', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.5px' }}>
+                    Matching Stays
+                  </div>
+                  {destSuggestions.map((item) => (
+                    <div
+                      key={item._id}
+                      onClick={() => handleSelectStay(item)}
+                      style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '6px 8px', borderRadius: '10px', cursor: 'pointer', transition: 'background 0.15s' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = isDark ? '#0f172a' : '#f8fafc')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                    >
+                      <img src={item.image?.url} alt={item.title} style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover' }} />
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontSize: '0.82rem', fontWeight: '700', color: navText, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</div>
+                        <div style={{ fontSize: '0.72rem', color: '#64748b' }}>{item.location} • ₹{item.price?.toLocaleString('en-IN')}/night</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Popular Curated Destinations */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <span style={{ fontSize: '0.74rem', fontWeight: '800', textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.5px' }}>
+                  Popular Destinations
+                </span>
+                {destination && (
+                  <button
+                    type="button"
+                    onClick={() => { setDestination(''); setLocationInput(''); }}
+                    style={{ background: 'none', border: 'none', color: '#ff5a5f', fontSize: '0.74rem', fontWeight: '700', cursor: 'pointer' }}
+                  >
+                    Reset
+                  </button>
+                )}
+              </div>
+
+              <div className="dest-grid">
+                {POPULAR_DESTINATIONS
+                  .filter(d => !locationInput.trim() || d.name.toLowerCase().includes(locationInput.toLowerCase()) || d.state.toLowerCase().includes(locationInput.toLowerCase()))
+                  .map((dest) => {
+                    const isSelected = destination.toLowerCase() === dest.name.toLowerCase();
+                    return (
+                      <button
+                        key={dest.name}
+                        type="button"
+                        onClick={() => handleSelectDestination(dest.name)}
+                        className={`dest-card ${isSelected ? 'selected' : ''}`}
+                      >
+                        <span style={{ fontSize: '1.25rem' }}>{dest.icon}</span>
+                        <div style={{ minWidth: 0, flex: 1 }}>
+                          <div style={{ fontSize: '0.84rem', fontWeight: '700', color: navText, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            {dest.name}
+                          </div>
+                          <div style={{ fontSize: '0.7rem', color: '#64748b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            {dest.desc}
+                          </div>
+                        </div>
+                        {isSelected && <Check size={14} color="#ff5a5f" strokeWidth={2.5} />}
+                      </button>
+                    );
+                  })}
+              </div>
+            </div>
+          )}
+
+          {/* Popover 2: When (Date Range Picker) */}
+          {activeDropdown === 'dates' && (
+            <DateRangePicker
+              checkIn={checkIn}
+              checkOut={checkOut}
+              isOpen={activeDropdown === 'dates'}
+              onClose={() => setActiveDropdown(null)}
+              onDatesChange={({ checkIn: newIn, checkOut: newOut }) => {
+                setCheckIn(newIn);
+                setCheckOut(newOut);
+                if (newIn && newOut) {
+                  setTimeout(() => setActiveDropdown('guests'), 180);
+                }
+              }}
+              style={{
+                position: 'absolute',
+                top: 'calc(100% + 10px)',
+                left: '50%',
+                right: 'auto',
+                transform: 'translateX(-50%)',
+                width: '350px',
+                zIndex: 2100,
+              }}
+            />
+          )}
+
+          {/* Popover 3: Who (Guest Counter Stepper) */}
+          {activeDropdown === 'guests' && (
+            <div className="nav-popover nav-popover-guests" style={{ background: dropBg, borderColor: navBorder }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px', borderBottom: '1px solid ' + navBorder, paddingBottom: '10px' }}>
+                <span style={{ fontSize: '0.86rem', fontWeight: '800', color: navText }}>Guests</span>
+                <span style={{ fontSize: '0.78rem', fontWeight: '700', color: '#ff5a5f' }}>
+                  {totalGuests} {totalGuests === 1 ? 'Guest' : 'Guests'} Selected
+                </span>
+              </div>
+
+              {/* Adults Counter */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+                <div>
+                  <div style={{ fontSize: '0.86rem', fontWeight: '700', color: navText }}>Adults</div>
+                  <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Ages 13 or above</div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <button
+                    type="button"
+                    disabled={adults <= 1}
+                    onClick={() => setAdults((a) => Math.max(1, a - 1))}
+                    className="stepper-btn"
+                    aria-label="Decrease adults"
+                  >
+                    –
+                  </button>
+                  <span style={{ fontSize: '0.92rem', fontWeight: '800', color: navText, minWidth: '18px', textAlign: 'center' }}>
+                    {adults}
+                  </span>
+                  <button
+                    type="button"
+                    disabled={adults + children >= 16}
+                    onClick={() => setAdults((a) => a + 1)}
+                    className="stepper-btn"
+                    aria-label="Increase adults"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              {/* Children Counter */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+                <div>
+                  <div style={{ fontSize: '0.86rem', fontWeight: '700', color: navText }}>Children</div>
+                  <div style={{ fontSize: '0.72rem', color: '#64748b' }}>Ages 2–12</div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <button
+                    type="button"
+                    disabled={children <= 0}
+                    onClick={() => setChildren((c) => Math.max(0, c - 1))}
+                    className="stepper-btn"
+                    aria-label="Decrease children"
+                  >
+                    –
+                  </button>
+                  <span style={{ fontSize: '0.92rem', fontWeight: '800', color: navText, minWidth: '18px', textAlign: 'center' }}>
+                    {children}
+                  </span>
+                  <button
+                    type="button"
+                    disabled={adults + children >= 16}
+                    onClick={() => setChildren((c) => c + 1)}
+                    className="stepper-btn"
+                    aria-label="Increase children"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              {/* Fast Presets */}
+              <div style={{ display: 'flex', gap: '6px', marginBottom: '16px', borderTop: '1px solid ' + navBorder, paddingTop: '12px' }}>
+                {[1, 2, 4, 6].map((num) => (
+                  <button
+                    key={num}
+                    type="button"
+                    onClick={() => { setAdults(num); setChildren(0); }}
+                    style={{
+                      flex: 1,
+                      padding: '6px 0',
+                      borderRadius: '8px',
+                      fontSize: '0.74rem',
+                      fontWeight: '700',
+                      border: totalGuests === num ? '1px solid #ff5a5f' : '1px solid ' + navBorder,
+                      background: totalGuests === num ? 'rgba(255, 90, 95, 0.12)' : 'var(--bg-secondary)',
+                      color: totalGuests === num ? '#ff5a5f' : navText,
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    {num === 6 ? '6+' : `${num} ${num === 1 ? 'guest' : 'guests'}`}
+                  </button>
+                ))}
+              </div>
+
+              {/* Bottom Actions */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid ' + navBorder, paddingTop: '12px' }}>
+                <button
+                  type="button"
+                  onClick={() => { setAdults(1); setChildren(0); }}
+                  style={{ background: 'none', border: 'none', color: '#64748b', fontSize: '0.78rem', fontWeight: '700', textDecoration: 'underline', cursor: 'pointer' }}
+                >
+                  Reset
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setActiveDropdown(null); handleExecuteSearch(); }}
+                  style={{
+                    padding: '7px 16px',
+                    borderRadius: '10px',
+                    background: '#ff5a5f',
+                    color: '#ffffff',
+                    border: 'none',
+                    fontSize: '0.8rem',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    boxShadow: '0 2px 8px rgba(255, 90, 95, 0.3)',
+                  }}
+                >
+                  Apply & Search
                 </button>
               </div>
-              {suggestions.map((item) => (
-                <div
-                  key={item._id}
-                  onClick={() => handleSelectSuggestion(item)}
-                  style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 16px', cursor: 'pointer', borderBottom: '1px solid ' + navBorder }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = isDark ? '#0f172a' : '#f8fafc')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = dropBg)}
-                >
-                  <img src={item.image?.url} alt={item.title} style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }} />
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: '0.85rem', fontWeight: '600', color: navText, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{item.location} • ₹{item.price?.toLocaleString('en-IN')}/night</div>
-                  </div>
-                </div>
-              ))}
             </div>
           )}
         </div>

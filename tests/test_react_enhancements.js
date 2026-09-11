@@ -114,6 +114,19 @@ async function testReactSuite() {
   const staySpa = await get(`http://127.0.0.1:8080/stay/${sample._id}`);
   assert(staySpa.status === 200 && staySpa.body.includes('<div id="root"></div>'), 'SPA route /stay/:id serves React app container');
 
+  // 7. Interactive 3-segment search filters (Anywhere, Any week, Add guests)
+  const destRes = await get('http://127.0.0.1:8080/api/listings?destination=Prayagraj');
+  assert(destRes.status === 200 && destRes.body.data.every(l => l.location.toLowerCase().includes('prayagraj')), '3-Segment Search: "Anywhere" destination Prayagraj accurately filters stays');
+
+  const guestRes = await get('http://127.0.0.1:8080/api/listings?guests=6');
+  assert(guestRes.status === 200 && guestRes.body.data.every(l => (l.maxGuests || 4) >= 6), '3-Segment Search: "Add guests" filters stays with maxGuests >= 6');
+
+  const dateRes = await get('http://127.0.0.1:8080/api/listings?destination=Varanasi&checkIn=2026-11-05');
+  assert(dateRes.status === 200 && dateRes.body.data && dateRes.body.data[0]?.festivalPricing?.direction === 'higher', '3-Segment Search: "Any week" check-in calculates seasonal festival pricing');
+
+  const destinationsApi = await get('http://127.0.0.1:8080/api/destinations');
+  assert(destinationsApi.status === 200 && (destinationsApi.body.data || destinationsApi.body.destinations)?.some(d => d.name === 'Prayagraj'), 'Destinations catalog contains Prayagraj and pilgrim corridors');
+
   console.log('===============================================================');
   console.log(`SUMMARY: ${passed} / ${total} REACT SUITE ASSERTIONS PASSED (100% SUCCESS)`);
   console.log('===============================================================\n');
