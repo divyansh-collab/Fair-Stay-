@@ -50,7 +50,7 @@ router.get('/listings', async (req, res) => {
       ];
     } else if (search) {
       const searchStr = search.trim().toLowerCase();
-      const festKeywords = ['diwali', 'deepawali', 'dev deepawali', 'sunburn', 'yoga', 'carnival', 'kumbh', 'holi', 'new year', 'christmas', 'onam', 'dussehra'];
+      const festKeywords = ['diwali', 'deepawali', 'dev deepawali', 'sunburn', 'yoga', 'carnival', 'kumbh', 'holi', 'new year', 'christmas', 'xmas', 'janmashtami', 'ganpati', 'ganesh', 'ganeshotsav', 'onam', 'dussehra'];
       const matchedKw = festKeywords.find(kw => searchStr.includes(kw));
       if (matchedKw) {
         detectedFestival = detectedFestival || matchedKw;
@@ -83,11 +83,10 @@ router.get('/listings', async (req, res) => {
     ]);
 
     const checkInDate = req.query.checkIn || req.query.checkInDate || null;
-    const dateObj = checkInDate ? new Date(checkInDate) : new Date();
 
     const dataWithPricing = listings.map((l) => {
       const obj = l.toObject();
-      const fest = getFestivalPricing(l, dateObj, detectedFestival);
+      const fest = getFestivalPricing(l, checkInDate, detectedFestival);
       obj.festivalPricing = {
         festivalId: fest.festivalId,
         festivalName: fest.festivalName,

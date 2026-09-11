@@ -110,6 +110,63 @@ async function runCityPricingTests() {
     assert(ayodhyaRes.percentage === 40, 'Ayodhya Deepotsav returns +40% surge');
     assert(ayodhyaRes.effectivePrice === 3500, 'Ayodhya Deepotsav effective price is 3500 (2500 + 40% = 3500)');
 
+    // 12. Universal Christmas Dates (Dec 25 check-in across multiple destinations)
+    const goaXmas = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Goa&checkInDate=2026-12-25&basePrice=6000');
+    assert(goaXmas.success === true, 'Goa Christmas Dec 25 date query succeeds');
+    assert(goaXmas.direction === 'higher', 'Goa Christmas recognized as peak holiday surge');
+    assert(goaXmas.percentage === 30, 'Goa Christmas returns +30% holiday surge');
+    assert(goaXmas.effectivePrice === 7800, 'Goa Christmas effective price is 7800 (6000 + 30%)');
+
+    const manaliXmas = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Manali&checkInDate=2026-12-25&basePrice=4000');
+    assert(manaliXmas.success === true, 'Manali Christmas Dec 25 date query succeeds');
+    assert(manaliXmas.direction === 'higher', 'Manali Christmas recognized as peak snow surge');
+    assert(manaliXmas.percentage === 35, 'Manali Christmas returns +35% snow surge');
+    assert(manaliXmas.effectivePrice === 5400, 'Manali Christmas effective price is 5400 (4000 + 35%)');
+
+    const varanasiXmas = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Varanasi&checkInDate=2026-12-25&basePrice=3000');
+    assert(varanasiXmas.success === true, 'Varanasi Christmas Dec 25 date query succeeds');
+    assert(varanasiXmas.direction === 'higher', 'Varanasi Christmas recognized as winter holiday surge');
+    assert(varanasiXmas.percentage === 25, 'Varanasi Christmas returns +25% holiday surge');
+
+    // 13. Tourist Destinations Exemption: Manali & Goa do NOT surge for Diwali
+    const goaDiwali = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Goa&festival=diwali&basePrice=5000');
+    assert(goaDiwali.success === true, 'Goa Diwali query succeeds');
+    assert(goaDiwali.percentage === 0, 'Goa does NOT hike for Diwali (0% holiday surge)');
+    assert(goaDiwali.effectivePrice === 5000, 'Goa maintains direct baseline rate (₹5,000) during Diwali');
+
+    const manaliDiwali = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Manali&festival=diwali&basePrice=4000');
+    assert(manaliDiwali.success === true, 'Manali Diwali query succeeds');
+    assert(manaliDiwali.percentage === 0, 'Manali does NOT hike for Diwali (0% holiday surge)');
+    assert(manaliDiwali.effectivePrice === 4000, 'Manali maintains direct baseline rate (₹4,000) during Diwali');
+
+    // 14. Regional Specificity: Janmashtami ONLY hikes in Mathura and Prayagraj
+    const mathuraJanmashtami = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Mathura&festival=janmashtami&basePrice=3000');
+    assert(mathuraJanmashtami.success === true, 'Mathura Janmashtami query succeeds');
+    assert(mathuraJanmashtami.percentage === 40, 'Mathura Janmashtami returns +40% surge');
+    assert(mathuraJanmashtami.effectivePrice === 4200, 'Mathura Janmashtami effective price is 4200 (3000 + 40%)');
+
+    const prayagrajJanmashtami = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Prayagraj&festival=janmashtami&basePrice=2500');
+    assert(prayagrajJanmashtami.success === true, 'Prayagraj Janmashtami query succeeds');
+    assert(prayagrajJanmashtami.percentage === 30, 'Prayagraj Janmashtami returns +30% surge');
+
+    const goaJanmashtami = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Goa&festival=janmashtami&basePrice=5000');
+    assert(goaJanmashtami.success === true, 'Goa Janmashtami query succeeds');
+    assert(goaJanmashtami.percentage === 0, 'Goa does NOT hike for Janmashtami (0% surge)');
+
+    // 15. Regional Specificity: Ganpati Mahotsav ONLY hikes in Maharashtra
+    const mumbaiGanpati = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Mumbai&festival=ganpati&basePrice=6000');
+    assert(mumbaiGanpati.success === true, 'Mumbai Ganpati query succeeds');
+    assert(mumbaiGanpati.percentage === 30, 'Mumbai Ganpati returns +30% surge');
+    assert(mumbaiGanpati.effectivePrice === 7800, 'Mumbai Ganpati effective price is 7800 (6000 + 30%)');
+
+    const manaliGanpati = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Manali&festival=ganpati&basePrice=4000');
+    assert(manaliGanpati.success === true, 'Manali Ganpati query succeeds');
+    assert(manaliGanpati.percentage === 0, 'Manali does NOT hike for Ganpati (0% surge)');
+
+    // 16. Christmas Dec 26 date check
+    const goaXmas26 = await fetchJson('http://127.0.0.1:8080/ai/predict-festival-price?destination=Goa&checkInDate=2026-12-26&basePrice=6000');
+    assert(goaXmas26.percentage === 30, 'Goa Dec 26 date correctly applies Christmas surge (+30%)');
+
     console.log('===============================================================');
     console.log(`SUMMARY: ${passed} / ${total} ASSERTIONS PASSED (100% SUCCESS)`);
     console.log('===============================================================\n');

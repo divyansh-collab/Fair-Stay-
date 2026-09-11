@@ -29,18 +29,18 @@ function runScript(scriptName) {
 
 function checkServerReady(port = 8080) {
   return new Promise((resolve) => {
-    const req = http.get(`http://127.0.0.1:${port}/listings`, (res) => {
+    const req = http.get(`http://127.0.0.1:${port}/api/me`, (res) => {
       resolve(res.statusCode < 500);
     });
     req.on('error', () => resolve(false));
-    req.setTimeout(1500, () => {
+    req.setTimeout(2500, () => {
       req.destroy();
       resolve(false);
     });
   });
 }
 
-function waitForServer(port = 8080, maxRetries = 25) {
+function waitForServer(port = 8080, maxRetries = 40) {
   return new Promise((resolve, reject) => {
     let attempts = 0;
     const interval = setInterval(async () => {
