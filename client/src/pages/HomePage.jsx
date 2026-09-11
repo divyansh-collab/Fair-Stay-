@@ -73,7 +73,7 @@ export default function HomePage({ searchQuery, onClearSearch }) {
   };
 
   // Only show hero when no filters or search are active
-  const isFilterActive = Boolean(activeCategory || activeDestination || activeFestival || searchQuery || minPrice || maxPrice);
+  const isFilterActive = Boolean(activeCategory || activeDestination || searchQuery || minPrice || maxPrice);
 
   return (
     <div>
@@ -115,12 +115,6 @@ export default function HomePage({ searchQuery, onClearSearch }) {
           {/* Active Filter Clear Tags */}
           {isFilterActive && (
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-              {activeFestival && (
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'rgba(255, 90, 95, 0.12)', color: '#ff5a5f', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '700', border: '1px solid rgba(255, 90, 95, 0.25)' }}>
-                  🪔 {activeFestival}
-                  <button onClick={() => setActiveFestival('')} style={{ color: '#ff5a5f', marginLeft: '4px', cursor: 'pointer' }}>✕</button>
-                </span>
-              )}
               {activeDestination && (
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#e0f2fe', color: '#0284c7', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '600' }}>
                   <MapPin size={12} /> {activeDestination}
@@ -149,7 +143,6 @@ export default function HomePage({ searchQuery, onClearSearch }) {
                 onClick={() => {
                   setActiveDestination('');
                   setActiveCategory('');
-                  setActiveFestival('');
                   onClearSearch && onClearSearch();
                 }}
                 style={{ fontSize: '0.78rem', color: '#ff5a5f', fontWeight: '700', textDecoration: 'underline', cursor: 'pointer' }}
