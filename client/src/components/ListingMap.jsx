@@ -1,43 +1,53 @@
-﻿import { useMemo } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import React, { useMemo, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Fix Leaflet default icon paths broken by bundlers
+// ─── Leaflet Icon Configuration ───────────────────────────────────────────────
+// Fix default Leaflet icon paths broken by bundlers using high-availability CDN assets
+delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconUrl: new URL("leaflet/dist/images/marker-icon.png", import.meta.url).href,
-  iconRetinaUrl: new URL("leaflet/dist/images/marker-icon-2x.png", import.meta.url).href,
-  shadowUrl: new URL("leaflet/dist/images/marker-shadow.png", import.meta.url).href,
+  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png",
+  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
 });
 
-// ─── Placeholder ──────────────────────────────────────────────────────────────
-
-function MapPlaceholder({ message = "Map unavailable" }) {
-  return (
-    <div
-      style={{
-        height: 320,
-        borderRadius: 16,
-        background: "#e2e8f0",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 8,
-        color: "#64748b",
-        fontSize: 15,
-      }}
-    >
-      <span style={{ fontSize: 36 }}>🗺️</span>
-      <span>{message}</span>
+// Custom FairStay Coral Pin (Zero image dependencies, 100% reliable)
+const customStayPin = L.divIcon({
+  className: "fairstay-map-pin",
+  html: `
+    <div style="background-color: #ff5a5f; color: #ffffff; border: 3px solid #ffffff; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.3); font-size: 1.25rem; cursor: pointer; transition: transform 0.2s ease;">
+      🏡
     </div>
-  );
+  `,
+  iconSize: [44, 44],
+  iconAnchor: [22, 22],
+  popupAnchor: [0, -22],
+});
+
+// ─── Auto-Resizer Component ───────────────────────────────────────────────────
+// Solves the infamous Leaflet "grey tiles" bug when container bounds calculate asynchronously
+function MapResizer({ center }) {
+  const map = useMap();
+  useEffect(() => {
+    if (center && Array.isArray(center) && center.length === 2) {
+      map.setView(center, map.getZoom());
+    }
+    const t1 = setTimeout(() => map.invalidateSize(), 150);
+    const t2 = setTimeout(() => map.invalidateSize(), 500);
+    const t3 = setTimeout(() => map.invalidateSize(), 1000);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, [center, map]);
+  return null;
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
-
 export default function ListingMap({ listing }) {
-  // geometry.coordinates is [lng, lat] — flip to [lat, lng] for Leaflet
+  // GeoJSON stores coordinates as [longitude, latitude] -> convert to [latitude, longitude] for Leaflet
   const center = useMemo(() => {
     try {
       const coords = listing?.geometry?.coordinates;
@@ -47,62 +57,69 @@ export default function ListingMap({ listing }) {
         typeof coords[0] !== "number" ||
         typeof coords[1] !== "number"
       ) {
-        return null;
+        return [25.3176, 82.9739]; // Default to Varanasi ghats if coordinates missing
       }
       return [coords[1], coords[0]]; // [lat, lng]
     } catch {
-      return null;
+      return [25.3176, 82.9739];
     }
   }, [listing]);
 
-  if (!center) {
-    return <MapPlaceholder message="Location not available" />;
-  }
-
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-      <MapContainer
-        center={center}
-        zoom={13}
-        scrollWheelZoom={false}
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div
         style={{
-          height: 320,
+          height: 340,
+          width: "100%",
           borderRadius: 16,
-          zIndex: 0,
           overflow: "hidden",
+          position: "relative",
+          border: "1px solid var(--border-light, #e2e8f0)",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
         }}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={center}>
-          <Popup>
-            <div style={{ minWidth: 140 }}>
-              <strong style={{ display: "block", marginBottom: 4 }}>
-                {listing?.title || "Listing"}
-              </strong>
-              <span style={{ fontSize: 13, color: "#64748b" }}>
-                {listing?.location || ""}
-              </span>
-            </div>
-          </Popup>
-        </Marker>
-      </MapContainer>
+        <MapContainer
+          center={center}
+          zoom={13}
+          scrollWheelZoom={false}
+          style={{ height: "100%", width: "100%", zIndex: 0 }}
+        >
+          <MapResizer center={center} />
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={center} icon={customStayPin}>
+            <Popup>
+              <div style={{ minWidth: 160, padding: 4 }}>
+                <strong style={{ display: "block", fontSize: "0.95rem", color: "#0f172a", marginBottom: 4 }}>
+                  {listing?.title || "Verified Stay"}
+                </strong>
+                <span style={{ fontSize: "0.8rem", color: "#64748b", display: "block", marginBottom: 6 }}>
+                  📍 {listing?.location || "India"}
+                </span>
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#ff5a5f" }}>
+                  ₹{listing?.price?.toLocaleString("en-IN")}/night • FairSafe Verified
+                </span>
+              </div>
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </div>
 
       {/* Note below map */}
       <p
         style={{
           margin: 0,
           fontSize: 13,
-          color: "#94a3b8",
+          color: "var(--text-muted, #94a3b8)",
           display: "flex",
           alignItems: "center",
           gap: 6,
         }}
       >
         <span>📍</span>
-        <span>Exact location provided after booking</span>
+        <span>Exact neighborhood provided after booking for guest & host privacy</span>
       </p>
     </div>
   );
